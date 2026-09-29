@@ -12,9 +12,9 @@ let corrupt=JSON.parse(JSON.stringify(p));corrupt.words['50000']=corrupt.words[1
 assert.equal(words.length,20000);assert.equal(new Set(words.map(w=>w.word)).size,20000);assert(words.every(w=>/^[a-z]+$/.test(w.word)&&w.zh&&w.full&&w.rank>0));assert(words.slice(103).every((w,i,a)=>i===0||w.rank>=a[i-1].rank));assert.equal(missions.length,12);assert.equal(missions.flatMap(m=>m.items).length,120);assert.equal(new Set(missions.flatMap(m=>m.items).map(w=>w.id)).size,120);
 for(const m of missions)for(const w of m.items)assert(w.sentence.toLowerCase().includes(w.word.toLowerCase()));
 assert.equal(Object.keys(examples).length,20000);assert(words.every(w=>examples[w.id]?.length===2));
-for(const w of words.slice(0,100))for(const item of examples[w.id]){
- assert(item.translation,'starter sentence needs a Chinese translation');
- assert(new RegExp('\\b'+w.word+'\\b','i').test(item.text),'starter sentence needs target word');
+for(const w of words.slice(0,500))for(const item of examples[w.id]){
+ assert(item.translation,'first-500 sentence needs a Chinese translation');
+ assert(new RegExp('\\b'+w.word+'\\b','i').test(item.text),'first-500 sentence needs target word');
 }
 for(const w of words){const opts=C.choices(w,words.slice(Math.max(0,w.id-150),Math.min(words.length,w.id+150)),'zh');assert.equal(opts.length,4);assert.equal(new Set(opts.map(o=>o.zh)).size,4);assert(opts.some(o=>o.id===w.id));}
 const expectedStart={programmer:'algorithm',foreign_trade:'export',finance:'asset',ai_creator:'prompt',marketing:'brand',healthcare:'patient',biology:'biology',law:'law',chemistry:'chemistry'};
