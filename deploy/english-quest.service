@@ -1,0 +1,20 @@
+[Unit]
+Description=English Quest learning site
+After=network.target
+[Service]
+Type=simple
+ExecStart=/opt/english-quest/english-quest-linux --port 18887 --state-dir /var/lib/english-quest
+WorkingDirectory=/opt/english-quest
+StateDirectory=english-quest
+StateDirectoryMode=0700
+Restart=on-failure
+RestartSec=3
+User=nobody
+Group=nobody
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+MemoryMax=128M
+[Install]
+WantedBy=multi-user.target
