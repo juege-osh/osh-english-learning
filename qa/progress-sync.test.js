@@ -18,6 +18,18 @@ assert.equal(merged.words[1].first,90);
 assert.ok(C.validate(merged));
 console.log('PASS: cloud progress keeps best levels and latest failure without losing wrong-word history');
 
+const specialist=C.fresh(),olderCloud=C.fresh();
+specialist.industries.programmer={seen:[1,2],skipped:{'3':100},skipResetAt:0};
+const specialistMerged=context.progressMerge(specialist,olderCloud);
+assert.deepEqual(Array.from(specialistMerged.industries.programmer.seen),[1,2]);
+assert.equal(specialistMerged.industries.programmer.skipped['3'],100);
+const resetCloud=C.fresh();
+resetCloud.industries.programmer={seen:[4],skipped:{},skipResetAt:101};
+const resetMerged=context.progressMerge(specialist,resetCloud);
+assert.deepEqual(Array.from(resetMerged.industries.programmer.seen).sort(),[1,2,4]);
+assert.equal(resetMerged.industries.programmer.skipped['3'],undefined);
+console.log('PASS: industry-only study syncs and a later skip reset wins');
+
 (async()=>{
  let finishRequest,loggedOut=false;
  context.p=C.fresh();context.KEY='progress';context.localStorage={setItem(){}};
