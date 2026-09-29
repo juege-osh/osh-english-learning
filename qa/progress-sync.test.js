@@ -17,3 +17,19 @@ assert.equal(merged.words[1].wrong,1);
 assert.equal(merged.words[1].first,90);
 assert.ok(C.validate(merged));
 console.log('PASS: cloud progress keeps best levels and latest failure without losing wrong-word history');
+
+(async()=>{
+ let finishRequest,loggedOut=false;
+ context.p=C.fresh();context.KEY='progress';context.localStorage={setItem(){}};
+ context.fetch=()=>new Promise(resolve=>{finishRequest=resolve;});
+ context.toast=()=>{};context.header=()=>{};context.route=()=>{};context.session=null;
+ vm.runInContext('cloudEnabled=true;cloudDirty=true;cloudRevision=0',context);
+ const saving=context.progressFlush();
+ const logout=context.progressBeforeLogout().then(ok=>{loggedOut=true;return ok;});
+ await Promise.resolve();
+ assert.equal(loggedOut,false,'logout must wait for an in-flight save');
+ finishRequest({ok:true,status:200,json:async()=>({revision:1})});
+ assert.equal(await saving,true);
+ assert.equal(await logout,true);
+ console.log('PASS: logout waits for an in-flight cloud save');
+})().catch(error=>{console.error(error);process.exitCode=1;});
