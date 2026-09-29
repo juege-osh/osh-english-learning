@@ -68,6 +68,24 @@ func TestProofApprovalRequiresReviewerAndGrantsThirtyDays(t *testing.T) {
 	if e := json.Unmarshal(applied.Body.Bytes(), &result); e != nil {
 		t.Fatal(e)
 	}
+	// Simulate an application saved by the older version, which omitted Image.
+	old := f.proofs.Applications[result.Application.ID]
+	old.Image = ""
+	f.proofs.Applications[old.ID] = old
+	if e := f.saveProofs(); e != nil {
+		t.Fatal(e)
+	}
+	f, e = newFeatures(dir)
+	if e != nil {
+		t.Fatal(e)
+	}
+	if got := f.proofs.Applications[old.ID].Image; got != old.ID+".png" {
+		t.Fatalf("old screenshot not recovered: %q", got)
+	}
+	f, e = newFeatures(dir)
+	if e != nil || f.proofs.Applications[old.ID].Image != old.ID+".png" {
+		t.Fatalf("screenshot association not persisted after restart: %v", e)
+	}
 	reviewBody, _ := json.Marshal(map[string]string{"id": result.Application.ID, "decision": "approve"})
 	reviewReq := httptest.NewRequest("POST", "/api/applications/review", bytes.NewReader(reviewBody))
 	for _, c := range cookies {
@@ -80,6 +98,15 @@ func TestProofApprovalRequiresReviewerAndGrantsThirtyDays(t *testing.T) {
 	}
 	if e = f.promoteAdmin("student_1"); e != nil {
 		t.Fatal(e)
+	}
+	imageReq := httptest.NewRequest("GET", "/api/applications/image?id="+old.ID, nil)
+	for _, c := range cookies {
+		imageReq.AddCookie(c)
+	}
+	imageResult := httptest.NewRecorder()
+	f.proofImage(imageResult, imageReq)
+	if imageResult.Code != 200 || !bytes.Equal(imageResult.Body.Bytes(), img.Bytes()) {
+		t.Fatalf("admin cannot see screenshot after restart: %d", imageResult.Code)
 	}
 	reviewReq = httptest.NewRequest("POST", "/api/applications/review", bytes.NewReader(reviewBody))
 	for _, c := range cookies {

@@ -53,6 +53,7 @@ type features struct {
 	proofPath   string
 	proofs      proofStore
 	proofDir    string
+	roomTries   map[string]roomAttempt
 	chatPath    string
 	chat        chatStore
 	progressDir string
@@ -79,7 +80,7 @@ func newFeatures(dir string) (*features, error) {
 	if err := os.MkdirAll(dir, 0700); err != nil {
 		return nil, err
 	}
-	f := &features{path: filepath.Join(dir, "state.json"), codeDir: filepath.Join(dir, "codes"), bookingDir: filepath.Join(dir, "bookings"), racePath: filepath.Join(dir, "races.json"), duoPath: filepath.Join(dir, "duos.json"), friendPath: filepath.Join(dir, "friends.json"), authPath: filepath.Join(dir, "accounts.json"), proofPath: filepath.Join(dir, "applications.json"), proofDir: filepath.Join(dir, "proofs"), chatPath: filepath.Join(dir, "chat.json"), progressDir: filepath.Join(dir, "progress"), data: siteState{Members: map[string]member{}, Codes: map[string]string{}, Starts: map[string]int64{}, Daily: map[string][]dailyEntry{}}}
+	f := &features{path: filepath.Join(dir, "state.json"), codeDir: filepath.Join(dir, "codes"), bookingDir: filepath.Join(dir, "bookings"), racePath: filepath.Join(dir, "races.json"), duoPath: filepath.Join(dir, "duos.json"), friendPath: filepath.Join(dir, "friends.json"), authPath: filepath.Join(dir, "accounts.json"), proofPath: filepath.Join(dir, "applications.json"), proofDir: filepath.Join(dir, "proofs"), roomTries: map[string]roomAttempt{}, chatPath: filepath.Join(dir, "chat.json"), progressDir: filepath.Join(dir, "progress"), data: siteState{Members: map[string]member{}, Codes: map[string]string{}, Starts: map[string]int64{}, Daily: map[string][]dailyEntry{}}}
 	if err := os.MkdirAll(f.codeDir, 0700); err != nil {
 		return nil, err
 	}

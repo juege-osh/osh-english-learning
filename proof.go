@@ -23,7 +23,7 @@ type proofApplication struct {
 	User     string `json:"user"`
 	Name     string `json:"name"`
 	Platform string `json:"platform"`
-	Image    string `json:"-"`
+	Image    string `json:"image,omitempty"`
 	Created  int64  `json:"created"`
 	Reviewed int64  `json:"reviewed,omitempty"`
 	Status   string `json:"status"`
@@ -44,6 +44,24 @@ func (f *features) loadProofs() error {
 	}
 	if f.proofs.Applications == nil {
 		f.proofs.Applications = map[string]proofApplication{}
+	}
+	changed := false
+	for id, item := range f.proofs.Applications {
+		if item.Image != "" {
+			continue
+		}
+		for _, ext := range []string{".png", ".jpg"} {
+			name := id + ext
+			if _, err := os.Stat(filepath.Join(f.proofDir, name)); err == nil {
+				item.Image = name
+				f.proofs.Applications[id] = item
+				changed = true
+				break
+			}
+		}
+	}
+	if changed {
+		return f.saveProofs()
 	}
 	return nil
 }

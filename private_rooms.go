@@ -3,10 +3,52 @@ package main
 import (
 	"crypto/subtle"
 	"encoding/json"
+	"net"
 	"net/http"
 	"strings"
 	"time"
 )
+
+type roomAttempt struct {
+	Count int
+	Until int64
+}
+
+// Call with f.mu held. Nginx replaces X-Real-IP before forwarding requests.
+func (f *features) roomPasswordCheck(w http.ResponseWriter, r *http.Request, roomID, password, salt, hash string) bool {
+	if hash == "" {
+		return true
+	}
+	ip := r.Header.Get("X-Real-IP")
+	if net.ParseIP(ip) == nil {
+		ip, _, _ = net.SplitHostPort(r.RemoteAddr)
+	}
+	key := roomID + ":" + ip
+	now := time.Now().Unix()
+	if len(f.roomTries) > 1000 {
+		for id, attempt := range f.roomTries {
+			if attempt.Until <= now {
+				delete(f.roomTries, id)
+			}
+		}
+	}
+	attempt := f.roomTries[key]
+	if attempt.Until > now && attempt.Count >= 5 {
+		http.Error(w, "密码错误次数过多，请一分钟后再试", http.StatusTooManyRequests)
+		return false
+	}
+	if checkRoomPassword(password, salt, hash) {
+		delete(f.roomTries, key)
+		return true
+	}
+	if attempt.Until <= now {
+		attempt = roomAttempt{Until: now + 60}
+	}
+	attempt.Count++
+	f.roomTries[key] = attempt
+	http.Error(w, "房间密码错误", http.StatusForbidden)
+	return false
+}
 
 func validRoomPassword(password string) bool {
 	return len([]rune(password)) >= 4 && len([]rune(password)) <= 32 && strings.TrimSpace(password) == password
@@ -132,8 +174,7 @@ func (f *features) raceRoomJoin(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "双方段位最多相差一阶", 403)
 		return
 	}
-	if !checkRoomPassword(body.Password, host.RoomSalt, host.RoomHash) {
-		http.Error(w, "房间密码错误", 403)
+	if !f.roomPasswordCheck(w, r, host.RoomID, body.Password, host.RoomSalt, host.RoomHash) {
 		return
 	}
 	id, err := randomCode()
@@ -244,8 +285,7 @@ func (f *features) duoRoomJoin(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "双方队伍段位最多相差一阶", 403)
 		return
 	}
-	if !checkRoomPassword(body.Password, wait.RoomSalt, wait.RoomHash) {
-		http.Error(w, "房间密码错误", 403)
+	if !f.roomPasswordCheck(w, r, wait.RoomID, body.Password, wait.RoomSalt, wait.RoomHash) {
 		return
 	}
 	id, err := randomCode()

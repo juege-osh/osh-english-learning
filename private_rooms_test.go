@@ -53,6 +53,27 @@ func TestPrivateRaceRoom(t *testing.T) {
 	}
 }
 
+func TestPasswordRoomStopsRepeatedGuesses(t *testing.T) {
+	f, err := newFeatures(t.TempDir())
+	if err != nil {
+		t.Fatal(err)
+	}
+	host, guest := raceVisit(t, f), raceVisit(t, f)
+	created := roomRequest(t, f.raceRoomCreate, host, "/api/race/room/create", map[string]any{"goal": 100, "password": "secret8"}, 200)
+	code := created["roomId"].(string)
+	for range 5 {
+		roomRequest(t, f.raceRoomJoin, guest, "/api/race/room/join", map[string]any{"code": code, "password": "wrong"}, 403)
+	}
+	roomRequest(t, f.raceRoomJoin, guest, "/api/race/room/join", map[string]any{"code": code, "password": "secret8"}, 429)
+	for key := range f.roomTries {
+		delete(f.roomTries, key)
+	}
+	joined := roomRequest(t, f.raceRoomJoin, guest, "/api/race/room/join", map[string]any{"code": code, "password": "secret8"}, 200)
+	if joined["mode"] != "racing" {
+		t.Fatal(joined)
+	}
+}
+
 func TestPrivateDuoRoom(t *testing.T) {
 	f, err := newFeatures(t.TempDir())
 	if err != nil {
