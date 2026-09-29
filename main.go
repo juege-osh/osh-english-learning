@@ -15,7 +15,7 @@ import (
 	"time"
 )
 
-//go:embed index.html style.css app.js features-ui.js member-ui.js chat-ui.js progress-sync.js core.js data/words.json data/scenarios.json data/examples.json data/industries.json
+//go:embed index.html style.css app.js features-ui.js member-ui.js chat-ui.js progress-sync.js core.js qrcode.min.js data/words.json data/scenarios.json data/examples.json data/industries.json
 var assets embed.FS
 
 func main() {
@@ -65,6 +65,11 @@ func main() {
 	mux.HandleFunc("/api/account/register", f.accountRegister)
 	mux.HandleFunc("/api/account/login", f.accountLogin)
 	mux.HandleFunc("/api/account/logout", f.accountLogout)
+	mux.HandleFunc("/api/payment/plans", f.paymentCatalog)
+	mux.HandleFunc("/api/payment/create", f.createPayment)
+	mux.HandleFunc("/api/payment/status", f.paymentStatus)
+	mux.HandleFunc("/api/payment/mock-success", f.mockPaymentSuccess)
+	mux.HandleFunc("/api/payment/notify/huifu", f.paymentNotify)
 	mux.HandleFunc("/api/progress", f.progressForAccount)
 	mux.HandleFunc("/api/applications", f.proofMine)
 	mux.HandleFunc("/api/applications/apply", f.proofApply)
@@ -123,7 +128,7 @@ func main() {
 	mux.HandleFunc("/api/friends/remove", f.friendRemove)
 	mux.HandleFunc("/api/health", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/json")
-		json.NewEncoder(w).Encode(map[string]interface{}{"ok": true, "service": "english-quest", "version": "1.17.0", "words": 20000, "levels": 2000, "goals": []int{5000, 10000, 20000}, "scenario_missions": 12, "phrases": 120, "tracks": len(f.industries), "industry_tracks": 9, "exam_tracks": 7, "progress_storage": "browser-local-and-account-cloud", "daily_leaderboard": true, "proof_applications": true, "member_bookings": true, "live_races": true, "duo_teams": true, "friends": true, "chat_channels": len(chatChannels)})
+		json.NewEncoder(w).Encode(map[string]interface{}{"ok": true, "service": "english-quest", "version": "1.19.0-staging", "words": 20000, "levels": 2000, "goals": []int{5000, 10000, 20000}, "scenario_missions": 12, "phrases": 120, "tracks": len(f.industries), "industry_tracks": 9, "exam_tracks": 7, "progress_storage": "browser-local-and-account-cloud", "daily_leaderboard": true, "proof_applications": true, "member_bookings": true, "live_races": true, "duo_teams": true, "friends": true, "chat_channels": len(chatChannels), "payment": paymentSummary(f)})
 	})
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		if r.Method != "GET" && r.Method != "HEAD" {

@@ -9,6 +9,7 @@ import (
 	"encoding/json"
 	"errors"
 	"net/http"
+	"net/mail"
 	"os"
 	"strings"
 	"time"
@@ -17,6 +18,7 @@ import (
 type account struct {
 	ID      string `json:"id"`
 	Name    string `json:"name"`
+	Email   string `json:"email,omitempty"`
 	Salt    string `json:"salt"`
 	Hash    string `json:"hash"`
 	Admin   bool   `json:"admin,omitempty"`
@@ -165,7 +167,7 @@ func (f *features) accountState(w http.ResponseWriter, r *http.Request) {
 		writeJSON(w, map[string]any{"registered": false})
 		return
 	}
-	writeJSON(w, map[string]any{"registered": true, "name": a.Name, "admin": a.Admin})
+	writeJSON(w, map[string]any{"registered": true, "name": a.Name, "email": a.Email, "admin": a.Admin})
 }
 func (f *features) accountRegister(w http.ResponseWriter, r *http.Request) {
 	f.accountLoginOrRegister(w, r, true)
@@ -180,6 +182,7 @@ func (f *features) accountLoginOrRegister(w http.ResponseWriter, r *http.Request
 	}
 	var input struct {
 		Name     string `json:"name"`
+		Email    string `json:"email"`
 		Password string `json:"password"`
 	}
 	r.Body = http.MaxBytesReader(w, r.Body, 2048)
@@ -188,9 +191,17 @@ func (f *features) accountLoginOrRegister(w http.ResponseWriter, r *http.Request
 		return
 	}
 	input.Name = strings.ToLower(strings.TrimSpace(input.Name))
-	if !validUser(input.Name) || len(input.Password) < 10 || len(input.Password) > 128 {
-		http.Error(w, "账号需3–24位英文、数字或下划线；密码至少10位", 400)
+	input.Email = strings.ToLower(strings.TrimSpace(input.Email))
+	if !validUser(input.Name) || len(input.Password) < 8 || len(input.Password) > 128 {
+		http.Error(w, "账号需3–24位英文、数字或下划线；密码至少8位", 400)
 		return
+	}
+	if register && input.Email != "" {
+		address, err := mail.ParseAddress(input.Email)
+		if err != nil || address.Address != input.Email || len(input.Email) > 254 {
+			http.Error(w, "邮箱格式有误", 400)
+			return
+		}
 	}
 	var visitorID string
 	if register {
@@ -215,6 +226,14 @@ func (f *features) accountLoginOrRegister(w http.ResponseWriter, r *http.Request
 			http.Error(w, "账号名已被使用", 409)
 			return
 		}
+		if input.Email != "" {
+			for _, other := range f.auth.Users {
+				if other.Email == input.Email {
+					http.Error(w, "邮箱已被使用", 409)
+					return
+				}
+			}
+		}
 		for _, other := range f.auth.Users {
 			if other.ID == visitorID {
 				http.Error(w, "当前访客身份已注册", 409)
@@ -231,7 +250,7 @@ func (f *features) accountLoginOrRegister(w http.ResponseWriter, r *http.Request
 			http.Error(w, "storage unavailable", 500)
 			return
 		}
-		a = account{ID: visitorID, Name: input.Name, Salt: salt, Hash: hash, Created: time.Now().Unix()}
+		a = account{ID: visitorID, Name: input.Name, Email: input.Email, Salt: salt, Hash: hash, Created: time.Now().Unix()}
 		f.auth.Users[input.Name] = a
 		f.accountIDs[visitorID] = true
 	} else {
@@ -301,11 +320,16 @@ func (f *features) promoteAdmin(name string) error {
 	f.mu.Lock()
 	defer f.mu.Unlock()
 	name = strings.ToLower(strings.TrimSpace(name))
-	a, ok := f.auth.Users[name]
+	_, ok := f.auth.Users[name]
 	if !ok {
 		return errors.New("account not found; register on site first")
 	}
-	a.Admin = true
-	f.auth.Users[name] = a
-	return f.saveAuth()
+	for key, user := range f.auth.Users {
+		user.Admin = key == name
+		f.auth.Users[key] = user
+	}
+	if err := f.saveAuth(); err != nil {
+		return err
+	}
+	return nil
 }

@@ -32,36 +32,39 @@ type dailyEntry struct {
 	TimeMs  int64  `json:"timeMs"`
 }
 type siteState struct {
-	Members map[string]member       `json:"members"`
-	Codes   map[string]string       `json:"codes"`
-	Starts  map[string]int64        `json:"starts"`
-	Daily   map[string][]dailyEntry `json:"daily"`
+	Members  map[string]member       `json:"members"`
+	Codes    map[string]string       `json:"codes"`
+	Starts   map[string]int64        `json:"starts"`
+	Daily    map[string][]dailyEntry `json:"daily"`
+	Payments map[string]paymentOrder `json:"payments,omitempty"`
 }
 type features struct {
-	mu          sync.Mutex
-	path        string
-	codeDir     string
-	bookingDir  string
-	racePath    string
-	races       raceStore
-	duoPath     string
-	duos        duoStore
-	friendPath  string
-	friends     friendStore
-	authPath    string
-	auth        authStore
-	accountIDs  map[string]bool
-	authTries   map[string]roomAttempt
-	proofPath   string
-	proofs      proofStore
-	proofDir    string
-	roomTries   map[string]roomAttempt
-	chatPath    string
-	chat        chatStore
-	progressDir string
-	data        siteState
-	words       []quizWord
-	industries  []industry
+	mu              sync.Mutex
+	path            string
+	codeDir         string
+	bookingDir      string
+	racePath        string
+	races           raceStore
+	duoPath         string
+	duos            duoStore
+	friendPath      string
+	friends         friendStore
+	authPath        string
+	auth            authStore
+	accountIDs      map[string]bool
+	authTries       map[string]roomAttempt
+	proofPath       string
+	proofs          proofStore
+	proofDir        string
+	roomTries       map[string]roomAttempt
+	chatPath        string
+	chat            chatStore
+	progressDir     string
+	data            siteState
+	words           []quizWord
+	industries      []industry
+	paymentProvider string
+	huifu           *huifuPayClient
 }
 type quizWord struct {
 	ID   int    `json:"id"`
@@ -113,6 +116,13 @@ func newFeatures(dir string) (*features, error) {
 	}
 	if f.data.Daily == nil {
 		f.data.Daily = map[string][]dailyEntry{}
+	}
+	if f.data.Payments == nil {
+		f.data.Payments = map[string]paymentOrder{}
+	}
+	f.paymentProvider = strings.ToLower(strings.TrimSpace(os.Getenv("ENGLISH_PAYMENT_PROVIDER")))
+	if f.paymentProvider == "huifu" {
+		f.huifu = newHuifuPayClientFromEnv()
 	}
 	if err := f.loadAuth(); err != nil {
 		return nil, err

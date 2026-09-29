@@ -120,3 +120,43 @@ func TestLoginTemporarilyLimitsRepeatedWrongPasswords(t *testing.T) {
 		t.Fatalf("login after cooldown returned %d", status)
 	}
 }
+
+func TestEmailRegistrationAndSingleOwner(t *testing.T) {
+	f, err := newFeatures(t.TempDir())
+	if err != nil {
+		t.Fatal(err)
+	}
+	register := func(name, email, password string) int {
+		body, _ := json.Marshal(map[string]string{"name": name, "email": email, "password": password})
+		result := httptest.NewRecorder()
+		f.accountRegister(result, httptest.NewRequest("POST", "/api/account/register", bytes.NewReader(body)))
+		return result.Code
+	}
+	if got := register("first_user", "first@example.com", "testpass8"); got != 200 {
+		t.Fatalf("first registration: %d", got)
+	}
+	if got := register("second_user", "FIRST@example.com", "testpass8"); got != 409 {
+		t.Fatalf("duplicate email: %d", got)
+	}
+	if got := register("second_user", "second@example.com", "testpass8"); got != 200 {
+		t.Fatalf("second registration: %d", got)
+	}
+	if got := register("third_user", "invalid-email", "testpass8"); got != 400 {
+		t.Fatalf("invalid email: %d", got)
+	}
+	if err := f.promoteAdmin("first_user"); err != nil {
+		t.Fatal(err)
+	}
+	if err := f.promoteAdmin("second_user"); err != nil {
+		t.Fatal(err)
+	}
+	if f.auth.Users["first_user"].Admin || !f.auth.Users["second_user"].Admin {
+		t.Fatal("more than one owner or wrong owner")
+	}
+	if err := f.promoteAdmin("missing_user"); err == nil {
+		t.Fatal("missing account became owner")
+	}
+	if !f.auth.Users["second_user"].Admin {
+		t.Fatal("owner changed after failed promotion")
+	}
+}
