@@ -97,7 +97,9 @@ func TestMemberBookingFlow(t *testing.T) {
 	guestRequest.AddCookie(cookie)
 	guestDenied := httptest.NewRecorder()
 	f.bookingCreate(guestDenied, guestRequest)
-	if guestDenied.Code != 401 { t.Fatalf("signed-out booking accepted: %d", guestDenied.Code) }
+	if guestDenied.Code != 401 {
+		t.Fatalf("signed-out booking accepted: %d", guestDenied.Code)
+	}
 	request := httptest.NewRequest("POST", "/api/bookings", bytes.NewReader(body))
 	request.Header.Set("Content-Type", "application/json")
 	request.AddCookie(cookie)
@@ -136,5 +138,59 @@ func TestMemberBookingFlow(t *testing.T) {
 	f.bookingCreate(denied, request)
 	if denied.Code != 403 {
 		t.Fatalf("expired member accepted: %d", denied.Code)
+	}
+}
+
+func TestBookingAdminReviewKeepsContactPrivate(t *testing.T) {
+	f, err := newFeatures(t.TempDir())
+	if err != nil {
+		t.Fatal(err)
+	}
+	regBody, _ := json.Marshal(map[string]string{"name": "booking_admin", "password": "long-password-123"})
+	registered := httptest.NewRecorder()
+	f.accountRegister(registered, httptest.NewRequest("POST", "/api/account/register", bytes.NewReader(regBody)))
+	if registered.Code != 200 {
+		t.Fatal(registered.Body.String())
+	}
+	cookies := registered.Result().Cookies()
+	item := booking{ID: "TESTBOOKING", Visitor: "another-user", Name: "学习者", Contact: "private-wechat-id", Preferred: "2026-10-10T19:00", Zone: "Asia/Shanghai", Topic: "反馈学习体验", Created: time.Now().Unix(), Status: "pending"}
+	if err := f.saveBooking(item); err != nil {
+		t.Fatal(err)
+	}
+	request := httptest.NewRequest("GET", "/api/bookings/admin", nil)
+	for _, c := range cookies {
+		request.AddCookie(c)
+	}
+	denied := httptest.NewRecorder()
+	f.bookingAdminList(denied, request)
+	if denied.Code != 403 || bytes.Contains(denied.Body.Bytes(), []byte(item.Contact)) {
+		t.Fatalf("private contact exposed: %d", denied.Code)
+	}
+	if err := f.promoteAdmin("booking_admin"); err != nil {
+		t.Fatal(err)
+	}
+	request = httptest.NewRequest("GET", "/api/bookings/admin", nil)
+	for _, c := range cookies {
+		request.AddCookie(c)
+	}
+	listed := httptest.NewRecorder()
+	f.bookingAdminList(listed, request)
+	if listed.Code != 200 || !bytes.Contains(listed.Body.Bytes(), []byte(item.Contact)) {
+		t.Fatalf("admin cannot see booking: %s", listed.Body.String())
+	}
+	reviewBody, _ := json.Marshal(map[string]string{"id": item.ID, "decision": "confirm", "when": "2026-10-10T20:00", "zone": "Asia/Shanghai"})
+	request = httptest.NewRequest("POST", "/api/bookings/review", bytes.NewReader(reviewBody))
+	request.Header.Set("Content-Type", "application/json")
+	for _, c := range cookies {
+		request.AddCookie(c)
+	}
+	confirmed := httptest.NewRecorder()
+	f.bookingReview(confirmed, request)
+	if confirmed.Code != 200 {
+		t.Fatal(confirmed.Body.String())
+	}
+	items, err := f.bookings()
+	if err != nil || len(items) != 1 || items[0].Status != "confirmed" || items[0].Confirmed != "2026-10-10 20:00 · 北京时间" {
+		t.Fatalf("booking not confirmed: %+v %v", items, err)
 	}
 }

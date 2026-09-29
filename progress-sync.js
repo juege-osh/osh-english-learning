@@ -1,5 +1,6 @@
 'use strict';
 let cloudRevision=0,cloudEnabled=false,cloudDirty=false,cloudTimer=null,cloudStarting=null,cloudFlight=null;
+function progressStatus(message){if(typeof document==='undefined')return;const el=document.getElementById('cloud-status');if(el)el.textContent=message;}
 
 function progressMerge(local,remote){
  if(!C.validate(remote))return local;
@@ -32,6 +33,7 @@ function progressMerge(local,remote){
 
 function progressSchedule(){
  if(!cloudEnabled)return;
+ progressStatus('本机已保存 · 正在同步到账号');
  cloudDirty=true;clearTimeout(cloudTimer);
  cloudTimer=setTimeout(progressFlush,1800);
 }
@@ -49,7 +51,8 @@ function progressFlush(){
     cloudRevision=latest.revision;cloudDirty=true;
    }else if(!r.ok)throw Error('sync failed');
    else{const result=await r.json();cloudRevision=result.revision;if(JSON.stringify(p)!==snapshot)cloudDirty=true;}
-  }catch{cloudDirty=true;}
+   progressStatus(cloudDirty?'本机已保存 · 正在同步到账号':'已同步到账号 · 可跨设备继续');
+  }catch{cloudDirty=true;progressStatus('本机已保存 · 云端暂未同步，请稍后重试');}
   finally{cloudFlight=null;if(cloudDirty&&cloudEnabled){clearTimeout(cloudTimer);cloudTimer=setTimeout(progressFlush,5000);}}
   return !cloudDirty;
  })();
@@ -61,7 +64,7 @@ async function progressStart(){
  cloudStarting=(async()=>{
   try{
    const account=await fetch('/api/account').then(r=>r.json());
-   if(!account.registered){cloudEnabled=false;return false;}
+   if(!account.registered){cloudEnabled=false;progressStatus('进度保存在此设备 · 登录后可跨设备同步');return false;}
    const r=await fetch('/api/progress');if(!r.ok)throw Error('sync unavailable');
    const remote=await r.json();cloudRevision=remote.revision;
    if(C.validate(remote.progress)){
@@ -73,9 +76,13 @@ async function progressStart(){
     }
    }
    cloudEnabled=true;
-   if(!C.validate(remote.progress)||JSON.stringify(remote.progress)!==JSON.stringify(p))progressSchedule();
+   if(!C.validate(remote.progress)||JSON.stringify(remote.progress)!==JSON.stringify(p)){
+    progressSchedule();clearTimeout(cloudTimer);
+    return await progressFlush();
+   }
+   progressStatus('已同步到账号 · 可跨设备继续');
    return true;
-  }catch{cloudEnabled=false;toast('云端同步暂时不可用。进度仍保存在此设备，可先导出备份。');return false;}
+  }catch{cloudEnabled=false;progressStatus('本机已保存 · 云端暂不可用');toast('云端同步暂时不可用。进度仍保存在此设备，可先导出备份。');return false;}
  })();
  try{return await cloudStarting;}finally{cloudStarting=null;}
 }
@@ -88,5 +95,6 @@ async function progressBeforeLogout(){
  }
  if(cloudDirty||cloudFlight){toast('云端尚未保存成功，请先导出进度再退出。');return false;}
  cloudEnabled=false;cloudDirty=false;cloudRevision=0;
+ progressStatus('进度保存在此设备 · 登录后可跨设备同步');
  return true;
 }

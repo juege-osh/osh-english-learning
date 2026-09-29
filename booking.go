@@ -215,3 +215,84 @@ func (f *features) confirmBooking(id, when string) error {
 	item.Confirmed = when
 	return f.saveBooking(item)
 }
+
+func (f *features) bookingAdminList(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodGet {
+		http.Error(w, "method not allowed", http.StatusMethodNotAllowed)
+		return
+	}
+	f.mu.Lock()
+	defer f.mu.Unlock()
+	if !f.requireAdmin(r) {
+		http.Error(w, "forbidden", http.StatusForbidden)
+		return
+	}
+	items, err := f.bookings()
+	if err != nil {
+		http.Error(w, "storage unavailable", http.StatusInternalServerError)
+		return
+	}
+	sort.Slice(items, func(i, j int) bool {
+		if (items[i].Status == "pending") != (items[j].Status == "pending") {
+			return items[i].Status == "pending"
+		}
+		return items[i].Created > items[j].Created
+	})
+	writeJSON(w, map[string]any{"items": items})
+}
+
+func (f *features) bookingReview(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost || !sameOrigin(r) || !strings.HasPrefix(r.Header.Get("Content-Type"), "application/json") {
+		http.Error(w, "request denied", http.StatusForbidden)
+		return
+	}
+	var input struct {
+		ID       string `json:"id"`
+		Decision string `json:"decision"`
+		When     string `json:"when"`
+		Zone     string `json:"zone"`
+	}
+	r.Body = http.MaxBytesReader(w, r.Body, 1024)
+	if json.NewDecoder(r.Body).Decode(&input) != nil || input.ID == "" || strings.ContainsAny(input.ID, "/\\.") || (input.Decision != "confirm" && input.Decision != "decline") {
+		http.Error(w, "请求格式有误", http.StatusBadRequest)
+		return
+	}
+	if input.Decision == "confirm" {
+		if len(input.When) != 16 || (input.Zone != "Asia/Shanghai" && input.Zone != "Asia/Ho_Chi_Minh") {
+			http.Error(w, "请选择确认的连麦时间和时区", http.StatusBadRequest)
+			return
+		}
+		if _, err := time.Parse("2006-01-02T15:04", input.When); err != nil {
+			http.Error(w, "连麦时间格式有误", http.StatusBadRequest)
+			return
+		}
+	}
+	f.mu.Lock()
+	defer f.mu.Unlock()
+	if !f.requireAdmin(r) {
+		http.Error(w, "forbidden", http.StatusForbidden)
+		return
+	}
+	data, err := os.ReadFile(filepath.Join(f.bookingDir, input.ID))
+	if err != nil {
+		http.Error(w, "预约不存在", http.StatusNotFound)
+		return
+	}
+	var item booking
+	if json.Unmarshal(data, &item) != nil || item.ID != input.ID || item.Status != "pending" {
+		http.Error(w, "预约已处理或资料有误", http.StatusConflict)
+		return
+	}
+	if input.Decision == "confirm" {
+		item.Status = "confirmed"
+		zone := map[string]string{"Asia/Shanghai": "北京时间", "Asia/Ho_Chi_Minh": "越南时间"}[input.Zone]
+		item.Confirmed = strings.Replace(input.When, "T", " ", 1) + " · " + zone
+	} else {
+		item.Status = "declined"
+	}
+	if err := f.saveBooking(item); err != nil {
+		http.Error(w, "storage unavailable", http.StatusInternalServerError)
+		return
+	}
+	writeJSON(w, map[string]any{"ok": true, "status": item.Status})
+}

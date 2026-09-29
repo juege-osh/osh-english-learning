@@ -40,7 +40,7 @@ node --check chat-ui.js
 
 刷新免费申请页即可审核截图。站长账号支持人工通过或拒绝，每次通过增加 30 天交流权益。具体账号主页链接、微信群入口尚待站长提供。
 
-查看预约：
+在站长账号的 **免费申请 → 连麦预约管理** 可以直接查看并确认预约。需要离线处理时，查看预约：
 
 ```bash
 /opt/english-quest/english-quest-linux --state-dir /var/lib/english-quest --list-bookings
