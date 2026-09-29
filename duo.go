@@ -229,11 +229,13 @@ func (f *features) duoStatus(w http.ResponseWriter, r *http.Request) {
 	defer f.mu.Unlock()
 	if team := f.myDuo(user); team != nil {
 		if wait, ok := f.duos.Queue[team.ID]; ok {
-			wait.LastSeen = time.Now().Unix()
-			f.duos.Queue[team.ID] = wait
-			if err = f.saveDuos(); err != nil {
-				http.Error(w, "storage unavailable", 500)
-				return
+			if now := time.Now().Unix(); now-wait.LastSeen >= 15 {
+				wait.LastSeen = now
+				f.duos.Queue[team.ID] = wait
+				if err = f.saveDuos(); err != nil {
+					http.Error(w, "storage unavailable", 500)
+					return
+				}
 			}
 		}
 	}

@@ -21,3 +21,5 @@
 
 @media(min-width:901px){.sidebar{overflow-y:auto}.sidebar-bottom{flex-shrink:0}}
 .industry-preview{margin-top:16px}.industry-preview summary{cursor:pointer;font-weight:700;color:#416bc4}.industry-preview[open] summary{margin-bottom:14px}.industry-preview .vocab-row{min-height:56px;grid-template-columns:minmax(130px,1fr) minmax(0,2fr) 40px}.industry-preview .vocab-row p{margin:0}.industry-preview .sound{justify-self:end}@media(max-width:680px){.industry-preview .vocab-row{grid-template-columns:1fr 36px}.industry-preview .vocab-row p{grid-column:1;grid-row:2}}
+
+.vocab-detail{grid-column:1/-1;margin-top:-8px;padding:0 0 7px;color:#4e6284}.vocab-detail summary{cursor:pointer;width:max-content;max-width:100%;font-size:13px;font-weight:700}.vocab-detail[open] summary{margin-bottom:8px}.vocab-detail .study-examples{background:#f7faff;border:1px solid #e4ebf6;border-radius:12px;padding:10px 14px}.vocab-detail .study-examples p{font-size:13px;margin:0}.vocab-detail .study-examples p+p{border-top:1px solid #e4ebf6;padding-top:8px;margin-top:8px}

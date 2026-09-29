@@ -202,11 +202,13 @@ func (f *features) raceStatus(w http.ResponseWriter, r *http.Request) {
 	f.mu.Lock()
 	defer f.mu.Unlock()
 	if wait, ok := f.races.Waiting[user]; ok {
-		wait.LastSeen = time.Now().Unix()
-		f.races.Waiting[user] = wait
-		if err = f.saveRaces(); err != nil {
-			http.Error(w, "storage unavailable", 500)
-			return
+		if now := time.Now().Unix(); now-wait.LastSeen >= 15 {
+			wait.LastSeen = now
+			f.races.Waiting[user] = wait
+			if err = f.saveRaces(); err != nil {
+				http.Error(w, "storage unavailable", 500)
+				return
+			}
 		}
 	}
 	writeJSON(w, f.raceState(user))
