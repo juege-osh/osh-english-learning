@@ -1,4 +1,4 @@
-const assert=require('node:assert/strict'),C=require('../core.js'),words=require('../data/words.json'),missions=require('../data/scenarios.json'),examples=require('../data/examples.json');
+const assert=require('node:assert/strict'),C=require('../core.js'),words=require('../data/words.json'),missions=require('../data/scenarios.json'),examples=require('../data/examples.json'),industries=require('../data/industries.json');
 let p=C.fresh();assert(C.validate(p));assert(C.unlocked(p,1));assert(!C.unlocked(p,2));
 C.complete(p,'level',1,100);assert(C.unlocked(p,2));const xp=p.xp;C.complete(p,'level',1,100);assert.equal(p.xp,xp);
 for(let n=2;n<=10;n++)C.complete(p,'level',n,100);assert(!C.unlocked(p,11));C.complete(p,'boss',10,80);assert(C.unlocked(p,11));
@@ -17,4 +17,14 @@ for(const w of words.slice(0,100))for(const item of examples[w.id]){
  assert(new RegExp('\\b'+w.word+'\\b','i').test(item.text),'starter sentence needs target word');
 }
 for(const w of words){const opts=C.choices(w,words.slice(Math.max(0,w.id-150),Math.min(words.length,w.id+150)),'zh');assert.equal(opts.length,4);assert.equal(new Set(opts.map(o=>o.zh)).size,4);assert(opts.some(o=>o.id===w.id));}
-console.log('PASS: 20,000 unique words, 120 phrases, unlock and boss gates, duplicate XP, cross-day mastery, failures, overdue reviews, import validation, 20,000 choice sets');
+const expectedStart={programmer:'algorithm',foreign_trade:'export',finance:'asset',ai_creator:'prompt',marketing:'brand',healthcare:'patient',biology:'biology',law:'law',chemistry:'chemistry'};
+for(const sector of industries.filter(x=>x.category==='industry')){
+ assert.equal(sector.coreCount,100);assert.equal(sector.wordIds.length,700);
+ assert.equal(Object.keys(sector.glosses).length,100);
+ assert(sector.wordIds.slice(0,100).every(id=>sector.glosses[id]));
+ assert.equal(new Set(sector.wordIds).size,700);
+ assert(sector.wordIds.every(id=>id>=1&&id<=20000));
+ assert.equal(words[sector.wordIds[0]-1].word,expectedStart[sector.id]);
+}
+const programmer=industries.find(x=>x.id==='programmer');assert.equal(programmer.glosses[words.find(x=>x.word==='server').id],'服务器');
+console.log('PASS: 20,000 unique words, 120 phrases, nine 700-word industry routes with curated starts, unlock and boss gates, duplicate XP, cross-day mastery, failures, overdue reviews, import validation, 20,000 choice sets');
