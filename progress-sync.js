@@ -1,5 +1,5 @@
 'use strict';
-let cloudRevision=0,cloudEnabled=false,cloudDirty=false,cloudBusy=false,cloudTimer=null,cloudStarting=null;
+let cloudRevision=0,cloudEnabled=false,cloudDirty=false,cloudTimer=null,cloudStarting=null,cloudFlight=null;
 
 function progressMerge(local,remote){
  if(!C.validate(remote))return local;
@@ -36,20 +36,24 @@ function progressSchedule(){
  cloudTimer=setTimeout(progressFlush,1800);
 }
 
-async function progressFlush(){
- if(!cloudEnabled||!cloudDirty||cloudBusy)return true;
- cloudBusy=true;cloudDirty=false;const snapshot=JSON.stringify(p);
- try{
-  const r=await fetch('/api/progress',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({revision:cloudRevision,progress:JSON.parse(snapshot)})});
-  if(r.status===409){
-   const latest=await fetch('/api/progress').then(x=>x.json());
-   if(C.validate(latest.progress)){p=progressMerge(p,latest.progress);localStorage.setItem(KEY,JSON.stringify(p));header();if(!session)route();}
-   cloudRevision=latest.revision;cloudDirty=true;
-  }else if(!r.ok)throw Error('sync failed');
-  else{const result=await r.json();cloudRevision=result.revision;if(JSON.stringify(p)!==snapshot)cloudDirty=true;}
- }catch{cloudDirty=true;}
- finally{cloudBusy=false;if(cloudDirty&&cloudEnabled){clearTimeout(cloudTimer);cloudTimer=setTimeout(progressFlush,5000);}}
- return !cloudDirty;
+function progressFlush(){
+ if(cloudFlight)return cloudFlight;
+ if(!cloudEnabled||!cloudDirty)return Promise.resolve(true);
+ cloudDirty=false;const snapshot=JSON.stringify(p);
+ cloudFlight=(async()=>{
+  try{
+   const r=await fetch('/api/progress',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({revision:cloudRevision,progress:JSON.parse(snapshot)})});
+   if(r.status===409){
+    const latest=await fetch('/api/progress').then(x=>x.json());
+    if(C.validate(latest.progress)){p=progressMerge(p,latest.progress);localStorage.setItem(KEY,JSON.stringify(p));header();if(!session)route();}
+    cloudRevision=latest.revision;cloudDirty=true;
+   }else if(!r.ok)throw Error('sync failed');
+   else{const result=await r.json();cloudRevision=result.revision;if(JSON.stringify(p)!==snapshot)cloudDirty=true;}
+  }catch{cloudDirty=true;}
+  finally{cloudFlight=null;if(cloudDirty&&cloudEnabled){clearTimeout(cloudTimer);cloudTimer=setTimeout(progressFlush,5000);}}
+  return !cloudDirty;
+ })();
+ return cloudFlight;
 }
 
 async function progressStart(){
@@ -78,7 +82,11 @@ async function progressStart(){
 
 async function progressBeforeLogout(){
  clearTimeout(cloudTimer);
- if(cloudDirty){const ok=await progressFlush();if(!ok){toast('云端尚未保存成功，请先导出进度再退出。');return false;}}
+ for(let attempt=0;attempt<3&&(cloudDirty||cloudFlight);attempt++){
+  const ok=await progressFlush();
+  if(ok)break;
+ }
+ if(cloudDirty||cloudFlight){toast('云端尚未保存成功，请先导出进度再退出。');return false;}
  cloudEnabled=false;cloudDirty=false;cloudRevision=0;
  return true;
 }
