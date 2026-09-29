@@ -15,6 +15,7 @@ type industry struct {
 	Name        string         `json:"name"`
 	Category    string         `json:"category,omitempty"`
 	Description string         `json:"description"`
+	CoreCount   int            `json:"coreCount,omitempty"`
 	Glosses     map[int]string `json:"glosses,omitempty"`
 	WordIDs     []int          `json:"wordIds"`
 }
@@ -57,19 +58,20 @@ func (f *features) industryCatalog(w http.ResponseWriter, r *http.Request) {
 func industryBoard(date, sector string) string { return "industry:" + date + ":" + sector }
 
 func (f *features) industryChallenge(date string, sector *industry) []quizQuestion {
-	h := sha256.Sum256([]byte(fmt.Sprintf("industry-v1:%s:%s", date, sector.ID)))
+	h := sha256.Sum256([]byte(fmt.Sprintf("industry-v2:%s:%s", date, sector.ID)))
 	rng := rand.New(rand.NewPCG(uint64(h[0])<<56|uint64(h[1])<<48|uint64(h[2])<<40|uint64(h[3])<<32|uint64(h[4])<<24|uint64(h[5])<<16|uint64(h[6])<<8|uint64(h[7]), uint64(h[8])<<56|uint64(h[9])<<48|uint64(h[10])<<40|uint64(h[11])<<32|uint64(h[12])<<24|uint64(h[13])<<16|uint64(h[14])<<8|uint64(h[15])))
-	perm := rng.Perm(len(sector.WordIDs))
+	pool := sector.WordIDs
+	if sector.Category == "industry" {
+		pool = pool[:sector.CoreCount]
+	}
+	perm := rng.Perm(len(pool))
 	questions := make([]quizQuestion, 0, 20)
 	for _, position := range perm[:20] {
-		word := f.words[sector.WordIDs[position]-1]
+		word := f.words[pool[position]-1]
 		meaning := sector.gloss(word)
 		q := quizQuestion{ID: word.ID, Word: word.Word, Options: []quizOption{{ID: word.ID, Zh: meaning}}}
 		seen := map[string]bool{meaning: true}
-		optionIDs := sector.WordIDs
-		if sector.Glosses[word.ID] != "" {
-			optionIDs = sector.WordIDs[:min(100, len(sector.WordIDs))]
-		}
+		optionIDs := pool
 		for len(q.Options) < 4 {
 			other := f.words[optionIDs[rng.IntN(len(optionIDs))]-1]
 			otherMeaning := sector.gloss(other)

@@ -78,20 +78,28 @@ func TestIndustryQuizUsesIndustryMeaning(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	sector := *f.findIndustry("programmer")
-	sector.WordIDs = sector.WordIDs[:20]
-	for _, q := range f.industryChallenge(dailyDate(), &sector) {
-		if q.Word != "server" {
-			continue
+	sector := f.findIndustry("programmer")
+	core := map[int]bool{}
+	for _, id := range sector.WordIDs[:sector.CoreCount] {
+		core[id] = true
+	}
+	for _, q := range f.industryChallenge(dailyDate(), sector) {
+		if !core[q.ID] {
+			t.Fatalf("unreviewed word %d entered ranked challenge", q.ID)
 		}
 		for _, option := range q.Options {
-			if option.ID == q.ID && option.Zh == "服务器" {
-				return
+			if !core[option.ID] {
+				t.Fatalf("unreviewed option %d entered ranked challenge", option.ID)
 			}
 		}
-		t.Fatalf("server question lacks industry meaning: %+v", q.Options)
 	}
-	t.Fatal("server missing from the reviewed start")
+	for _, id := range sector.WordIDs[:sector.CoreCount] {
+		word := f.words[id-1]
+		if word.Word == "server" && sector.gloss(word) == "服务器" {
+			return
+		}
+	}
+	t.Fatal("server lacks the reviewed industry meaning")
 }
 
 func TestMemberBookingFlow(t *testing.T) {

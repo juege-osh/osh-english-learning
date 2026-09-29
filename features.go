@@ -142,7 +142,7 @@ func newFeatures(dir string) (*features, error) {
 		if len(sector.WordIDs) < 20 {
 			return nil, fmt.Errorf("industry %s has too few words", sector.ID)
 		}
-		if sector.Category == "industry" && len(sector.Glosses) != 100 {
+		if sector.Category == "industry" && (sector.CoreCount != 100 || len(sector.Glosses) != 100) {
 			return nil, fmt.Errorf("industry %s has %d core meanings", sector.ID, len(sector.Glosses))
 		}
 		for _, id := range sector.WordIDs {

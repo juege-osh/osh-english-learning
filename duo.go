@@ -320,7 +320,7 @@ func (f *features) duoJoin(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "邀请口令无效或队伍已满", 400)
 		return
 	}
-	if !f.roomPasswordCheck(w, r, team.ID, body.Password, team.RoomSalt, team.RoomHash) {
+	if !f.roomPasswordCheck(w, team.ID, user, body.Password, team.RoomSalt, team.RoomHash) {
 		return
 	}
 	team.Members[1] = duoMember{User: user, Name: cleanName(body.Name)}

@@ -3,7 +3,6 @@ package main
 import (
 	"crypto/subtle"
 	"encoding/json"
-	"net"
 	"net/http"
 	"strings"
 	"time"
@@ -14,16 +13,12 @@ type roomAttempt struct {
 	Until int64
 }
 
-// Call with f.mu held. Nginx replaces X-Real-IP before forwarding requests.
-func (f *features) roomPasswordCheck(w http.ResponseWriter, r *http.Request, roomID, password, salt, hash string) bool {
+// Call with f.mu held. A visitor ID is more precise than an IP shared by many people behind Cloudflare.
+func (f *features) roomPasswordCheck(w http.ResponseWriter, roomID, visitorID, password, salt, hash string) bool {
 	if hash == "" {
 		return true
 	}
-	ip := r.Header.Get("X-Real-IP")
-	if net.ParseIP(ip) == nil {
-		ip, _, _ = net.SplitHostPort(r.RemoteAddr)
-	}
-	key := roomID + ":" + ip
+	key := roomID + ":" + visitorID
 	now := time.Now().Unix()
 	if len(f.roomTries) > 1000 {
 		for id, attempt := range f.roomTries {
@@ -174,7 +169,7 @@ func (f *features) raceRoomJoin(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "双方段位最多相差一阶", 403)
 		return
 	}
-	if !f.roomPasswordCheck(w, r, host.RoomID, body.Password, host.RoomSalt, host.RoomHash) {
+	if !f.roomPasswordCheck(w, host.RoomID, user, body.Password, host.RoomSalt, host.RoomHash) {
 		return
 	}
 	id, err := randomCode()
@@ -285,7 +280,7 @@ func (f *features) duoRoomJoin(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "双方队伍段位最多相差一阶", 403)
 		return
 	}
-	if !f.roomPasswordCheck(w, r, wait.RoomID, body.Password, wait.RoomSalt, wait.RoomHash) {
+	if !f.roomPasswordCheck(w, wait.RoomID, user, body.Password, wait.RoomSalt, wait.RoomHash) {
 		return
 	}
 	id, err := randomCode()

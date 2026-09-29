@@ -61,7 +61,22 @@ func (f *features) loadAuth() error {
 		}
 		return f.saveAuth()
 	}
+	if f.pruneSessions() {
+		return f.saveAuth()
+	}
 	return nil
+}
+
+func (f *features) pruneSessions() bool {
+	changed := false
+	now := time.Now().Unix()
+	for token, session := range f.auth.Sessions {
+		if session.Until <= now {
+			delete(f.auth.Sessions, token)
+			changed = true
+		}
+	}
+	return changed
 }
 func (f *features) saveAuth() error {
 	b, e := json.Marshal(f.auth)
@@ -217,6 +232,7 @@ func (f *features) accountLoginOrRegister(w http.ResponseWriter, r *http.Request
 		http.Error(w, "storage unavailable", 500)
 		return
 	}
+	f.pruneSessions()
 	f.auth.Sessions[tokenHash(token)] = loginSession{User: input.Name, Until: time.Now().Add(30 * 24 * time.Hour).Unix()}
 	if e = f.saveAuth(); e != nil {
 		http.Error(w, "storage unavailable", 500)
