@@ -87,3 +87,36 @@ func TestLogoutDropsAccountAndVisitorIdentity(t *testing.T) {
 		t.Fatal("a stale visitor cookie reused the logged-out account")
 	}
 }
+
+func TestLoginTemporarilyLimitsRepeatedWrongPasswords(t *testing.T) {
+	f, err := newFeatures(t.TempDir())
+	if err != nil {
+		t.Fatal(err)
+	}
+	register, _ := json.Marshal(map[string]string{"name": "login_user", "password": "correct-password-123"})
+	created := httptest.NewRecorder()
+	f.accountRegister(created, httptest.NewRequest("POST", "/api/account/register", bytes.NewReader(register)))
+	if created.Code != 200 {
+		t.Fatal(created.Body.String())
+	}
+	login := func(password string) int {
+		body, _ := json.Marshal(map[string]string{"name": "login_user", "password": password})
+		result := httptest.NewRecorder()
+		f.accountLogin(result, httptest.NewRequest("POST", "/api/account/login", bytes.NewReader(body)))
+		return result.Code
+	}
+	for range 5 {
+		if status := login("wrong-password-123"); status != 401 {
+			t.Fatalf("wrong password returned %d", status)
+		}
+	}
+	if status := login("correct-password-123"); status != 429 {
+		t.Fatalf("cooldown returned %d", status)
+	}
+	attempt := f.authTries["login_user"]
+	attempt.Until = time.Now().Add(-time.Second).Unix()
+	f.authTries["login_user"] = attempt
+	if status := login("correct-password-123"); status != 200 {
+		t.Fatalf("login after cooldown returned %d", status)
+	}
+}

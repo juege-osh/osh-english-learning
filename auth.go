@@ -235,8 +235,26 @@ func (f *features) accountLoginOrRegister(w http.ResponseWriter, r *http.Request
 		f.auth.Users[input.Name] = a
 		f.accountIDs[visitorID] = true
 	} else {
+		now := time.Now().Unix()
+		attempt := f.authTries[input.Name]
+		if attempt.Until > now && attempt.Count >= 5 {
+			http.Error(w, "密码尝试过多，请一分钟后再试", http.StatusTooManyRequests)
+			return
+		}
 		hash, e := passHash(input.Password, a.Salt)
 		if !exists || e != nil || subtle.ConstantTimeCompare([]byte(hash), []byte(a.Hash)) != 1 {
+			if attempt.Until <= now {
+				attempt = roomAttempt{Until: now + 60}
+			}
+			attempt.Count++
+			f.authTries[input.Name] = attempt
+			if len(f.authTries) > 1000 {
+				for name, prior := range f.authTries {
+					if prior.Until <= now {
+						delete(f.authTries, name)
+					}
+				}
+			}
 			http.Error(w, "账号或密码不正确", 401)
 			return
 		}
@@ -256,6 +274,7 @@ func (f *features) accountLoginOrRegister(w http.ResponseWriter, r *http.Request
 		http.Error(w, "storage unavailable", 500)
 		return
 	}
+	delete(f.authTries, input.Name)
 	setSessionCookie(w, r, token, 30*86400)
 	writeJSON(w, map[string]any{"ok": true, "name": a.Name, "admin": a.Admin})
 }
