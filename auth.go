@@ -48,6 +48,9 @@ func (f *features) loadAuth() error {
 	if f.auth.Sessions == nil {
 		f.auth.Sessions = map[string]loginSession{}
 	}
+	for _, a := range f.auth.Users {
+		f.accountIDs[a.ID] = true
+	}
 	if first {
 		// Preserve the trial window already granted before free applications replaced pricing.
 		for id, m := range f.data.Members {
@@ -142,6 +145,10 @@ func setSessionCookie(w http.ResponseWriter, r *http.Request, token string, maxA
 	secure := r.TLS != nil || r.Host == "english.osh.lol" || r.Header.Get("X-Forwarded-Proto") == "https"
 	http.SetCookie(w, &http.Cookie{Name: "eq_session", Value: token, Path: "/", MaxAge: maxAge, Secure: secure, HttpOnly: true, SameSite: http.SameSiteLaxMode})
 }
+func setVisitorCookie(w http.ResponseWriter, r *http.Request, id string, maxAge int) {
+	secure := r.TLS != nil || r.Host == "english.osh.lol" || r.Header.Get("X-Forwarded-Proto") == "https"
+	http.SetCookie(w, &http.Cookie{Name: "eq_visitor", Value: id, Path: "/", MaxAge: maxAge, Secure: secure, HttpOnly: true, SameSite: http.SameSiteLaxMode})
+}
 func sameOrigin(r *http.Request) bool {
 	origin := r.Header.Get("Origin")
 	return origin == "" || origin == "http://"+r.Host || origin == "https://"+r.Host
@@ -197,6 +204,12 @@ func (f *features) accountLoginOrRegister(w http.ResponseWriter, r *http.Request
 	f.mu.Lock()
 	defer f.mu.Unlock()
 	a, exists := f.auth.Users[input.Name]
+	rollbackRegistration := func() {
+		if register {
+			delete(f.auth.Users, input.Name)
+			delete(f.accountIDs, visitorID)
+		}
+	}
 	if register {
 		if exists {
 			http.Error(w, "账号名已被使用", 409)
@@ -220,6 +233,7 @@ func (f *features) accountLoginOrRegister(w http.ResponseWriter, r *http.Request
 		}
 		a = account{ID: visitorID, Name: input.Name, Salt: salt, Hash: hash, Created: time.Now().Unix()}
 		f.auth.Users[input.Name] = a
+		f.accountIDs[visitorID] = true
 	} else {
 		hash, e := passHash(input.Password, a.Salt)
 		if !exists || e != nil || subtle.ConstantTimeCompare([]byte(hash), []byte(a.Hash)) != 1 {
@@ -229,12 +243,16 @@ func (f *features) accountLoginOrRegister(w http.ResponseWriter, r *http.Request
 	}
 	token, e := randomHex(32)
 	if e != nil {
+		rollbackRegistration()
 		http.Error(w, "storage unavailable", 500)
 		return
 	}
 	f.pruneSessions()
-	f.auth.Sessions[tokenHash(token)] = loginSession{User: input.Name, Until: time.Now().Add(30 * 24 * time.Hour).Unix()}
+	sessionKey := tokenHash(token)
+	f.auth.Sessions[sessionKey] = loginSession{User: input.Name, Until: time.Now().Add(30 * 24 * time.Hour).Unix()}
 	if e = f.saveAuth(); e != nil {
+		delete(f.auth.Sessions, sessionKey)
+		rollbackRegistration()
 		http.Error(w, "storage unavailable", 500)
 		return
 	}
@@ -249,10 +267,15 @@ func (f *features) accountLogout(w http.ResponseWriter, r *http.Request) {
 	f.mu.Lock()
 	if c, e := r.Cookie("eq_session"); e == nil {
 		delete(f.auth.Sessions, tokenHash(c.Value))
-		_ = f.saveAuth()
+		if e := f.saveAuth(); e != nil {
+			f.mu.Unlock()
+			http.Error(w, "storage unavailable", 500)
+			return
+		}
 	}
 	f.mu.Unlock()
 	setSessionCookie(w, r, "", -1)
+	setVisitorCookie(w, r, "", -1)
 	writeJSON(w, map[string]any{"ok": true})
 }
 func (f *features) promoteAdmin(name string) error {

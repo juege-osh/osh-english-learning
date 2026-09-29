@@ -50,6 +50,7 @@ type features struct {
 	friends     friendStore
 	authPath    string
 	auth        authStore
+	accountIDs  map[string]bool
 	proofPath   string
 	proofs      proofStore
 	proofDir    string
@@ -80,7 +81,7 @@ func newFeatures(dir string) (*features, error) {
 	if err := os.MkdirAll(dir, 0700); err != nil {
 		return nil, err
 	}
-	f := &features{path: filepath.Join(dir, "state.json"), codeDir: filepath.Join(dir, "codes"), bookingDir: filepath.Join(dir, "bookings"), racePath: filepath.Join(dir, "races.json"), duoPath: filepath.Join(dir, "duos.json"), friendPath: filepath.Join(dir, "friends.json"), authPath: filepath.Join(dir, "accounts.json"), proofPath: filepath.Join(dir, "applications.json"), proofDir: filepath.Join(dir, "proofs"), roomTries: map[string]roomAttempt{}, chatPath: filepath.Join(dir, "chat.json"), progressDir: filepath.Join(dir, "progress"), data: siteState{Members: map[string]member{}, Codes: map[string]string{}, Starts: map[string]int64{}, Daily: map[string][]dailyEntry{}}}
+	f := &features{path: filepath.Join(dir, "state.json"), codeDir: filepath.Join(dir, "codes"), bookingDir: filepath.Join(dir, "bookings"), racePath: filepath.Join(dir, "races.json"), duoPath: filepath.Join(dir, "duos.json"), friendPath: filepath.Join(dir, "friends.json"), authPath: filepath.Join(dir, "accounts.json"), accountIDs: map[string]bool{}, proofPath: filepath.Join(dir, "applications.json"), proofDir: filepath.Join(dir, "proofs"), roomTries: map[string]roomAttempt{}, chatPath: filepath.Join(dir, "chat.json"), progressDir: filepath.Join(dir, "progress"), data: siteState{Members: map[string]member{}, Codes: map[string]string{}, Starts: map[string]int64{}, Daily: map[string][]dailyEntry{}}}
 	if err := os.MkdirAll(f.codeDir, 0700); err != nil {
 		return nil, err
 	}
@@ -223,7 +224,7 @@ func (f *features) visitor(w http.ResponseWriter, r *http.Request) (string, memb
 		}
 	}
 	if c, err := r.Cookie("eq_visitor"); err == nil {
-		if m, ok := f.data.Members[c.Value]; ok {
+		if m, ok := f.data.Members[c.Value]; ok && !f.accountIDs[c.Value] {
 			return c.Value, m, nil
 		}
 	}
@@ -237,8 +238,7 @@ func (f *features) visitor(w http.ResponseWriter, r *http.Request) (string, memb
 		delete(f.data.Members, id)
 		return "", member{}, err
 	}
-	secure := r.Host == "english.osh.lol" || r.TLS != nil || r.Header.Get("X-Forwarded-Proto") == "https"
-	http.SetCookie(w, &http.Cookie{Name: "eq_visitor", Value: id, Path: "/", MaxAge: 3 * 365 * 86400, Secure: secure, HttpOnly: true, SameSite: http.SameSiteLaxMode})
+	setVisitorCookie(w, r, id, 3*365*86400)
 	return id, m, nil
 }
 func (f *features) membership(w http.ResponseWriter, r *http.Request) {
