@@ -5,7 +5,7 @@ function progressStatus(message){if(typeof document==='undefined')return;const e
 function progressMerge(local,remote){
  if(!C.validate(remote))return local;
  if(!C.validate(local))return remote;
- const hasLocal=Object.keys(local.words).length||Object.keys(local.levels).length||Object.keys(local.missions).length;
+ const hasLocal=Object.keys(local.words).length||Object.keys(local.levels).length||Object.keys(local.missions).length||Object.values(local.industries||{}).some(entry=>(entry?.seen||[]).length||Object.keys(entry?.skipped||{}).length);
  if(!hasLocal)return remote;
  const out={...remote,...local};
  for(const key of ['levels','bosses','missions']){
@@ -24,7 +24,10 @@ function progressMerge(local,remote){
  out.industries={...remote.industries,...local.industries};
  for(const [id,entry]of Object.entries(remote.industries||{})){
   const own=local.industries?.[id];if(!own)continue;
-  out.industries[id]={...entry,...own,seen:[...new Set([...(entry.seen||[]),...(own.seen||[])])]};
+  const skipResetAt=Math.max(entry.skipResetAt||0,own.skipResetAt||0);
+  const skipped={...(entry.skipped||{}),...(own.skipped||{})};
+  for(const [word,at] of Object.entries(skipped))if(at<=skipResetAt)delete skipped[word];
+  out.industries[id]={...entry,...own,seen:[...new Set([...(entry.seen||[]),...(own.seen||[])])],skipped,skipResetAt};
  }
  out.xp=Math.min(450000,Math.max(local.xp,remote.xp,Object.keys(out.levels).length*100+Object.keys(out.bosses).length*150+Object.keys(out.missions).length*80));
  out.totalTimeMs=Math.max(local.totalTimeMs||0,remote.totalTimeMs||0);
