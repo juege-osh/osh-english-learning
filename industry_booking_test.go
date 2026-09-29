@@ -81,11 +81,27 @@ func TestMemberBookingFlow(t *testing.T) {
 	visitor := httptest.NewRecorder()
 	f.membership(visitor, httptest.NewRequest("GET", "/api/membership", nil))
 	cookie := visitor.Result().Cookies()[0]
+	registerBody, _ := json.Marshal(map[string]string{"name": "booking_user", "password": "long-password-123"})
+	registerRequest := httptest.NewRequest("POST", "/api/account/register", bytes.NewReader(registerBody))
+	registerRequest.AddCookie(cookie)
+	registered := httptest.NewRecorder()
+	f.accountRegister(registered, registerRequest)
+	if registered.Code != 200 {
+		t.Fatal(registered.Body.String())
+	}
+	sessionCookie := registered.Result().Cookies()[0]
 	f.data.Members[cookie.Value] = member{Created: time.Now().Unix(), Until: time.Now().Add(30 * 24 * time.Hour).Unix()}
 	body, _ := json.Marshal(map[string]any{"name": "觉哥", "contact": "private-wechat", "preferred": "2026-10-10T19:00", "zone": "Asia/Shanghai", "topic": "聊网站的新功能建议"})
+	guestRequest := httptest.NewRequest("POST", "/api/bookings", bytes.NewReader(body))
+	guestRequest.Header.Set("Content-Type", "application/json")
+	guestRequest.AddCookie(cookie)
+	guestDenied := httptest.NewRecorder()
+	f.bookingCreate(guestDenied, guestRequest)
+	if guestDenied.Code != 401 { t.Fatalf("signed-out booking accepted: %d", guestDenied.Code) }
 	request := httptest.NewRequest("POST", "/api/bookings", bytes.NewReader(body))
 	request.Header.Set("Content-Type", "application/json")
 	request.AddCookie(cookie)
+	request.AddCookie(sessionCookie)
 	created := httptest.NewRecorder()
 	f.bookingCreate(created, request)
 	if created.Code != 200 {
@@ -102,6 +118,7 @@ func TestMemberBookingFlow(t *testing.T) {
 	}
 	my := httptest.NewRequest("GET", "/api/bookings", nil)
 	my.AddCookie(cookie)
+	my.AddCookie(sessionCookie)
 	listed := httptest.NewRecorder()
 	f.bookingMine(listed, my)
 	var mine struct {
@@ -114,6 +131,7 @@ func TestMemberBookingFlow(t *testing.T) {
 	request = httptest.NewRequest("POST", "/api/bookings", bytes.NewReader(body))
 	request.Header.Set("Content-Type", "application/json")
 	request.AddCookie(cookie)
+	request.AddCookie(sessionCookie)
 	denied := httptest.NewRecorder()
 	f.bookingCreate(denied, request)
 	if denied.Code != 403 {

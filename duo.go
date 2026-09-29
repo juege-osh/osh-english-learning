@@ -28,12 +28,17 @@ type duoTeam struct {
 	PracticeErrors   int          `json:"practiceErrors"`
 	PracticeSeed     string       `json:"practiceSeed"`
 	CurrentMatch     string       `json:"currentMatch"`
+	RoomSalt         string       `json:"roomSalt,omitempty"`
+	RoomHash         string       `json:"roomHash,omitempty"`
 }
 type duoQueue struct {
 	TeamID   string `json:"teamId"`
 	Goal     int    `json:"goal"`
 	Since    int64  `json:"since"`
 	LastSeen int64  `json:"lastSeen"`
+	RoomID   string `json:"roomId,omitempty"`
+	RoomSalt string `json:"roomSalt,omitempty"`
+	RoomHash string `json:"roomHash,omitempty"`
 }
 type duoSide struct {
 	TeamID   string `json:"teamId"`
@@ -164,7 +169,7 @@ func (f *features) duoState(user string) map[string]any {
 	if team == nil {
 		return result
 	}
-	result["team"] = map[string]any{"id": team.ID, "inviteCode": team.ID, "names": duoNames(team), "members": []string{team.Members[0].Name, team.Members[1].Name}, "points": team.Points, "tier": raceTiers[raceTier(team.Points)], "tierIndex": raceTier(team.Points), "wins": team.Wins, "losses": team.Losses, "practiceTotal": team.PracticeTotal, "practiceGoal": team.PracticeGoal, "practiceProgress": team.PracticeProgress, "practiceErrors": team.PracticeErrors}
+	result["team"] = map[string]any{"id": team.ID, "inviteCode": team.ID, "hasPassword": team.RoomHash != "", "names": duoNames(team), "members": []string{team.Members[0].Name, team.Members[1].Name}, "points": team.Points, "tier": raceTiers[raceTier(team.Points)], "tierIndex": raceTier(team.Points), "wins": team.Wins, "losses": team.Losses, "practiceTotal": team.PracticeTotal, "practiceGoal": team.PracticeGoal, "practiceProgress": team.PracticeProgress, "practiceErrors": team.PracticeErrors}
 	if team.Members[1].User == "" {
 		result["mode"] = "inviting"
 		return result
@@ -195,6 +200,7 @@ func (f *features) duoState(user string) map[string]any {
 	if wait, ok := f.duos.Queue[team.ID]; ok {
 		result["mode"] = "waiting"
 		result["goal"] = wait.Goal
+		result["roomId"] = wait.RoomID
 		return result
 	}
 	if team.PracticeGoal > 0 {
@@ -245,11 +251,21 @@ func (f *features) duoCreate(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	var body struct {
-		Name string `json:"name"`
+		Name     string `json:"name"`
+		Password string `json:"password"`
 	}
 	r.Body = http.MaxBytesReader(w, r.Body, 512)
 	if json.NewDecoder(r.Body).Decode(&body) != nil {
 		http.Error(w, "invalid name", 400)
+		return
+	}
+	if body.Password != "" && !validRoomPassword(body.Password) {
+		http.Error(w, "房间密码需要 4 到 32 个字符", 400)
+		return
+	}
+	salt, hash, err := roomPassword(body.Password)
+	if err != nil {
+		http.Error(w, "storage unavailable", 500)
 		return
 	}
 	f.mu.Lock()
@@ -263,7 +279,7 @@ func (f *features) duoCreate(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "storage unavailable", 500)
 		return
 	}
-	team := &duoTeam{ID: id, Members: [2]duoMember{{User: user, Name: cleanName(body.Name)}}, Active: true, Created: time.Now().Unix()}
+	team := &duoTeam{ID: id, Members: [2]duoMember{{User: user, Name: cleanName(body.Name)}}, Active: true, Created: time.Now().Unix(), RoomSalt: salt, RoomHash: hash}
 	f.duos.Teams[id] = team
 	f.duos.UserTeam[user] = id
 	if err = f.saveDuos(); err != nil {
@@ -283,8 +299,9 @@ func (f *features) duoJoin(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	var body struct {
-		Code string `json:"code"`
-		Name string `json:"name"`
+		Code     string `json:"code"`
+		Name     string `json:"name"`
+		Password string `json:"password"`
 	}
 	r.Body = http.MaxBytesReader(w, r.Body, 512)
 	if json.NewDecoder(r.Body).Decode(&body) != nil {
@@ -301,6 +318,10 @@ func (f *features) duoJoin(w http.ResponseWriter, r *http.Request) {
 	team := f.duos.Teams[id]
 	if team == nil || !team.Active || team.Members[1].User != "" || team.Members[0].User == user {
 		http.Error(w, "邀请口令无效或队伍已满", 400)
+		return
+	}
+	if !checkRoomPassword(body.Password, team.RoomSalt, team.RoomHash) {
+		http.Error(w, "房间密码错误", 403)
 		return
 	}
 	team.Members[1] = duoMember{User: user, Name: cleanName(body.Name)}
@@ -548,7 +569,7 @@ func (f *features) duoRaceJoin(w http.ResponseWriter, r *http.Request) {
 		if gap < 0 {
 			gap = -gap
 		}
-		if wait.Goal == body.Goal && gap <= 1 {
+		if wait.RoomID == "" && wait.Goal == body.Goal && gap <= 1 {
 			candidates = append(candidates, wait)
 		}
 	}

@@ -14,7 +14,7 @@ import (
 	"time"
 )
 
-//go:embed index.html style.css app.js features-ui.js member-ui.js chat-ui.js core.js data/words.json data/scenarios.json data/examples.json data/industries.json
+//go:embed index.html style.css app.js features-ui.js member-ui.js chat-ui.js progress-sync.js core.js data/words.json data/scenarios.json data/examples.json data/industries.json
 var assets embed.FS
 
 func main() {
@@ -64,6 +64,7 @@ func main() {
 	mux.HandleFunc("/api/account/register", f.accountRegister)
 	mux.HandleFunc("/api/account/login", f.accountLogin)
 	mux.HandleFunc("/api/account/logout", f.accountLogout)
+	mux.HandleFunc("/api/progress", f.progressForAccount)
 	mux.HandleFunc("/api/applications", f.proofMine)
 	mux.HandleFunc("/api/applications/apply", f.proofApply)
 	mux.HandleFunc("/api/applications/admin", f.proofAdminList)
@@ -93,6 +94,8 @@ func main() {
 	mux.HandleFunc("/api/industries/leaderboard", f.industryLeaderboard)
 	mux.HandleFunc("/api/race/status", f.raceStatus)
 	mux.HandleFunc("/api/race/join", f.raceJoin)
+	mux.HandleFunc("/api/race/room/create", f.raceRoomCreate)
+	mux.HandleFunc("/api/race/room/join", f.raceRoomJoin)
 	mux.HandleFunc("/api/race/answer", f.raceAnswer)
 	mux.HandleFunc("/api/race/forfeit", f.raceForfeit)
 	mux.HandleFunc("/api/race/cancel", f.raceCancel)
@@ -104,6 +107,8 @@ func main() {
 	mux.HandleFunc("/api/duo/practice/answer", f.duoPracticeAnswer)
 	mux.HandleFunc("/api/duo/practice/stop", f.duoPracticeStop)
 	mux.HandleFunc("/api/duo/race/join", f.duoRaceJoin)
+	mux.HandleFunc("/api/duo/race/room/create", f.duoRoomCreate)
+	mux.HandleFunc("/api/duo/race/room/join", f.duoRoomJoin)
 	mux.HandleFunc("/api/duo/race/answer", f.duoRaceAnswer)
 	mux.HandleFunc("/api/duo/race/cancel", f.duoRaceCancel)
 	mux.HandleFunc("/api/duo/race/forfeit", f.duoRaceForfeit)
@@ -115,7 +120,7 @@ func main() {
 	mux.HandleFunc("/api/friends/remove", f.friendRemove)
 	mux.HandleFunc("/api/health", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/json")
-		json.NewEncoder(w).Encode(map[string]interface{}{"ok": true, "service": "english-quest", "version": "1.0.0", "words": 20000, "levels": 2000, "goals": []int{5000, 10000, 20000}, "scenario_missions": 12, "phrases": 120, "tracks": len(f.industries), "industry_tracks": 9, "exam_tracks": 7, "progress_storage": "browser-local", "daily_leaderboard": true, "proof_applications": true, "member_bookings": true, "live_races": true, "duo_teams": true, "friends": true, "chat_channels": len(chatChannels)})
+		json.NewEncoder(w).Encode(map[string]interface{}{"ok": true, "service": "english-quest", "version": "1.1.0", "words": 20000, "levels": 2000, "goals": []int{5000, 10000, 20000}, "scenario_missions": 12, "phrases": 120, "tracks": len(f.industries), "industry_tracks": 9, "exam_tracks": 7, "progress_storage": "browser-local-and-account-cloud", "daily_leaderboard": true, "proof_applications": true, "member_bookings": true, "live_races": true, "duo_teams": true, "friends": true, "chat_channels": len(chatChannels)})
 	})
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		if r.Method != "GET" && r.Method != "HEAD" {

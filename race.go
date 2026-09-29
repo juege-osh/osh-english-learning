@@ -26,6 +26,9 @@ type raceWaiting struct {
 	Goal     int    `json:"goal"`
 	Since    int64  `json:"since"`
 	LastSeen int64  `json:"lastSeen"`
+	RoomID   string `json:"roomId,omitempty"`
+	RoomSalt string `json:"roomSalt,omitempty"`
+	RoomHash string `json:"roomHash,omitempty"`
 }
 type racePlayer struct {
 	User     string `json:"user"`
@@ -181,6 +184,7 @@ func (f *features) raceState(user string) map[string]any {
 		result["mode"] = "waiting"
 		result["goal"] = wait.Goal
 		result["since"] = wait.Since
+		result["roomId"] = wait.RoomID
 	}
 	return result
 }
@@ -248,7 +252,7 @@ func (f *features) raceJoin(w http.ResponseWriter, r *http.Request) {
 		if gap < 0 {
 			gap = -gap
 		}
-		if wait.Goal == body.Goal && gap <= 1 {
+		if wait.RoomID == "" && wait.Goal == body.Goal && gap <= 1 {
 			candidates = append(candidates, wait)
 		}
 	}

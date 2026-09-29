@@ -81,12 +81,14 @@ func (f *features) bookingMine(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "method not allowed", 405)
 		return
 	}
-	id, _, err := f.visitor(w, r)
-	if err != nil {
-		http.Error(w, "storage unavailable", 500)
+	f.mu.Lock()
+	a := f.accountFromRequest(r)
+	if a == nil {
+		f.mu.Unlock()
+		writeJSON(w, map[string]any{"items": []booking{}})
 		return
 	}
-	f.mu.Lock()
+	id := a.ID
 	items, err := f.bookings()
 	f.mu.Unlock()
 	if err != nil {
@@ -104,15 +106,19 @@ func (f *features) bookingMine(w http.ResponseWriter, r *http.Request) {
 	writeJSON(w, map[string]any{"items": own})
 }
 func (f *features) bookingCreate(w http.ResponseWriter, r *http.Request) {
-	if r.Method != "POST" || r.Header.Get("Content-Type") != "application/json" {
+	if r.Method != "POST" || r.Header.Get("Content-Type") != "application/json" || !sameOrigin(r) {
 		http.Error(w, "JSON POST required", 405)
 		return
 	}
-	id, m, err := f.visitor(w, r)
-	if err != nil {
-		http.Error(w, "storage unavailable", 500)
+	f.mu.Lock()
+	a := f.accountFromRequest(r)
+	if a == nil {
+		f.mu.Unlock()
+		http.Error(w, "请先登录", 401)
 		return
 	}
+	id, m := a.ID, f.data.Members[a.ID]
+	f.mu.Unlock()
 	if allowed, _ := activeMember(m, time.Now().Unix()); !allowed {
 		http.Error(w, "请先申请并通过免费权益审核", 403)
 		return
