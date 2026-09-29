@@ -15,21 +15,22 @@ type duoMember struct {
 	Name string `json:"name"`
 }
 type duoTeam struct {
-	ID               string       `json:"id"`
-	Members          [2]duoMember `json:"members"`
-	Active           bool         `json:"active"`
-	Created          int64        `json:"created"`
-	Points           int          `json:"points"`
-	Wins             int          `json:"wins"`
-	Losses           int          `json:"losses"`
-	PracticeTotal    int          `json:"practiceTotal"`
-	PracticeGoal     int          `json:"practiceGoal"`
-	PracticeProgress int          `json:"practiceProgress"`
-	PracticeErrors   int          `json:"practiceErrors"`
-	PracticeSeed     string       `json:"practiceSeed"`
-	CurrentMatch     string       `json:"currentMatch"`
-	RoomSalt         string       `json:"roomSalt,omitempty"`
-	RoomHash         string       `json:"roomHash,omitempty"`
+	ID                   string       `json:"id"`
+	Members              [2]duoMember `json:"members"`
+	Active               bool         `json:"active"`
+	Created              int64        `json:"created"`
+	Points               int          `json:"points"`
+	Wins                 int          `json:"wins"`
+	Losses               int          `json:"losses"`
+	PracticeTotal        int          `json:"practiceTotal"`
+	PracticeGoal         int          `json:"practiceGoal"`
+	PracticeProgress     int          `json:"practiceProgress"`
+	PracticeErrors       int          `json:"practiceErrors"`
+	PracticeSeed         string       `json:"practiceSeed"`
+	PracticeOrderVersion int          `json:"practiceOrderVersion,omitempty"`
+	CurrentMatch         string       `json:"currentMatch"`
+	RoomSalt             string       `json:"roomSalt,omitempty"`
+	RoomHash             string       `json:"roomHash,omitempty"`
 }
 type duoQueue struct {
 	TeamID   string `json:"teamId"`
@@ -46,14 +47,15 @@ type duoSide struct {
 	Errors   int    `json:"errors"`
 }
 type duoMatch struct {
-	ID      string     `json:"id"`
-	Goal    int        `json:"goal"`
-	Started int64      `json:"started"`
-	Ended   int64      `json:"ended"`
-	Status  string     `json:"status"`
-	Winner  string     `json:"winner"`
-	Reason  string     `json:"reason"`
-	Sides   [2]duoSide `json:"sides"`
+	ID           string     `json:"id"`
+	Goal         int        `json:"goal"`
+	OrderVersion int        `json:"orderVersion,omitempty"`
+	Started      int64      `json:"started"`
+	Ended        int64      `json:"ended"`
+	Status       string     `json:"status"`
+	Winner       string     `json:"winner"`
+	Reason       string     `json:"reason"`
+	Sides        [2]duoSide `json:"sides"`
 }
 type duoNotice struct {
 	Team    string `json:"team"`
@@ -159,8 +161,8 @@ func (f *features) duoBoards() map[string]any {
 	}
 	return map[string]any{"practice": practice, "competitive": ranked}
 }
-func (f *features) duoQuestion(seed string, goal, index int) quizQuestion {
-	pseudo := &raceMatch{ID: "duo:" + seed, Goal: goal}
+func (f *features) duoQuestion(seed string, goal, index, orderVersion int) quizQuestion {
+	pseudo := &raceMatch{ID: "duo:" + seed, Goal: goal, OrderVersion: orderVersion}
 	return f.raceQuestion(pseudo, index)
 }
 func (f *features) duoState(user string) map[string]any {
@@ -189,7 +191,7 @@ func (f *features) duoState(user string) map[string]any {
 		result["opponentName"] = duoNames(f.duos.Teams[opponent.TeamID])
 		if match.Status == "active" {
 			result["mode"] = "racing"
-			result["question"] = f.duoQuestion(match.ID, match.Goal, mine.Progress)
+			result["question"] = f.duoQuestion(match.ID, match.Goal, mine.Progress, match.OrderVersion)
 		} else {
 			result["mode"] = "finished"
 			result["won"] = match.Winner == team.ID
@@ -206,7 +208,7 @@ func (f *features) duoState(user string) map[string]any {
 	if team.PracticeGoal > 0 {
 		if team.PracticeProgress < team.PracticeGoal {
 			result["mode"] = "practicing"
-			result["question"] = f.duoQuestion(team.PracticeSeed, team.PracticeGoal, team.PracticeProgress)
+			result["question"] = f.duoQuestion(team.PracticeSeed, team.PracticeGoal, team.PracticeProgress, team.PracticeOrderVersion)
 		} else {
 			result["mode"] = "practice_done"
 		}
@@ -428,6 +430,7 @@ func (f *features) duoPracticeStart(w http.ResponseWriter, r *http.Request) {
 	team.PracticeProgress = 0
 	team.PracticeErrors = 0
 	team.PracticeSeed = seed
+	team.PracticeOrderVersion = 1
 	if err = f.saveDuos(); err != nil {
 		http.Error(w, "storage unavailable", 500)
 		return
@@ -464,7 +467,7 @@ func (f *features) duoPracticeAnswer(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "搭档已完成这题，请刷新", 409)
 		return
 	}
-	q := f.duoQuestion(team.PracticeSeed, team.PracticeGoal, body.Index)
+	q := f.duoQuestion(team.PracticeSeed, team.PracticeGoal, body.Index, team.PracticeOrderVersion)
 	valid := false
 	for _, v := range q.Options {
 		if v.ID == body.Choice {
@@ -515,6 +518,7 @@ func (f *features) duoPracticeStop(w http.ResponseWriter, r *http.Request) {
 	team.PracticeGoal = 0
 	team.PracticeProgress = 0
 	team.PracticeSeed = ""
+	team.PracticeOrderVersion = 0
 	team.PracticeErrors = 0
 	if err = f.saveDuos(); err != nil {
 		http.Error(w, "storage unavailable", 500)
@@ -586,7 +590,7 @@ func (f *features) duoRaceJoin(w http.ResponseWriter, r *http.Request) {
 			http.Error(w, "storage unavailable", 500)
 			return
 		}
-		match := &duoMatch{ID: id, Goal: body.Goal, Started: time.Now().UnixMilli(), Status: "active", Sides: [2]duoSide{{TeamID: other.ID}, {TeamID: team.ID}}}
+		match := &duoMatch{ID: id, Goal: body.Goal, OrderVersion: 1, Started: time.Now().UnixMilli(), Status: "active", Sides: [2]duoSide{{TeamID: other.ID}, {TeamID: team.ID}}}
 		f.duos.Matches[id] = match
 		team.CurrentMatch = id
 		other.CurrentMatch = id
@@ -638,7 +642,7 @@ func (f *features) duoRaceAnswer(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "搭档已完成这题，请刷新", 409)
 		return
 	}
-	q := f.duoQuestion(match.ID, match.Goal, body.Index)
+	q := f.duoQuestion(match.ID, match.Goal, body.Index, match.OrderVersion)
 	valid := false
 	for _, v := range q.Options {
 		if v.ID == body.Choice {

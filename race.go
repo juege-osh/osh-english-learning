@@ -2,9 +2,11 @@ package main
 
 import (
 	"crypto/sha256"
+	"encoding/binary"
 	"encoding/json"
 	"errors"
 	"fmt"
+	"math/bits"
 	"math/rand/v2"
 	"net/http"
 	"os"
@@ -37,14 +39,15 @@ type racePlayer struct {
 	Errors   int    `json:"errors"`
 }
 type raceMatch struct {
-	ID      string        `json:"id"`
-	Goal    int           `json:"goal"`
-	Started int64         `json:"started"`
-	Ended   int64         `json:"ended"`
-	Status  string        `json:"status"`
-	Winner  string        `json:"winner"`
-	Reason  string        `json:"reason"`
-	Players [2]racePlayer `json:"players"`
+	ID           string        `json:"id"`
+	Goal         int           `json:"goal"`
+	OrderVersion int           `json:"orderVersion,omitempty"`
+	Started      int64         `json:"started"`
+	Ended        int64         `json:"ended"`
+	Status       string        `json:"status"`
+	Winner       string        `json:"winner"`
+	Reason       string        `json:"reason"`
+	Players      [2]racePlayer `json:"players"`
 }
 type raceNotice struct {
 	Winner  string `json:"winner"`
@@ -126,9 +129,32 @@ func seededRaceRNG(seed string) *rand.Rand {
 	}
 	return rand.New(rand.NewPCG(first, second))
 }
+func raceOrderIndex(id string, goal, index int) int {
+	h := sha256.Sum256([]byte("order:" + id))
+	width := bits.Len(uint(goal - 1))
+	mask := uint64(1<<width) - 1
+	mul1 := binary.LittleEndian.Uint64(h[:8]) | 1
+	add1 := binary.LittleEndian.Uint64(h[8:16])
+	mul2 := binary.LittleEndian.Uint64(h[16:24]) | 1
+	add2 := binary.LittleEndian.Uint64(h[24:32])
+	x := uint64(index)
+	for {
+		x = (x*mul1 + add1) & mask
+		x ^= x >> ((width + 1) / 2)
+		x = (x*mul2 + add2) & mask
+		if x < uint64(goal) {
+			return int(x)
+		}
+	}
+}
 func (f *features) raceQuestion(match *raceMatch, index int) quizQuestion {
-	order := seededRaceRNG("order:" + match.ID).Perm(match.Goal)
-	word := f.words[order[index]]
+	position := 0
+	if match.OrderVersion >= 1 {
+		position = raceOrderIndex(match.ID, match.Goal, index)
+	} else {
+		position = seededRaceRNG("order:" + match.ID).Perm(match.Goal)[index]
+	}
+	word := f.words[position]
 	q := quizQuestion{ID: word.ID, Word: word.Word, Options: []quizOption{{ID: word.ID, Zh: word.Zh}}}
 	rng := seededRaceRNG(fmt.Sprintf("options:%s:%d", match.ID, index))
 	seen := map[string]bool{word.Zh: true}
@@ -239,6 +265,7 @@ func (f *features) raceJoin(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "请先完成当前对局", 409)
 		return
 	}
+	delete(f.races.Active, user)
 	delete(f.races.Waiting, user)
 	now := time.Now().Unix()
 	for id, wait := range f.races.Waiting {
@@ -269,7 +296,7 @@ func (f *features) raceJoin(w http.ResponseWriter, r *http.Request) {
 			http.Error(w, "storage unavailable", 500)
 			return
 		}
-		match := &raceMatch{ID: id, Goal: body.Goal, Started: time.Now().UnixMilli(), Status: "active", Players: [2]racePlayer{{User: other.User, Name: other.Name}, {User: user, Name: body.Name}}}
+		match := &raceMatch{ID: id, Goal: body.Goal, OrderVersion: 1, Started: time.Now().UnixMilli(), Status: "active", Players: [2]racePlayer{{User: other.User, Name: other.Name}, {User: user, Name: body.Name}}}
 		f.races.Matches[id] = match
 		f.races.Active[user] = id
 		f.races.Active[other.User] = id

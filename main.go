@@ -2,6 +2,7 @@ package main
 
 import (
 	"bytes"
+	"crypto/sha256"
 	"embed"
 	"encoding/json"
 	"flag"
@@ -122,7 +123,7 @@ func main() {
 	mux.HandleFunc("/api/friends/remove", f.friendRemove)
 	mux.HandleFunc("/api/health", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/json")
-		json.NewEncoder(w).Encode(map[string]interface{}{"ok": true, "service": "english-quest", "version": "1.13.0", "words": 20000, "levels": 2000, "goals": []int{5000, 10000, 20000}, "scenario_missions": 12, "phrases": 120, "tracks": len(f.industries), "industry_tracks": 9, "exam_tracks": 7, "progress_storage": "browser-local-and-account-cloud", "daily_leaderboard": true, "proof_applications": true, "member_bookings": true, "live_races": true, "duo_teams": true, "friends": true, "chat_channels": len(chatChannels)})
+		json.NewEncoder(w).Encode(map[string]interface{}{"ok": true, "service": "english-quest", "version": "1.14.0", "words": 20000, "levels": 2000, "goals": []int{5000, 10000, 20000}, "scenario_missions": 12, "phrases": 120, "tracks": len(f.industries), "industry_tracks": 9, "exam_tracks": 7, "progress_storage": "browser-local-and-account-cloud", "daily_leaderboard": true, "proof_applications": true, "member_bookings": true, "live_races": true, "duo_teams": true, "friends": true, "chat_channels": len(chatChannels)})
 	})
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		if r.Method != "GET" && r.Method != "HEAD" {
@@ -139,6 +140,8 @@ func main() {
 			return
 		}
 		w.Header().Set("Content-Type", mime.TypeByExtension(path.Ext(name)))
+		digest := sha256.Sum256(data)
+		w.Header().Set("ETag", fmt.Sprintf("\"%x\"", digest))
 		w.Header().Set("Cache-Control", "public, max-age=300")
 		if name == "/index.html" {
 			w.Header().Set("Cache-Control", "no-cache")

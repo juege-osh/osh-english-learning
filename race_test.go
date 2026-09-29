@@ -7,6 +7,33 @@ import (
 	"testing"
 )
 
+func TestRaceOrderCoversEveryWordWithoutRepeats(t *testing.T) {
+	for _, goal := range raceGoals {
+		seen := make([]bool, goal)
+		for index := 0; index < goal; index++ {
+			position := raceOrderIndex("new-match-123", goal, index)
+			if position < 0 || position >= goal || seen[position] {
+				t.Fatalf("goal %d index %d produced duplicate/out-of-range word %d", goal, index, position)
+			}
+			seen[position] = true
+		}
+	}
+}
+
+func TestExistingRaceKeepsItsOriginalQuestionOrder(t *testing.T) {
+	f, err := newFeatures(t.TempDir())
+	if err != nil {
+		t.Fatal(err)
+	}
+	legacy := &raceMatch{ID: "existing-match", Goal: 100}
+	order := seededRaceRNG("order:" + legacy.ID).Perm(legacy.Goal)
+	for index := 0; index < legacy.Goal; index++ {
+		if got := f.raceQuestion(legacy, index).ID; got != f.words[order[index]].ID {
+			t.Fatalf("legacy question %d changed from %d to %d", index, f.words[order[index]].ID, got)
+		}
+	}
+}
+
 func raceVisit(t *testing.T, f *features) *httptest.ResponseRecorder {
 	t.Helper()
 	w := httptest.NewRecorder()
@@ -82,6 +109,13 @@ func TestRaceMatchFinishAndAnnouncement(t *testing.T) {
 	loaded, err := newFeatures(f.racePath[:len(f.racePath)-len("/races.json")])
 	if err != nil || len(loaded.races.Notices) != 1 {
 		t.Fatal("race result not persisted", err)
+	}
+	if again := raceJoinTest(t, f, b, 100, "乙"); again["mode"] != "waiting" {
+		t.Fatalf("rematch must enter queue instead of reopening finished result: %+v", again)
+	}
+	private := roomRequest(t, f.raceRoomCreate, a, "/api/race/room/create", map[string]any{"goal": 100, "name": "甲", "password": "secret8"}, 200)
+	if private["mode"] != "waiting" || private["roomId"] == "" {
+		t.Fatalf("private room after a match must stay visible: %+v", private)
 	}
 }
 

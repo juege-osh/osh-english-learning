@@ -118,6 +118,7 @@ func (f *features) raceRoomCreate(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "请先完成当前对局", 409)
 		return
 	}
+	delete(f.races.Active, user)
 	id, err := randomCode()
 	if err != nil {
 		http.Error(w, "storage unavailable", 500)
@@ -179,7 +180,7 @@ func (f *features) raceRoomJoin(w http.ResponseWriter, r *http.Request) {
 	}
 	delete(f.races.Waiting, user)
 	delete(f.races.Waiting, host.User)
-	match := &raceMatch{ID: id, Goal: host.Goal, Started: time.Now().UnixMilli(), Status: "active", Players: [2]racePlayer{{User: host.User, Name: host.Name}, {User: user, Name: cleanName(body.Name)}}}
+	match := &raceMatch{ID: id, Goal: host.Goal, OrderVersion: 1, Started: time.Now().UnixMilli(), Status: "active", Players: [2]racePlayer{{User: host.User, Name: host.Name}, {User: user, Name: cleanName(body.Name)}}}
 	f.races.Matches[id] = match
 	f.races.Active[user] = id
 	f.races.Active[host.User] = id
@@ -290,7 +291,7 @@ func (f *features) duoRoomJoin(w http.ResponseWriter, r *http.Request) {
 	}
 	delete(f.duos.Queue, team.ID)
 	delete(f.duos.Queue, other.ID)
-	match := &duoMatch{ID: id, Goal: wait.Goal, Started: time.Now().UnixMilli(), Status: "active", Sides: [2]duoSide{{TeamID: other.ID}, {TeamID: team.ID}}}
+	match := &duoMatch{ID: id, Goal: wait.Goal, OrderVersion: 1, Started: time.Now().UnixMilli(), Status: "active", Sides: [2]duoSide{{TeamID: other.ID}, {TeamID: team.ID}}}
 	f.duos.Matches[id] = match
 	team.CurrentMatch = id
 	other.CurrentMatch = id
