@@ -141,9 +141,17 @@ func newFeatures(dir string) (*features, error) {
 		if len(sector.WordIDs) < 20 {
 			return nil, fmt.Errorf("industry %s has too few words", sector.ID)
 		}
+		if sector.Category == "industry" && len(sector.Glosses) != 100 {
+			return nil, fmt.Errorf("industry %s has %d core meanings", sector.ID, len(sector.Glosses))
+		}
 		for _, id := range sector.WordIDs {
 			if id < 1 || id > len(f.words) {
 				return nil, fmt.Errorf("invalid industry word %d", id)
+			}
+		}
+		for _, id := range sector.WordIDs[:min(len(sector.WordIDs), 100)] {
+			if sector.Category == "industry" && sector.Glosses[id] == "" {
+				return nil, fmt.Errorf("industry %s lacks core meaning for %d", sector.ID, id)
 			}
 		}
 	}

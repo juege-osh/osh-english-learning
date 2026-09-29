@@ -11,11 +11,19 @@ import (
 )
 
 type industry struct {
-	ID          string `json:"id"`
-	Name        string `json:"name"`
-	Category    string `json:"category,omitempty"`
-	Description string `json:"description"`
-	WordIDs     []int  `json:"wordIds"`
+	ID          string         `json:"id"`
+	Name        string         `json:"name"`
+	Category    string         `json:"category,omitempty"`
+	Description string         `json:"description"`
+	Glosses     map[int]string `json:"glosses,omitempty"`
+	WordIDs     []int          `json:"wordIds"`
+}
+
+func (sector *industry) gloss(word quizWord) string {
+	if meaning := sector.Glosses[word.ID]; meaning != "" {
+		return meaning
+	}
+	return word.Zh
 }
 
 func (f *features) findIndustry(id string) *industry {
@@ -55,13 +63,19 @@ func (f *features) industryChallenge(date string, sector *industry) []quizQuesti
 	questions := make([]quizQuestion, 0, 20)
 	for _, position := range perm[:20] {
 		word := f.words[sector.WordIDs[position]-1]
-		q := quizQuestion{ID: word.ID, Word: word.Word, Options: []quizOption{{ID: word.ID, Zh: word.Zh}}}
-		seen := map[string]bool{word.Zh: true}
+		meaning := sector.gloss(word)
+		q := quizQuestion{ID: word.ID, Word: word.Word, Options: []quizOption{{ID: word.ID, Zh: meaning}}}
+		seen := map[string]bool{meaning: true}
+		optionIDs := sector.WordIDs
+		if sector.Glosses[word.ID] != "" {
+			optionIDs = sector.WordIDs[:min(100, len(sector.WordIDs))]
+		}
 		for len(q.Options) < 4 {
-			other := f.words[sector.WordIDs[rng.IntN(len(sector.WordIDs))]-1]
-			if !seen[other.Zh] {
-				q.Options = append(q.Options, quizOption{ID: other.ID, Zh: other.Zh})
-				seen[other.Zh] = true
+			other := f.words[optionIDs[rng.IntN(len(optionIDs))]-1]
+			otherMeaning := sector.gloss(other)
+			if !seen[otherMeaning] {
+				q.Options = append(q.Options, quizOption{ID: other.ID, Zh: otherMeaning})
+				seen[otherMeaning] = true
 			}
 		}
 		rng.Shuffle(len(q.Options), func(i, j int) { q.Options[i], q.Options[j] = q.Options[j], q.Options[i] })

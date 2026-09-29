@@ -73,6 +73,27 @@ func TestIndustryBoardsAreSeparate(t *testing.T) {
 	}
 }
 
+func TestIndustryQuizUsesIndustryMeaning(t *testing.T) {
+	f, err := newFeatures(t.TempDir())
+	if err != nil {
+		t.Fatal(err)
+	}
+	sector := *f.findIndustry("programmer")
+	sector.WordIDs = sector.WordIDs[:20]
+	for _, q := range f.industryChallenge(dailyDate(), &sector) {
+		if q.Word != "server" {
+			continue
+		}
+		for _, option := range q.Options {
+			if option.ID == q.ID && option.Zh == "服务器" {
+				return
+			}
+		}
+		t.Fatalf("server question lacks industry meaning: %+v", q.Options)
+	}
+	t.Fatal("server missing from the reviewed start")
+}
+
 func TestMemberBookingFlow(t *testing.T) {
 	f, err := newFeatures(t.TempDir())
 	if err != nil {

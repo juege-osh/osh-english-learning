@@ -6,11 +6,12 @@ extension is a related-vocabulary pool and should not be called a syllabus.
 import json
 import re
 from pathlib import Path
+from qa.industry_core import CORE, GLOSSES
 
 root = Path(__file__).parent
 words = json.loads((root / 'data/words.json').read_text())
 prior = json.loads((root / 'data/industries.json').read_text())
-seeds = {x['id']: x['wordIds'][:53] for x in prior if x.get('category') != 'exam'}
+word_ids = {item['word'].lower(): item['id'] for item in words}
 
 # A strong ECDICT subject label plus topical words in the displayed meaning or
 # English definition places useful vocabulary ahead of incidental polysemy.
@@ -59,7 +60,10 @@ def relevance(item, tag, zh_terms, en_terms):
 output = []
 for id_, name, description, tag, zh_words, en_words in specs:
     zh_terms, en_terms = zh_words.split(), en_words.split()
-    initial = seeds.get(id_, [])
+    initial = list(dict.fromkeys(word_ids[w.lower()] for w in CORE[id_].split() if w.lower() in word_ids))[:100]
+    if len(initial) != 100:
+        raise RuntimeError(f'{id_} needs 100 reviewed starting words, found {len(initial)}')
+    glosses = {str(word_id): GLOSSES[id_][words[word_id - 1]['word']] for word_id in initial}
     initial_set = set(initial)
     candidates = [(relevance(w, tag, zh_terms, en_terms),w) for w in words
                   if w['id'] not in initial_set and len(w['word']) >= 3
@@ -68,7 +72,7 @@ for id_, name, description, tag, zh_words, en_words in specs:
     selected = [w['id'] for score,w in sorted(candidates,key=lambda x:(-x[0],x[1]['rank'],x[1]['id'])) if score>=4][:max(0,700-len(initial))]
     if len(initial)+len(selected)<500:
         raise RuntimeError(f'{id_} only has {len(initial)+len(selected)} related entries')
-    output.append({'id':id_,'name':name,'description':description,'category':'industry','wordIds':initial+selected})
+    output.append({'id':id_,'name':name,'description':description,'category':'industry','coreCount':len(initial),'glosses':glosses,'wordIds':initial+selected})
 for x in prior:
     if x.get('category')=='exam':output.append(x)
 (root/'data/industries.json').write_text(json.dumps(output,ensure_ascii=False,separators=(',',':')))
