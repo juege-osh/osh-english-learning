@@ -1,0 +1,13 @@
+{
+  "source": "https://github.com/skywind3000/ECDICT",
+  "source_file": "ecdict.csv",
+  "source_sha256": "1a6947e04785db63613a92e14903cdae7954f7e84860b10e68e5c7cbb3f9c3cf",
+  "license": "MIT",
+  "count": 20000,
+  "unique": 20000,
+  "levels": 2000,
+  "chapter_count": 20,
+  "selection": "Frequency ordered; exclude explicit inflection lemmas and proper-name translations; first 100 words hand selected; derived lexemes count separately, not as word families.",
+  "qa": "Structural checks passed; source definitions are not individually editorially reviewed.",
+  "generated_at": "2026-09-29"
+}
