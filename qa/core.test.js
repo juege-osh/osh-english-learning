@@ -11,6 +11,7 @@ C.record(p,'p1',true,true,start);assert.equal(C.stats(p,start).learned,1);assert
 let corrupt=JSON.parse(JSON.stringify(p));corrupt.words['50000']=corrupt.words[1];assert(!C.validate(corrupt));corrupt=JSON.parse(JSON.stringify(p));corrupt.words[1].days=['bad'];assert(!C.validate(corrupt));
 assert.equal(words.length,20000);assert.equal(new Set(words.map(w=>w.word)).size,20000);assert(words.every(w=>/^[a-z]+$/.test(w.word)&&w.zh&&w.full&&w.rank>0));assert(words.slice(103).every((w,i,a)=>i===0||w.rank>=a[i-1].rank));assert.equal(missions.length,12);assert.equal(missions.flatMap(m=>m.items).length,120);assert.equal(new Set(missions.flatMap(m=>m.items).map(w=>w.id)).size,120);
 for(const m of missions)for(const w of m.items)assert(w.sentence.toLowerCase().includes(w.word.toLowerCase()));
+assert.equal(words[143].zh,'将；会；愿意');assert.equal(words[203].zh,'嗯（犹豫时的语气词）');assert.equal(words[430].zh,'杀死；使停止');assert(words.slice(0,500).every(w=>!/^((n|v|vt|vi|a|adv|pron|prep|conj|abbr)\.)/.test(w.zh)));
 assert.equal(Object.keys(examples).length,20000);assert(words.every(w=>examples[w.id]?.length===2));
 for(const w of words.slice(0,500))for(const item of examples[w.id]){
  assert(item.translation,'first-500 sentence needs a Chinese translation');
