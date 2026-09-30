@@ -72,6 +72,9 @@ specs = [
  ('chemistry','化学与材料','元素、反应、材料与工艺','化',
   '化学 元素 分子 原子 反应 酸 碱 溶液 材料 聚合物 金属 晶体 温度 试剂 浓度',
   'chemistry element molecule atom reaction acid alkaline solution material polymer metal crystal reagent concentration'),
+ ('travel','旅行','机场、住宿、交通、餐饮与全球旅行沟通','',
+  '机场 航班 护照 住宿 交通 餐厅 购物 求助 旅行',
+  'airport flight passport accommodation transport restaurant travel'),
 ]
 
 def relevance(item, tag, zh_terms, en_terms):
@@ -89,14 +92,21 @@ def relevance(item, tag, zh_terms, en_terms):
 output = []
 for id_, name, description, tag, zh_words, en_words in specs:
     zh_terms, en_terms = zh_words.split(), en_words.split()
-    priority = list(dict.fromkeys(main_ids[w.lower()] for w in CORE[id_].split() if w.lower() in main_ids))
+    if id_ == 'travel':
+        # This new route has its own editorial seeds, including terms absent
+        # from the general dictionary. Existing routes keep their original IDs.
+        seed_rows = [line.split('\t') for line in (root/'qa/travel_reviewed.tsv').read_text().splitlines()
+                     if line and not line.startswith('#')]
+        priority = [word_ids[headword] for headword, meaning in seed_rows[:100]]
+        seed_glosses = {str(word_ids[headword]): meaning for headword, meaning in seed_rows[:100]}
+    else:
+        priority = list(dict.fromkeys(main_ids[w.lower()] for w in CORE[id_].split() if w.lower() in main_ids))
+        seed_glosses = {str(word_id): GLOSSES[id_][words[word_id - 1]['word']] for word_id in priority
+                       if words[word_id - 1]['word'] in GLOSSES[id_]}
     initial = priority[:100]
     if len(initial) != 100:
         raise RuntimeError(f'{id_} needs 100 reviewed starting words, found {len(initial)}')
-    glosses = {str(word_id): GLOSSES[id_][words[word_id - 1]['word']] for word_id in initial}
-    glosses.update({str(word_id): GLOSSES[id_][words[word_id - 1]['word']]
-                    for word_id in priority[len(initial):]
-                    if words[word_id - 1]['word'] in GLOSSES[id_]})
+    glosses = seed_glosses
     # A reviewed TSV replaces the trial pool entirely. Never count a keyword
     # match as editorial review, or pad a professional route with common words.
     reviewed_file = root / 'qa' / f'{id_}_reviewed.tsv'

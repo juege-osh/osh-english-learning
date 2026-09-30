@@ -33,7 +33,7 @@ func TestAccountProgressPersistsAndRejectsStaleWrite(t *testing.T) {
 		t.Fatal(joined.Body.String())
 	}
 	cookies := joined.Result().Cookies()
-	progress := json.RawMessage(`{"version":1,"xp":100,"goal":10000,"levels":{"1":100},"bosses":{},"missions":{},"words":{"1":{"first":1,"last":1,"failed":0,"wrong":0,"seen":1,"days":["2026-09-30"],"production":false,"due":86400001}},"days":{"2026-09-30":1},"dailyGoal":20,"industries":{"biology":{"seen":[20001],"answers":{"20001":{"correct":false,"at":100}}}}}`)
+	progress := json.RawMessage(`{"version":1,"xp":100,"goal":10000,"levels":{"1":100},"bosses":{},"missions":{},"words":{"1":{"first":1,"last":1,"failed":0,"wrong":0,"seen":1,"days":["2026-09-30"],"production":false,"due":86400001}},"days":{"2026-09-30":1},"dailyGoal":20,"industries":{"biology":{"seen":[20001],"answers":{"20001":{"correct":false,"at":100}}}},"basics":{"phonics":{"p01":{"studiedAt":1,"slots":[0,1],"wrong":1,"at":100}},"grammar":{"be":{"studiedAt":1,"slots":[0],"wrong":0,"at":100}}}}`)
 	write, _ := json.Marshal(cloudProgress{Revision: 0, Progress: progress})
 	if got := request("POST", write, cookies).Code; got != 200 {
 		t.Fatalf("save: %d", got)

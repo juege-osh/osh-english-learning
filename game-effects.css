@@ -1,0 +1,23 @@
+/* Matching is animated without a repeating background soundtrack. */
+.game-effects-controls{display:flex;align-items:center;justify-content:flex-end;gap:10px;flex-wrap:wrap;margin:-8px 0 16px;color:#777b91;font-size:12px}
+.game-sound-toggle{min-width:100px;min-height:44px;border:1px solid #dfe4f2;border-radius:12px;background:#fff;color:#555d7f;padding:9px 14px;font:inherit;font-weight:600;cursor:pointer}
+.game-sound-toggle[aria-pressed="true"]{background:#edf4ff;color:#2563bc;border-color:#c8dcff}
+.game-sound-toggle:focus-visible{outline:3px solid #9bbcff;outline-offset:2px}
+.match-motion{display:flex;flex-direction:column;align-items:center;gap:16px;margin:8px auto 18px}
+.match-orbit{position:relative;display:grid;place-items:center;width:106px;height:106px;border-radius:50%;background:radial-gradient(circle,#f5efff,#e9f2ff);box-shadow:0 0 0 12px #f2f6ff}
+.match-orbit:before{content:"";position:absolute;inset:0;border:3px solid #d5def6;border-top-color:#7959ee;border-right-color:#4599e6;border-radius:50%;animation:match-spin 2s linear infinite}
+.match-orbit b{font-size:35px;line-height:1;animation:match-float 2.4s ease-in-out infinite}
+.match-orbit>i{position:absolute;inset:12px;border:1px dashed #b0bde1;border-radius:50%;animation:match-spin 5s linear infinite reverse}
+.match-orbit>i+i{inset:23px;border-color:#c8bcf0;animation-duration:7s}
+.match-search-dots{display:flex;gap:8px}
+.match-search-dots i{width:7px;height:7px;border-radius:50%;background:#8062e5;animation:match-dot 1.2s ease-in-out infinite}
+.match-search-dots i:nth-child(2){animation-delay:.15s}.match-search-dots i:nth-child(3){animation-delay:.3s}
+.game-feedback-correct .race-question{animation:game-correct .45s ease-out}.game-feedback-wrong .race-question{animation:game-wrong .3s ease-out}
+.game-feedback-win .result,.game-feedback-matched .race-scoreboard{animation:game-correct .45s ease-out}.game-feedback-loss .result{animation:game-wrong .3s ease-out}
+@keyframes match-spin{to{transform:rotate(360deg)}}
+@keyframes match-float{50%{transform:translateY(-5px)}}
+@keyframes match-dot{50%{opacity:.35;transform:translateY(-4px)}}
+@keyframes game-correct{0%{box-shadow:0 0 0 3px #72cba5;background-color:#f1fff7}100%{box-shadow:0 0 0 0 #72cba500}}
+@keyframes game-wrong{0%,100%{transform:translateX(0)}25%,75%{transform:translateX(-3px)}50%{transform:translateX(3px)}}
+@media(prefers-reduced-motion:reduce){.match-orbit:before,.match-orbit b,.match-orbit>i,.match-search-dots i,.game-feedback-correct .race-question,.game-feedback-wrong .race-question,.game-feedback-win .result,.game-feedback-matched .race-scoreboard,.game-feedback-loss .result{animation:none!important}.match-orbit:before{border-color:#7959ee}}
+@media(max-width:520px){.game-effects-controls{justify-content:flex-start;margin:0 0 12px}.match-orbit{width:86px;height:86px}.match-motion{gap:12px}}

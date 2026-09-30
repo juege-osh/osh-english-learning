@@ -5,7 +5,7 @@ function progressStatus(message){if(typeof document==='undefined')return;const e
 function progressMerge(local,remote){
  if(!C.validate(remote))return local;
  if(!C.validate(local))return remote;
- const hasLocal=Object.keys(local.words).length||Object.keys(local.levels).length||Object.keys(local.missions).length||Object.values(local.industries||{}).some(entry=>(entry?.seen||[]).length||Object.keys(entry?.skipped||{}).length);
+ const hasLocal=Object.keys(local.words).length||Object.keys(local.levels).length||Object.keys(local.missions).length||Object.values(local.industries||{}).some(entry=>(entry?.seen||[]).length||Object.keys(entry?.skipped||{}).length)||Object.values(local.basics||{}).some(entry=>Object.keys(entry).length);
  if(!hasLocal)return remote;
  const out={...remote,...local};
  for(const key of ['levels','bosses','missions']){
@@ -31,6 +31,7 @@ function progressMerge(local,remote){
   for(const [word,answer]of Object.entries(entry.answers||{})){const localAnswer=own.answers?.[word];if(!localAnswer||answer.at>localAnswer.at||(answer.at===localAnswer.at&&!answer.correct))answers[word]=answer;}
   out.industries[id]={...entry,...own,seen:[...new Set([...(entry.seen||[]),...(own.seen||[])])],skipped,skipResetAt,answers};
  }
+ if(local.basics||remote.basics)out.basics=C.mergeBasics(local.basics,remote.basics);
  out.xp=Math.min(450000,Math.max(local.xp,remote.xp,Object.keys(out.levels).length*100+Object.keys(out.bosses).length*150+Object.keys(out.missions).length*80));
  out.totalTimeMs=Math.max(local.totalTimeMs||0,remote.totalTimeMs||0);
  return C.validate(out)?out:local;
@@ -52,7 +53,7 @@ function progressFlush(){
    const r=await fetch('/api/progress',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({revision:cloudRevision,progress:JSON.parse(snapshot)})});
    if(r.status===409){
     const latest=await fetch('/api/progress').then(x=>x.json());
-    if(C.validate(latest.progress)){p=progressMerge(p,latest.progress);localStorage.setItem(KEY,JSON.stringify(p));header();if(!session)route();}
+    if(C.validate(latest.progress)){p=progressMerge(p,latest.progress);localStorage.setItem(KEY,JSON.stringify(p));header();if(!session&&!(typeof basicsBusy==='function'&&basicsBusy()))route();}
     cloudRevision=latest.revision;cloudDirty=true;
    }else if(!r.ok)throw Error('sync failed');
    else{const result=await r.json();cloudRevision=result.revision;if(JSON.stringify(p)!==snapshot)cloudDirty=true;}
@@ -77,7 +78,7 @@ async function progressStart(){
     if(JSON.stringify(merged)!==JSON.stringify(p)){
      p=merged;localStorage.setItem(KEY,JSON.stringify(p));
      mapChapter=Math.ceil(currentLevel()/100);mapPage=Math.floor(((currentLevel()-1)%100)/20);
-     if(loaded&&!session)route();
+     if(loaded&&!session&&!(typeof basicsBusy==='function'&&basicsBusy()))route();
     }
    }
    cloudEnabled=true;

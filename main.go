@@ -11,7 +11,7 @@ import (
 	"time"
 )
 
-//go:embed index.html style.css app.js features-ui.js member-ui.js chat-ui.js progress-sync.js core.js qrcode.min.js data/words.json data/scenarios.json data/examples.json data/industries.json data/industry_words.json
+//go:embed index.html style.css app.js features-ui.js member-ui.js chat-ui.js progress-sync.js core.js basics-ui.js game-effects.js game-effects.css guide-ui.js guide.css qrcode.min.js data/words.json data/scenarios.json data/examples.json data/industries.json data/industry_words.json data/phonics.json data/grammar.json audio/phonics/p*.ogg provenance/phonics-audio.md
 var assets embed.FS
 
 func main() {
@@ -131,7 +131,7 @@ func main() {
 	mux.HandleFunc("/api/friends/remove", f.friendRemove)
 	mux.HandleFunc("/api/health", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/json")
-		json.NewEncoder(w).Encode(map[string]interface{}{"ok": true, "service": "english-quest", "version": "1.25.0-staging", "words": 20000, "levels": 2000, "goals": []int{5000, 10000, 20000}, "scenario_missions": 12, "phrases": 120, "tracks": len(f.industries), "industry_tracks": 9, "exam_tracks": 7, "progress_storage": "browser-local-and-account-cloud", "daily_leaderboard": true, "proof_applications": true, "member_bookings": true, "live_races": true, "duo_teams": true, "friends": true, "chat_channels": len(chatChannels), "payment": paymentSummary(f)})
+		json.NewEncoder(w).Encode(map[string]interface{}{"ok": true, "service": "english-quest", "version": "1.26.0-staging", "words": 20000, "levels": 2000, "goals": []int{5000, 10000, 20000}, "scenario_missions": 12, "phrases": 120, "tracks": len(f.industries), "industry_tracks": 10, "exam_tracks": 7, "progress_storage": "browser-local-and-account-cloud", "permanent_leaderboard": true, "proof_applications": true, "member_bookings": true, "live_races": true, "duo_teams": true, "friends": true, "chat_channels": len(chatChannels), "phonics": 44, "grammar_points": 36, "payment": paymentSummary(f)})
 	})
 	mux.HandleFunc("/", serveStatic(staticFiles))
 	addr := fmt.Sprintf("127.0.0.1:%d", *port)

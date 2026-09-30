@@ -6,19 +6,19 @@ import (
 	"fmt"
 	"math/rand/v2"
 	"net/http"
-	"sort"
 	"time"
 )
 
 type industry struct {
-	ID           string         `json:"id"`
-	Name         string         `json:"name"`
-	Category     string         `json:"category,omitempty"`
-	Description  string         `json:"description"`
-	CoreCount    int            `json:"coreCount,omitempty"`
-	Glosses      map[int]string `json:"glosses,omitempty"`
-	DisplayWords map[int]string `json:"displayWords,omitempty"`
-	WordIDs      []int          `json:"wordIds"`
+	ID            string         `json:"id"`
+	Name          string         `json:"name"`
+	Category      string         `json:"category,omitempty"`
+	Description   string         `json:"description"`
+	CoreCount     int            `json:"coreCount,omitempty"`
+	Glosses       map[int]string `json:"glosses,omitempty"`
+	DisplayWords  map[int]string `json:"displayWords,omitempty"`
+	WordIDs       []int          `json:"wordIds"`
+	SourceVersion string         `json:"-"`
 }
 
 // Specialist terms live outside f.words, so main progression and competitive
@@ -78,22 +78,23 @@ func (sector *industry) edition() string {
 		pool = pool[:sector.CoreCount]
 	}
 	// Meaning edits and pool changes start a separate board, so scores from
-	// different question sets are never silently compared on the same day.
+	// different question sets are never silently compared on the same board.
 	body, _ := json.Marshal(struct {
-		IDs      []int
-		Glosses  map[int]string
-		Displays map[int]string `json:",omitempty"`
-	}{pool, sector.Glosses, sector.DisplayWords})
+		IDs           []int
+		Glosses       map[int]string
+		Displays      map[int]string `json:",omitempty"`
+		SourceVersion string         `json:",omitempty"`
+	}{pool, sector.Glosses, sector.DisplayWords, sector.SourceVersion})
 	h := sha256.Sum256(body)
 	return fmt.Sprintf("%x", h[:6])
 }
 
-func industryBoard(date string, sector *industry) string {
-	return "industry:" + date + ":" + sector.ID + ":" + sector.edition()
+func industryBoard(_ string, sector *industry) string {
+	return "permanent:v1:industry:" + sector.ID + ":" + sector.edition()
 }
 
-func (f *features) industryChallenge(date string, sector *industry) []quizQuestion {
-	h := sha256.Sum256([]byte(fmt.Sprintf("industry-v3:%s:%s:%s", date, sector.ID, sector.edition())))
+func (f *features) industryChallenge(_ string, sector *industry) []quizQuestion {
+	h := sha256.Sum256([]byte(fmt.Sprintf("industry-permanent-v1:%s:%s", sector.ID, sector.edition())))
 	rng := rand.New(rand.NewPCG(uint64(h[0])<<56|uint64(h[1])<<48|uint64(h[2])<<40|uint64(h[3])<<32|uint64(h[4])<<24|uint64(h[5])<<16|uint64(h[6])<<8|uint64(h[7]), uint64(h[8])<<56|uint64(h[9])<<48|uint64(h[10])<<40|uint64(h[11])<<32|uint64(h[12])<<24|uint64(h[13])<<16|uint64(h[14])<<8|uint64(h[15])))
 	pool := sector.WordIDs
 	if sector.Category == "industry" {
@@ -139,23 +140,15 @@ func (f *features) industryQuiz(w http.ResponseWriter, r *http.Request) {
 	date := dailyDate()
 	board := industryBoard(date, sector)
 	f.mu.Lock()
-	if f.data.Starts[board+":"+id] == 0 {
-		f.data.Starts[board+":"+id] = time.Now().UnixMilli()
-		if err = f.save(); err != nil {
-			f.mu.Unlock()
-			http.Error(w, "storage unavailable", 500)
-			return
-		}
+	attemptID, err := f.beginBoardAttempt(board, id)
+	if err != nil {
+		f.mu.Unlock()
+		http.Error(w, "storage unavailable", 500)
+		return
 	}
-	submitted := false
-	for _, entry := range f.data.Daily[board] {
-		if entry.User == id {
-			submitted = true
-			break
-		}
-	}
+	best, hasBest := bestEntry(f.data.Daily[board], id)
 	f.mu.Unlock()
-	writeJSON(w, map[string]any{"sector": sector.ID, "date": date, "edition": sector.edition(), "submitted": submitted, "questions": f.industryChallenge(date, sector)})
+	writeJSON(w, map[string]any{"sector": sector.ID, "date": date, "edition": sector.edition(), "period": "all-time", "attemptId": attemptID, "submitted": false, "hasBest": hasBest, "best": publicEntry(best, hasBest), "questions": f.industryChallenge(date, sector)})
 }
 
 func (f *features) industrySubmit(w http.ResponseWriter, r *http.Request) {
@@ -169,10 +162,11 @@ func (f *features) industrySubmit(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	var body struct {
-		Sector  string `json:"sector"`
-		Edition string `json:"edition"`
-		Name    string `json:"name"`
-		Answers []int  `json:"answers"`
+		Sector    string `json:"sector"`
+		Edition   string `json:"edition"`
+		Name      string `json:"name"`
+		Answers   []int  `json:"answers"`
+		AttemptID string `json:"attemptId"`
 	}
 	r.Body = http.MaxBytesReader(w, r.Body, 2048)
 	if json.NewDecoder(r.Body).Decode(&body) != nil || len(body.Answers) != 20 {
@@ -185,41 +179,42 @@ func (f *features) industrySubmit(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	if body.Edition != sector.edition() {
-		http.Error(w, "专项词表已更新，请重新开始今日挑战；本次未扣除参赛机会", http.StatusConflict)
+		http.Error(w, "专项词表已更新，请重新开始永久榜挑战", http.StatusConflict)
 		return
 	}
 	date := dailyDate()
 	board := industryBoard(date, sector)
 	f.mu.Lock()
 	defer f.mu.Unlock()
-	start := f.data.Starts[board+":"+id]
-	if start == 0 {
-		http.Error(w, "请先开始专项挑战", 400)
+	attempt, exists := f.data.Attempts[body.AttemptID]
+	if !exists || attempt.User != id || attempt.Board != board {
+		http.Error(w, "请先开始专项挑战；每轮只能提交一次", 400)
 		return
 	}
-	for _, entry := range f.data.Daily[board] {
-		if entry.User == id {
-			http.Error(w, "今天已提交过", 409)
-			return
-		}
-	}
+	start := attempt.Started
 	correct := 0
 	for i, q := range f.industryChallenge(date, sector) {
 		if body.Answers[i] == q.ID {
 			correct++
 		}
 	}
-	elapsed := time.Now().UnixMilli() - start
+	now := time.Now().UnixMilli()
+	elapsed := now - start
 	if elapsed < 1000 {
 		elapsed = 1000
 	}
-	f.data.Daily[board] = append(f.data.Daily[board], dailyEntry{User: id, Name: cleanName(body.Name), Correct: correct, TimeMs: elapsed})
-	delete(f.data.Starts, board+":"+id)
+	item := dailyEntry{User: id, Name: cleanName(body.Name), Correct: correct, TimeMs: elapsed, SubmittedAt: now, Username: f.accountUsername(id)}
+	previous := append([]dailyEntry{}, f.data.Daily[board]...)
+	entries, best, improved := retainBest(previous, item)
+	f.data.Daily[board] = entries
+	delete(f.data.Attempts, body.AttemptID)
 	if err = f.save(); err != nil {
+		f.data.Daily[board] = previous
+		f.data.Attempts[body.AttemptID] = attempt
 		http.Error(w, "storage unavailable", 500)
 		return
 	}
-	writeJSON(w, map[string]any{"correct": correct, "timeMs": elapsed})
+	writeJSON(w, map[string]any{"correct": correct, "timeMs": elapsed, "submittedAt": now, "improved": improved, "best": publicEntry(best, true), "edition": body.Edition, "period": "all-time"})
 }
 
 func (f *features) industryLeaderboard(w http.ResponseWriter, r *http.Request) {
@@ -232,24 +227,10 @@ func (f *features) industryLeaderboard(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "invalid industry", 400)
 		return
 	}
-	date := dailyDate()
+	query := leaderboardQuery(r.URL.Query().Get("q"))
 	f.mu.Lock()
-	entries := append([]dailyEntry{}, f.data.Daily[industryBoard(date, sector)]...)
+	view := filterBoard(f.data.Daily[industryBoard("", sector)], query)
+	legacy := filterBoard(f.data.Daily[legacyIndustryBoard(sector.ID)], query).Entries
 	f.mu.Unlock()
-	sort.Slice(entries, func(i, j int) bool {
-		if entries[i].Correct != entries[j].Correct {
-			return entries[i].Correct > entries[j].Correct
-		}
-		if entries[i].TimeMs != entries[j].TimeMs {
-			return entries[i].TimeMs < entries[j].TimeMs
-		}
-		return entries[i].Name < entries[j].Name
-	})
-	if len(entries) > 50 {
-		entries = entries[:50]
-	}
-	for i := range entries {
-		entries[i].User = ""
-	}
-	writeJSON(w, map[string]any{"sector": sector.ID, "date": date, "entries": entries})
+	writeJSON(w, map[string]any{"sector": sector.ID, "date": dailyDate(), "edition": sector.edition(), "period": "all-time", "entries": view.Entries, "legacyEntries": legacy, "total": view.Total, "matched": view.Matched, "limit": view.Limit, "q": query})
 }

@@ -89,7 +89,7 @@ func TestMembershipCodeAndDailyBoard(t *testing.T) {
 	for i, q := range f.challenge(dailyDate(), 5000) {
 		answers[i] = q.ID
 	}
-	body, _ := json.Marshal(map[string]any{"name": "觉哥", "goal": 5000, "answers": answers})
+	body, _ := json.Marshal(map[string]any{"name": "觉哥", "goal": 5000, "edition": f.mainEdition(5000), "attemptId": challenge["attemptId"], "answers": answers})
 	submitReq := httptest.NewRequest("POST", "/api/daily/submit", bytes.NewReader(body))
 	submitReq.Header.Set("Content-Type", "application/json")
 	submitReq.AddCookie(cookie)

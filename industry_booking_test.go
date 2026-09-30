@@ -15,7 +15,7 @@ func TestIndustryBoardsAreSeparate(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	if len(f.industries) != 16 {
+	if len(f.industries) != 17 {
 		t.Fatalf("industry count %d", len(f.industries))
 	}
 	visitor := httptest.NewRecorder()
@@ -31,6 +31,7 @@ func TestIndustryBoardsAreSeparate(t *testing.T) {
 	}
 	var quiz struct {
 		Questions []map[string]any `json:"questions"`
+		AttemptID string           `json:"attemptId"`
 	}
 	if err := json.Unmarshal(result.Body.Bytes(), &quiz); err != nil {
 		t.Fatal(err)
@@ -45,7 +46,7 @@ func TestIndustryBoardsAreSeparate(t *testing.T) {
 	for i, q := range f.industryChallenge(dailyDate(), sector) {
 		answers[i] = q.ID
 	}
-	body, _ := json.Marshal(map[string]any{"sector": "finance", "edition": sector.edition(), "name": "财务同学", "answers": answers})
+	body, _ := json.Marshal(map[string]any{"sector": "finance", "edition": sector.edition(), "attemptId": quiz.AttemptID, "name": "财务同学", "answers": answers})
 	submit := httptest.NewRequest("POST", "/api/industries/submit", bytes.NewReader(body))
 	submit.Header.Set("Content-Type", "application/json")
 	submit.AddCookie(cookie)
@@ -306,7 +307,7 @@ func TestEditorialIndustryChallengePools(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	for id, count := range map[string]int{"ai_creator": 831, "healthcare": 753, "biology": 967, "foreign_trade": 774, "finance": 846, "marketing": 767, "law": 850, "chemistry": 932} {
+	for id, count := range map[string]int{"ai_creator": 831, "healthcare": 753, "biology": 967, "foreign_trade": 774, "finance": 846, "marketing": 767, "law": 850, "chemistry": 932, "travel": 709} {
 		t.Run(id, func(t *testing.T) {
 			sector := f.findIndustry(id)
 			if sector == nil || sector.CoreCount != count || len(sector.WordIDs) != count || len(sector.Glosses) != count {
@@ -362,7 +363,7 @@ func TestSupplementalIndustryWordsStayOutsideMainRoute(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	if len(f.words) != 20000 || len(f.extraWords) != 1331 {
+	if len(f.words) != 20000 || len(f.extraWords) != 1407 {
 		t.Fatal("main or supplemental vocabulary size changed unexpectedly")
 	}
 	sector := f.findIndustry("biology")
@@ -422,7 +423,7 @@ func TestIndustryAcronymsPreserveCanonicalProgressIDs(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	// Routes without display changes retain their previous leaderboard edition.
+	// Display-free routes include any source dictionary version in their edition.
 	for _, sector := range f.industries {
 		if len(sector.DisplayWords) != 0 {
 			continue
@@ -432,9 +433,10 @@ func TestIndustryAcronymsPreserveCanonicalProgressIDs(t *testing.T) {
 			pool = pool[:sector.CoreCount]
 		}
 		body, _ := json.Marshal(struct {
-			IDs     []int
-			Glosses map[int]string
-		}{pool, sector.Glosses})
+			IDs           []int
+			Glosses       map[int]string
+			SourceVersion string `json:",omitempty"`
+		}{pool, sector.Glosses, sector.SourceVersion})
 		h := sha256.Sum256(body)
 		if sector.edition() != fmt.Sprintf("%x", h[:6]) {
 			t.Fatalf("unaffected board changed: %s", sector.ID)

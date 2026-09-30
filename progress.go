@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
+	"regexp"
 	"time"
 )
 
@@ -82,9 +83,50 @@ func validProgressDocument(raw json.RawMessage) bool {
 		Bosses  map[string]json.RawMessage `json:"bosses"`
 		Words   map[string]json.RawMessage `json:"words"`
 		Days    map[string]json.RawMessage `json:"days"`
+		Basics  json.RawMessage            `json:"basics"`
 	}
 	if json.Unmarshal(raw, &p) != nil || p.Version != 1 || p.XP < 0 || p.XP > 450000 || p.Levels == nil || p.Bosses == nil || p.Words == nil || p.Days == nil {
 		return false
 	}
-	return len(p.Levels) <= 2000 && len(p.Bosses) <= 200 && len(p.Words) <= 20120 && len(p.Days) <= 10000
+	return len(p.Levels) <= 2000 && len(p.Bosses) <= 200 && len(p.Words) <= 20120 && len(p.Days) <= 10000 && validBasicProgress(p.Basics)
+}
+
+var phonicsProgressID = regexp.MustCompile(`^p(0[1-9]|[1-3][0-9]|4[0-4])$`)
+var grammarProgressID = regexp.MustCompile(`^[a-z][a-z0-9-]{0,39}$`)
+
+// The short courses are independent of the vocabulary/ranked route.
+func validBasicProgress(raw json.RawMessage) bool {
+	if len(raw) == 0 {
+		return true // Existing accounts and backups predate these courses.
+	}
+	var courses map[string]map[string]struct {
+		StudiedAt int64 `json:"studiedAt"`
+		Slots     []int `json:"slots"`
+		Wrong     int64 `json:"wrong"`
+		At        int64 `json:"at"`
+	}
+	if json.Unmarshal(raw, &courses) != nil || courses == nil || len(courses) > 2 {
+		return false
+	}
+	for kind, records := range courses {
+		if (kind != "phonics" && kind != "grammar") || records == nil || len(records) > 128 {
+			return false
+		}
+		for id, entry := range records {
+			if (kind == "phonics" && !phonicsProgressID.MatchString(id)) || (kind == "grammar" && (!grammarProgressID.MatchString(id) || id == "constructor" || id == "prototype")) {
+				return false
+			}
+			if entry.Slots == nil || len(entry.Slots) > 2 || entry.StudiedAt < 0 || entry.At < 0 || entry.Wrong < 0 || entry.StudiedAt > 9007199254740991 || entry.At > 9007199254740991 || entry.Wrong > 9007199254740991 {
+				return false
+			}
+			seen := map[int]bool{}
+			for _, slot := range entry.Slots {
+				if (slot != 0 && slot != 1) || seen[slot] {
+					return false
+				}
+				seen[slot] = true
+			}
+		}
+	}
+	return true
 }

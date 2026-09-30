@@ -12,7 +12,6 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
-	"sort"
 	"strconv"
 	"strings"
 	"sync"
@@ -26,18 +25,24 @@ type member struct {
 	Lifetime         bool  `json:"lifetime"`
 }
 type dailyEntry struct {
-	User    string `json:"user"`
-	Name    string `json:"name"`
-	Correct int    `json:"correct"`
-	TimeMs  int64  `json:"timeMs"`
+	User        string `json:"user"`
+	Name        string `json:"name"`
+	Correct     int    `json:"correct"`
+	TimeMs      int64  `json:"timeMs"`
+	SubmittedAt int64  `json:"submittedAt"`
+	LegacyDate  string `json:"legacyDate,omitempty"`
+	Username    string `json:"username,omitempty"`
+	Rank        int    `json:"rank,omitempty"`
 }
 type siteState struct {
-	Members   map[string]member       `json:"members"`
-	Codes     map[string]string       `json:"codes"`
-	Starts    map[string]int64        `json:"starts"`
-	Daily     map[string][]dailyEntry `json:"daily"`
-	Payments  map[string]paymentOrder `json:"payments,omitempty"`
-	Community communitySettings       `json:"community,omitempty"`
+	Members        map[string]member       `json:"members"`
+	Codes          map[string]string       `json:"codes"`
+	Starts         map[string]int64        `json:"starts"`
+	Daily          map[string][]dailyEntry `json:"daily"`
+	Payments       map[string]paymentOrder `json:"payments,omitempty"`
+	Attempts       map[string]boardAttempt `json:"leaderboardAttempts,omitempty"`
+	BoardMigration int                     `json:"leaderboardMigration,omitempty"`
+	Community      communitySettings       `json:"community,omitempty"`
 }
 type features struct {
 	mu              sync.Mutex
@@ -119,6 +124,9 @@ func newFeatures(dir string) (*features, error) {
 	if f.data.Daily == nil {
 		f.data.Daily = map[string][]dailyEntry{}
 	}
+	if f.data.Attempts == nil {
+		f.data.Attempts = map[string]boardAttempt{}
+	}
 	if f.data.Payments == nil {
 		f.data.Payments = map[string]paymentOrder{}
 	}
@@ -199,6 +207,18 @@ func newFeatures(dir string) (*features, error) {
 			}
 		}
 	}
+	for i := range f.industries {
+		sector := &f.industries[i]
+		if sector.Category == "exam" {
+			source := make([]quizWord, 0, len(sector.WordIDs))
+			for _, id := range sector.WordIDs {
+				source = append(source, f.industryWord(id))
+			}
+			encoded, _ := json.Marshal(source)
+			h := sha256.Sum256(encoded)
+			sector.SourceVersion = fmt.Sprintf("%x", h[:6])
+		}
+	}
 	if err = f.loadRaces(); err != nil {
 		return nil, err
 	}
@@ -207,6 +227,11 @@ func newFeatures(dir string) (*features, error) {
 	}
 	if err = f.loadFriends(); err != nil {
 		return nil, err
+	}
+	if f.migratePermanentBoards() {
+		if err = f.save(); err != nil {
+			return nil, err
+		}
 	}
 	return f, nil
 }
@@ -410,8 +435,8 @@ func dailyDate() string {
 }
 func validGoal(goal int) bool               { return goal == 5000 || goal == 10000 || goal == 20000 }
 func dailyKey(date string, goal int) string { return fmt.Sprintf("%s:%d", date, goal) }
-func (f *features) challenge(date string, goal int) []quizQuestion {
-	seed := sha256.Sum256([]byte(fmt.Sprintf("english-quest-daily-v2:%s:%d", date, goal)))
+func (f *features) challenge(_ string, goal int) []quizQuestion {
+	seed := sha256.Sum256([]byte(fmt.Sprintf("english-quest-permanent-v1:%s:%d", f.mainEdition(goal), goal)))
 	rng := rand.New(rand.NewPCG(uint64(seed[0])<<56|uint64(seed[1])<<48|uint64(seed[2])<<40|uint64(seed[3])<<32|uint64(seed[4])<<24|uint64(seed[5])<<16|uint64(seed[6])<<8|uint64(seed[7]), uint64(seed[8])<<56|uint64(seed[9])<<48|uint64(seed[10])<<40|uint64(seed[11])<<32|uint64(seed[12])<<24|uint64(seed[13])<<16|uint64(seed[14])<<8|uint64(seed[15])))
 	perm := rng.Perm(goal)
 	out := make([]quizQuestion, 0, 20)
@@ -451,26 +476,17 @@ func (f *features) dailyQuiz(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 	date := dailyDate()
-	board := dailyKey(date, goal)
-	key := board + ":" + id
+	board := f.mainBoard(goal)
 	f.mu.Lock()
-	if f.data.Starts[key] == 0 {
-		f.data.Starts[key] = time.Now().UnixMilli()
-		if err = f.save(); err != nil {
-			f.mu.Unlock()
-			http.Error(w, "storage unavailable", 500)
-			return
-		}
+	attemptID, err := f.beginBoardAttempt(board, id)
+	if err != nil {
+		f.mu.Unlock()
+		http.Error(w, "storage unavailable", 500)
+		return
 	}
-	submitted := false
-	for _, v := range f.data.Daily[board] {
-		if v.User == id {
-			submitted = true
-			break
-		}
-	}
+	best, hasBest := bestEntry(f.data.Daily[board], id)
 	f.mu.Unlock()
-	writeJSON(w, map[string]any{"date": date, "goal": goal, "questions": f.challenge(date, goal), "submitted": submitted})
+	writeJSON(w, map[string]any{"date": date, "goal": goal, "period": "all-time", "edition": f.mainEdition(goal), "questions": f.challenge(date, goal), "attemptId": attemptID, "submitted": false, "hasBest": hasBest, "best": publicEntry(best, hasBest)})
 }
 func cleanName(s string) string {
 	s = strings.TrimSpace(s)
@@ -495,48 +511,54 @@ func (f *features) dailySubmit(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	var body struct {
-		Name    string `json:"name"`
-		Answers []int  `json:"answers"`
-		Goal    int    `json:"goal"`
+		Name      string `json:"name"`
+		Answers   []int  `json:"answers"`
+		Goal      int    `json:"goal"`
+		Edition   string `json:"edition"`
+		AttemptID string `json:"attemptId"`
 	}
 	r.Body = http.MaxBytesReader(w, r.Body, 2048)
 	if json.NewDecoder(r.Body).Decode(&body) != nil || len(body.Answers) != 20 || !validGoal(body.Goal) {
 		http.Error(w, "invalid answers", 400)
 		return
 	}
-	date := dailyDate()
-	board := dailyKey(date, body.Goal)
-	f.mu.Lock()
-	defer f.mu.Unlock()
-	start := f.data.Starts[board+":"+id]
-	if start == 0 {
-		http.Error(w, "请先开始今日挑战", 400)
+	if body.Edition != f.mainEdition(body.Goal) {
+		http.Error(w, "词表已更新，请重新开始永久榜挑战", http.StatusConflict)
 		return
 	}
-	for _, v := range f.data.Daily[board] {
-		if v.User == id {
-			http.Error(w, "今天已经提交过", 409)
-			return
-		}
+	date := dailyDate()
+	board := f.mainBoard(body.Goal)
+	f.mu.Lock()
+	defer f.mu.Unlock()
+	attempt, exists := f.data.Attempts[body.AttemptID]
+	if !exists || attempt.User != id || attempt.Board != board {
+		http.Error(w, "请先开始永久榜挑战；每轮只能提交一次", 400)
+		return
 	}
+	start := attempt.Started
 	correct := 0
 	for i, q := range f.challenge(date, body.Goal) {
 		if q.ID == body.Answers[i] {
 			correct++
 		}
 	}
-	elapsed := time.Now().UnixMilli() - start
+	now := time.Now().UnixMilli()
+	elapsed := now - start
 	if elapsed < 1000 {
 		elapsed = 1000
 	}
-	item := dailyEntry{User: id, Name: cleanName(body.Name), Correct: correct, TimeMs: elapsed}
-	f.data.Daily[board] = append(f.data.Daily[board], item)
-	delete(f.data.Starts, board+":"+id)
+	item := dailyEntry{User: id, Name: cleanName(body.Name), Correct: correct, TimeMs: elapsed, SubmittedAt: now, Username: f.accountUsername(id)}
+	previous := append([]dailyEntry{}, f.data.Daily[board]...)
+	entries, best, improved := retainBest(previous, item)
+	f.data.Daily[board] = entries
+	delete(f.data.Attempts, body.AttemptID)
 	if err = f.save(); err != nil {
+		f.data.Daily[board] = previous
+		f.data.Attempts[body.AttemptID] = attempt
 		http.Error(w, "storage unavailable", 500)
 		return
 	}
-	writeJSON(w, map[string]any{"correct": correct, "timeMs": elapsed})
+	writeJSON(w, map[string]any{"correct": correct, "timeMs": elapsed, "submittedAt": now, "improved": improved, "best": publicEntry(best, true), "edition": body.Edition, "period": "all-time"})
 }
 func (f *features) leaderboard(w http.ResponseWriter, r *http.Request) {
 	if r.Method != "GET" {
@@ -552,27 +574,12 @@ func (f *features) leaderboard(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 	}
-	date := dailyDate()
-	board := dailyKey(date, goal)
+	query := leaderboardQuery(r.URL.Query().Get("q"))
 	f.mu.Lock()
-	items := append([]dailyEntry{}, f.data.Daily[board]...)
+	view := filterBoard(f.data.Daily[f.mainBoard(goal)], query)
+	legacy := filterBoard(f.data.Daily[legacyMainBoard(goal)], query).Entries
 	f.mu.Unlock()
-	sort.Slice(items, func(i, j int) bool {
-		if items[i].Correct != items[j].Correct {
-			return items[i].Correct > items[j].Correct
-		}
-		if items[i].TimeMs != items[j].TimeMs {
-			return items[i].TimeMs < items[j].TimeMs
-		}
-		return items[i].Name < items[j].Name
-	})
-	if len(items) > 50 {
-		items = items[:50]
-	}
-	for i := range items {
-		items[i].User = ""
-	}
-	writeJSON(w, map[string]any{"date": date, "goal": goal, "entries": items})
+	writeJSON(w, map[string]any{"date": dailyDate(), "goal": goal, "period": "all-time", "edition": f.mainEdition(goal), "entries": view.Entries, "legacyEntries": legacy, "total": view.Total, "matched": view.Matched, "limit": view.Limit, "q": query})
 }
 func writeJSON(w http.ResponseWriter, v any) {
 	w.Header().Set("Content-Type", "application/json; charset=utf-8")
