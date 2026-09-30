@@ -65,12 +65,13 @@ def main():
     ok('退出后账号不可见',not a.call('/api/account')['registered'])
     a.call('/api/account/login',{'name':a.name,'password':'test-pass-123'})
     ok('退出后可重新登录',a.call('/api/account')['registered'])
-    payload={'revision':0,'progress':{'version':1,'xp':100,'goal':10000,'levels':{'1':100},'bosses':{},'missions':{},'words':{},'days':{},'dailyGoal':20}}
+    payload={'revision':0,'progress':{'version':1,'xp':100,'goal':10000,'levels':{'1':100},'bosses':{},'missions':{},'words':{},'days':{},'dailyGoal':20,'industries':{'programmer':{'seen':[1],'answers':{'1':{'correct':False,'at':100}}}}}}
     saved=a.call('/api/progress',payload)
     ok('账号进度保存/读取',a.call('/api/progress')['revision']==saved['revision'])
     another_device=Client('second-device')
     another_device.call('/api/account/login',{'name':a.name,'password':'test-pass-123'})
     ok('另一浏览器登录后能读取进度',another_device.call('/api/progress')['revision']==saved['revision'])
+    ok('专项错词跨设备保存且对其他账号隐藏',another_device.call('/api/progress')['progress']['industries']['programmer']['answers']['1']['correct'] is False and not b.call('/api/progress')['progress'])
     a.call('/api/progress',payload,status=409)
     ok('过期版本不能覆盖进度',True)
     daily_before=len(a.call('/api/daily/leaderboard?goal=5000')['entries'])
@@ -84,7 +85,7 @@ def main():
     ok('行业及考试目录',len(sectors)==16)
     industry_before=len(b.call('/api/industries/leaderboard?sector=programmer')['entries'])
     iq=b.call('/api/industries/challenge?sector=programmer')
-    b.call('/api/industries/submit',{'sector':'programmer','name':b.name,'answers':[q['options'][0]['id'] for q in iq['questions']]})
+    b.call('/api/industries/submit',{'sector':'programmer','edition':iq['edition'],'name':b.name,'answers':[q['options'][0]['id'] for q in iq['questions']]})
     ok('行业题与独立榜单',len(iq['questions'])==20 and len(b.call('/api/industries/leaderboard?sector=programmer')['entries'])==industry_before+1)
     ac=a.call('/api/friends/status')['me']['code']
     b.call('/api/friends/status')
