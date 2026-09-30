@@ -84,6 +84,15 @@ def main():
     biology=b.call('/api/industries/challenge?sector=biology')
     b.call('/api/industries/submit',{'sector':'biology','edition':biology['edition'],'name':b.name,'answers':[q['options'][0]['id'] for q in biology['questions']]})
     ok('生物专业词参与专项题及榜单',len(biology['questions'])==20 and len(b.call('/api/industries/leaderboard?sector=biology')['entries'])==1)
+    route_data=a.call('/data/industries.json')
+    for route, count in [('foreign_trade',774),('finance',846)]:
+        sector=next(item for item in route_data if item['id']==route)
+        base_words=a.call('/data/words.json')
+        target_ids={sector.get('displayWords',{}).get(str(word['id']),word['word']):word['id'] for word in base_words+extra if word['id'] in sector['wordIds']}
+        iq=c.call('/api/industries/challenge?sector='+route)
+        c.call('/api/industries/submit',{'sector':route,'edition':iq['edition'],'name':c.name,'answers':[next(word['id'] for word in iq['questions'][j]['options'] if word['id'] == target_ids[q['word']]) for j,q in enumerate(iq['questions'])]})
+        board=c.call('/api/industries/leaderboard?sector='+route)['entries']
+        ok(route+' 精选释义/双语题库/专项榜',sector['coreCount']==count and len(sector['examples'])==100 and all(len(items)==2 for items in sector['examples'].values()) and len(iq['questions'])==20 and board[0]['correct']==20)
     daily_before=len(a.call('/api/daily/leaderboard?goal=5000')['entries'])
     other_before=len(a.call('/api/daily/leaderboard?goal=20000')['entries'])
     daily=a.call('/api/daily?goal=5000')
