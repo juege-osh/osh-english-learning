@@ -2,6 +2,35 @@
 let cloudRevision=0,cloudEnabled=false,cloudDirty=false,cloudTimer=null,cloudStarting=null,cloudFlight=null;
 function progressStatus(message){if(typeof document==='undefined')return;const el=document.getElementById('cloud-status');if(el)el.textContent=message;}
 
+// Merge the data immediately, but don't rebuild the page underneath an answer
+// or an unsent form. Inspect the visible view: specialty sessions can remain in
+// memory after the learner has returned to the route list.
+function progressViewBusy(){
+ if((typeof session!=='undefined'&&session)||(typeof basicsBusy==='function'&&basicsBusy()))return true;
+ if(typeof document==='undefined')return false;
+ const view=document.getElementById('app');if(!view)return false;
+ if(view.querySelector?.('.question-workspace, .question-card, .race-question'))return true;
+ const active=document.activeElement;
+ if(active&&view.contains?.(active)&&(/^(INPUT|TEXTAREA|SELECT)$/.test(active.tagName)||active.isContentEditable))return true;
+ for(const field of view.querySelectorAll?.('input, textarea, select, [contenteditable]')||[]){
+  if(field.isContentEditable){if(field.textContent?.trim())return true;continue;}
+  if(field.tagName==='SELECT'){
+   const options=Array.from(field.options||[]),explicit=options.some(option=>option.defaultSelected);
+   const implicit=field.multiple||explicit?-1:options.findIndex(option=>!option.disabled&&!(option.parentElement?.tagName==='OPTGROUP'&&option.parentElement.disabled));
+   if(options.some((option,index)=>option.selected!==!!(option.defaultSelected||index===implicit)))return true;
+   continue;
+  }
+  if(['button','submit','reset','hidden'].includes(field.type))continue;
+  if(['checkbox','radio'].includes(field.type)){if(field.checked!==field.defaultChecked)return true;continue;}
+  if(String(field.value||'')!==String(field.defaultValue||''))return true;
+ }
+ return false;
+}
+function progressRefreshView(){
+ if(typeof header==='function')header();
+ if(typeof loaded!=='undefined'&&loaded&&!progressViewBusy())route();
+}
+
 function progressMerge(local,remote){
  if(!C.validate(remote))return local;
  if(!C.validate(local))return remote;
@@ -53,7 +82,7 @@ function progressFlush(){
    const r=await fetch('/api/progress',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({revision:cloudRevision,progress:JSON.parse(snapshot)})});
    if(r.status===409){
     const latest=await fetch('/api/progress').then(x=>x.json());
-    if(C.validate(latest.progress)){p=progressMerge(p,latest.progress);localStorage.setItem(KEY,JSON.stringify(p));header();if(!session&&!(typeof basicsBusy==='function'&&basicsBusy()))route();}
+    if(C.validate(latest.progress)){p=progressMerge(p,latest.progress);localStorage.setItem(KEY,JSON.stringify(p));progressRefreshView();}
     cloudRevision=latest.revision;cloudDirty=true;
    }else if(!r.ok)throw Error('sync failed');
    else{const result=await r.json();cloudRevision=result.revision;if(JSON.stringify(p)!==snapshot)cloudDirty=true;}
@@ -78,7 +107,7 @@ async function progressStart(){
     if(JSON.stringify(merged)!==JSON.stringify(p)){
      p=merged;localStorage.setItem(KEY,JSON.stringify(p));
      mapChapter=Math.ceil(currentLevel()/100);mapPage=Math.floor(((currentLevel()-1)%100)/20);
-     if(loaded&&!session&&!(typeof basicsBusy==='function'&&basicsBusy()))route();
+     progressRefreshView();
     }
    }
    cloudEnabled=true;
