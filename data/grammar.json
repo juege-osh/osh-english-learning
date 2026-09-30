@@ -1,0 +1,1132 @@
+[
+  {
+    "id": "be",
+    "title": "am、is、are",
+    "group": "基础",
+    "rule": "I 用 am；he、she、it 和单数名词用 is；you、we、they 和复数名词用 are。",
+    "example": {
+      "text": "I am ready to leave.",
+      "translation": "我准备好出发了。"
+    },
+    "choice": {
+      "text": "My passport ____ in my bag.",
+      "translation": "我的护照在包里。",
+      "options": [
+        "is",
+        "am",
+        "are",
+        "be"
+      ],
+      "answer": "is",
+      "explanation": "passport 是单数，表示现在的状态，用 is。"
+    },
+    "blank": {
+      "text": "We ____ ready for the meeting.",
+      "translation": "我们准备好开会了。",
+      "answers": [
+        "are"
+      ],
+      "hint": "填 1 词：be 的一般现在时形式。",
+      "explanation": "主语是 we，所以用 are。"
+    }
+  },
+  {
+    "id": "object-pronouns",
+    "title": "人称代词：主格与宾格",
+    "group": "基础",
+    "rule": "做主语用 I、he、she、we、they；放在动词或介词后作宾语，用 me、him、her、us、them。",
+    "example": {
+      "text": "Can you send it to me?",
+      "translation": "你能把它发给我吗？"
+    },
+    "choice": {
+      "text": "Please call ____ when you arrive.",
+      "translation": "你到了以后请给我打电话。",
+      "options": [
+        "I",
+        "me",
+        "my",
+        "mine"
+      ],
+      "answer": "me",
+      "explanation": "call 后面需要宾语，表示“我”用 me。"
+    },
+    "blank": {
+      "text": "The guide is waiting for ____.",
+      "translation": "导游正在等我们。",
+      "answers": [
+        "us"
+      ],
+      "hint": "填 1 词：we 的宾格。",
+      "explanation": "for 是介词，后面用 we 的宾格 us。"
+    }
+  },
+  {
+    "id": "possessives",
+    "title": "my 与 mine",
+    "group": "基础",
+    "rule": "my、your、her 等后面要接名词；mine、yours、hers 等可以独立表示“某人的东西”。",
+    "example": {
+      "text": "This is my seat. That one is yours.",
+      "translation": "这是我的座位。那个是你的。"
+    },
+    "choice": {
+      "text": "Is this ____ ticket?",
+      "translation": "这是你的票吗？",
+      "options": [
+        "you",
+        "yours",
+        "your",
+        "yourself"
+      ],
+      "answer": "your",
+      "explanation": "ticket 前需要表示所属的限定词 your。"
+    },
+    "blank": {
+      "text": "This laptop is ____.",
+      "translation": "这台笔记本电脑是我的。",
+      "answers": [
+        "mine"
+      ],
+      "hint": "填 1 词：my 对应的独立物主代词。",
+      "explanation": "后面没有名词，独立表示“我的”用 mine。"
+    }
+  },
+  {
+    "id": "articles",
+    "title": "a、an、the",
+    "group": "基础",
+    "rule": "首次提到一个可数单数物品通常用 a 或 an；看后面的发音选择，辅音音素前用 a，元音音素前用 an。双方知道具体是哪一个时常用 the。",
+    "example": {
+      "text": "I booked a room. The room has a balcony.",
+      "translation": "我订了一个房间。那个房间有阳台。"
+    },
+    "choice": {
+      "text": "We need ____ hour to finish this task.",
+      "translation": "我们需要一个小时来完成这项任务。",
+      "options": [
+        "a",
+        "many",
+        "any",
+        "an"
+      ],
+      "answer": "an",
+      "explanation": "hour 的 h 不发音，开头是元音音素，所以用 an。"
+    },
+    "blank": {
+      "text": "She is ____ engineer.",
+      "translation": "她是一名工程师。",
+      "answers": [
+        "an"
+      ],
+      "hint": "填 1 词：表示“一名”的不定冠词。",
+      "explanation": "engineer 以元音音素开头，职业名前用 an。"
+    }
+  },
+  {
+    "id": "plural-nouns",
+    "title": "可数名词的复数",
+    "group": "基础",
+    "rule": "说两个或更多可数物品时，名词通常加 s 或 es；部分词需要改写，如 child 变 children。",
+    "example": {
+      "text": "I have two suitcases.",
+      "translation": "我有两个行李箱。"
+    },
+    "choice": {
+      "text": "There are three ____ near the station.",
+      "translation": "车站附近有三个盒子。",
+      "options": [
+        "boxes",
+        "box",
+        "boxs",
+        "boxing"
+      ],
+      "answer": "boxes",
+      "explanation": "box 以 x 结尾，复数加 es。"
+    },
+    "blank": {
+      "text": "The museum has a special area for ____.",
+      "translation": "博物馆有专门供儿童使用的区域。",
+      "answers": [
+        "children"
+      ],
+      "hint": "填 1 词：child 的复数。",
+      "explanation": "child 的不规则复数是 children。"
+    }
+  },
+  {
+    "id": "there-be",
+    "title": "there is 与 there are",
+    "group": "基础",
+    "rule": "说明“某处有某物”用 there is 或 there are；单数可数名词和不可数名词通常用 is，复数名词用 are。",
+    "example": {
+      "text": "There is a cafe across the street.",
+      "translation": "街对面有一家咖啡馆。"
+    },
+    "choice": {
+      "text": "There ____ two exits on this floor.",
+      "translation": "这一层有两个出口。",
+      "options": [
+        "is",
+        "are",
+        "am",
+        "be"
+      ],
+      "answer": "are",
+      "explanation": "two exits 是复数，用 there are。"
+    },
+    "blank": {
+      "text": "There ____ some water in the bottle.",
+      "translation": "瓶子里有一些水。",
+      "answers": [
+        "is"
+      ],
+      "hint": "填 1 词：be 的一般现在时形式。",
+      "explanation": "water 是不可数名词，用 there is。"
+    }
+  },
+  {
+    "id": "much-many",
+    "title": "much 与 many",
+    "group": "基础",
+    "rule": "many 修饰可数名词复数；much 修饰不可数名词。比如 many messages、much information。",
+    "example": {
+      "text": "How much luggage do you have?",
+      "translation": "你有多少行李？"
+    },
+    "choice": {
+      "text": "How ____ messages did you send?",
+      "translation": "你发了多少条消息？",
+      "options": [
+        "much",
+        "a",
+        "many",
+        "an"
+      ],
+      "answer": "many",
+      "explanation": "messages 是可数名词复数，“多少”用 many。"
+    },
+    "blank": {
+      "text": "How ____ time do we have before the flight?",
+      "translation": "离航班起飞我们还有多少时间？",
+      "answers": [
+        "much"
+      ],
+      "hint": "填 1 词：much 或 many。",
+      "explanation": "time 在这里表示时间，是不可数名词，用 much。"
+    }
+  },
+  {
+    "id": "some-any",
+    "title": "some 与 any",
+    "group": "基础",
+    "rule": "some 常见于肯定句，any 常见于否定句和一般疑问句。邀请或请求时也常用 some，所以不要只看问号。",
+    "example": {
+      "text": "Would you like some tea?",
+      "translation": "你想喝点茶吗？"
+    },
+    "choice": {
+      "text": "We do not have ____ clean towels left.",
+      "translation": "我们已经没有干净毛巾了。",
+      "options": [
+        "some",
+        "a",
+        "an",
+        "any"
+      ],
+      "answer": "any",
+      "explanation": "do not 构成否定句，表示没有任何干净毛巾，用 any。"
+    },
+    "blank": {
+      "text": "I bought ____ apples for the trip.",
+      "translation": "我为旅途买了一些苹果。",
+      "answers": [
+        "some"
+      ],
+      "hint": "填 1 词：some 或 any。",
+      "explanation": "肯定句里表示买了一些苹果，用 some。"
+    }
+  },
+  {
+    "id": "time-prepositions",
+    "title": "时间前的 at、on、in",
+    "group": "基础",
+    "rule": "具体钟点前用 at；星期和具体日期前用 on；月份、年份和季节前通常用 in。",
+    "example": {
+      "text": "The train leaves at six.",
+      "translation": "火车六点出发。"
+    },
+    "choice": {
+      "text": "Our meeting is ____ Monday morning.",
+      "translation": "我们的会议在星期一早上。",
+      "options": [
+        "on",
+        "at",
+        "in",
+        "to"
+      ],
+      "answer": "on",
+      "explanation": "Monday morning 是具体某一天的早上，用 on。"
+    },
+    "blank": {
+      "text": "My birthday is ____ September.",
+      "translation": "我的生日在九月。",
+      "answers": [
+        "in"
+      ],
+      "hint": "填 1 词：at、on 或 in。",
+      "explanation": "月份前用 in。"
+    }
+  },
+  {
+    "id": "present-simple",
+    "title": "一般现在时：习惯",
+    "group": "时态",
+    "rule": "日常习惯和通常成立的事实常用一般现在时。he、she、it 作主语时，肯定句中的实义动词通常加 s 或 es。",
+    "example": {
+      "text": "She checks her email every morning.",
+      "translation": "她每天早上查看邮件。"
+    },
+    "choice": {
+      "text": "My brother ____ from home every Friday.",
+      "translation": "我哥哥每周五都在家办公。",
+      "options": [
+        "work",
+        "works",
+        "working",
+        "to work"
+      ],
+      "answer": "works",
+      "explanation": "every Friday 表示习惯，主语 My brother 是第三人称单数，用 works。"
+    },
+    "blank": {
+      "text": "He ____ English on the bus every day.",
+      "translation": "他每天在公交车上学习英语。",
+      "answers": [
+        "studies"
+      ],
+      "hint": "填 1 词：study 的一般现在时形式。",
+      "explanation": "he 后用 studies；study 变 y 为 i，再加 es。"
+    }
+  },
+  {
+    "id": "present-negative",
+    "title": "一般现在时：否定",
+    "group": "时态",
+    "rule": "实义动词的现在时否定用 do not 或 does not，加动词原形。第三人称单数用 does not，动词不用再加 s。",
+    "example": {
+      "text": "I do not drink coffee at night.",
+      "translation": "我晚上不喝咖啡。"
+    },
+    "choice": {
+      "text": "She ____ eat meat.",
+      "translation": "她不吃肉。",
+      "options": [
+        "do not",
+        "is not",
+        "does not",
+        "not"
+      ],
+      "answer": "does not",
+      "explanation": "she 用 does not，后面的 eat 保持原形。"
+    },
+    "blank": {
+      "text": "They ____ work on Sundays.",
+      "translation": "他们星期天不工作。",
+      "answers": [
+        "do not",
+        "don't"
+      ],
+      "hint": "填 2 词，或对应缩写：do 的一般现在时否定形式。",
+      "explanation": "they 用 do not，也可以写作 don't。"
+    }
+  },
+  {
+    "id": "present-questions",
+    "title": "一般现在时：提问",
+    "group": "时态",
+    "rule": "实义动词的一般疑问句用 Do 或 Does 放在主语前，后面的动词用原形。询问信息时，可在前面加 where、what 等疑问词。",
+    "example": {
+      "text": "Where do you live?",
+      "translation": "你住在哪里？"
+    },
+    "choice": {
+      "text": "____ your friend speak English?",
+      "translation": "你的朋友会说英语吗？",
+      "options": [
+        "Do",
+        "Is",
+        "Are",
+        "Does"
+      ],
+      "answer": "Does",
+      "explanation": "your friend 是第三人称单数；speak 是实义动词，所以用 Does。"
+    },
+    "blank": {
+      "text": "Where ____ you usually have lunch?",
+      "translation": "你通常在哪里吃午饭？",
+      "answers": [
+        "do"
+      ],
+      "hint": "填 1 词：do 或 does。",
+      "explanation": "主语 you 用 do，后面的 have 保持原形。"
+    }
+  },
+  {
+    "id": "present-continuous",
+    "title": "现在进行时",
+    "group": "时态",
+    "rule": "说此刻正在做的事，用 am、is、are 加动词 ing 形式。right now、at the moment 可以帮助判断。",
+    "example": {
+      "text": "I am waiting for a taxi.",
+      "translation": "我正在等出租车。"
+    },
+    "choice": {
+      "text": "Look! The children ____ in the pool.",
+      "translation": "看！孩子们正在泳池里游泳。",
+      "options": [
+        "are swimming",
+        "swim",
+        "swims",
+        "is swimming"
+      ],
+      "answer": "are swimming",
+      "explanation": "此刻正在发生，children 是复数，用 are swimming。"
+    },
+    "blank": {
+      "text": "I ____ dinner right now.",
+      "translation": "我现在正在做晚饭。",
+      "answers": [
+        "am cooking",
+        "'m cooking"
+      ],
+      "hint": "填 2 词，或对应缩写：cook 的现在进行时形式。",
+      "explanation": "I 后用 am，cook 变 cooking，合起来是 am cooking。"
+    }
+  },
+  {
+    "id": "past-simple",
+    "title": "一般过去时",
+    "group": "时态",
+    "rule": "有 yesterday、last week 等已经结束的时间时，常用一般过去时。规则动词通常加 ed，不规则动词要记过去式。",
+    "example": {
+      "text": "We arrived at the hotel last night.",
+      "translation": "我们昨晚到了酒店。"
+    },
+    "choice": {
+      "text": "I ____ the museum yesterday.",
+      "translation": "我昨天参观了博物馆。",
+      "options": [
+        "visit",
+        "visited",
+        "visits",
+        "visiting"
+      ],
+      "answer": "visited",
+      "explanation": "yesterday 是已经结束的过去时间，visit 用过去式 visited。"
+    },
+    "blank": {
+      "text": "She ____ a new phone last week.",
+      "translation": "她上周买了一部新手机。",
+      "answers": [
+        "bought"
+      ],
+      "hint": "填 1 词：buy 的过去式。",
+      "explanation": "buy 的不规则过去式是 bought。"
+    }
+  },
+  {
+    "id": "past-negative",
+    "title": "一般过去时：否定",
+    "group": "时态",
+    "rule": "实义动词的过去时否定用 did not 加动词原形。did 已经表示过去，后面的动词不要再变过去式。",
+    "example": {
+      "text": "I did not see your message yesterday.",
+      "translation": "我昨天没看到你的消息。"
+    },
+    "choice": {
+      "text": "We did not ____ the last train.",
+      "translation": "我们没赶上末班火车。",
+      "options": [
+        "caught",
+        "catches",
+        "catch",
+        "catching"
+      ],
+      "answer": "catch",
+      "explanation": "did not 后接动词原形 catch。"
+    },
+    "blank": {
+      "text": "He ____ call me last night.",
+      "translation": "他昨晚没有给我打电话。",
+      "answers": [
+        "did not",
+        "didn't"
+      ],
+      "hint": "填 2 词，或对应缩写：did 的否定形式。",
+      "explanation": "last night 表示过去，否定用 did not，也可以写作 didn't。"
+    }
+  },
+  {
+    "id": "past-continuous",
+    "title": "过去进行时",
+    "group": "时态",
+    "rule": "过去某个时刻正在进行的动作，用 was 或 were 加动词 ing 形式；常用来交代另一个过去动作发生时的背景。",
+    "example": {
+      "text": "I was cooking when you called.",
+      "translation": "你打电话时，我正在做饭。"
+    },
+    "choice": {
+      "text": "At eight last night, they ____ a film.",
+      "translation": "昨晚八点，他们正在看电影。",
+      "options": [
+        "watch",
+        "watched",
+        "was watching",
+        "were watching"
+      ],
+      "answer": "were watching",
+      "explanation": "过去特定时刻正在看，they 用 were watching。"
+    },
+    "blank": {
+      "text": "She ____ when the alarm rang.",
+      "translation": "闹钟响时，她正在睡觉。",
+      "answers": [
+        "was sleeping"
+      ],
+      "hint": "填 2 词：sleep 的过去进行时形式。",
+      "explanation": "she 用 was，sleep 变 sleeping，合起来是 was sleeping。"
+    }
+  },
+  {
+    "id": "present-perfect",
+    "title": "现在完成时",
+    "group": "时态",
+    "rule": "have 或 has 加过去分词，把过去的经历、结果或持续状态联系到现在。提到 yesterday 等明确结束的时间时，通常用一般过去时。",
+    "example": {
+      "text": "I have lost my key, so I cannot get in.",
+      "translation": "我把钥匙弄丢了，所以进不去。"
+    },
+    "choice": {
+      "text": "She ____ in this city since 2020 and still lives here.",
+      "translation": "她从 2020 年起就住在这座城市，现在仍住在这里。",
+      "options": [
+        "has lived",
+        "live",
+        "lives",
+        "have lived"
+      ],
+      "answer": "has lived",
+      "explanation": "since 2020 加上仍住在这里，表示持续到现在；she 用 has lived。"
+    },
+    "blank": {
+      "text": "I ____ that film three times so far.",
+      "translation": "到目前为止，我已经看过那部电影三次了。",
+      "answers": [
+        "have seen",
+        "'ve seen"
+      ],
+      "hint": "填 2 词，或对应缩写：see 的现在完成时形式。",
+      "explanation": "so far 表示截至现在；I 用 have，see 的过去分词是 seen。"
+    }
+  },
+  {
+    "id": "past-perfect",
+    "title": "过去完成时",
+    "group": "时态",
+    "rule": "回看两个过去动作时，要强调更早完成的那个动作，可以用 had 加过去分词。它表示“过去之前”。",
+    "example": {
+      "text": "The shop had closed before we arrived.",
+      "translation": "我们到达之前，商店就已经关门了。"
+    },
+    "choice": {
+      "text": "When I reached the station, the train ____ already left.",
+      "translation": "我到车站时，火车已经开走了。",
+      "options": [
+        "has",
+        "had",
+        "have",
+        "is"
+      ],
+      "answer": "had",
+      "explanation": "reached 是过去；火车离开更早，用 had already left。"
+    },
+    "blank": {
+      "text": "By the time I opened the chat, Mia ____ the answer.",
+      "translation": "等我打开聊天时，米娅早已发出了答案。",
+      "answers": [
+        "had sent",
+        "'d sent"
+      ],
+      "hint": "填 2 词，或对应缩写：send 的过去完成时形式。",
+      "explanation": "send 的过去分词是 sent；比 opened 更早的动作，用 had sent。"
+    }
+  },
+  {
+    "id": "will",
+    "title": "will：承诺与临时决定",
+    "group": "表达",
+    "rule": "承诺或说话时刚做出的决定，常用 will 加动词原形；I will 可以缩写为 I'll。其他未来形式在一些语境里也成立，本关明确练习 will。",
+    "example": {
+      "text": "I will send you the address tonight.",
+      "translation": "我今晚会把地址发给你。"
+    },
+    "choice": {
+      "text": "I promise I ____ call you after the meeting.",
+      "translation": "我保证会在会议后给你打电话。",
+      "options": [
+        "am",
+        "was",
+        "will",
+        "have"
+      ],
+      "answer": "will",
+      "explanation": "will 后接 call 原形，这里用来作出承诺。"
+    },
+    "blank": {
+      "text": "Do not worry. I ____ help you with the bags.",
+      "translation": "别担心。我会帮你拿这些包。",
+      "answers": [
+        "will",
+        "'ll"
+      ],
+      "hint": "填 1 词，或对应缩写：使用 will 结构作出承诺。",
+      "explanation": "承诺提供帮助，用 will help；I will 可以缩写为 I'll。"
+    }
+  },
+  {
+    "id": "going-to",
+    "title": "be going to：已有打算",
+    "group": "表达",
+    "rule": "说事先已有的打算，常用 am、is、are going to 加动词原形。未来表达有时可以互换，本关明确练习 going to 的完整结构。",
+    "example": {
+      "text": "We are going to visit the coast next month.",
+      "translation": "我们打算下个月去海边。"
+    },
+    "choice": {
+      "text": "She ____ going to learn to drive this summer.",
+      "translation": "她打算今年夏天学开车。",
+      "options": [
+        "am",
+        "are",
+        "be",
+        "is"
+      ],
+      "answer": "is",
+      "explanation": "she 对应 is；完整结构是 is going to learn。"
+    },
+    "blank": {
+      "text": "They ____ book a room this evening.",
+      "translation": "他们打算今晚订一个房间。",
+      "answers": [
+        "are going to",
+        "'re going to"
+      ],
+      "hint": "填 3 词，或对应缩写：用 be going to 表示打算。",
+      "explanation": "they 对应 are，所以填 are going to。"
+    }
+  },
+  {
+    "id": "can",
+    "title": "can：能力",
+    "group": "表达",
+    "rule": "表达“能、会”可以用 can 加动词原形。can 不随主语变化，否定用 cannot 或 can't。",
+    "example": {
+      "text": "I can read the menu in English.",
+      "translation": "我能看懂英文菜单。"
+    },
+    "choice": {
+      "text": "She can ____ this problem.",
+      "translation": "她能解决这个问题。",
+      "options": [
+        "solve",
+        "solves",
+        "solved",
+        "solving"
+      ],
+      "answer": "solve",
+      "explanation": "can 后面的动词要用原形 solve。"
+    },
+    "blank": {
+      "text": "I ____ swim yet.",
+      "translation": "我还不会游泳。",
+      "answers": [
+        "cannot",
+        "can't",
+        "can not"
+      ],
+      "hint": "填 can 的否定形式：1 词，或缩写（也接受 can not）。",
+      "explanation": "表示“还不会”用 cannot 或 can't；can not 也可接受。"
+    }
+  },
+  {
+    "id": "should",
+    "title": "should：给建议",
+    "group": "表达",
+    "rule": "给别人建议时，常用 should 加动词原形。should 不表示强制规定；否定是 should not 或 shouldn't。",
+    "example": {
+      "text": "You should save your work before closing the app.",
+      "translation": "关掉应用前，你应该保存工作内容。"
+    },
+    "choice": {
+      "text": "You should ____ a copy of your passport.",
+      "translation": "你应该留一份护照复印件。",
+      "options": [
+        "keeps",
+        "keep",
+        "kept",
+        "keeping"
+      ],
+      "answer": "keep",
+      "explanation": "should 后接动词原形 keep。"
+    },
+    "blank": {
+      "text": "You ____ skip breakfast if it makes you feel unwell.",
+      "translation": "如果不吃早餐会让你不舒服，你就不应该省掉早餐。",
+      "answers": [
+        "should not",
+        "shouldn't"
+      ],
+      "hint": "填 2 词，或对应缩写：should 的否定形式。",
+      "explanation": "给出“不应该”的建议，用 should not 或 shouldn't。"
+    }
+  },
+  {
+    "id": "must-not",
+    "title": "must not：禁止",
+    "group": "表达",
+    "rule": "must not 或 mustn't 表示“不准”。do not have to 表示“不必”，两者意思不同。",
+    "example": {
+      "text": "You must not share your password.",
+      "translation": "你不准把密码告诉别人。"
+    },
+    "choice": {
+      "text": "You ____ smoke here. It is forbidden.",
+      "translation": "这里禁止吸烟，你不准在这里吸烟。",
+      "options": [
+        "do not have to",
+        "have to",
+        "must not",
+        "can"
+      ],
+      "answer": "must not",
+      "explanation": "forbidden 明确表示禁止，所以用 must not。do not have to 只是“不必”。"
+    },
+    "blank": {
+      "text": "Passengers ____ enter this area. It is staff only.",
+      "translation": "乘客不准进入这个区域，这里仅限工作人员。",
+      "answers": [
+        "must not",
+        "mustn't"
+      ],
+      "hint": "填 2 词，或对应缩写：must 的否定形式。",
+      "explanation": "must not 表示禁止；mustn't 是它的缩写。"
+    }
+  },
+  {
+    "id": "have-to",
+    "title": "have to：要求与必要性",
+    "group": "表达",
+    "rule": "外部规定或实际需要常用 have to 加动词原形；he、she、it 用 has to。否定 do not have to 表示“不必”。",
+    "example": {
+      "text": "We have to show our tickets at the entrance.",
+      "translation": "我们必须在入口出示车票。"
+    },
+    "choice": {
+      "text": "He ____ to wear a helmet at work.",
+      "translation": "他上班必须戴头盔。",
+      "options": [
+        "have",
+        "having",
+        "to have",
+        "has"
+      ],
+      "answer": "has",
+      "explanation": "这里练习现在的要求，主语 he 用 has to。"
+    },
+    "blank": {
+      "text": "You ____ have to print the ticket; a digital copy is fine.",
+      "translation": "你不必打印车票，电子版就可以。",
+      "answers": [
+        "do not",
+        "don't"
+      ],
+      "hint": "填 2 词，或对应缩写：do 的现在时否定形式。",
+      "explanation": "do not have to 表示“不必”；这里电子票就可以，不是禁止打印。"
+    }
+  },
+  {
+    "id": "comparatives",
+    "title": "比较级",
+    "group": "表达",
+    "rule": "比较两者常用比较级加 than。短形容词通常加 er；较长的词常用 more 加原词；good 的比较级是 better。",
+    "example": {
+      "text": "This route is shorter than the other one.",
+      "translation": "这条路线比另一条短。"
+    },
+    "choice": {
+      "text": "This bag is ____ than mine.",
+      "translation": "这个包比我的重。",
+      "options": [
+        "heavier",
+        "heavy",
+        "heaviest",
+        "more heavier"
+      ],
+      "answer": "heavier",
+      "explanation": "比较两个包用 heavier；heavy 变 y 为 i 再加 er。"
+    },
+    "blank": {
+      "text": "The new version is ____ than the old one.",
+      "translation": "新版本比旧版本好。",
+      "answers": [
+        "better"
+      ],
+      "hint": "填 1 词：good 的比较级。",
+      "explanation": "good 的不规则比较级是 better。"
+    }
+  },
+  {
+    "id": "superlatives",
+    "title": "最高级",
+    "group": "表达",
+    "rule": "在三个或更多对象中说“最……”常用最高级。短词通常加 est，长词常用 most 加原词，前面通常有 the。",
+    "example": {
+      "text": "This is the quietest room in the hotel.",
+      "translation": "这是酒店里最安静的房间。"
+    },
+    "choice": {
+      "text": "Of these five routes, this one is the ____.",
+      "translation": "这五条路线中，这一条最短。",
+      "options": [
+        "short",
+        "shortest",
+        "shorter",
+        "more short"
+      ],
+      "answer": "shortest",
+      "explanation": "在五条路线中选最短的一条，用最高级 shortest。"
+    },
+    "blank": {
+      "text": "This is the ____ expensive hotel in the area.",
+      "translation": "这是这一带最贵的酒店。",
+      "answers": [
+        "most"
+      ],
+      "hint": "填 1 词：完成 expensive 的最高级结构。",
+      "explanation": "expensive 的最高级是 most expensive，所以空里填 most。"
+    }
+  },
+  {
+    "id": "adverbs",
+    "title": "形容词与方式副词",
+    "group": "表达",
+    "rule": "形容词说明人或物是什么样；方式副词说明动作怎么做，常由形容词加 ly 构成。比如 careful 变 carefully；good 对应 well。",
+    "example": {
+      "text": "Please speak slowly.",
+      "translation": "请说慢一点。"
+    },
+    "choice": {
+      "text": "Please read the instructions ____.",
+      "translation": "请仔细阅读说明。",
+      "options": [
+        "careful",
+        "carefulness",
+        "carefully",
+        "more careful"
+      ],
+      "answer": "carefully",
+      "explanation": "这里说明 read 的方式，用副词 carefully。"
+    },
+    "blank": {
+      "text": "She speaks English ____.",
+      "translation": "她英语说得很好。",
+      "answers": [
+        "well"
+      ],
+      "hint": "填 1 词：good 对应的方式副词。",
+      "explanation": "修饰 speaks 用方式副词 well，而不是形容词 good。"
+    }
+  },
+  {
+    "id": "gerunds",
+    "title": "enjoy 后接动词 ing",
+    "group": "句型",
+    "rule": "enjoy、avoid、finish 等动词后接另一个动作时，通常用动词 ing 形式。不同动词的搭配需要分别记。",
+    "example": {
+      "text": "I enjoy walking around new cities.",
+      "translation": "我喜欢在陌生城市里到处走走。"
+    },
+    "choice": {
+      "text": "He enjoys ____ at home.",
+      "translation": "他喜欢在家做饭。",
+      "options": [
+        "cook",
+        "cooks",
+        "to cook",
+        "cooking"
+      ],
+      "answer": "cooking",
+      "explanation": "enjoy 后接动词 ing 形式，cook 变 cooking。"
+    },
+    "blank": {
+      "text": "We finished ____ the app before lunch.",
+      "translation": "我们在午饭前测完了应用。",
+      "answers": [
+        "testing"
+      ],
+      "hint": "填 1 词：test 的 ing 形式。",
+      "explanation": "finish 后接动词 ing 形式，所以填 testing。"
+    }
+  },
+  {
+    "id": "to-infinitive",
+    "title": "want 与 decide 后接 to do",
+    "group": "句型",
+    "rule": "want、decide、hope 等动词后接动作时，常用 to 加动词原形。不要把它们和 enjoy doing 混用。",
+    "example": {
+      "text": "I want to learn a few useful phrases.",
+      "translation": "我想学几句实用的表达。"
+    },
+    "choice": {
+      "text": "She decided ____ an earlier train.",
+      "translation": "她决定坐更早的一班火车。",
+      "options": [
+        "to take",
+        "take",
+        "takes",
+        "taking"
+      ],
+      "answer": "to take",
+      "explanation": "decide 后接 to 加动词原形，用 to take。"
+    },
+    "blank": {
+      "text": "We hope ____ you again soon.",
+      "translation": "我们希望很快再见到你。",
+      "answers": [
+        "to see"
+      ],
+      "hint": "填 2 词：see 的带 to 不定式。",
+      "explanation": "hope 后接 to see。"
+    }
+  },
+  {
+    "id": "purpose",
+    "title": "to do：说明目的",
+    "group": "句型",
+    "rule": "说明做一件事的目的，常用 to 加动词原形，意思是“为了……”。",
+    "example": {
+      "text": "I came here to meet a friend.",
+      "translation": "我来这里是为了见一个朋友。"
+    },
+    "choice": {
+      "text": "I use a checklist ____ mistakes.",
+      "translation": "我用检查清单来避免出错。",
+      "options": [
+        "avoid",
+        "to avoid",
+        "avoids",
+        "avoiding"
+      ],
+      "answer": "to avoid",
+      "explanation": "说明使用清单的目的，用 to avoid。"
+    },
+    "blank": {
+      "text": "She went to the station ____ a ticket.",
+      "translation": "她去车站买一张票。",
+      "answers": [
+        "to buy"
+      ],
+      "hint": "填 2 词：buy 的带 to 不定式，表示目的。",
+      "explanation": "买票是去车站的目的，所以用 to buy。"
+    }
+  },
+  {
+    "id": "first-conditional",
+    "title": "第一条件句：可能发生的未来",
+    "group": "句型",
+    "rule": "谈未来可能发生的情况，常用 if 加一般现在时，主句用 will 加动词原形。if 从句通常不用 will 来表示这种条件。",
+    "example": {
+      "text": "If it rains tomorrow, we will stay inside.",
+      "translation": "如果明天下雨，我们就待在室内。"
+    },
+    "choice": {
+      "text": "If the train ____ late, we will take a taxi.",
+      "translation": "如果火车晚点，我们就坐出租车。",
+      "options": [
+        "will be",
+        "being",
+        "is",
+        "be"
+      ],
+      "answer": "is",
+      "explanation": "这种未来条件的 if 从句用一般现在时，the train 对应 is。"
+    },
+    "blank": {
+      "text": "If she ____ early tomorrow, we will have breakfast together.",
+      "translation": "如果她明天到得早，我们就一起吃早餐。",
+      "answers": [
+        "arrives"
+      ],
+      "hint": "填 1 词：arrive 的一般现在时形式。",
+      "explanation": "if 从句用一般现在时，she 对应 arrives。"
+    }
+  },
+  {
+    "id": "second-conditional",
+    "title": "第二条件句：假设",
+    "group": "句型",
+    "rule": "想象现在或将来不太可能、与现实不同的情况，常用 if 加过去式，主句用 would 加动词原形。这里的过去式主要表达假设。",
+    "example": {
+      "text": "If I had more free time, I would travel more.",
+      "translation": "如果我有更多空闲时间，我会多去旅行。"
+    },
+    "choice": {
+      "text": "If I knew the answer, I ____ tell you.",
+      "translation": "如果我知道答案，我就会告诉你。",
+      "options": [
+        "will",
+        "am",
+        "have",
+        "would"
+      ],
+      "answer": "would",
+      "explanation": "knew 表示假设，主句配 would tell。"
+    },
+    "blank": {
+      "text": "If he ____ a car, he would drive us home.",
+      "translation": "如果他有车，他就会开车送我们回家。",
+      "answers": [
+        "had"
+      ],
+      "hint": "填 1 词：have 的过去式，用于第二条件句。",
+      "explanation": "假设他现在有车，if 从句用过去式 had。"
+    }
+  },
+  {
+    "id": "passive",
+    "title": "被动语态",
+    "group": "句型",
+    "rule": "突出“什么被做了”时，用 be 加过去分词。be 根据主语和时间变化；动作的过去分词保留。",
+    "example": {
+      "text": "The room is cleaned every morning.",
+      "translation": "这个房间每天早上都会被打扫。"
+    },
+    "choice": {
+      "text": "These tickets ____ checked at the gate every day.",
+      "translation": "这些票每天都会在闸口被检查。",
+      "options": [
+        "are",
+        "is",
+        "has",
+        "have"
+      ],
+      "answer": "are",
+      "explanation": "tickets 是复数，这里是一般现在时被动语态，用 are checked。"
+    },
+    "blank": {
+      "text": "The window ____ by a ball yesterday.",
+      "translation": "昨天，一只球把这扇窗户打碎了。",
+      "answers": [
+        "was broken"
+      ],
+      "hint": "填 2 词：break 的一般过去时被动形式。",
+      "explanation": "the window 是单数，yesterday 表示过去，用 was；break 的过去分词是 broken。"
+    }
+  },
+  {
+    "id": "relative-clauses",
+    "title": "关系从句：who、which、that",
+    "group": "句型",
+    "rule": "给前面的名词补充必要信息，可以用关系从句。指人常用 who 或 that；指物常用 which 或 that。关系词在从句里作主语时不能省略。",
+    "example": {
+      "text": "The cafe that opens early is near the station.",
+      "translation": "那家开门很早的咖啡馆在车站附近。"
+    },
+    "choice": {
+      "text": "The person ____ helped me works at the hotel.",
+      "translation": "帮过我的那个人在酒店工作。",
+      "options": [
+        "which",
+        "who",
+        "where",
+        "when"
+      ],
+      "answer": "who",
+      "explanation": "前面是 person，空处又是 helped 的主语，指人用 who。"
+    },
+    "blank": {
+      "text": "This is the app ____ saves my notes automatically.",
+      "translation": "这是那个会自动保存我的笔记的应用。",
+      "answers": [
+        "which",
+        "that"
+      ],
+      "hint": "填 1 词：指物、在从句里作主语的关系代词。",
+      "explanation": "app 是物，可以用 which 或 that；空处作 saves 的主语，不能省略。"
+    }
+  },
+  {
+    "id": "reported-speech",
+    "title": "间接引语：转述已说过的话",
+    "group": "句型",
+    "rule": "用过去时转述，并明确把时间视角移到过去时，原话里的 am、is、are 常改成 was、were。若内容现在仍成立，有时可以保留现在时；本关明确练习时态后移。",
+    "example": {
+      "text": "He said that he was tired after the trip.",
+      "translation": "他说他旅行结束后很累。"
+    },
+    "choice": {
+      "text": "Mia said that she ____ tired that evening.",
+      "translation": "米娅说她那天晚上很累。",
+      "options": [
+        "were",
+        "be",
+        "was",
+        "being"
+      ],
+      "answer": "was",
+      "explanation": "转述的是那天晚上的状态，she 用过去式 was。"
+    },
+    "blank": {
+      "text": "Leo said that he ____ busy the day before.",
+      "translation": "利奥说他前一天很忙。",
+      "answers": [
+        "had been",
+        "'d been"
+      ],
+      "hint": "填 2 词，或对应缩写：将原话 I was busy yesterday 中的 was 后移一个时态。",
+      "explanation": "原话的 was 是一般过去时，按本题要求后移为过去完成时 had been。"
+    }
+  },
+  {
+    "id": "indirect-questions",
+    "title": "礼貌问句里的语序",
+    "group": "句型",
+    "rule": "Can you tell me、Do you know 等后面的间接问句用陈述语序：疑问词加主语，再加动词。不要在后半句再做一次倒装。",
+    "example": {
+      "text": "Can you tell me where the station is?",
+      "translation": "你能告诉我车站在哪里吗？"
+    },
+    "choice": {
+      "text": "Do you know where ____?",
+      "translation": "你知道最近的银行在哪里吗？",
+      "options": [
+        "is the nearest bank",
+        "does the nearest bank",
+        "the nearest bank does",
+        "the nearest bank is"
+      ],
+      "answer": "the nearest bank is",
+      "explanation": "where 后面用主语 the nearest bank 加动词 is 的陈述语序。"
+    },
+    "blank": {
+      "text": "Could you tell me what time ____?",
+      "translation": "你能告诉我公交车几点到吗？",
+      "answers": [
+        "the bus arrives"
+      ],
+      "hint": "填 3 词：把 the bus / arrives 按间接问句的语序排列。",
+      "explanation": "间接问句用陈述语序，填 the bus arrives。"
+    }
+  }
+]

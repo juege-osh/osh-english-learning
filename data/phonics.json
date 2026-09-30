@@ -1,0 +1,838 @@
+[
+  {
+    "id": "p01",
+    "symbol": "iː",
+    "group": "长元音",
+    "tip": "嘴角稍向两侧展开，舌前部抬高，声音拉长。",
+    "words": [
+      {
+        "text": "see",
+        "ipa": "siː"
+      },
+      {
+        "text": "tea",
+        "ipa": "tiː"
+      }
+    ],
+    "audio": "/audio/phonics/p01.ogg",
+    "note": "这是 IPA 的 [i] 参考音；英式 /iː/ 还要注意长音时值。",
+    "questionHint": "听完整的元音；口型滑动的音也作为一个音来选。"
+  },
+  {
+    "id": "p02",
+    "symbol": "ɪ",
+    "group": "短元音",
+    "tip": "舌前部抬高但放松，比 /iː/ 更短、更松。",
+    "words": [
+      {
+        "text": "sit",
+        "ipa": "sɪt"
+      },
+      {
+        "text": "fish",
+        "ipa": "fɪʃ"
+      }
+    ],
+    "audio": "/audio/phonics/p02.ogg",
+    "note": "别把 sit 和 seat 读成一样。",
+    "questionHint": "听完整的元音；口型滑动的音也作为一个音来选。"
+  },
+  {
+    "id": "p03",
+    "symbol": "e",
+    "group": "短元音",
+    "tip": "嘴巴半开，舌前部稍抬，短促发声。",
+    "words": [
+      {
+        "text": "bed",
+        "ipa": "bed"
+      },
+      {
+        "text": "ten",
+        "ipa": "ten"
+      }
+    ],
+    "audio": "/audio/phonics/p03.ogg",
+    "note": "英式教材常写 /e/，本参考录音的精细记音为 [ɛ]。",
+    "questionHint": "听完整的元音；口型滑动的音也作为一个音来选。"
+  },
+  {
+    "id": "p04",
+    "symbol": "æ",
+    "group": "短元音",
+    "tip": "嘴张得比 /e/ 大，舌头靠前，短促发声。",
+    "words": [
+      {
+        "text": "cat",
+        "ipa": "kæt"
+      },
+      {
+        "text": "bag",
+        "ipa": "bæɡ"
+      }
+    ],
+    "audio": "/audio/phonics/p04.ogg",
+    "note": "别把 cat 读成 cut。",
+    "questionHint": "听完整的元音；口型滑动的音也作为一个音来选。"
+  },
+  {
+    "id": "p05",
+    "symbol": "ɑː",
+    "group": "长元音",
+    "tip": "嘴巴张开，舌身靠后，嘴唇不收圆，声音拉长。",
+    "words": [
+      {
+        "text": "car",
+        "ipa": "kɑː"
+      },
+      {
+        "text": "park",
+        "ipa": "pɑːk"
+      }
+    ],
+    "audio": "/audio/phonics/p05.ogg",
+    "note": "本参考音为 [ɑ]；英式 car 的词尾 r 通常不读，美式会读。",
+    "questionHint": "听完整的元音；口型滑动的音也作为一个音来选。"
+  },
+  {
+    "id": "p06",
+    "symbol": "ɒ",
+    "group": "短元音",
+    "tip": "嘴巴张开，嘴唇略收圆，发一个短音。",
+    "words": [
+      {
+        "text": "hot",
+        "ipa": "hɒt"
+      },
+      {
+        "text": "dog",
+        "ipa": "dɒɡ"
+      }
+    ],
+    "audio": "/audio/phonics/p06.ogg",
+    "note": "美式 hot 常用 /ɑː/ 一类的音，这里练英式 /ɒ/。",
+    "questionHint": "听完整的元音；口型滑动的音也作为一个音来选。"
+  },
+  {
+    "id": "p07",
+    "symbol": "ɔː",
+    "group": "长元音",
+    "tip": "嘴唇收圆，舌身靠后，声音拉长。",
+    "words": [
+      {
+        "text": "law",
+        "ipa": "lɔː"
+      },
+      {
+        "text": "talk",
+        "ipa": "tɔːk"
+      }
+    ],
+    "audio": "/audio/phonics/p07.ogg",
+    "note": "本参考录音为 [ɔ]；/ɔː/ 在词里通常读得较长。",
+    "questionHint": "听完整的元音；口型滑动的音也作为一个音来选。"
+  },
+  {
+    "id": "p08",
+    "symbol": "ʊ",
+    "group": "短元音",
+    "tip": "嘴唇稍圆，舌后部抬起但放松，声音短。",
+    "words": [
+      {
+        "text": "book",
+        "ipa": "bʊk"
+      },
+      {
+        "text": "good",
+        "ipa": "ɡʊd"
+      }
+    ],
+    "audio": "/audio/phonics/p08.ogg",
+    "note": "book 的元音别读成 boot。",
+    "questionHint": "听完整的元音；口型滑动的音也作为一个音来选。"
+  },
+  {
+    "id": "p09",
+    "symbol": "uː",
+    "group": "长元音",
+    "tip": "嘴唇收圆，舌后部抬高，声音拉长。",
+    "words": [
+      {
+        "text": "food",
+        "ipa": "fuːd"
+      },
+      {
+        "text": "blue",
+        "ipa": "bluː"
+      }
+    ],
+    "audio": "/audio/phonics/p09.ogg",
+    "note": "本参考录音为 [u]；英式 /uː/ 在不同口音里舌位会有差异。",
+    "questionHint": "听完整的元音；口型滑动的音也作为一个音来选。"
+  },
+  {
+    "id": "p10",
+    "symbol": "ʌ",
+    "group": "短元音",
+    "tip": "嘴唇放松，不收圆，嘴巴稍张，声音短。",
+    "words": [
+      {
+        "text": "cup",
+        "ipa": "kʌp"
+      },
+      {
+        "text": "bus",
+        "ipa": "bʌs"
+      }
+    ],
+    "audio": "/audio/phonics/p10.ogg",
+    "note": "不要把 cup 的短音拖成 car 的长音。",
+    "questionHint": "听完整的元音；口型滑动的音也作为一个音来选。"
+  },
+  {
+    "id": "p11",
+    "symbol": "ɜː",
+    "group": "长元音",
+    "tip": "嘴唇放松，舌头居中，保持口型把声音拉长。",
+    "words": [
+      {
+        "text": "bird",
+        "ipa": "bɜːd"
+      },
+      {
+        "text": "work",
+        "ipa": "wɜːk"
+      }
+    ],
+    "audio": "/audio/phonics/p11.ogg",
+    "note": "本参考录音为 [ɜ]；美式 bird 常用带卷舌的 /ɝː/。",
+    "questionHint": "听完整的元音；口型滑动的音也作为一个音来选。"
+  },
+  {
+    "id": "p12",
+    "symbol": "ə",
+    "group": "弱读元音",
+    "tip": "嘴巴和舌头都放松，轻轻发一个很短的中间音。",
+    "words": [
+      {
+        "text": "about",
+        "ipa": "əˈbaʊt"
+      },
+      {
+        "text": "sofa",
+        "ipa": "ˈsəʊfə"
+      }
+    ],
+    "audio": "/audio/phonics/p12.ogg",
+    "note": "这是弱读的 a，本身只有 /ə/；通常出现在非重读音节。",
+    "questionHint": "听完整的元音；口型滑动的音也作为一个音来选。"
+  },
+  {
+    "id": "p13",
+    "symbol": "eɪ",
+    "group": "双元音",
+    "tip": "从较开的前元音滑向 /ɪ/，口型逐渐变小，一口气完成。",
+    "words": [
+      {
+        "text": "day",
+        "ipa": "deɪ"
+      },
+      {
+        "text": "name",
+        "ipa": "neɪm"
+      }
+    ],
+    "audio": "/audio/phonics/p13.ogg",
+    "note": "录音是重读 a，本身只有 /eɪ/。不要拆成两个独立音节。",
+    "questionHint": "听完整的元音；口型滑动的音也作为一个音来选。"
+  },
+  {
+    "id": "p14",
+    "symbol": "aɪ",
+    "group": "双元音",
+    "tip": "从张开的口型滑向 /ɪ/，先开后收，一口气完成。",
+    "words": [
+      {
+        "text": "time",
+        "ipa": "taɪm"
+      },
+      {
+        "text": "my",
+        "ipa": "maɪ"
+      }
+    ],
+    "audio": "/audio/phonics/p14.ogg",
+    "note": "录音是英式 I，本身只有 /aɪ/。",
+    "questionHint": "听完整的元音；口型滑动的音也作为一个音来选。"
+  },
+  {
+    "id": "p15",
+    "symbol": "ɔɪ",
+    "group": "双元音",
+    "tip": "从圆唇的 /ɔ/ 滑向 /ɪ/，嘴唇由圆转松。",
+    "words": [
+      {
+        "text": "boy",
+        "ipa": "bɔɪ"
+      },
+      {
+        "text": "choice",
+        "ipa": "tʃɔɪs"
+      }
+    ],
+    "audio": "/audio/phonics/p15.ogg",
+    "note": "录音是英式 oi，本身只有 /ɔɪ/。",
+    "questionHint": "听完整的元音；口型滑动的音也作为一个音来选。"
+  },
+  {
+    "id": "p16",
+    "symbol": "əʊ",
+    "group": "双元音",
+    "tip": "从放松的中间口型滑向 /ʊ/，嘴唇逐渐收圆。",
+    "words": [
+      {
+        "text": "go",
+        "ipa": "ɡəʊ"
+      },
+      {
+        "text": "home",
+        "ipa": "həʊm"
+      }
+    ],
+    "audio": "/audio/phonics/p16.ogg",
+    "note": "录音是英式 oh，本身只有 /əʊ/；美式常标作 /oʊ/。",
+    "questionHint": "听完整的元音；口型滑动的音也作为一个音来选。"
+  },
+  {
+    "id": "p17",
+    "symbol": "aʊ",
+    "group": "双元音",
+    "tip": "嘴巴先张开，再向 /ʊ/ 滑动，最后嘴唇收圆。",
+    "words": [
+      {
+        "text": "now",
+        "ipa": "naʊ"
+      },
+      {
+        "text": "house",
+        "ipa": "haʊs"
+      }
+    ],
+    "audio": "/audio/phonics/p17.ogg",
+    "note": "连着滑过去，不要在中间停一下。",
+    "questionHint": "听完整的元音；口型滑动的音也作为一个音来选。"
+  },
+  {
+    "id": "p18",
+    "symbol": "ɪə",
+    "group": "双元音",
+    "tip": "从 /ɪ/ 滑向放松的 /ə/，嘴巴稍稍打开。",
+    "words": [
+      {
+        "text": "ear",
+        "ipa": "ɪə"
+      },
+      {
+        "text": "near",
+        "ipa": "nɪə"
+      }
+    ],
+    "audio": "/audio/phonics/p18.ogg",
+    "note": "录音是非卷舌英式 ear，本身只有 /ɪə/；部分现代英式口音会读成长元音。",
+    "questionHint": "听完整的元音；口型滑动的音也作为一个音来选。"
+  },
+  {
+    "id": "p19",
+    "symbol": "eə",
+    "group": "双元音",
+    "tip": "从较开的前元音滑向 /ə/，嘴唇保持放松。",
+    "words": [
+      {
+        "text": "hair",
+        "ipa": "heə"
+      },
+      {
+        "text": "chair",
+        "ipa": "tʃeə"
+      }
+    ],
+    "audio": "/audio/phonics/p19.ogg",
+    "note": "传统教材常写 /eə/，精细记音也写 [ɛə]；部分现代英式口音会读成长元音。",
+    "questionHint": "听完整的元音；口型滑动的音也作为一个音来选。"
+  },
+  {
+    "id": "p20",
+    "symbol": "ʊə",
+    "group": "双元音",
+    "tip": "从稍圆的 /ʊ/ 滑向放松的 /ə/，嘴唇逐渐放开。",
+    "words": [
+      {
+        "text": "tour",
+        "ipa": "tʊə"
+      },
+      {
+        "text": "cure",
+        "ipa": "kjʊə"
+      }
+    ],
+    "audio": "/audio/phonics/p20.ogg",
+    "note": "这里练传统英式 /ʊə/；tour、cure 在一些现代口音里改用 /ɔː/。",
+    "questionHint": "听完整的元音；口型滑动的音也作为一个音来选。"
+  },
+  {
+    "id": "p21",
+    "symbol": "p",
+    "group": "清辅音",
+    "tip": "双唇闭合，再把气流短促放出，声带不振动。",
+    "words": [
+      {
+        "text": "pen",
+        "ipa": "pen"
+      },
+      {
+        "text": "happy",
+        "ipa": "ˈhæpi"
+      }
+    ],
+    "audio": "/audio/phonics/p21.ogg",
+    "note": "不要在后面加一个完整的“呃”音。 参考示范带辅助元音，请辨认其中的辅音。",
+    "questionHint": "听示范中的辅音；旁边的元音只用来帮助听清。"
+  },
+  {
+    "id": "p22",
+    "symbol": "b",
+    "group": "浊辅音",
+    "tip": "双唇闭合再放开，发声时声带振动。",
+    "words": [
+      {
+        "text": "bag",
+        "ipa": "bæɡ"
+      },
+      {
+        "text": "baby",
+        "ipa": "ˈbeɪbi"
+      }
+    ],
+    "audio": "/audio/phonics/p22.ogg",
+    "note": "和 /p/ 口型接近，区别是声带振动。 参考示范带辅助元音，请辨认其中的辅音。",
+    "questionHint": "听示范中的辅音；旁边的元音只用来帮助听清。"
+  },
+  {
+    "id": "p23",
+    "symbol": "t",
+    "group": "清辅音",
+    "tip": "舌尖抵上齿龈，随后放开气流，声带不振动。",
+    "words": [
+      {
+        "text": "tea",
+        "ipa": "tiː"
+      },
+      {
+        "text": "time",
+        "ipa": "taɪm"
+      }
+    ],
+    "audio": "/audio/phonics/p23.ogg",
+    "note": "舌尖接触上门牙后面的凸起，不是咬住舌尖。 参考示范带辅助元音，请辨认其中的辅音。",
+    "questionHint": "听示范中的辅音；旁边的元音只用来帮助听清。"
+  },
+  {
+    "id": "p24",
+    "symbol": "d",
+    "group": "浊辅音",
+    "tip": "舌尖抵上齿龈后放开，发声时声带振动。",
+    "words": [
+      {
+        "text": "day",
+        "ipa": "deɪ"
+      },
+      {
+        "text": "dog",
+        "ipa": "dɒɡ"
+      }
+    ],
+    "audio": "/audio/phonics/p24.ogg",
+    "note": "和 /t/ 比较，摸摸喉咙感受振动。 参考示范带辅助元音，请辨认其中的辅音。",
+    "questionHint": "听示范中的辅音；旁边的元音只用来帮助听清。"
+  },
+  {
+    "id": "p25",
+    "symbol": "k",
+    "group": "清辅音",
+    "tip": "舌后部抵软腭，再短促放开，声带不振动。",
+    "words": [
+      {
+        "text": "cat",
+        "ipa": "kæt"
+      },
+      {
+        "text": "key",
+        "ipa": "kiː"
+      }
+    ],
+    "audio": "/audio/phonics/p25.ogg",
+    "note": "发音位置在口腔后部。 参考示范带辅助元音，请辨认其中的辅音。",
+    "questionHint": "听示范中的辅音；旁边的元音只用来帮助听清。"
+  },
+  {
+    "id": "p26",
+    "symbol": "ɡ",
+    "group": "浊辅音",
+    "tip": "舌后部抵软腭再放开，同时让声带振动。",
+    "words": [
+      {
+        "text": "go",
+        "ipa": "ɡəʊ"
+      },
+      {
+        "text": "good",
+        "ipa": "ɡʊd"
+      }
+    ],
+    "audio": "/audio/phonics/p26.ogg",
+    "note": "印刷体 g 和音标 ɡ 都用来表示这个音。 参考示范带辅助元音，请辨认其中的辅音。",
+    "questionHint": "听示范中的辅音；旁边的元音只用来帮助听清。"
+  },
+  {
+    "id": "p27",
+    "symbol": "f",
+    "group": "清辅音",
+    "tip": "上牙轻触下唇，让气流从缝隙通过，声带不振动。",
+    "words": [
+      {
+        "text": "fish",
+        "ipa": "fɪʃ"
+      },
+      {
+        "text": "food",
+        "ipa": "fuːd"
+      }
+    ],
+    "audio": "/audio/phonics/p27.ogg",
+    "note": "不要把下唇完全咬紧。 参考示范带辅助元音，请辨认其中的辅音。",
+    "questionHint": "听示范中的辅音；旁边的元音只用来帮助听清。"
+  },
+  {
+    "id": "p28",
+    "symbol": "v",
+    "group": "浊辅音",
+    "tip": "上牙轻触下唇，气流擦过时让声带振动。",
+    "words": [
+      {
+        "text": "very",
+        "ipa": "ˈveri"
+      },
+      {
+        "text": "save",
+        "ipa": "seɪv"
+      }
+    ],
+    "audio": "/audio/phonics/p28.ogg",
+    "note": "不要读成圆唇的 /w/；/v/ 要让上牙轻触下唇。示范带辅助元音，请辨认其中的辅音。",
+    "questionHint": "听示范中的辅音；旁边的元音只用来帮助听清。"
+  },
+  {
+    "id": "p29",
+    "symbol": "θ",
+    "group": "清辅音",
+    "tip": "舌尖轻触上下牙之间，吹气，声带不振动。",
+    "words": [
+      {
+        "text": "think",
+        "ipa": "θɪŋk"
+      },
+      {
+        "text": "both",
+        "ipa": "bəʊθ"
+      }
+    ],
+    "audio": "/audio/phonics/p29.ogg",
+    "note": "舌尖轻轻露出一点，别读成 /s/ 或 /t/。 参考示范带辅助元音，请辨认其中的辅音。",
+    "questionHint": "听示范中的辅音；旁边的元音只用来帮助听清。"
+  },
+  {
+    "id": "p30",
+    "symbol": "ð",
+    "group": "浊辅音",
+    "tip": "舌尖轻触上下牙之间，发声时声带振动。",
+    "words": [
+      {
+        "text": "this",
+        "ipa": "ðɪs"
+      },
+      {
+        "text": "mother",
+        "ipa": "ˈmʌðə"
+      }
+    ],
+    "audio": "/audio/phonics/p30.ogg",
+    "note": "和 /θ/ 口型相同，区别是声带振动。 参考示范带辅助元音，请辨认其中的辅音。",
+    "questionHint": "听示范中的辅音；旁边的元音只用来帮助听清。"
+  },
+  {
+    "id": "p31",
+    "symbol": "s",
+    "group": "清辅音",
+    "tip": "舌尖靠近上齿龈，牙齿稍合，让气流擦过。",
+    "words": [
+      {
+        "text": "see",
+        "ipa": "siː"
+      },
+      {
+        "text": "bus",
+        "ipa": "bʌs"
+      }
+    ],
+    "audio": "/audio/phonics/p31.ogg",
+    "note": "声音像持续的气流，不加元音。 参考示范带辅助元音，请辨认其中的辅音。",
+    "questionHint": "听示范中的辅音；旁边的元音只用来帮助听清。"
+  },
+  {
+    "id": "p32",
+    "symbol": "z",
+    "group": "浊辅音",
+    "tip": "保持 /s/ 的口型，同时让声带振动。",
+    "words": [
+      {
+        "text": "zoo",
+        "ipa": "zuː"
+      },
+      {
+        "text": "easy",
+        "ipa": "ˈiːzi"
+      }
+    ],
+    "audio": "/audio/phonics/p32.ogg",
+    "note": "别在词尾把 /z/ 全读成 /s/。 参考示范带辅助元音，请辨认其中的辅音。",
+    "questionHint": "听示范中的辅音；旁边的元音只用来帮助听清。"
+  },
+  {
+    "id": "p33",
+    "symbol": "ʃ",
+    "group": "清辅音",
+    "tip": "舌前部抬起，嘴唇稍向前，吹出摩擦音。",
+    "words": [
+      {
+        "text": "she",
+        "ipa": "ʃiː"
+      },
+      {
+        "text": "fish",
+        "ipa": "fɪʃ"
+      }
+    ],
+    "audio": "/audio/phonics/p33.ogg",
+    "note": "比 /s/ 的发音位置更靠后。 参考示范带辅助元音，请辨认其中的辅音。",
+    "questionHint": "听示范中的辅音；旁边的元音只用来帮助听清。"
+  },
+  {
+    "id": "p34",
+    "symbol": "ʒ",
+    "group": "浊辅音",
+    "tip": "保持 /ʃ/ 的口型，发声时声带振动。",
+    "words": [
+      {
+        "text": "vision",
+        "ipa": "ˈvɪʒən"
+      },
+      {
+        "text": "usual",
+        "ipa": "ˈjuːʒuəl"
+      }
+    ],
+    "audio": "/audio/phonics/p34.ogg",
+    "note": "常出现在词中，不要读成先堵后放的 /dʒ/。 参考示范带辅助元音，请辨认其中的辅音。",
+    "questionHint": "听示范中的辅音；旁边的元音只用来帮助听清。"
+  },
+  {
+    "id": "p35",
+    "symbol": "h",
+    "group": "清辅音",
+    "tip": "嘴巴放松，轻轻呼出气流，声带不振动。",
+    "words": [
+      {
+        "text": "hat",
+        "ipa": "hæt"
+      },
+      {
+        "text": "home",
+        "ipa": "həʊm"
+      }
+    ],
+    "audio": "/audio/phonics/p35.ogg",
+    "note": "不要把喉咙挤紧。 参考示范带辅助元音，请辨认其中的辅音。",
+    "questionHint": "听示范中的辅音；旁边的元音只用来帮助听清。"
+  },
+  {
+    "id": "p36",
+    "symbol": "m",
+    "group": "鼻音",
+    "tip": "双唇闭合，声带振动，声音从鼻腔出来。",
+    "words": [
+      {
+        "text": "my",
+        "ipa": "maɪ"
+      },
+      {
+        "text": "team",
+        "ipa": "tiːm"
+      }
+    ],
+    "audio": "/audio/phonics/p36.ogg",
+    "note": "发音时嘴唇是合上的。 参考示范带辅助元音，请辨认其中的辅音。",
+    "questionHint": "听示范中的辅音；旁边的元音只用来帮助听清。"
+  },
+  {
+    "id": "p37",
+    "symbol": "n",
+    "group": "鼻音",
+    "tip": "舌尖抵上齿龈，声带振动，气流从鼻腔通过。",
+    "words": [
+      {
+        "text": "no",
+        "ipa": "nəʊ"
+      },
+      {
+        "text": "ten",
+        "ipa": "ten"
+      }
+    ],
+    "audio": "/audio/phonics/p37.ogg",
+    "note": "和 /m/ 比较，换的是舌头和嘴唇的位置。 参考示范带辅助元音，请辨认其中的辅音。",
+    "questionHint": "听示范中的辅音；旁边的元音只用来帮助听清。"
+  },
+  {
+    "id": "p38",
+    "symbol": "ŋ",
+    "group": "鼻音",
+    "tip": "舌后部抬到软腭，声带振动，声音从鼻腔出来。",
+    "words": [
+      {
+        "text": "sing",
+        "ipa": "sɪŋ"
+      },
+      {
+        "text": "long",
+        "ipa": "lɒŋ"
+      }
+    ],
+    "audio": "/audio/phonics/p38.ogg",
+    "note": "sing 的词尾通常没有另一个 /ɡ/ 音。 参考示范带辅助元音，请辨认其中的辅音。",
+    "questionHint": "听示范中的辅音；旁边的元音只用来帮助听清。"
+  },
+  {
+    "id": "p39",
+    "symbol": "l",
+    "group": "近音",
+    "tip": "舌尖轻抵上齿龈，让气流从舌头两侧通过。",
+    "words": [
+      {
+        "text": "light",
+        "ipa": "laɪt"
+      },
+      {
+        "text": "love",
+        "ipa": "lʌv"
+      }
+    ],
+    "audio": "/audio/phonics/p39.ogg",
+    "note": "词尾的 l 往往更暗；先练词首这个口型。 参考示范带辅助元音，请辨认其中的辅音。",
+    "questionHint": "听示范中的辅音；旁边的元音只用来帮助听清。"
+  },
+  {
+    "id": "p40",
+    "symbol": "r",
+    "group": "近音",
+    "tip": "舌尖抬起但不碰上腭，嘴唇略向前，声带振动。",
+    "words": [
+      {
+        "text": "red",
+        "ipa": "red"
+      },
+      {
+        "text": "right",
+        "ipa": "raɪt"
+      }
+    ],
+    "audio": "/audio/phonics/p40.ogg",
+    "note": "英式教学常写 /r/，实际常用 [ɹ]；不是颤舌音。 参考示范带辅助元音，请辨认其中的辅音。",
+    "questionHint": "听示范中的辅音；旁边的元音只用来帮助听清。"
+  },
+  {
+    "id": "p41",
+    "symbol": "j",
+    "group": "近音",
+    "tip": "舌前部抬高接近硬腭，再顺着滑向后面的元音。",
+    "words": [
+      {
+        "text": "yes",
+        "ipa": "jes"
+      },
+      {
+        "text": "you",
+        "ipa": "juː"
+      }
+    ],
+    "audio": "/audio/phonics/p41.ogg",
+    "note": "这是 yes 开头的音，不是字母 j 的名称。 参考示范带辅助元音，请辨认其中的辅音。",
+    "questionHint": "听示范中的辅音；旁边的元音只用来帮助听清。"
+  },
+  {
+    "id": "p42",
+    "symbol": "w",
+    "group": "近音",
+    "tip": "嘴唇先收圆，舌后部抬起，再迅速滑向元音。",
+    "words": [
+      {
+        "text": "we",
+        "ipa": "wiː"
+      },
+      {
+        "text": "water",
+        "ipa": "ˈwɔːtə"
+      }
+    ],
+    "audio": "/audio/phonics/p42.ogg",
+    "note": "上牙不接触下唇，和 /v/ 分开。 参考示范带辅助元音，请辨认其中的辅音。",
+    "questionHint": "听示范中的辅音；旁边的元音只用来帮助听清。"
+  },
+  {
+    "id": "p43",
+    "symbol": "tʃ",
+    "group": "清辅音",
+    "tip": "舌头先挡住气流，再放开成 /ʃ/ 的摩擦音。",
+    "words": [
+      {
+        "text": "chair",
+        "ipa": "tʃeə"
+      },
+      {
+        "text": "cheap",
+        "ipa": "tʃiːp"
+      }
+    ],
+    "audio": "/audio/phonics/p43.ogg",
+    "note": "这是一个紧连的破擦音，别拆成两个音节。 参考示范带辅助元音，请辨认其中的辅音。",
+    "questionHint": "听示范中的辅音；旁边的元音只用来帮助听清。"
+  },
+  {
+    "id": "p44",
+    "symbol": "dʒ",
+    "group": "浊辅音",
+    "tip": "舌头先挡住气流，再放开成 /ʒ/，声带振动。",
+    "words": [
+      {
+        "text": "job",
+        "ipa": "dʒɒb"
+      },
+      {
+        "text": "juice",
+        "ipa": "dʒuːs"
+      }
+    ],
+    "audio": "/audio/phonics/p44.ogg",
+    "note": "和 /tʃ/ 比较，区别是声带振动。 参考示范带辅助元音，请辨认其中的辅音。",
+    "questionHint": "听示范中的辅音；旁边的元音只用来帮助听清。"
+  }
+]
