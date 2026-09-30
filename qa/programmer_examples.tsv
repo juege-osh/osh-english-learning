@@ -399,3 +399,286 @@ accessibility	Have we checked keyboard accessibility?	我们检查过键盘操�
 navigation	The navigation should show which section is active.	导航应该显示当前所在的栏目。	Can users complete the navigation with a keyboard?	用户能用键盘完成导航操作吗？
 layout	The layout breaks on a narrow screen.	这个布局在窄屏上会出问题。	Can we keep the buttons visible without changing the layout completely?	我们能在不彻底改变布局的情况下让按钮保持可见吗？
 widget	This widget updates when the selected date changes.	选择的日期变化时，这个组件会更新。	Does the widget have a useful label for screen readers?	这个组件有供屏幕阅读器使用的清晰标签吗？
+component	This component handles the login form.	这个组件负责登录表单。	Can we reuse the component on mobile?	移动端能复用这个组件吗？
+button	The submit button stays disabled during the request.	请求期间提交按钮保持禁用。	Give this button a clear label.	给这个按钮加个明确的标签。
+form	The form keeps your answers after a failed request.	请求失败后，表单会保留你的答案。	Which form field is required?	哪个表单字段是必填的？
+input	Trim the input before checking its length.	检查长度前先去掉输入两端的空白。	This input accepts a date, not a timestamp.	这里的输入应是日期，而不是时间戳。
+output	The output includes a warning about missing files.	输出包含一条文件缺失警告。	Save the output so we can compare runs.	保存输出，方便比较不同运行结果。
+panel	Open the network panel and repeat the request.	打开网络面板，再发一次请求。	The settings panel covers the save button.	设置面板挡住了保存按钮。
+menu	The menu closes when I press Escape.	按下退出键后，菜单会关闭。	Add a sign-out option to the menu.	在菜单里加一个退出登录选项。
+tab	The error appears only in the second tab.	错误只出现在第二个标签页。	Can users reach this tab with the keyboard?	用户能用键盘切到这个标签页吗？
+responsive	The responsive layout works on a narrow screen.	响应式布局在窄屏上能正常显示。	We need a responsive version of this table.	这张表需要做响应式适配。
+mobile	The mobile view hides the extra columns.	移动端视图隐藏了额外的列。	Please test the mobile keyboard before release.	发布前请测试移动端键盘。
+desktop	The desktop app can work without a browser.	桌面应用不需要浏览器就能运行。	This shortcut is available on desktop only.	这个快捷键仅在桌面端可用。
+tablet	The tablet shows the menu in two columns.	平板上菜单分成两列显示。	Rotate the tablet and check the chart again.	转动平板，再检查一下图表。
+touch	The touch target is too small for my thumb.	触摸区域太小，拇指不好点。	Use touch input to test the drawing tool.	用触摸输入测试绘图工具。
+keyboard	Keep the dialog usable with a keyboard.	确保用键盘也能操作对话框。	The keyboard shortcut conflicts with the browser.	这个键盘快捷键与浏览器冲突。
+mouse	The tooltip appears when I move the mouse.	移动鼠标后，提示会出现。	Can I finish this task without a mouse?	不用鼠标能完成这个操作吗？
+screen	The message goes off the edge of the screen.	提示消息超出了屏幕边缘。	Share your screen so I can see the error.	共享一下屏幕，让我看看错误。
+pixel	Move the icon one pixel to the right.	把图标向右移一个像素。	The screenshot differs by a single pixel.	两张截图只差一个像素。
+icon	This icon needs a text label for accessibility.	这个图标需要无障碍文本标签。	The loading icon keeps spinning after the request.	请求结束后，加载图标还在转。
+font	The font file fails to load on my phone.	我的手机加载不了这个字体文件。	Use a font that includes Chinese characters.	用一种包含中文字符的字体。
+resolution	The image looks blurry at this resolution.	图片在这个分辨率下有些模糊。	Check the display resolution before taking screenshots.	截图前先检查显示分辨率。
+image	The image needs alternative text.	这张图片需要替代文本。	Upload a smaller image and try again.	上传一张小一点的图片再试。
+animation	The animation stops when the tab is hidden.	标签页隐藏后，动画会停止。	Offer a way to reduce the animation.	提供一个减少动画效果的选项。
+transition	The transition makes the menu feel slow.	这个过渡效果让菜单显得迟缓。	Apply the transition to opacity, not every property.	只给透明度添加过渡，不要应用到所有属性。
+render	We render the list after the data arrives.	数据返回后，我们再渲染列表。	Do not render untrusted text as raw HTML.	不要把不可信文本当作原始网页代码渲染。
+canvas	The canvas becomes blank after resizing.	调整尺寸后，画布变成了空白。	Clear the canvas before drawing the next frame.	绘制下一帧前先清空画布。
+graphic	The graphic asset is missing from the bundle.	打包文件里缺少图形素材。	Ask the designer for a smaller graphic file.	请设计师提供一个更小的图形文件。
+graphics	The graphics settings affect battery life.	图形设置会影响续航。	Update the graphics driver on the test machine.	更新测试机的图形驱动。
+texture	The texture repeats at the edge of the model.	模型边缘的纹理出现了重复。	Load the texture before starting the scene.	启动场景前先加载纹理。
+layer	Move the text to the top layer.	把文字移到最上层。	This layer should stay behind the dialog.	这一层应该放在对话框后面。
+mask	Apply the mask to hide the background.	应用遮罩来隐藏背景。	The bit mask selects the lower eight bits.	这个位掩码选中了低八位。
+color	The error state needs more than a color change.	错误状态不能只靠变色来提示。	Pick a color with enough contrast against white.	选一种与白色有足够对比度的颜色。
+colour	The colour setting is saved with the theme.	颜色设置会随主题一起保存。	Which colour should we use for warnings?	警告提示应该用什么颜色？
+contrast	The gray text has poor contrast on this background.	灰色文字在这个背景上对比度不足。	Check the contrast before approving the design.	确认设计前先检查对比度。
+brightness	Lower the brightness in the image editor.	在图片编辑器里降低亮度。	The brightness control does not affect saved images.	这个亮度控件不会改变已保存的图片。
+saturation	Reduce the saturation to soften the background.	降低饱和度，让背景柔和一些。	The saturation slider resets when I reopen the file.	重新打开文件后，饱和度滑块重置了。
+height	The card height changes when the text wraps.	文字换行后，卡片高度会改变。	Give the chart a minimum height.	给图表设置一个最小高度。
+width	The sidebar width leaves little room for the table.	侧栏宽度占了太多空间，表格不好显示。	Set the width relative to the available space.	根据可用空间设置宽度。
+depth	Limit the nesting depth of this parser.	限制这个解析器的嵌套深度。	What is the maximum depth of the tree?	这棵树的最大深度是多少？
+zoom	Reset the zoom before comparing screenshots.	比较截图前先重置缩放。	The text remains readable at two hundred percent zoom.	放大到百分之二百后，文字仍然清晰。
+crop	Can users crop the photo before uploading it?	用户上传照片前能先裁剪吗？	Keep the original when you crop an image.	裁剪图片时保留原图。
+rotate	We rotate the signing key every three months.	我们每三个月轮换一次签名密钥。	Use this handle to rotate the shape.	用这个控制点旋转图形。
+scale	The service must scale during busy hours.	服务需要在繁忙时段扩容。	Keep the scale consistent across these charts.	这些图表的比例尺要保持一致。
+transform	Use this function to transform the response data.	用这个函数转换响应数据。	The CSS transform moves the card without changing layout.	样式变换移动了卡片，但没有改变布局。
+underline	Add an underline so the link is easier to spot.	加上下划线，让链接更明显。	The underline disappears when the link receives focus.	链接获得焦点后，下划线消失了。
+bold	Make the field label bold, not the whole paragraph.	把字段标签加粗，不要把整段都加粗。	The bold weight is missing from this font.	这个字体没有粗体字重。
+alignment	The button alignment breaks when the label wraps.	标签换行后，按钮的对齐乱了。	Check the alignment of these table headers.	检查这些表头是否对齐。
+escape	We must escape this text before inserting it into HTML.	把文本放进网页代码前必须先转义。	How does this parser handle an escape sequence?	这个解析器如何处理转义序列？
+pattern	The pattern matches a four-digit year.	这个模式匹配四位数年份。	Show an example of the expected input pattern.	给出一个符合预期输入模式的例子。
+match	The route should match the whole path.	路由应该匹配完整路径。	This test checks for an exact match.	这个测试检查是否完全匹配。
+range	The slider allows a range from zero to ten.	滑块允许的范围是零到十。	Reject a value outside the allowed range.	拒绝超出允许范围的值。
+boundary	Test the value at each boundary.	测试每个边界上的值。	The transaction boundary needs to include both writes.	事务边界需要覆盖两次写入。
+offset	The offset starts at zero in this file format.	这种文件格式的偏移量从零开始。	Keep the time zone offset in the exported data.	导出数据时保留时区偏移量。
+address	Do not expose the internal IP address in errors.	不要在错误信息中暴露内部网络地址。	This pointer holds the address of the first element.	这个指针保存着第一个元素的内存地址。
+origin	The port is part of the browser origin.	端口是浏览器来源的一部分。	Place the shape at the origin of the coordinate system.	把图形放到坐标系原点。
+host	The host rejects connections on this port.	这台主机拒绝这个端口上的连接。	Which host runs the background worker?	后台任务运行在哪台主机上？
+target	The build target is Linux on ARM.	构建目标是ARM架构的Linux系统。	Check the target branch before opening the pull request.	发起合并请求前先检查目标分支。
+destination	The destination folder must already exist.	目标文件夹必须已经存在。	Log the destination address without including credentials.	记录目标地址时不要包含凭据。
+downtime	We need to estimate the downtime for this migration.	我们需要估算这次迁移的停机时间。	The dashboard shows yesterday's downtime.	仪表板显示了昨天的停机时间。
+lifetime	The connection lifetime is shorter than the request timeout.	连接生命周期比请求超时时间短。	Tie the resource lifetime to the owning object.	让资源生命周期随所属对象管理。
+cleanup	The cleanup runs even when the test fails.	即使测试失败，资源清理仍会执行。	Add cleanup for the temporary directory.	补上临时目录的清理操作。
+clean	Please clean the build folder before trying again.	请先清理构建目录再试。	We clean up the test data after each run.	每轮运行后，我们都会清理测试数据。
+sandbox	Run the untrusted script in a sandbox.	在沙箱里运行不可信脚本。	The sandbox cannot access the user's home directory.	这个沙箱不能访问用户的主目录。
+partition	This partition has almost no free space.	这个分区几乎没有剩余空间。	We partition the records by month.	我们按月份对记录分区。
+shard	The new shard receives too much traffic.	新分片收到的流量过多。	Which shard owns this customer's records?	这个客户的记录属于哪个分片？
+synchronize	We synchronize local changes after the connection returns.	连接恢复后，我们会同步本地改动。	Do both devices synchronize with the same server?	两台设备都与同一台服务器同步吗？
+lock	Release the lock when this scope ends.	这个作用域结束时释放锁。	The second worker waits for the lock.	第二个工作线程正在等待锁。
+unlock	Always unlock the mutex after acquiring it.	取得互斥锁后，务必在使用完时解锁。	Can this error path skip the unlock step?	这条错误路径会跳过解锁步骤吗？
+wait	We wait for the upload before closing the dialog.	上传完成后，我们才关闭对话框。	Do not wait on the main thread for this task.	不要在主线程上等待这个任务。
+signal	The process handles the termination signal.	这个进程会处理终止信号。	Send a signal when the worker is ready.	工作线程准备好后发一个信号。
+pipe	The pipe connects the output to the next command.	管道把输出传给下一条命令。	Close the unused end of the pipe.	关闭管道中不用的那一端。
+redirect	We redirect users to login after the session expires.	会话失效后，我们会把用户重定向到登录页。	Does this redirect preserve the query string?	这个重定向会保留查询字符串吗？
+seek	Use seek to move within this binary file.	用定位操作移动这个二进制文件的读写位置。	The network stream does not support seek.	这个网络流不支持移动读写位置。
+rewind	We rewind the file before reading it again.	再次读取文件前，我们先回到文件开头。	This helper can rewind a buffered input stream.	这个辅助函数能让带缓冲的输入流回到开头。
+flush	Call flush before another process reads the buffered log.	另一个进程读取日志前，先刷新日志缓冲区。	A flush alone does not guarantee durable storage.	仅刷新缓冲区不能保证数据已持久保存。
+overflow	Check for overflow before multiplying these integers.	这些整数相乘前，先检查是否可能溢出。	The scroll container clips horizontal overflow.	滚动容器会裁切横向溢出的内容。
+conversion	The conversion loses the fractional part.	这个转换会丢掉小数部分。	Can this conversion fail for an empty string?	空字符串会让这个转换失败吗？
+convert	We convert the response into a typed object.	我们把响应转换成有明确类型的对象。	Do not convert missing values to zero silently.	不要悄悄把缺失值转成零。
+converter	The converter handles dates in both formats.	这个转换器能处理两种格式的日期。	Add a test for the currency converter.	给货币转换器补一个测试。
+cast	The cast is safe only after the type check.	只有检查类型后，这个类型转换才安全。	An explicit cast would make the intention clearer.	显式类型转换能让意图更清楚。
+round	How should we round values exactly halfway between integers?	恰好处于两个整数中间的值该如何取整？	We round the displayed value to two decimal places.	显示的数值会保留两位小数。
+precision	Use higher precision for the intermediate calculation.	中间计算采用更高精度。	The database column limits decimal precision.	这个数据库字段限制了十进制精度。
+accuracy	The benchmark measures accuracy as well as speed.	这个基准测试既测速度，也测准确度。	We lost accuracy after reducing the image size.	缩小图片后，准确度下降了。
+fraction	Store the value as a fraction to avoid early rounding.	把数值存成分数，避免过早取整。	This fraction has a zero denominator.	这个分数的分母是零。
+rational	The library supports exact rational arithmetic.	这个库支持精确的有理数运算。	Represent this rational number with a numerator and denominator.	用分子和分母表示这个有理数。
+mathematical	The mathematical model needs clear assumptions.	这个数学模型需要明确假设。	Write the mathematical expression beside the implementation.	把数学表达式写在实现代码旁边。
+math	The math in this comment does not match the code.	注释里的数学计算与代码不一致。	We can move the math into a separate helper.	我们可以把数学运算放进单独的辅助函数。
+mathematics	A background in mathematics helps with this simulation.	数学基础有助于理解这个仿真。	Explain the mathematics without hiding the implementation details.	解释数学原理时，也要讲清实现细节。
+calculus	This optimization method uses ideas from calculus.	这个优化方法用到了微积分思想。	The calculus example needs a plot of the function.	这个微积分示例需要画出函数图像。
+algebra	Linear algebra is required for the matrix code.	理解这段矩阵代码需要线性代数知识。	Review the algebra before changing the formula.	修改公式前，先检查代数推导。
+arithmetic	Integer arithmetic behaves differently from floating-point arithmetic.	整数算术与浮点算术的行为不同。	The arithmetic here assumes a nonzero divisor.	这里的算术运算假设除数不为零。
+operation	This operation updates both records in one transaction.	这个操作在同一事务中更新两条记录。	The operation is too expensive for every frame.	每帧执行这个运算的开销太大。
+notation	Use the same notation in the paper and code comments.	论文和代码注释要使用同一套记号。	Explain the notation before showing the equation.	展示方程前先解释记号。
+factorial	The test expects factorial of zero to return one.	测试要求零的阶乘返回一。	This factorial implementation quickly exceeds the integer limit.	这个阶乘实现很快就会超出整数范围。
+exponential	The search has exponential worst-case complexity.	这个搜索的最坏情况复杂度呈指数级增长。	Use an exponential backoff between retries.	重试之间采用指数退避。
+linear	The linear scan is fast enough for this small list.	这个列表很小，线性扫描已经够快。	The chart uses a linear scale.	图表采用线性刻度。
+nonlinear	The sensor follows a nonlinear response curve.	传感器的响应曲线是非线性的。	Try a nonlinear model for this dataset.	试着给这组数据使用非线性模型。
+extrapolation	The extrapolation goes beyond our measured range.	这个外推超出了测量范围。	Label the extrapolation clearly on the chart.	在图表上明确标出外推部分。
+gradient	Pass the sample spacing when estimating the gradient.	估计梯度时传入采样间距。	The gradient changes sharply near this point.	这个点附近的梯度变化很大。
+derivative	Check the derivative against a numerical estimate.	把导数与数值估计结果做个比较。	The derivative is undefined at this corner.	这个拐角处的导数没有定义。
+integral	We approximate the integral with a numerical method.	我们用数值方法近似计算积分。	The integral needs upper and lower bounds.	这个积分需要上下限。
+differential	The solver handles this differential equation.	这个求解器可以处理这个微分方程。	Reduce the step size in the differential equation solver.	减小微分方程求解器的步长。
+covariance	The covariance matrix must use the same variable order.	协方差矩阵必须采用相同的变量顺序。	Show the covariance between these two measurements.	显示这两项测量值之间的协方差。
+variance	The variance increases when we add these outliers.	加入这些离群值后，方差增大了。	Which variance estimate does this function return?	这个函数返回哪种方差估计值？
+distribution	The distribution of requests is uneven across servers.	请求在各服务器上的分布不均匀。	Plot the distribution before choosing a model.	选择模型前先画出分布。
+probability	The probability must stay between zero and one.	概率必须保持在零到一之间。	This field stores the probability of a failed delivery.	这个字段保存投递失败的概率。
+randomize	We randomize the question order for each practice run.	每轮练习都会随机排列题目。	Do not randomize this test without recording the seed.	随机化这个测试时，要记录随机种子。
+discrete	The simulation advances in discrete time steps.	这个仿真按离散时间步推进。	Choose a discrete value from the supported modes.	从支持的模式中选一个离散值。
+continuous	The sensor produces a continuous signal.	这个传感器产生连续信号。	We approximate the continuous curve with sample points.	我们用采样点近似表示连续曲线。
+periodic	The worker performs a periodic health check.	这个后台任务会定期检查服务状态。	The periodic signal repeats every two seconds.	这个周期信号每两秒重复一次。
+frequency	The update frequency affects power consumption.	更新频率会影响耗电量。	Measure the signal frequency in hertz.	用赫兹测量信号频率。
+sample	Take a sample of the logs before deleting them.	删除日志前先取一份样本。	We sample the sensor every fifty milliseconds.	我们每五十毫秒采样一次传感器。
+simulation	The simulation stops when the temperature reaches the limit.	温度达到上限后，仿真就会停止。	Run the simulation with a smaller time step.	用更小的时间步运行仿真。
+simulator	The simulator cannot reproduce this hardware fault.	模拟器无法复现这个硬件故障。	Check the screen size in the device simulator.	在设备模拟器中检查屏幕尺寸。
+emulate	We emulate a slow connection for this test.	这个测试会模拟慢速连接。	Can this tool emulate the older processor?	这个工具能模拟旧款处理器吗？
+emulation	The emulation is slower than running on real hardware.	仿真比在真实硬件上运行更慢。	Disable emulation before measuring native performance.	测量原生性能前先关闭仿真。
+instruction	The instruction updates the status register.	这条指令会更新状态寄存器。	Check whether the processor supports this instruction.	检查处理器是否支持这条指令。
+increment	Apply the increment after recording the current value.	记录当前数值后再进行递增。	Use a smaller increment for the slider.	把滑块的增量设小一点。
+negate	We negate the condition to enter the error branch.	我们将条件取反，进入错误分支。	Do not negate the smallest signed integer without checking overflow.	对最小有符号整数取负前，要检查溢出。
+negative	A negative index refers to the end in this API.	在这个接口中，负索引表示从末尾取值。	Reject a negative timeout value.	拒绝负的超时时间。
+positive	The batch size must be a positive integer.	批次大小必须是正整数。	The test uses a positive offset from the start.	这个测试使用从起点开始的正偏移量。
+sort	We sort the results by their creation time.	我们按创建时间排序结果。	Do not sort the original array in place.	不要直接修改原数组来排序。
+bubble	The tutorial shows how bubble sort swaps adjacent values.	教程演示了冒泡排序如何交换相邻值。	Use a small list to explain bubble sort.	用一个短列表来解释冒泡排序。
+insertion	The insertion preserves the order of existing records.	插入操作保留了已有记录的顺序。	Measure the cost of insertion at the start of the array.	测量在数组开头插入元素的开销。
+selection	The selection disappears when the list refreshes.	列表刷新后，选中的项消失了。	This example implements selection sort.	这个示例实现了选择排序。
+browse	Users can browse the catalog without signing in.	用户无需登录就能浏览目录。	Browse the logs from the time of the failure.	查看故障发生时的日志。
+explorer	The file explorer shows hidden files now.	文件浏览器现在会显示隐藏文件。	Open the project folder in the explorer.	在文件浏览器中打开项目文件夹。
+alias	The command alias points to an old script.	这个命令别名指向了旧脚本。	Give this long column name a short alias.	给这个长列名起个简短的别名。
+symbolic	The symbolic link points outside the project folder.	这个符号链接指向项目文件夹外。	This tool performs symbolic differentiation.	这个工具可以做符号微分。
+symbol	The debugger cannot find the function symbol.	调试器找不到这个函数符号。	Choose a symbol that is valid in this grammar.	选择一个符合这个语法的符号。
+investigate	We need to investigate the spike in memory use.	我们需要调查内存占用激增的原因。	Can you investigate this failure on Windows?	你能在Windows上调查这个故障吗？
+diagnose	The logs help us diagnose connection problems.	这些日志有助于诊断连接问题。	We cannot diagnose the issue from this screenshot alone.	只凭这张截图还无法诊断问题。
+failure	The failure happens before the database connection opens.	建立数据库连接前就出现了故障。	Record the failure without exposing private data.	记录故障时不要暴露私人数据。
+fault	The device reports a fault in its power supply.	设备报告电源出现了故障。	We reproduced the fault by disconnecting the cable.	拔掉电缆后，我们复现了故障。
+defect	This defect affects the export feature only.	这个缺陷只影响导出功能。	Link the defect report to the failing test.	把缺陷报告关联到失败的测试。
+incident	The incident started after the configuration change.	这次服务异常始于配置变更之后。	Add the timeline to the incident report.	在事故报告中补上时间线。
+root	The root node contains references to both children.	根节点保存着两个子节点的引用。	Run the command from the project root.	在项目根目录运行这条命令。
+cause	We have not found the cause of the timeout.	我们还没找到超时的原因。	A missing index could cause this slow query.	缺少索引可能导致这条查询变慢。
+reconnect	The client will reconnect after the network returns.	网络恢复后，客户端会重新连接。	Keep unsent edits when you reconnect.	重新连接时保留尚未发送的修改。
+expiration	Check the token expiration before starting the upload.	开始上传前先检查令牌的失效时间。	The expiration date is stored in UTC.	失效日期按协调世界时保存。
+expire	The session will expire after an hour of inactivity.	一小时没有操作后，会话就会失效。	We let temporary links expire automatically.	我们让临时链接自动失效。
+cancel	Users can cancel the upload from this dialog.	用户可以在这个对话框中取消上传。	Cancel the old request when the search changes.	搜索内容变化时，取消旧请求。
+cancellation	The worker checks for cancellation between batches.	后台任务会在批次之间检查取消信号。	Handle cancellation separately from a server error.	把取消操作与服务器错误分别处理。
+abort	We abort the transaction if either write fails.	任意一次写入失败，我们就中止事务。	Does closing the dialog abort the request?	关闭对话框会中止请求吗？
+stop	Please stop the service before replacing the binary.	替换可执行文件前请先停止服务。	The timer should stop when the page closes.	页面关闭后，计时器应该停止。
+terminate	The supervisor can terminate a stuck worker.	管理进程可以终止卡住的工作进程。	Do not terminate the process during the final write.	最后一次写入时不要终止进程。
+termination	The shutdown handler prepares for process termination.	关闭处理函数会为进程终止做准备。	Unexpected termination left a temporary file behind.	意外终止留下了一个临时文件。
+suspend	We suspend polling while the page is hidden.	页面隐藏时，我们会挂起轮询。	Can the debugger suspend only this thread?	调试器能只挂起这个线程吗？
+resume	Click here to resume the paused download.	点击这里继续已暂停的下载。	The worker can resume from the last checkpoint.	后台任务可以从上次检查点恢复执行。
+pause	We pause the animation when the dialog opens.	对话框打开时，我们会暂停动画。	Let the user pause the recording.	允许用户暂停录制。
+sleep	The test uses sleep to wait briefly between checks.	这个测试用休眠在检查之间短暂等待。	Do not use sleep as a substitute for synchronization.	不要用休眠代替同步机制。
+awake	Keep the device awake while collecting measurements.	采集测量值时，让设备保持唤醒状态。	The worker stays awake until the queue is empty.	队列清空前，工作线程会保持活动状态。
+synchronise	We synchronise the offline notes when the app reconnects.	应用重新连接后，我们会同步离线笔记。	Can these two clocks synchronise with the same source?	这两个时钟能与同一来源同步吗？
+compilation	The compilation fails before any tests run.	测试尚未开始，编译就失败了。	Incremental compilation saves time on small changes.	增量编译能节省小改动的构建时间。
+interpretation	This runtime uses interpretation for the startup script.	这个运行时通过解释执行来运行启动脚本。	The course compares interpretation with ahead-of-time compilation.	课程会比较解释执行与提前编译。
+interpreter	Which interpreter runs this script on the server?	服务器上用哪个解释器运行这个脚本？	The interpreter reports the line with the syntax error.	解释器报告了存在语法错误的那一行。
+encrypt	We encrypt the backup before uploading it.	上传备份前，我们会先加密。	Use the library to encrypt this file.	用这个库加密这个文件。
+validity	The check confirms the validity of the signature.	这个检查确认了签名的有效性。	The certificate validity period ends next month.	证书有效期到下个月结束。
+invalid	The parser rejects an invalid date.	解析器会拒绝无效日期。	This identifier is invalid in the new format.	这个标识符在新格式中无效。
+invalidate	We invalidate the cache after updating the record.	更新记录后，我们会让缓存失效。	Does changing the password invalidate existing sessions?	修改密码会使已有会话失效吗？
+valid	The link remains valid until midnight.	这个链接到午夜前都有效。	Return a clear error when the signature is not valid.	签名无效时，返回明确的错误。
+sanitize	We sanitize submitted HTML with an allowlist.	我们按允许列表清理提交的网页代码。	Do not rely on this helper to sanitize SQL queries.	不要依赖这个辅助函数来清理数据库查询语句。
+malicious	The filter blocked a malicious attachment.	过滤器拦截了一个恶意附件。	Treat uploaded scripts as potentially malicious.	把上传的脚本视为可能含有恶意内容。
+malware	The scan found malware in the downloaded archive.	扫描在下载的压缩包中发现了恶意软件。	Keep the malware sample off the shared network.	不要让恶意软件样本接入共享网络。
+spyware	The security alert mentions possible spyware.	安全告警提到可能存在间谍软件。	We isolated the device suspected of running spyware.	我们隔离了疑似运行间谍软件的设备。
+exploit	The report includes a proof-of-concept exploit.	报告中附有漏洞利用的概念验证程序。	Only test the exploit in the approved lab.	只在获准的实验环境中测试这个漏洞利用程序。
+vulnerability	The scan found a vulnerability in this dependency.	扫描在这个依赖中发现了一个漏洞。	Track the vulnerability until the patch is verified.	跟踪这个漏洞，直到补丁经过验证。
+vulnerable	The old version is vulnerable to this known issue.	旧版本容易受到这个已知漏洞影响。	Replace the vulnerable package and rerun the tests.	替换存在漏洞的包，再运行测试。
+injection	Parameterized queries help prevent SQL injection.	参数化查询有助于防止数据库注入攻击。	This test covers an injection attempt through a form field.	这个测试覆盖通过表单字段进行的注入尝试。
+breach	The team is investigating a possible data breach.	团队正在调查一起疑似数据泄露事件。	Keep the breach investigation notes in the restricted folder.	把安全事件调查记录放在受限文件夹中。
+attack	The attack caused a spike in failed login attempts.	这次攻击让登录失败次数激增。	Our test simulates an attack on an isolated service.	我们的测试在隔离服务上模拟攻击。
+hacker	The story describes how a hacker found the bug.	这篇报道讲述了一名黑客如何发现这个缺陷。	The authorized hacker submitted a detailed security report.	获授权的黑客提交了详细的安全报告。
+adversary	The threat model assumes an adversary can read network traffic.	这个威胁模型假设攻击者能读取网络流量。	Could an adversary reuse this expired token?	攻击者能重复使用这个已失效的令牌吗？
+threat	The threat model includes a stolen laptop.	威胁模型包含笔记本电脑失窃的情形。	Which threat does this control address?	这项控制措施针对哪种威胁？
+trust	Do not trust a role sent by the browser.	不要信任浏览器传来的角色信息。	The trust boundary sits between the client and server.	信任边界位于客户端与服务器之间。
+privacy	The privacy settings are visible on the account page.	隐私设置可以在账户页面找到。	Review the logs for privacy risks before sharing them.	共享日志前，先检查其中的隐私风险。
+confidential	Keep the confidential report out of the public repository.	不要把保密报告放进公开仓库。	This field may contain confidential customer information.	这个字段可能包含客户的保密信息。
+confidentiality	Encryption helps protect the confidentiality of stored data.	加密有助于保护存储数据的保密性。	The review covers confidentiality as well as availability.	这次审查既关注保密性，也关注可用性。
+secrecy	The design must not depend on the secrecy of the algorithm.	这个设计不能依赖算法本身保密。	The secrecy of the signing key matters here.	这里必须确保签名密钥保密。
+secret	Read the secret from the approved secret store.	从获准的机密存储中读取机密值。	Never print the secret in a debug log.	不要在调试日志中打印机密值。
+credentials	Remove the credentials from this example configuration.	把凭据从这个示例配置中移除。	The job reads its credentials at startup.	这个任务在启动时读取凭据。
+author	Ask the author why this check was added.	问问代码作者为什么加了这个检查。	The commit records the author and timestamp.	这个提交记录了作者和时间戳。
+authorize	We authorize each request after checking the user's identity.	核验用户身份后，我们会逐个请求检查授权。	Only the server can authorize this admin action.	只有服务器能为这个管理操作授权。
+privilege	The service does not need this extra privilege.	这个服务不需要这项额外特权。	Review the privilege required by each background job.	检查每个后台任务需要什么特权。
+administrator	An administrator must approve the account change.	账户变更必须由管理员批准。	The administrator can view the pending requests.	管理员可以查看待处理的请求。
+administration	The administration page is hidden from regular users.	普通用户看不到管理页面。	Move user administration into a separate section.	把用户管理放进独立的区域。
+authenticate	We authenticate the user before checking access rights.	我们先验证用户身份，再检查访问权限。	Does this endpoint authenticate requests with a session cookie?	这个接口使用会话凭据验证请求身份吗？
+identity	The token carries the user's verified identity.	令牌携带已验证的用户身份。	Do not infer identity from a display name.	不要根据显示名称推断身份。
+identification	Device identification happens before registration.	设备身份识别在注册前进行。	The report explains the user identification process.	报告解释了用户身份识别流程。
+certification	The product team is preparing for security certification.	产品团队正在准备安全认证。	Keep the certification documents with the release records.	把认证文件与发布记录放在一起。
+certify	The lab will certify the device after testing.	实验室将在测试后认证这个设备。	Who can certify that these results are complete?	谁能证明这些结果是完整的？
+protect	Use access checks to protect the export endpoint.	用访问权限检查来保护导出接口。	How do we protect the backup from accidental deletion?	我们如何防止备份被误删？
+protection	The form needs protection against repeated submissions.	这个表单需要防止重复提交。	The protection stops working when this flag is disabled.	关闭这个标记后，保护措施就失效了。
+policy	The policy limits access to the billing page.	这项策略限制了账单页面的访问。	Document the retry policy beside the client code.	在客户端代码旁记录重试策略。
+allow	We allow uploads from signed-in users only.	我们只允许已登录用户上传。	Does this setting allow connections from outside the network?	这个设置允许外部网络连接吗？
+deny	The server should deny a request with no valid session.	没有有效会话时，服务器应拒绝请求。	We deny access unless a rule explicitly permits it.	只有规则明确允许时，我们才开放访问。
+consent	Save the user's consent before enabling analytics.	启用分析功能前，先保存用户的同意记录。	Users can withdraw consent on this page.	用户可以在这个页面撤回同意。
+agreement	Read the service agreement before enabling the integration.	启用集成前，先阅读服务协议。	The agreement describes how the vendor handles our data.	协议说明了供应商如何处理我们的数据。
+license	Check the license before copying this dependency.	复制这个依赖前，先查看许可证。	Include the license text in the distribution package.	在分发包中附上许可证文本。
+check	Add a check for an empty file.	加一个空文件检查。	The final check runs before the release is published.	最后的检查在发布前执行。
+sum	The sum includes only successful transactions.	这个总和只包含成功的交易。	Calculate the sum before formatting the numbers.	格式化数值前先计算总和。
+total	The total updates when a new item is added.	添加新项目后，总量会更新。	Display the total next to the progress bar.	在进度条旁边显示总量。
+machine	The build fails on this machine only.	构建只在这台机器上失败。	Restart the test machine after installing the driver.	安装驱动后重启测试机。
+modem	The modem reconnects after a power cut.	停电后，调制解调器会重新连接。	Check the modem status before blaming the application.	怀疑应用有问题前，先检查调制解调器状态。
+cable	The cable is loose at the network port.	网口上的电缆松了。	Try another cable before replacing the adapter.	更换适配器前，先试一根别的电缆。
+wireless	The wireless connection drops during large uploads.	上传大文件时，无线连接会断开。	Test the app over both wired and wireless connections.	分别用有线和无线连接测试应用。
+broadband	The broadband connection is slower than usual today.	今天宽带连接比平时慢。	Our upload test also runs on a home broadband connection.	上传测试也会使用家庭宽带连接。
+antenna	The antenna is attached to the wireless module.	天线连接在无线模块上。	Move the antenna away from the metal case.	把天线移到远离金属外壳的位置。
+infrared	The infrared sensor reports distance to the controller.	红外传感器向控制器报告距离。	We use an infrared remote for this demo.	这个演示使用红外遥控器。
+optical	The optical sensor stops responding in bright sunlight.	光学传感器在强烈阳光下停止响应。	The optical drive cannot read this disc.	这个光驱无法读取这张光盘。
+fiber	The fiber connection links the two buildings.	光纤连接把两栋楼连在一起。	Do not bend the fiber cable sharply.	不要大幅弯折光纤电缆。
+connector	The connector is damaged on this board.	这块板上的连接器损坏了。	Check the connector orientation before attaching the cable.	连接电缆前，先检查连接器方向。
+adapter	The adapter needs a driver on this system.	这个适配器在此系统上需要驱动。	Our adapter converts the old API response into the new format.	我们的适配器会把旧接口响应转成新格式。
+plug	Please plug the keyboard into another port.	请把键盘插到另一个接口上。	The power plug is not fully inserted.	电源插头没有插到底。
+unplug	Do not unplug the drive while the export is running.	导出期间不要拔掉驱动器。	We unplug the network cable to test offline mode.	我们拔掉网线来测试离线模式。
+controller	The controller sends commands to the motor.	控制器向电机发送指令。	Move request handling out of this controller.	把请求处理逻辑移出这个控制器。
+control	This control adjusts the playback speed.	这个控件用于调节播放速度。	Keep the user in control of automatic updates.	让用户自己决定自动更新的设置。
+automatic	The automatic retry stops after three attempts.	自动重试会在三次尝试后停止。	Make automatic saving visible to the user.	让用户能看到自动保存状态。
+robot	The robot stops when the sensor detects an obstacle.	传感器检测到障碍后，机器人会停止。	Run the robot program in the simulator first.	先在模拟器里运行机器人程序。
+embed	We embed the chart in the report page.	我们把图表嵌入报告页面。	Can we embed this viewer without loading another framework?	不加载其他框架能嵌入这个查看器吗？
+computation	The computation runs outside the main thread.	计算在主线程之外执行。	Cache the result of this expensive computation.	缓存这个高开销计算的结果。
+computational	The computational cost grows with the input size.	计算开销会随输入规模增长。	Compare the computational requirements of both approaches.	比较两种方案的计算资源要求。
+compute	We compute the checksum before uploading the file.	上传文件前，我们会计算校验和。	Can this function compute the result without loading everything?	这个函数能不加载全部数据就算出结果吗？
+computer	The computer runs out of memory during the build.	这台计算机在构建过程中内存不足。	Connect the test device to this computer.	把测试设备连接到这台计算机。
+microcomputer	The exhibit shows an early microcomputer.	展览中陈列着一台早期微型计算机。	This microcomputer uses a simple operating system.	这台微型计算机使用简单的操作系统。
+supercomputer	The simulation runs on a supercomputer.	这个仿真在超级计算机上运行。	We submit the job to the supercomputer queue.	我们把任务提交到超级计算机的队列中。
+workstation	The workstation has enough memory for this dataset.	这台工作站有足够内存处理这组数据。	The developer workstation needs a graphics driver update.	这台开发工作站需要更新图形驱动。
+laptop	The laptop gets hot during compilation.	这台笔记本电脑在编译时发热明显。	I can reproduce the issue on my laptop.	我能在自己的笔记本电脑上复现问题。
+tool	This tool compares two directory trees.	这个工具用来比较两个目录树。	Which tool generated the report?	报告是哪个工具生成的？
+utility	The utility cleans up old log files.	这个实用工具会清理旧日志文件。	Install the command-line utility for local testing.	安装这个命令行工具来做本地测试。
+functionality	The basic functionality works without an account.	不注册账户也能使用基本功能。	This change adds export functionality to the dashboard.	这次改动给仪表板加了导出功能。
+compatible	The new client is compatible with the old server.	新客户端与旧服务器兼容。	Is this file format compatible with the mobile app?	这个文件格式与移动应用兼容吗？
+compatibility	The update needs a compatibility test on older devices.	这次更新需要在旧设备上做兼容性测试。	We kept the old field name for compatibility.	为了兼容，我们保留了旧字段名。
+portable	The portable build runs from a USB drive.	这个便携版本可以从移动存储设备运行。	Keep this code portable across operating systems.	让这段代码能在不同操作系统之间移植。
+portability	The system-specific call limits portability.	这个系统专用调用限制了可移植性。	Test portability by building on a second platform.	在另一个平台上构建，测试可移植性。
+extension	The browser extension reads the current page title.	这个浏览器扩展会读取当前页面标题。	The file extension does not prove its actual format.	文件扩展名不能证明实际格式。
+extend	We can extend the parser to support comments.	我们可以扩展解析器，让它支持注释。	Does this change extend the response schema?	这个改动会扩展响应结构吗？
+modular	The modular design lets us replace the payment provider.	模块化设计让我们能替换支付服务商。	Keep the test helpers modular instead of building one large utility.	让测试辅助代码保持模块化，不要堆成一个大工具。
+platform	The package supports more than one platform.	这个软件包支持多个平台。	Which platform should we test first?	我们应该先测试哪个平台？
+measurement	Record the measurement with its unit.	记录测量值时带上单位。	Repeat the measurement after the system warms up.	系统预热后，再测量一次。
+measurable	The change needs a measurable performance goal.	这个改动需要一个可量化的性能目标。	We saw a measurable drop in startup time.	启动时间出现了可测量的下降。
+audit	The audit log records changes to account permissions.	审计日志会记录账户权限的变更。	Schedule an audit of our third-party dependencies.	安排一次第三方依赖审计。
+ledger	The ledger keeps a record of each balance change.	账本会记录每一次余额变化。	Compare the ledger entry with the payment receipt.	把账本记录与支付回执进行比较。
+date	The date field accepts year, month, and day.	日期字段接受年、月、日。	Display the date using the user's locale.	按用户的地区格式显示日期。
+time	The time is stored separately from the date.	时间与日期分开存储。	We need time to investigate this failure.	我们需要时间调查这个故障。
+calendar	The calendar marks days with completed lessons.	日历会标出完成学习的日期。	Can users move through the calendar with arrow keys?	用户能用方向键在日历中移动吗？
+clock	Use a monotonic clock to measure elapsed time.	用单调时钟测量经过的时间。	The server clock is five minutes behind.	服务器时钟慢了五分钟。
+timer	Cancel the timer when the component is removed.	组件移除时取消计时器。	The timer may fire late when the event loop is busy.	事件循环繁忙时，计时器可能晚些触发。
+delay	Add a short delay before retrying the request.	重试请求前加一个短暂延迟。	The delay is visible on slower phones.	这个延迟在较慢的手机上很明显。
+interval	The polling interval is thirty seconds.	轮询间隔是三十秒。	Increase the interval when the page is hidden.	页面隐藏时延长间隔。
+duration	The duration includes time spent waiting for the database.	这个持续时间包含等待数据库的时间。	Show the recording duration beside the stop button.	在停止按钮旁显示录制时长。
+period	Each reporting period begins at midnight UTC.	每个报告周期从协调世界时午夜开始。	The sampling period must be shorter for this signal.	这个信号需要更短的采样周期。
+second	The counter updates once every second.	计数器每秒更新一次。	Wait one second before trying the connection again.	等待一秒再尝试连接。
+minute	The job usually completes in under a minute.	这个任务通常不到一分钟就能完成。	We group these events by minute.	我们按分钟对这些事件分组。
+hour	The backup runs once an hour.	备份每小时运行一次。	Show the hour in the user's local time zone.	按用户本地时区显示小时。
+nanosecond	The trace stores each duration as a nanosecond count.	追踪记录将每段时长保存为纳秒数。	This display rounds to the nearest nanosecond.	这个显示结果会取整到最接近的纳秒。
+millisecond	We report request latency in millisecond units.	我们以毫秒为单位报告请求延迟。	The counter cannot show changes smaller than one millisecond.	这个计数器无法显示小于一毫秒的变化。
+support	Does the browser support this image format?	这个浏览器支持这种图片格式吗？	We support the current release and the previous one.	我们支持当前版本和上一个版本。
+maintain	Who will maintain this package after the release?	发布后谁来维护这个软件包？	We maintain a separate branch for security fixes.	我们维护着一个用于安全修复的独立分支。
+maintenance	The service will be unavailable during maintenance.	维护期间服务会暂时不可用。	Add the maintenance window to the status page.	把维护时段加到状态页面上。
+upgrade	Back up the database before the upgrade.	升级前先备份数据库。	Can we upgrade without changing the file format?	能在不改文件格式的情况下升级吗？
+update	The update fixes the login problem.	这次更新修复了登录问题。	Do not update the screen after the component is removed.	组件移除后不要再更新界面。
+repair	This tool can repair the damaged index.	这个工具能修复损坏的索引。	Save a copy before attempting a repair.	尝试修复前先保存一份副本。
+fix	The fix needs a test for the original failure.	这个修复需要用测试覆盖原来的故障。	Can you fix the broken link on this page?	你能修复这个页面上的失效链接吗？
+stabilize	We need to stabilize the build before adding features.	添加功能前，我们需要让构建稳定下来。	These changes should help stabilize memory usage.	这些改动应该有助于稳定内存占用。
+stabilization	The release plan includes a week for stabilization.	发布计划留出了一周做稳定化处理。	During stabilization, we focus on bugs rather than new features.	稳定化期间，我们优先修缺陷，暂缓新增功能。
+stable	The connection stays stable during the long upload.	长时间上传过程中，连接保持稳定。	Keep the last stable build available for rollback.	保留上一个稳定构建，以便回滚。
+unstable	The nightly build is still unstable.	这个每日构建仍然不稳定。	An unstable connection can interrupt the download.	不稳定的连接可能中断下载。
+stability	The test checks stability over a full day.	这个测试会连续一天检查稳定性。	We improved stability by limiting concurrent requests.	限制并发请求后，稳定性改善了。
+beta	The beta release is ready for volunteer testing.	测试版已经准备好供志愿者试用。	Keep beta feedback separate from production incidents.	把测试版反馈与生产环境事故分开记录。
+alpha	The alpha build includes an unfinished editor.	早期测试构建中包含一个尚未完成的编辑器。	We use the alpha version to test the basic workflow.	我们用早期测试版本检查基本流程。
+experimental	The experimental feature is disabled by default.	这个实验性功能默认关闭。	Mark the experimental API clearly in the documentation.	在文档中明确标注这个实验性接口。
+prototype	The prototype demonstrates the search interaction.	这个原型演示了搜索交互。	We should test the prototype with actual users.	我们应该让真实用户测试这个原型。
+preview	The preview shows unsaved changes.	预览会显示尚未保存的改动。	Open the preview in a separate browser tab.	在单独的浏览器标签页中打开预览。
+production	The change has not reached production yet.	这个改动还没有部署到生产环境。	Check production logs after the deployment.	部署后检查生产环境日志。
+productivity	A faster local build improves developer productivity.	更快的本地构建能提高开发效率。	We measure productivity without counting lines of code.	我们衡量工作效率时，不用代码行数作标准。
+collaboration	The shared test environment makes collaboration easier.	共享测试环境让协作更方便。	Good collaboration includes explaining the reason for a change.	良好的协作包括说明改动原因。
+collaborative	The editor supports collaborative document updates.	这个编辑器支持协作修改文档。	We tested the collaborative workflow with two accounts.	我们用两个账户测试了协作流程。
+collaborate	We collaborate with the design team on accessibility.	我们与设计团队合作改进无障碍体验。	Can both users collaborate on the same draft?	两位用户能合作编辑同一份草稿吗？
+review	Please review the error handling before we merge.	合并前请审查错误处理逻辑。	The review caught a missing access check.	代码审查发现了一处遗漏的访问权限检查。
+reviewer	The reviewer asked for a smaller patch.	审查者希望把补丁拆小一点。	Give the reviewer steps to reproduce the problem.	给审查者提供复现问题的步骤。
+feedback	The feedback points out a confusing error message.	反馈指出了一条难懂的错误提示。	We need feedback from users with slower devices.	我们需要使用较慢设备的用户反馈。
+approval	The release is waiting for final approval.	这次发布正在等待最终批准。	Record the approval before deploying the change.	部署改动前，先记录批准结果。
+approve	Do not approve the change until the tests pass.	测试通过前不要批准这个改动。	Only the owner can approve this access request.	只有所有者能批准这个访问申请。

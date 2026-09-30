@@ -57,7 +57,7 @@
 
 `qa/basics.test.js`检查两次独立听音成功、选择题与输入填空各一次、缩写及弯引号、空答案、错题补练、音频播放成功后才解锁选项、播放失败与取消、复练本轮计数、保存格式及主线进度独立。`progress-sync.test.js`还检查课程互补槽位合并；账号进度接口检查合法课程结构、重复槽位拒绝和跨设备保存。课程不写入主线`words`或增加XP。
 
-`travel_reviewed.tsv`和`travel_examples.tsv`整理旅行709词及400词的800句原创双语用法。它和其余九条行业合计5384个句子目标词、10768句；行业含义已有本站编辑层，余下2728个行业词尚需补句子。十条行业加七条考试，共17条路线；补充行业词库现有1407词，原有ID保持，新增只追加。
+`travel_reviewed.tsv`和`travel_examples.tsv`整理旅行709词及全词表的1418句原创双语用法。它和其余九条行业合计6329个句子目标词、12658句；行业含义已有本站编辑层，余下1783个行业词尚需补句子。十条行业加七条考试，共17条路线；补充行业词库现有1407词，原有ID保持，新增只追加。
 
 专项答题反馈的释义和例句默认收起，用户展开后才看和听。手机导航显示4个常用入口，其他9个入口折叠到「更多」。
 
@@ -74,7 +74,7 @@
 本轮永久榜后端最终42项Go测试4.428秒、并发检测53.935秒、vet及47项四账号检查通过；此前34/43项记录是改造前基线。
 
 
-当前行业例句覆盖：程序员、外贸、AI创作、医疗、旅行各400词配800句；金融500词配1000句、化学300词配600句；营销767词配1534句、法律850词配1700句、生物967词配1934句，三条路线所有词均有两句行业用法。十行业合计5384词、10768句，仍2728词待补两句。
+当前行业例句覆盖：程序员683词配1366句、医疗753词配1506句、旅行709词配1418句；营销767词配1534句、法律850词配1700句、生物967词配1934句，六条路线所有词均有两句行业用法。外贸、AI创作各400词配800句，金融500词配1000句，化学300词配600句。十行业合计6329词、12658句，仍1783词待补两句。
 ## v1.26.1 行业用法补齐
 
 程序员、AI创作、医疗健康、旅行本次各增加100词的两句双语用法，共新增800句。四条路线现各覆盖200词、400句；十行业合计1422词、2844句，仍有6690词待补行业例句。此前版本中的前100词覆盖量是历史记录。主线词库、主线例句、场景与考试池保持不变，不增加主线进度。旅行的checked补充“托运的”，医疗的cranial补充“颅部的”，避免句子与释义不符。
@@ -176,3 +176,24 @@
 - 令状术语：[美国第九巡回上诉法院](https://www.ca9.uscourts.gov/guides-resources/glossary/)；prejudgment预先判断：[英国法院原始判决](https://www.judiciary.uk/wp-content/uploads/2019/04/bates-judgment-no.4-9-april-19-final.pdf)；cassation特定程序：[法国官方说明](https://www.service-public.gouv.fr/particuliers/vosdroits/F2224?lang=en)。
 - 环保宣传：[FTC Green Guides](https://www.ftc.gov/business-guidance/resources/environmental-claims-summary-green-guides)；增量与归因：[Google Ads 增量实验](https://support.google.com/google-ads/answer/12003020?hl=en)；广告技术角色：[IAB 2025术语附录](https://www.iab.com/wp-content/uploads/2025/06/IAB_Untangling_Issues_Commerce_Media_Networks_June_23_2025.pdf)。
 - APR与利息率区分：[CFPB](https://www.consumerfinance.gov/ask-cfpb/what-is-the-difference-between-a-mortgage-interest-rate-and-an-apr-en-135/)；结算：[BIS](https://www.bis.org/committees/cpmi/pfmi/overview)；信托角色：[OCC术语表](https://www.occ.gov/static/ots/trust-handbook/ots-trust-handbook-glossary.pdf)。
+
+
+## v1.26.9 程序员、医疗与旅行例句补齐
+
+程序员补283词566句、医疗补353词706句、旅行补309词618句，共945词1890句。三条路线分别覆盖683、753、709词，每词两句原创双语；加上生物、法律、营销，六条路线的行业例句已覆盖全表。十行业合计6329词配12658句，仍1783词待补：外贸374、金融346、AI创作431、化学与材料632。主线20,000词的逐条语言编辑和音标专业听审尚未完成。
+
+开发用法覆盖组件、数据结构、数值计算、网络、协作审查与发布；医疗用法围绕病史描述、预约、检查报告和康复沟通，不用例句替代诊断或用药；旅行涵盖饮食过敏、购物通信、景点、户外天气与求助。句子题排除同句可合理替换的干扰词，仍区分饮食要求、相反状态与不同专业概念。三个追加例句文件的旧字节前缀、全部学习编号、主线及考试池保持不变。
+
+金融APR原中文较宽，本次改为「年百分率（APR，借款年化成本指标）」；对应补充词ID20306及一处旧例句译文同步修正，英文和学习编号保持。参考[CFPB对借款利息率与APR的说明](https://www.consumerfinance.gov/ask-cfpb/what-is-the-difference-between-a-mortgage-interest-rate-and-an-apr-en-135/)，不把所有产品的APR一概解释为包含全部费用。该内容编辑照常使用题库版本隔离。
+
+在「行业与考试」选择程序员、医疗或旅行，进入「句子选词」；也可展开「查找专项词」，搜索component、chill、vegetarian后点「练这个词」。答后展开「查看释义与例句」，逐句看中文、点播放。金融搜APR可查看修正释义。专项练习不会增加主线词数。
+
+本批源代码、数据和说明整批同步私有仓库，整仓字节核验后发布。实际版本见 /api/health；发布哈希、回滚备份、浏览器验收、测试与低负载资源快照见 /tmp/english-quest-v1269-evidence/verification.json。真实支付宝仍待配置和本人试付。
+
+42项Go测试通过（最终5.627秒），vet、核心数据及全部6329个行业句子目标检查通过；47项隔离四账号检查通过。真实预览走通component、chill、vegetarian和APR的句子题、折叠展开与两句反馈，程序员播放按钮已点击，主线0保持且无控制台错误。本批只有内容变化，没有重跑并发和小屏布局验收。
+
+本批疑难用法核对来源：
+
+- 开发缓冲与定位：[Python io](https://docs.python.org/3/library/io.html)；刷新不等于持久化：[os.fsync](https://docs.python.org/3/library/os.html#os.fsync)；身份与权限：[OWASP Authorization](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html)。
+- 医疗用词：[MedlinePlus aspiration](https://medlineplus.gov/ency/article/002216.htm)、[CDC灭菌与消毒](https://www.cdc.gov/infection-control/hcp/disinfection-sterilization/introduction-methods-definition-of-terms.html)。
+- 旅行沟通：[FDA食品过敏](https://www.fda.gov/food/nutrition-food-labeling-and-critical-foods/food-allergies)、[Apple eSIM](https://support.apple.com/en-gb/118227)。这些页面用于核对含义；双语句子由本站编写。

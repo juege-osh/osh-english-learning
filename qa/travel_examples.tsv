@@ -399,3 +399,312 @@ ingredient	Could you check whether egg is an ingredient in this sauce?	你能检
 allergy	I have a serious nut allergy.	我对坚果严重过敏。	Could you tell the kitchen about my allergy?	你能把我的过敏情况告诉厨房吗？
 allergic	I'm allergic to peanuts.	我对花生过敏。	My friend is allergic to shellfish.	我的朋友对贝类海鲜过敏。
 dietary	Could you note my dietary requirements on the booking?	你能在预订记录中注明我的饮食要求吗？	Does the menu list options for different dietary needs?	菜单列出了适合不同饮食需求的选项吗？
+vegetarian	Do you have a vegetarian option?	你们有素食选项吗？	I'm vegetarian, so I'd like the vegetable soup.	我是素食者，想点蔬菜汤。
+vegan	Is this cake vegan?	这个蛋糕是纯素的吗？	Could you recommend a vegan restaurant nearby?	你能推荐附近一家纯素餐厅吗？
+halal	Do you serve halal food?	你们供应清真食物吗？	Could you tell me where to find a halal restaurant?	你能告诉我哪里有清真餐厅吗？
+gluten	Does this sauce contain gluten?	这份酱汁含麸质吗？	I need to avoid gluten; could you check the ingredients?	我需要避免麸质，你能检查一下配料吗？
+lactose	Does this drink contain lactose?	这杯饮料含乳糖吗？	I'm lactose intolerant; is there a suitable option?	我有乳糖不耐受，有适合的选项吗？
+peanut	I have a peanut allergy.	我对花生过敏。	Could you check whether the sauce contains peanut paste?	你能检查这份酱汁是否含花生酱吗？
+nut	Does the dressing contain any nut oil?	这份沙拉酱含坚果油吗？	I need to avoid nut products; could you check with the kitchen?	我需要避免坚果制品，你能和厨房确认一下吗？
+shellfish	I'm allergic to shellfish.	我对贝类和甲壳类海鲜过敏。	Does the soup contain shellfish or shellfish stock?	这份汤含贝类、甲壳类海鲜或用它们做的高汤吗？
+egg	Does this bread contain egg?	这个面包含鸡蛋吗？	Could I have an egg with my breakfast?	我的早餐能加一个鸡蛋吗？
+milk	Could I have some milk with my coffee?	我的咖啡能配一点牛奶吗？	Is there milk in this dessert?	这份甜点里有牛奶吗？
+bread	Could we have some bread for the table?	能给我们这一桌来些面包吗？	Is the bread included with the soup?	点汤会附送面包吗？
+rice	I'd like rice instead of fries.	我想要米饭，不要薯条。	Is there any rice left?	还有米饭吗？
+noodle	Where can I try the local noodle soup?	我在哪里能尝到当地的面汤？	I'd like the noodle dish without meat.	我想点那道面食，不要肉。
+pasta	Which pasta dish would you recommend?	你推荐哪道意大利面？	Could you pack the leftover pasta for me?	你能帮我把剩下的意大利面打包吗？
+vegetable	I'd like the vegetable curry, please.	请给我一份蔬菜咖喱。	What's in today's vegetable soup?	今天的蔬菜汤里有什么？
+salad	Could I have the dressing on the side of the salad?	沙拉酱能单独放在旁边吗？	Is this salad large enough to share?	这份沙拉够两个人一起吃吗？
+soup	What is the soup of the day?	今天的例汤是什么？	The soup is a little cold; could you warm it up?	汤有点凉，你能加热一下吗？
+sandwich	Could you cut the sandwich in half?	你能把三明治切成两半吗？	Does this sandwich come with a drink?	这个三明治配饮料吗？
+burger	Could I have the burger without cheese?	我的汉堡能不加奶酪吗？	Is there a vegetarian burger on the menu?	菜单上有素食汉堡吗？
+pizza	What size is the small pizza?	小号比萨有多大？	Could we order one pizza to share?	我们能点一份比萨一起吃吗？
+meat	Does this dish contain any meat?	这道菜里有肉吗？	Could you tell me what kind of meat this is?	你能告诉我这是什么肉吗？
+chicken	I'd like the chicken dish with rice.	我想要配米饭的那道鸡肉菜。	Is the chicken grilled or fried?	这份鸡肉是烤的还是炸的？
+fish	What kind of fish is on the menu today?	今天菜单上有什么鱼？	Could you help me choose a fish dish without bones?	你能帮我选一道没有鱼刺的鱼菜吗？
+seafood	Is there a seafood restaurant near the harbour?	港口附近有海鲜餐厅吗？	I don't eat seafood; what else would you recommend?	我不吃海鲜，你推荐别的什么菜？
+cheese	Could you leave the cheese off my sandwich?	我的三明治能不加奶酪吗？	Is this cheese made locally?	这种奶酪是当地制作的吗？
+butter	Could I have some butter for the bread?	能给我一点抹面包的黄油吗？	Is this cooked with butter or oil?	这个是用黄油还是食用油做的？
+sauce	Could you put the sauce in a separate container?	酱汁能单独装在一个盒子里吗？	What is this sauce made from?	这个酱汁是用什么做的？
+salt	Could you pass me the salt?	能把盐递给我吗？	Please use less salt if possible.	如果可以，请少放点盐。
+pepper	Could I have some black pepper?	能给我一点黑胡椒吗？	Is that a sweet pepper or a hot one?	那是甜椒还是辣椒？
+sugar	I'd like my tea without sugar.	我的茶不要加糖。	Could you bring a little sugar for the coffee?	能拿一点糖来加咖啡吗？
+sweet	Is this drink very sweet?	这杯饮料很甜吗？	I'd prefer something less sweet.	我更想要不那么甜的。
+sour	The soup tastes quite sour.	这汤喝起来挺酸。	Is this fruit sweet or sour?	这个水果是甜的还是酸的？
+spicy	How spicy is this dish?	这道菜有多辣？	I'd like something that isn't too spicy.	我想要不太辣的菜。
+mild	Could you make it mild, please?	请做得不太辣，好吗？	Does this cheese have a mild flavour?	这种奶酪的味道温和吗？
+fresh	Is the juice made from fresh fruit?	这果汁是用新鲜水果做的吗？	Where can I buy fresh bread in the morning?	早上我在哪里能买到新鲜面包？
+raw	Does this dish contain raw fish?	这道菜里有生鱼吗？	I'd rather not eat raw vegetables today.	我今天不想吃生蔬菜。
+cooked	I'd like everything fully cooked, please.	请把所有食物都做熟。	Is this dish served cooked or raw?	这道菜上桌时是熟的还是生的？
+tea	Could I have a pot of tea for two?	能来一壶供两人喝的茶吗？	What kind of tea do you have?	你们有哪些茶？
+coffee	Is there a place to get coffee near the station?	车站附近有买咖啡的地方吗？	Could I have a small coffee to go?	能给我一杯小杯咖啡带走吗？
+juice	I'd like a glass of orange juice.	我想要一杯橙汁。	Is the juice included in breakfast?	早餐包含果汁吗？
+soda	Do you have a soda without sugar?	你们有无糖汽水吗？	Could I have a soda with no ice?	能给我一杯汽水，不加冰吗？
+lemonade	Is your lemonade sparkling or still?	你们的柠檬饮料是含气的还是不含气的？	I'd like a small lemonade, please.	请给我一小杯柠檬饮料。
+sparkling	Could I have sparkling water?	能给我一杯气泡水吗？	Is this a sparkling drink?	这是一种含气饮料吗？
+still	I'd prefer still water, please.	请给我不含气的水。	Do you have both sparkling and still water?	你们有气泡水和不含气的水吗？
+ice	Could I have this without ice?	这杯能不加冰吗？	There's too much ice in my drink.	我的饮料里冰太多了。
+iced	I'd like an iced coffee.	我想要一杯冰咖啡。	Do you serve iced tea without sugar?	你们有不加糖的冰茶吗？
+beer	Which local beer would you recommend?	你推荐哪种当地啤酒？	Is there an alcohol-free beer available?	你们有无酒精啤酒吗？
+wine	Could I see the wine list?	我能看一下酒单吗？	Is this wine sold by the glass?	这款葡萄酒可以按杯点吗？
+alcohol	Does this dessert contain alcohol?	这份甜点里含酒精吗？	I'd like a drink without alcohol.	我想要一杯不含酒精的饮料。
+cup	Could I have another cup?	能再给我一个杯子吗？	This cup has a crack in it.	这个杯子有一条裂缝。
+glass	Could you bring a glass of water?	你能拿一杯水来吗？	My glass is chipped; could I have a different one?	我的玻璃杯缺了一个口，能换一个吗？
+plate	Could we have an extra plate for sharing?	我们能多要一个盘子来分着吃吗？	Please don't take my plate yet.	请先别收走我的盘子。
+bowl	Could I have a smaller bowl?	能给我一个小一点的碗吗？	Is this bowl large enough for the soup?	这个碗装汤够大吗？
+fork	Could I have a fork, please?	能给我一把叉子吗？	I dropped my fork; could you bring a clean one?	我的叉子掉了，你能拿一把干净的吗？
+spoon	I need a spoon for the soup.	我需要一把勺子来喝汤。	Could you bring a teaspoon instead of this large spoon?	能拿一把茶匙来换掉这把大勺子吗？
+knife	Could I have a knife to cut the bread?	能给我一把刀切面包吗？	This knife isn't cutting through the steak.	这把刀切不开牛排。
+chopsticks	Could you show me how to use chopsticks?	你能教我怎样用筷子吗？	I'd prefer chopsticks, if you have them.	如果有的话，我更想用筷子。
+napkin	Could I have a napkin?	能给我一张餐巾吗？	There's a clean napkin on the empty chair.	空椅子上有一张干净的餐巾。
+straw	I don't need a straw, thank you.	我不需要吸管，谢谢。	Could I have a straw for this drink?	这杯饮料能给我一根吸管吗？
+cutlery	The takeaway order didn't include any cutlery.	这份外带订单没有配餐具。	Where can I find the cutlery at the buffet?	自助餐的餐具在哪里拿？
+tip	Is the tip already included in the bill?	账单里已经包含小费了吗？	Could you give me a tip for finding a quiet beach?	你能给我一点寻找安静海滩的建议吗？
+split	Could we split the bill?	我们能分开付账吗？	Let's split the taxi fare between us.	我们分摊出租车费吧。
+shop	What time does this shop open?	这家商店几点开门？	I'd like to shop for a few local gifts.	我想买几件当地礼物。
+store	Is there a grocery store near the hotel?	酒店附近有食品杂货店吗？	Could you store this bag while I look around?	我逛一逛的时候，你能帮我存一下这个包吗？
+market	Is the market open on weekdays?	这个集市在工作日开放吗？	Which entrance leads to the food market?	哪个入口通向食品市场？
+supermarket	Where is the nearest supermarket?	最近的超市在哪里？	Can we stop at a supermarket on the way back?	我们回去的路上能在超市停一下吗？
+souvenir	I'm looking for a small souvenir to take home.	我想找一个小纪念品带回家。	Is this souvenir made in the region?	这个纪念品是在本地制作的吗？
+gift	Could you wrap this as a gift?	你能把这个包装成礼物吗？	I'm choosing a gift for my sister.	我在给妹妹挑礼物。
+postcard	I'd like a postcard with a picture of the old town.	我想要一张有老城照片的明信片。	Where can I post this postcard?	我在哪里可以寄这张明信片？
+stamp	Do you sell a stamp for an international postcard?	你们卖寄国际明信片用的邮票吗？	How much postage does this stamp cover?	这枚邮票能支付多少邮资？
+shipping	Does the price include shipping?	这个价格包含寄送费用吗？	Could you explain the shipping options to my country?	你能说明一下寄到我所在国家有哪些方式吗？
+discount	Is there a discount for buying two?	买两个有折扣吗？	Does the student discount apply to this ticket?	这张票适用学生折扣吗？
+tax	Is tax included in the displayed price?	标出的价格含税吗？	Where can I ask about a tax refund?	我在哪里可以咨询退税？
+total	Could you tell me the total before I pay?	付款前，你能告诉我总额吗？	The total on the receipt looks different from the price you quoted.	收据上的总额看起来和你报的价格不一样。
+warranty	Is there an international warranty for this camera?	这台相机有国际保修吗？	Could I have the warranty details in writing?	你能给我一份书面的保修说明吗？
+size	Do you have this in a smaller size?	这个有小一号的吗？	What size would fit a ten-year-old child?	十岁的孩子适合什么尺码？
+fit	These shoes don't fit me very well.	这双鞋不太合我的脚。	Would this bag fit in the overhead locker?	这个包能放进头顶的行李柜吗？
+waterproof	Is this jacket waterproof?	这件外套防水吗？	I'm looking for a waterproof cover for my backpack.	我在找一个背包用的防水罩。
+jacket	May I try on this jacket?	我能试穿这件夹克吗？	I left my jacket in the dining room.	我把外套落在餐厅里了。
+coat	Where can I hang my coat?	我的大衣可以挂在哪里？	I'm looking for a warm coat for the trip.	我在找一件旅途中穿的暖和大衣。
+umbrella	Can I borrow an umbrella from the front desk?	我能从前台借一把雨伞吗？	This umbrella won't open properly.	这把雨伞没法正常打开。
+raincoat	Do you sell a light raincoat?	你们卖轻便雨衣吗？	I'll put my raincoat in the outside pocket.	我会把雨衣放在外侧口袋里。
+swimsuit	Where can I buy a swimsuit?	我在哪里可以买到泳衣？	I forgot to pack my swimsuit.	我忘记把泳衣带上了。
+sunglasses	Have you seen a pair of sunglasses on this table?	你见过这张桌上的一副太阳镜吗？	Could I try these sunglasses on?	我能试戴这副太阳镜吗？
+sunscreen	Does the hotel shop sell sunscreen?	酒店商店卖防晒霜吗？	I left my sunscreen in the room.	我把防晒霜落在房间里了。
+repellent	Where can I buy insect repellent?	我在哪里可以买到驱虫剂？	Could you help me read the instructions on this repellent?	你能帮我看一下这个驱虫剂的使用说明吗？
+wallet	I think I left my wallet at the café.	我想我把钱包落在咖啡馆了。	Did someone hand in a brown wallet?	有人交来一个棕色钱包吗？
+purse	I left my purse on the bus.	我把钱包落在公交车上了。	Could you describe the purse that was found?	你能描述一下找到的那个手提包吗？
+pouch	I keep my charging cables in this pouch.	我把充电线放在这个小袋子里。	Have you seen a small blue pouch near the seats?	你在座位附近见过一个蓝色小袋子吗？
+bag	Could I have a bag for these items?	能给我一个袋子装这些东西吗？	This bag belongs to my travel companion.	这个包是我同行伙伴的。
+padlock	Do you sell a small padlock for a locker?	你们卖储物柜用的小挂锁吗？	The key won't turn in this padlock.	这把挂锁里的钥匙转不动。
+phone	May I use your phone to call the hotel?	我能用你的电话打给酒店吗？	My phone battery is nearly empty.	我的手机快没电了。
+mobile	Is there a mobile phone shop near here?	这附近有手机店吗？	I can't find my mobile; could you call it?	我找不到手机了，你能给它打个电话吗？
+smartphone	Can I show the ticket on my smartphone?	我能在智能手机上出示车票吗？	My smartphone can't scan this code.	我的智能手机扫不了这个码。
+sim	Where can I buy a local SIM card?	我在哪里可以买到当地手机卡？	Will this SIM work in my phone?	这张手机卡能在我的手机上使用吗？
+esim	Does my phone support an eSIM?	我的手机支持嵌入式手机卡吗？	Could you help me activate this eSIM?	你能帮我激活这张嵌入式手机卡吗？
+roaming	Does this plan include international roaming?	这个套餐包含国际漫游吗？	I want to check the roaming charges before using my phone abroad.	在国外使用手机前，我想查一下漫游费用。
+data	How much mobile data is included?	包含多少移动数据流量？	I've used most of my data for this month.	我已经用掉了本月的大部分流量。
+signal	There's no phone signal in this room.	这个房间没有手机信号。	Where can I get a stronger signal?	在哪里可以收到更强的信号？
+network	Which network does this card use?	这张卡使用哪个通信网络？	My phone isn't connecting to the local network.	我的手机连不上当地网络。
+wifi	What is the WiFi password?	无线网络密码是什么？	Is the WiFi available in the lobby as well?	大堂也能使用无线网络吗？
+hotspot	Can I use my phone as a hotspot for my laptop?	我能把手机作为笔记本电脑的热点吗？	The hotspot keeps disconnecting.	这个热点一直断开。
+internet	Is there internet access in the room?	房间里可以上网吗？	I need internet access to download my ticket.	我需要联网下载车票。
+connect	I can't connect to the hotel network.	我连不上酒店网络。	Could you help me connect my phone to the WiFi?	你能帮我把手机连上无线网络吗？
+disconnect	How do I disconnect from this network?	我怎样断开这个网络？	Does the connection disconnect when I leave the lobby?	我离开大堂时，连接会断开吗？
+activate	Could you activate the mobile plan for me?	你能帮我激活手机套餐吗？	Do I need an internet connection to activate it?	激活它需要联网吗？
+prepaid	I'd like a prepaid SIM card.	我想要一张预付费手机卡。	How long is this prepaid plan valid?	这个预付费套餐有效期是多久？
+translate	Could you translate this message for me?	你能帮我翻译这条消息吗？	Can this app translate the menu using my camera?	这个应用能通过相机翻译菜单吗？
+translation	The translation on my phone doesn't make sense.	我手机上的翻译读起来不太对。	Could I check the translation with you?	我能请你帮忙核对一下翻译吗？
+language	What language is the tour in?	这个游览使用哪种语言？	I'm still learning the language, so I may need a little time.	我还在学这门语言，可能需要一点时间。
+understand	I don't understand the last part.	我没听懂最后一部分。	I understand a little, but I can't speak very well.	我能听懂一点，但说得不太好。
+repeat	Could you repeat the address?	你能把地址再说一遍吗？	Please repeat that a little more slowly.	请慢一点再说一遍。
+slowly	Could you speak more slowly?	你能说得慢一点吗？	Please read the number slowly so I can write it down.	请慢慢读号码，让我记下来。
+speak	Do you speak English?	你会说英语吗？	May I speak to someone at reception?	我能和前台工作人员说话吗？
+call	I'll call reception to ask about the late checkout.	我会打电话给前台，问问延迟退房的事。	May I call you when I arrive?	我到了以后能给你打电话吗？
+attraction	Which attraction would you recommend for a rainy day?	下雨天，你推荐去哪个景点？	Is the attraction within walking distance of the hotel?	这个景点从酒店步行能到吗？
+sight	I don't want to miss the town's main sight.	我不想错过镇上的主要名胜。	The river at sunset is a lovely sight.	日落时的河景很美。
+sightseeing	We have one afternoon for sightseeing.	我们有一个下午可以观光。	Is there a sightseeing bus that stops near here?	有没有在这附近停靠的观光巴士？
+landmark	Could you suggest a landmark near the meeting point?	你能说一个集合地点附近的地标吗？	The hotel is opposite a well-known landmark.	酒店在一个著名地标的对面。
+monument	What does this monument commemorate?	这座纪念碑是纪念什么的？	Can we walk around the monument?	我们可以绕着这座纪念碑走一走吗？
+memorial	Where is the entrance to the memorial?	纪念馆的入口在哪里？	Is there a guide explaining the story behind this memorial?	有没有介绍这处纪念物背后故事的导览？
+museum	Do I need to book the museum in advance?	参观博物馆需要提前预约吗？	How much time should I allow for the museum?	我应该为参观这家博物馆留出多少时间？
+gallery	Is the gallery showing any local artists?	这家画廊有展出当地艺术家的作品吗？	Could you point me towards the gallery entrance?	你能指一下美术馆入口的方向吗？
+exhibition	How long will this exhibition be here?	这个展览会在这里展出多久？	Is the temporary exhibition included in my ticket?	我的门票包含临时展览吗？
+exhibit	Could you tell me more about this exhibit?	你能多介绍一下这个展品吗？	The interactive exhibit is closed today.	这个互动展览今天关闭了。
+heritage	Why is this place important to the area's heritage?	这个地方为什么对当地文化遗产很重要？	Is there a heritage walking tour of the old town?	有没有介绍老城文化遗产的步行游览？
+historic	I'd like to explore the historic centre on foot.	我想步行逛逛这座历史城区。	Is this a historic building or a recent reconstruction?	这是一座历史建筑，还是近期重建的建筑？
+historical	Does the museum have a historical map of the city?	博物馆有这座城市的历史地图吗？	Could you explain the historical background of this festival?	你能介绍一下这个节日的历史背景吗？
+ancient	How old is this ancient temple?	这座古老寺庙有多少年历史了？	Where can I see the ancient city walls?	我在哪里能看到古代城墙？
+architecture	I'm interested in the architecture of this neighbourhood.	我对这个街区的建筑风格很感兴趣。	Does the tour explain the local architecture?	这条游览线路会介绍当地建筑吗？
+palace	Can visitors go inside the palace?	游客可以进入宫殿吗？	Where does the palace tour begin?	宫殿游览从哪里开始？
+castle	Is there a path up to the castle?	有通向城堡的步道吗？	Does the castle have an audio guide?	这座城堡有语音导览吗？
+church	Is the church open to visitors right now?	教堂现在向游客开放吗？	May I sit quietly at the back of the church?	我可以安静地坐在教堂后面吗？
+mosque	Is there a time when visitors can enter the mosque?	有没有游客可以进入清真寺的时段？	Where should I leave my shoes before entering the mosque?	进入清真寺之前，我应该把鞋放在哪里？
+temple	Are there any visiting rules for this temple?	参观这座寺庙有什么规定吗？	Which bus goes to the temple?	哪路公交车去那座寺庙？
+shrine	Could you explain the custom at this shrine?	你能解释一下这处神社的习俗吗？	Is the shrine within the monastery grounds?	这处圣地在修道院的院内吗？
+pagoda	Can we walk up to the pagoda?	我们能走到那座宝塔那里吗？	Which path gives a good view of the pagoda?	从哪条路能清楚地看到宝塔？
+monastery	Is the monastery accepting visitors today?	修道院今天接待游客吗？	Could you tell me about daily life in the monastery?	你能讲讲修道院里的日常生活吗？
+statue	Who does this statue represent?	这座雕像表现的是谁？	Let's meet beside the statue at the entrance.	我们在入口的雕像旁见面吧。
+sculpture	Is this sculpture by a local artist?	这件雕塑是当地艺术家的作品吗？	Could I take a photograph of the sculpture?	我能给这件雕塑拍照吗？
+mural	What is the story behind this mural?	这幅壁画背后有什么故事？	I'd like to see the mural on the library wall.	我想看看图书馆墙上的壁画。
+fountain	Is the drinking fountain working?	这个饮水喷泉能用吗？	We'll meet by the fountain in the main square.	我们会在主广场的喷泉旁见面。
+square	Where is the main square?	主广场在哪里？	Is there a café overlooking the square?	有没有能看到广场的咖啡馆？
+plaza	Can we reach the plaza without crossing the main road?	我们能不横穿主干道就到广场吗？	The entrance is on the far side of the plaza.	入口在广场另一侧。
+park	Is the park open after sunset?	这个公园日落后还开放吗？	I'd like a quiet place to sit in the park.	我想在公园里找个安静的地方坐一坐。
+garden	May we walk through the garden?	我们可以从花园穿过去吗？	Does the garden have a shaded seating area?	花园里有可以坐着乘凉的地方吗？
+zoo	Which entrance is closest to the zoo bus stop?	哪个入口离动物园公交站最近？	Can I buy a zoo ticket at the gate?	我能在门口买动物园的票吗？
+aquarium	How do we get to the aquarium from here?	从这里怎样去水族馆？	Does the aquarium have any timed entry slots?	这家水族馆有分时段入场安排吗？
+viewpoint	Is the viewpoint accessible without a long climb?	不长时间爬山也能到这个观景点吗？	Where does the path to the viewpoint start?	通向观景点的步道从哪里开始？
+lookout	Is the lookout open in this weather?	这样的天气，观景台还开放吗？	We stopped at the lookout to enjoy the view.	我们在观景台停下来欣赏景色。
+scenery	I'd like a train route with beautiful scenery.	我想坐一条沿途风景优美的铁路线路。	Can we stop here to enjoy the scenery?	我们能在这里停下来看看风景吗？
+landscape	The guide explained how the river shaped the landscape.	导游解释了这条河是怎样塑造地貌的。	Where can I photograph the landscape without disturbing anyone?	我在哪里拍风景不会打扰别人？
+village	How far is the village from the bus stop?	那个村庄离公交站多远？	Is there somewhere to stay in the village?	村里有住宿的地方吗？
+town	Can you suggest a walking route around the town?	你能推荐一条绕镇步行的路线吗？	We're staying just outside the town.	我们住在镇子外面不远的地方。
+city	What's the easiest way to get into the city?	进城最方便的方式是什么？	Could I have a map of the city?	能给我一张城市地图吗？
+capital	Was this city once the capital?	这座城市以前是首都吗？	How long is the journey to the capital?	去首都的路程需要多久？
+coast	I'd like to travel along the coast.	我想沿着海岸旅行。	Does this bus go all the way to the coast?	这辆公交车一直开到海岸吗？
+beach	Is there a public beach near the hotel?	酒店附近有公共海滩吗？	Where can we leave our bags at the beach?	我们在海滩上可以把包存在哪里？
+bay	Does the ferry cross the bay?	这艘渡轮会穿过海湾吗？	Is there a walking path around the bay?	海湾周围有步行小路吗？
+island	How do we get to the island?	我们怎样去那个岛？	Can we stay overnight on the island?	我们可以在岛上过夜吗？
+lake	Can we walk around the lake?	我们能绕湖走一圈吗？	Is there a bus stop near the lake?	湖附近有公交站吗？
+river	Where is the nearest bridge across the river?	最近的过河桥在哪里？	Does this boat trip go along the river?	这条游船线路沿着河走吗？
+waterfall	How long is the walk to the waterfall?	走到瀑布需要多久？	Is the waterfall path open today?	通向瀑布的步道今天开放吗？
+mountain	Which mountain can we see from here?	从这里能看到的是哪座山？	Is there a visitor centre at the foot of the mountain?	山脚下有游客中心吗？
+hill	Can we reach the top of the hill by road?	我们能沿公路到达山丘顶部吗？	The hotel is halfway up the hill.	酒店在半山坡上。
+forest	Are there marked walking routes through the forest?	森林里有标记好的步行路线吗？	We'd like to join a guided walk in the forest.	我们想参加一次有人带领的森林徒步。
+desert	Is there a guided trip into the desert?	有没有人带领的沙漠游览？	What should we bring for the desert tour?	参加沙漠游览需要带什么？
+cave	Do we need to book the cave tour?	我们需要预订洞穴游览吗？	How long will we spend inside the cave?	我们会在洞穴里待多久？
+volcano	Can the visitor centre explain the history of the volcano?	游客中心能介绍这座火山的历史吗？	Is the volcano tour running today?	火山游览今天照常进行吗？
+snow	Is there snow on the road to the hotel?	去酒店的路上有积雪吗？	We didn't expect this much snow.	我们没想到会有这么多雪。
+trail	Which trail is suitable for a short walk?	哪条步道适合短时间散步？	Is the trail clearly marked?	这条步道的标记清楚吗？
+path	Does this path lead back to the entrance?	这条小路通向入口吗？	The path splits here; which way should we go?	小路在这里分岔了，我们该走哪边？
+footpath	Is this footpath open to the public?	这条步行小道对公众开放吗？	The footpath starts behind the visitor centre.	这条步行小道从游客中心后面开始。
+hike	How long is the hike to the lake?	徒步去湖边要多久？	I'd like a short hike rather than a full-day trip.	我想参加一次短途徒步，不想走一整天。
+hiking	Is there a shop that rents hiking boots?	有没有出租徒步靴的商店？	We have little hiking experience, so we'd like to ask about the route.	我们徒步经验不多，想先问问路线情况。
+trek	What experience is needed for this trek?	参加这次长途徒步需要什么经验？	Is accommodation included in the trek?	这次长途徒步包含住宿吗？
+walking	Is the station within walking distance?	车站步行能到吗？	Do you have a map of the walking routes?	你有步行路线图吗？
+climb	Do we need a guide for this climb?	这次攀登需要导游吗？	I'm not comfortable with a steep climb.	我不太能接受很陡的攀登路段。
+climbing	Is this climbing session suitable for beginners?	这场攀岩活动适合初学者吗？	Can we rent the equipment for climbing here?	我们可以在这里租攀岩装备吗？
+summit	How far are we from the summit?	我们离山顶还有多远？	The guide said the summit route was closed.	导游说通向山顶的路线关闭了。
+peak	Which peak is that in the distance?	远处那是哪座山峰？	Can we see the peak from the village?	从村子里能看到山峰吗？
+slope	Is there another route that avoids this steep slope?	有没有另一条路线可以避开这段陡坡？	The lodge is on a gentle slope above the lake.	那家山间旅馆在湖上方的一处缓坡上。
+slippery	The steps are slippery after the rain.	雨后这些台阶很滑。	Is the path slippery in this weather?	这样的天气，步道会滑吗？
+signpost	I can't read the signpost from here.	我从这里看不清路标。	Does that signpost point towards the village?	那个路标指向村子吗？
+compass	Could you show me how to read this compass?	你能教我怎样看这个指南针吗？	Does the guide carry a compass?	导游带指南针吗？
+navigation	The navigation app is showing two different routes.	导航应用显示了两条不同的路线。	Can I use navigation on this phone without mobile data?	这部手机不使用移动数据时能导航吗？
+guide	Where should we meet our guide?	我们应该在哪里和导游见面？	Could you guide us back to the main road?	你能带我们回到主路吗？
+guided	Is there a guided tour in English?	有没有英语导览？	We'd prefer a guided walk rather than exploring alone.	我们更想参加有人带领的徒步，不想自己探索。
+tour	How many people will be on the tour?	这个旅行团会有多少人？	Does the tour return to the starting point?	这条游览线路会回到起点吗？
+excursion	Does the excursion include lunch?	这次短途游览包含午餐吗？	I'd like to book the morning excursion.	我想预订上午的短途游览。
+activity	Is this activity suitable for children?	这项活动适合孩子吗？	What happens if the activity is cancelled because of weather?	如果活动因为天气取消，会怎么处理？
+adventure	We're looking for a gentle adventure, not an extreme sport.	我们想参加轻松一点的探险，不是极限运动。	The guide asked about our experience before the adventure began.	探险开始前，导游询问了我们的经验。
+camping	Is camping allowed in this area?	这个地区允许露营吗？	Do you rent camping equipment?	你们出租露营装备吗？
+tent	Is the tent included in the equipment hire?	装备租赁包括帐篷吗？	Where should we put up the tent?	我们应该在哪里搭帐篷？
+torch	Could I borrow a torch for the walk back?	我能借一支手电筒走回去吗？	The torch needs new batteries.	这支手电筒需要换电池了。
+flashlight	Do you sell batteries for this flashlight?	你们卖这支手电筒用的电池吗？	I left my flashlight at the campsite.	我把手电筒落在营地了。
+camera	May I bring my camera inside?	我可以把相机带进去吗？	Could you take a photo of us with this camera?	你能用这台相机给我们拍张照吗？
+photography	Is photography allowed in this room?	这个房间允许摄影吗？	Does the museum have a photography exhibition?	博物馆有摄影展吗？
+sunrise	Can we see the sunrise from the hotel?	从酒店能看到日出吗？	What time should we meet for the sunrise walk?	参加日出徒步，我们应该几点集合？
+sunset	I'd like to watch the sunset by the water.	我想在水边看日落。	Does the boat trip finish before sunset?	游船行程会在日落前结束吗？
+weather	What's the weather usually like at this time of year?	每年这个时候，天气通常怎么样？	The weather changed while we were waiting for the boat.	我们等船时，天气变了。
+forecast	Where can I check the local forecast?	我在哪里可以查看当地天气预报？	Does the forecast suggest we should ask about cancelling the tour?	看天气预报，我们是不是该问问是否取消游览？
+temperature	What is the temperature outside?	外面温度是多少？	The temperature in the room is too high for me.	房间里的温度对我来说太高了。
+sunny	Is there a sunny spot where we can sit?	有没有阳光充足的地方可以坐？	If it's sunny tomorrow, we'd like to visit the garden.	如果明天晴朗，我们想去花园看看。
+cloudy	It was cloudy when we left the hotel.	我们离开酒店时，天是多云的。	Does the boat tour still run when it's cloudy?	多云天气时，游船还照常运行吗？
+rainy	What would you recommend for a rainy afternoon?	下雨的下午，你推荐做什么？	The rainy weather has changed our plans.	下雨的天气让我们改变了计划。
+windy	It's too windy for us to sit outside.	风太大了，我们没法坐在外面。	Is the cable car running in this windy weather?	这样的多风天气，缆车还在运行吗？
+humid	The room feels very humid.	房间里感觉很潮湿。	Is it usually this humid in the morning?	早上通常都会这么潮湿吗？
+humidity	The humidity makes my clothes take longer to dry.	湿度高，让我的衣服晾干得更慢。	Does the room have anything to control the humidity?	房间里有什么设备可以控制湿度吗？
+dry	Is there a dry place where we can wait?	有没有干燥的地方可以让我们等候？	I'd like to dry my wet shoes before leaving.	我想在出发前把湿鞋晾干。
+fog	The fog is making it hard to see the road.	雾让我们很难看清路面。	Has the ferry been delayed because of fog?	渡轮因为雾而延误了吗？
+foggy	It was foggy when we reached the lookout.	我们到观景台时，有雾。	Could we postpone the walk if it's still foggy?	如果还是有雾，我们可以推迟徒步吗？
+mist	There's mist over the lake this morning.	今天早上湖面上有薄雾。	Can we wait here until the mist clears?	我们能在这里等薄雾散去吗？
+storm	Where can we get updates about the storm?	我们在哪里可以获取暴风雨的最新消息？	The boat trip was cancelled because of the storm.	游船行程因为暴风雨取消了。
+thunder	I can hear thunder in the distance.	我能听到远处的雷声。	We went back to the visitor centre when the thunder started.	开始打雷时，我们回到了游客中心。
+lightning	We saw lightning while waiting for the bus.	等公交车时，我们看到了闪电。	Does the activity stop when there's lightning nearby?	附近有闪电时，活动会停止吗？
+blizzard	The driver said the road was closed because of the blizzard.	司机说，道路因暴风雪关闭了。	Where can we stay while the blizzard warning is in effect?	暴风雪警报生效期间，我们可以住在哪里？
+hurricane	The hotel staff told us about the hurricane warning.	酒店工作人员告诉了我们飓风警报的消息。	Who should we ask about the hurricane evacuation plan?	我们应该向谁询问飓风撤离方案？
+typhoon	Our flight was cancelled because of the typhoon.	我们的航班因为台风取消了。	Where can we read the official typhoon updates?	我们在哪里可以查看官方台风消息？
+monsoon	Does this route operate during the monsoon season?	这条线路在季风雨季运行吗？	The guide explained how the monsoon affects local travel.	导游介绍了季风雨季对当地出行的影响。
+flood	Is there a flood warning for this area?	这个地区有洪水警报吗？	We need to ask whether the flood has affected the station.	我们需要问一下洪水是否影响了车站。
+flooding	The road is closed because of flooding.	道路因淹水而关闭。	Has the hotel entrance been affected by flooding?	酒店入口受到淹水影响了吗？
+landslide	The bus was diverted after a landslide.	发生山体滑坡后，公交车改道了。	Where can we check for landslide warnings before the trip?	出发前，我们在哪里可以查看山体滑坡警报？
+avalanche	The guide cancelled the route because of the avalanche warning.	导游因为雪崩警报取消了这条路线。	Where can we read the current avalanche information?	我们在哪里可以查看最新的雪崩信息？
+heatwave	The heatwave has made the room uncomfortable.	热浪让房间里待着不舒服。	Is the outdoor event still going ahead during the heatwave?	热浪期间，户外活动还照常进行吗？
+shelter	Where is the nearest shelter?	最近的避难处在哪里？	Can we take shelter in this building?	我们能在这栋建筑里避一下吗？
+shade	Could we sit in the shade?	我们能坐在阴凉处吗？	Is there any shade near the bus stop?	公交站附近有阴凉处吗？
+tide	Where can we check the tide times?	我们在哪里可以查看潮汐时间？	Does the tide affect access to this beach?	潮汐会影响这片海滩的通行吗？
+current	Is the current strong near this beach?	这片海滩附近的水流强吗？	Could you explain the warning about the current?	你能解释一下这个水流警告吗？
+wave	A large wave splashed over the side of the boat.	一个大浪溅过了船边。	The guide asked us to wait until the wave passed.	导游让我们等这道浪过去。
+surf	Is there a place to rent a surf board?	有没有地方可以租冲浪板？	The surf looks rough today.	今天的浪看起来很猛。
+surfing	Do you offer surfing lessons for beginners?	你们有面向初学者的冲浪课吗？	Is the surfing lesson still running in this weather?	这种天气，冲浪课还照常进行吗？
+swim	Is it permitted to swim here?	这里允许游泳吗？	I'd like to ask the lifeguard before I swim.	我想先问问救生员，再下水游泳。
+swimming	Where is the hotel swimming pool?	酒店游泳池在哪里？	Is the swimming area supervised?	这个游泳区域有人看护吗？
+snorkeling	Can we book a snorkeling trip with a guide?	我们可以预订有向导带领的浮潜行程吗？	What experience do we need for snorkeling here?	在这里浮潜需要什么经验？
+diving	Is there a diving centre near the harbour?	港口附近有潜水中心吗？	Which qualifications do you need for this diving trip?	参加这次潜水行程需要哪些资格？
+scuba	Do you provide the equipment for the scuba course?	水肺潜水课程的装备由你们提供吗？	I'm interested in an introduction to scuba diving.	我想了解水肺潜水的入门课程。
+kayak	Can two people use this kayak?	这艘皮艇能坐两个人吗？	Where do we return the kayak after the trip?	行程结束后，我们在哪里归还皮艇？
+canoe	Is there a guided canoe trip on the lake?	湖上有没有有人带领的独木舟行程？	Could you explain the equipment that comes with the canoe?	你能介绍一下租独木舟配有哪些装备吗？
+rafting	Is the rafting trip suitable for first-time visitors?	这次漂流行程适合第一次参加的人吗？	What should we bring for the rafting session?	参加漂流活动需要带什么？
+paddle	Could I have a shorter paddle?	能给我一支短一点的桨吗？	The instructor will show us how to paddle.	教练会教我们怎样划桨。
+sail	When does the boat sail?	船什么时候开？	Is there a chance to learn how to sail on this trip?	这次行程有机会学习怎样驾帆船吗？
+ski	Can I rent a pair of ski boots here?	我能在这里租一双滑雪靴吗？	I'd like to learn to ski with an instructor.	我想跟教练学习滑雪。
+skiing	Is there a beginner skiing lesson this afternoon?	今天下午有初学者滑雪课吗？	What equipment is included in the skiing package?	滑雪套餐包含哪些装备？
+snowboard	Is this snowboard the right size for me?	这块滑雪板的尺寸适合我吗？	Where can I rent a snowboard?	我在哪里可以租单板滑雪板？
+snowboarding	Do you offer snowboarding lessons in English?	你们提供英语单板滑雪课程吗？	I haven't tried snowboarding before.	我以前没试过单板滑雪。
+sled	Can we rent a sled for the children?	我们能给孩子租一个雪橇吗？	Where is the designated sled area?	指定的雪橇活动区在哪里？
+wildlife	I'd like to see wildlife without disturbing the animals.	我想观察野生动物，但不打扰它们。	Is there a guided wildlife walk?	有没有人带领的野生动物观察徒步？
+litter	Where should we put this litter?	我们应该把这些垃圾放在哪里？	Please don't leave litter on the trail.	请不要把垃圾留在步道上。
+respect	We want to respect the customs of the place we're visiting.	我们想尊重到访地的习俗。	Could you explain how visitors can show respect here?	你能解释游客在这里怎样表达尊重吗？
+etiquette	Is there any local etiquette we should know about?	有没有我们应该了解的当地礼仪？	Could you explain the etiquette for visiting this home?	你能讲讲拜访这户人家的礼仪吗？
+traditional	Where can we try traditional local food?	我们在哪里能尝到传统的当地食物？	Is this a traditional dance from the region?	这是这个地区的传统舞蹈吗？
+culture	I'd like to learn more about the local culture.	我想多了解一些当地文化。	How does the festival reflect the community's culture?	这个节日是怎样体现当地社区文化的？
+festival	Do we need tickets for the festival?	参加这个节日活动需要门票吗？	Will public transport run later during the festival?	节日期间，公共交通会延长运营时间吗？
+admission	Is admission included in the tour price?	游览价格包含入场费吗？	Where can we ask about admission for children?	我们在哪里可以咨询儿童入场的规定？
+opening	Could you confirm the opening time of the ticket office?	你能确认一下售票处的开门时间吗？	Does the opening time change at weekends?	周末的开放时间会变化吗？
+closing	How long do we have before closing?	离关门还有多久？	Could you confirm the closing time today?	你能确认一下今天的关闭时间吗？
+hours	What are the visiting hours?	参观时间是几点到几点？	The hours shown online are different from the sign.	网上显示的营业时间和告示上的不同。
+free	Is the walking tour free?	这个步行游览是免费的吗？	Do you have a free table for two?	你们有一张可供两人坐的空桌吗？
+urgent	I need urgent help with my travel documents.	我的旅行证件出了问题，需要紧急帮助。	Could you tell the manager this is urgent?	你能告诉经理这件事很紧急吗？
+rescue	Can someone contact the rescue service?	有人能联系救援部门吗？	Where should we wait for the rescue team?	我们应该在哪里等救援队？
+evacuate	Do we need to evacuate the building?	我们需要撤离这栋建筑吗？	The staff told everyone to evacuate through the marked exit.	工作人员让所有人通过标出的出口撤离。
+evacuation	Where is the evacuation meeting point?	疏散集合地点在哪里？	Could you explain the evacuation procedure to us?	你能向我们解释疏散流程吗？
+alarm	Is that the fire alarm?	那是火灾警报吗？	The alarm woke us during the night.	夜里警报把我们叫醒了。
+fire	I can see a fire near the building.	我能看到建筑附近有火。	Where is the fire exit?	消防出口在哪里？
+smoke	There's smoke coming from the hallway.	走廊里正在冒烟。	I can smell smoke in my room.	我在房间里闻到了烟味。
+warning	Could you translate this warning for me?	你能帮我翻译这个警告吗？	Is there a weather warning for tomorrow's trip?	明天的行程有相关天气警报吗？
+risk	What is the main risk on this route?	这条路线的主要风险是什么？	We'd prefer an activity with less risk.	我们更想参加风险较小的活动。
+hurt	My ankle hurts, and I think I may have hurt it on the steps.	我的脚踝很疼，我觉得可能是在台阶上伤到了。	Did you hurt yourself when you fell?	你摔倒时受伤了吗？
+pain	I have pain in my left arm.	我的左臂疼。	The pain started this morning.	疼痛是今天早上开始的。
+sick	I feel sick after the boat trip.	坐完船后，我觉得恶心。	My travel companion is sick and needs to see a doctor.	我的同行伙伴生病了，需要看医生。
+ill	I've been feeling ill since yesterday.	我从昨天开始就感觉生病了。	Is there a place where someone who is ill can wait quietly?	有没有地方可以让生病的人安静地等候？
+unwell	I'm feeling unwell and need to sit down.	我感觉身体不舒服，需要坐下。	My friend is unwell; could you help us find a clinic?	我的朋友身体不舒服，你能帮我们找一家诊所吗？
+fever	I have a fever and would like to see a doctor.	我发烧了，想看医生。	The fever started last night.	我是昨晚开始发烧的。
+cough	I've had a cough for three days.	我已经咳嗽三天了。	The cough is keeping me awake at night.	咳嗽让我晚上睡不着。
+dizzy	I feel dizzy; may I sit here?	我有点头晕，可以坐在这里吗？	I became dizzy during the walk.	我在走路时开始头晕。
+bite	I have an insect bite on my arm.	我的手臂被虫子叮了一下。	Could a doctor check this bite?	能请医生检查一下这个咬伤吗？
+sting	I felt a sting while walking through the grass.	我走过草地时感觉被蜇了一下。	Could you help me explain this insect sting to the nurse?	你能帮我向护士说明这处虫子蜇伤吗？
+medication	I take this medication every day.	我每天服用这种药。	Could you help me read the label on my medication?	你能帮我看一下我的药物标签吗？
+medicine	I left my medicine at the hotel.	我把药落在酒店了。	This is the medicine my doctor prescribed.	这是医生给我开的药。
+prescription	I have a prescription from my doctor.	我有医生开的处方。	Could you help me understand the instructions on this prescription?	你能帮我看懂这张处方上的说明吗？
+doctor	Could you help me find a doctor who speaks English?	你能帮我找一位会说英语的医生吗？	I'd like to explain my symptoms to the doctor.	我想向医生说明我的症状。
+nurse	Could I speak to a nurse?	我能和护士说话吗？	The nurse asked when the pain started.	护士问疼痛是从什么时候开始的。
+ambulance	Could you call an ambulance?	你能叫一辆救护车吗？	Where should we wait for the ambulance?	我们应该在哪里等救护车？
+rest	Could we stop here for a rest?	我们能在这里休息一下吗？	I need to rest before continuing the walk.	继续走之前，我需要休息。
+sanitizer	Is there hand sanitizer at the entrance?	入口有免洗洗手液吗？	My sanitizer bottle leaked inside my bag.	我的消毒液瓶子在包里漏了。
+wash	Where can I wash my hands?	我在哪里可以洗手？	Is there somewhere to wash these clothes?	有没有地方可以洗这些衣服？
+clean	Could you bring a clean bedsheet?	你能拿一条干净的床单来吗？	Is there a place to clean my muddy shoes?	有没有地方可以清洗我沾满泥的鞋子？
+dirty	The bedsheet is dirty; could it be changed?	床单脏了，能换一下吗？	My clothes are dirty after the hike.	徒步后，我的衣服脏了。
+pickpocket	I think a pickpocket took my wallet.	我觉得扒手拿走了我的钱包。	The guide told us to watch for a pickpocket in the crowd.	导游提醒我们留意人群中的扒手。
+scam	I'm worried that this message might be a scam.	我担心这条消息可能是骗局。	Could you help me report a travel booking scam?	你能帮我举报一起旅行预订骗局吗？
+suspicious	That payment request looks suspicious.	那项付款要求看起来很可疑。	I'd like to report a suspicious message claiming to be from the hotel.	我想举报一条自称来自酒店的可疑消息。
+belongings	Where can I leave my belongings while I swim?	游泳时，我可以把随身物品放在哪里？	Some of my belongings are missing from the room.	房间里少了几件我的随身物品。
+valuable	Is there a safe for valuable items?	有没有存放贵重物品的保险箱？	I don't want to leave anything valuable in the car.	我不想把贵重东西留在车里。
+recover	Who can help me recover my lost luggage?	谁能帮我找回丢失的行李？	I need a quiet day to recover after the long journey.	长途旅行后，我需要安静地休息一天来恢复。
+insurer	My insurer asked for a copy of the medical receipt.	我的保险公司要求提供医疗收据的副本。	Could you help me contact my insurer?	你能帮我联系我的保险公司吗？
+hotline	Is there a tourist assistance hotline?	有没有游客援助热线？	The hotline operator asked for our exact location.	热线工作人员要求我们提供准确位置。
+helpline	Could you write down the helpline number?	你能把求助热线号码写下来吗？	Does the helpline offer support in English?	这条求助热线提供英语服务吗？
+nearby	Is there a pharmacy nearby?	附近有药房吗？	Could you recommend somewhere nearby for breakfast?	你能推荐附近一个吃早餐的地方吗？
+alone	I'm travelling alone.	我一个人在旅行。	I don't feel comfortable walking back alone tonight.	今晚一个人走回去，我不太放心。
+companion	My companion is waiting at the station.	我的同伴在车站等我。	Can my travel companion come with me to the appointment?	我的同行伙伴能陪我一起赴约吗？
+explain	Could you explain how this ticket works?	你能解释一下这张票怎样使用吗？	I'll explain what happened when we get to reception.	到了前台，我会解释发生了什么。
+crowded	Is the museum usually this crowded?	这家博物馆通常都这么拥挤吗？	We'd prefer a less crowded place to eat.	我们更想找个不那么拥挤的地方吃饭。
+empty	Is this seat empty?	这个座位空着吗？	The bottle is empty; could I fill it here?	瓶子空了，我能在这里装水吗？
+upstairs	Is the restaurant upstairs?	餐厅在楼上吗？	Could you help me take this bag upstairs?	你能帮我把这个包拿到楼上吗？
+downstairs	I'll wait for you downstairs.	我在楼下等你。	Is there a lift to take us downstairs?	有没有可以让我们下楼的电梯？
+opposite	Is the bus stop opposite the bank?	公交站在银行对面吗？	Our room is opposite the stairs.	我们的房间在楼梯对面。
+checkpoint	What documents do we need at this checkpoint?	在这个检查站，我们需要出示什么文件？	The driver stopped at the checkpoint to speak to an officer.	司机在检查站停下来，与一位工作人员交谈。
+refill	Could I have a refill of water?	能再给我添点水吗？	Where can I refill my bottle?	我在哪里可以把水瓶重新装满？
