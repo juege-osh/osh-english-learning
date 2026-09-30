@@ -82,6 +82,9 @@ func main() {
 	mux.HandleFunc("/api/chat/block", f.chatBlock)
 	mux.HandleFunc("/api/chat/moderate", f.chatModerate)
 	mux.HandleFunc("/api/redeem", f.redeem)
+	mux.HandleFunc("/api/codes/create", f.createMemberCode)
+	mux.HandleFunc("/api/community", f.communityInfo)
+	mux.HandleFunc("/api/community/settings", f.communityUpdate)
 	mux.HandleFunc("/api/bookings", func(w http.ResponseWriter, r *http.Request) {
 		if r.Method == http.MethodGet {
 			f.bookingMine(w, r)
@@ -128,7 +131,7 @@ func main() {
 	mux.HandleFunc("/api/friends/remove", f.friendRemove)
 	mux.HandleFunc("/api/health", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/json")
-		json.NewEncoder(w).Encode(map[string]interface{}{"ok": true, "service": "english-quest", "version": "1.19.7-staging", "words": 20000, "levels": 2000, "goals": []int{5000, 10000, 20000}, "scenario_missions": 12, "phrases": 120, "tracks": len(f.industries), "industry_tracks": 9, "exam_tracks": 7, "progress_storage": "browser-local-and-account-cloud", "daily_leaderboard": true, "proof_applications": true, "member_bookings": true, "live_races": true, "duo_teams": true, "friends": true, "chat_channels": len(chatChannels), "payment": paymentSummary(f)})
+		json.NewEncoder(w).Encode(map[string]interface{}{"ok": true, "service": "english-quest", "version": "1.20.0-staging", "words": 20000, "levels": 2000, "goals": []int{5000, 10000, 20000}, "scenario_missions": 12, "phrases": 120, "tracks": len(f.industries), "industry_tracks": 9, "exam_tracks": 7, "progress_storage": "browser-local-and-account-cloud", "daily_leaderboard": true, "proof_applications": true, "member_bookings": true, "live_races": true, "duo_teams": true, "friends": true, "chat_channels": len(chatChannels), "payment": paymentSummary(f)})
 	})
 	mux.HandleFunc("/", serveStatic(staticFiles))
 	addr := fmt.Sprintf("127.0.0.1:%d", *port)

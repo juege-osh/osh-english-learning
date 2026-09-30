@@ -28,6 +28,16 @@ func TestMembershipCodeAndDailyBoard(t *testing.T) {
 		t.Fatalf("unexpected profile: %+v", profile)
 	}
 	cookie := first.Result().Cookies()[0]
+	registration := httptest.NewRecorder()
+	f.accountRegister(registration, httptest.NewRequest("POST", "/api/account/register", bytes.NewBufferString(`{"name":"member_test","password":"test-pass-123"}`)))
+	if registration.Code != 200 {
+		t.Fatal(registration.Body.String())
+	}
+	for _, c := range registration.Result().Cookies() {
+		if c.Name == "eq_session" {
+			cookie = c
+		}
+	}
 	code, err := f.generateCode("year")
 	if err != nil {
 		t.Fatal(err)

@@ -32,11 +32,12 @@ type dailyEntry struct {
 	TimeMs  int64  `json:"timeMs"`
 }
 type siteState struct {
-	Members  map[string]member       `json:"members"`
-	Codes    map[string]string       `json:"codes"`
-	Starts   map[string]int64        `json:"starts"`
-	Daily    map[string][]dailyEntry `json:"daily"`
-	Payments map[string]paymentOrder `json:"payments,omitempty"`
+	Members   map[string]member       `json:"members"`
+	Codes     map[string]string       `json:"codes"`
+	Starts    map[string]int64        `json:"starts"`
+	Daily     map[string][]dailyEntry `json:"daily"`
+	Payments  map[string]paymentOrder `json:"payments,omitempty"`
+	Community communitySettings       `json:"community,omitempty"`
 }
 type features struct {
 	mu              sync.Mutex
@@ -278,13 +279,8 @@ func (f *features) membership(w http.ResponseWriter, r *http.Request) {
 	writeJSON(w, map[string]any{"status": status, "until": until, "freeStudy": true})
 }
 func (f *features) redeem(w http.ResponseWriter, r *http.Request) {
-	if r.Method != "POST" || r.Header.Get("Content-Type") != "application/json" {
+	if r.Method != "POST" || r.Header.Get("Content-Type") != "application/json" || !sameOrigin(r) {
 		http.Error(w, "JSON POST required", 405)
-		return
-	}
-	id, _, err := f.visitor(w, r)
-	if err != nil {
-		http.Error(w, "storage unavailable", 500)
 		return
 	}
 	var body struct {
@@ -297,7 +293,17 @@ func (f *features) redeem(w http.ResponseWriter, r *http.Request) {
 	}
 	f.mu.Lock()
 	defer f.mu.Unlock()
+	a := f.accountFromRequest(r)
+	if a == nil {
+		http.Error(w, "请先注册并登录，再兑换到账号", 401)
+		return
+	}
+	id := a.ID
 	hash := codeHash(body.Code)
+	if _, used := f.data.Codes[hash]; used {
+		http.Error(w, "兑换码不存在或已使用", 400)
+		return
+	}
 	codePath := filepath.Join(f.codeDir, hash)
 	codeBytes, err := os.ReadFile(codePath)
 	if err != nil {
@@ -310,10 +316,6 @@ func (f *features) redeem(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	usedPath := codePath + ".used"
-	if err = os.Rename(codePath, usedPath); err != nil {
-		http.Error(w, "兑换码暂时不可用", 500)
-		return
-	}
 	m := f.data.Members[id]
 	previous := m
 	now := time.Now().Unix()
@@ -321,8 +323,8 @@ func (f *features) redeem(w http.ResponseWriter, r *http.Request) {
 	if m.Until > base {
 		base = m.Until
 	}
-	if m.Created+30*86400 > base {
-		base = m.Created + 30*86400
+	if m.LegacyTrialUntil > base {
+		base = m.LegacyTrialUntil
 	}
 	switch kind {
 	case "month":
@@ -333,13 +335,45 @@ func (f *features) redeem(w http.ResponseWriter, r *http.Request) {
 		m.Lifetime = true
 	}
 	f.data.Members[id] = m
+	f.data.Codes[hash] = id
 	if err = f.save(); err != nil {
 		f.data.Members[id] = previous
-		os.Rename(usedPath, codePath)
+		delete(f.data.Codes, hash)
 		http.Error(w, "storage unavailable", 500)
 		return
 	}
+	// Entitlement and consumption are committed in the same state file. A
+	// crash before renaming the code cannot grant it to another account.
+	_ = os.Rename(codePath, usedPath)
 	writeJSON(w, map[string]any{"ok": true, "kind": kind})
+}
+
+func (f *features) createMemberCode(w http.ResponseWriter, r *http.Request) {
+	if r.Method != http.MethodPost || !sameOrigin(r) || r.Header.Get("Content-Type") != "application/json" {
+		http.Error(w, "request denied", 403)
+		return
+	}
+	f.mu.Lock()
+	defer f.mu.Unlock()
+	if !f.requireAdmin(r) {
+		http.Error(w, "只有站长能生成兑换码", 403)
+		return
+	}
+	var body struct {
+		Kind string `json:"kind"`
+	}
+	r.Body = http.MaxBytesReader(w, r.Body, 1024)
+	if json.NewDecoder(r.Body).Decode(&body) != nil || (body.Kind != "month" && body.Kind != "year" && body.Kind != "lifetime") {
+		http.Error(w, "请选择月卡、年卡或永久权益", 400)
+		return
+	}
+	code, err := f.generateCode(body.Kind)
+	if err != nil {
+		http.Error(w, "生成失败，请重试", 500)
+		return
+	}
+	w.Header().Set("Cache-Control", "no-store")
+	writeJSON(w, map[string]any{"code": code, "kind": body.Kind})
 }
 func dailyDate() string {
 	return time.Now().In(time.FixedZone("北京时间", 8*3600)).Format("2006-01-02")
