@@ -2,7 +2,7 @@
 
 此目录包含前端逻辑测试及词库例句构建辅助脚本。
 
-`curate_starter_examples.py` 是前 100 词双语句子的人工编辑层。重新构建整份例句数据时，在补全和简体转换后，依次运行它、`curate_first500_examples.py`、`curate_common_examples.py`、`curate_next200_examples.py --apply` 、`curate_701_800_example_gaps.py --apply` 和 `curate_801_900_example_gaps.py --apply`。前 900 词就会恢复为每词两句双语例句；后 200 词的可编辑原稿在 `data/curated_examples_501_600.tsv` 与 `data/curated_examples_601_700.tsv`。不要颠倒顺序。
+`curate_starter_examples.py` 是前 100 词双语句子的人工编辑层。重新构建整份例句数据时，在补全和简体转换后，依次运行它、`curate_first500_examples.py`、`curate_common_examples.py`、`curate_next200_examples.py --apply`，以及第 701–1000 词三批对应的 `curate_*_example_gaps.py --apply`。前 1,000 词就会恢复为每词两句双语例句；后 500 词的可编辑原稿存于 `data/curated_examples_*.tsv`。不要颠倒顺序。
 
 `augment_bilingual_examples.py` 使用已下载的 Tatoeba 英中句子和关联表，从短句候选中优先选择有译文的例句。先不带参数运行并抽查结果；确认后加 `--apply`。完成语料补全及简体转换后，再执行上述人工编辑脚本。
 
@@ -12,6 +12,8 @@
 
 `curate_801_900_example_gaps.py --apply` 为第 801–900 词补写 67 个词的 134 句：其中 43 个词原先缺中文，另 24 个词的原句重复、别扭或误译。剩下 33 个词暂沿用双语语料，后续继续审读。可编辑原稿分别在两份 `curated_examples_801_900_*.tsv`。重建例句词库时，紧接上一批脚本运行。
 
+`curate_901_1000_example_gaps.py --apply` 为第 901–1000 词补写 50 个词的 100 句：其中 36 个词原先缺中文，另 14 个词的原句重复、误译或不适合入门练习。剩下 50 个词暂沿用双语语料，后续继续审读。可编辑原稿分别在两份 `curated_examples_901_1000_*.tsv`。
+
 完成语料补全后，可安装 `opencc==1.1.9`，运行 `normalize_translations.py` 预览繁转简数量，再用 `--apply` 写回。[OpenCC](https://github.com/BYVoid/OpenCC) 采用 Apache-2.0 许可；这里只在构建时使用，没有把其程序或词典打包进网站。已转换的句子带 `translationAdapted` 标记，页面显示“简体转换”并保留原译文链接。
 
-`curate_first500_glosses.py` 在 `build_vocab.py` 后运行，为第 101–500 词补上简短常用中文义；接着运行 `curate_next200_glosses.py --apply`、`curate_next100_glosses.py --apply` 和 `curate_next100_glosses_801_900.py --apply`，处理第 501–900 词。这些编辑层都保留 ECDICT 原释义供展开查看。重建 `data/words.json` 后必须重跑。
+`curate_first500_glosses.py` 在 `build_vocab.py` 后运行，为第 101–500 词补上简短常用中文义；接着运行 `curate_next200_glosses.py --apply`、`curate_next100_glosses.py --apply`、`curate_next100_glosses_801_900.py --apply` 和 `curate_next100_glosses_901_1000.py --apply`，处理第 501–1000 词。这些编辑层都保留 ECDICT 原释义供展开查看。重建 `data/words.json` 后必须重跑。
