@@ -100,7 +100,7 @@ def main():
         iq=c.call('/api/industries/challenge?sector='+route)
         c.call('/api/industries/submit',{'sector':route,'edition':iq['edition'],'attemptId':iq['attemptId'],'name':c.name,'answers':[next(word['id'] for word in iq['questions'][j]['options'] if word['id'] == target_ids[q['word']]) for j,q in enumerate(iq['questions'])]})
         board=c.call('/api/industries/leaderboard?sector='+route)['entries']
-        ok(route+' 精选释义/双语题库/专项榜',sector['coreCount']==count and len(sector['examples'])==(300 if route in ('travel','finance') else 400 if route in ('ai_creator','healthcare','foreign_trade') else 300) and all(len(items)==2 for items in sector['examples'].values()) and len(iq['questions'])==20 and board[0]['correct']==20)
+        ok(route+' 精选释义/双语题库/专项榜',sector['coreCount']==count and len(sector['examples'])=={'travel':400,'finance':300,'foreign_trade':400,'marketing':500,'law':500,'chemistry':300}[route] and all(len(items)==2 for items in sector['examples'].values()) and len(iq['questions'])==20 and board[0]['correct']==20)
     daily_before=len(a.call('/api/daily/leaderboard?goal=5000')['entries'])
     other_before=len(a.call('/api/daily/leaderboard?goal=20000')['entries'])
     daily=a.call('/api/daily?goal=5000')
