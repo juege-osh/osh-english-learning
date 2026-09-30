@@ -81,31 +81,55 @@ def main():
     a.call('/api/progress',payload)
     synced=another_device.call('/api/progress')['progress']
     ok('独立行业词跨设备保存且不进入主线计数',meiosis['id']>20000 and synced['industries']['biology']['seen']==[meiosis['id']] and not synced['words'])
+    payload['revision']=a.call('/api/progress')['revision']
+    payload['progress']['basics']={'phonics':{'p01':{'studiedAt':100,'slots':[0,1],'wrong':1,'at':200}},'grammar':{'be':{'studiedAt':100,'slots':[0],'wrong':0,'at':200}}}
+    latest=a.call('/api/progress',payload)
+    basic_readback=another_device.call('/api/progress')['progress']
+    ok('音标语法跨设备保存且主线词汇独立',basic_readback['basics']==payload['progress']['basics'] and not basic_readback['words'])
+    invalid=json.loads(json.dumps(payload));invalid['revision']=latest['revision'];invalid['progress']['basics']['phonics']['p01']['slots']=[0,0]
+    a.call('/api/progress',invalid,status=400)
+    ok('非法速通槽位不能覆盖账号进度',a.call('/api/progress')['revision']==latest['revision'])
     biology=b.call('/api/industries/challenge?sector=biology')
-    b.call('/api/industries/submit',{'sector':'biology','edition':biology['edition'],'name':b.name,'answers':[q['options'][0]['id'] for q in biology['questions']]})
+    b.call('/api/industries/submit',{'sector':'biology','edition':biology['edition'],'attemptId':biology['attemptId'],'name':b.name,'answers':[q['options'][0]['id'] for q in biology['questions']]})
     ok('生物专业词参与专项题及榜单',len(biology['questions'])==20 and len(b.call('/api/industries/leaderboard?sector=biology')['entries'])==1)
     route_data=a.call('/data/industries.json')
-    for route, count in [('foreign_trade',774),('finance',846),('marketing',767),('law',850),('chemistry',932)]:
+    for route, count in [('foreign_trade',774),('finance',846),('marketing',767),('law',850),('chemistry',932),('travel',709)]:
         sector=next(item for item in route_data if item['id']==route)
         base_words=a.call('/data/words.json')
         target_ids={sector.get('displayWords',{}).get(str(word['id']),word['word']):word['id'] for word in base_words+extra if word['id'] in sector['wordIds']}
         iq=c.call('/api/industries/challenge?sector='+route)
-        c.call('/api/industries/submit',{'sector':route,'edition':iq['edition'],'name':c.name,'answers':[next(word['id'] for word in iq['questions'][j]['options'] if word['id'] == target_ids[q['word']]) for j,q in enumerate(iq['questions'])]})
+        c.call('/api/industries/submit',{'sector':route,'edition':iq['edition'],'attemptId':iq['attemptId'],'name':c.name,'answers':[next(word['id'] for word in iq['questions'][j]['options'] if word['id'] == target_ids[q['word']]) for j,q in enumerate(iq['questions'])]})
         board=c.call('/api/industries/leaderboard?sector='+route)['entries']
         ok(route+' 精选释义/双语题库/专项榜',sector['coreCount']==count and len(sector['examples'])==100 and all(len(items)==2 for items in sector['examples'].values()) and len(iq['questions'])==20 and board[0]['correct']==20)
     daily_before=len(a.call('/api/daily/leaderboard?goal=5000')['entries'])
     other_before=len(a.call('/api/daily/leaderboard?goal=20000')['entries'])
     daily=a.call('/api/daily?goal=5000')
-    answers=[q['options'][0]['id'] for q in daily['questions']]
-    a.call('/api/daily/submit',{'goal':5000,'name':a.name,'answers':answers})
+    main_ids={word['word']:word['id'] for word in base_words}
+    answers=[main_ids[q['word']] for q in daily['questions']]
+    a.call('/api/daily/submit',{'goal':5000,'edition':daily['edition'],'attemptId':daily['attemptId'],'name':a.name,'answers':answers})
     entries=a.call('/api/daily/leaderboard?goal=5000')['entries']
-    ok('每日题与同档榜单',len(daily['questions'])==20 and len(entries)==daily_before+1 and len(a.call('/api/daily/leaderboard?goal=20000')['entries'])==other_before)
+    ok('永久挑战与同词量榜单',len(daily['questions'])==20 and len(entries)==daily_before+1 and len(a.call('/api/daily/leaderboard?goal=20000')['entries'])==other_before)
+    first_best=next(entry for entry in entries if entry['name']==a.name)
+    new_daily=a.call('/api/daily?goal=5000')
+    worse=a.call('/api/daily/submit',{'goal':5000,'edition':new_daily['edition'],'attemptId':new_daily['attemptId'],'name':a.name,'answers':[0]*20})
+    kept=a.call('/api/daily/leaderboard?goal=5000')
+    retained=next(entry for entry in kept['entries'] if entry['name']==a.name)
+    ok('主线可再挑战且较差成绩不覆盖最佳',not new_daily['submitted'] and new_daily['hasBest'] and worse['correct']==0 and not worse['improved'] and retained==first_best and len(kept['entries'])==len(entries))
+    ok('永久榜版本与最佳成绩上榜时间',kept['period']=='all-time' and kept['edition']==daily['edition'] and first_best['correct']==20 and first_best['submittedAt']>0 and 'legacyEntries' in kept)
+    searched=a.call('/api/daily/leaderboard?goal=5000&q='+a.name.upper())
+    ok('用户名模糊搜索保持真实名次并隐藏账号ID',searched['limit']==1000 and searched['matched']==1 and searched['entries'][0]['username']==a.name and searched['entries'][0]['rank']>=1 and not searched['entries'][0]['user'])
     sectors=a.call('/api/industries')['industries']
-    ok('行业及考试目录',len(sectors)==16)
+    ok('行业及考试目录',len(sectors)==17)
     industry_before=len(b.call('/api/industries/leaderboard?sector=programmer')['entries'])
     iq=b.call('/api/industries/challenge?sector=programmer')
-    b.call('/api/industries/submit',{'sector':'programmer','edition':iq['edition'],'name':b.name,'answers':[q['options'][0]['id'] for q in iq['questions']]})
+    b.call('/api/industries/submit',{'sector':'programmer','edition':iq['edition'],'attemptId':iq['attemptId'],'name':b.name,'answers':[0]*20})
     ok('行业题与独立榜单',len(iq['questions'])==20 and len(b.call('/api/industries/leaderboard?sector=programmer')['entries'])==industry_before+1)
+    programmer=next(item for item in route_data if item['id']=='programmer')
+    prog_ids={programmer.get('displayWords',{}).get(str(word['id']),word['word']):word['id'] for word in base_words+extra if word['id'] in programmer['wordIds']}
+    retry=b.call('/api/industries/challenge?sector=programmer')
+    improved=b.call('/api/industries/submit',{'sector':'programmer','edition':retry['edition'],'attemptId':retry['attemptId'],'name':b.name,'answers':[prog_ids[q['word']] for q in retry['questions']]})
+    programmer_board=b.call('/api/industries/leaderboard?sector=programmer')
+    ok('专项可再挑战且只保留同用户最佳成绩',not retry['submitted'] and retry['hasBest'] and improved['improved'] and improved['best']['correct']==20 and improved['best']['submittedAt']>0 and programmer_board['period']=='all-time' and len(programmer_board['entries'])==industry_before+1)
     ac=a.call('/api/friends/status')['me']['code']
     b.call('/api/friends/status')
     b.call('/api/friends/request',{'code':ac})
