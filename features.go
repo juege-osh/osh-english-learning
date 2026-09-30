@@ -63,6 +63,7 @@ type features struct {
 	progressDir     string
 	data            siteState
 	words           []quizWord
+	extraWords      map[int]quizWord
 	industries      []industry
 	paymentProvider string
 	huifu           *huifuPayClient
@@ -144,6 +145,26 @@ func newFeatures(dir string) (*features, error) {
 	if len(f.words) != 20000 {
 		return nil, fmt.Errorf("unexpected word count %d", len(f.words))
 	}
+	b, err = assets.ReadFile("data/industry_words.json")
+	if err != nil {
+		return nil, err
+	}
+	var extras []quizWord
+	if err = json.Unmarshal(b, &extras); err != nil {
+		return nil, err
+	}
+	f.extraWords = make(map[int]quizWord, len(extras))
+	headwords := make(map[string]bool, len(f.words)+len(extras))
+	for _, word := range f.words {
+		headwords[word.Word] = true
+	}
+	for _, word := range extras {
+		if word.ID <= len(f.words) || word.ID > 30000 || word.Word == "" || word.Zh == "" || headwords[word.Word] || f.extraWords[word.ID].ID != 0 {
+			return nil, fmt.Errorf("invalid specialist word %d", word.ID)
+		}
+		headwords[word.Word] = true
+		f.extraWords[word.ID] = word
+	}
 	b, err = assets.ReadFile("data/industries.json")
 	if err != nil {
 		return nil, err
@@ -159,7 +180,7 @@ func newFeatures(dir string) (*features, error) {
 			return nil, fmt.Errorf("industry %s has invalid glossary size %d", sector.ID, len(sector.Glosses))
 		}
 		for _, id := range sector.WordIDs {
-			if id < 1 || id > len(f.words) {
+			if f.industryWord(id).ID == 0 || (sector.Category == "exam" && id > len(f.words)) {
 				return nil, fmt.Errorf("invalid industry word %d", id)
 			}
 		}

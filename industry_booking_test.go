@@ -304,7 +304,7 @@ func TestEditorialIndustryChallengePools(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	for id, count := range map[string]int{"ai_creator": 831, "healthcare": 753} {
+	for id, count := range map[string]int{"ai_creator": 831, "healthcare": 753, "biology": 967} {
 		t.Run(id, func(t *testing.T) {
 			sector := f.findIndustry(id)
 			if sector == nil || sector.CoreCount != count || len(sector.WordIDs) != count || len(sector.Glosses) != count {
@@ -352,5 +352,65 @@ func TestEditorialIndustryChallengePools(t *testing.T) {
 				t.Fatal("edited meaning reused the old leaderboard")
 			}
 		})
+	}
+}
+
+func TestSupplementalIndustryWordsStayOutsideMainRoute(t *testing.T) {
+	f, err := newFeatures(t.TempDir())
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(f.words) != 20000 || len(f.extraWords) != 245 {
+		t.Fatal("main or supplemental vocabulary size changed unexpectedly")
+	}
+	sector := f.findIndustry("biology")
+	found := map[string]bool{}
+	for _, id := range sector.WordIDs {
+		word := f.industryWord(id)
+		if word.ID != id || word.Word == "" || sector.gloss(word) == "" {
+			t.Fatal("missing specialist word or sense")
+		}
+		if id > 20000 {
+			found[word.Word] = true
+		}
+	}
+	for _, headword := range []string{"meiosis", "cytoplasm", "ribosome", "plasmid", "xylem", "dna", "rna"} {
+		if !found[headword] {
+			t.Fatalf("essential specialist term missing: %s", headword)
+		}
+	}
+	appeared := false
+	for day := 1; day <= 30; day++ {
+		date := time.Date(2026, 10, day, 0, 0, 0, 0, time.UTC).Format("2006-01-02")
+		for _, q := range f.industryChallenge(date, sector) {
+			appeared = appeared || q.ID > 20000
+			if q.Word != f.industryWord(q.ID).Word {
+				t.Fatal("specialist question does not resolve to its vocabulary")
+			}
+		}
+		for _, goal := range []int{5000, 10000, 20000} {
+			for _, q := range f.challenge(date, goal) {
+				if q.ID < 1 || q.ID > goal {
+					t.Fatal("specialist vocabulary leaked into main daily competition")
+				}
+				for _, option := range q.Options {
+					if option.ID > goal {
+						t.Fatal("specialist distractor leaked into main competition")
+					}
+				}
+			}
+		}
+	}
+	if !appeared || f.industryWord(0).ID != 0 || f.industryWord(30001).ID != 0 {
+		t.Fatal("supplemental lookup or ranked coverage failed")
+	}
+	for _, industry := range f.industries {
+		if industry.Category == "exam" {
+			for _, id := range industry.WordIDs {
+				if id > 20000 {
+					t.Fatal("supplemental vocabulary changed an exam reference pool")
+				}
+			}
+		}
 	}
 }

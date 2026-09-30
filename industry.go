@@ -20,6 +20,15 @@ type industry struct {
 	WordIDs     []int          `json:"wordIds"`
 }
 
+// Specialist terms live outside f.words, so main progression and competitive
+// races continue to use exactly the same 20,000-word dictionary.
+func (f *features) industryWord(id int) quizWord {
+	if id >= 1 && id <= len(f.words) {
+		return f.words[id-1]
+	}
+	return f.extraWords[id]
+}
+
 func (sector *industry) gloss(word quizWord) string {
 	if meaning := sector.Glosses[word.ID]; meaning != "" {
 		return meaning
@@ -84,13 +93,13 @@ func (f *features) industryChallenge(date string, sector *industry) []quizQuesti
 	perm := rng.Perm(len(pool))
 	questions := make([]quizQuestion, 0, 20)
 	for _, position := range perm[:20] {
-		word := f.words[pool[position]-1]
+		word := f.industryWord(pool[position])
 		meaning := sector.gloss(word)
 		q := quizQuestion{ID: word.ID, Word: word.Word, Options: []quizOption{{ID: word.ID, Zh: meaning}}}
 		seen := map[string]bool{meaning: true}
 		optionIDs := pool
 		for len(q.Options) < 4 {
-			other := f.words[optionIDs[rng.IntN(len(optionIDs))]-1]
+			other := f.industryWord(optionIDs[rng.IntN(len(optionIDs))])
 			otherMeaning := sector.gloss(other)
 			if !seen[otherMeaning] {
 				q.Options = append(q.Options, quizOption{ID: other.ID, Zh: otherMeaning})

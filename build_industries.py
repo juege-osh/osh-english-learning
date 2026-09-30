@@ -11,7 +11,34 @@ from qa.industry_core import CORE, GLOSSES
 root = Path(__file__).parent
 words = json.loads((root / 'data/words.json').read_text())
 prior = json.loads((root / 'data/industries.json').read_text())
-word_ids = {item['word'].lower(): item['id'] for item in words}
+main_ids = {item['word'].lower(): item['id'] for item in words}
+# Supplement IDs are append-only. Keep the main 20,000 entries and every
+# previous specialist ID unchanged when an editorial route is expanded.
+extras_file = root / 'data/industry_words.json'
+extras = json.loads(extras_file.read_text()) if extras_file.exists() else []
+extra_ids = {item['word']: item['id'] for item in extras}
+if len(extra_ids) != len(extras) or len({item['id'] for item in extras}) != len(extras):
+    raise RuntimeError('duplicate specialist vocabulary')
+if any(item['id'] <= 20000 or item['id'] > 30000 or item['word'] in main_ids
+       or not re.fullmatch('[a-z]+', item['word']) or not item['zh'] for item in extras):
+    raise RuntimeError('invalid specialist vocabulary')
+next_id = max([20000] + [item['id'] for item in extras]) + 1
+for glossary in sorted((root / 'qa').glob('*_reviewed.tsv')):
+    if glossary.name.startswith('.'):
+        continue
+    for line in glossary.read_text().splitlines():
+        if not line or line.startswith('#'):
+            continue
+        headword, meaning = line.split('\t')
+        if not re.fullmatch('[a-z]+', headword) or not meaning:
+            raise RuntimeError(f'invalid specialist word: {headword}')
+        if headword not in main_ids and headword not in extra_ids:
+            if next_id > 30000:
+                raise RuntimeError('specialist vocabulary exceeds ID range')
+            extras.append({'id': next_id, 'word': headword, 'zh': meaning})
+            extra_ids[headword] = next_id
+            next_id += 1
+word_ids = {**main_ids, **extra_ids}
 confusables = json.loads((root / 'qa/industry_confusables.json').read_text())
 
 # A strong ECDICT subject label plus topical words in the displayed meaning or
@@ -61,7 +88,7 @@ def relevance(item, tag, zh_terms, en_terms):
 output = []
 for id_, name, description, tag, zh_words, en_words in specs:
     zh_terms, en_terms = zh_words.split(), en_words.split()
-    priority = list(dict.fromkeys(word_ids[w.lower()] for w in CORE[id_].split() if w.lower() in word_ids))
+    priority = list(dict.fromkeys(main_ids[w.lower()] for w in CORE[id_].split() if w.lower() in main_ids))
     initial = priority[:100]
     if len(initial) != 100:
         raise RuntimeError(f'{id_} needs 100 reviewed starting words, found {len(initial)}')
@@ -132,5 +159,6 @@ for id_, name, description, tag, zh_words, en_words in specs:
     output.append(route)
 for x in prior:
     if x.get('category')=='exam':output.append(x)
+extras_file.write_text(json.dumps(extras,ensure_ascii=False,separators=(',',':')))
 (root/'data/industries.json').write_text(json.dumps(output,ensure_ascii=False,separators=(',',':')))
 print([(x['id'],len(x['wordIds'])) for x in output])
