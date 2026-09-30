@@ -6,13 +6,19 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT / "data/curated_examples_701_800_gaps.tsv"
+SOURCES = (
+    (ROOT / "data/curated_examples_701_800_gaps.tsv", 33),
+    (ROOT / "data/curated_examples_701_800_fixes.tsv", 21),
+)
 EXAMPLES = ROOT / "data/examples.json"
 words = json.loads((ROOT / "data/words.json").read_text())
 examples = json.loads(EXAMPLES.read_text())
 word_ids = {word["word"]: word["id"] for word in words[700:800]}
-rows = [line.split("\t") for line in SOURCE.read_text().splitlines() if line.strip()]
-assert len(rows) == 33, len(rows)
+rows = []
+for source, expected in SOURCES:
+    group = [line.split("\t") for line in source.read_text().splitlines() if line.strip()]
+    assert len(group) == expected, (source, len(group))
+    rows.extend(group)
 assert len({row[0] for row in rows}) == len(rows)
 assert {row[0] for row in rows} <= set(word_ids)
 for fields in rows:
