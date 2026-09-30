@@ -57,7 +57,7 @@
 
 `qa/basics.test.js`检查两次独立听音成功、选择题与输入填空各一次、缩写及弯引号、空答案、错题补练、音频播放成功后才解锁选项、播放失败与取消、复练本轮计数、保存格式及主线进度独立。`progress-sync.test.js`还检查课程互补槽位合并；账号进度接口检查合法课程结构、重复槽位拒绝和跨设备保存。课程不写入主线`words`或增加XP。
 
-`travel_reviewed.tsv`和`travel_examples.tsv`整理旅行709词及400词的800句原创双语用法。它和其余九条行业合计4722个句子目标词、9444句；行业含义已有本站编辑层，余下3390个行业词尚需补句子。十条行业加七条考试，共17条路线；补充行业词库现有1407词，原有ID保持，新增只追加。
+`travel_reviewed.tsv`和`travel_examples.tsv`整理旅行709词及400词的800句原创双语用法。它和其余九条行业合计5384个句子目标词、10768句；行业含义已有本站编辑层，余下2728个行业词尚需补句子。十条行业加七条考试，共17条路线；补充行业词库现有1407词，原有ID保持，新增只追加。
 
 专项答题反馈的释义和例句默认收起，用户展开后才看和听。手机导航显示4个常用入口，其他9个入口折叠到「更多」。
 
@@ -74,7 +74,7 @@
 本轮永久榜后端最终42项Go测试4.428秒、并发检测53.935秒、vet及47项四账号检查通过；此前34/43项记录是改造前基线。
 
 
-当前行业例句覆盖：程序员、外贸、AI创作、医疗、旅行各400词配800句；营销、法律各700词配1400句；金融、化学各300词配600句；生物722词配1444句。十行业合计4722词、9444句，仍3390词待补两句。
+当前行业例句覆盖：程序员、外贸、AI创作、医疗、旅行各400词配800句；金融500词配1000句、化学300词配600句；营销767词配1534句、法律850词配1700句、生物967词配1934句，三条路线所有词均有两句行业用法。十行业合计5384词、10768句，仍2728词待补两句。
 ## v1.26.1 行业用法补齐
 
 程序员、AI创作、医疗健康、旅行本次各增加100词的两句双语用法，共新增800句。四条路线现各覆盖200词、400句；十行业合计1422词、2844句，仍有6690词待补行业例句。此前版本中的前100词覆盖量是历史记录。主线词库、主线例句、场景与考试池保持不变，不增加主线进度。旅行的checked补充“托运的”，医疗的cranial补充“颅部的”，避免句子与释义不符。
@@ -156,3 +156,23 @@
 42项Go测试4.542秒、vet、核心数据及4722个行业句子目标检查、47项隔离四账号检查通过。实际预览走通upstream、decomposer、restriction、review的句子选词、折叠展开与两句反馈，开发例句播放按钮实际点击；主线0保持，无控制台错误。专项前端检查原来固定写300词，已改为核对实际题库数量后通过；没有产品功能失败。本次仅改内容，未重复并发及小屏布局验收。
 
 生物术语另核对[OpenStax氧需求](https://openstax.org/books/microbiology/pages/9-2-oxygen-requirements-for-microbial-growth)、[先天免疫](https://openstax.org/books/biology-2e/pages/42-1-innate-immune-response)、[行为生物学](https://openstax.org/books/biology-2e/pages/45-7-behavioral-biology-proximate-and-ultimate-causes-of-behavior)及[植物组织](https://openstax.org/books/biology-2e/pages/30-1-the-plant-body)。
+
+
+## v1.26.8 三条行业例句补齐与金融扩充
+
+生物新增245词490句、法律150词300句、营销67词134句，三条路线已分别覆盖967、850、767词，每词两句双语。金融另补200词400句，现覆盖500词。合计新增662词1324句；十行业现5384词配10768句，仍2728词待补，主线20,000词尚未逐条语言编辑。
+
+生物涵盖花部、植物生长、生态水文、分类与野外记录；法律涵盖司法公正、审查、解释与法律原则；营销涵盖广告证据、环保表达、公益和广告技术；金融涵盖监管、信托、风控、结算与财务沟通。专业句子用于工作或学习交流，不把不同法律程序、科学概念和财务指标教成等同。句子题会排除能在同一句中合理替换的干扰词；相反概念保持区分。旧例句字节前缀、全部学习编号、原有释义、1407补充专业词、主线及考试池保持。
+
+在「行业与考试」选生物、法律、营销或金融，可点「句子选词」练习；也可展开「查找专项词」，搜 anthocyanin、prejudgment、substantiation 或 regulator，点击「练这个词」。答后点「查看释义与例句」，查看两句中文并逐句朗读。专项学习不增加主线词数。
+
+42项Go测试4.614秒、vet、核心数据及全部5384个行业句子目标检查通过；47项隔离四账号检查通过。真实预览走通上述四词的句子题、折叠展开与双语反馈，营销播放按钮已点击；主线0保持，无控制台错误。本批仅改内容，没有重复并发和小屏布局验收。
+
+源代码、数据和说明整批同步私有仓库，整仓字节核验后发布。正式站实际版本见 /api/health；发布哈希、回滚备份、线上验收与低负载资源快照见 /tmp/english-quest-v1268-evidence/verification.json。真实支付宝仍未试付，专业音标听审和完整主线语言审校仍待完成。
+
+本批疑难概念来源核对，例句均自行编写：
+
+- 花部与胚珠：[OpenStax 被子植物](https://openstax.org/books/biology/pages/26-3-angiosperms)；连锁基因仍可重组：[遗传连锁](https://openstax.org/books/biology-2e/pages/13-1-chromosomal-theory-and-genetic-linkage)；碱度与pH区分：[USGS 碱度](https://www.usgs.gov/water-science-school/science/alkalinity-and-water)。
+- 令状术语：[美国第九巡回上诉法院](https://www.ca9.uscourts.gov/guides-resources/glossary/)；prejudgment预先判断：[英国法院原始判决](https://www.judiciary.uk/wp-content/uploads/2019/04/bates-judgment-no.4-9-april-19-final.pdf)；cassation特定程序：[法国官方说明](https://www.service-public.gouv.fr/particuliers/vosdroits/F2224?lang=en)。
+- 环保宣传：[FTC Green Guides](https://www.ftc.gov/business-guidance/resources/environmental-claims-summary-green-guides)；增量与归因：[Google Ads 增量实验](https://support.google.com/google-ads/answer/12003020?hl=en)；广告技术角色：[IAB 2025术语附录](https://www.iab.com/wp-content/uploads/2025/06/IAB_Untangling_Issues_Commerce_Media_Networks_June_23_2025.pdf)。
+- APR与利息率区分：[CFPB](https://www.consumerfinance.gov/ask-cfpb/what-is-the-difference-between-a-mortgage-interest-rate-and-an-apr-en-135/)；结算：[BIS](https://www.bis.org/committees/cpmi/pfmi/overview)；信托角色：[OCC术语表](https://www.occ.gov/static/ots/trust-handbook/ots-trust-handbook-glossary.pdf)。
