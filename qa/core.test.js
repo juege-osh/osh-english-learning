@@ -20,7 +20,7 @@ for(const w of words.slice(0,1100))for(const item of examples[w.id]){
 for(const w of words){const opts=C.choices(w,words.slice(Math.max(0,w.id-150),Math.min(words.length,w.id+150)),'zh');assert.equal(opts.length,4);assert.equal(new Set(opts.map(o=>o.zh)).size,4);assert(opts.some(o=>o.id===w.id));}
 const expectedStart={programmer:'algorithm',foreign_trade:'export',finance:'asset',ai_creator:'prompt',marketing:'brand',healthcare:'patient',biology:'biology',law:'law',chemistry:'chemistry'};
 for(const sector of industries.filter(x=>x.category==='industry')){
- const count=sector.id==='programmer'?683:700;assert.equal(sector.coreCount,sector.id==='programmer'?683:100);assert.equal(sector.wordIds.length,count);
+ const reviewedCounts={programmer:683,ai_creator:831,healthcare:753},count=reviewedCounts[sector.id]||700;assert.equal(sector.coreCount,reviewedCounts[sector.id]||100);assert.equal(sector.wordIds.length,count);
  assert(Object.keys(sector.glosses).length>=100);
  assert(sector.wordIds.slice(0,sector.coreCount).every(id=>sector.glosses[id]));
  assert.equal(new Set(sector.wordIds).size,count);
@@ -34,5 +34,6 @@ const aiCreator=industries.find(x=>x.id==='ai_creator');assert.equal(words[aiCre
 assert.equal(aiCreator.glosses[aiCreator.wordIds[100]],'标志设计');
 assert.equal(Object.keys(programmer.glosses).length,683);assert.equal(Object.keys(programmer.examples).length,100);
 for(const id of programmer.wordIds.slice(0,100)){assert.equal(programmer.examples[id].length,2);for(const ex of programmer.examples[id]){assert(ex.translation);assert(new RegExp('\\b'+words[id-1].word+'\\b','i').test(ex.text));}}
+for(const sector of industries.filter(s=>['ai_creator','healthcare'].includes(s.id))){assert.equal(Object.keys(sector.glosses).length,sector.coreCount);assert.equal(Object.keys(sector.examples).length,100);for(const id of sector.wordIds.slice(0,100)){assert.equal(sector.examples[id].length,2);for(const ex of sector.examples[id]){assert(ex.translation);assert(new RegExp('\\b'+words[id-1].word+'\\b','i').test(ex.text));}}for(const group of sector.confusableGroups){assert(group.length>=2);assert(group.every(id=>sector.wordIds.includes(id)));}for(const wrong of ['baseball','country','mannequin'])assert(!sector.wordIds.some(id=>words[id-1].word===wrong));}
 for(const wrong of ['mannequin','deixis','baseball','country','summer'])assert(!programmer.wordIds.some(id=>words[id-1].word===wrong));
-console.log('PASS: 20,000 unique words, 120 phrases, 683 reviewed programmer words with 200 bilingual examples and eight labelled trial routes, unlock and boss gates, duplicate XP, cross-day mastery, failures, overdue reviews, import validation, 20,000 choice sets');
+console.log('PASS: 20,000 unique words, 120 phrases, three reviewed industry routes, 600 bilingual examples and six labelled trial routes, unlock and boss gates, duplicate XP, cross-day mastery, failures, overdue reviews, import validation, 20,000 choice sets');

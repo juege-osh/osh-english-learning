@@ -2,7 +2,7 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
 const words=require('../data/words.json'),industries=require('../data/industries.json'),C=require('../core.js');
 const elements=new Map(),spoken=[];
-function element(id){if(!elements.has(id))elements.set(id,{innerHTML:'',textContent:'',addEventListener(){},classList:{add(){}},style:{}});return elements.get(id);}
+function element(id){if(!elements.has(id))elements.set(id,{innerHTML:'',textContent:'',addEventListener(){},classList:{add(){},toggle(){}},style:{},selectedOptions:[]});return elements.get(id);}
 const context=vm.createContext({EnglishCore:C,inputWords:words,inputIndustries:industries,console,Map,Set,Date,JSON,Math,Promise,URLSearchParams,
  document:{getElementById:element,addEventListener(){},querySelectorAll(){return []}},window:{addEventListener(){},scrollTo(){}},
  location:{hash:'#industries',search:''},localStorage:{setItem(){},getItem(){return null}},setTimeout(){},clearTimeout(){},setInterval(){},clearInterval(){},
@@ -39,6 +39,29 @@ async function run(){
  await vm.runInContext("selectedIndustry='finance';renderIndustries()",context);
  assert(element('app').innerHTML.includes('练精选 100 词'));
  assert(element('app').innerHTML.includes('试练扩展 600 词'));
- console.log('PASS: dynamic route sizes, bilingual cloze, reviewed audio text, separate progress, wrong-word review and removed-word filtering');
+ for(const [sector,headword,count,meaning] of [['healthcare','patient',753,'患者正在外面等候。'],['ai_creator','prompt',831,'能把提示词写得更具体一点吗？']]){
+  await vm.runInContext(`selectedIndustry='${sector}';renderIndustries()`,context);
+  assert(element('app').innerHTML.includes(`练精选 ${count} 词`));assert(!element('app').innerHTML.includes('试练扩展'));
+  vm.runInContext("industryPracticeStart('sentences')",context);assert(element('app').innerHTML.includes(meaning));
+  const word=words.find(x=>x.word===headword);vm.runInContext('industryPracticeAnswer('+word.id+')',context);
+  assert(element('industry-feedback').innerHTML.includes(industries.find(x=>x.id===sector).examples[word.id][0].text.replaceAll("'",'&#39;')));
+  vm.runInContext(`actions['speak-industry-example']('${sector}:${word.id}:1')`,context);
+  assert.equal(spoken.at(-1),industries.find(x=>x.id===sector).examples[word.id][1].text);
+  vm.runInContext('industryPracticeNext();industryPracticeAnswer(0)',context);assert.equal(vm.runInContext(`industryWrong('${sector}').length`,context),1);vm.runInContext('header()',context);assert.equal(element('nav-due').textContent,1,'sidebar review badge must include specialist mistakes');
+  vm.runInContext("industryPracticeStart('wrong');industryPracticeAnswer(industryPractice.items[0].id)",context);assert.equal(vm.runInContext(`industryWrong('${sector}').length`,context),0);vm.runInContext('header()',context);assert.equal(element('nav-due').textContent,0);
+ }
+ // Cover the entire editorial cloze bank, not just the first visible question.
+ for(const sector of industries.filter(s=>s.examples))for(const id of Object.keys(sector.examples).map(Number)){
+  context.testSector=sector;context.testID=id;
+  const chosen=vm.runInContext('(()=>{const word=industryWord(testSector,testID),pool=testSector.wordIds.map(id=>industryWord(testSector,id));return industryChoicePool(testSector,word,pool,true);})()',context);
+  assert(chosen.some(x=>x.id===id));const groups=(sector.confusableGroups||[]).filter(g=>g.includes(id));
+  for(const other of chosen.filter(x=>x.id!==id)){
+   assert(!groups.some(g=>g.includes(other.id)),'cloze must not offer an editorial near-synonym');
+   const target=new Set(sector.glosses[id].split(/[；;]/).map(s=>s.trim()));assert(!other.zh.split(/[；;]/).map(s=>s.trim()).some(s=>target.has(s)),'cloze must not offer an alternate spelling or identical sense');
+  }
+  const options=C.choices(words[id-1],chosen,'word');assert.equal(options.length,4);assert.equal(new Set(options.map(x=>x.id)).size,4);
+ }
+ assert.equal(vm.runInContext('C.stats(p).learned',context),0);
+ console.log('PASS: three reviewed routes, all 300 cloze words without near-synonym distractors, correct bilingual audio text, separate progress, wrong-word review and removed-word filtering');
 }
 run().catch(error=>{console.error(error);process.exitCode=1;});
