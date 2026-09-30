@@ -54,6 +54,13 @@ def main():
     a,b,c,d=[Client('qa_'+RUN+'_'+x) for x in 'abcd']
     for x in a,b,c,d:x.register()
     ok('四账号注册与登录态隔离',len({x.call('/api/account')['name'] for x in [a,b,c,d]})==4)
+    community=a.call('/api/community')
+    ok('免费账号不读取入群联系信息',not community['groupAccess'] and not community['settings']['groupContact'] and not community['settings']['groupInstructions'])
+    a.call('/api/community/settings',{'followLinks':{}},status=403)
+    a.call('/api/codes/create',{'kind':'month'},status=403)
+    ok('普通账号不能修改社区或生成兑换码',True)
+    Client('guest').call('/api/redeem',{'code':'test-invalid-code'},status=401)
+    ok('兑换码必须绑定已登录账号',True)
     a.call('/api/account/logout',{})
     ok('退出后账号不可见',not a.call('/api/account')['registered'])
     a.call('/api/account/login',{'name':a.name,'password':'test-pass-123'})
