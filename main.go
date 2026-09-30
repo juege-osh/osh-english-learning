@@ -131,7 +131,7 @@ func main() {
 	mux.HandleFunc("/api/friends/remove", f.friendRemove)
 	mux.HandleFunc("/api/health", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/json")
-		json.NewEncoder(w).Encode(map[string]interface{}{"ok": true, "service": "english-quest", "version": "1.26.6", "words": 20000, "levels": 2000, "goals": []int{5000, 10000, 20000}, "scenario_missions": 12, "phrases": 120, "tracks": len(f.industries), "industry_tracks": 10, "exam_tracks": 7, "progress_storage": "browser-local-and-account-cloud", "permanent_leaderboard": true, "proof_applications": true, "member_bookings": true, "live_races": true, "duo_teams": true, "friends": true, "chat_channels": len(chatChannels), "phonics": 44, "grammar_points": 36, "payment": paymentSummary(f)})
+		json.NewEncoder(w).Encode(map[string]interface{}{"ok": true, "service": "english-quest", "version": "1.26.7", "words": 20000, "levels": 2000, "goals": []int{5000, 10000, 20000}, "scenario_missions": 12, "phrases": 120, "tracks": len(f.industries), "industry_tracks": 10, "exam_tracks": 7, "progress_storage": "browser-local-and-account-cloud", "permanent_leaderboard": true, "proof_applications": true, "member_bookings": true, "live_races": true, "duo_teams": true, "friends": true, "chat_channels": len(chatChannels), "phonics": 44, "grammar_points": 36, "payment": paymentSummary(f)})
 	})
 	mux.HandleFunc("/", serveStatic(staticFiles))
 	addr := fmt.Sprintf("127.0.0.1:%d", *port)
