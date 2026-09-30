@@ -15,7 +15,7 @@ async function run(){
  await vm.runInContext('renderIndustries()',context);
  assert(element('app').innerHTML.includes('练精选 683 词'));
  assert(!element('app').innerHTML.includes('试练扩展'));
- assert(element('app').innerHTML.includes('句子选词 · 300 词'));
+ assert(element('app').innerHTML.includes('句子选词 · '+Object.keys(industries.find(s=>s.id==='programmer').examples).length+' 词'));
  vm.runInContext("industryPracticeStart('sentences')",context);
  assert(element('app').innerHTML.includes('_____'));
  assert(element('app').innerHTML.includes('这个算法处理大文件太慢了。'));

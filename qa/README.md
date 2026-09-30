@@ -57,7 +57,7 @@
 
 `qa/basics.test.js`检查两次独立听音成功、选择题与输入填空各一次、缩写及弯引号、空答案、错题补练、音频播放成功后才解锁选项、播放失败与取消、复练本轮计数、保存格式及主线进度独立。`progress-sync.test.js`还检查课程互补槽位合并；账号进度接口检查合法课程结构、重复槽位拒绝和跨设备保存。课程不写入主线`words`或增加XP。
 
-`travel_reviewed.tsv`和`travel_examples.tsv`整理旅行709词及400词的800句原创双语用法。它和其余九条行业合计4022个句子目标词、8044句；行业含义已有本站编辑层，余下4090个行业词尚需补句子。十条行业加七条考试，共17条路线；补充行业词库现有1407词，原有ID保持，新增只追加。
+`travel_reviewed.tsv`和`travel_examples.tsv`整理旅行709词及400词的800句原创双语用法。它和其余九条行业合计4722个句子目标词、9444句；行业含义已有本站编辑层，余下3390个行业词尚需补句子。十条行业加七条考试，共17条路线；补充行业词库现有1407词，原有ID保持，新增只追加。
 
 专项答题反馈的释义和例句默认收起，用户展开后才看和听。手机导航显示4个常用入口，其他9个入口折叠到「更多」。
 
@@ -74,7 +74,7 @@
 本轮永久榜后端最终42项Go测试4.428秒、并发检测53.935秒、vet及47项四账号检查通过；此前34/43项记录是改造前基线。
 
 
-当前行业例句覆盖：外贸、AI创作、医疗、旅行各400词配800句；营销、法律各500词配1000句；程序员、金融、化学各300词配600句；生物522词配1044句。十行业合计4022词、8044句，仍4090词待补两句。
+当前行业例句覆盖：程序员、外贸、AI创作、医疗、旅行各400词配800句；营销、法律各700词配1400句；金融、化学各300词配600句；生物722词配1444句。十行业合计4722词、9444句，仍3390词待补两句。
 ## v1.26.1 行业用法补齐
 
 程序员、AI创作、医疗健康、旅行本次各增加100词的两句双语用法，共新增800句。四条路线现各覆盖200词、400句；十行业合计1422词、2844句，仍有6690词待补行业例句。此前版本中的前100词覆盖量是历史记录。主线词库、主线例句、场景与考试池保持不变，不增加主线进度。旅行的checked补充“托运的”，医疗的cranial补充“颅部的”，避免句子与释义不符。
@@ -143,3 +143,16 @@
 本批术语核对参考：[NHGRI遗传词汇表](https://www.genome.gov/genetics-glossary)、[OpenStax演化](https://openstax.org/books/biology-2e/pages/18-1-understanding-evolution)、[群落生态学](https://openstax.org/books/biology-2e/pages/45-6-community-ecology)、[纽约法院术语表](https://www.nycourts.gov/courts/7th-judicial-district/glossary)、[美国法院破产术语表](https://www.uscourts.gov/court-programs/bankruptcy/bankruptcy-basics/bankruptcy-basics-glossary)、[NIST统计](https://www.itl.nist.gov/div898/handbook/ppc/section1/ppc136.htm)、[OpenStax定价策略](https://openstax.org/books/principles-marketing/pages/12-4-pricing-strategies-for-new-products)、[FTC背书说明](https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking)、[TfL票价](https://tfl.gov.uk/fares/pay-the-right-fare?intcmp=79668)。旅行支付、驾照和保险表达采用询问句，不把地区规则写成全球规定。
 
 42项Go测试4.426秒、vet、核心数据及全部4022个行业句子目标检查、47项隔离四账号检查通过。预览实际走通reactivate、mutagen、intentional、hire的句子题、释义折叠与两句反馈，营销播放按钮实际点击；主线0保持，无控制台错误。本次只有内容变化，没有重复并发与小屏布局验收。
+
+
+## v1.26.7 生物、法律、营销与开发用法
+
+生物、法律、营销各新增200词400句，程序员新增100词200句，共700词1400句双语工作或学习用法。生物涵盖生态与生理过程；法律涵盖土地、合同期限、披露和证据沟通；营销涵盖社群、搜索、广告指标和媒体交流；程序员涵盖异常处理、监控、数据库、分布式服务与协作开发。十行业现4722词配9444句，仍3390词待补两句；主线20,000词尚未逐条语言编辑。
+
+已有词号、行业释义、旧例句、主线及考试池保持不变。句子干扰排除只为避免同一句多个合理答案，不表示专业概念相同。源代码、数据和说明整批同步私有仓库，整仓字节核验后发布；实际版本见 /api/health，发布哈希、回滚备份、浏览器验收及资源快照见 /tmp/english-quest-v1267-evidence/verification.json。真实支付宝仍未试付。
+
+本批专业措辞核对参考：[Go panic/recover](https://go.dev/blog/defer-panic-and-recover)、[PostgreSQL约束](https://www.postgresql.org/docs/18/ddl-constraints.html)、[魁北克民法典](https://www.legisquebec.gouv.qc.ca/en/document/cs/CCQ-1991)、[英国土地登记指南](https://www.gov.uk/government/publications/easements-claimed-by-prescription-pg52)、[缅因州法院术语](https://www.med.uscourts.gov/glossary)、[Google Ads指标](https://support.google.com/google-ads/answer/9451527?hl=en)、[HubSpot线索阶段](https://knowledge.hubspot.com/records/use-lifecycle-stages)、[Google规范网址](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls)。旧版主从命名在开发例句中明确标为传统用语，不改变学习词号。
+
+42项Go测试4.542秒、vet、核心数据及4722个行业句子目标检查、47项隔离四账号检查通过。实际预览走通upstream、decomposer、restriction、review的句子选词、折叠展开与两句反馈，开发例句播放按钮实际点击；主线0保持，无控制台错误。专项前端检查原来固定写300词，已改为核对实际题库数量后通过；没有产品功能失败。本次仅改内容，未重复并发及小屏布局验收。
+
+生物术语另核对[OpenStax氧需求](https://openstax.org/books/microbiology/pages/9-2-oxygen-requirements-for-microbial-growth)、[先天免疫](https://openstax.org/books/biology-2e/pages/42-1-innate-immune-response)、[行为生物学](https://openstax.org/books/biology-2e/pages/45-7-behavioral-biology-proximate-and-ultimate-causes-of-behavior)及[植物组织](https://openstax.org/books/biology-2e/pages/30-1-the-plant-body)。

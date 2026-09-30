@@ -299,3 +299,103 @@ type	The type of this field changed in the new response.	新响应中，这个�
 signature	The function signature changed when we added the new argument.	添加新参数后，函数签名变了。	Verify the signature before accepting the downloaded package.	接收下载的软件包前，先验证签名。
 contract	The API contract says this field must always be present.	接口契约规定，这个字段必须始终存在。	Our client follows the old contract, so the new response breaks it.	我们的客户端遵循旧契约，所以新响应让它无法正常运行。
 transport	The client uses HTTP as its transport.	这个客户端使用HTTP进行传输。	Which transport should the test server support?	测试服务器应该支持哪种传输方式？
+upstream	The upstream service is returning errors.	上游服务正在返回错误。	Have we sent this fix to the upstream project?	我们把这个修复提交给上游项目了吗？
+downstream	This change may affect downstream consumers.	这个改动可能影响下游使用方。	Please check whether the downstream service received the event.	请检查下游服务是否收到了事件。
+status	What's the status of the deployment?	部署现在是什么状态？	The response status tells us whether the request succeeded.	响应状态能告诉我们请求是否成功。
+catch	We need to catch this exception before it reaches the user.	我们需要在异常影响用户之前捕获它。	Does this catch block hide the original error?	这个异常捕获块会掩盖原始错误吗？
+throw	This function can throw an exception on invalid input.	这个函数遇到无效输入时可能抛出异常。	Should we throw an error or return an empty result?	我们应该抛出错误，还是返回空结果？
+panic	The stack trace shows where the panic started.	堆栈信息显示了程序恐慌从哪里开始。	Can you reproduce this panic with a smaller input?	你能用更小的输入复现这次程序恐慌吗？
+recover	We call recover inside a deferred function in this Go handler.	在这个Go处理函数中，我们在延迟执行的函数里调用recover。	How long does the service take to recover after a failure?	服务发生故障后需要多久才能恢复？
+recovery	Have we tested the recovery procedure?	我们测试过恢复流程了吗？	The recovery log shows which records were restored.	恢复日志显示了哪些记录被还原。
+metric	Which metric should trigger this alert?	应该由哪个指标触发这条告警？	This metric measures failed requests, not total traffic.	这个指标衡量失败请求，而不是总流量。
+trace	Could you send me the trace for this request?	你能把这个请求的调用追踪发给我吗？	The trace shows a long wait in the database call.	调用追踪显示数据库调用等待了很久。
+severity	What severity should we assign to this incident?	这次事件应该定为什么严重级别？	The log includes a severity field for filtering.	日志包含一个严重级别字段，便于筛选。
+telemetry	We need telemetry to understand where requests slow down.	我们需要遥测数据来了解请求在哪个环节变慢。	Does this telemetry include any personal information?	这些遥测数据包含个人信息吗？
+diagnostic	Please attach the diagnostic report to the issue.	请把诊断报告附到问题记录里。	This diagnostic tool can help locate the connection failure.	这个诊断工具能帮助定位连接故障。
+diagnostics	Where can I find the network diagnostics?	我在哪里能找到网络诊断信息？	The diagnostics didn't show a disk error.	诊断结果没有显示磁盘错误。
+health	The health endpoint is responding normally.	健康检查接口正在正常响应。	Does the health check include the database connection?	健康检查包含数据库连接吗？
+heartbeat	We haven't received a heartbeat from this worker.	我们还没有收到这个工作进程的心跳。	The heartbeat interval is configurable.	心跳间隔可以配置。
+alive	Is the background worker still alive?	后台工作进程还在运行吗？	This check only tells us the process is alive.	这个检查只能说明进程还活着。
+readiness	The readiness check failed during startup.	启动期间就绪检查失败了。	What does this readiness endpoint verify?	这个就绪检查接口验证哪些内容？
+shutdown	We need a graceful shutdown for active requests.	我们需要在关闭时妥善处理正在执行的请求。	The shutdown log shows that the worker finished its last job.	关闭日志显示工作进程完成了最后一个任务。
+restart	Should we restart the service after this configuration change?	这项配置改动后，我们需要重启服务吗？	The restart didn't fix the underlying problem.	重启没有解决根本问题。
+snapshot	Take a snapshot before changing the test database.	修改测试数据库之前先拍一个快照。	Which snapshot contains the state before the migration?	哪个快照保存了迁移前的状态？
+archive	We can archive logs after the retention period.	保留期限结束后，我们可以归档日志。	Can you open the archive without the original application?	不用原来的应用，你能打开这个归档文件吗？
+archival	What format should we use for archival storage?	长期归档存储应该用什么格式？	The archival copy is stored separately from the working files.	归档副本与正在使用的文件分开存放。
+retention	What's the retention period for these logs?	这些日志的保留期限是多久？	The retention policy also applies to old backups.	保留策略也适用于旧备份。
+migrate	When can we migrate the test data?	我们什么时候能迁移测试数据？	We need a rollback plan before we migrate this table.	迁移这张表之前，我们需要一个回滚方案。
+explain	Could you explain why this query is slow?	你能解释一下这个查询为什么慢吗？	Use EXPLAIN to inspect the query plan.	用EXPLAIN查看查询计划。
+filter	Let's filter out records that have no valid date.	我们把没有有效日期的记录筛掉吧。	Can users filter the list by status?	用户能按状态筛选这个列表吗？
+select	Please select only the columns this page needs.	请只选择这个页面需要的列。	What happens if we select a deleted record?	如果选中了已删除的记录，会发生什么？
+join	This join combines orders with customer records.	这个连接操作把订单与客户记录关联起来。	Why does the join return more rows than expected?	为什么这个连接操作返回的行数比预期多？
+projection	The projection includes only the ID and display name.	投影操作只包含编号和显示名称。	Can we reduce the projection to avoid reading unused fields?	我们能减少投影字段，避免读取不用的字段吗？
+aggregate	We aggregate the counts by region before sending the response.	返回响应之前，我们按地区汇总数量。	Should we aggregate these events by hour or by day?	这些事件应该按小时还是按天汇总？
+aggregation	The aggregation runs after the filter stage.	聚合操作在筛选阶段之后执行。	This aggregation gives us the total for each account.	这个聚合操作会给出每个账号的总数。
+grouping	The grouping key is the customer ID.	分组键是客户编号。	Can we change the grouping without changing the stored data?	我们能在不改变存储数据的情况下调整分组吗？
+group	We group these rows by account and date.	我们按账号和日期对这些行分组。	Each group should have a separate subtotal.	每一组都应该有单独的小计。
+distinct	Does this query return distinct customer IDs?	这个查询会返回去重后的客户编号吗？	Adding DISTINCT removed the repeated rows.	添加DISTINCT后，重复的行被去掉了。
+unique	Each record needs a unique identifier.	每条记录都需要一个唯一标识。	The unique constraint rejects this duplicate value.	唯一约束拒绝了这个重复值。
+duplicate	We found a duplicate record in the import.	我们在导入数据中发现了一条重复记录。	How should the API handle a duplicate request?	接口应该怎样处理重复请求？
+normalize	We should normalize the email address before comparing it.	比较邮箱地址之前，我们应该先统一它的格式。	Do we need to normalize this database schema further?	我们需要进一步规范化这个数据库结构吗？
+normalization	The normalization step converts the text to a consistent form.	规范化步骤会把文本转换成统一形式。	What trade-off did we make with this level of normalization?	选择这种规范化程度时，我们做了什么取舍？
+relational	This relational database stores accounts and orders in separate tables.	这个关系型数据库把账号和订单存放在不同的表里。	Would a relational model fit these relationships?	关系型模型适合表达这些关联吗？
+relation	This relation contains the active customer records.	这个关系包含有效客户的记录。	Which columns define the relation between these tables?	哪些列定义了这些表之间的关系？
+document	Please document the reason for this workaround.	请记录采用这个临时处理办法的原因。	The document includes examples of valid requests.	这份文档包含有效请求的示例。
+documentation	The documentation doesn't mention this error code.	文档里没有提到这个错误码。	Can you update the documentation after changing the API?	修改接口后，你能更新一下文档吗？
+column	This column stores the creation time.	这一列保存创建时间。	Can this column contain a null value?	这一列可以包含空值吗？
+row	Which row caused the import to fail?	哪一行导致了导入失败？	The query returns one row for each account.	这个查询会为每个账号返回一行。
+record	We need to record the reason for this change.	我们需要记录这次改动的原因。	This record was updated by another request.	这条记录被另一个请求更新了。
+primary	Which column is the primary key?	哪一列是主键？	The primary database is accepting writes again.	主数据库恢复接收写入了。
+secondary	Would a secondary index help this query?	次级索引对这个查询有帮助吗？	The secondary node is still catching up.	次级节点仍在追赶数据进度。
+foreign	This foreign key links the order to its customer.	这个外键把订单关联到对应客户。	The insert failed because the foreign key referenced a missing record.	插入失败了，因为外键引用了一条不存在的记录。
+constraint	Which constraint did this update violate?	这次更新违反了哪个约束？	We added a constraint to reject negative quantities.	我们添加了一个约束来拒绝负数数量。
+integrity	We need to check data integrity after the import.	导入之后，我们需要检查数据完整性。	This constraint protects referential integrity.	这个约束保护引用完整性。
+dimension	Time is one dimension in this report.	时间是这份报表中的一个维度。	Which dimension should users filter first?	用户应该先按哪个维度筛选？
+dimensional	We're reviewing the dimensional model for reporting.	我们正在审查用于报表的维度模型。	This dimensional table contains the product attributes.	这张维度表包含产品属性。
+hierarchy	The menu hierarchy has too many levels.	这个菜单层级太多了。	Can the database represent this hierarchy without losing parent links?	数据库能在保留父级关联的情况下表示这个层次结构吗？
+hierarchical	The permissions follow a hierarchical structure.	这些权限采用层次结构。	Would a hierarchical menu make these sections easier to find?	层级菜单会让这些栏目更容易找到吗？
+sequential	The benchmark compares sequential reads with random reads.	这个基准测试比较顺序读取与随机读取。	These jobs require sequential processing.	这些任务需要按顺序处理。
+random	We use a random sample for this test.	我们在这个测试中使用随机样本。	Can we reproduce the failure with the same random seed?	我们能用相同的随机种子复现故障吗？
+synchronization	The synchronization job failed halfway through.	同步任务执行到一半失败了。	How do we prevent synchronization from overwriting newer changes?	我们怎样防止同步覆盖更新的改动？
+decentralization	What problem would decentralization solve here?	去中心化在这里能解决什么问题？	The design review compares decentralization with a single coordinator.	设计评审比较了去中心化方案与单一协调节点方案。
+centralized	The logs go to a centralized service.	这些日志会发送到一个集中式服务。	Would centralized configuration simplify this deployment?	集中式配置会简化这次部署吗？
+cluster	Which cluster is running this workload?	哪个集群正在运行这项工作负载？	The cluster has enough capacity for another worker.	这个集群还有足够的容量容纳一个工作进程。
+node	This node is no longer receiving traffic.	这个节点已经不再接收流量。	Can we remove the node without interrupting the job?	我们能在不中断任务的情况下移除这个节点吗？
+replica	The replica is behind the primary database.	这个副本落后于主数据库。	Which replica handled this read request?	哪个副本处理了这次读取请求？
+leader	The leader changed during the test.	测试期间主导节点发生了切换。	How does a new leader learn the latest state?	新的主导节点怎样获取最新状态？
+follower	This follower has not received the latest entry.	这个跟随节点还没有收到最新条目。	Can the follower serve this read safely?	这个跟随节点能安全地处理这次读取吗？
+master	The old configuration calls the primary node the master.	旧配置把主节点称为master。	Does this legacy master setting still affect failover?	这个旧版主节点配置还会影响故障切换吗？
+slave	The old monitoring page uses slave for a replica node.	旧监控页面用slave表示副本节点。	We need to map this legacy slave label to the current replica name.	我们需要把这个旧版从节点标签对应到现在的副本名称。
+peer	The peer disconnected before the transfer finished.	对等节点在传输结束前断开了连接。	Can this peer verify the received data?	这个对等节点能验证收到的数据吗？
+ring	The hash ring assigns keys to nodes.	哈希环把键分配给不同节点。	What happens to the ring when a node leaves?	节点离开时，这个环会发生什么变化？
+communication	The failure interrupted communication between the two services.	这次故障中断了两个服务之间的通信。	We need clearer communication about breaking changes.	关于不兼容的改动，我们需要沟通得更清楚。
+connection	The connection closed before the response arrived.	响应到达前，连接就关闭了。	Can we reuse this connection for the next request?	我们能在下一个请求中复用这个连接吗？
+connect	The client can't connect to the database.	客户端无法连接数据库。	Which address should the worker connect to?	工作进程应该连接哪个地址？
+disconnect	Why did the client disconnect during the upload?	客户端为什么在上传过程中断开了连接？	We should disconnect cleanly when the user signs out.	用户退出登录时，我们应该正常断开连接。
+channel	Which channel carries these events?	哪个通道传递这些事件？	The channel closes when the producer finishes.	生产方结束工作时，这个通道会关闭。
+stream	We read the file as a stream instead of loading it all at once.	我们以流的方式读取文件，而不是一次性全部加载。	Can the client resume this stream after a connection loss?	连接中断后，客户端能继续接收这个流吗？
+broadcast	We broadcast the update to all connected clients.	我们向所有已连接的客户端广播更新。	Does this broadcast include clients in other rooms?	这次广播包含其他房间的客户端吗？
+segmentation	The segmentation step divides the input into smaller parts.	分段步骤会把输入拆成较小的部分。	Does this network segmentation isolate the test environment?	这种网络分段能隔离测试环境吗？
+segment	The parser reads one segment at a time.	解析器每次读取一个片段。	Which segment of the log contains the failure?	日志的哪个片段包含故障信息？
+fragment	This fragment is missing its closing tag.	这个片段缺少结束标签。	Can we render the fragment without the full page?	我们能在没有完整页面的情况下渲染这个片段吗？
+chunk	We upload the file one chunk at a time.	我们分块上传这个文件。	What size should each chunk be?	每个块应该多大？
+chain	The middleware chain stops when authentication fails.	认证失败时，中间件链会停止执行。	Can you show me the chain of calls that led to this error?	你能给我看看导致这个错误的调用链吗？
+link	This link points to an outdated page.	这个链接指向一个过时的页面。	How do we link this issue to the related change?	我们怎样把这个问题关联到相关改动？
+build	The build failed before the tests started.	测试开始前，构建就失败了。	Can you build this version on your machine?	你能在自己的机器上构建这个版本吗？
+design	Let's review the design before we start coding.	我们开始写代码之前，先评审一下设计吧。	Does this design support the expected number of users?	这个设计能支持预期的用户数量吗？
+requirement	This requirement needs a clearer acceptance condition.	这项需求需要更明确的验收条件。	Who can confirm this requirement with the customer?	谁能跟客户确认这项需求？
+specification	The specification doesn't define the timeout behavior.	规格说明没有定义超时行为。	Does the implementation match the specification?	实现与规格说明一致吗？
+feature	This feature is available only to signed-in users.	这个功能只对已登录用户开放。	Can we release the feature behind a flag?	我们能通过开关控制这个功能的发布吗？
+project	Which project owns this shared library?	哪个项目负责维护这个共享库？	The project needs a documented release process.	这个项目需要一套有文档的发布流程。
+sprint	What can we finish in this sprint?	我们能在这个迭代周期里完成什么？	The sprint review is scheduled for Friday.	这次迭代评审安排在星期五。
+agile	How does the team apply agile practices?	团队怎样运用敏捷实践？	An agile process still needs clear priorities.	敏捷流程仍然需要明确的优先级。
+waterfall	The team used a waterfall process on the previous project.	团队在上一个项目中采用了瀑布流程。	Would a waterfall approach fit these changing requirements?	瀑布式方法适合这些不断变化的需求吗？
+milestone	Have we reached the testing milestone?	我们达到测试阶段的里程碑了吗？	This milestone depends on the database migration.	这个里程碑依赖数据库迁移的完成。
+deadline	Can we meet the deadline without skipping the review?	我们能在不省略评审的情况下赶上截止时间吗？	The deadline moved after the scope changed.	范围变更后，截止时间调整了。
+backlog	This bug is near the top of the backlog.	这个缺陷排在待办列表的前面。	Who will prioritize the backlog for the next release?	谁来为下一次发布的待办事项排优先级？
+stakeholder	Which stakeholder can approve this change?	哪位相关方能批准这个改动？	We should explain the delay to the stakeholder who requested the feature.	我们应该向提出这个功能需求的相关方解释延期原因。
+acceptance	What are the acceptance criteria for this story?	这个需求的验收标准是什么？	The acceptance test covers both success and failure cases.	这个验收测试同时覆盖成功和失败情况。
+accessibility	Have we checked keyboard accessibility?	我们检查过键盘操作的无障碍支持吗？	The accessibility review found a missing input label.	无障碍评审发现一个输入框缺少标签。
+navigation	The navigation should show which section is active.	导航应该显示当前所在的栏目。	Can users complete the navigation with a keyboard?	用户能用键盘完成导航操作吗？
+layout	The layout breaks on a narrow screen.	这个布局在窄屏上会出问题。	Can we keep the buttons visible without changing the layout completely?	我们能在不彻底改变布局的情况下让按钮保持可见吗？
+widget	This widget updates when the selected date changes.	选择的日期变化时，这个组件会更新。	Does the widget have a useful label for screen readers?	这个组件有供屏幕阅读器使用的清晰标签吗？
