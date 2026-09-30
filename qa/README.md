@@ -19,3 +19,7 @@
 完成语料补全后，可安装 `opencc==1.1.9`，运行 `normalize_translations.py` 预览繁转简数量，再用 `--apply` 写回。[OpenCC](https://github.com/BYVoid/OpenCC) 采用 Apache-2.0 许可；这里只在构建时使用，没有把其程序或词典打包进网站。已转换的句子带 `translationAdapted` 标记，页面显示“简体转换”并保留原译文链接。
 
 `curate_first500_glosses.py` 在 `build_vocab.py` 后运行，为第 101–500 词补上简短常用中文义；接着运行 `curate_next200_glosses.py --apply`、`curate_next100_glosses.py --apply` 和第 801–1100 词三批 `curate_next100_glosses_*` 脚本，处理第 501–1100 词。这些编辑层都保留 ECDICT 原释义供展开查看。重建 `data/words.json` 后必须重跑。
+
+第 1101–1200 词的简短中文义由 `curate_next100_glosses_1101_1200.py --apply` 写回，原稿在 `data/curated_glosses_1101_1200.tsv`。紧接第 1001–1100 词编辑层运行；这一批尚未补齐两句双语例句。
+
+`codes_test.go` 覆盖站长生成、登录兑换、月卡30天/年卡365天/永久权益、重启及重复使用拒绝。`community_test.go` 覆盖主页保存、入群信息的权限隔离、过期权益和不安全链接拒绝。`scripts/qa_smoke.py` 现有32项隔离多账号检查；不可对正式站运行。
