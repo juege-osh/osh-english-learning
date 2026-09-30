@@ -19,6 +19,15 @@ func TestStaticAssets(t *testing.T) {
 		t.Fatal("large word list was not preloaded")
 	}
 	handler := serveStatic(files)
+	// Browser reloads must revalidate the application after a deployment; large
+	// vocabulary files retain their five-minute cache and conditional ETag.
+	for _, name := range []string{"/", "/member-ui.js", "/style.css"} {
+		rr := httptest.NewRecorder()
+		handler.ServeHTTP(rr, httptest.NewRequest(http.MethodGet, name, nil))
+		if rr.Header().Get("Cache-Control") != "no-cache" || rr.Header().Get("ETag") == "" {
+			t.Fatalf("app update can remain stale at %s", name)
+		}
+	}
 	get := httptest.NewRecorder()
 	handler.ServeHTTP(get, httptest.NewRequest(http.MethodGet, "/data/words.json", nil))
 	if get.Code != http.StatusOK || get.Body.Len() != len(words.data) || get.Header().Get("ETag") != words.etag {
