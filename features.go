@@ -155,7 +155,7 @@ func newFeatures(dir string) (*features, error) {
 		if len(sector.WordIDs) < 20 {
 			return nil, fmt.Errorf("industry %s has too few words", sector.ID)
 		}
-		if sector.Category == "industry" && (sector.CoreCount != 100 || len(sector.Glosses) < sector.CoreCount || len(sector.Glosses) > len(sector.WordIDs)) {
+		if sector.Category == "industry" && (sector.CoreCount < 20 || sector.CoreCount > len(sector.WordIDs) || len(sector.Glosses) < sector.CoreCount || len(sector.Glosses) > len(sector.WordIDs)) {
 			return nil, fmt.Errorf("industry %s has invalid glossary size %d", sector.ID, len(sector.Glosses))
 		}
 		for _, id := range sector.WordIDs {
@@ -163,7 +163,7 @@ func newFeatures(dir string) (*features, error) {
 				return nil, fmt.Errorf("invalid industry word %d", id)
 			}
 		}
-		for _, id := range sector.WordIDs[:min(len(sector.WordIDs), 100)] {
+		for _, id := range sector.WordIDs[:sector.CoreCount] {
 			if sector.Category == "industry" && sector.Glosses[id] == "" {
 				return nil, fmt.Errorf("industry %s lacks core meaning for %d", sector.ID, id)
 			}

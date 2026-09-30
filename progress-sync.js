@@ -27,7 +27,9 @@ function progressMerge(local,remote){
   const skipResetAt=Math.max(entry.skipResetAt||0,own.skipResetAt||0);
   const skipped={...(entry.skipped||{}),...(own.skipped||{})};
   for(const [word,at] of Object.entries(skipped))if(at<=skipResetAt)delete skipped[word];
-  out.industries[id]={...entry,...own,seen:[...new Set([...(entry.seen||[]),...(own.seen||[])])],skipped,skipResetAt};
+  const answers={...(entry.answers||{}),...(own.answers||{})};
+  for(const [word,answer]of Object.entries(entry.answers||{})){const localAnswer=own.answers?.[word];if(!localAnswer||answer.at>localAnswer.at||(answer.at===localAnswer.at&&!answer.correct))answers[word]=answer;}
+  out.industries[id]={...entry,...own,seen:[...new Set([...(entry.seen||[]),...(own.seen||[])])],skipped,skipResetAt,answers};
  }
  out.xp=Math.min(450000,Math.max(local.xp,remote.xp,Object.keys(out.levels).length*100+Object.keys(out.bosses).length*150+Object.keys(out.missions).length*80));
  out.totalTimeMs=Math.max(local.totalTimeMs||0,remote.totalTimeMs||0);

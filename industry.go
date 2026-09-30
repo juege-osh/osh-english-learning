@@ -55,10 +55,27 @@ func (f *features) industryCatalog(w http.ResponseWriter, r *http.Request) {
 	writeJSON(w, map[string]any{"industries": items})
 }
 
-func industryBoard(date, sector string) string { return "industry:" + date + ":" + sector }
+func (sector *industry) edition() string {
+	pool := sector.WordIDs
+	if sector.Category == "industry" {
+		pool = pool[:sector.CoreCount]
+	}
+	// Meaning edits and pool changes start a separate board, so scores from
+	// different question sets are never silently compared on the same day.
+	body, _ := json.Marshal(struct {
+		IDs     []int
+		Glosses map[int]string
+	}{pool, sector.Glosses})
+	h := sha256.Sum256(body)
+	return fmt.Sprintf("%x", h[:6])
+}
+
+func industryBoard(date string, sector *industry) string {
+	return "industry:" + date + ":" + sector.ID + ":" + sector.edition()
+}
 
 func (f *features) industryChallenge(date string, sector *industry) []quizQuestion {
-	h := sha256.Sum256([]byte(fmt.Sprintf("industry-v2:%s:%s", date, sector.ID)))
+	h := sha256.Sum256([]byte(fmt.Sprintf("industry-v3:%s:%s:%s", date, sector.ID, sector.edition())))
 	rng := rand.New(rand.NewPCG(uint64(h[0])<<56|uint64(h[1])<<48|uint64(h[2])<<40|uint64(h[3])<<32|uint64(h[4])<<24|uint64(h[5])<<16|uint64(h[6])<<8|uint64(h[7]), uint64(h[8])<<56|uint64(h[9])<<48|uint64(h[10])<<40|uint64(h[11])<<32|uint64(h[12])<<24|uint64(h[13])<<16|uint64(h[14])<<8|uint64(h[15])))
 	pool := sector.WordIDs
 	if sector.Category == "industry" {
@@ -102,7 +119,7 @@ func (f *features) industryQuiz(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	date := dailyDate()
-	board := industryBoard(date, sector.ID)
+	board := industryBoard(date, sector)
 	f.mu.Lock()
 	if f.data.Starts[board+":"+id] == 0 {
 		f.data.Starts[board+":"+id] = time.Now().UnixMilli()
@@ -120,7 +137,7 @@ func (f *features) industryQuiz(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 	f.mu.Unlock()
-	writeJSON(w, map[string]any{"sector": sector.ID, "date": date, "submitted": submitted, "questions": f.industryChallenge(date, sector)})
+	writeJSON(w, map[string]any{"sector": sector.ID, "date": date, "edition": sector.edition(), "submitted": submitted, "questions": f.industryChallenge(date, sector)})
 }
 
 func (f *features) industrySubmit(w http.ResponseWriter, r *http.Request) {
@@ -135,6 +152,7 @@ func (f *features) industrySubmit(w http.ResponseWriter, r *http.Request) {
 	}
 	var body struct {
 		Sector  string `json:"sector"`
+		Edition string `json:"edition"`
 		Name    string `json:"name"`
 		Answers []int  `json:"answers"`
 	}
@@ -148,8 +166,12 @@ func (f *features) industrySubmit(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "invalid industry", 400)
 		return
 	}
+	if body.Edition != sector.edition() {
+		http.Error(w, "专项词表已更新，请重新开始今日挑战；本次未扣除参赛机会", http.StatusConflict)
+		return
+	}
 	date := dailyDate()
-	board := industryBoard(date, sector.ID)
+	board := industryBoard(date, sector)
 	f.mu.Lock()
 	defer f.mu.Unlock()
 	start := f.data.Starts[board+":"+id]
@@ -194,7 +216,7 @@ func (f *features) industryLeaderboard(w http.ResponseWriter, r *http.Request) {
 	}
 	date := dailyDate()
 	f.mu.Lock()
-	entries := append([]dailyEntry{}, f.data.Daily[industryBoard(date, sector.ID)]...)
+	entries := append([]dailyEntry{}, f.data.Daily[industryBoard(date, sector)]...)
 	f.mu.Unlock()
 	sort.Slice(entries, func(i, j int) bool {
 		if entries[i].Correct != entries[j].Correct {

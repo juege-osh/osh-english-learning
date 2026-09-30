@@ -43,7 +43,7 @@ func TestIndustryBoardsAreSeparate(t *testing.T) {
 	for i, q := range f.industryChallenge(dailyDate(), sector) {
 		answers[i] = q.ID
 	}
-	body, _ := json.Marshal(map[string]any{"sector": "finance", "name": "财务同学", "answers": answers})
+	body, _ := json.Marshal(map[string]any{"sector": "finance", "edition": sector.edition(), "name": "财务同学", "answers": answers})
 	submit := httptest.NewRequest("POST", "/api/industries/submit", bytes.NewReader(body))
 	submit.Header.Set("Content-Type", "application/json")
 	submit.AddCookie(cookie)
@@ -221,5 +221,80 @@ func TestBookingAdminReviewKeepsContactPrivate(t *testing.T) {
 	items, err := f.bookings()
 	if err != nil || len(items) != 1 || items[0].Status != "confirmed" || items[0].Confirmed != "2026-10-10 20:00 · 北京时间" {
 		t.Fatalf("booking not confirmed: %+v %v", items, err)
+	}
+}
+
+// Expanding a route must not grade an earlier quiz against a different pool.
+func TestIndustryEditionSeparatesQuestionPools(t *testing.T) {
+	f, err := newFeatures(t.TempDir())
+	if err != nil {
+		t.Fatal(err)
+	}
+	sector := f.findIndustry("programmer")
+	if sector.CoreCount != 683 || len(sector.WordIDs) != 683 || len(sector.Glosses) != 683 {
+		t.Fatal("programmer editorial pool is incomplete")
+	}
+	edition := sector.edition()
+	board := industryBoard(dailyDate(), sector)
+	allowed := map[int]bool{}
+	for _, id := range sector.WordIDs {
+		allowed[id] = true
+	}
+	beyondStart := false
+	for day := 1; day <= 30; day++ {
+		questions := f.industryChallenge(time.Date(2026, 10, day, 0, 0, 0, 0, time.UTC).Format("2006-01-02"), sector)
+		seen := map[int]bool{}
+		for _, q := range questions {
+			if !allowed[q.ID] || seen[q.ID] || len(q.Options) != 4 {
+				t.Fatal("invalid industry question")
+			}
+			seen[q.ID] = true
+			meanings := map[string]bool{}
+			found := false
+			for _, option := range q.Options {
+				if !allowed[option.ID] || meanings[option.Zh] || option.Zh != sector.Glosses[option.ID] {
+					t.Fatal("distractor did not use a distinct reviewed industry meaning")
+				}
+				meanings[option.Zh] = true
+				found = found || option.ID == q.ID
+			}
+			if !found {
+				t.Fatal("missing correct option")
+			}
+			for _, id := range sector.WordIDs[100:] {
+				beyondStart = beyondStart || id == q.ID
+			}
+		}
+	}
+	if !beyondStart {
+		t.Fatal("new words were never used by the board")
+	}
+	visitor := httptest.NewRecorder()
+	f.membership(visitor, httptest.NewRequest("GET", "/api/membership", nil))
+	cookie := visitor.Result().Cookies()[0]
+	start := httptest.NewRequest("GET", "/api/industries/challenge?sector=programmer", nil)
+	start.AddCookie(cookie)
+	started := httptest.NewRecorder()
+	f.industryQuiz(started, start)
+	if started.Code != 200 {
+		t.Fatal(started.Body.String())
+	}
+	sector.CoreCount = 100
+	if edition == sector.edition() || board == industryBoard(dailyDate(), sector) {
+		t.Fatal("changed question pool reused the previous edition")
+	}
+	body, _ := json.Marshal(map[string]any{"sector": "programmer", "edition": edition, "answers": make([]int, 20)})
+	submit := httptest.NewRequest("POST", "/api/industries/submit", bytes.NewReader(body))
+	submit.Header.Set("Content-Type", "application/json")
+	submit.AddCookie(cookie)
+	result := httptest.NewRecorder()
+	f.industrySubmit(result, submit)
+	if result.Code != 409 || len(f.data.Daily[board]) != 0 || f.data.Starts[board+":"+cookie.Value] == 0 {
+		t.Fatalf("stale quiz consumed an entry: %d %s", result.Code, result.Body.String())
+	}
+	sector.CoreCount = 683
+	sector.Glosses[sector.WordIDs[0]] = "新的词义"
+	if edition == sector.edition() {
+		t.Fatal("meaning edit did not change the edition")
 	}
 }

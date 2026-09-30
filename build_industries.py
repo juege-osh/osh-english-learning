@@ -1,4 +1,4 @@
-"""Expand practice pools from ECDICT subject labels and transparent topic keywords.
+"""Build editorial routes, with labelled trial pools for unreviewed routes.
 
 The first words are hand-selected seed lists from the original site. The
 extension is a related-vocabulary pool and should not be called a syllabus.
@@ -68,18 +68,60 @@ for id_, name, description, tag, zh_words, en_words in specs:
     glosses.update({str(word_id): GLOSSES[id_][words[word_id - 1]['word']]
                     for word_id in priority[len(initial):]
                     if words[word_id - 1]['word'] in GLOSSES[id_]})
-    priority_set = set(priority)
-    candidates = [(relevance(w, tag, zh_terms, en_terms),w) for w in words
-                  if w['id'] not in priority_set and len(w['word']) >= 3
-                  and w['word'].isalpha() and not w['zh'].startswith(('abbr.', 'pron.'))]
+    # A reviewed TSV replaces the trial pool entirely. Never count a keyword
+    # match as editorial review, or pad a professional route with common words.
+    reviewed_file = root / 'qa' / f'{id_}_reviewed.tsv'
+    example_file = root / 'qa' / f'{id_}_examples.tsv'
+    route_examples = {}
+    if reviewed_file.exists():
+        reviewed = []
+        seen_headwords = set()
+        for line in reviewed_file.read_text().splitlines():
+            if not line or line.startswith('#'):
+                continue
+            headword, meaning = line.split('\t')
+            if headword in seen_headwords or headword not in word_ids or not meaning:
+                raise RuntimeError(f'{id_}: invalid reviewed entry {headword}')
+            seen_headwords.add(headword)
+            word_id = word_ids[headword]
+            reviewed.append(word_id)
+            glosses[str(word_id)] = meaning
+        initial = list(dict.fromkeys(initial + reviewed))
+        if len(initial) < 500:
+            raise RuntimeError(f'{id_}: reviewed route needs at least 500 words')
+        # Only keep senses that actually belong to the resulting route.
+        glosses = {str(word_id): glosses[str(word_id)] for word_id in initial}
+        selected = []
+    else:
+        priority_set = set(priority)
+        candidates = [(relevance(w, tag, zh_terms, en_terms),w) for w in words
+                      if w['id'] not in priority_set and len(w['word']) >= 3
+                      and w['word'].isalpha() and not w['zh'].startswith(('abbr.', 'pron.'))]
+        selected = priority[len(initial):]
+        selected += [w['id'] for score,w in sorted(candidates,key=lambda x:(-x[0],x[1]['rank'],x[1]['id'])) if score>=4][:max(0,700-len(priority))]
+    if example_file.exists():
+        for line in example_file.read_text().splitlines():
+            if not line or line.startswith('#'):
+                continue
+            headword, en1, zh1, en2, zh2 = line.split('\t')
+            word_id = word_ids[headword]
+            if word_id not in initial or str(word_id) in route_examples:
+                raise RuntimeError(f'{id_}: invalid example entry {headword}')
+            items = []
+            for text, translation in ((en1,zh1), (en2,zh2)):
+                if not translation or not re.search(r'\b'+re.escape(headword)+r'\b', text, re.I):
+                    raise RuntimeError(f'{id_}: example missing target word or translation: {headword}')
+                items.append({'text':text,'translation':translation,'source':'original'})
+            route_examples[str(word_id)] = items
     # Show the remaining hand-picked, topic-specific words before automated
     # dictionary matches. A broad sense such as "system" or "design" can
     # otherwise rank unrelated headwords ahead of useful industry vocabulary.
-    selected = priority[len(initial):]
-    selected += [w['id'] for score,w in sorted(candidates,key=lambda x:(-x[0],x[1]['rank'],x[1]['id'])) if score>=4][:max(0,700-len(priority))]
     if len(initial)+len(selected)<500:
         raise RuntimeError(f'{id_} only has {len(initial)+len(selected)} related entries')
-    output.append({'id':id_,'name':name,'description':description,'category':'industry','coreCount':len(initial),'glosses':glosses,'wordIds':initial+selected})
+    route = {'id':id_,'name':name,'description':description,'category':'industry','coreCount':len(initial),'glosses':glosses,'wordIds':initial+selected}
+    if route_examples:
+        route['examples'] = route_examples
+    output.append(route)
 for x in prior:
     if x.get('category')=='exam':output.append(x)
 (root/'data/industries.json').write_text(json.dumps(output,ensure_ascii=False,separators=(',',':')))
