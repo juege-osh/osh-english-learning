@@ -1,17 +1,13 @@
 package main
 
 import (
-	"bytes"
-	"crypto/sha256"
 	"embed"
 	"encoding/json"
 	"flag"
 	"fmt"
 	"log"
-	"mime"
 	"net/http"
 	"os"
-	"path"
 	"time"
 )
 
@@ -58,6 +54,10 @@ func main() {
 		}
 		fmt.Println("booking confirmed")
 		return
+	}
+	staticFiles, err := loadStaticAssets()
+	if err != nil {
+		log.Fatal(err)
 	}
 	mux := http.NewServeMux()
 	mux.HandleFunc("/api/membership", f.membership)
@@ -128,34 +128,9 @@ func main() {
 	mux.HandleFunc("/api/friends/remove", f.friendRemove)
 	mux.HandleFunc("/api/health", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/json")
-		json.NewEncoder(w).Encode(map[string]interface{}{"ok": true, "service": "english-quest", "version": "1.19.1-staging", "words": 20000, "levels": 2000, "goals": []int{5000, 10000, 20000}, "scenario_missions": 12, "phrases": 120, "tracks": len(f.industries), "industry_tracks": 9, "exam_tracks": 7, "progress_storage": "browser-local-and-account-cloud", "daily_leaderboard": true, "proof_applications": true, "member_bookings": true, "live_races": true, "duo_teams": true, "friends": true, "chat_channels": len(chatChannels), "payment": paymentSummary(f)})
+		json.NewEncoder(w).Encode(map[string]interface{}{"ok": true, "service": "english-quest", "version": "1.19.2-staging", "words": 20000, "levels": 2000, "goals": []int{5000, 10000, 20000}, "scenario_missions": 12, "phrases": 120, "tracks": len(f.industries), "industry_tracks": 9, "exam_tracks": 7, "progress_storage": "browser-local-and-account-cloud", "daily_leaderboard": true, "proof_applications": true, "member_bookings": true, "live_races": true, "duo_teams": true, "friends": true, "chat_channels": len(chatChannels), "payment": paymentSummary(f)})
 	})
-	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		if r.Method != "GET" && r.Method != "HEAD" {
-			w.WriteHeader(405)
-			return
-		}
-		name := r.URL.Path
-		if name == "/" {
-			name = "/index.html"
-		}
-		data, err := assets.ReadFile(name[1:])
-		if err != nil {
-			http.NotFound(w, r)
-			return
-		}
-		w.Header().Set("Content-Type", mime.TypeByExtension(path.Ext(name)))
-		digest := sha256.Sum256(data)
-		w.Header().Set("ETag", fmt.Sprintf("\"%x\"", digest))
-		w.Header().Set("Cache-Control", "public, max-age=300")
-		if name == "/index.html" {
-			w.Header().Set("Cache-Control", "no-cache")
-		}
-		w.Header().Set("X-Content-Type-Options", "nosniff")
-		w.Header().Set("Referrer-Policy", "strict-origin-when-cross-origin")
-		w.Header().Set("X-Frame-Options", "SAMEORIGIN")
-		http.ServeContent(w, r, name, time.Time{}, bytes.NewReader(data))
-	})
+	mux.HandleFunc("/", serveStatic(staticFiles))
 	addr := fmt.Sprintf("127.0.0.1:%d", *port)
 	log.Printf("English Quest listening on %s", addr)
 	srv := &http.Server{Addr: addr, Handler: mux, ReadHeaderTimeout: 5 * time.Second, ReadTimeout: 15 * time.Second, WriteTimeout: 30 * time.Second, IdleTimeout: 60 * time.Second}

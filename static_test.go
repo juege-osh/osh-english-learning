@@ -1,0 +1,44 @@
+package main
+
+import (
+	"net/http"
+	"net/http/httptest"
+	"testing"
+)
+
+func TestStaticAssets(t *testing.T) {
+	files, err := loadStaticAssets()
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(files) != 13 {
+		t.Fatalf("expected 13 public assets, got %d", len(files))
+	}
+	words := files["/data/words.json"]
+	if len(words.data) < 4_000_000 || words.etag == "" {
+		t.Fatal("large word list was not preloaded")
+	}
+	handler := serveStatic(files)
+	get := httptest.NewRecorder()
+	handler.ServeHTTP(get, httptest.NewRequest(http.MethodGet, "/data/words.json", nil))
+	if get.Code != http.StatusOK || get.Body.Len() != len(words.data) || get.Header().Get("ETag") != words.etag {
+		t.Fatal("preloaded word list was not served intact")
+	}
+	conditional := httptest.NewRequest(http.MethodGet, "/data/words.json", nil)
+	conditional.Header.Set("If-None-Match", words.etag)
+	cached := httptest.NewRecorder()
+	handler.ServeHTTP(cached, conditional)
+	if cached.Code != http.StatusNotModified || cached.Body.Len() != 0 {
+		t.Fatal("conditional request should reuse the precomputed ETag")
+	}
+	head := httptest.NewRecorder()
+	handler.ServeHTTP(head, httptest.NewRequest(http.MethodHead, "/data/words.json", nil))
+	if head.Code != http.StatusOK || head.Body.Len() != 0 {
+		t.Fatal("HEAD should return headers without a body")
+	}
+	missing := httptest.NewRecorder()
+	handler.ServeHTTP(missing, httptest.NewRequest(http.MethodGet, "/not-an-asset", nil))
+	if missing.Code != http.StatusNotFound {
+		t.Fatal("unknown assets should return 404")
+	}
+}
