@@ -154,8 +154,8 @@ func newFeatures(dir string) (*features, error) {
 		if len(sector.WordIDs) < 20 {
 			return nil, fmt.Errorf("industry %s has too few words", sector.ID)
 		}
-		if sector.Category == "industry" && (sector.CoreCount != 100 || len(sector.Glosses) != 100) {
-			return nil, fmt.Errorf("industry %s has %d core meanings", sector.ID, len(sector.Glosses))
+		if sector.Category == "industry" && (sector.CoreCount != 100 || len(sector.Glosses) < sector.CoreCount || len(sector.Glosses) > len(sector.WordIDs)) {
+			return nil, fmt.Errorf("industry %s has invalid glossary size %d", sector.ID, len(sector.Glosses))
 		}
 		for _, id := range sector.WordIDs {
 			if id < 1 || id > len(f.words) {
