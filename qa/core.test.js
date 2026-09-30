@@ -21,11 +21,15 @@ for(const w of words){const opts=C.choices(w,words.slice(Math.max(0,w.id-150),Ma
 const expectedStart={programmer:'algorithm',foreign_trade:'export',finance:'asset',ai_creator:'prompt',marketing:'brand',healthcare:'patient',biology:'biology',law:'law',chemistry:'chemistry'};
 for(const sector of industries.filter(x=>x.category==='industry')){
  assert.equal(sector.coreCount,100);assert.equal(sector.wordIds.length,700);
- assert.equal(Object.keys(sector.glosses).length,100);
+ assert(Object.keys(sector.glosses).length>=100);
  assert(sector.wordIds.slice(0,100).every(id=>sector.glosses[id]));
  assert.equal(new Set(sector.wordIds).size,700);
  assert(sector.wordIds.every(id=>id>=1&&id<=20000));
  assert.equal(words[sector.wordIds[0]-1].word,expectedStart[sector.id]);
 }
 const programmer=industries.find(x=>x.id==='programmer');assert.equal(programmer.glosses[words.find(x=>x.word==='server').id],'服务器');
+assert.equal(words[programmer.wordIds[100]-1].word,'download');
+assert.equal(programmer.glosses[programmer.wordIds[100]],'下载');
+const aiCreator=industries.find(x=>x.id==='ai_creator');assert.equal(words[aiCreator.wordIds[100]-1].word,'logo');
+assert.equal(aiCreator.glosses[aiCreator.wordIds[100]],'标志设计');
 console.log('PASS: 20,000 unique words, 120 phrases, nine 700-word industry routes with curated starts, unlock and boss gates, duplicate XP, cross-day mastery, failures, overdue reviews, import validation, 20,000 choice sets');

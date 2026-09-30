@@ -56,3 +56,5 @@ GLOSSES['marketing'].update(profit='利润',page='网页',generation='生成；�
 GLOSSES['healthcare'].update(outpatient='门诊病人',inpatient='住院病人',admission='入院',discharge='出院',referral='转诊',checkup='体检',immunization='免疫接种',immunity='免疫力',immune='免疫的')
 GLOSSES['biology'].update(phytoplankton='浮游植物',invasive='入侵性的',symbiosis='共生',ecological='生态的')
 GLOSSES['law'].update(administrative='行政法相关的',immigration='移民法律事务',employment='劳动雇佣')
+GLOSSES['programmer'].update(download='下载',hash='哈希值',key='密钥',certificate='数字证书',proxy='代理服务器',firewall='防火墙',load='系统负载',performance='性能',optimization='性能优化',log='日志',crash='程序崩溃',stack='调用栈')
+GLOSSES['ai_creator'].update(logo='标志设计',illustration='插画',graphic='图形；平面设计',graphics='图形；图像',generator='生成器',algorithm='算法',data='数据',neural='神经网络相关的',network='网络',deep='深度学习中的深度',machine='机器学习中的机器',diffusion='扩散模型',transformer='Transformer 模型',synthetic='合成的',media='媒体内容',consent='授权同意',privacy='隐私',identity='身份；形象',likeness='肖像；外貌',tone='语气；色调',mood='氛围',reference='参考素材',consistency='一致性',review='审看；审核',publish='发布')
