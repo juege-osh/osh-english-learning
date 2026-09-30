@@ -74,6 +74,16 @@ def main():
     ok('专项错词跨设备保存且对其他账号隐藏',another_device.call('/api/progress')['progress']['industries']['programmer']['answers']['1']['correct'] is False and not b.call('/api/progress')['progress'])
     a.call('/api/progress',payload,status=409)
     ok('过期版本不能覆盖进度',True)
+    extra=a.call('/data/industry_words.json')
+    meiosis=next(word for word in extra if word['word']=='meiosis')
+    payload['revision']=saved['revision']
+    payload['progress']['industries']['biology']={'seen':[meiosis['id']],'answers':{str(meiosis['id']):{'correct':False,'at':200}}}
+    a.call('/api/progress',payload)
+    synced=another_device.call('/api/progress')['progress']
+    ok('独立行业词跨设备保存且不进入主线计数',meiosis['id']>20000 and synced['industries']['biology']['seen']==[meiosis['id']] and not synced['words'])
+    biology=b.call('/api/industries/challenge?sector=biology')
+    b.call('/api/industries/submit',{'sector':'biology','edition':biology['edition'],'name':b.name,'answers':[q['options'][0]['id'] for q in biology['questions']]})
+    ok('生物专业词参与专项题及榜单',len(biology['questions'])==20 and len(b.call('/api/industries/leaderboard?sector=biology')['entries'])==1)
     daily_before=len(a.call('/api/daily/leaderboard?goal=5000')['entries'])
     other_before=len(a.call('/api/daily/leaderboard?goal=20000')['entries'])
     daily=a.call('/api/daily?goal=5000')
