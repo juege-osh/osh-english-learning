@@ -400,3 +400,434 @@ composer	The composer wrote a shorter theme for the opening titles.	作曲家为
 musician	The musician recorded another take with a slower tempo.	音乐人用更慢的速度又录了一遍。	Ask the musician which instrument should lead in this section.	问问音乐人，这一段应该由哪种乐器主奏。
 performer	The performer needs space to finish the gesture before the cut.	剪切前，需要给表演者留出时间完成动作。	Show the performer the reference movement before recording.	录制前，先把参考动作给表演者看。
 actor	The actor wants to hear the previous line before recording the reply.	录制回应的台词前，演员想先听一下上一句。	We need the actor's approval before using a synthetic version of their voice.	使用演员声音的合成版本前，我们需要获得演员的同意。
+actress	The actress asked why her character left the room.	女演员问，她的角色为什么离开房间。	We need the actress to record one more line.	我们需要这位女演员再录一句台词。
+narrator	The narrator should pause before revealing the answer.	旁白者应该在揭晓答案前停顿一下。	Can the narrator speak more quietly in this scene?	这个场景里，旁白者能说得更轻一些吗？
+speaker	The speaker is distorting at this volume.	扬声器在这个音量下出现失真。	The transcript needs a label for each speaker.	转写稿需要为每位说话者标注身份。
+presenter	The presenter needs a shorter introduction.	主持人需要一段更短的开场介绍。	Send the presenter a copy of the final questions.	把最终版问题发一份给主持人。
+host	The host will introduce the guest before the demo.	主持人会在演示前介绍嘉宾。	Can the host repeat the question for people watching the replay?	主持人能把问题重复一遍，方便看回放的人吗？
+cast	The cast list is missing the voice actor.	演员名单里漏了配音演员。	Let's confirm the cast before preparing the recording schedule.	准备录制日程前，先确认演员阵容。
+collaboration	The collaboration worked better once we agreed on a shared brief.	统一需求说明后，协作更顺畅了。	This collaboration includes writing, animation, and sound design.	这次协作涵盖写作、动画和声音设计。
+collaborate	We can collaborate on the storyboard before generating any images.	生成图片前，我们可以一起设计分镜。	How will the two editors collaborate without overwriting each other's work?	两位编辑怎样协作，才能不覆盖对方的工作？
+collaborator	Ask the collaborator which files they need for the edit.	问问合作者，剪辑需要哪些文件。	Our collaborator noticed a continuity error in the draft.	我们的合作者发现草稿里有一处连续性错误。
+team	The team needs to see the reference clip before editing.	剪辑前，团队需要看参考短片。	Who on the team is checking the final subtitles?	团队里由谁检查最终字幕？
+brief	The brief doesn't explain who the video is for.	需求说明没有解释视频是给谁看的。	Let's add the required dimensions to the brief.	我们把要求的尺寸加进需求说明吧。
+requirement	The client added a requirement for bilingual captions.	客户新增了双语字幕的要求。	Is the vertical format a requirement or a preference?	竖屏格式是硬性要求，还是偏好？
+specification	The export specification includes resolution and frame rate.	导出规格包括分辨率和帧率。	Check the specification before rendering the whole sequence.	渲染整段序列之前，先核对规格。
+delivery	The delivery includes the video and the editable project files.	交付内容包括视频和可编辑项目文件。	We need to agree on a delivery date with the client.	我们需要与客户商定交付日期。
+approval	We're waiting for approval of the character design.	我们正在等待角色设计获批。	The approval email refers to an older version of the storyboard.	批准邮件指的是较旧版本的分镜。
+approve	Can you approve the final voiceover before we animate the scene?	给场景做动画之前，你能批准最终旁白吗？	The client needs to approve the logo placement.	客户需要批准标志的摆放位置。
+reject	We should reject the frame because the character's face has changed.	这张画面中的角色脸变了，我们应该驳回它。	Did the reviewer reject the whole sequence or just this shot?	审核者驳回了整段序列，还是只有这个镜头？
+rejection	The rejection note says the audio is too quiet.	驳回说明指出，音频声音太小。	We need a clear reason for the rejection so the editor can fix it.	我们需要明确的驳回理由，让剪辑师知道怎样修改。
+comment	Leave a comment at the exact frame where the hand changes.	在手部发生变化的那一帧留下批注。	This comment refers to the opening title, not the closing credits.	这条评论针对开场标题，不是片尾字幕。
+critique	The critique focuses on whether the story is easy to follow.	这次作品评议关注故事是否容易理解。	I'd like a critique of the draft before adding more effects.	增加更多特效之前，我想听听对草稿的评议。
+criticism	The criticism of the pacing is fair.	对节奏的批评有道理。	Let's separate useful criticism from personal preferences.	我们把有用的批评意见和个人偏好分开吧。
+revise	We need to revise the scene where the motivation is unclear.	我们需要修订角色动机不清楚的那个场景。	Could you revise the last paragraph without changing its meaning?	你能修改最后一段，同时保持原意吗？
+grammar	The grammar is correct, but the line sounds unnatural.	语法没错，但这句台词听起来不自然。	Check the grammar after translating the captions.	翻译字幕后，检查一下语法。
+punctuation	The punctuation makes this sentence hard to read aloud.	这句话的标点让它很难顺畅朗读。	Use consistent punctuation throughout the subtitle file.	整个字幕文件要使用一致的标点。
+clarity	We shortened the introduction to improve clarity.	我们缩短了引言，让表达更清楚。	The visual effect adds drama but reduces clarity.	这个视觉效果增加了戏剧感，却降低了表达清晰度。
+coherence	The second revision improved the coherence of the story.	第二次修订改善了故事的连贯性。	We need to check coherence between the narration and the images.	我们需要检查旁白和画面之间是否连贯。
+concise	Keep the instruction concise enough to fit on one screen.	把说明写得简洁一些，让它能放在一屏内。	The concise version leaves more time for the demonstration.	简洁的版本给演示留出了更多时间。
+fluent	The dialogue is fluent, but it doesn't sound like this character.	对话很流畅，却不像这个角色会说的话。	How can we make the dialogue sound fluent without speeding it up?	我们怎样让对话听起来流畅，又不加快语速？
+fluency	Read the paragraph aloud to check its fluency.	把这段话读出来，检查流畅度。	The edits improved fluency without adding extra information.	修改让表达更流畅，没有增加额外信息。
+natural	I'd like a natural speaking pace for the tutorial.	我希望教程使用自然的讲话速度。	The hand movement doesn't look natural yet.	手部动作看起来还不自然。
+authentic	Use authentic details from the interview in the script.	在脚本中使用采访里真实的细节。	The dialogue feels more authentic when the characters don't explain everything.	角色不把一切都解释清楚时，对话反而显得更真实。
+formal	The formal version suits the company announcement.	正式版本适合这则公司公告。	The dialogue is too formal for two close friends.	这段对话对两个好朋友来说太正式了。
+informal	Use an informal tone for the behind-the-scenes post.	幕后帖子可以用非正式的语气。	The informal introduction helps the interview feel relaxed.	不那么正式的开场让采访显得轻松。
+casual	The character needs a casual outfit for this scene.	这个场景里的角色需要穿日常便装。	Could the voiceover sound more casual?	旁白能更像日常说话吗？
+friendly	The welcome message should sound friendly without being pushy.	欢迎信息要亲切，不要咄咄逼人。	A friendly expression would fit this scene better than a big grin.	亲切的表情比咧嘴大笑更适合这个场景。
+professional	The layout looks professional, but the text is too small.	版式看起来专业，但字太小了。	Keep the response professional even when the feedback is frustrating.	即使反馈让人烦躁，回复也要保持专业。
+humorous	The humorous version works better with a shorter pause.	幽默版本的停顿短一些，效果更好。	We need a humorous ending that still fits the character.	我们需要一个幽默、同时符合角色的结尾。
+humour	The humour comes from the contrast between the two characters.	幽默来自两个角色之间的反差。	This scene doesn't need more humour; it needs a clearer setup.	这个场景不需要增加幽默，而是需要更清楚的铺垫。
+humor	The humor was lost in the translation.	翻译后，幽默感没了。	Can we keep the humor without making the customer look foolish?	我们能保留幽默，又不让客户显得愚蠢吗？
+sarcasm	The sarcasm is easy to miss in the generated voice.	生成的声音里，这种讽刺语气不容易听出来。	Would this character really use sarcasm in that situation?	这个角色在那种情况下真的会用讽刺语气吗？
+irony	The irony is that the expert makes the simplest mistake.	反讽在于，专家犯了最简单的错误。	We need to make the irony clear without explaining the joke.	我们需要让反讽清楚一些，又不能把笑点解释出来。
+metaphor	The script uses a bridge as a metaphor for trust.	脚本用桥来比喻信任。	That metaphor is hard to show in a short video.	这个隐喻很难在短视频里表现出来。
+analogy	Could we use a familiar analogy to explain the model?	我们能用一个熟悉的类比来解释这个模型吗？	The analogy helps beginners, but we should explain where it stops working.	这个类比能帮助初学者，但我们也应该说明它在哪些地方不适用。
+idiom	This idiom doesn't translate well into Chinese.	这个习语很难直接译成中文。	Choose an idiom the target audience will understand.	选一个目标受众能理解的习语。
+phrase	The phrase sounds like something from a corporate brochure.	这个词组听起来像公司宣传册里的话。	Can we replace this phrase with everyday language?	我们能把这个词组换成日常说法吗？
+word	The same word appears three times in one sentence.	同一个词在一句话里出现了三次。	Which word should we emphasise in the narration?	旁白里应该强调哪个词？
+sentence	This sentence is too long for one subtitle.	这句话太长，一条字幕放不下。	Let's split the sentence where the speaker naturally pauses.	我们在说话者自然停顿的地方把这句话拆开吧。
+paragraph	Move this paragraph before the example.	把这一段移到例子前面。	The paragraph repeats what the diagram already shows.	这段文字重复了图中已经呈现的信息。
+chapter	The chapter ends before the main question is answered.	这一章在回答主要问题之前就结束了。	We need a clear opening for each chapter.	每一章都需要一个清楚的开头。
+section	This section explains how to use the reference image.	这一部分解释了怎样使用参考图。	Could we remove the section that repeats the introduction?	我们能删掉重复引言的那一部分吗？
+headline	The headline promises more than the article delivers.	标题承诺的内容超过了文章实际提供的内容。	Could you write a headline that explains the actual benefit?	你能写一个说明实际好处的标题吗？
+title	The title disappears too quickly in the opening.	开场的标题消失得太快了。	Does the title still make sense after the story changes?	故事修改后，这个作品标题还合适吗？
+introduction	The introduction takes too long to reach the main topic.	引言花了太多时间才进入主题。	Let's record a new introduction for the updated tutorial.	我们为更新后的教程录一个新引言吧。
+conclusion	The conclusion should answer the question raised at the beginning.	结尾应该回答开头提出的问题。	This conclusion adds a new idea that needs more explanation.	这个结尾引入了一个需要更多解释的新想法。
+summary	The summary leaves out the main limitation of the experiment.	摘要漏掉了这个实验的主要限制。	Could you add a short summary before the detailed instructions?	你能在详细说明前加一段简短摘要吗？
+summarize	Can you summarize the changes for the review meeting?	你能为审核会议概括一下修改内容吗？	We need to summarize the story without revealing the ending.	我们需要概括故事，但不能透露结局。
+synopsis	The synopsis describes the conflict but not the resolution.	故事梗概写了冲突，却没有写如何解决。	Send a one-page synopsis before the full screenplay.	先发一页故事梗概，再发完整剧本。
+premise	The premise is that nobody can remember yesterday.	故事前提是，没有人记得昨天。	We need to test whether this premise can sustain a whole episode.	我们需要看看这个故事前提能否支撑一整集。
+concept	The concept is interesting, but the audience needs a clearer example.	这个概念很有意思，但受众需要一个更清楚的例子。	Let's sketch the concept before writing a detailed prompt.	写详细提示词之前，先把概念画成草图。
+idea	I like the idea of showing the same event from two viewpoints.	我喜欢从两个视角呈现同一事件的想法。	The idea is simple enough for a thirty-second video.	这个想法足够简单，可以放进三十秒视频。
+inspiration	The interview gave us inspiration for the opening scene.	这次采访给了我们开场场景的灵感。	We can use the photo for inspiration without copying its composition.	我们可以从照片中获取灵感，不必照搬构图。
+brainstorm	Let's brainstorm three different ways to explain this.	我们来构思三种不同的解释方式吧。	Could we brainstorm the ending before generating more shots?	生成更多镜头之前，我们能先构思一下结尾吗？
+brainstorming	The brainstorming session produced two ideas worth testing.	这次头脑风暴产生了两个值得测试的想法。	We need a clear question for the brainstorming session.	头脑风暴需要一个明确的问题。
+perspective	The doorway looks wrong because the perspective is inconsistent.	门框看起来不对，因为透视不一致。	Let's tell this scene from the child's perspective.	我们从孩子的视角来讲这个场景吧。
+viewpoint	The narrator's viewpoint changes halfway through the chapter.	这一章中途改变了旁白的叙述视角。	We need to choose a viewpoint before rewriting the scene.	重写场景前，我们需要确定叙述视角。
+protagonist	The protagonist needs a reason to leave home.	主角需要一个离家的理由。	What does the protagonist want at the beginning of the story?	故事开始时，主角想要什么？
+antagonist	The antagonist should have a goal beyond stopping the hero.	对立角色不应该只是阻止主角，也应该有自己的目标。	We haven't shown why the antagonist made this decision.	我们还没有展示对立角色为什么作出这个决定。
+motivation	The character's motivation isn't clear in this version.	这个版本里，角色的动机不清楚。	Can we show the motivation through an action rather than a speech?	我们能通过行动，而不是一段讲话来展示动机吗？
+conflict	The conflict starts when both characters want the same room.	两个角色都想要同一间房时，冲突开始了。	This scene needs a conflict that matters to the audience.	这个场景需要一个受众在意的冲突。
+climax	The climax arrives before we've established the stakes.	我们还没交代清楚利害关系，高潮就来了。	Let's slow down the moment just before the climax.	我们把高潮前的那一刻放慢一点吧。
+suspense	The pause builds suspense before the door opens.	开门前的停顿增加了悬念。	Showing the answer too early removes the suspense.	太早展示答案会消除悬念。
+pace	The pace feels too fast for this emotional scene.	对这个情感场景来说，节奏太快了。	We can change the pace by holding the reaction shot longer.	我们可以让反应镜头多停留一会儿，调整节奏。
+arc	The character's arc should be visible across the three episodes.	角色的发展弧线应该贯穿这三集。	Does this decision fit the story arc we've established?	这个决定符合我们已经建立的故事发展弧线吗？
+structure	The structure moves from the problem to a practical demonstration.	这个结构从问题进入实际演示。	We should fix the structure before polishing individual sentences.	润色具体句子之前，我们应该先调整结构。
+continuity	There's a continuity error in the position of the bag.	包的位置出现了连续性错误。	Check continuity between the wide shot and the close-up.	检查全景和特写之间的连续性。
+flashback	The flashback explains why she recognises the house.	闪回解释了她为什么认得这栋房子。	Can we make the flashback visually distinct from the present?	我们能让闪回在视觉上与现在区分开吗？
+world	The story world needs consistent rules.	故事世界需要一致的规则。	What does the audience need to know about this world before the action starts?	行动开始前，受众需要了解这个世界的哪些信息？
+fiction	This work of fiction is set in an invented city.	这部虚构作品发生在一座虚构的城市里。	We should make it clear that the dialogue is fiction.	我们应该明确说明，这段对话是虚构的。
+nonfiction	The nonfiction script needs sources for its factual claims.	非虚构脚本中的事实性说法需要来源支持。	We can't invent a quotation for a nonfiction piece.	我们不能给非虚构作品编造引语。
+fantasy	The fantasy setting still needs a believable emotional conflict.	奇幻背景仍然需要一个可信的情感冲突。	I'd like the fantasy creature to feel heavy enough to affect the ground.	我希望这个奇幻生物有足够的重量感，能对地面产生影响。
+science	The science explanation needs checking before we animate it.	制作动画前，需要核查科学解释。	This scene belongs in a science fiction story, not a documentary.	这个场景应该出现在科幻故事中，不是纪录片中。
+horror	The horror scene is stronger when we don't show everything.	不把一切都展示出来时，恐怖场景更有力量。	We need sound that suits horror without drowning out the dialogue.	我们需要适合恐怖类型、又不会盖住对话的声音。
+thriller	The thriller needs a clue that the audience can notice later.	这个惊悚作品需要一个受众之后能注意到的线索。	The opening feels more like a thriller than a comedy.	这个开场更像惊悚作品，而不是喜剧。
+comedy	The comedy depends on the timing of the reaction.	这个喜剧效果取决于反应的时机。	We shouldn't add comedy to the scene where the character is grieving.	角色悲伤的场景里，不应该加入喜剧元素。
+drama	The drama comes from the choice between family and work.	戏剧冲突来自家庭和工作之间的选择。	This quiet conversation carries more drama than the chase.	这段安静的对话比追逐场面更有戏剧张力。
+romance	The romance develops through small shared moments.	这段爱情通过一些共同经历的小瞬间发展。	The romance subplot needs more than one sudden confession.	爱情支线不能只靠一次突然告白。
+adventure	The adventure should change how the characters see each other.	这段冒险应该改变角色对彼此的看法。	We need a quieter moment after the adventure ends.	冒险结束后，我们需要一个更平静的时刻。
+action	The action is hard to follow because the camera keeps changing direction.	镜头一直改变方向，让动作场面难以看懂。	Let's show the character's reaction before the next action sequence.	下一个动作段落之前，我们先展示角色的反应。
+genre	Which genre best fits this story?	哪种类型最适合这个故事？	The genre affects what the audience expects from the opening.	作品类型会影响受众对开场的期待。
+adapt	We can adapt the chapter into three short scenes.	我们可以把这一章改编成三个短场景。	How should we adapt the joke for a different audience?	面对不同的受众，我们应该怎样改编这个笑话？
+screenplay	The screenplay needs a clearer transition between locations.	这个电影剧本需要更清楚的地点转换。	The editor asked for the latest version of the screenplay.	剪辑师要求提供最新版本的电影剧本。
+take	The second take has the clearest pronunciation.	第二条拍摄的发音最清楚。	Can we do another take with a longer pause?	我们能再拍一条，把停顿拉长一些吗？
+montage	The montage shows several weeks passing in a few seconds.	这个蒙太奇用几秒钟表现了几周过去。	The montage needs a final shot that brings us back to the present.	这个蒙太奇需要一个把我们带回现在的结尾镜头。
+teaser	The teaser should suggest the conflict without revealing the solution.	预告短片应该透露冲突，但不揭晓解决方式。	Could we cut a shorter teaser for the launch post?	我们能为上线帖子剪一个更短的预告短片吗？
+trailer	The trailer gives away too much of the ending.	这段预告片透露了太多结局内容。	The trailer needs to show what makes the story different.	预告片需要展示这个故事的特别之处。
+promo	The promo needs a clear explanation of the event.	宣传片需要清楚说明活动内容。	We should use the confirmed date in the promo.	我们应该在宣传片中使用已经确认的日期。
+documentary	The documentary includes interviews with the people involved.	这部纪录片包含对当事人的采访。	The documentary editor asked us to verify the date on the archive footage.	纪录片剪辑师让我们核实档案影像上的日期。
+tutorial	The tutorial skips a step that beginners need.	这个教程跳过了初学者需要的一个步骤。	Let's record the tutorial using the current interface.	我们用当前界面录制教程吧。
+interview	The interview works better when the guest has time to answer.	给嘉宾时间回答，采访效果会更好。	The interview transcript includes a correction from the guest.	采访转写稿中包含了嘉宾的更正。
+podcast	The podcast needs a short introduction to the guest.	这期播客需要一段简短的嘉宾介绍。	Can we make an audio-only version for the podcast?	我们能为播客制作一个纯音频版本吗？
+broadcast	The broadcast needs captions for viewers watching without sound.	播出内容需要字幕，方便静音观看的人。	What time will we broadcast the interview?	我们几点播出这段采访？
+episode	This episode introduces the main character's problem.	这一集介绍了主角面临的问题。	The episode is too long for the planned release slot.	这一集太长，放不进计划的播出时段。
+series	The series needs a consistent opening style.	这个系列需要一致的开场风格。	Can each video in the series work on its own?	系列里的每个视频能独立观看吗？
+short	The short tells one complete story in three minutes.	这部短片用三分钟讲了一个完整故事。	We need a different ending for the short.	我们需要为这部短片换一个结尾。
+cinema	The sound needs testing before the cinema screening.	在影院放映前，需要测试声音。	The class explores how cinema tells stories through images.	这堂课探讨电影怎样通过画面讲故事。
+cinematic	The lighting looks cinematic, but the faces are difficult to see.	灯光有电影感，但人物的脸不好看清。	We can make the scene cinematic without adding dramatic music everywhere.	我们不用到处加戏剧性音乐，也能让场景有电影感。
+film	The film begins with an empty room.	这部影片以一个空房间开场。	We need to check the subtitles throughout the film.	我们需要检查整部影片的字幕。
+movie	The movie poster uses a different costume from the final scene.	电影海报使用的服装与最终场景不同。	What does the audience know at this point in the movie?	在电影进行到这里时，观众知道了什么？
+shoot	We plan to shoot the interview in a quiet room.	我们计划在一个安静的房间里拍采访。	Can we shoot a reference clip for this movement?	我们能为这个动作拍一段参考短片吗？
+studio	The studio booking includes time for the sound check.	摄影棚预订包含了声音检查的时间。	Our studio keeps a separate folder for each client's source files.	我们的工作室为每个客户的源文件保留独立文件夹。
+set	The set needs a doorway that matches the earlier scene.	这个布景需要一个与之前场景一致的门口。	We should photograph the set before moving the props.	移动道具前，我们应该把布景拍下来。
+location	The location is too noisy for clean dialogue.	这个拍摄地点太吵，无法录出干净的对话。	We need permission before filming at this location.	我们需要先获得许可，才能在这个地点拍摄。
+prop	The prop changes colour between shots.	这个道具在不同镜头间变了颜色。	Can we replace this prop with something the character would actually carry?	我们能把这个道具换成角色确实会随身携带的东西吗？
+costume	The costume should show that the character has been travelling.	服装应该让人看出角色一直在旅行。	We need a reference image for the costume in each scene.	我们需要每个场景中服装的参考图。
+wardrobe	The wardrobe team needs the updated scene list.	戏服团队需要更新后的场景清单。	Keep the wardrobe consistent across the character's reference images.	角色参考图中的服装要保持一致。
+makeup	The makeup looks too polished for this tired character.	对这个疲惫的角色来说，妆容太精致了。	Can we keep the makeup the same in the close-up?	特写里的妆容能保持一致吗？
+light	The light should come from the window on the left.	光线应该来自左侧的窗户。	There's too much light on the background compared with the face.	相比脸部，背景上的光太多了。
+illumination	The illumination changes abruptly when the camera turns.	镜头转动时，照明突然变了。	We need softer illumination for the interview setup.	采访布置需要更柔和的照明。
+illuminate	A small lamp will illuminate the desk.	一盏小灯会照亮桌面。	Can we illuminate the doorway without brightening the whole room?	我们能只照亮门口，而不把整个房间都弄亮吗？
+exposure	The exposure differs between the two camera angles.	两个拍摄角度的曝光不同。	Check the exposure before adjusting the colour grade.	调色前，先检查曝光。
+aperture	Which aperture was used for the reference shot?	参考镜头用了什么光圈？	We need to record the aperture setting for the next take.	我们需要为下一条拍摄记录光圈设置。
+shutter	The shutter speed affects how the movement looks.	快门速度会影响运动的呈现方式。	Check whether the shutter setting changed between takes.	检查不同拍摄条次之间，快门设置是否变了。
+focus	The focus shifts away from the character's eyes.	焦点偏离了角色的眼睛。	We need to focus on the hand as it picks up the key.	手拿起钥匙时，我们需要对焦到手上。
+focal	Use the same focal length for these reference portraits.	这些参考肖像使用相同焦距。	The focal point of the composition should be the face.	构图的视觉焦点应该是脸部。
+zoom	The zoom is distracting during the explanation.	讲解时的变焦让人分心。	Could we zoom in more slowly on the diagram?	我们能更慢地放大这张示意图吗？
+pan	Let's pan across the room before showing the character.	展示角色前，我们先水平摇镜扫过房间。	The pan stops before the audience can see the window.	观众还没看到窗户，水平摇镜就停了。
+tilt	The camera should tilt down to reveal the note.	镜头应该向下摇，展示那张便条。	This tilt is too fast for the viewer to follow.	这个垂直摇镜太快，观众跟不上。
+dolly	The dolly move follows the character towards the doorway.	摄影移动台的运动跟着角色走向门口。	Can we test the dolly movement with a simple preview?	我们能用一个简单预览测试移动台镜头运动吗？
+aerial	The aerial shot establishes the size of the city.	航拍镜头交代了城市规模。	Do we need an aerial view, or would a street-level shot work better?	我们需要航拍视角，还是街面镜头会更好？
+drone	The drone footage needs stabilisation before the edit.	无人机素材需要先稳定，再剪辑。	Ask the producer whether the drone shot can be used in this project.	问问制片人，这段无人机镜头能否用于这个项目。
+tripod	The tripod keeps the camera in the same position for both takes.	三脚架让两条拍摄中的相机位置保持相同。	We forgot to remove the tripod from the background.	我们忘了把背景里的三脚架移走。
+stabilizer	The stabilizer reduced the shake but changed the framing.	稳定器减少了抖动，但改变了取景。	Which stabilizer was used for the walking shot?	步行镜头用了哪种稳定器？
+angle	The angle hides the object the character is pointing at.	这个角度遮住了角色正在指的物体。	Let's try an angle that shows both faces.	我们试试能同时展示两张脸的角度吧。
+view	The preview has a separate view for checking the camera position.	预览里有一个独立视图，用来检查相机位置。	The platform counted a view before the clip had finished.	视频还没播放完，平台就计入了一次观看。
+wide	Would a wide-angle lens help us show the cramped room?	用广角镜头能帮助我们展示这间狭小的房间吗？	The wide lens makes the person near the edge look stretched.	广角镜头让靠近边缘的人看起来被拉长了。
+medium	The medium shot lets us see the hands and the facial reaction.	中景让我们能同时看到手部和面部反应。	Which medium is best for this idea: a video or an illustrated guide?	这个想法最适合哪种媒介：视频还是图文指南？
+telephoto	The telephoto lens gives us a tighter view of the performer.	长焦镜头让我们更紧凑地拍到表演者。	Do we have a telephoto reference for the distant building?	我们有没有远处建筑的长焦参考图？
+macro	The macro shot shows the texture of the fabric.	微距镜头展示了布料的纹理。	Can we use a macro view for this tiny detail?	我们能用微距视图展示这个小细节吗？
+depth	The depth of field changes between these two shots.	这两个镜头之间的景深变了。	The flat background makes the scene lose its sense of depth.	平面的背景让场景失去了空间深度感。
+field	The field of view is too narrow to show the whole room.	视野太窄，无法展示整个房间。	Can we match the field of view to the reference camera?	我们能把视野调得与参考相机一致吗？
+symmetry	The symmetry makes the poster feel calm and formal.	对称让海报显得平静而正式。	Check the symmetry of the generated face before approving it.	批准生成的人脸之前，检查一下对称情况。
+asymmetry	A little asymmetry makes the pose feel less stiff.	一点不对称会让姿势不那么僵硬。	The asymmetry in the layout draws attention to the title.	版式中的不对称把注意力引向了标题。
+balance	The composition needs more balance between the text and the image.	构图中的文字和图像需要更均衡。	Does the dark shape on the left disturb the balance?	左侧的深色形状会破坏画面均衡吗？
+proportion	The head is out of proportion to the body.	头部和身体的比例不对。	We need to preserve the proportion of the logo when resizing it.	改变标志大小时，我们需要保持比例。
+scale	The scale of the doorway makes the character look too small.	门口的尺度让角色显得太小了。	Use a familiar object to show the scale of the creature.	用一个熟悉的物体来表现生物的尺度。
+silhouette	The silhouette is clear even at a small size.	这个剪影即使缩小也很清楚。	Can we recognise the character from the silhouette alone?	我们能只通过剪影认出这个角色吗？
+shape	The shape of the bag changes in the next frame.	下一帧里，包的形状变了。	We need a simpler shape for this small icon.	这个小图标需要更简单的形状。
+form	The form of the creature should suggest how it moves.	生物的形态应该让人能看出它怎样运动。	The lighting helps reveal the form of the object.	灯光帮助呈现物体的形态。
+contour	The contour of the hand is broken near the wrist.	手部轮廓线在手腕附近断开了。	Could you simplify the contour without losing the pose?	你能简化轮廓线，同时保留姿势吗？
+edge	There's a bright edge around the cutout.	抠出的图像周围有一圈亮边。	The edge of the label is too close to the crop.	标签边缘离裁切位置太近了。
+line	The line should follow the curve of the character's shoulder.	这条线应该沿着角色肩部的曲线走。	Make the dividing line lighter so it doesn't dominate the page.	把分隔线变浅一些，让它别在页面中太抢眼。
+curve	The curve looks uneven near the corner.	拐角附近的曲线看起来不平顺。	Can we use a smoother curve for the motion path?	我们能给运动路径使用更平滑的曲线吗？
+surface	The surface looks like plastic instead of wood.	表面看起来像塑料，不像木头。	We need a reference showing how light falls on this surface.	我们需要一张展示光线落在这个表面上的参考图。
+material	The material is too reflective for worn leather.	对于磨旧的皮革来说，这个材质太反光了。	Which material should we use for the window frame?	窗框应该用什么材质？
+mesh	The mesh has a hole near the elbow.	网格在肘部附近有一个洞。	Can we simplify the mesh before testing the animation?	测试动画前，我们能先简化网格吗？
+geometry	The geometry bends incorrectly when the arm moves.	手臂移动时，几何结构的弯曲不正确。	We need to check the geometry hidden behind the costume.	我们需要检查服装后面被遮住的几何结构。
+geometric	The geometric pattern should repeat without a visible break.	这个几何图案应该连续重复，看不出断点。	A geometric shape may work better than a detailed illustration here.	这里用几何形状可能比复杂插画更合适。
+rig	The rig needs a control for the character's eyebrows.	动画骨架系统需要一个控制角色眉毛的功能。	Test the rig before adding the final animation.	添加最终动画之前，测试一下骨架系统。
+skeleton	The skeleton doesn't match the proportions of the model.	骨架与模型的比例不一致。	We need to check the skeleton inside the imported character.	我们需要检查导入角色内部的骨架。
+bone	The bone is rotating around the wrong point.	这根骨骼正在绕错误的位置旋转。	Which bone controls the wrist movement?	哪根骨骼控制手腕运动？
+joint	The elbow joint bends in the wrong direction.	肘关节向错误的方向弯曲了。	The animator asked for a closer view of the shoulder joint.	动画师要求看肩关节的更近视图。
+pose	The pose looks balanced, but the feet don't touch the ground.	姿势看起来平衡，但脚没有接触地面。	Can we keep this pose for the character reference sheet?	角色参考表能保留这个姿势吗？
+simulation	The cloth simulation clips through the chair.	布料模拟穿过了椅子。	We need a short simulation test before the final render.	最终渲染前，我们需要做一个短模拟测试。
+simulate	Can we simulate the curtain moving in a light breeze?	我们能模拟窗帘在微风中移动吗？	The preview doesn't need to simulate every small particle.	预览不需要模拟每一个小粒子。
+physics	The physics setup makes the ball bounce too much.	这个物理模拟设置让球弹得太多了。	Let's test the physics before adding detailed materials.	添加复杂材质之前，我们先测试物理模拟吧。
+particle	Each particle follows the same path in this test.	这个测试中的每个粒子都沿着同一路径运动。	The particle effect is hiding the character's face.	粒子效果遮住了角色的脸。
+collision	The collision test shows the hand passing through the table.	碰撞测试显示，手穿过了桌子。	We need a simpler collision shape for the background objects.	背景物体需要一个更简单的碰撞形状。
+cloth	The cloth moves as though it has no weight.	布料移动起来像没有重量。	Can we use a different cloth reference for the coat?	我们能给外套换一份布料参考吗？
+hair	The hair changes length halfway through the shot.	镜头进行到一半时，头发长度变了。	Keep the hair out of the eyes in this close-up.	这个特写里，头发不要挡住眼睛。
+fur	The fur looks too smooth for this animal.	这个动物的皮毛看起来太光滑了。	We need the fur to move with the body rather than float around it.	皮毛应该跟随身体移动，不要在身体周围漂浮。
+liquid	The liquid spills before the cup is tilted.	杯子还没倾斜，液体就洒出来了。	Use a small liquid simulation to test the pour.	用一个小型液体模拟测试倾倒动作。
+fluid	The fluid simulation needs more room around the container.	流体模拟需要在容器周围留出更多空间。	The artist adjusted the fluid settings after checking the reference.	美术人员核对参考后，调整了流体设置。
+smoke	The smoke moves against the direction of the wind in the scene.	烟雾移动的方向与场景里的风向相反。	The smoke effect is too dense to see the doorway.	烟雾效果太浓，门口都看不清了。
+fire	The fire effect needs to light the nearby wall.	火焰效果需要照亮附近的墙面。	We can test the fire animation without rendering the full room.	我们可以不渲染整个房间，先测试火焰动画。
+ambient	The ambient sound doesn't match the empty room.	环境音与这个空房间不相符。	Reduce the ambient light so the desk lamp has more effect.	降低环境光，让台灯更能发挥作用。
+reflection	The reflection shows an object that isn't in the scene.	反射里出现了场景中没有的物体。	Check the reflection in the window after changing the camera.	改变相机位置后，检查窗户里的反射。
+reflective	The reflective surface is picking up the wrong background.	反光表面映出了错误的背景。	Can the sign be less reflective so the text stays readable?	招牌能少反光一点，让文字保持可读吗？
+diffuse	The shader combines diffuse reflection with a glossy layer.	这个着色器把漫反射和光泽层组合起来。	We need to check the diffuse colour before adding more effects.	添加更多效果前，我们需要检查漫反射颜色。
+roughness	Increasing the roughness changed the appearance of the highlight.	增加粗糙度后，高光的样子变了。	The roughness map has a visible seam near the edge.	粗糙度贴图在边缘附近有一条明显接缝。
+metallic	The metallic setting makes the wooden box look wrong.	金属质感设置让木盒看起来不对。	We need a metallic material for the buckle, not the whole belt.	我们需要给搭扣用金属材质，不是整条皮带。
+opacity	The opacity is too low for the text to stand out.	不透明度太低，文字不够突出。	Can we animate the opacity as the label appears?	标签出现时，我们能给不透明度做动画吗？
+translucent	The translucent curtain lets some light into the room.	半透明窗帘让一些光线进入房间。	This surface should be translucent rather than completely transparent.	这个表面应该是半透明的，不是完全透明的。
+emission	The emission makes the sign appear to glow.	自发光让招牌看起来在发亮。	Check whether the emission is affecting the surrounding objects in this render.	检查这次渲染里，自发光是否影响了周围物体。
+luminosity	The luminosity of the background competes with the title.	背景的明亮度抢了标题的注意力。	Could we reduce the luminosity of this effect?	我们能降低这个效果的明亮度吗？
+hue	The hue of the jacket has shifted towards green.	夹克的色相偏绿了。	Keep the hue consistent across the product images.	产品图之间的色相要保持一致。
+palette	The palette uses three main colours.	这个配色方案使用了三种主色。	We need a palette that still works on a small screen.	我们需要一个在小屏幕上也有效的配色方案。
+warm	The warm lighting makes the scene feel welcoming.	暖色灯光让场景显得亲切。	This version is too warm compared with the reference.	与参考相比，这个版本的色调太暖了。
+cool	Use a cool background to separate it from the warm foreground.	用冷色背景来区分暖色前景。	The cool tones fit the night scene better.	冷色调更适合这个夜景。
+neutral	A neutral background would make the product easier to judge.	中性背景会让产品更容易被判断。	We need a neutral grey for the comparison chart.	对比图表需要一种中性灰色。
+vibrant	The vibrant colours suit the festival poster.	鲜艳的颜色适合节日海报。	Can we make the title vibrant without changing the whole palette?	我们能让标题鲜艳一些，而不改变整个配色吗？
+muted	The muted palette keeps attention on the character.	柔和低饱和的配色把注意力留在角色身上。	This scene needs a muted background rather than a bright one.	这个场景需要柔和的背景，不要太鲜亮。
+vivid	The vivid red draws attention to the warning label.	鲜明的红色把注意力引向警告标签。	The memory scene can use more vivid colours than the present.	回忆场景可以比现在的场景用更鲜明的颜色。
+monochrome	The monochrome version makes the shapes easier to compare.	单色版本让形状更容易比较。	Could we test the poster in monochrome first?	我们能先测试海报的单色版本吗？
+sepia	The sepia tone makes the flashback feel older.	棕褐色调让闪回显得更有年代感。	We need a sepia version for the character's memory sequence.	角色的回忆段落需要一个棕褐色版本。
+pastel	The pastel colours are too pale against this background.	这些粉彩色在这个背景上太浅了。	I'd like a pastel palette for the invitation design.	我希望邀请函设计使用粉彩配色。
+complementary	The complementary colours make the two sections distinct.	互补色让这两个部分区别明显。	Can we try a complementary palette for the poster?	我们能为海报试试互补色配色吗？
+analogous	The analogous colour scheme makes the scene feel unified.	类似色配色让场景显得统一。	We chose analogous colours for the background illustrations.	我们给背景插画选择了类似色。
+gradation	The gradation is uneven near the brightest area.	最亮区域附近的色调渐变不均匀。	We need a softer gradation between the two background colours.	两种背景颜色之间需要更柔和的渐变。
+shadow	The shadow points in a different direction from the light.	阴影的方向与灯光不对应。	Can we keep the shadow from covering the subtitle?	我们能让阴影别遮住字幕吗？
+highlight	The highlight on the face is too bright.	脸上的高光太亮了。	We lost detail in the highlight after the colour adjustment.	调色后，高光里的细节丢失了。
+glow	The glow around the title makes the letters harder to read.	标题周围的光晕让字更难读了。	We need a subtle glow from the screen onto the face.	我们需要屏幕在脸上投出一点柔和的光。
+bloom	The bloom effect is washing out the small lights.	辉光效果让小灯的细节变淡了。	Can we compare the render with and without bloom?	我们能对比有辉光和没有辉光的渲染吗？
+glare	The glare on the window hides the character inside.	窗户上的眩光遮住了里面的角色。	We need to reduce the glare before placing text over this shot.	在这个镜头上放文字之前，我们需要减弱眩光。
+flare	The lens flare crosses the actor's eyes.	镜头光晕经过了演员的眼睛。	Does the flare fit the direction of the light source?	这个镜头光晕与光源方向相符吗？
+blur	The background blur looks uneven around the hair.	头发周围的背景模糊看起来不均匀。	Could you blur the personal details in this screenshot?	你能模糊处理这张截图中的个人信息吗？
+blurry	The face becomes blurry during the turn.	转身时，脸变得模糊了。	This preview is too blurry to check the small text.	这个预览太模糊，无法检查小字。
+sharp	The product label needs to stay sharp throughout the shot.	产品标签需要在整个镜头里保持清晰。	The background is sharp, but the subject isn't.	背景清晰，但主体不清晰。
+sharpness	The extra sharpness makes the skin look unnatural.	增加的清晰度让皮肤看起来不自然。	Check sharpness at the final viewing size.	按最终观看尺寸检查清晰度。
+sharpen	Don't sharpen the image before checking the noise.	先检查噪点，再决定是否锐化图像。	Could we sharpen just the product label?	我们能只锐化产品标签吗？
+noise	There is visible noise in the dark part of the frame.	画面暗部有明显噪点。	The noise in the recording is louder between sentences.	录音噪声在句子间隙更明显。
+grain	The grain gives the image a textured look.	颗粒感让图像更有质感。	Keep the grain consistent between the generated shots.	生成镜头之间的颗粒感要保持一致。
+artifact	There's an artifact near the character's mouth.	角色嘴边有一个生成伪影。	We need to inspect this compression artifact in the exported file.	我们需要在导出文件中检查这个压缩伪影。
+distortion	The distortion makes the door frame bend.	畸变让门框弯曲了。	Can we reduce the distortion without cropping out the hand?	我们能减少畸变，同时不裁掉手部吗？
+upscale	We should test a small crop before we upscale the full image.	放大整张图之前，我们应该先测试一块小裁切。	Can this tool upscale the frame without changing the face?	这个工具能在不改变脸部的情况下放大画面吗？
+composite	The composite needs a matching shadow under the character.	合成画面需要在角色下方加上匹配的阴影。	We can composite the title over the footage after the colour grade.	调色后，我们可以把标题合成到素材上。
+blend	The edge doesn't blend into the background.	这个边缘没能融入背景。	Can we blend the two colours more gradually?	我们能让这两种颜色混合得更渐进吗？
+merge	Please merge the duplicate subtitle tracks.	请合并重复的字幕轨道。	We need to merge the review notes before sending them to the editor.	把审核意见发给剪辑师前，我们需要先合并它们。
+flatten	Keep an editable copy before you flatten the layers.	合并图层之前，保留一份可编辑副本。	Do we need to flatten this artwork for the printer?	交给印刷方之前，我们需要合并这份作品的图层吗？
+align	Align the text with the left edge of the image.	让文字与图像左边缘对齐。	The subtitles don't align with the speaker's timing.	字幕时间与说话者的时间不对齐。
+rotate	Could you rotate the product slightly towards the camera?	你能把产品稍微转向相机吗？	We need to rotate the logo without stretching it.	我们需要旋转标志，但不能拉伸它。
+rotation	The rotation is too fast at the end of the animation.	动画结尾的旋转太快了。	Check the rotation of the wrist in the reference clip.	检查参考短片中手腕的旋转。
+flip	Flip the image only if the text remains correct.	翻转图像之前，要确认文字不会出错。	Can we flip the layout so the title is on the other side?	我们能翻转版式，让标题移到另一侧吗？
+mirror	The mirror effect also reverses the label.	镜像效果也反转了标签。	Don't mirror the character if it changes which hand holds the key.	如果会改变拿钥匙的那只手，就不要把角色镜像翻转。
+transform	We can transform this flat diagram into a simple animation.	我们可以把这个平面示意图变换成简单动画。	Use the handles to transform the shape without changing its proportions.	用控制点变换形状，同时不改变比例。
+transformation	The transformation from the sketch to the final image is too abrupt.	从草图到最终图像的变换太突然了。	Show the transformation in stages so the viewer can follow it.	分阶段展示变换，让观众能跟得上。
+warp	The tool can warp the label around the bottle.	这个工具能把标签变形，使其贴合瓶身。	We shouldn't warp the face to match the background.	我们不应该为了匹配背景而扭曲脸部。
+expand	Could we expand the background to fit a vertical format?	我们能扩展背景，让它适合竖屏格式吗？	The tool needs to expand the frame without moving the main subject.	这个工具需要扩展画面，同时不移动主体。
+erase	Please erase the stray mark beside the title.	请擦除标题旁边多余的印记。	Don't erase the shadow that connects the object to the floor.	不要擦掉把物体与地面联系起来的阴影。
+eraser	The eraser is removing part of the character's sleeve.	橡皮擦正在擦掉角色袖子的一部分。	Use a smaller eraser near the edge of the face.	脸部边缘附近用小一点的橡皮擦。
+brush	This brush leaves a rough texture along the line.	这支画笔沿线留下了粗糙的纹理。	Can we use a softer brush for the shadow?	我们能用更柔和的画笔画阴影吗？
+stroke	The stroke is too thick for this small icon.	这个小图标的笔触太粗了。	Try a single stroke instead of several overlapping marks.	试试一笔完成，不要叠加好几笔。
+pen	The pen tool gives us more control over the curve.	钢笔工具让我们更容易控制曲线。	Could you trace the shape with the pen tool?	你能用钢笔工具描出这个形状吗？
+pencil	The pencil sketch is enough to explain the composition.	这张铅笔草图已经足够说明构图。	Keep the pencil texture visible in the final illustration.	最终插画里要保留铅笔纹理。
+sketch	The sketch shows the main movement but not the setting.	草图展示了主要动作，却没有展示环境。	Let's sketch two alternatives before choosing a composition.	选择构图前，我们先画两个备选草图吧。
+painting	The painting needs a stronger sense of depth.	这幅画需要更强的空间深度感。	We should keep the original painting separate from the edited version.	我们应该把原画与修改后的版本分开保存。
+paint	Can we paint a simpler background behind the character?	我们能在角色后面画一个更简单的背景吗？	The artist will paint the missing section by hand.	美术人员会手动画出缺失部分。
+canvas	The canvas is wider than the required output size.	画布比要求的输出尺寸更宽。	Add some space at the top of the canvas for the headline.	在画布顶部留一些空间放标题。
+artwork	The artwork needs checking at its printed size.	这份美术作品需要按印刷尺寸检查。	Who created the original artwork used in this reference?	这份参考里的原始美术作品是谁创作的？
+encode	Which settings will we use to encode the final video?	我们会用哪些设置编码最终视频？	The server couldn't encode the uploaded clip.	服务器没能编码上传的短片。
+decode	The player can't decode this version of the file.	播放器无法解码这个版本的文件。	We need to decode a sample frame to check the output.	我们需要解码一帧样本来检查输出。
+channel	The left channel is much quieter than the right.	左声道比右声道安静很多。	Which channel will publish the tutorial first?	哪个内容频道会先发布教程？
+stereo	The stereo mix sounds unbalanced on headphones.	立体声混音在耳机上听起来不平衡。	We need a stereo version for the review.	审核需要一个立体声版本。
+mono	The voice was recorded in mono.	这段人声是用单声道录制的。	Check the mix in mono as well as stereo.	除了立体声，也检查一下单声道混音。
+surround	The surround mix needs checking in the screening room.	环绕声混音需要在放映室检查。	Do we have the correct speaker setup to review surround audio?	我们有合适的扬声器配置来审核环绕声音频吗？
+frequency	The frequency of the hum is visible in the analysis.	分析里可以看出嗡声的频率。	Could you identify the frequency that is making the voice sound harsh?	你能找出让人声听起来刺耳的频率吗？
+waveform	The waveform shows a gap where the sentence should be.	波形显示，本应有句子的地方有一段空白。	Zoom in on the waveform to check the edit point.	放大波形，检查剪辑点。
+wave	The diagram shows how a sound wave travels through the room.	示意图展示了声波怎样穿过房间。	Could we animate the wave to explain the audio effect?	我们能给这道声波做动画，解释音频效果吗？
+amplitude	The amplitude rises sharply at the beginning of the shout.	喊声开始时，振幅急剧上升。	The chart should show amplitude on the vertical axis.	这张图表应该在纵轴上显示振幅。
+pitch	The pitch rises at the end of every sentence.	每句话结尾的音高都升了上去。	Can we keep the pitch natural when slowing down the voice?	放慢人声时，我们能让音高保持自然吗？
+volume	The music volume is too high during the explanation.	讲解时，音乐音量太高了。	Check the volume on a phone as well as studio speakers.	除了监听音箱，也在手机上检查音量。
+gain	The input gain was too high during the recording.	录制时，输入增益太高了。	Can we lower the gain before the signal reaches the effect?	我们能在信号进入效果器之前降低增益吗？
+peak	The peak level is higher in this version of the mix.	这个混音版本的峰值电平更高。	We need to inspect the peak at the start of the recording.	我们需要检查录音开头的峰值。
+normalize	Should we normalize the audio before making the comparison?	对比之前，我们要先对音频做标准化处理吗？	The editor asked us to normalize the level of the voice clips.	剪辑师让我们把这些人声片段的电平标准化。
+equalizer	The equalizer is making the voice sound too thin.	均衡器让人声听起来太单薄了。	We can compare the recording before and after the equalizer.	我们可以对比录音使用均衡器前后的效果。
+compressor	The compressor is reducing the contrast between quiet and loud words.	压缩器正在减小轻声词和大声词之间的差距。	The voice sounds better with a gentler compressor setting.	压缩器设置温和一些，人声听起来更好。
+reverberation	The reverberation makes the room sound much larger.	混响让房间听起来大了很多。	There's too much reverberation to understand the last word.	混响太多，最后一个词听不清了。
+echo	The echo repeats the last word after the speaker stops.	说话者停下后，回声重复了最后一个词。	Can we reduce the echo in this recording?	我们能减弱这段录音里的回声吗？
+delay	The delay effect doesn't match the rhythm of the music.	延迟效果与音乐节奏不匹配。	We need to hear the voice without delay before deciding.	作决定之前，我们需要先听听不加延迟效果的人声。
+fade	The fade at the end cuts off the final word.	结尾淡出截掉了最后一个词。	Could we fade the music in more slowly?	我们能让音乐更慢地淡入吗？
+mix	The mix needs more space for the narration.	这份混音需要给旁白留出更多空间。	Let's mix the dialogue before adding the crowd sounds.	加入人群声音之前，我们先混好对话吧。
+master	Keep the master file separate from the smaller preview copies.	把母版文件和较小的预览副本分开保存。	Is this the approved master or a review export?	这是获批的母版，还是审核导出版本？
+track	The voice track starts too late.	人声音轨开始得太晚了。	Please label each track so the editor can find it.	请给每条音轨加标签，让剪辑师能找到它。
+soundtrack	The soundtrack changes mood before the story does.	故事情绪还没变，配乐的情绪先变了。	We need a soundtrack that leaves room for the dialogue.	我们需要一段给对话留出空间的配乐。
+music	The music should end before the final instruction.	音乐应该在最后一条说明前结束。	Do we have permission to use this music in the published video?	我们获得了在发布视频中使用这段音乐的许可吗？
+melody	The melody is memorable, but it competes with the speech.	旋律让人印象深刻，却抢了讲话的注意力。	Could we simplify the melody during the narration?	旁白期间，我们能把旋律简化一些吗？
+harmony	The harmony changes too quickly for this calm scene.	对这个平静场景来说，和声变化太快了。	We need a different harmony under the final line.	最后一句台词下面需要换一种和声。
+rhythm	The rhythm of the edit doesn't match the character's movement.	剪辑节奏与角色的动作不匹配。	Let's keep the rhythm steady until the surprise.	出现意外之前，我们保持节奏稳定吧。
+tempo	The tempo is too fast for the walking scene.	对于步行场景来说，这段音乐速度太快了。	Can we try the same music at a slower tempo?	我们能把同一段音乐调慢一点试试吗？
+instrument	Which instrument carries the main melody?	哪种乐器演奏主旋律？	We need an instrument that doesn't cover the low voice.	我们需要一种不会盖住低沉人声的乐器。
+instrumental	Could we use an instrumental version under the interview?	采访下面能用器乐版本吗？	The instrumental section gives the viewer time to absorb the images.	器乐段落给观众时间理解画面。
+vocal	The vocal track has a click near the beginning.	人声音轨开头附近有一个咔哒声。	The vocal performance needs more variation between the two characters.	两名角色的人声表演需要更多差别。
+vocalist	The vocalist asked for the lyrics before the session.	歌手要求在录制前拿到歌词。	Can the vocalist record a softer version of the chorus?	歌手能录一个更柔和的副歌版本吗？
+lyric	This lyric is difficult to sing at the current tempo.	以当前速度，这句歌词很难唱出来。	The first lyric should introduce the central idea of the song.	第一句歌词应该引出歌曲的核心想法。
+lyrical	The lyrical style fits the memory scene.	抒情风格适合这个回忆场景。	We need a lyrical passage without making the dialogue sound like a poem.	我们需要一个抒情段落，但不能让对话听起来像诗。
+chorus	The chorus starts before the main visual appears.	主画面还没出现，副歌就开始了。	Could we repeat the chorus once at the end?	我们能在结尾再重复一次副歌吗？
+verse	The second verse adds a detail we haven't shown visually.	第二段主歌增加了一个我们还没用画面展示的细节。	This verse needs fewer words to fit the melody.	这段主歌需要减少词数，才能配合旋律。
+bridge	The bridge creates a pause before the final chorus.	歌曲桥段在最后一次副歌前形成了一个缓冲。	Can we shorten the bridge without losing the change in mood?	我们能缩短桥段，同时保留情绪变化吗？
+intro	The intro is longer than the rest of the lesson.	开场比课程其余部分还长。	Let's use a simple intro with the title and one clear promise.	我们用一个简单的开场，放标题，再说清楚要讲什么。
+jingle	The jingle needs to fit the short closing animation.	广告短曲需要配合这个简短的结尾动画。	The jingle is catchy, but the brand name isn't clear.	这段广告短曲很抓耳，但品牌名不清楚。
+ambience	The ambience sounds like a busy street, not a quiet village.	环境声听起来像繁忙街道，不像安静村庄。	We need a short recording of the room ambience.	我们需要一段房间环境声录音。
+dub	Will we dub the dialogue into another language?	我们会把对话配成另一种语言吗？	The new dub needs to fit the timing of the original performance.	新的配音需要配合原表演的时间。
+accent	The character's accent changes between sentences.	角色的口音在不同句子间变了。	We need to agree on the accent before recording the voice.	录制人声前，我们需要确定口音。
+pronunciation	The pronunciation of the product name is inconsistent.	产品名的发音不一致。	Could we check the pronunciation with someone who knows the language?	我们能请懂这门语言的人核对发音吗？
+intonation	The intonation makes the statement sound like a question.	语调让这句陈述听起来像问题。	We need a different intonation for the surprised response.	惊讶的回复需要不同的语调。
+articulation	The articulation becomes unclear in the faster part.	较快的部分吐字不清楚。	Better articulation would help the listener understand the names.	吐字更清楚，有助于听者听懂名字。
+cadence	The cadence is too regular for natural conversation.	语流节奏太整齐，不像自然对话。	Can we vary the cadence between the question and the answer?	我们能让提问和回答的语流节奏有所区别吗？
+breath	There's a loud breath before the final line.	最后一句台词前有一个很响的呼吸声。	Keep a little breath in the recording so it doesn't sound artificial.	录音中保留一点呼吸声，避免听起来不自然。
+whisper	The whisper is difficult to hear under the music.	音乐下面的耳语很难听清。	Could the character whisper instead of speaking normally?	角色能改用耳语，不要正常说话吗？
+shout	The shout sounds angry, but the character is frightened.	喊声听起来很愤怒，但角色其实很害怕。	We need one clear shout for the crowd scene.	人群场景需要一个清楚的喊声。
+laugh	The laugh starts before the joke is finished.	笑声在笑话讲完之前就开始了。	Can the character laugh more quietly in this scene?	这个场景里，角色能笑得轻一点吗？
+laughter	The laughter continues after the scene changes.	场景切换后，笑声还在继续。	We need natural laughter rather than the same sound repeated.	我们需要自然的笑声，不要反复用同一个声音。
+cry	The cry sounds too dramatic for this small disappointment.	面对这样的小失望，哭声显得太戏剧化了。	Could we use a short cry before the character speaks?	角色说话前，我们能加一声短促的哭声吗？
+emotion	The emotion in the voice doesn't match the facial expression.	声音中的情绪与面部表情不一致。	What emotion should the audience feel at this point?	此时观众应该感受到什么情绪？
+emotional	The emotional change happens too suddenly.	情绪变化来得太突然了。	We need a more emotional delivery of the final line.	最后一句台词需要更有情绪的表达。
+expressive	The eyes are expressive, but the mouth hardly moves.	眼睛很有表现力，但嘴几乎不动。	Can the voice be more expressive without becoming exaggerated?	人声能更有表现力，又不显得夸张吗？
+expression	The expression changes before the character hears the news.	角色还没听到消息，表情就变了。	Keep the expression consistent between these two angles.	这两个角度的表情要保持一致。
+facial	The facial animation needs a smoother transition into the smile.	面部动画需要更平滑地转入微笑。	We should test the facial controls before recording the dialogue.	录制对话前，我们应该测试面部控制功能。
+gesture	The gesture points to the wrong object.	这个手势指向了错误的物体。	A small gesture may communicate more than another line of dialogue.	一个小手势可能比再加一句对话更能表达意思。
+body	The body turns, but the feet stay in the same place.	身体转了，脚却留在原地。	We need a full body reference for the character's proportions.	我们需要角色的全身参考来核对比例。
+lip	The lip movement starts before the audio.	嘴唇动作比音频先开始了。	Check the lower lip in the close-up for unwanted movement.	检查特写里的下唇是否有多余动作。
+lipstick	The lipstick colour changes between the two shots.	口红颜色在两个镜头之间变了。	The reference image shows lighter lipstick than this render.	参考图中的口红比这张渲染图更浅。
+perform	The actor needs room to perform the movement naturally.	演员需要空间，才能自然地表演这个动作。	Could she perform the line without looking directly at the camera?	她能不直接看镜头，表演这句台词吗？
+performance	The performance is strong, but the timing doesn't match the edit.	表演很有力，但时间与剪辑不匹配。	We need to compare the model's performance on the same test scene.	我们需要用同一个测试场景比较模型的表现效果。
+retake	We need a retake because the microphone picked up a door slam.	麦克风录到了关门声，我们需要重拍。	The retake should keep the same hand position as the previous shot.	重拍时，手的位置应该与之前的镜头一致。
+rehearsal	The rehearsal revealed that the prop was difficult to carry.	排练发现，这个道具不太好拿。	Let's use the rehearsal to check the camera movement.	我们用排练来检查镜头运动吧。
+rehearse	Could we rehearse the dialogue before recording it?	录制前，我们能排练一下对话吗？	The team will rehearse the transition between the live demo and the interview.	团队会排练现场演示与采访之间的衔接。
+record	We need to record the room sound before packing up.	收设备前，我们需要录一下房间的环境声。	Could you record another version with a slower delivery?	你能再录一个表达慢一些的版本吗？
+recorder	The recorder stopped halfway through the interview.	录音设备在采访中途停了。	Check the recorder before the guest arrives.	嘉宾到场之前，检查一下录音设备。
+headphone	The headphone mix has too much music for the vocalist.	耳机混音里的音乐对歌手来说太多了。	The headphone cable is damaged near the connector.	耳机线在接头附近损坏了。
+acoustic	The acoustic treatment made the room less echoey.	声学处理减少了房间里的回声。	We need to compare the acoustic conditions of the two recording spaces.	我们需要比较这两个录音空间的声学条件。
+silence	The silence after the question makes the scene tense.	问题之后的寂静让场景紧张起来。	Don't remove all the silence between sentences.	不要删掉句子之间的所有空白。
+silent	The silent version still needs to communicate the main idea.	无声版本仍然需要传达主要想法。	Can we check the video with the speakers silent?	我们能把扬声器静音，检查一下视频吗？
+transcribe	Please transcribe the interview before selecting the quotes.	挑选引语前，请先转写采访。	The tool couldn't transcribe the last word clearly.	这个工具没能清楚地转写最后一个词。
+translate	Could you translate the captions without shortening the meaning?	你能翻译字幕，同时不删减意思吗？	We need someone to translate the guest's answer accurately.	我们需要有人准确翻译嘉宾的回答。
+localize	We should localize the examples, not just the interface text.	我们应该把例子也本地化，而不只是界面文字。	How will we localize the joke for viewers in another region?	面对另一个地区的观众，我们会怎样本地化这个笑话？
+localization	The localization review found an unfamiliar date format.	本地化审核发现了一种当地不熟悉的日期格式。	Leave enough time for localization before the release.	发布前，要为本地化留出足够时间。
+language	Which language should the opening title use?	开场标题应该用哪种语言？	The generated voice switches language in the middle of the sentence.	生成的人声在句子中间切换了语言。
+bilingual	The bilingual captions need separate checks for both languages.	双语字幕需要分别检查两种语言。	Can the bilingual layout fit on a phone screen?	这个双语版式能放进手机屏幕吗？
+multilingual	The multilingual version includes different narration tracks.	多语版本包含不同的旁白音轨。	We need a naming system for the multilingual exports.	我们需要给多语导出文件制定命名方式。
+accessibility	The accessibility review includes captions and keyboard controls.	无障碍审核包括字幕和键盘控制。	We should consider accessibility before finalising the player design.	确定播放器设计之前，我们应该考虑无障碍使用。
+accessible	The tutorial should be accessible to people who cannot hear the audio.	教程应该让听不到音频的人也能使用。	Is the menu accessible without a mouse?	不用鼠标能操作这个菜单吗？
+readable	The subtitle isn't readable against the bright background.	在明亮背景上，这条字幕读不清楚。	Make sure the chart remains readable when the image is reduced.	确保图像缩小时，图表仍然能看清。
+sans	We chose a sans serif typeface for the small labels.	我们给小标签选择了无衬线字体。	Would a sans serif font fit the tone of this poster?	无衬线字体适合这张海报的风格吗？
+baseline	The numbers don't sit on the same baseline as the letters.	这些数字和字母不在同一条基线上。	Align the text to the baseline before comparing the spacing.	比较间距之前，先把文字按基线对齐。
+bold	Use bold text for the step number, not the whole paragraph.	用粗体标出步骤编号，不要让整段都加粗。	The bold heading is overpowering the illustration.	粗体标题抢了插画的注意力。
+capitalization	The capitalization of the product name is inconsistent.	产品名的大小写使用不一致。	Check capitalization after importing the translated titles.	导入翻译后的标题后，检查大小写。
+indentation	The indentation makes this list look like a new section.	这个缩进让列表看起来像一个新部分。	We need consistent indentation for the quoted dialogue.	引用的对话需要一致的缩进。
+margin	The page margin is too narrow for printing.	页边距太窄，不适合印刷。	Leave a wider margin around the diagram.	在示意图周围留宽一点的边距。
+grid	The grid helps keep the cards aligned.	网格帮助这些卡片保持对齐。	Can we simplify the grid for the mobile layout?	我们能简化移动端版式的网格吗？
+column	The second column has too much text.	第二列的文字太多了。	Keep the caption within the same column as the image.	让说明文字和图像放在同一列内。
+row	The last row is cut off in the exported image.	导出的图像里，最后一行被截掉了。	Put the labels in a separate row above the chart.	把标签放在图表上方独立的一行。
+hierarchy	The visual hierarchy doesn't make the main instruction clear.	视觉层级没有突出主要说明。	We need a stronger hierarchy between the title and the body text.	标题和正文之间需要更明显的层级。
+emphasis	The emphasis should be on the action the viewer needs to take.	重点应该放在观众需要采取的行动上。	Too much emphasis on every line makes the page harder to scan.	每一行都过分强调，会让页面更难快速浏览。
+bullet	The bullet is too close to the text.	项目符号离文字太近了。	Use the same bullet style throughout the guide.	整份指南使用同一种项目符号样式。
+list	The list is easier to follow when each item starts with a verb.	每一项都以动词开头时，列表更容易理解。	We should move the equipment list before the first step.	我们应该把设备清单移到第一步之前。
+page	The page needs more space between the examples.	这个页面的例子之间需要更多空间。	Does the page still work when the title wraps onto two lines?	标题换成两行时，这个页面仍然能正常呈现吗？
+spread	The illustration continues across the whole spread.	插画延伸到了整个跨页。	Check that the important details don't fall into the centre of the spread.	检查重要细节是否落在跨页中央的装订位置。
+booklet	The booklet needs a clear cover and a simple contents page.	这本小册子需要清楚的封面和简单的目录页。	Can we make a digital version of the booklet?	我们能给这本小册子做一个电子版吗？
+brochure	The brochure uses photos that don't match the current product.	宣传册使用的照片与当前产品不一致。	We need to check the brochure at its final folded size.	我们需要按最终折叠尺寸检查宣传册。
+poster	The poster needs to be readable from across the room.	这张海报需要让人从房间另一端也能读清。	Move the event date higher on the poster.	把海报上的活动日期往上移一些。
+banner	The banner is cropped differently on mobile.	横幅在移动端的裁切方式不同。	We need a wider banner for the desktop page.	桌面页面需要一个更宽的横幅。
+flyer	The flyer doesn't include a contact method.	这张传单没有写联系方式。	Could we create a smaller flyer for the event table?	我们能给活动桌做一张更小的传单吗？
+chart	The chart labels are too small in the video.	视频里的图表标签太小了。	This chart needs a source and a date range.	这张图表需要注明来源和日期范围。
+diagram	The diagram explains the process better than the paragraph.	这个示意图比那段文字更能解释流程。	Can we animate the diagram one step at a time?	我们能按步骤给示意图做动画吗？
+icon	The icon looks like a download button, but it opens a menu.	这个图标看起来像下载按钮，却会打开菜单。	We need an icon that stays clear at a small size.	我们需要一个缩小后仍然清楚的图标。
+symbol	This symbol may mean something different to another audience.	这个符号对另一些受众可能有不同含义。	Could we explain the symbol in the legend?	我们能在图例中解释这个符号吗？
+emblem	The emblem should remain recognisable on the character's jacket.	角色夹克上的徽记应该仍然能辨认出来。	Can we simplify the emblem without changing its main shape?	我们能简化徽记，同时保留主要形状吗？
+badge	The badge marks the lessons the learner has completed.	徽章标出了学习者已经完成的课程。	We need a badge design that fits the site's existing style.	我们需要一个符合网站现有风格的徽章设计。
+sticker	The sticker has a white outline for use on dark backgrounds.	这个贴纸有白色轮廓，方便放在深色背景上。	Could we make a sticker from the character's surprised expression?	我们能用角色惊讶的表情做一个贴纸吗？
+prototype	The prototype is ready for a short user test.	原型已经可以进行一次简短的用户测试。	We should test the prototype before designing every screen.	设计所有屏幕之前，我们应该先测试原型。
+template	The template has room for a title and two examples.	这个模板有空间放一个标题和两个例子。	Don't let the template force every story into the same structure.	不要让模板把每个故事都塞进同一种结构。
+responsive	The responsive layout breaks when the caption is long.	说明文字较长时，响应式布局出了问题。	Check the responsive version on a narrow screen.	在窄屏上检查响应式版本。
+mobile	The mobile version hides the main control.	移动端版本把主要控制按钮藏起来了。	We need larger text for the mobile preview.	移动端预览需要更大的字。
+desktop	The desktop layout leaves too much empty space beside the video.	桌面端版式在视频旁边留了太多空白。	Can we compare the desktop and mobile versions side by side?	我们能并排比较桌面端和移动端版本吗？
+screen	The screen recording includes a private notification.	屏幕录制中包含了一条私人通知。	We should test the colours on another screen.	我们应该在另一块屏幕上测试颜色。
+navigation	The navigation makes it difficult to return to the previous lesson.	这个导航让人很难返回上一课。	Use the same navigation labels in every language version.	每个语言版本使用一致的导航标签。
+interaction	The interaction starts before the viewer understands the instruction.	观众还没理解说明，交互就开始了。	Can we test the interaction with someone who hasn't seen the design?	我们能请一个没看过设计的人测试交互吗？
+interactive	The interactive diagram lets viewers explore each stage.	这个交互式示意图让观众可以探索每个阶段。	An interactive tutorial needs a clear way to recover from mistakes.	交互式教程需要一种清楚的方式，让用户从错误中恢复。
+experience	The user experience suffers when the controls move during playback.	播放期间控制按钮移动，会影响用户体验。	Let's ask beginners about their experience with the tutorial.	我们问问初学者使用这个教程的体验吧。
+brand	The colours don't match the brand guidelines.	这些颜色不符合品牌指南。	We need to mention the brand without turning the whole story into an ad.	我们需要提到品牌，但不能让整个故事变成广告。
+persona	The audience persona includes people who use the tool at work.	受众画像包括在工作中使用这个工具的人。	Is this persona based on interviews or assumptions?	这个用户画像是基于采访，还是假设？
+demographic	The demographic data doesn't tell us why people watched the video.	人口特征数据不能告诉我们人们为什么看这个视频。	Which demographic group is represented in the survey?	这次调查涵盖了哪个人口群体？
+target	The target audience is new to this software.	目标受众刚开始使用这款软件。	We need to check whether the examples suit the target viewer.	我们需要检查例子是否适合目标观众。
+reach	The report shows reach separately from impressions.	报告把触达人数和曝光次数分开列示。	Did the campaign reach the people we intended to help?	这次活动触达了我们希望帮助的人吗？
+impression	An impression doesn't tell us whether someone watched the whole video.	一次曝光不能告诉我们对方是否看完了视频。	The impression count increased after the post was shown again.	帖子再次被展示后，曝光次数增加了。
+conversion	We need to define what counts as a conversion for this campaign.	我们需要明确这次活动把什么算作转化。	The conversion report separates signups from purchases.	转化报告把注册和购买分开了。
+retention	The viewer retention drops during the long introduction.	冗长开场期间，观众留存下降了。	Which changes might explain the improvement in retention?	哪些改动可能解释了留存的改善？
+subscriber	A subscriber asked for a slower version of the lesson.	一位订阅者想要一个讲得更慢的课程版本。	We should tell the subscriber before changing the email schedule.	更改邮件发送安排前，我们应该告知订阅者。
+follower	One follower noticed an error in the diagram.	一位关注者发现了示意图中的错误。	The new follower came from our behind-the-scenes post.	这位新关注者是看了我们的幕后帖子后来的。
+follow	People can follow the channel for future lessons.	人们可以关注频道，观看之后的课程。	Would you follow an account that only posted promotional clips?	如果一个账号只发宣传短片，你会关注吗？
+subscribe	Viewers can subscribe after reading a sample lesson.	观众可以先读一节样例课程，再决定订阅。	Don't ask people to subscribe before explaining what they will receive.	先说明订阅后能收到什么，再请人们订阅。
+share	Could you share the preview with the review team?	你能把预览分享给审核团队吗？	We need permission before we share the interview clip publicly.	公开分享采访片段之前，我们需要获得许可。
+reaction	The audience reaction was different from what we expected.	受众的反应与我们预想的不同。	That reaction helped us identify an unclear part of the lesson.	那个反馈帮助我们发现了课程里一处讲得不清楚的地方。
+like	The like count doesn't show whether the tutorial helped people.	点赞数量不能说明教程是否真的帮到了人。	People may like the artwork without understanding the story.	人们可能喜欢这份美术作品，却没看懂故事。
+viewer	The viewer needs time to read the label before it disappears.	标签消失前，观众需要时间把它读完。	What does the viewer learn from this shot?	观众能从这个镜头中了解什么？
+watch	Can we watch the export without stopping it?	我们能不停顿地看一遍导出视频吗？	I'd like to watch the interview before choosing the opening quote.	选择开场引语之前，我想先看采访。
+click	The button responds to a click, but the result isn't clear.	按钮对点击有反应，但结果不清楚。	What happens when viewers click this link?	观众点击这个链接后会发生什么？
+traffic	Most of the traffic came from the tutorial page.	大部分访问流量来自教程页面。	We need to distinguish useful traffic from accidental visits.	我们需要区分有用流量和误入访问。
+analysis	The analysis suggests that the opening is too long.	分析表明，开场太长了。	Our analysis should include comments as well as view counts.	我们的分析应该包括评论，而不只是观看次数。
+insight	The interview gave us an insight into how beginners use the tool.	采访让我们了解到初学者怎样使用这个工具。	We need evidence for the insight before changing the whole series.	改变整个系列之前，我们需要证据来支持这个分析发现。
+trend	This trend may not last long enough for a full series.	这个趋势可能持续不了那么久，不适合做完整系列。	The report shows a trend across several videos, not just one.	报告展示的是多个视频的趋势，不是只有一个视频的结果。
+viral	The clip went viral, but few viewers watched the next lesson.	这个短片广泛传播了，但很少有人看下一课。	We shouldn't promise that the next post will go viral.	我们不应该承诺下一篇帖子会大范围传播。
+organic	The report separates organic traffic from paid visits.	报告把自然流量和付费访问分开了。	Our organic audience grew after we posted the useful checklist.	发布实用清单后，我们的自然受众增加了。
+advertisement	The advertisement needs to show what the product actually does.	这条广告需要展示产品实际上能做什么。	The advertisement was placed beside an unrelated article.	这条广告被放在了一篇不相关的文章旁边。
+advertising	The advertising budget is listed separately from production costs.	广告投放预算与制作成本分开列示。	We need to review the advertising results after the campaign.	活动结束后，我们需要审查广告投放结果。
+promotion	The promotion brought visitors who weren't interested in the lesson.	这次推广带来了对课程不感兴趣的访客。	Does the promotion explain who the workshop is for?	这个推广说明了工作坊适合谁吗？
+promote	How can we promote the guide without exaggerating its benefits?	我们怎样推广这份指南，又不夸大它的好处？	The team plans to promote the tutorial through its existing channels.	团队计划通过现有渠道推广教程。
+sponsor	The sponsor asked where its name would appear.	赞助商问自己的名字会出现在哪里。	We need a clear agreement with the sponsor before recording.	录制前，我们需要与赞助商达成明确协议。
+sponsorship	The video should explain the sponsorship relationship clearly.	视频应该清楚说明赞助关系。	The sponsorship covers the venue, but not the editing costs.	这项赞助包括场地，但不包括剪辑成本。
+partnership	The partnership includes a shared production schedule.	这个合作关系包括一份共同的制作日程。	What does each team contribute to the partnership?	每个团队为这次合作贡献什么？
+revenue	The report lists revenue before the production expenses.	报告先列收入，再列制作支出。	We need to identify which revenue came from subscriptions.	我们需要确定哪些收入来自订阅。
+profit	Higher revenue didn't lead to more profit because production costs rose.	收入提高了，但制作成本也上涨，所以利润没有增加。	Does this estimate include the costs needed to calculate profit?	这个估算包括了计算利润所需的成本吗？
+sales	The tutorial led to sales of the beginner course.	这篇教程带来了入门课程的销售。	We shouldn't judge the educational video only by sales.	我们不应该只用销量判断这个教学视频。
+product	The product demonstration needs to show the actual interface.	产品演示需要展示真实界面。	What problem does the product solve for this audience?	这个产品解决了这群受众的什么问题？
+launch	The launch needs a tested demo, not just a polished poster.	发布上线需要一个经过测试的演示，而不只是精美海报。	We should check all the links before the launch.	上线前，我们应该检查所有链接。
+newsletter	The newsletter includes a short lesson and a project example.	邮件简报包括一节短课和一个项目例子。	Could we make the newsletter easier to read on a phone?	我们能让邮件简报更方便在手机上阅读吗？
+notification	A notification appeared in the middle of the screen recording.	屏幕录制过程中出现了一条通知。	The notification should tell the user what changed.	通知应该告诉用户发生了什么变化。
+community	The community suggested a tutorial on the export settings.	社群建议做一篇关于导出设置的教程。	Let's ask the community which examples are most confusing.	我们问问社群，哪些例子最让人困惑吧。
+moderator	The moderator will collect questions during the live session.	管理员会在直播期间收集问题。	We need a moderator who can keep the discussion on topic.	我们需要一位能让讨论不偏题的管理员。
+schedule	The release schedule leaves no time for subtitle review.	发布日程没有给字幕审核留时间。	Can we change the schedule without affecting the guest's recording session?	我们能调整日程，又不影响嘉宾的录制吗？
+calendar	The content calendar includes tutorials and community posts.	内容日历包括教程和社群帖子。	Add the review dates to the calendar, not just the publication dates.	日历里不仅要写发布日期，也要加上审核日期。
+deadline	The deadline is before the client can review the draft.	截止日期比客户能审核草稿的时间还早。	We need to agree on a realistic deadline for the revised video.	我们需要为修改版视频商定一个现实的截止日期。
+milestone	The first milestone is approval of the storyboard.	第一个制作里程碑是分镜获批。	We haven't reached the audio review milestone yet.	我们还没有达到音频审核这个里程碑。
+strategy	The strategy focuses on helping beginners complete one small project.	这个策略主要是帮助初学者完成一个小项目。	We should revise the strategy after reviewing audience feedback.	审查受众反馈后，我们应该调整策略。
+strategic	The strategic choice was to release fewer, clearer lessons.	策略上的选择是少发布一些课程，但讲得更清楚。	This partnership has a strategic role beyond the launch event.	这个合作除了服务上线活动，还有策略上的作用。
+plan	The plan needs time for real users to test the tutorial.	计划里需要给真实用户测试教程留时间。	We can change the plan if the reference footage doesn't work.	如果参考素材不合适，我们可以调整计划。
+experiment	The experiment compares two versions of the opening.	这个实验比较了两个开场版本。	We need to define the result we're measuring before the experiment starts.	实验开始前，我们需要明确测量什么结果。
+experimental	The experimental edit uses silence instead of music.	这个实验性剪辑用了寂静，没有用音乐。	Keep the experimental version separate from the client's approved draft.	把实验版本与客户获批的草稿分开。
+comparison	The comparison should use the same input for both models.	这个对比应该给两个模型使用相同输入。	We need a side-by-side comparison at the final output size.	我们需要按最终输出尺寸进行并排对比。
+compare	Could we compare the two exports on the same screen?	我们能在同一屏幕上比较这两个导出版本吗？	Compare the generated frame with the approved reference.	把生成画面与获批参考进行比较。
+variant	This variant uses a quieter opening and a shorter title.	这个版本变体用了更安静的开场和更短的标题。	We need to label the variant so the reviewers don't confuse the files.	我们需要标记这个版本变体，避免审核者混淆文件。
+alternative	The alternative layout leaves more space for the caption.	备选版式给说明文字留了更多空间。	Could you prepare an alternative with no background music?	你能准备一个不加背景音乐的备选方案吗？
+optimize	We need to optimize the export size without making the text blurry.	我们需要优化导出文件大小，又不能让文字模糊。	Don't optimize the opening for clicks if it misrepresents the lesson.	如果会歪曲课程内容，就不要为了点击量优化开场。
+report	The report includes the test results and the unresolved issues.	报告包括测试结果和未解决问题。	Please attach the sample files to the report.	请把样本文件附在报告里。
+check	We need to check the lip movement against the audio.	我们需要把嘴唇动作和音频对照检查。	Could you check the exported file rather than just the preview?	你能检查导出文件，而不只是预览吗？
+inspection	The inspection found a missing subtitle in the final minute.	检查发现最后一分钟缺少一条字幕。	We need a closer inspection of the hands in this sequence.	我们需要更仔细地检查这段序列里的手部。
+inspect	Inspect the image at full size before approving it.	批准图像前，按完整尺寸检查。	Could you inspect the transition where the background changes?	你能检查背景变化的那个衔接吗？
+mismatch	There's a mismatch between the spoken date and the title card.	说出的日期与标题卡上的日期不一致。	The reviewer noticed a mismatch in the character's clothing.	审核者发现角色服装不一致。
+inconsistent	The lighting is inconsistent across the shots.	这些镜头之间的光线不一致。	The character's voice becomes inconsistent near the end.	角色声音在接近结尾时变得不一致。
+consistent	Keep the pronunciation consistent throughout the series.	整个系列的发音要保持一致。	The camera height should stay consistent between these two angles.	这两个角度之间的相机高度应该保持一致。
+correction	The correction fixes the date but changes the line length.	这项修正改对了日期，却改变了台词长度。	We need a correction to the label in the diagram.	我们需要修正示意图里的标签。
+correct	Could you correct the spelling without moving the text?	你能更正拼写，同时不移动文字吗？	We need to correct the timing of the final subtitle.	我们需要修正最后一条字幕的时间。
+fix	The editor will fix the gap between these two clips.	剪辑师会修复这两个片段之间的空隙。	Can we fix the mouth movement without regenerating the whole scene?	我们能修复嘴部动作，而不重新生成整个场景吗？
+refine	Let's refine the composition before adding detailed textures.	添加复杂纹理前，我们先细化构图吧。	Could you refine the answer so it addresses the viewer's actual question?	你能改进这个回答，让它回应观众真正的问题吗？
+refinement	The refinement made the transition smoother.	这次细化改进让衔接更平滑了。	We need another refinement of the title layout.	标题版式还需要再细化一次。
+polished	The polished version still has an error in the closing credits.	完成度很高的版本在片尾字幕里仍然有错误。	It looks polished, but we haven't tested it with real viewers.	它看起来很完善，但我们还没有请真实观众测试。
+final	The final export uses the approved narration.	最终导出版本使用了获批旁白。	Is this really the final version, or are there more changes to come?	这真的是最终版本，还是还会有修改？
+finalize	We can't finalize the video until the captions are checked.	字幕检查完成前，我们不能把视频定稿。	Let's finalize the file names before the delivery.	交付前，我们先确定文件名吧。
+submission	The submission includes a preview and the source files.	提交内容包括预览和源文件。	The submission was returned because the title was missing.	提交内容因为缺少标题而被退回。
+submit	Please submit the review notes before changing the scene.	修改场景前，请提交审核意见。	We need to submit the version that was actually approved.	我们需要提交真正获批的那个版本。
+deliver	Can we deliver the editable project along with the video?	我们能把可编辑项目与视频一起交付吗？	The team will deliver the files after the final review.	最终审核之后，团队会交付文件。

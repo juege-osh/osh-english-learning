@@ -298,3 +298,635 @@ inhibition	The results suggest partial inhibition of the reaction.	结果表明�
 promoter	The catalyst contains a small amount of promoter.	这种催化剂含有少量助剂。	What role does the promoter play in the proposed mechanism?	在提出的机理中，这种助剂起什么作用？
 initiator	The article identifies the polymerization initiator.	文章明确了聚合反应的引发剂。	Is the initiator listed in the formulation record?	配方记录中列出了引发剂吗？
 initiation	The lecture separates initiation from chain propagation.	这节课区分了链反应引发和链增长。	The model includes an initiation step.	这个模型包含一个引发步骤。
+propagation	This step belongs to chain propagation.	这一步属于链反应传播。	Where does propagation appear in your mechanism?	你的机理中哪里出现了链反应传播？
+termination	The diagram includes a termination step.	图中包含一个链反应终止步骤。	Does termination explain the shorter chains?	链反应终止能解释链较短吗？
+mechanism	We haven't established the reaction mechanism yet.	我们还没有确定反应机理。	Could you explain your proposed mechanism?	你能解释提出的反应机理吗？
+pathway	The data suggest another reaction pathway.	数据提示存在另一条反应途径。	Which pathway matches the observed products?	哪条反应途径符合观察到的产物？
+kinetics	Let's review the kinetics before discussing yield.	讨论产率前，我们先看看动力学。	The paper separates kinetics from thermodynamics.	论文把动力学与热力学分开讨论。
+kinetic	These are kinetic measurements, not equilibrium measurements.	这些是动力学测量，不是平衡测量。	Your kinetic model needs another parameter.	你的动力学模型需要另一个参数。
+thermodynamics	I'm revising thermodynamics for tomorrow's seminar.	我正在为明天的研讨课复习热力学。	Does thermodynamics alone predict the reaction rate?	仅凭热力学能预测反应速率吗？
+thermodynamic	Please state the thermodynamic assumptions here.	请写明这里的热力学假设。	The graph compares two thermodynamic states.	图中比较了两个热力学状态。
+equilibrium	The system hasn't reached equilibrium yet.	系统还没有达到平衡。	Which conditions define this equilibrium calculation?	这项平衡计算采用哪些条件？
+equilibrate	The model allows both phases to equilibrate.	模型允许两个相达到平衡。	How long did the sample take to equilibrate?	样品多久才达到平衡？
+reversible	The arrows indicate a reversible reaction.	箭头表示可逆反应。	Is this transition reversible in your dataset?	在你的数据中，这个转变可逆吗？
+irreversible	The report describes the change as irreversible.	报告把这个变化描述为不可逆。	What evidence supports an irreversible process?	哪些证据支持这是不可逆过程？
+entropy	The entropy calculation includes the mixing contribution.	熵的计算包括混合的贡献。	Check the units for this entropy value.	核对一下这个熵值的单位。
+enthalpy	We reported the enthalpy change separately.	我们单独报告了焓变。	Does this enthalpy refer to one mole?	这个焓值对应一摩尔吗？
+exothermic	The diagram shows an exothermic reaction.	图中显示了放热反应。	Which peak represents the exothermic event?	哪个峰代表这个放热过程？
+endothermic	This peak is assigned to an endothermic change.	这个峰被归为吸热变化。	The lesson compares endothermic and exothermic processes.	课程比较了吸热与放热过程。
+adiabatic	The calculation assumes an adiabatic boundary.	计算假设边界不与外界交换热量。	Does your adiabatic model allow work transfer?	你的绝热模型允许功的传递吗？
+isothermal	These data were collected under isothermal conditions.	这些数据是在等温条件下采集的。	The model isn't isothermal throughout the cycle.	模型在整个循环中并非都保持等温。
+isobaric	The diagram follows an isobaric path.	图中沿着一条等压路径展开。	We compared isobaric and constant-volume calculations.	我们比较了等压计算与定容计算。
+isochoric	This section assumes an isochoric process.	这一部分假设过程保持定容。	Which curve describes the isochoric case?	哪条曲线描述定容情形？
+activation	The paper estimates the activation energy.	论文估计了活化能。	Our graph needs a label for activation energy.	我们的图需要标出活化能。
+barrier	The calculation predicts a lower reaction barrier.	计算预测反应能垒较低。	Which barrier limits the proposed pathway?	哪个能垒限制了提出的反应途径？
+diffusion	The model includes diffusion through the film.	模型包括穿过薄膜的扩散。	Is diffusion limiting the observed transport?	扩散限制了观察到的输运吗？
+diffuse	The molecules can diffuse into the polymer.	这些分子能够扩散进聚合物。	Which species diffuse across this interface?	哪些物种会扩散穿过这个界面？
+diffusivity	Please report diffusivity with its units.	请写出扩散系数及其单位。	The fitted diffusivity changes with temperature.	拟合出的扩散系数随温度变化。
+convection	The model neglects convection in the liquid.	模型忽略了液体中的对流。	Could convection explain the uneven temperature?	对流能解释温度不均匀吗？
+conductivity	We measured both electrical and thermal conductivity.	我们测量了电导率与热导率。	Which conductivity does this column report?	这一栏报告的是哪种导率？
+conductive	The coating is electrically conductive.	这个涂层能够导电。	We compared conductive and insulating fillers.	我们比较了导电填料与绝缘填料。
+conductor	The diagram places a conductor between insulators.	图中把导体放在绝缘体之间。	Is this material a good thermal conductor?	这种材料是良好的热导体吗？
+insulator	The component uses a ceramic insulator.	这个部件使用陶瓷绝缘体。	Check the insulator label in the drawing.	核对图中的绝缘体标注。
+insulation	The report describes the thermal insulation layer.	报告描述了隔热层。	We need data supporting the insulation claim.	我们需要支持隔热性能说法的数据。
+resistance	The electrical resistance rose during the test.	测试中电阻升高了。	Does the reported resistance include the contacts?	报告的电阻包括接触部分吗？
+resistivity	Please distinguish resistivity from measured resistance.	请区分电阻率与测得的电阻。	The table lists bulk resistivity values.	表中列出了体相电阻率。
+capacity	The battery capacity declined over repeated cycles.	电池容量在反复循环中下降了。	Is the capacity normalized by electrode mass?	容量按电极质量归一化了吗？
+capacitance	The circuit model includes an extra capacitance.	电路模型包括一个额外电容。	We compared capacitance at several frequencies.	我们比较了几个频率下的电容。
+capacitor	The diagram includes a small capacitor.	图中包括一个小电容器。	Which capacitor corresponds to this measurement?	这个测量对应哪个电容器？
+dielectric	The sample contains a polymer dielectric.	样品含有聚合物电介质。	How does the dielectric affect the response?	电介质如何影响这个响应？
+polarization	The paper discusses electrode polarization.	论文讨论了电极极化。	Which axis represents the polarization response?	哪条轴表示极化响应？
+polarisation	The polarisation data came from a different electrode.	这些极化数据来自另一个电极。	We compared polarisation curves from two electrodes.	我们比较了两个电极的极化曲线。
+polar	The molecule contains a polar group.	这个分子含有极性基团。	The lesson contrasts polar and nonpolar solvents.	课程对比了极性与非极性溶剂。
+nonpolar	This region of the molecule is nonpolar.	分子的这一区域是非极性的。	The report identifies a nonpolar component.	报告指出了一种非极性组分。
+polarity	Molecular polarity affects the proposed interaction.	分子极性影响所提出的相互作用。	Have you considered polarity in this interpretation?	你在这个解释中考虑过极性吗？
+dipole	The diagram shows an electric dipole.	图中显示了一个电偶极子。	Which charges form this dipole?	这个偶极子由哪些电荷构成？
+dipolar	The analysis includes dipolar interactions.	分析包括偶极相互作用。	Could a dipolar contribution explain this shift?	偶极贡献能解释这个偏移吗？
+bond	The drawing is missing one chemical bond.	图中少画了一条化学键。	Which bond changes in the proposed mechanism?	所提出的机理中，哪条键发生变化？
+bonding	The paper compares different types of bonding.	论文比较了不同的键合类型。	This spectrum gives evidence about chemical bonding.	这张谱图提供了化学键合的证据。
+covalent	The diagram shows a covalent bond.	图中显示了一条共价键。	Which atoms form the covalent linkage?	哪些原子形成了这个共价连接？
+ionic	The model includes ionic interactions.	模型包括离子相互作用。	We discussed ionic bonding in today's class.	我们在今天的课上讨论了离子键合。
+valence	Please label the valence electrons in this diagram.	请在图中标出价电子。	The explanation begins with the valence shell.	这个解释从价电子层开始。
+valency	The worksheet asks about the atom's valency.	练习询问这个原子的化合价。	Don't confuse valency with coordination number.	别把化合价与配位数弄混。
+monovalent	The figure contains a monovalent cation.	图中包含一个一价阳离子。	This section compares monovalent and divalent ions.	这一部分比较一价与二价离子。
+divalent	The model includes a divalent metal ion.	模型包括一个二价金属离子。	Which symbol represents the divalent species?	哪个符号代表二价物种？
+trivalent	The report identifies a trivalent metal centre.	报告指出了一个三价金属中心。	We checked the charge assigned to the trivalent ion.	我们核对了三价离子的电荷标注。
+tetravalent	The lesson introduces tetravalent carbon.	课程介绍了四价碳。	The table includes a tetravalent element.	表中包括一种四价元素。
+orbital	The drawing shows a molecular orbital.	图中显示了一个分子轨道。	Which orbital receives the additional electron?	新增电子进入哪个轨道？
+configuration	Check the electronic configuration in the caption.	核对图注中的电子构型。	The calculated configuration differs from our sketch.	计算得到的构型与我们的草图不同。
+hybridization	The lesson explains orbital hybridization.	课程讲解了轨道杂化。	Which hybridization model is used here?	这里使用了哪种杂化模型？
+hybridisation	Our notes connect hybridisation with molecular geometry.	我们的笔记把杂化与分子几何联系起来。	The tutor reviewed hybridisation before the quiz.	老师在测验前复习了杂化。
+hybrid	This is a hybrid organic-inorganic material.	这是一种有机—无机混合材料。	The report compares two hybrid coatings.	报告比较了两种混合涂层。
+shell	The diagram labels the outer electron shell.	图中标出了最外电子层。	The particle has a thin polymer shell.	这个颗粒有一层薄聚合物壳。
+subshell	Which subshell contains these electrons?	这些电子位于哪个亚层？	The diagram separates each subshell by energy.	图中按能量区分各电子亚层。
+spin	The model includes electron spin.	模型包括电子自旋。	Please explain the spin labels on this diagram.	请解释图中的自旋标注。
+quantum	The course introduces quantum models of atoms.	课程介绍了原子的量子模型。	Which quantum number identifies this state?	哪个量子数标识这个状态？
+quantization	The diagram illustrates energy quantization.	图中展示了能量量子化。	The discussion distinguishes quantization from continuous energies.	讨论区分了量子化与连续能量。
+quantisation	The lecture uses quantisation to explain discrete levels.	课程用量子化解释离散能级。	Could we revisit the quantisation example?	我们能重新看一下量子化的例子吗？
+photon	The diagram shows absorption of one photon.	图中显示吸收了一个光子。	What energy does this photon carry?	这个光子携带多少能量？
+excitation	The arrow marks electronic excitation.	箭头标出了电子激发。	Which wavelength was used for excitation?	激发使用的是哪个波长？
+excited	The molecule is in an excited state.	这个分子处于激发态。	The model follows the excited population over time.	模型追踪激发态粒子数随时间的变化。
+emission	The emission peak shifted between samples.	样品之间的发射峰发生了偏移。	Please separate emission data from absorption data.	请把发射数据与吸收数据分开。
+emit	These particles emit light after excitation.	这些颗粒在激发后发光。	Which wavelengths does this sample emit?	这个样品发射哪些波长的光？
+absorption	The spectrum shows a broad absorption band.	谱图显示了一个宽吸收带。	The polymer model includes absorption into the bulk.	聚合物模型包括进入体相的吸收。
+absorb	The sample can absorb light in this region.	样品能吸收这个区域的光。	How much water does the polymer absorb?	这个聚合物吸收多少水？
+absorbance	Please report absorbance at the stated wavelength.	请报告指定波长下的吸光度。	The absorbance curve needs a clearer label.	吸光度曲线需要更清楚的标注。
+absorptivity	The calculation uses molar absorptivity.	计算使用摩尔吸光系数。	Is the absorptivity value taken from this paper?	吸光系数值取自这篇论文吗？
+adsorption	The study examines adsorption on the surface.	研究考察了表面的吸附。	Does the adsorption model fit both datasets?	这个吸附模型符合两组数据吗？
+adsorb	These molecules adsorb onto the solid surface.	这些分子吸附在固体表面。	Which species can adsorb at this interface?	哪些物种能在这个界面吸附？
+adsorbent	The report compares three adsorbent materials.	报告比较了三种吸附剂材料。	Which adsorbent corresponds to the blue curve?	蓝色曲线对应哪种吸附剂？
+adsorbate	The diagram places the adsorbate on the surface.	图中把被吸附物放在表面上。	Is the adsorbate chemically changed after binding?	被吸附物在结合后发生化学变化了吗？
+desorption	The second curve describes desorption.	第二条曲线描述了解吸。	We compared adsorption and desorption branches.	我们比较了吸附支与解吸支。
+desorb	The model predicts when molecules desorb.	模型预测分子何时解吸。	Which species desorb from this surface?	哪些物种会从这个表面解吸？
+sorption	The authors use sorption because the uptake mechanism remains unclear.	摄取机理仍不明确，因此作者统称为吸着（吸收或吸附）。	Please explain what sorption covers in this report.	请解释报告中的吸着涵盖哪些过程。
+sorbent	The study compares uptake by each sorbent.	研究比较了各吸着材料（吸收或吸附材料）的摄取量。	The sorbent mass is missing from the table.	表中缺少吸着材料的质量。
+chemisorption	The paper discusses evidence for chemisorption.	论文讨论了化学吸附的证据。	Could chemisorption explain the strong binding?	化学吸附能解释这种强结合吗？
+physisorption	The analysis considers physisorption at the interface.	分析考虑了界面上的物理吸附。	The lecture contrasts physisorption with chemical bonding.	课程对比了物理吸附与化学键合。
+surface	The surface image shows several defects.	表面图像显示了几个缺陷。	We need a clearer view of this surface.	我们需要更清楚地看到这个表面。
+interfacial	The model includes an interfacial layer.	模型包括一个界面层。	What evidence supports the interfacial interaction?	什么证据支持这种界面相互作用？
+interface	The crack follows the interface between layers.	裂纹沿着层间界面延伸。	Please mark the interface in the image.	请在图中标出界面。
+bulk	The bulk material differs from the surface layer.	体相材料与表面层不同。	Does the calculation describe bulk transport?	这个计算描述的是体相输运吗？
+porous	The sample has a porous structure.	样品具有多孔结构。	We compared porous and dense films.	我们比较了多孔薄膜与致密薄膜。
+porosity	The report gives porosity as a percentage.	报告用百分比表示孔隙率。	Which method supports this porosity estimate?	哪种方法支持这个孔隙率估计？
+pore	The image shows a pore near the boundary.	图中显示边界附近有一个孔隙。	This pore is connected to another channel.	这个孔隙与另一条孔道相连。
+micropore	The diagram identifies one micropore region.	图中标出了一个微孔区域。	Check the width assigned to this micropore.	核对这个微孔标出的宽度。
+mesopore	The analysis reports a dominant mesopore size.	分析报告了一个主要介孔尺寸。	Which peak represents the mesopore population?	哪个峰代表介孔这一组？
+macropore	The image reveals a large macropore.	图像显示了一个较大的大孔。	The model includes transport through a macropore.	模型包括经过大孔的输运。
+microporous	The paper describes a microporous carbon.	论文描述了一种微孔碳材料。	These curves compare two microporous samples.	这些曲线比较了两个微孔样品。
+mesoporous	The sample is described as mesoporous silica.	样品被描述为介孔二氧化硅。	We compared the mesoporous structure across batches.	我们比较了不同批次的介孔结构。
+macroporous	The material has a macroporous framework.	这种材料具有大孔骨架。	The macroporous sample needs another image.	这个大孔样品需要再拍一张图。
+permeability	Please specify which gas this permeability describes.	请注明这个渗透性对应哪种气体。	The measured permeability changes with temperature.	测得的渗透性随温度变化。
+permeable	The film is permeable to water vapor.	这层薄膜允许水蒸气透过。	Is the membrane permeable to these ions?	这张膜允许这些离子透过吗？
+impermeable	The model assumes an impermeable boundary.	模型假设边界不可渗透。	What supports the claim that this layer is impermeable?	什么证据支持这一层不可渗透的说法？
+membrane	The membrane separates the two liquid streams.	这张膜分开了两股液流。	We compared membrane performance across three batches.	我们比较了三个批次的膜性能。
+filter	The report names the filter used for analysis.	报告写明了分析使用的过滤器。	Which filter belongs to this instrument?	哪个过滤器属于这台仪器？
+filtrate	The label identifies this sample as filtrate.	标签把这个样品标为滤液。	The analysis compares filtrate with the original solution.	分析比较了滤液与原溶液。
+retentate	The diagram labels the retentate stream.	图中标出了截留液流。	We need the retentate concentration in this table.	这张表需要填写截留液浓度。
+permeate	The report gives the permeate flow rate.	报告给出了透过液流量。	Which sample represents the permeate?	哪个样品代表透过液？
+flux	The membrane flux declined during the observation.	观察期间，膜通量下降了。	Is the flux normalized by membrane area?	通量按膜面积归一化了吗？
+fouling	The images suggest surface fouling.	图像提示存在表面污染结垢。	The report compares fouling between membrane types.	报告比较了不同膜类型的污染结垢。
+clogging	The pressure change may indicate clogging.	压力变化可能提示堵塞。	We reviewed the evidence for pore clogging.	我们复核了孔道堵塞的证据。
+clog	These particles may clog the narrow channels.	这些颗粒可能堵塞狭窄孔道。	The model asks which pores clog first.	模型探讨哪些孔先堵塞。
+clogged	The image shows a clogged channel.	图中显示了一条堵塞的孔道。	Are the clogged pores included in the estimate?	估计中包括堵塞的孔吗？
+wetting	The photograph shows uneven surface wetting.	照片显示表面润湿不均匀。	We compared wetting on the two coatings.	我们比较了两种涂层的润湿情况。
+wettability	The report describes the coating's wettability.	报告描述了涂层的润湿性。	Which measurement supports the wettability comparison?	哪个测量支持这个润湿性比较？
+hydrophilic	The film has a hydrophilic surface.	薄膜具有亲水表面。	Which treatment is described as hydrophilic?	哪一种处理被描述为亲水的？
+hydrophobic	The paper discusses a hydrophobic coating.	论文讨论了一种疏水涂层。	The hydrophobic sample is on the left.	疏水样品在左边。
+hydrophilicity	The study reports increased surface hydrophilicity.	研究报告了表面亲水性增加。	How was hydrophilicity assessed in this paper?	这篇论文如何评估亲水性？
+hydrophobicity	The diagram relates texture to hydrophobicity.	图中把纹理与疏水性联系起来。	We need evidence for the hydrophobicity claim.	我们需要支持疏水性说法的证据。
+oleophilic	The report identifies an oleophilic surface.	报告指出了一个亲油表面。	The diagram compares oleophilic and oleophobic layers.	图中比较了亲油层与疏油层。
+oleophobic	This coating is described as oleophobic.	这个涂层被描述为疏油的。	Which image supports the oleophobic behavior?	哪张图支持这个疏油表现？
+lyophilic	The lesson introduces lyophilic colloids.	课程介绍了亲溶剂胶体。	We compared lyophilic behavior in two solvents.	我们比较了两种溶剂中的亲溶剂表现。
+lyophobic	The paper describes a lyophobic dispersion.	论文描述了一种疏溶剂分散体系。	Which interaction makes this system lyophobic?	哪种相互作用使这个体系呈疏溶剂性？
+surfactant	The formulation contains a surfactant.	配方含有一种表面活性剂。	Please name the surfactant in the report.	请在报告中写出表面活性剂名称。
+detergent	The analysis identifies the detergent ingredients.	分析鉴定了洗涤剂成分。	The sample label says detergent solution.	样品标签写着洗涤剂溶液。
+soap	The lecture discusses the chemistry of soap.	课程讨论了肥皂的化学。	The report compares soap with other surfactants.	报告比较了肥皂与其他表面活性剂。
+micelle	The drawing shows one micelle in solution.	图中显示溶液里有一个胶束。	Where is the micelle core in this sketch?	这张草图中的胶束核心在哪里？
+micellar	The model describes a micellar system.	模型描述了一个胶束体系。	The paper compares micellar and nonmicellar conditions.	论文比较了胶束与非胶束条件。
+colloid	The sample is a colloid, not a molecular solution.	样品是胶体，不是分子溶液。	How does the report classify this colloid?	报告如何给这个胶体分类？
+colloidal	The suspension contains colloidal particles.	悬浮液含有胶体颗粒。	We discussed colloidal stability during the meeting.	我们在会上讨论了胶体稳定性。
+dispersion	The dispersion became less uniform over time.	分散体系随时间变得不均匀。	The images compare dispersion across the film.	这些图像比较了薄膜中的分散情况。
+disperse	The method describes how particles disperse.	方法部分描述了颗粒如何分散。	Which model predicts whether these particles disperse?	哪个模型预测这些颗粒是否会分散？
+dispersant	The formulation lists a polymeric dispersant.	配方列出了一种聚合物分散剂。	What role does the dispersant have here?	分散剂在这里起什么作用？
+dispersed	The image shows dispersed particles in the matrix.	图中显示颗粒分散在基体中。	The dispersed phase is labelled in blue.	分散相用蓝色标出。
+dispersity	The paper reports molar-mass dispersity.	论文报告了摩尔质量分散度。	Check how dispersity is defined in this table.	核对表中如何定义分散度。
+polydispersity	We need to check the authors' definition of polydispersity.	我们需要核对作者对分散度的定义。	Could you clarify the polydispersity measure here?	你能说明这里的分散度指标吗？
+monodisperse	The authors describe nearly monodisperse particles.	作者把这些颗粒描述为尺寸近乎一致。	The monodisperse model is only an approximation.	单分散模型只是一种近似。
+polydisperse	This sample contains polydisperse particles.	这个样品含有尺寸分布较宽的颗粒。	The polydisperse model fits the data better.	多分散模型更符合数据。
+particle	The image includes a large particle.	图像中有一个较大的颗粒。	Please mark the particle boundary clearly.	请清楚地标出颗粒边界。
+particulate	The filter retained particulate material.	过滤器截留了颗粒状物质。	The report distinguishes particulate from dissolved components.	报告区分了颗粒状组分与溶解组分。
+aggregate	The image shows a dense particle aggregate.	图中显示一个致密的颗粒聚集体。	Is this aggregate present in the original sample?	这个聚集体存在于原样品中吗？
+aggregation	The model includes aggregation over time.	模型包括随时间发生的聚集。	Could aggregation explain the changing particle size?	聚集能解释粒径变化吗？
+agglomerate	The microscope reveals a loose agglomerate.	显微镜显示了一个松散团聚体。	The agglomerate contains particles of different sizes.	这个团聚体含有不同大小的颗粒。
+agglomeration	The report discusses particle agglomeration.	报告讨论了颗粒团聚。	We need images supporting the agglomeration interpretation.	我们需要支持团聚解释的图像。
+flocculation	The study follows flocculation in the suspension.	研究追踪了悬浮液中的絮凝。	Which curve represents the flocculation stage?	哪条曲线代表絮凝阶段？
+flocculant	The process record identifies the flocculant.	过程记录写明了絮凝剂。	The analysis compares two flocculant formulations.	分析比较了两种絮凝剂配方。
+coagulation	The lecture distinguishes coagulation from other aggregation processes.	课程区分了凝聚与其他聚集过程。	The report presents evidence of coagulation.	报告给出了凝聚的证据。
+coagulant	The paper names the coagulant studied.	论文写明了研究的凝聚剂。	Please include the coagulant identity in this table.	请在表中填写凝聚剂的名称。
+sedimentation	We observed sedimentation during storage.	我们在储存期间观察到了沉降。	The sedimentation model needs particle-density data.	沉降模型需要颗粒密度数据。
+sediment	The image shows sediment at the bottom.	图中显示底部有沉积物。	The report gives the composition of the sediment.	报告给出了沉积物的组成。
+settling	The video follows particle settling.	视频追踪了颗粒沉降。	Which factors explain the settling rate?	哪些因素解释了沉降速率？
+centrifugation	The report documents the centrifugation stage.	报告记录了离心分离阶段。	This diagram illustrates centrifugation rather than filtration.	这张图展示的是离心分离，不是过滤。
+centrifuge	The equipment list includes a centrifuge.	设备清单包括一台离心机。	Which centrifuge produced these separation data?	这些分离数据来自哪台离心机？
+rotor	The maintenance record names the rotor.	维护记录写明了转子型号。	The centrifuge diagram is missing its rotor label.	离心机示意图漏掉了转子标注。
+centrifugal	The report states the relative centrifugal force.	报告写明了相对离心力。	The simulation compares centrifugal separation patterns.	模拟比较了离心分离模式。
+centripetal	The physics diagram includes a centripetal force.	物理图中包括一个向心力。	Which arrow points in the centripetal direction?	哪个箭头指向向心方向？
+decant	The paper explains why the authors decant the liquid.	论文解释了作者为什么倾析液体。	Does this workflow decant the clear layer?	这个流程会倾析清液层吗？
+decantation	The separation diagram includes decantation.	分离图中包括倾析。	The report compares decantation with filtration.	报告比较了倾析与过滤。
+supernatant	The label identifies the supernatant sample.	标签标明了上清液样品。	The analysis reports solids remaining in the supernatant.	分析报告了上清液中残留的固体。
+pellet	The photograph shows the centrifugation pellet.	照片显示了离心沉淀团。	The composition of the pellet differs from the supernatant.	沉淀团的组成与上清液不同。
+precipitant	The method section names the precipitant.	方法部分写明了沉淀剂。	Which precipitant was studied in the comparison?	这个比较研究了哪种沉淀剂？
+crystallization	The report follows crystallization over time.	报告追踪了结晶过程随时间的变化。	We need evidence that crystallization occurred.	我们需要证明发生了结晶的证据。
+crystallisation	The paper discusses crystallisation of the polymer.	论文讨论了聚合物的结晶。	This image shows the early crystallisation stage.	这张图显示了结晶的早期阶段。
+crystallize	The model predicts how these molecules crystallize.	模型预测这些分子如何结晶。	Do both components crystallize in the same phase?	两个组分都在同一相中结晶吗？
+crystallise	The simulation allows the material to crystallise.	模拟允许材料结晶。	Which component begins to crystallise first?	哪个组分先开始结晶？
+recrystallization	The paper includes a recrystallization analysis.	论文包括一项重结晶分析。	Does recrystallization change the grain-size distribution?	重结晶会改变晶粒尺寸分布吗？
+recrystallisation	The report identifies recrystallisation in the metal.	报告指出金属中发生了重结晶。	We compared images before and after recrystallisation.	我们比较了重结晶前后的图像。
+nucleation	The model separates nucleation from crystal growth.	模型区分了晶核形成与晶体生长。	Where does nucleation occur in the simulation?	模拟中的晶核在哪里形成？
+nucleate	The model predicts where crystals nucleate.	模型预测晶体在哪里形成晶核。	Does the surface help this phase nucleate?	这个表面有助于该相形成晶核吗？
+seeding	The report compares crystallization with and without seeding.	报告比较了有晶种与无晶种时的结晶。	The seeding stage is marked in the diagram.	图中标出了提供晶种的阶段。
+seed	The drawing shows a small crystal seed.	图中显示了一颗小晶种。	The final crystal grew around the seed.	最终晶体围绕晶种生长。
+growth	The graph shows crystal growth over time.	图中显示了晶体生长随时间的变化。	We compared growth along different crystal directions.	我们比较了不同晶向的生长。
+crystallography	I'm attending the crystallography seminar tomorrow.	我明天会参加晶体学研讨会。	The paper uses crystallography to examine structure.	论文用晶体学研究结构。
+crystallographic	The caption lists the crystallographic directions.	图注列出了晶体学方向。	Please check the crystallographic notation here.	请核对这里的晶体学符号。
+lattice	The diagram shows the crystal lattice.	图中显示了晶格。	The fitted lattice parameters differ slightly.	拟合的晶格参数略有不同。
+cell	The drawing labels the unit cell.	图中标出了晶胞。	The electrochemical cell appears in the next figure.	下一张图中出现了电化学电池。
+amorphous	The film contains an amorphous region.	薄膜含有一个无定形区域。	The report compares amorphous and crystalline samples.	报告比较了无定形与结晶样品。
+crystallinity	The estimate of crystallinity needs an uncertainty range.	结晶度估计需要给出不确定度范围。	We compared crystallinity across the polymer batches.	我们比较了各聚合物批次的结晶度。
+polymorph	The report identifies a second polymorph.	报告鉴定出了第二种同质多晶型。	Which polymorph matches this diffraction pattern?	哪种同质多晶型符合这个衍射图样？
+polymorphism	The seminar discusses polymorphism in molecular crystals.	研讨会讨论了分子晶体的同质多晶现象。	The data suggest polymorphism rather than contamination.	数据提示是同质多晶现象，而不是污染。
+allotrope	Diamond is one allotrope of carbon.	金刚石是碳的一种同素异形体。	The diagram compares this allotrope with graphite.	图中比较了这种同素异形体与石墨。
+allotropy	The lesson uses carbon to explain allotropy.	课程用碳解释同素异形现象。	Don't confuse allotropy with isotope differences.	别把同素异形现象与同位素差异弄混。
+phase	The diffraction pattern suggests another phase.	衍射图样提示存在另一个相。	Please label each phase in the micrograph.	请在显微图中标出各个相。
+transition	The spectrum includes an electronic transition.	谱图包括一个电子跃迁。	The lecture introduces transition-metal complexes.	课程介绍了过渡金属配合物。
+transformation	The paper follows a phase transformation.	论文追踪了相变。	What evidence supports the proposed transformation?	哪些证据支持所提出的材料转化？
+melting	The curve shows a broad melting region.	曲线显示了一个较宽的熔化区域。	The melting peak differs between the samples.	样品之间的熔化峰不同。
+melt	The model describes flow within the melt.	模型描述了熔体内部的流动。	The report records when the material begins to melt.	报告记录了材料何时开始熔化。
+freezing	The diagram compares melting and freezing.	图中比较了熔化与凝固。	The freezing curve shows a delayed transition.	凝固曲线显示转变有延迟。
+freeze	The simulation predicts when the liquid will freeze.	模拟预测液体何时凝固。	Do both components freeze at the same temperature?	两个组分在相同温度下凝固吗？
+solidification	The microstructure changed during solidification.	微观结构在凝固过程中发生了变化。	The model includes the solidification front.	模型包括凝固前沿。
+solidify	The diagram shows where the melt will solidify.	图中显示熔体将在何处凝固。	Does the material solidify into one phase?	材料凝固后成为单一相吗？
+boiling	The lesson explains the boiling transition.	课程讲解了沸腾转变。	The reported boiling point needs a pressure value.	报告的沸点需要注明压力。
+boil	The model predicts when this liquid will boil.	模型预测这种液体何时沸腾。	Does the mixture boil over a temperature range?	混合物在一个温度范围内沸腾吗？
+sublimation	The diagram includes a sublimation pathway.	图中包含一条升华途径。	The lecture distinguishes sublimation from evaporation.	课程区分了升华与蒸发。
+sublime	The phase diagram shows when the solid can sublime.	相图显示固体何时能够升华。	The paper examines materials that sublime.	论文研究了会升华的材料。
+deposition	The report discusses thin-film deposition.	报告讨论了薄膜沉积。	The phase diagram labels deposition from vapor to solid.	相图标出了从气体到固体的凝华。
+vaporization	The calculation includes the enthalpy of vaporization.	计算包括汽化焓。	The diagram shows vaporization from the liquid phase.	图中显示了液相的汽化。
+vaporisation	The paper reports a vaporisation enthalpy.	论文报告了汽化焓。	Which curve corresponds to vaporisation?	哪条曲线对应汽化？
+vaporize	The model predicts how much liquid will vaporize.	模型预测多少液体会汽化。	Does the entire droplet vaporize in the simulation?	模拟中整个液滴都会汽化吗？
+vaporise	The calculation allows part of the liquid to vaporise.	计算允许部分液体汽化。	The report compares how quickly the samples vaporise.	报告比较了样品汽化的快慢。
+condense	The model predicts where vapor will condense.	模型预测蒸气会在哪里冷凝。	Which species condense in the simulated mixture?	模拟混合物中的哪些物种会冷凝？
+condensate	The analysis identifies components in the condensate.	分析鉴定了冷凝液中的组分。	The condensate sample needs a clearer label.	冷凝液样品需要更清楚的标签。
+condensed	The lecture introduces condensed matter.	课程介绍了凝聚态物质。	The model compares condensed and gaseous phases.	模型比较了凝聚相与气相。
+evaporate	The model predicts how droplets evaporate.	模型预测液滴如何蒸发。	Does the solvent evaporate completely in this case?	这种情况下溶剂完全蒸发了吗？
+evaporator	The process diagram includes an evaporator.	流程图包括一个蒸发设备。	We reviewed the evaporator performance data.	我们查看了蒸发设备的性能数据。
+density	The density value is missing its units.	密度值缺少单位。	These two materials have similar density.	这两种材料的密度相近。
+viscosity	The viscosity depends on measurement conditions.	黏度取决于测量条件。	Please include temperature with the viscosity result.	请给黏度结果注明温度。
+viscous	The sample was more viscous than expected.	样品的黏度比预期更大。	The model describes flow of a viscous liquid.	模型描述了高黏度液体的流动。
+rheology	We discussed rheology at the materials meeting.	我们在材料会议上讨论了流变学。	The paper relates rheology to coating behavior.	论文把流变性质与涂覆表现联系起来。
+rheological	The report includes rheological measurements.	报告包括流变测量。	Which rheological model fits this curve?	哪种流变模型符合这条曲线？
+rheometer	The equipment record names the rheometer.	设备记录写明了流变仪型号。	Were both samples measured on this rheometer?	两个样品都在这台流变仪上测量的吗？
+thixotropy	The paper presents evidence of thixotropy.	论文给出了触变性的证据。	Don't infer thixotropy from one viscosity value.	别只凭一个黏度值推断触变性。
+thixotropic	The formulation shows thixotropic behavior.	这个配方表现出触变性。	How did the study assess thixotropic recovery?	研究如何评估触变恢复？
+newtonian	The model assumes a Newtonian liquid.	模型假设液体符合牛顿黏性定律。	Do the data support Newtonian behavior here?	这里的数据支持牛顿流体表现吗？
+shear	The graph shows shear stress against shear rate.	图中绘出了剪切应力与剪切速率的关系。	The material response changes under shear.	材料响应在剪切作用下发生变化。
+strain	The measured strain increased during loading.	测得的应变在加载期间增加了。	Is this strain reported as a percentage?	这个应变用百分比报告吗？
+stress	The stress axis needs a unit label.	应力轴需要标注单位。	The model predicts stress near the boundary.	模型预测了边界附近的应力。
+elastic	The deformation was mostly elastic.	这次变形主要是弹性的。	Which region of the curve is elastic?	曲线的哪个区域属于弹性范围？
+elasticity	We compared elasticity across the polymer samples.	我们比较了聚合物样品的弹性。	The model assumes linear elasticity.	模型假设线性弹性。
+plasticity	The lecture distinguishes plasticity from elasticity.	课程区分了塑性与弹性。	The deformation model includes plasticity.	变形模型包括塑性。
+viscoelastic	The film shows a viscoelastic response.	薄膜表现出黏弹性响应。	We need a viscoelastic model for these data.	这些数据需要一个黏弹性模型。
+viscoelasticity	The seminar covers viscoelasticity in polymers.	研讨会介绍聚合物的黏弹性。	Does viscoelasticity explain the delayed recovery?	黏弹性能解释恢复延迟吗？
+modulus	Which modulus is reported in this column?	这一栏报告的是哪种模量？	The fitted modulus changes with frequency.	拟合出的模量随频率变化。
+strength	The strength result needs an uncertainty estimate.	强度结果需要不确定度估计。	We compared strength after repeated aging tests.	我们比较了反复老化测试后的强度。
+tensile	The report contains tensile test results.	报告包含拉伸试验结果。	The tensile curve ends at fracture.	拉伸曲线在断裂处结束。
+compression	The sample deformed under compression.	样品在压缩下发生了变形。	We compared tension and compression responses.	我们比较了拉伸与压缩响应。
+compressive	The model shows compressive stress at the edge.	模型显示边缘处有压缩应力。	The table lists compressive strength separately.	表中单独列出了压缩强度。
+compressibility	The calculation includes liquid compressibility.	计算包括液体可压缩性。	What evidence supports this compressibility value?	什么证据支持这个可压缩性值？
+compressible	The simulation treats the fluid as compressible.	模拟把流体视为可压缩的。	A compressible model gives a different result.	可压缩模型给出了不同结果。
+incompressible	The model assumes an incompressible fluid.	模型假设流体不可压缩。	Is the incompressible approximation reasonable here?	这里采用不可压缩近似合理吗？
+hardness	We measured hardness at several surface locations.	我们在几个表面位置测量了硬度。	Please name the hardness scale used.	请写明使用的硬度标尺。
+hard	The outer layer is relatively hard.	外层相对较硬。	The image contrasts hard and soft regions.	图中对比了硬区域与软区域。
+soft	The film is too soft for this component.	这层薄膜对这个部件而言太软了。	We compared two soft polymer samples.	我们比较了两个软聚合物样品。
+stiffness	The design requires more stiffness.	这个设计需要更高的刚度。	Does the measured stiffness include the support?	测得的刚度包括支撑部分吗？
+stiff	This panel is too stiff for the original design.	这块板对原设计而言刚度太高了。	The report describes a stiff reinforcing layer.	报告描述了一个高刚度增强层。
+flexible	The coating needs a flexible substrate.	这个涂层需要柔性基底。	The flexible film remained intact after bending.	柔性薄膜弯曲后仍然完整。
+flexibility	The material lost flexibility during aging.	材料在老化期间失去了柔性。	How did the report assess flexibility?	报告如何评估柔性？
+brittle	The sample became brittle after aging.	样品老化后变脆了。	This brittle fracture surface looks different.	这个脆性断裂表面看起来不同。
+brittleness	The report links brittleness with composition.	报告把脆性与组成联系起来。	We need evidence for increased brittleness.	我们需要脆性增加的证据。
+ductile	The metal showed ductile deformation.	金属表现出延性变形。	The fracture image suggests a ductile failure.	断裂图像提示发生了延性失效。
+ductility	The paper compares strength and ductility.	论文比较了强度与延展性。	Which measurement supports the ductility estimate?	哪种测量支持延展性估计？
+malleable	The lesson describes the metal as malleable.	课程把这种金属描述为可锻的。	We discussed why this alloy is malleable.	我们讨论了这种合金为什么具有可锻性。
+malleability	The seminar separates malleability from ductility.	研讨会区分了可锻性与延展性。	The table compares malleability across metals.	表中比较了各金属的可锻性。
+toughness	The design needs better fracture toughness.	这个设计需要更好的断裂韧性。	Please state how toughness was measured.	请说明韧性如何测量。
+tough	The polymer is tough but not especially stiff.	这个聚合物韧性好，但刚度并不特别高。	We need a tough material for this part.	这个部件需要韧性好的材料。
+fracture	The fracture started near the edge.	断裂从边缘附近开始。	The report includes images of the fracture surface.	报告包括断裂表面的图像。
+fractured	The sample fractured during the mechanical test.	样品在力学试验中断裂了。	The fractured piece is labelled in the photograph.	照片中标出了断裂的部分。
+crack	There is a crack beside the interface.	界面旁边有一条裂纹。	The model predicts where the crack will grow.	模型预测裂纹会在哪里扩展。
+cracking	The coating shows signs of cracking.	涂层出现了开裂迹象。	We compared cracking before and after aging.	我们比较了老化前后的开裂情况。
+fatigue	The report examines material fatigue.	报告考察了材料疲劳。	The fatigue test results need another graph.	疲劳试验结果需要另一张图。
+creep	The strain increased during the creep test.	应变在蠕变试验中增加了。	The model includes long-term creep behavior.	模型包括长期蠕变表现。
+relaxation	The graph shows stress relaxation over time.	图中显示了应力松弛随时间的变化。	Which timescale describes this relaxation process?	哪个时间尺度描述了这个松弛过程？
+resilience	The report assesses resilience after unloading.	报告评估了卸载后的弹性恢复能力。	We compared resilience across the elastomers.	我们比较了各弹性体的弹性恢复能力。
+resilient	The foam remained resilient after repeated deformation.	泡沫材料反复变形后仍能弹性恢复。	This resilient layer returned toward its original shape.	这个弹性恢复层趋向恢复原状。
+abrasion	The surface shows damage from abrasion.	表面出现了磨耗损伤。	The report compares abrasion resistance.	报告比较了耐磨耗性。
+abrasive	The materials list names the abrasive.	材料清单写明了磨料。	Which abrasive was used in this comparison?	这个比较使用了哪种磨料？
+wear	The image shows wear near the contact.	图中显示接触处附近有磨损。	We need to separate wear from corrosion.	我们需要区分磨损与腐蚀。
+friction	The measured friction changed during testing.	测得的摩擦在测试中变化了。	The model includes friction between the surfaces.	模型包括表面之间的摩擦。
+frictional	The diagram shows frictional forces.	图中显示了摩擦力。	Could frictional heating explain this change?	摩擦发热能解释这个变化吗？
+lubrication	The report compares different lubrication conditions.	报告比较了不同润滑条件。	The maintenance notes document lubrication history.	维护记录写明了润滑历史。
+lubricant	The materials list includes a lubricant.	材料清单包括一种润滑剂。	The analysis identifies changes in the lubricant.	分析鉴定了润滑剂的变化。
+lubricate	The maintenance record explains which surfaces staff lubricate.	维护记录说明了工作人员润滑哪些表面。	The contact model includes a film to lubricate the surfaces.	接触模型包括润滑表面的薄膜。
+tribology	I'm attending the tribology seminar next week.	我下周会参加摩擦学研讨会。	The project connects tribology with surface chemistry.	项目把摩擦学与表面化学联系起来。
+tribological	The report presents tribological measurements.	报告给出了摩擦学测量。	Which tribological conditions apply to this comparison?	这个比较适用哪些摩擦学条件？
+adhesion	The coating lost adhesion during aging.	涂层老化时黏附力下降了。	We measured adhesion at the interface.	我们测量了界面处的黏附。
+adhesive	The joint contains a polymer adhesive.	接头含有聚合物胶黏剂。	The adhesive layer is visible in the image.	图中能看到胶黏剂层。
+adhere	The coating did not adhere uniformly.	涂层没有均匀黏附。	Which surfaces do these particles adhere to?	这些颗粒黏附在哪些表面上？
+cohesion	The report distinguishes cohesion from adhesion.	报告区分了内聚与黏附。	The model includes cohesion within the material.	模型包括材料内部的凝聚。
+cohesive	The image suggests a cohesive failure.	图像提示发生了内聚失效。	We compared cohesive and interfacial fracture.	我们比较了内聚断裂与界面断裂。
+delamination	The photograph shows delamination at the edge.	照片显示边缘处出现分层脱离。	What evidence explains the delamination?	哪些证据解释了这次分层脱离？
+laminate	The laminate contains three distinct layers.	这个层合材料含有三个不同层。	Please label the laminate cross section.	请标注层合材料的横切面。
+lamination	The report documents the lamination stage.	报告记录了层合加工阶段。	The analysis compares interfaces after lamination.	分析比较了层合加工后的界面。
+layer	The outer layer is thinner than expected.	外层比预期更薄。	The image shows a damaged layer.	图中显示了一个受损层。
+layered	The sample has a layered structure.	样品具有层状结构。	We compared two layered materials.	我们比较了两种层状材料。
+coating	The coating has several small defects.	涂层有几个小缺陷。	The report compares coating thickness across batches.	报告比较了各批次的涂层厚度。
+coat	The paper explains why they coat the substrate.	论文解释了为什么要涂覆基底。	Does the model coat both sides equally?	模型中两侧的涂覆程度相同吗？
+film	The film peeled away at one corner.	薄膜在一个角上剥离了。	We need the film thickness in this table.	这张表需要薄膜厚度。
+thin	The sample contains a thin oxide layer.	样品含有一层薄氧化层。	This thin film needs another cross-sectional image.	这层薄膜需要另一张横切面图。
+thickness	The measured thickness varies across the surface.	测得的厚度在表面各处不同。	Please report thickness in consistent units.	请用一致的单位报告厚度。
+thick	The coating is too thick near the edge.	涂层在边缘附近太厚了。	We compared thick and thin samples.	我们比较了厚样品与薄样品。
+substrate	The substrate appears beneath the coating.	涂层下方能看到基底。	Which substrate was used for this film?	这层薄膜使用了哪种基底？
+support	The catalyst uses a porous support.	催化剂使用多孔载体。	The diagram separates the active phase from its support.	图中区分了活性相与载体。
+supported	The paper examines a supported catalyst.	论文研究了一种负载型催化剂。	The supported particles are visible in this image.	图中能看到负载在载体上的颗粒。
+deposit	The surface deposit contains several elements.	表面沉积物含有几种元素。	The report explains where the particles deposit.	报告解释了颗粒沉积的位置。
+plating	The inspection record describes the plating.	检验记录描述了镀层。	We compared the surface before and after plating.	我们比较了镀覆前后的表面。
+plate	The sample is a thin metal plate.	样品是一块薄金属板。	The report names the material used to plate the surface.	报告写明了镀覆表面所用的材料。
+sputtering	The paper compares sputtering with other deposition methods.	论文比较了溅射与其他沉积方法。	The report includes the sputtering equipment record.	报告包括溅射设备记录。
+sputter	Did the authors sputter this coating?	作者用溅射制作了这个涂层吗？	The process diagram shows where they sputter the film.	流程图显示了在哪个阶段溅射薄膜。
+etching	The image shows changes after etching.	图像显示了刻蚀后的变化。	The paper compares two etching methods.	论文比较了两种刻蚀方法。
+etch	The report explains why they etch the surface.	报告解释了为什么刻蚀表面。	Does the model etch every region equally?	模型对各区域的刻蚀程度相同吗？
+passivation	The paper examines surface passivation.	论文考察了表面钝化。	The report links passivation with corrosion behavior.	报告把钝化与腐蚀表现联系起来。
+passivate	The review discusses methods that passivate metals.	综述讨论了使金属钝化的方法。	Does the coating help passivate this surface?	涂层有助于这个表面钝化吗？
+anodization	The record includes an anodization stage.	记录包括阳极氧化阶段。	The image shows the layer formed by anodization.	图中显示了阳极氧化形成的层。
+anodize	The paper explains why they anodize the component.	论文解释了为什么对部件进行阳极氧化。	Which parts do the authors anodize?	作者对哪些部分进行阳极氧化？
+anodisation	The report discusses anodisation of aluminium.	报告讨论了铝的阳极氧化。	We compared surfaces before and after anodisation.	我们比较了阳极氧化前后的表面。
+anodise	The method summary says they anodise the sample.	方法摘要说，作者对样品进行阳极氧化。	Does the process anodise only the outer surface?	这个过程只对外表面进行阳极氧化吗？
+redox	The diagram shows a redox reaction.	图中显示了氧化还原反应。	Which species participate in this redox pair?	哪些物种参与这个氧化还原对？
+electrochemistry	The next seminar focuses on electrochemistry.	下次研讨会主要讨论电化学。	The project connects electrochemistry with material stability.	项目把电化学与材料稳定性联系起来。
+electrochemical	The paper reports electrochemical measurements.	论文报告了电化学测量。	The electrochemical model includes both electrodes.	电化学模型包括两个电极。
+electrolysis	The lecture explains electrolysis in a diagram.	课程用示意图讲解了电解。	The report discusses energy use in electrolysis.	报告讨论了电解中的能耗。
+electrolytic	The diagram shows an electrolytic cell.	图中显示了电解池。	Which data describe the electrolytic process?	哪些数据描述了电解过程？
+electrolyze	The paper describes systems that electrolyze water.	论文描述了电解水的系统。	Does the proposed process electrolyze this solution?	提出的过程会电解这份溶液吗？
+electrolyse	The authors compare devices that electrolyse water.	作者比较了电解水的装置。	The diagram indicates which stream they electrolyse.	图中指出了对哪股液流进行电解。
+anode	Oxidation occurs at the anode in this diagram.	图中氧化发生在阳极。	Please label the anode and its reaction.	请标出阳极及其反应。
+cathode	The diagram shows reduction at the cathode.	图中显示还原发生在阴极。	Which material forms the cathode here?	这里的阴极由哪种材料构成？
+anodic	The report includes an anodic current.	报告包括阳极电流。	Which peak represents the anodic process?	哪个峰代表阳极过程？
+cathodic	The plot shows a cathodic response.	图中显示了阴极响应。	The model separates cathodic and anodic contributions.	模型区分了阴极贡献与阳极贡献。
+potential	The electrode potential needs a reference label.	电极电势需要注明参照。	We compared potential across the two electrodes.	我们比较了两个电极的电势。
+voltage	The recorded voltage changed during discharge.	记录的电压在放电时变化了。	Check the voltage axis on this graph.	核对这张图的电压轴。
+current	The current signal includes background noise.	电流信号包含背景噪声。	Does the table report current or current density?	表中报告的是电流还是电流密度？
+amperage	The equipment record states the amperage.	设备记录写明了电流强度。	We reviewed the amperage data from the test.	我们查看了测试中的电流强度数据。
+ampere	The ampere is a unit of current.	安培是电流单位。	The table uses the ampere rather than the milliampere.	这张表使用安培，而不是毫安。
+volt	The volt is the voltage unit here.	这里的电压单位是伏特。	The volt symbol is missing from the voltage axis.	电压轴少了伏特符号。
+ohm	The report uses the ohm as its resistance unit.	报告用欧姆作为电阻单位。	The ohm symbol is missing from this table.	这张表缺少欧姆符号。
+watt	The report uses watt units for power.	报告用瓦特单位表示功率。	Check the watt value against the instrument record.	根据仪器记录核对瓦特数值。
+power	The graph compares power and energy.	图中比较了功率与能量。	Please normalize power by the stated mass.	请按指定质量对功率归一化。
+charge	The calculation tracks the total charge transferred.	计算追踪了转移的总电荷量。	The diagram shows charge on each ion.	图中显示了各离子的电荷。
+charging	The charging curve differs from the discharge curve.	充电曲线与放电曲线不同。	We reviewed charging data from repeated cycles.	我们查看了反复循环中的充电数据。
+discharge	The battery voltage decreased during discharge.	电池电压在放电时下降了。	Which curve belongs to the discharge stage?	哪条曲线属于放电阶段？
+recharge	The report tracks how often they recharge the cell.	报告追踪了电池重新充电的次数。	Can the model predict capacity after we recharge?	模型能预测重新充电后的容量吗？
+rechargeable	The project studies rechargeable batteries.	项目研究可充电电池。	The report compares two rechargeable cell designs.	报告比较了两种可充电电池设计。
+cycle	The capacity changed after the first cycle.	容量在第一次循环后变化了。	The graph labels each charge-discharge cycle.	图中标出了各次充放电循环。
+cycling	The report includes long-term cycling data.	报告包括长期充放电循环数据。	The electrode changed during repeated cycling.	电极在反复充放电中发生了变化。
+coulomb	The coulomb is a unit of electric charge.	库仑是电荷单位。	Please state the transferred charge in coulomb units.	请用库仑单位写出转移的电荷量。
+coulombic	The table reports coulombic efficiency.	表中报告了库仑效率。	The coulombic efficiency decreased during cycling.	库仑效率在循环中下降了。
+efficiency	The report distinguishes energy efficiency from charge efficiency.	报告区分了能量效率与电荷效率。	What losses are included in this efficiency estimate?	这个效率估计包括哪些损失？
+supercapacitor	The project compares a supercapacitor with a battery.	项目比较了超级电容器与电池。	The supercapacitor data need a separate caption.	超级电容器数据需要单独的图注。
+pseudocapacitance	The paper discusses evidence for pseudocapacitance.	论文讨论了赝电容的证据。	Please explain the pseudocapacitance assignment in this graph.	请解释图中对赝电容的归属。
+pseudocapacitive	The authors propose a pseudocapacitive contribution.	作者提出存在赝电容贡献。	Does the analysis support pseudocapacitive behavior?	分析支持赝电容表现吗？
+intercalation	The structure changes during ion intercalation.	结构在离子嵌入过程中变化了。	The diagram compares intercalation with surface adsorption.	图中比较了嵌入与表面吸附。
+intercalate	These ions can intercalate between the layers.	这些离子能够嵌入层间。	Does the model allow both species to intercalate?	模型允许两个物种都嵌入吗？
+insertion	The report follows ion insertion into the host.	报告追踪了离子嵌入宿主材料的过程。	The insertion mechanism needs more structural evidence.	嵌入机理需要更多结构证据。
+deintercalation	The graph shows changes during deintercalation.	图中显示了脱嵌过程中的变化。	We compared intercalation and deintercalation paths.	我们比较了嵌入与脱嵌路径。
+separator	The battery diagram includes a separator.	电池图中包括隔膜。	The report examines the separator's pore structure.	报告考察了隔膜的孔结构。
+impedance	The model fits the impedance data.	模型拟合了阻抗数据。	Please include frequency with the impedance results.	请给阻抗结果注明频率。
+corrode	The report asks why these components corrode.	报告探讨了这些部件为什么腐蚀。	Do both alloys corrode at the same rate?	两种合金的腐蚀速率相同吗？
+rusting	The photograph shows early signs of rusting.	照片显示了早期生锈迹象。	The inspection report documents rusting near the joint.	检验报告记录了接头附近的生锈情况。
+anticorrosive	The component has an anticorrosive coating.	这个部件有防腐蚀涂层。	What evidence supports the anticorrosive claim?	什么证据支持防腐蚀性能的说法？
+metallurgy	The seminar introduces physical metallurgy.	研讨会介绍了物理冶金学。	The project connects metallurgy with phase analysis.	项目把冶金学与物相分析联系起来。
+metallurgical	The report includes a metallurgical examination.	报告包括冶金检查。	The metallurgical interpretation needs microstructural evidence.	这个冶金解释需要微观结构证据。
+ore	The ore sample contains several minerals.	这份矿石样品含有几种矿物。	The report gives the ore composition.	报告给出了矿石组成。
+mineralogy	The course covers mineralogy and crystal structure.	课程介绍矿物学与晶体结构。	We reviewed the mineralogy of the ore.	我们查看了矿石的矿物组成。
+mineralogical	The sample needs further mineralogical analysis.	样品需要进一步的矿物学分析。	The report compares mineralogical findings across sites.	报告比较了各地点的矿物学结果。
+smelting	The process diagram includes a smelting stage.	流程图包括冶炼阶段。	The report examines emissions from smelting.	报告考察了冶炼产生的排放。
+smelt	Did the facility smelt the ore on site?	这家设施是在现场冶炼矿石的吗？	Which metal do these facilities smelt?	这些设施冶炼哪种金属？
+refining	The report discusses metal refining.	报告讨论了金属精炼。	The diagram separates refining from casting.	图中区分了精炼与铸造。
+refine	The supplier plans to refine this metal further.	供应商打算进一步精炼这种金属。	Does the model include losses when they refine the metal?	模型包括金属精炼时的损失吗？
+refinery	The refinery report includes product composition.	精炼厂报告包括产品组成。	The diagram shows streams entering the refinery.	图中显示了进入精炼厂的物流。
+casting	The inspection record identifies casting defects.	检验记录指出了铸造缺陷。	We compared microstructures after casting.	我们比较了铸造后的微观结构。
+cast	The component was cast rather than machined.	这个部件通过铸造制成，而不是机械加工。	The report shows the cast sample's cross section.	报告显示了铸造样品的横切面。
+mold	The drawing labels the casting mold.	图中标出了铸模。	Which mold was used for this component?	这个部件使用了哪个模具？
+mould	The component record names the mould.	部件记录写明了模具。	The mould geometry appears in the next figure.	模具几何形状出现在下一张图中。
+molding	The report documents the molding process.	报告记录了模塑成型过程。	The polymer changed orientation during molding.	聚合物在模塑成型时改变了取向。
+moulding	The inspection compares moulding defects.	检验比较了模塑成型缺陷。	This diagram shows the moulding stage.	这张图显示了模塑成型阶段。
+forging	The paper examines microstructure after forging.	论文考察了锻造后的微观结构。	The process record includes forging history.	过程记录包括锻造历史。
+forge	Was this part machined before they began to forge it?	这个部件在锻造前进行过机械加工吗？	Does the report compare parts before and after they forge them?	报告比较了部件锻造前后的情况吗？
+rolling	The sample shows texture caused by rolling.	样品显示出轧制造成的织构。	The report gives the rolling direction.	报告给出了轧制方向。
+roll	The supplier can roll this alloy into sheet.	供应商能把这种合金轧制成薄板。	Which materials does the plant roll?	这家工厂轧制哪些材料？
+extrusion	The paper discusses polymer extrusion.	论文讨论了聚合物挤出。	The cross section shows an extrusion defect.	横切面显示了一处挤出缺陷。
+extrude	The report names the polymer they extrude.	报告写明了挤出的聚合物。	Does this design extrude a solid or hollow profile?	这个设计挤出实心还是空心型材？
+extruder	The equipment list includes an extruder.	设备清单包括挤出机。	The report compares output from two extruder designs.	报告比较了两种挤出机设计的产出。
+drawing	The report follows changes during wire drawing.	报告追踪了拉丝成型中的变化。	The sample record includes its drawing history.	样品记录包括拉拔历史。
+draw	The wire changed texture after they began to draw it.	金属丝开始拉拔后，织构发生了变化。	Which alloys can this process draw?	这个过程能拉拔哪些合金？
+machining	The image shows marks from machining.	图中显示了机械加工痕迹。	The inspection report documents machining defects.	检验报告记录了机械加工缺陷。
+machine	The workshop records which parts they machine.	车间记录了机械加工哪些部件。	Do they machine this surface after casting?	他们在铸造后对这个表面进行机械加工吗？
+milling	The report compares samples after milling.	报告比较了研磨后的样品。	The milling record includes the equipment identity.	研磨记录包括设备信息。
+mill	The equipment diagram shows a ball mill.	设备图中显示了一台球磨机。	Which mill produced this powder batch?	这批粉末来自哪台研磨设备？
+grinding	The photograph shows changes after grinding.	照片显示了研磨后的变化。	The report distinguishes grinding from polishing.	报告区分了磨削与抛光。
+grind	Did they grind the sample before measuring particle size?	测量粒径前，他们研磨过样品吗？	Which samples do the authors grind before analysis?	作者在分析前研磨哪些样品？
+polishing	The inspection compares surfaces after polishing.	检验比较了抛光后的表面。	The report documents the polishing stage.	报告记录了抛光阶段。
+polish	The photographs show which surfaces they polish.	照片显示了对哪些表面抛光。	Do they polish both faces of the sample?	他们对样品两面都抛光吗？
+annealing	The paper examines changes after annealing.	论文考察了退火后的变化。	The sample record includes its annealing history.	样品记录包括退火历史。
+anneal	Why did they choose to anneal this specimen?	他们为什么选择对这个试样退火？	Which samples does the study anneal?	研究对哪些样品进行退火？
+quenching	The fluorescence data suggest quenching.	荧光数据提示发生了猝灭。	The metallurgical report includes quenching history.	冶金报告包括淬火历史。
+quench	These interactions can quench fluorescence.	这些相互作用能够猝灭荧光。	The report explains why they quench the alloy.	报告解释了为什么对合金淬火。
+tempering	The inspection compares hardness after tempering.	检验比较了回火后的硬度。	The paper distinguishes tempering from annealing.	论文区分了回火与退火。
+temper	The process record explains which parts they temper.	过程记录说明了对哪些部件回火。	Do the authors temper every specimen?	作者对每个试样都回火吗？
+hardening	The report shows evidence of material hardening.	报告给出了材料硬化的证据。	The graph tracks hardening during deformation.	图中追踪了变形期间的硬化。
+harden	The model predicts when the material will harden.	模型预测材料何时硬化。	Does the treatment harden the entire component?	这种处理会使整个部件硬化吗？
+sintering	The paper examines porosity after sintering.	论文考察了烧结后的孔隙率。	The report includes the sintering stage.	报告包括烧结阶段。
+sinter	The process summary says they sinter the powder.	流程摘要说，作者烧结了粉末。	Which materials do these facilities sinter?	这些设施烧结哪些材料？
+calcination	The report compares samples after calcination.	报告比较了煅烧后的样品。	The analysis follows phase changes during calcination.	分析追踪了煅烧期间的物相变化。
+calcine	Is that the product after they calcine the precursor?	那是前驱体煅烧后的产物吗？	Does the proposed process calcine the entire batch?	提出的过程会煅烧整批材料吗？
+pyrolysis	The paper studies products from pyrolysis.	论文研究了热解产物。	The process diagram separates pyrolysis from combustion.	流程图区分了热解与燃烧。
+pyrolyze	The review names materials that they pyrolyze.	综述写明了热解哪些材料。	What changes when the authors pyrolyze the polymer?	作者热解聚合物时发生了什么变化？
+pyrolyse	The review compares what happens when different polymers pyrolyse.	综述比较了不同聚合物热解时的变化。	Does the model pyrolyse all components equally?	模型对所有组分的热解程度相同吗？
+carbonization	The report follows structural changes during carbonization.	报告追踪了碳化期间的结构变化。	The carbonization stage appears in the diagram.	图中出现了碳化阶段。
+carbonisation	The study compares carbonisation products.	研究比较了碳化产物。	The report documents the material's carbonisation history.	报告记录了材料的碳化历史。
+carbonize	The authors explain why they carbonize the precursor.	作者解释了为什么碳化前驱体。	Does the process carbonize the entire structure?	这个过程会使整个结构碳化吗？
+carbonise	Does the structure change when they carbonise it?	对它进行碳化时，结构会改变吗？	Which components does the model carbonise?	模型对哪些组分进行碳化？
+combust	The model predicts how these materials combust.	模型预测这些材料如何燃烧。	Which products form when the samples combust?	样品燃烧时形成哪些产物？
+incineration	The report examines emissions from incineration.	报告考察了焚烧产生的排放。	The diagram includes an incineration stage.	图中包括焚烧阶段。
+incinerate	The facility report lists materials they incinerate.	设施报告列出了焚烧哪些材料。	Does the process incinerate the solid residue?	这个过程会焚烧固体残余物吗？
+hydrolysis	The paper discusses hydrolysis of ester groups.	论文讨论了酯基的水解。	The spectrum provides evidence of hydrolysis.	谱图提供了水解的证据。
+hydrolyze	The model predicts which bonds hydrolyze.	模型预测哪些键会水解。	Do these components hydrolyze at similar rates?	这些组分的水解速率相近吗？
+hydrolyse	The authors compare polymers that hydrolyse.	作者比较了会水解的聚合物。	Does the model allow the ester to hydrolyse?	模型允许这个酯水解吗？
+hydrolytic	The report examines hydrolytic degradation.	报告考察了水解降解。	The material shows different hydrolytic stability.	材料表现出不同的水解稳定性。
+solvolysis	The lesson distinguishes solvolysis from hydrolysis.	课程区分了溶剂解与水解。	The paper proposes a solvolysis pathway.	论文提出了一条溶剂解途径。
+alcoholysis	The mechanism includes an alcoholysis step.	机理包括一个醇解步骤。	Which products support the alcoholysis interpretation?	哪些产物支持醇解的解释？
+esterification	The reaction scheme includes esterification.	反应示意图包括酯化。	The report discusses evidence for esterification.	报告讨论了酯化的证据。
+esterify	The reaction scheme shows which groups they esterify.	反应示意图显示了对哪些基团酯化。	Does the model esterify both functional groups?	模型对两个官能团都酯化吗？
+transesterification	The proposed pathway involves transesterification.	提出的途径涉及酯交换。	The analysis compares products from transesterification.	分析比较了酯交换产生的产物。
+saponification	The lesson explains the saponification reaction.	课程解释了皂化反应。	The report assigns these products to saponification.	报告把这些产物归于皂化。
+saponify	The diagram shows how an ester can saponify.	图示说明酯如何发生皂化。	Does this reaction saponify the starting material?	这个反应会使起始物发生皂化吗？
+neutralization	The report includes a neutralization curve.	报告包含一条中和曲线。	We need to explain the neutralization stage.	我们需要解释中和阶段。
+neutralisation	The lesson compares neutralisation with dilution.	这节课比较中和与稀释。	The neutralisation result is recorded separately.	中和结果单独记录。
+neutralize	The model predicts how the acid will neutralize the base.	模型预测酸将如何中和碱。	Which species can neutralize this charge?	哪种物种可以中和这个电荷？
+neutralise	The equation shows enough acid to neutralise the base.	方程显示这些酸足以中和碱。	Can this substance neutralise the acid in the model?	在这个模型中，该物质能中和酸吗？
+neutral	The molecule is electrically neutral overall.	这个分子整体呈电中性。	The solution is described as neutral in the report.	报告将这个溶液描述为酸碱中性。
+acidity	The acidity changed during storage.	储存期间酸度发生了变化。	How did you measure the acidity?	你是怎样测量酸度的？
+alkalinity	The water report includes an alkalinity result.	水样报告包含碱度结果。	Do not confuse alkalinity with pH.	不要把碱度与酸碱度指标混淆。
+basicity	The substituent affects the molecule's basicity.	这个取代基会影响分子的碱性。	Compare the basicity of these two compounds.	比较这两个化合物的碱性。
+acidification	The study tracks acidification over time.	这项研究跟踪酸化随时间的变化。	The acidification trend needs further explanation.	酸化趋势需要进一步解释。
+acidify	Why does the solution acidify during storage?	这个溶液为何在储存期间酸化？	The model predicts that dissolved gas can acidify the water.	模型预测溶解的气体会使水酸化。
+buffer	Which buffer was used for this measurement?	这次测量使用了哪种缓冲液？	The buffer composition is missing from the report.	报告中缺少缓冲液组成。
+buffering	The graph shows the solution's buffering behavior.	图表显示了溶液的缓冲行为。	Buffering reduces the size of the observed pH change.	缓冲作用减小了观测到的酸碱度变化幅度。
+buffered	The sample was tested in a buffered solution.	样品在缓冲溶液中接受了检测。	Is the reference solution buffered?	参照溶液是缓冲溶液吗？
+ph	The pH reading drifted during the measurement.	测量期间，酸碱度读数发生了漂移。	Include the measurement temperature beside the pH result.	在酸碱度结果旁注明测量温度。
+pka	The pKa value depends on the reported conditions.	酸解离常数负对数的数值取决于所报告的条件。	Where did this pKa estimate come from?	这个酸解离常数负对数估计值来自哪里？
+pkb	The table lists a pKb value for the base.	表格列出了这种碱的碱解离常数负对数。	Check the source of the pKb value.	检查这个碱解离常数负对数的来源。
+dissociation	The diagram illustrates dissociation into ions.	图示说明了物质解离成离子的过程。	The dissociation constant is given in the appendix.	附录给出了解离常数。
+dissociate	Does this salt dissociate in water?	这种盐在水中会解离吗？	The complex can dissociate under the studied conditions.	在研究条件下，这个配位化合物会解离。
+ionization	The spectrum depends on the ionization method.	谱图会受到电离方法的影响。	State the ionization mode in the report.	在报告中注明电离模式。
+ionisation	The instrument log records the ionisation settings.	仪器日志记录了电离设置。	The ionisation method differs between these studies.	这些研究采用的电离方法不同。
+ionize	The instrument can ionize the sample molecules.	仪器可以使样品分子电离。	How readily does this compound ionize?	这个化合物有多容易电离？
+ionise	The model explains why these molecules ionise.	模型解释了这些分子为何电离。	Can the detector measure species that do not ionise?	检测器能测量不电离的物种吗？
+ionized	The signal comes from the ionized species.	信号来自已电离的物种。	What fraction of the sample is ionized?	样品中有多大比例已发生电离？
+ionised	The ionised species appears in the mass spectrum.	已电离的物种出现在质谱中。	The model includes both ionised and neutral molecules.	模型同时包含已电离和中性分子。
+cation	The cation carries a positive charge.	这个阳离子带正电荷。	Which cation is present in the sample?	样品中含有哪种阳离子？
+anion	The anion is identified in the diagram.	图中标出了这个阴离子。	The analysis found more than one anion.	分析发现了不止一种阴离子。
+cationic	The coating contains a cationic polymer.	涂层含有一种阳离子聚合物。	How does the cationic group affect the surface?	阳离子基团如何影响表面？
+anionic	The formulation includes an anionic surfactant.	配方中包含一种阴离子表面活性剂。	The anionic group is marked on the structure.	结构图中标出了阴离子基团。
+zwitterion	This structure represents a zwitterion.	这个结构代表一种两性离子。	A zwitterion has both positive and negative charges.	两性离子同时带有正、负电荷。
+zwitterionic	The material has a zwitterionic surface.	这种材料具有两性离子表面。	We are comparing two zwitterionic coatings.	我们正在比较两种两性离子涂层。
+amphoteric	The report describes this oxide as amphoteric.	报告将这种氧化物描述为两性物质。	An amphoteric substance can show acidic and basic behavior.	两性物质可以表现出酸性和碱性。
+amphiphilic	The amphiphilic molecule has distinct hydrophilic and hydrophobic parts.	这个两亲分子具有不同的亲水与疏水部分。	The diagram shows an amphiphilic assembly.	图中显示了一种两亲分子组装体。
+salt	The residue contains a crystalline salt.	残留物含有一种结晶盐。	Which salt is named in the material specification?	材料规格中列明的是哪种盐？
+saline	The test used a saline reference solution.	测试使用了含盐参照溶液。	The sample came from a saline environment.	样品来自含盐环境。
+salinity	The water samples differ in salinity.	这些水样的盐度不同。	Include the salinity measurement in the summary.	在摘要中加入盐度测量结果。
+brine	The brine sample has a separate label.	浓盐水样品贴有单独的标签。	The report compares brine with fresh water.	报告比较了浓盐水与淡水。
+solvation	The simulation includes solvent effects and solvation.	模拟考虑了溶剂效应和溶剂化。	The solvation shell is shown around the ion.	图中显示了离子周围的溶剂化层。
+solvate	The crystal was identified as a solvate.	这个晶体被鉴定为溶剂化物。	The solvate contains solvent molecules in its structure.	这个溶剂化物的结构中含有溶剂分子。
+solubility	The solubility data include the solvent and temperature.	溶解度数据包含溶剂和温度信息。	We cannot compare solubility without matching the conditions.	条件不一致时，我们无法比较溶解度。
+insoluble	The report describes the residue as insoluble in water.	报告称这个残留物不溶于水。	An insoluble particle remains visible in the sample.	样品中仍可看到一个不溶颗粒。
+miscible	The two liquids are miscible under these conditions.	在这些条件下，两种液体可以混溶。	Are the solvents completely miscible?	这两种溶剂完全混溶吗？
+immiscible	The sample contains two immiscible liquid layers.	样品包含两层不混溶液体。	The diagram shows an immiscible solvent pair.	图中显示了一对不混溶溶剂。
+miscibility	The study examines miscibility across different compositions.	这项研究考察不同组成下的混溶性。	The miscibility result differs from the earlier report.	混溶性结果与之前的报告不同。
+immiscibility	Immiscibility explains the two separate liquid layers.	不混溶性解释了两层液体分开的原因。	The model predicts immiscibility in this mixture.	模型预测这个混合物存在不混溶性。
+dissolve	Does the polymer dissolve in this solvent?	这种聚合物溶于这个溶剂吗？	The crystals did not dissolve during the observation.	观察期间，这些晶体没有溶解。
+solute	The solute is named in the sample record.	样品记录中列明了溶质。	Which component acts as the solute here?	这里哪个组分是溶质？
+concentrated	The concentrated sample needs a clear label.	高浓度样品需要明确标识。	The report compares concentrated and dilute solutions.	报告比较了浓溶液与稀溶液。
+concentrate	The process is designed to concentrate the solution.	这个工艺用于提高溶液浓度。	Can this separation method concentrate the target compound?	这个分离方法能提高目标化合物的浓度吗？
+molarity	The table gives molarity in moles per liter of solution.	表格以每升溶液的摩尔数表示物质的量浓度。	Do not replace molarity with molality in the calculation.	计算中不要把物质的量浓度替换为质量摩尔浓度。
+molality	Molality uses the mass of the solvent, not solution volume.	质量摩尔浓度使用溶剂质量，而不是溶液体积。	Please check the units of this molality value.	请检查这个质量摩尔浓度数值的单位。
+molar	The calculation uses the compound's molar mass.	计算使用了这个化合物的摩尔质量。	The molar ratio is given in the equation.	方程中给出了摩尔比。
+mole	The mole is a unit of amount of substance.	摩尔是物质的量单位。	The worksheet asks for the mass of one mole.	练习题要求计算一摩尔物质的质量。
+molecularity	Molecularity describes an elementary reaction step.	分子数描述的是基元反应步骤。	Do not infer molecularity from the overall equation alone.	不要仅凭总反应方程推断基元反应分子数。
+mol	Use mol as the unit symbol in this column.	这一栏使用摩尔的单位符号。	The equation expresses the amount in mol.	方程以摩尔表示物质的量。
+ppm	The report gives the concentration in ppm.	报告用百万分之一表示浓度。	State whether this ppm value is based on mass or volume.	注明这个百万分之一数值按质量还是体积计算。
+ppb	The instrument reports trace levels in ppb.	仪器以十亿分之一报告痕量水平。	The ppb result needs a clearly stated basis.	这个十亿分之一结果需要明确计算基准。
+percent	The result is expressed as percent by mass.	结果用质量百分比表示。	Does this percent value refer to the whole sample?	这个百分比数值针对的是整个样品吗？
+percentage	The percentage changed after the data correction.	数据修正后，百分比改变了。	Include the basis of the percentage calculation.	注明百分比的计算基准。
+fraction	The collected fraction contains the target compound.	收集的组分中含有目标化合物。	This fraction has a different spectrum.	这个馏分的谱图不同。
+ratio	The ratio of the two components is shown in the table.	表中列出了两个组分的比例。	Is the ratio based on mass or amount of substance?	这个比例按质量还是物质的量计算？
+mass	The mass measurement includes its uncertainty.	质量测量结果包含不确定度。	The sample mass is missing from the record.	记录中缺少样品质量。
+weight	The label uses weight to mean mass here.	这里的标签用重量表示质量。	We need to clarify what weight means in this report.	我们需要说明报告中的重量具体指什么。
+volume	The volume reading is recorded in milliliters.	体积读数以毫升记录。	The sample volume changed during storage.	样品在储存期间体积发生了变化。
+volumetric	The method uses a volumetric flask.	这个方法使用容量瓶。	The volumetric analysis results are attached.	附件中有容量分析结果。
+gravimetric	The report includes a gravimetric determination.	报告包含一次重量法测定。	Which gravimetric method was used for the residue?	残留物采用哪种重量分析方法？
+titration	The titration curve is shown on the next page.	下一页显示了滴定曲线。	The titration result needs a repeat measurement.	这个滴定结果需要复测。
+titrate	The protocol explains which sample to titrate.	方案说明了要滴定哪个样品。	Who is trained to titrate this type of sample?	谁受过这类样品滴定的培训？
+titrant	The titrant identity is listed in the method.	方法中列明了滴定剂名称。	Check the titrant record against the report.	对照报告核对滴定剂记录。
+indicator	The indicator changes color near the endpoint.	指示剂在终点附近变色。	Which indicator was used in the analysis?	分析使用了哪种指示剂？
+endpoint	The endpoint was difficult to identify.	这个滴定终点不容易识别。	Mark the endpoint on the titration curve.	在滴定曲线上标出终点。
+equivalence	The diagram marks the equivalence point.	图中标出了化学计量等当点。	The endpoint may differ from the equivalence point.	滴定终点可能与化学计量等当点不同。
+equivalent	The calculation uses the equivalent amount of reagent.	计算使用了试剂的等当量。	Explain what equivalent means in this reaction.	解释这个反应中的等当关系。
+burette	The burette reading is written in the notebook.	滴定管读数写在实验记录本里。	This burette needs a maintenance check.	这支滴定管需要维护检查。
+buret	The buret is included in the equipment list.	设备清单中包含滴定管。	The report notes a problem with the buret.	报告记录了滴定管的问题。
+pipette	The pipette has a calibration label.	移液器上贴有校准标签。	Which pipette was used for this sample?	这个样品使用了哪支移液器？
+pipet	The pipet is stored in the marked holder.	移液管放在有标识的支架里。	The pipet number is missing from the record.	记录中缺少移液管编号。
+micropipette	The micropipette is due for calibration.	这个微量移液器到校准期了。	The equipment record identifies the micropipette used.	设备记录注明了所用的微量移液器。
+flask	The flask label matches the sample record.	烧瓶标签与样品记录一致。	There is a crack in this flask.	这个烧瓶有裂纹。
+beaker	The beaker contains the labeled reference sample.	烧杯里放着已标记的参照样品。	The beaker size is listed in the method.	方法中列明了烧杯规格。
+cuvette	The cuvette has a scratch on its optical surface.	比色皿的光学表面有一道划痕。	Which cuvette was used for the blank measurement?	空白测量使用了哪个比色皿？
+vial	The vial number appears on the chromatogram.	色谱图上显示了样品小瓶编号。	This vial belongs to a different batch.	这个小瓶属于另一个批次。
+ampoule	The ampoule label is difficult to read.	安瓿瓶标签不容易看清。	The sample arrived in a sealed ampoule.	样品装在密封安瓿瓶中送达。
+ampule	The ampule is listed in the sample inventory.	样品库存清单中列明了这个安瓿瓶。	We found a damaged ampule in the package.	我们在包裹里发现了一个受损安瓿瓶。
+funnel	The funnel is missing from the equipment tray.	器材盘中少了漏斗。	Which funnel does the approved method specify?	获批的方法指定哪种漏斗？
+crucible	The crucible has a recorded identification number.	坩埚的识别编号已经记录。	The result refers to the mass of the empty crucible.	结果涉及空坩埚的质量。
+desiccator	The sample was stored in a desiccator.	样品曾存放在干燥器中。	The desiccator lid needs inspection.	干燥器盖需要检查。
+desiccant	The packaging includes a desiccant packet.	包装中有一包干燥剂。	The desiccant type is stated on the label.	标签上注明了干燥剂种类。
+balance	The balance calibration is still valid.	这个实验天平仍在校准有效期内。	The balance log shows an unstable reading.	天平日志显示读数不稳定。
+weigh	Who will weigh the reference sample?	谁来称量参照样品？	The method says to weigh the sample separately.	方法要求单独称量样品。
+weighing	The weighing record includes the container mass.	称量记录包含容器质量。	A draft near the balance affected the weighing.	天平附近的气流影响了称量。
+scale	The study began at laboratory scale.	这项研究从实验室规模开始。	The scale reading differs from the recorded mass.	称量器具的读数与记录的质量不同。
+thermometer	The thermometer has a damaged display.	温度计的显示屏损坏了。	The report identifies the thermometer used.	报告注明了所用的温度计。
+thermocouple	The thermocouple signal was unstable.	热电偶信号不稳定。	Check the thermocouple model in the instrument record.	查看仪器记录中的热电偶型号。
+manometer	The manometer shows a pressure difference.	压力计显示了压差。	The manometer reading is missing from the log.	日志中缺少压力计读数。
+barometer	The barometer records atmospheric pressure.	气压计记录大气压力。	The barometer data are included in the weather record.	气象记录中包含气压计数据。
+spectrometer	The spectrometer is booked for tomorrow.	谱仪已经预约在明天使用。	Which spectrometer produced this dataset?	这组数据由哪台谱仪产生？
+spectrometry	The study uses mass spectrometry to identify compounds.	这项研究使用质谱测定来鉴定化合物。	The spectrometry method is described in the appendix.	附录描述了谱测定方法。
+spectroscopy	The spectroscopy results support the proposed structure.	光谱分析结果支持所提出的结构。	We need spectroscopy data from the reference material.	我们需要参照材料的光谱分析数据。
+spectroscopic	The spectroscopic evidence is not conclusive.	光谱证据还不足以得出确定结论。	Compare the spectroscopic features of both samples.	比较两个样品的光谱特征。
+spectrophotometer	The spectrophotometer is waiting for calibration.	分光光度计正在等待校准。	The spectrophotometer exported the raw readings.	分光光度计导出了原始读数。
+spectrophotometry	The concentration was estimated using spectrophotometry.	浓度通过分光光度测定进行估计。	The spectrophotometry report includes the reference spectrum.	分光光度测定报告包含参照光谱。
+spectrum	The spectrum shows a broad feature here.	光谱在这里显示了一个宽的特征带。	This spectrum belongs to the control sample.	这张谱图属于对照样品。
+spectra	The spectra were collected on different days.	这些谱图是在不同日期采集的。	We need to compare the spectra on the same scale.	我们需要按相同比例比较这些谱图。
+spectral	The spectral data include the wavelength range.	光谱数据包含波长范围。	The spectral feature remains visible after processing.	处理后，这个光谱特征仍然可见。
+wavelength	The wavelength axis needs a unit label.	波长轴需要标注单位。	At which wavelength was the measurement reported?	报告的测量结果对应哪个波长？
+wavenumber	The wavenumber axis is shown in inverse centimeters.	波数轴以厘米的倒数表示。	Check the wavenumber assigned to this band.	检查这个谱带对应的波数。
+frequency	The model relates frequency to wavelength.	模型说明了频率与波长的关系。	The reported frequency needs a unit.	报告的频率需要注明单位。
+intensity	The signal intensity changed between runs.	不同运行之间，信号强度改变了。	Compare the intensity with the reference measurement.	把强度与参照测量比较。
+peak	The peak appears at the same position.	谱峰出现在同一个位置。	This peak overlaps a weaker signal.	这个谱峰与较弱的信号重叠。
+background	The background signal is higher than usual.	背景信号比平时高。	We recorded the background separately from the sample.	我们将背景与样品分开记录。
+baseline	The baseline drifts across the measurement.	测量过程中，基线发生了漂移。	Show the baseline correction in the processing notes.	在处理记录中说明基线校正。
+noise	The noise makes the weak peak difficult to see.	噪声让较弱的谱峰不容易看清。	Is the noise similar in the reference data?	参照数据中的噪声相似吗？
+signal	The signal is below the method's detection limit.	信号低于这个方法的检出限。	The signal increased in the second measurement.	第二次测量的信号增强了。
+transmittance	The graph reports transmittance as a percentage.	图表以百分比报告透光率。	The transmittance result differs from the earlier measurement.	透光率结果与之前的测量不同。
+transmission	The coating affects light transmission.	涂层会影响光透射。	We measured transmission through the finished film.	我们测量了成品薄膜的透射情况。
+transmit	Can this material transmit light in the visible range?	这个材料能透射可见光吗？	The film does not transmit much light at this wavelength.	这个薄膜在该波长下透射的光不多。
+reflectance	The reflectance spectrum is included in the report.	报告包含反射率光谱。	The surface treatment changed the reflectance.	表面处理改变了反射率。
+reflection	The reflection comes from the coated surface.	反射来自涂层表面。	The diagram distinguishes reflection from refraction.	图示区分了反射与折射。
+reflect	The particles reflect part of the incident light.	这些颗粒反射了一部分入射光。	How strongly does this surface reflect light?	这个表面反射光的能力有多强？
+refraction	The change in direction is caused by refraction.	方向变化由折射引起。	The drawing illustrates refraction at the interface.	这张图说明了界面处的折射。
+refractive	The refractive index is listed in the datasheet.	数据表中列明了折射率。	We are comparing the refractive properties of two films.	我们正在比较两种薄膜的折射特性。
+scattering	The particles increase light scattering.	这些颗粒增强了光散射。	The scattering data need a background correction.	散射数据需要背景校正。
+scatter	The suspended particles scatter the light.	悬浮颗粒会散射光。	Does this coating scatter light differently after aging?	老化后，这个涂层的散射光行为会改变吗？
+diffraction	The diffraction pattern supports the proposed crystal structure.	衍射图谱支持所提出的晶体结构。	The report includes X-ray diffraction data.	报告包含 X 射线衍射数据。
+diffract	Crystals can diffract X-rays.	晶体可以使 X 射线发生衍射。	How does the sample diffract the incident beam?	这个样品如何使入射束发生衍射？
+fluorescence	The fluorescence signal faded during observation.	观察期间，荧光信号减弱了。	The reference sample shows no detectable fluorescence.	参照样品没有可检测的荧光。
+fluorescent	The fluorescent label identifies the marked region.	荧光标记标出了对应区域。	We compared the fluorescent signal with the control.	我们将荧光信号与对照进行了比较。
+phosphorescence	The study measures phosphorescence after excitation ends.	这项研究测量激发结束后的磷光。	The phosphorescence lifetime is included in the results.	结果中包含磷光寿命。
+phosphorescent	The phosphorescent coating continues to glow briefly.	这个磷光涂层会短暂持续发光。	The supplier provided a phosphorescent material sample.	供应商提供了一个磷光材料样品。
+luminescence	The detector records the sample's luminescence.	检测器记录样品的发光。	Which process produces the observed luminescence?	观测到的发光由哪个过程产生？
+luminescent	The luminescent material needs further characterization.	这种发光材料需要进一步表征。	The film contains luminescent particles.	薄膜含有发光颗粒。
+chemiluminescence	The signal is produced by chemiluminescence.	这个信号由化学发光产生。	The chemiluminescence result is weaker in the control.	对照中的化学发光结果较弱。
+photoluminescence	The photoluminescence spectrum is on the next slide.	下一张幻灯片是光致发光光谱。	We need photoluminescence data for the reference material.	我们需要参照材料的光致发光数据。
+quencher	The quencher reduces the measured fluorescence.	猝灭剂降低了测得的荧光。	Which compound acts as the quencher here?	这里哪个化合物起猝灭剂作用？
+chromatography	The sample was analyzed by chromatography.	样品经过了色谱分析。	The chromatography results show an additional component.	色谱分析结果显示了一个额外组分。
+chromatographic	The chromatographic method is described in the report.	报告描述了色谱方法。	This chromatographic peak appears in the blank too.	这个色谱峰也出现在空白样中。
+chromatogram	The chromatogram has two overlapping peaks.	色谱图中有两个重叠的峰。	Attach the original chromatogram to the report.	在报告中附上原始色谱图。
+chromatograph	The chromatograph is unavailable during maintenance.	色谱仪维护期间不能使用。	Which chromatograph generated this result?	这个结果由哪台色谱仪产生？
+elution	The elution profile differs between the samples.	这些样品的洗脱曲线不同。	The report describes the elution sequence.	报告描述了洗脱顺序。
+elute	The compounds elute at different times.	这些化合物在不同时间洗脱。	Why does this component elute earlier than expected?	为什么这个组分比预期更早洗脱？
+eluent	The eluent composition is listed in the method.	方法中列明了洗脱液组成。	Do not confuse the eluent with the collected eluate.	不要把洗脱液与收集到的洗脱流出液混淆。
+eluate	The eluate contains material from the column.	洗脱流出液含有从色谱柱出来的物质。	The collected eluate has a separate sample number.	收集的洗脱流出液有单独的样品编号。
+retention	The retention time changed between runs.	不同运行之间，保留时间改变了。	Explain the retention behavior of the reference compound.	解释参照化合物的保留行为。
+resolution	The resolution between these peaks is poor.	这些谱峰之间的分离度不佳。	The report gives a resolution value for the peak pair.	报告给出了这对谱峰的分离度。
+separation	The separation leaves two visible components.	分离后能看到两个组分。	We need to evaluate the separation efficiency.	我们需要评估分离效率。
+separate	Can the method separate the two compounds?	这个方法能分离这两个化合物吗？	The study aims to separate the target from impurities.	这项研究旨在将目标物与杂质分离。
+partition	How does the compound partition between the two phases?	这个化合物如何在两相之间分配？	The model predicts where the solute will partition.	模型预测溶质会分配到哪一相。
+partitioning	The study compares partitioning in different solvent pairs.	这项研究比较不同溶剂对中的分配过程。	The partitioning result depends on the chemical species present.	分配结果取决于存在的化学物种。
+fractionation	The fractionation produced samples with different compositions.	分级分离得到了组成不同的样品。	The report explains the purpose of fractionation.	报告解释了分级分离的目的。
+fractionate	The method can fractionate the polymer sample.	这个方法能对聚合物样品进行分级分离。	How well does the process fractionate the mixture?	这个过程分级分离混合物的效果如何？
+fractional	The diagram shows a fractional distillation column.	图示显示了一个分馏柱。	The fractional distillation data are incomplete.	分馏数据还不完整。
+extract	The extract contains several dissolved compounds.	萃取物含有几种溶解的化合物。	Can the method extract the target from this matrix?	这个方法能从该基质中萃取目标物吗？
+extractant	The extractant is named in the process description.	工艺说明中列明了萃取剂。	The study compares the selectivity of each extractant.	这项研究比较了各萃取剂的选择性。
+raffinate	The raffinate remains after the extraction stage.	萃取阶段后留下了萃余液。	We need analytical data for the raffinate.	我们需要萃余液的分析数据。
+extractive	The paper describes an extractive separation method.	论文描述了一种萃取分离方法。	Which solvent was studied for extractive distillation?	研究了哪种用于萃取精馏的溶剂？
+distill	The approved process can distill the solvent mixture.	获批工艺可以蒸馏这个溶剂混合物。	The report explains why the team chose to distill it.	报告解释了团队为何选择蒸馏它。
+distil	The plant uses a closed system to distil the solvent.	工厂使用封闭系统蒸馏溶剂。	Can this process distil the mixture into useful fractions?	这个工艺能把混合物蒸馏成有用的馏分吗？
+distillate	The distillate has its own sample record.	馏出液有单独的样品记录。	The analysis found an impurity in the distillate.	分析在馏出液中发现了一种杂质。
+reflux	The diagram includes a reflux condenser.	图中包含回流冷凝器。	The report does not state the reflux duration.	报告没有注明回流时长。
+rectification	The rectification column appears in the process diagram.	工艺图中显示了精馏塔。	The study evaluates the efficiency of rectification.	这项研究评估了精馏效率。
+rectify	The column is designed to rectify the mixture.	这个塔用于精馏该混合物。	Can the process rectify this feed into separate products?	这个工艺能通过精馏将原料分成不同产品吗？
+azeotrope	The mixture forms an azeotrope under the reported conditions.	在报告的条件下，这个混合物形成共沸物。	The diagram marks the azeotrope composition.	图中标出了共沸物组成。
+azeotropic	The study compares azeotropic and non-azeotropic mixtures.	这项研究比较共沸和非共沸混合物。	The azeotropic behavior needs to be included in the model.	模型需要考虑共沸行为。
+fractionating	The fractionating column is shown in the photograph.	照片中显示了分馏柱。	The equipment list specifies a fractionating column.	设备清单中指定了分馏柱。
+separatory	The separatory funnel is listed in the method.	方法中列明了分液漏斗。	The separatory funnel has a damaged stopper.	分液漏斗的塞子损坏了。
+organic	The report identifies an organic compound.	报告鉴定出了一种有机化合物。	We need an organic chemistry reference for this structure.	我们需要这个结构的有机化学参考资料。
+inorganic	The residue contains inorganic material.	残留物中含有无机物。	The inorganic analysis results arrived today.	无机分析结果今天到了。
+organometallic	The study examines an organometallic catalyst.	这项研究考察了一种有机金属催化剂。	The organometallic compound is identified in the paper.	论文中注明了这个有机金属化合物。
+coordination	The diagram shows coordination around the metal center.	图中显示了金属中心周围的配位情况。	The coordination environment changes in the new complex.	在新的配位化合物中，配位环境发生了变化。
+coordinate	Can this ligand coordinate through both donor atoms?	这个配体能通过两个供体原子配位吗？	The model shows how the ligand can coordinate to the metal.	模型显示了配体如何与金属配位。
+complex	The complex contains a metal center and ligands.	这个配位化合物含有金属中心和配体。	We need more evidence for the proposed complex.	我们需要更多证据支持所提出的配位化合物。
+complexation	The color change may indicate complexation.	变色可能表明发生了络合。	The study measures complexation under different conditions.	这项研究测量不同条件下的络合情况。
+ligand	The ligand has two possible donor atoms.	这个配体有两个可能的供体原子。	Which ligand is bound to the metal center?	哪个配体与金属中心结合？
+ligation	The diagram shows ligation at the metal center.	图中显示了金属中心处的配体结合。	The paper discusses ligation by the donor group.	论文讨论了供体基团的配位结合。
+chelation	The structure suggests chelation by two donor atoms.	这个结构表明两个供体原子参与螯合。	The report distinguishes chelation from single-site binding.	报告区分了螯合与单一位点结合。
+chelate	The compound forms a stable chelate in this study.	在这项研究中，化合物形成了稳定螯合物。	Can this ligand chelate the metal ion?	这个配体能螯合该金属离子吗？
+chelator	The chelator is identified in the formulation record.	配方记录中注明了螯合剂。	The reference study used a different chelator.	参照研究使用了另一种螯合剂。
+chelatable	The report distinguishes chelatable metal from other forms.	报告区分了可被螯合的金属与其他形态。	How was the chelatable fraction measured?	可被螯合的部分是怎样测量的？
+chelating	The molecule contains a chelating group.	这个分子含有一个螯合基团。	The chelating behavior differs between the two ligands.	这两个配体的螯合行为不同。
+geometry	The proposed geometry fits the available data.	提出的几何形状符合现有数据。	The molecule's geometry is shown in the model.	模型显示了分子的几何形状。
+linear	The model assumes a linear polymer chain.	模型假设聚合物链为线形。	Compare the linear polymer with the branched sample.	把线形聚合物与支化样品进行比较。
+bent	The molecule has a bent shape.	这个分子呈弯曲形。	The bent geometry is visible in the model.	模型中可以看到弯曲的几何形状。
+tetrahedral	The model shows a tetrahedral arrangement.	模型显示了四面体排列。	Which atoms define the tetrahedral geometry?	哪些原子决定了四面体几何形状？
+octahedral	The complex is described as octahedral.	这个配位化合物被描述为八面体形。	The data support an octahedral coordination environment.	数据支持八面体配位环境。
+trigonal	The structure has a trigonal planar center.	这个结构具有三角平面形中心。	The diagram labels the trigonal arrangement.	图中标出了三角形排列。
+planar	The ring is nearly planar in this model.	在这个模型中，环接近平面形。	Does the structure remain planar after substitution?	取代后，结构仍保持平面形吗？
+pyramidal	The proposed structure is trigonal pyramidal.	提出的结构为三角锥形。	The pyramidal geometry differs from the planar reference.	锥形几何结构与平面形参照结构不同。
+symmetry	The crystal symmetry is stated in the report.	报告注明了晶体对称性。	The model needs to preserve the molecule's symmetry.	模型需要保留分子的对称性。
+symmetric	The structure is symmetric about this axis.	这个结构关于这条轴对称。	The symmetric arrangement explains the repeated pattern.	对称排列解释了重复图案。
+symmetrical	The model shows a symmetrical molecule.	模型显示了一个对称分子。	Is the coordination arrangement symmetrical?	配位排列是对称的吗？
+asymmetric	The molecule has an asymmetric substitution pattern.	这个分子的取代方式不对称。	The asymmetric structure is shown on the right.	不对称结构显示在右侧。
+asymmetrical	The crystal has an asymmetrical local environment.	这个晶体的局部环境不对称。	The asymmetrical model fits the observations better.	不对称模型更符合观测结果。
+chirality	The analysis examines the compound's chirality.	这次分析考察了化合物的手性。	The diagram explains why chirality matters here.	图示解释了手性在这里为何重要。
+chiral	The separation uses a chiral stationary phase.	这个分离过程采用手性固定相。	The molecule is chiral despite its simple appearance.	尽管外观简单，这个分子仍具有手性。
+achiral	The reference compound is achiral.	参照化合物没有手性。	An achiral molecule can be superimposed on its mirror image.	非手性分子可以与其镜像重合。
+enantiomer	The diagram shows one enantiomer of the compound.	图中显示了这个化合物的一个对映异构体。	Which enantiomer is identified in the report?	报告鉴定出的是哪个对映异构体？
+enantiomeric	The result includes an enantiomeric ratio.	结果包含对映异构体比例。	We need a method to assess enantiomeric purity.	我们需要一种评估对映异构体纯度的方法。
+diastereomer	The second structure is a diastereomer of the first.	第二个结构是第一个结构的非对映异构体。	The sample contains more than one diastereomer.	样品中含有不止一种非对映异构体。
+diastereomeric	The reaction produced a diastereomeric mixture.	这个反应产生了非对映异构体混合物。	The diastereomeric ratio is reported separately.	非对映异构体比例单独报告。
+monomer	The monomer identity is stated in the material record.	材料记录中注明了单体名称。	The analysis detected residual monomer.	分析检测到了残留单体。
+oligomer	The oligomer contains a small number of repeating units.	这个低聚物含有少量重复单元。	The oligomer fraction has a different mass distribution.	低聚物部分具有不同的质量分布。
+polymerization	The report describes the polymerization mechanism.	报告描述了聚合机理。	The polymerization data include conversion over time.	聚合数据包含转化率随时间的变化。
+copolymer	The copolymer contains two types of repeating units.	这个共聚物含有两种重复单元。	The supplier sent a new copolymer sample.	供应商寄来了一个新的共聚物样品。
+polyethylene	The packaging is made from polyethylene.	这个包装由聚乙烯制成。	Which grade of polyethylene was tested?	检测的是哪个牌号的聚乙烯？
+polypropylene	The polypropylene sample has a supplier label.	聚丙烯样品上有供应商标签。	We need mechanical data for this polypropylene grade.	我们需要这个聚丙烯牌号的力学数据。
+polyurethane	The coating contains polyurethane.	涂层含有聚氨酯。	The polyurethane film was compared with the reference material.	这个聚氨酯薄膜与参照材料进行了比较。
+polyester	The polyester fibers were examined under a microscope.	聚酯纤维接受了显微观察。	The report identifies the polyester used in the fabric.	报告注明了织物所用的聚酯。
+polyamide	The part is molded from polyamide.	这个零件由聚酰胺成型。	The polyamide specification includes moisture-related properties.	聚酰胺规格包含与水分有关的性能。
+silicone	The seal is made from silicone.	这个密封件由有机硅材料制成。	Silicone is a polymer material, not elemental silicon.	有机硅材料是聚合物材料，并非单质硅。
+graphene	The study examines a graphene coating.	这项研究考察了石墨烯涂层。	The graphene layer is identified in the image.	图像中标出了石墨烯层。
+graphite	The electrode contains graphite.	电极含有石墨。	The graphite sample has a different particle size.	这个石墨样品的颗粒大小不同。
+aluminium	The aluminium sample was supplied as a sheet.	铝样品以板材形式提供。	The report compares aluminium with a coated reference.	报告比较了铝与涂层参照样品。
+sulphur	The analysis detected sulphur in the residue.	分析在残留物中检测到了硫。	The sulphur result is listed with the other elements.	硫的结果与其他元素一起列出。
+hydrogel	The hydrogel retains water in its network.	水凝胶在其网络中保留水分。	The hydrogel sample changed shape during storage.	水凝胶样品在储存期间形状发生了变化。
+elastomer	The elastomer returns toward its original shape after stretching.	拉伸后，这个弹性体趋向恢复原来的形状。	We need fatigue data for the elastomer.	我们需要这个弹性体的疲劳数据。
+thermoplastic	The part is made from a thermoplastic material.	这个零件由热塑性材料制成。	The thermoplastic grade is listed on the supplier sheet.	供应商资料列明了热塑性材料牌号。
+thermoset	The cured material is a thermoset.	固化后的材料是热固性材料。	The thermoset sample fractured during the mechanical test.	热固性样品在力学测试中断裂了。
+semiconductor	The semiconductor layer is shown in the cross-section.	截面图中显示了半导体层。	The study measures the semiconductor's electrical properties.	这项研究测量了半导体的电学性能。
+nanoparticle	The image shows a single nanoparticle.	图像显示了一个纳米颗粒。	The nanoparticle size distribution is included in the report.	报告包含纳米颗粒的粒径分布。
+pvc	The pipe sample is made from PVC.	这个管材样品由聚氯乙烯制成。	The PVC formulation differs between the two suppliers.	两家供应商的聚氯乙烯配方不同。
+pet	The bottle is made from PET.	这个瓶子由聚对苯二甲酸乙二酯制成。	The PET sample came from recycled packaging.	这个聚对苯二甲酸乙二酯样品来自再生包装材料。
+ptfe	The seal contains PTFE.	这个密封件含有聚四氟乙烯。	Check the PTFE grade in the material specification.	查看材料规格中的聚四氟乙烯牌号。
+pmma	The transparent sheet is PMMA.	这块透明板材是聚甲基丙烯酸甲酯。	The PMMA sample has scratches on its surface.	聚甲基丙烯酸甲酯样品表面有划痕。
+pva	PVA means polyvinyl alcohol in this report.	这份报告中的缩写指聚乙烯醇。	The PVA film was tested for water uptake.	这个聚乙烯醇薄膜接受了吸水测试。
+abs	The housing is molded from ABS.	外壳由丙烯腈、丁二烯与苯乙烯共聚物成型。	We compared two ABS grades for impact performance.	我们比较了两个该共聚物牌号的冲击性能。
+peek	The PEEK sample is identified by its batch number.	聚醚醚酮样品通过批号识别。	The supplier provided mechanical data for this PEEK grade.	供应商提供了这个聚醚醚酮牌号的力学数据。
+silicon	The wafer is made from silicon.	这个晶圆由硅制成。	The silicon sample should not be confused with silicone.	不要把硅样品与有机硅材料混淆。
+silica	The coating contains silica particles.	涂层含有二氧化硅颗粒。	The silica content is given in the material report.	材料报告列明了二氧化硅含量。
+cellulose	The fibers contain cellulose.	这些纤维含有纤维素。	The study compares untreated cellulose with the modified sample.	这项研究比较了未处理纤维素与改性样品。
+biodegradable	The label describes the material as biodegradable.	标签将这个材料描述为可生物降解。	Ask which test supports the biodegradable claim.	询问哪项测试支持可生物降解的说法。
+biocompatibility	The biocompatibility assessment considers the finished device.	生物相容性评估会考虑最终成品器械。	We cannot infer biocompatibility from appearance alone.	不能仅凭外观推断生物相容性。

@@ -24,7 +24,7 @@
 
 `codes_test.go` 覆盖站长生成、登录兑换、月卡30天/年卡365天/永久权益、重启及重复使用拒绝。`community_test.go` 覆盖主页保存、入群信息的权限隔离、过期权益和不安全链接拒绝。`scripts/qa_smoke.py` 现有47项隔离多账号检查；不可对正式站运行。
 
-`programmer_reviewed.tsv` 是新增583个程序员词的行业释义，结合原100个起步词形成683词完整精选池；`programmer_examples.tsv` 为原100个起步词提供200句原创双语开发用语。重建时运行 `python3 build_industries.py`，缺词头、重复词头、缺译文、句子不含目标词都会拒绝写入。词条ID沿用主线，行业排序变化不会改主线关卡。
+`programmer_reviewed.tsv` 是新增583个程序员词的行业释义，结合原100个起步词形成683词完整精选池；`programmer_examples.tsv` 为全表683词提供1366句原创双语开发用语。重建时运行 `python3 build_industries.py`，缺词头、重复词头、缺译文、句子不含目标词都会拒绝写入。词条ID沿用主线，行业排序变化不会改主线关卡。
 
 `industry-practice.test.js` 覆盖动态数量、句子选词、行业例句朗读文本、独立进度、专项错词复习及删除词过滤。`progress-sync.test.js` 检查不同设备按最近专项答案合并；同一时间的冲突保留错误，避免丢失待复习词。Go检查覆盖行业释义与选项、十条编辑路线的精选词进入榜单、新旧题库成绩隔离和旧题提交拒绝。
 
@@ -57,7 +57,7 @@
 
 `qa/basics.test.js`检查两次独立听音成功、选择题与输入填空各一次、缩写及弯引号、空答案、错题补练、音频播放成功后才解锁选项、播放失败与取消、复练本轮计数、保存格式及主线进度独立。`progress-sync.test.js`还检查课程互补槽位合并；账号进度接口检查合法课程结构、重复槽位拒绝和跨设备保存。课程不写入主线`words`或增加XP。
 
-`travel_reviewed.tsv`和`travel_examples.tsv`整理旅行709词及全词表的1418句原创双语用法。它和其余九条行业合计6329个句子目标词、12658句；行业含义已有本站编辑层，余下1783个行业词尚需补句子。十条行业加七条考试，共17条路线；补充行业词库现有1407词，原有ID保持，新增只追加。
+`travel_reviewed.tsv`和`travel_examples.tsv`整理旅行709词及全词表的1418句原创双语用法。它和其余九条行业合计8112个句子目标条目、16224句；行业含义和两句用法均已覆盖全表。十条行业加七条考试，共17条路线；补充行业词库现有1407词，原有ID保持，新增只追加。
 
 专项答题反馈的释义和例句默认收起，用户展开后才看和听。手机导航显示4个常用入口，其他9个入口折叠到「更多」。
 
@@ -74,7 +74,7 @@
 本轮永久榜后端最终42项Go测试4.428秒、并发检测53.935秒、vet及47项四账号检查通过；此前34/43项记录是改造前基线。
 
 
-当前行业例句覆盖：程序员683词配1366句、医疗753词配1506句、旅行709词配1418句；营销767词配1534句、法律850词配1700句、生物967词配1934句，六条路线所有词均有两句行业用法。外贸、AI创作各400词配800句，金融500词配1000句，化学300词配600句。十行业合计6329词、12658句，仍1783词待补两句。
+当前十条行业路线共8112个学习条目，每个条目都有两句本站编写的双语行业用法，共16224句。程序员683、外贸774、金融846、AI创作831、营销767、医疗753、生物967、法律850、化学与材料932、旅行709，均已补齐。不同路线可能包含相同词，8112不是去重后的词汇数。主线20,000词的逐条语言编辑和44音标的专业听审仍待完成。
 ## v1.26.1 行业用法补齐
 
 程序员、AI创作、医疗健康、旅行本次各增加100词的两句双语用法，共新增800句。四条路线现各覆盖200词、400句；十行业合计1422词、2844句，仍有6690词待补行业例句。此前版本中的前100词覆盖量是历史记录。主线词库、主线例句、场景与考试池保持不变，不增加主线进度。旅行的checked补充“托运的”，医疗的cranial补充“颅部的”，避免句子与释义不符。
@@ -197,3 +197,23 @@
 - 开发缓冲与定位：[Python io](https://docs.python.org/3/library/io.html)；刷新不等于持久化：[os.fsync](https://docs.python.org/3/library/os.html#os.fsync)；身份与权限：[OWASP Authorization](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html)。
 - 医疗用词：[MedlinePlus aspiration](https://medlineplus.gov/ency/article/002216.htm)、[CDC灭菌与消毒](https://www.cdc.gov/infection-control/hcp/disinfection-sterilization/introduction-methods-definition-of-terms.html)。
 - 旅行沟通：[FDA食品过敏](https://www.fda.gov/food/nutrition-food-labeling-and-critical-foods/food-allergies)、[Apple eSIM](https://support.apple.com/en-gb/118227)。这些页面用于核对含义；双语句子由本站编写。
+
+
+## v1.27.0 术语核对来源
+
+四条补齐路线的例句为本站编写。专业含义核对参考 [ICC贸易术语问答](https://library.iccwbo.org/clp/clp-incoterms-qa-2020.htm?AGENT=ICC_HQ)、[美国商务部贸易融资指南](https://www.trade.gov/report/trade-finance-guide)、[欧盟CE说明](https://single-market-economy.ec.europa.eu/single-market/goods/ce-marking_en)、[NAIC保险术语](https://content.naic.org/glossary-insurance-terms)、[SEC净资产值](https://www.investor.gov/introduction-investing/investing-basics/glossary/net-asset-value)、[OIC期权Greeks](https://prd-web.optionseducation.org/advancedconcepts/understanding-options-greeks)、[Adobe音频增益与压缩](https://helpx.adobe.com/audition/desktop/effects-reference/amplitude-compression-effects.html)和[W3C转写说明](https://www.w3.org/WAI/media/av/transcripts/)。不把FCL写成必须装满，不把CE写成欧盟产品批准，不把EBITDA当成银行现金，也不混淆流通股份与汇率浮动。句子干扰排除只限制选项，不表示金融指标、贸易角色或科学概念相同。
+
+
+## v1.27.0 十条行业例句全表覆盖
+
+外贸补374词748句、金融346词692句、AI创作431词862句、化学与材料632词1264句，共新增1783词3566句。十条行业路线的8112个学习条目现在各有两句本站编写的双语用法，共16224句；路线间可能重复，不当作8112个去重词。主线20,000词的逐条语言编辑、44音标的专业听审仍未完成。
+
+在「行业与考试」选外贸、金融、AI创作或化学与材料，点「句子选词」练全表；也可展开「查找专项词」，搜surety、EBITDA、actress或biocompatibility，点「练这个词」。答后展开「查看释义与例句」，看中文并逐句播放。建议先理解双语用法，再切速刷；错词到复习营地回练。专项学习与主线词数分别保存。
+
+原例句字节前缀、全部学习编号、主线及考试池保持。专业例句用于语言交流，金融指标、贸易角色和科学概念仍区分；干扰词排除只为减少同句多解。化学句子不写危险实验参数。真实支付宝仍待配置和本人试付。
+
+本批测试、私有仓库整仓核验、线上实测、回滚备份及资源快照见 /tmp/english-quest-v1270-evidence/verification.json。只有内容改动，不把旧版并发与小屏布局检查当作本次重测。
+
+化学用法另核对 [IUPAC吸着](https://goldbook.iupac.org/terms/view/S05769/plain)、[IUPAC分散度](https://goldbook.iupac.org/terms/view/12226/plain)、[OpenStax电解](https://openstax.org/books/chemistry-2e/pages/17-7-electrolysis)、[NIST单位量名](https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-8)和[FDA生物相容性评估](https://www.fda.gov/medical-devices/biocompatibility-assessment-resource-center/basics-biocompatibility-information-needed-assessment-fda)。不混淆质量/重量、molarity/molality、eluent/eluate、silicon/silicone/silica；吸着是泛称，不能只等同表面吸附。
+
+本批42项Go测试通过（最终11.968秒）、vet、核心数据及全部8112个行业句子目标检查通过；47项隔离四账号检查通过。实际预览走通surety、EBITDA、actress、biocompatibility，答后展开两句反馈，金融播放按钮已点击；主线0保持，无控制台错误。本次未重跑布局和并发检查。

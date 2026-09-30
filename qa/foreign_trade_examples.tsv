@@ -399,3 +399,377 @@ toxic	Is the material classified as toxic in the safety data sheet?	安全数据
 hazard	What hazard does this warning label refer to?	这个警示标签指的是哪种危险因素？	The inspection report mentions a hazard with the damaged packaging.	检验报告提到了损坏包装带来的危险因素。
 dangerous	Does the carrier accept dangerous goods on this service?	承运人的这项运输服务接受危险货物吗？	Our shipping team is checking the dangerous goods documentation.	我们的运输团队正在核查危险货物单证。
 msds	The supplier sent an MSDS for this material.	供应商发送了这种材料的材料安全数据表。	Do you have a current safety data sheet to replace this old MSDS?	你们有最新的安全数据表，可以替代这份旧MSDS吗？
+sds	Please send the latest SDS for this chemical.	请发来这种化学品最新的安全数据表。	The carrier asked for an SDS before booking.	承运人要求订舱前提供安全数据表。
+marking	The marking must be readable after wrapping.	包膜后，货物标记仍须清晰可读。	Confirm the carton marking with the buyer.	请与买方确认纸箱上的标记。
+mark	Put the shipping mark on two sides.	在两面印上运输唛头。	This mark does not match the packing list.	这个唛头与装箱单不一致。
+barcode	The barcode scanner cannot read this label.	扫描器读不了这个标签上的条形码。	Keep the barcode clear of the carton seam.	不要把条形码贴在纸箱接缝处。
+qr	Scan the QR code to view the shipment.	扫描二维码查看这批货。	The QR code links to the product manual.	二维码指向产品说明书。
+serial	Record the serial number before packing.	包装前记录序列号。	Each machine has a different serial number.	每台机器都有不同的序列号。
+sku	We need a separate SKU for each color.	每种颜色都需要单独的库存编码。	Which SKU did the customer order?	客户订的是哪个库存编码的产品？
+lot	The lot number is printed beside the date.	批号印在日期旁边。	Keep samples from this lot for inspection.	留取这个批次的样品供检验。
+batch	This batch is ready for shipment.	这批货已经可以发运。	Do not mix it with the previous batch.	不要把它与上一批混在一起。
+batching	The warehouse uses batching to group similar orders.	仓库通过批次处理将相似订单归组。	Will batching delay the urgent order?	批次处理会耽误这张急单吗？
+traceability	The buyer wants traceability from factory to delivery.	买方希望能追溯从工厂到交付的全过程。	Our traceability records include supplier batch numbers.	我们的追溯记录包含供应商批号。
+traceable	Each carton is traceable through its label.	每箱货都能通过标签追溯来源。	Are the raw materials traceable to the supplier?	这些原材料能追溯到供应商吗？
+trace	We can trace the defect to one production batch.	我们能把缺陷追溯到一个生产批次。	Please trace the source of this component.	请追踪这个零件的来源。
+track	You can track the parcel with this number.	你可以用这个号码追踪包裹。	We track each pallet through the warehouse.	我们会追踪每托货在仓库中的流转。
+tracking	The tracking page has not updated yet.	物流追踪页面还没更新。	Send the tracking details after dispatch.	发货后把追踪信息发来。
+identification	The label helps with cargo identification.	标签有助于识别货物。	Cargo identification is difficult without a lot number.	没有批号，很难识别货物。
+identify	Can you identify the damaged carton in the photo?	你能从照片中认出受损的纸箱吗？	Use the label to identify the product model.	用标签识别产品型号。
+identifier	Each pallet has a unique identifier.	每托货都有独立的识别编号。	Include the shipment identifier in your email.	请在邮件中写上货运识别编号。
+dimension	One dimension exceeds the carrier's size limit.	有一个尺寸超出了承运人的限制。	Check every dimension before ordering the cartons.	订购纸箱前检查每个尺寸。
+weigh	Please weigh the loaded pallet again.	请把装好货的托盘再称一次。	We weigh each carton before sealing it.	我们封箱前会给每箱称重。
+weighing	The weighing took place before loading.	称重是在装货前进行的。	Keep the weighing record with the shipment documents.	将称重记录与货运单证放在一起。
+weighbridge	The truck is waiting at the weighbridge.	卡车正在地磅处等候。	Ask for the weighbridge ticket after weighing.	称重后索取地磅单。
+net	The net weight excludes the packaging.	净重不包括包装。	Show the net amount after the discount.	列出折扣后的净额。
+gross	The gross weight includes the pallet.	毛重包括托盘重量。	Check the gross amount before applying deductions.	扣款前检查总额。
+tare	Record the tare weight of the empty container.	记录空集装箱的皮重。	The tare value is missing from the weight record.	称重记录里缺少皮重值。
+payload	The truck cannot exceed its rated payload.	卡车不能超过额定载荷。	Confirm the payload before loading the machinery.	装载机器前确认有效载荷。
+capacity	The warehouse is close to full capacity.	仓库容量快满了。	Does this container have enough capacity for the order?	这个集装箱装得下整张订单吗？
+cubic	The quote gives a rate per cubic meter.	报价列出了每立方米的费率。	Calculate the cubic volume of the packed goods.	计算包装后货物的立方体积。
+cbm	The packing list shows a total of eight CBM.	装箱单上显示总体积为八立方米。	Please confirm the CBM before asking for freight rates.	询问运费前请确认立方米数。
+measurement	The measurement includes the outer packaging.	这个尺寸测量包含外包装。	Please check this measurement against the drawing.	请对照图纸检查这个测量值。
+measure	We measure the carton after it is packed.	我们装好货后再测量纸箱。	Can you measure the width again?	你能再测一次宽度吗？
+metric	Please use metric units on the drawing.	请在图纸上使用公制单位。	The buyer requested a metric weight label.	买方要求使用公制重量标签。
+unit	The price is quoted per unit.	价格按每个单位报价。	Which unit does this weight column use?	这一重量栏使用什么单位？
+piece	One piece is missing from the carton.	箱子里少了一件。	Please pack each piece separately.	请把每件单独包装。
+pcs	The order quantity is listed as 500 PCS.	订单数量写的是五百件。	Does PCS refer to individual items or sets here?	这里的件数指单件，还是整套？
+kilogram	The sample weighs less than one kilogram.	样品重量不到一千克。	The carrier charges by the kilogram for this service.	这项运输服务按千克收费。
+incoterms	Which version of Incoterms does the contract use?	合同采用哪一版国际贸易术语解释通则？	Include the chosen Incoterms rule in the quotation.	在报价中写上选定的贸易术语规则。
+exw	The EXW quote names the factory address.	工厂交货报价写明了工厂地址。	Are you asking for EXW or another delivery basis?	你要的是工厂交货报价，还是其他交货条件？
+fca	The FCA price names the agreed delivery point.	货交承运人价格写明了约定交货地点。	Please confirm the carrier for this FCA shipment.	请确认这批货交承运人货物的承运人。
+fob	The FOB quote specifies the port of shipment.	船上交货报价写明了装运港。	Can you quote FOB Ningbo for this order?	这张订单能报宁波港船上交货价吗？
+cfr	The CFR offer names the destination port.	成本加运费报价写明了目的港。	Please separate the product price and freight in the CFR quote.	请在成本加运费报价中分列货价与运费。
+cif	The CIF quote names the destination port.	成本、保险费加运费报价写明了目的港。	We need the insurance details for this CIF order.	我们需要这张成本、保险费加运费订单的保险详情。
+cpt	The CPT offer names the destination terminal.	运费付至报价写明了目的地货站。	The buyer asked for a CPT quotation.	买方要求一份运费付至报价。
+cip	The CIP quotation includes insurance details.	运费和保险费付至报价包含保险详情。	Which destination is named in the CIP offer?	运费和保险费付至报价指定了哪个目的地？
+dap	The DAP quote names the buyer's warehouse.	目的地交货报价指定了买方仓库。	Please confirm the delivery address for DAP.	请确认目的地交货条件下的交货地址。
+dpu	The DPU quote includes unloading at the named place.	目的地卸货后交货报价包含在指定地点卸货。	Confirm the unloading arrangements for this DPU shipment.	确认这批目的地卸货后交货货物的卸货安排。
+ddp	The buyer requested a DDP quotation.	买方要求一份完税后交货报价。	Our team is reviewing the import arrangements for DDP.	我们的团队正在核对完税后交货的进口安排。
+fas	The FAS offer names the port of shipment.	船边交货报价指定了装运港。	Please identify the vessel for this FAS order.	请说明这张船边交货订单对应的船舶。
+consignor	The consignor address is missing from the document.	单证中缺少发货人地址。	Ask the consignor to confirm the cargo description.	请发货人确认货物描述。
+consignee	The consignee name must match the shipping documents.	收货人名称应与货运单证一致。	Has the consignee received the arrival notice?	收货人收到到货通知了吗？
+shipper	The shipper provided the cargo weight.	托运人提供了货物重量。	Contact the shipper about the missing labels.	联系托运人，询问缺失的标签。
+shipping	The shipping cost is higher than we expected.	运输费用比我们预想的高。	Send the shipping documents when they are ready.	货运单证备齐后请发来。
+forwarder	Our forwarder will arrange the pickup.	我们的货代会安排提货。	Which forwarder handles your exports?	哪家货代负责你们的出口？
+forwarding	The forwarding fee is shown separately.	货运代理费用单独列出。	We need a forwarding service for this shipment.	这批货需要货运代理服务。
+freighter	The freighter is scheduled to leave tomorrow.	货船计划明天离港。	The air freighter has space for the urgent cargo.	货运飞机有位置装这批急货。
+charter	We may charter a vessel for the oversized cargo.	我们可能为这批超大货物租一艘船。	Ask for a charter quote before deciding.	决定前先索取租船报价。
+charterer	The charterer requested a revised loading schedule.	租船人要求修改装货计划。	Confirm the charterer named in the agreement.	确认协议中列明的租船人。
+liner	The liner service calls at this port weekly.	这个班轮服务每周挂靠该港。	Check the liner schedule before promising delivery.	承诺交期前先查班轮时刻表。
+sailing	The next sailing is already fully booked.	下一班船已经订满了。	Can we move the cargo to an earlier sailing?	能把这批货安排到更早的船期吗？
+voyage	The voyage number is on the booking confirmation.	订舱确认上有航次号。	This voyage includes a stop at another port.	这个航次会停靠另一个港口。
+route	The route passes through a busy transshipment port.	这条路线经过一个繁忙的转运港。	Is there a direct route to the destination?	有没有直达目的地的路线？
+routing	The routing needs the buyer's approval.	运输路线安排需要买方确认。	Ask the carrier for the final routing.	向承运人索取最终路线安排。
+reroute	The carrier plans to reroute the shipment.	承运人计划让这批货改道。	Can we reroute the cargo without changing the delivery date?	能改道运输而不改变交货日期吗？
+rerouting	The rerouting adds three days to transit.	改道会让运输时间增加三天。	Inform the buyer about the rerouting.	把改道安排告知买方。
+transshipment	The booking includes one transshipment.	这次订舱包含一次转运。	Confirm the transshipment port with the carrier.	与承运人确认转运港。
+transship	We will transship the cargo at Singapore.	我们将在新加坡转运这批货。	Does the carrier plan to transship this container?	承运人打算转运这个集装箱吗？
+transloading	The cargo needs transloading from rail to truck.	货物需要从铁路换装到卡车上。	Include the transloading cost in the estimate.	在估算中计入换装费用。
+intermodal	The intermodal service uses rail and road.	这个联运服务使用铁路和公路。	Will the container stay sealed during intermodal transport?	联运途中集装箱会保持封箱吗？
+multimodal	We need a multimodal transport plan.	我们需要一份多式联运方案。	The multimodal shipment includes a sea leg.	这批多式联运货物包含海运环节。
+consolidation	The consolidation will take place at this warehouse.	货物将在这个仓库集货。	Ask when the consolidation closes for this sailing.	问一下这个船期何时停止收货拼箱。
+consolidate	We consolidate small orders before shipping.	我们把小订单集货后再发运。	Can you consolidate these cartons into one shipment?	能把这些纸箱合成一批货发运吗？
+consolidator	The consolidator has received all three orders.	集货代理已经收到这三张订单的货物。	Send the carton details to the consolidator.	把纸箱信息发给集货代理。
+fcl	The FCL quote is for exclusive use of one container.	整箱报价针对一个集装箱的独占使用。	Compare the FCL quote with the smaller shipment option.	将整箱报价与小批量发运方案做个比较。
+lcl	The LCL cargo will share a container.	拼箱货物将与其他货物共用集装箱。	What charges are included in this LCL quote?	这份拼箱报价包含哪些费用？
+teu	The report measures port volume in TEU.	报告以二十英尺标准箱单位统计港口货量。	One twenty-foot container counts as one TEU.	一个二十英尺集装箱计为一个标准箱单位。
+feu	The carrier quoted a rate per FEU.	承运人按四十英尺标准箱单位报价。	One FEU represents a forty-foot container.	一个四十英尺标准箱单位代表一个四十英尺集装箱。
+reefer	The reefer needs a power connection at the depot.	冷藏集装箱在堆场需要接电。	Confirm the temperature setting for the reefer.	确认冷藏集装箱的温度设定。
+refrigerated	The goods require refrigerated transport.	这些货物需要冷藏运输。	Is a refrigerated truck available tomorrow?	明天有冷藏卡车可用吗？
+refrigeration	The refrigeration unit stopped during the trip.	运输途中制冷机组停了。	Ask for the refrigeration maintenance record.	索取制冷设备的维护记录。
+ventilation	The cargo needs ventilation during storage.	货物仓储期间需要通风。	Do not block the container ventilation openings.	不要堵住集装箱的通风口。
+insulation	The insulation protects the goods from rapid temperature changes.	隔热材料能减缓货物温度的剧烈变化。	Check the insulation for damage before packing.	包装前检查隔热材料是否受损。
+stack	Do not stack heavy cartons on fragile goods.	不要把重箱堆在易碎货物上。	We stack these pallets only two high.	这些托盘货只堆两层。
+stackable	These crates are stackable when fully closed.	这些板条箱完全关闭后可以堆叠。	Mark the pallet as not stackable.	把这托货标为不可堆叠。
+stowage	The stowage plan keeps heavy cargo low.	配载方案把重货放在低处。	Ask the vessel team to review the stowage plan.	请船方复核积载方案。
+stow	Where should we stow the fragile cargo?	这批易碎货应积载在哪个位置？	The crew will stow the crates below deck.	船员会将板条箱积载在甲板下。
+lashing	The lashing must be checked before departure.	出发前必须检查货物绑扎情况。	The lashing equipment is included in the loading plan.	装货方案包含绑扎设备。
+lash	The crew will lash the machinery to the deck.	船员会把机器绑扎在甲板上。	Use the approved points to lash the cargo.	用获准的固定点绑扎货物。
+secure	Please secure the load before moving the truck.	开动卡车前请固定好货物。	We secure each machine inside its crate.	我们将每台机器固定在箱内。
+load	We can load the truck this afternoon.	我们今天下午可以装车。	Check the load against the packing list.	对照装箱单核对所装货物。
+unload	The team will unload the container at the warehouse.	团队会在仓库卸下集装箱货物。	Can you unload this crate with your equipment?	你们的设备能卸这个箱子吗？
+loader	The loader is waiting beside the cargo bay.	装货设备正在货物装卸区旁等候。	Ask the loader to check the carton labels.	请装货人员检查纸箱标签。
+unloader	The unloader cannot handle this crate's weight.	这个卸货设备承受不了这箱货的重量。	We need an unloader suitable for bulk grain.	我们需要适合散装粮食的卸货设备。
+dock	The truck is waiting at the loading dock.	卡车正在装货平台等候。	The vessel will dock after midnight.	船舶将在午夜后靠岸。
+berth	The vessel is waiting for an available berth.	船舶正在等待空出的泊位。	Confirm the berth number before sending the truck.	派车前确认泊位号。
+terminal	The container has arrived at the terminal.	集装箱已经到达码头。	Which terminal handles this sailing?	这个船期在哪个码头办理？
+quay	The crates are waiting on the quay.	板条箱正在码头岸壁处等候。	Access to the quay is restricted today.	今天码头岸壁区域限制进入。
+wharf	The vessel is tied up at the wharf.	船舶已经系泊在码头。	The wharf operator confirmed the unloading slot.	码头运营方确认了卸货时段。
+harbor	The harbor is closed because of strong winds.	大风导致港口关闭。	The ship has entered the harbor.	船舶已经进入港口。
+harbour	The harbour authority issued a new notice.	港务部门发出了一则新通知。	Our vessel is waiting outside the harbour.	我们的船正在港口外等候。
+anchorage	The vessel is holding at the anchorage.	船舶正在锚地等候。	How far is the anchorage from the terminal?	锚地距离码头有多远？
+anchor	The vessel will anchor outside the harbor.	船舶将在港外抛锚。	The crew checked the anchor before sailing.	船员在开航前检查了船锚。
+hatch	Keep the hatch closed during heavy rain.	大雨时保持货舱舱口关闭。	The cargo must fit through this hatch.	货物必须能够通过这个舱口。
+deck	The deck is clear for loading.	甲板已腾空，可以装货。	Does the booking permit cargo on deck?	这次订舱允许货物放在甲板上吗？
+containerization	The report compares containerization with bulk shipping.	报告比较了集装箱运输和散货运输。	Containerization changed how this port handles cargo.	集装箱运输改变了这个港口的货物处理方式。
+chassis	A chassis is needed to move the container by road.	公路运输集装箱需要运输底盘。	The depot has no spare chassis today.	堆场今天没有备用底盘。
+trailer	The trailer can carry two pallets side by side.	这辆拖车能并排放下两托货。	The trailer number is on the delivery note.	送货单上写着拖车编号。
+truck	The truck will arrive before noon.	卡车将在中午前到达。	Can your site accept a large truck?	你们的场地允许大卡车进入吗？
+trucking	The trucking charge covers the port-to-warehouse journey.	公路货运费用涵盖从港口到仓库的运输。	Our trucking provider changed the pickup time.	我们的卡车运输服务商改了提货时间。
+haulage	The haulage quote excludes waiting time.	公路运输报价不含等候时间。	Book the haulage after confirming cargo release.	确认货物放行后再预约公路运输。
+haul	The carrier will haul the machinery overnight.	承运人会在夜间运输这些机器。	Can this truck haul the entire load?	这辆卡车能运输全部货物吗？
+hauler	The hauler asked for the exact pickup address.	运输承运人要求提供准确提货地址。	Which hauler will collect the container?	哪家运输承运人会来提集装箱？
+rail	We can send the goods by rail.	我们可以通过铁路发送这批货。	The rail connection reduces the road journey.	铁路接驳缩短了公路运输路程。
+railway	The railway station accepts cargo on weekdays.	这个铁路站点在工作日接收货物。	Check the railway schedule for available departures.	查看铁路时刻表，确认可用班次。
+railroad	The railroad serves the inland depot.	这条铁路通往内陆货运站。	The railroad operator confirmed space for our cargo.	铁路运营方确认能装下我们的货。
+railcar	The railcar is ready for loading.	铁路货车已经可以装货。	We need a covered railcar for these goods.	这批货需要有盖的铁路货车。
+airfreight	Airfreight is faster but costs more.	空运更快，但费用更高。	Send an airfreight quote for the urgent samples.	请为这批紧急样品提供空运报价。
+awb	Please check the consignee on the AWB.	请核对航空运单上的收货人。	The AWB number is needed for tracking.	追踪货物需要航空运单号。
+bl	The BL shows the port of discharge.	提单列明了卸货港。	Please send a copy of the BL for review.	请发一份提单副本供核对。
+courier	The courier collected the samples this morning.	快递承运人今天早上取走了样品。	Which courier do you use for documents?	你们寄文件用哪家快递？
+express	The express service can collect today.	快递服务今天可以上门取件。	Does the express price include remote-area delivery?	快递价格包含偏远地区配送吗？
+parcel	The parcel arrived with damaged packaging.	包裹送到时，包装已经受损。	Please send a photo of the parcel label.	请发一张包裹标签照片。
+postage	The postage depends on weight and destination.	邮资取决于重量和目的地。	The quoted price does not include postage.	这个报价不含邮资。
+postal	The postal service returned the sample.	邮政服务退回了样品。	Please confirm the postal address before dispatch.	寄出前请确认邮政地址。
+pickup	The pickup is booked for Friday morning.	提货预约在周五上午。	We need a contact number for the pickup.	我们需要提货联系人的电话号码。
+collect	The driver will collect the goods at two.	司机将在两点提货。	Can the carrier collect from our second warehouse?	承运人能从我们的第二个仓库提货吗？
+collection	Arrange collection after the goods are packed.	货物包装好后安排提货。	Ask the bank about documentary collection charges.	向银行询问跟单托收费用。
+onward	The onward journey continues by truck.	后续转运将使用卡车。	We are waiting for the onward transport booking.	我们正在等待后续运输的订舱确认。
+inbound	The inbound cargo will arrive tonight.	入库货物今晚会到。	Use this gate for inbound deliveries.	入库送货请走这个门。
+outbound	The outbound orders are packed and labeled.	出库订单已经包装并贴好标签。	Keep the outbound cargo separate from returns.	把出库货物与退货分开存放。
+eta	The ETA has changed to Monday.	预计到达时间改到了周一。	Please confirm the ETA with the carrier.	请向承运人确认预计到达时间。
+etd	The ETD is still subject to confirmation.	预计离港时间还需要确认。	Has the carrier updated the ETD?	承运人更新预计离港时间了吗？
+arrive	The goods should arrive next week.	货物预计下周到达。	Please call us when you arrive at the warehouse.	到仓库后请给我们打电话。
+depart	The vessel is due to depart tonight.	船舶计划今晚离港。	Can the truck depart before the road closes?	卡车能在道路封闭前出发吗？
+overdue	The invoice is now overdue.	这张发票的款项已经逾期。	Please follow up on the overdue delivery.	请跟进这批逾期未交的货物。
+postpone	We need to postpone the pickup.	我们需要推迟提货。	Can you postpone shipment until the inspection finishes?	能把发运推迟到验货完成后吗？
+postponement	The postponement affects our delivery promise.	这次延期影响了我们的交货承诺。	Tell the buyer the reason for the postponement.	向买方说明延期原因。
+reschedule	Please reschedule the truck for tomorrow.	请把卡车安排改到明天。	We will reschedule the inspection with the factory.	我们会与工厂重新安排验货时间。
+expedite	Can you expedite the sample order?	能加急处理这张样品订单吗？	We asked the agent to expedite the paperwork.	我们请代理加快办理单证。
+expedited	The buyer requested expedited delivery.	买方要求加急配送。	Please quote the extra cost for expedited service.	请报出加急服务的额外费用。
+urgent	This is an urgent order for replacement parts.	这是一张替换零件的急单。	The urgent shipment needs approval today.	这批急货今天需要获批。
+urgency	Please explain the urgency to the carrier.	请向承运人说明事情有多急。	The customer's message makes the urgency clear.	客户的消息说清了紧急程度。
+priority	Give the damaged shipment priority.	优先处理这批受损货物。	Which order has the highest priority?	哪张订单的优先级最高？
+prioritize	We need to prioritize the delayed orders.	我们需要优先处理延期订单。	Please prioritize this pickup before the holiday.	请在假期前优先安排这次提货。
+congestion	Port congestion is delaying container release.	港口拥堵导致集装箱放行延迟。	The route avoids the worst congestion.	这条路线避开了最拥堵的路段。
+congested	The terminal is heavily congested today.	码头今天十分拥堵。	Could we use a less congested port?	能换一个不那么拥堵的港口吗？
+bottleneck	The loading area has become a bottleneck.	装货区已经成了运作瓶颈。	We need to identify the bottleneck in packing.	我们需要找出包装环节的瓶颈。
+shortage	A carton shortage may delay packing.	纸箱短缺可能拖延包装。	The carrier reported a shortage of empty containers.	承运人报告空集装箱短缺。
+disruption	The storm caused a transport disruption.	暴风雨造成了运输中断。	Tell customers how the disruption affects deliveries.	告诉客户这次中断如何影响交货。
+disrupt	The strike may disrupt deliveries this week.	罢工可能扰乱本周的送货安排。	Missing labels can disrupt warehouse operations.	标签缺失可能扰乱仓库作业。
+interruption	We recorded an interruption in the cold chain.	我们记录了一次冷链中断。	The interruption lasted longer than expected.	中断时间比预想的长。
+interrupt	Please do not interrupt the loading process.	请不要打断装货流程。	A power failure could interrupt production.	停电可能导致生产中断。
+contingency	The contingency plan covers a missed sailing.	应急方案涵盖了错过船期的情况。	Review the contingency arrangements before the holiday.	放假前检查应急安排。
+backup	We have a backup carrier for urgent orders.	我们有一家负责急单的备用承运人。	What is the backup plan if the port closes?	港口关闭时，备用方案是什么？
+contingent	The delivery date is contingent on final inspection.	交货日期取决于最终验货结果。	This offer is contingent on the buyer's approval.	这份报价以买方批准为条件。
+forecast	The forecast shows higher demand next month.	预测显示下个月需求会增加。	Please revise the forecast using the latest orders.	请根据最新订单修改预测。
+planning	We need more time for shipment planning.	我们需要更多时间安排发运。	The planning team is reviewing warehouse capacity.	计划团队正在检查仓库容量。
+plan	The plan includes an inspection before shipment.	计划包含发运前验货。	Can you send the loading plan today?	你今天能发来装货计划吗？
+replenishment	The replenishment order covers the next two weeks.	这张补货订单覆盖接下来两周的需求。	We are waiting for replenishment from the factory.	我们正在等待工厂补货。
+replenish	We need to replenish the sample stock.	我们需要补充样品库存。	When can the supplier replenish these items?	供应商何时能补齐这些产品？
+stock	We have enough stock for this order.	我们的库存足够供应这张订单。	Please check the stock before confirming availability.	确认有货前请先检查库存。
+storage	The storage fee starts after the agreed free period.	约定的免费期结束后开始收取仓储费。	These goods need dry storage.	这些货物需要干燥的存储环境。
+storeroom	The samples are kept in the storeroom.	样品存放在储藏室。	Keep the storeroom door locked after use.	使用后把储藏室门锁好。
+racking	The warehouse needs stronger racking for these pallets.	仓库需要更结实的货架系统来放这些托盘。	Check the racking labels for load limits.	查看货架系统标签上的载荷限制。
+rack	Put the small cartons on this rack.	把小纸箱放到这个货架上。	One rack was damaged by the forklift.	叉车碰坏了一个货架。
+shelving	The new shelving makes spare parts easier to find.	新货架让备件更容易找到。	We need more shelving for the sample room.	样品室需要更多货架。
+shelf	The sample box is on the top shelf.	样品箱在最上层货架上。	Label each shelf with its product category.	为每层货架标明产品类别。
+aisle	Do not leave pallets in the aisle.	不要把托盘留在通道上。	The forklift needs a wider aisle.	叉车需要更宽的通道。
+bay	The driver is waiting at loading bay three.	司机正在三号装货区等候。	Keep this bay clear for incoming goods.	腾出这个仓储分区，准备接收来货。
+pick	Please pick the goods for order twenty-four.	请拣出二十四号订单的货物。	We pick fragile items separately.	我们会单独拣选易碎物品。
+repack	We must repack the damaged cartons.	我们必须重新包装受损的纸箱。	Can the warehouse repack the goods today?	仓库今天能重新包装这批货吗？
+sorting	The sorting team found a missing label.	分拣团队发现了一个缺失的标签。	Sorting takes longer when product codes are unclear.	产品编码不清晰时，分拣会花更长时间。
+sort	Please sort the cartons by destination.	请按目的地分拣纸箱。	We sort returned goods before inspection.	我们会先分拣退货，再进行检验。
+assembly	The assembly instructions are inside the carton.	装配说明在纸箱里。	Check the assembly before packing the machine.	包装机器前检查装配情况。
+assemble	The buyer will assemble the furniture locally.	买方会在当地组装家具。	We assemble the sample before sending photos.	我们组装好样品后再拍照发送。
+workmanship	The buyer is not satisfied with the workmanship.	买方对工艺质量不满意。	Compare the workmanship with the approved sample.	将工艺质量与已确认的样品比较。
+defect	The inspector found a defect in the handle.	验货员发现把手有一处缺陷。	Please photograph the defect before returning the item.	退回产品前请拍下缺陷。
+defective	We separated the defective goods from the shipment.	我们把有缺陷的产品从这批货中分了出来。	How many units are defective?	有多少件存在缺陷？
+fault	The test found an electrical fault.	检测发现了一处电气故障。	Describe the fault in the inspection report.	在检验报告中描述这个故障。
+faulty	The faulty switch must be replaced.	有故障的开关必须更换。	The buyer sent back two faulty units.	买方退回了两台故障产品。
+damage	The damage appears on one side of the crate.	货损出现在箱子的一侧。	Check for damage before signing the delivery receipt.	签收前检查是否有货损。
+breakage	Better packing may reduce breakage in transit.	更好的包装可能减少运输中的破损。	The inspection report lists the breakage by carton.	检验报告按箱列明了破损情况。
+scratch	There is a scratch on the display surface.	显示面上有一道划痕。	Does this scratch appear in the factory photos?	工厂照片中有这道划痕吗？
+dent	The crate has a dent near the corner.	箱子靠近角落处有一个凹痕。	Please measure the dent and send a photo.	请测量这个凹痕并发张照片。
+crack	The buyer found a crack in the plastic cover.	买方发现塑料盖上有一条裂纹。	This crack was not visible before packing.	包装前没有看到这条裂纹。
+leak	The tank has a leak near the valve.	罐体阀门附近有一处泄漏。	Check for a leak before shipping the equipment.	发运设备前检查是否泄漏。
+leakage	The inspection recorded leakage from two drums.	检验记录显示两只桶有泄漏。	Report any leakage to the warehouse supervisor.	发现泄漏时向仓库主管报告。
+moisture	The cartons show signs of moisture.	纸箱有受潮迹象。	Measure the moisture content before packing the wood.	包装木材前测量含水量。
+mold	The inspector found mold on the wooden pallet.	验货员在木托盘上发现了霉菌。	We rejected the carton with visible mold.	我们拒收了有明显霉菌的纸箱。
+mould	There is mould inside the outer packaging.	外包装内有霉菌。	Check the stored samples for mould.	检查存放的样品是否发霉。
+contamination	Keep food packaging away from contamination.	避免食品包装受到污染。	The laboratory is testing for contamination.	实验室正在检测污染情况。
+rust	The metal parts show spots of rust.	金属零件上有锈斑。	Protect the tools from rust during storage.	仓储期间要防止工具生锈。
+corrosion	The report describes corrosion around the bolts.	报告描述了螺栓周围的腐蚀。	Check the corrosion protection specified by the buyer.	检查买方要求的防腐保护措施。
+wear	The belt shows wear after repeated use.	多次使用后，皮带出现磨损。	Is this wear expected under normal operating conditions?	在正常工况下，这种磨损符合预期吗？
+tolerance	The drawing gives a tolerance for this dimension.	图纸规定了这个尺寸的公差。	The measured part is outside the agreed tolerance.	测得的零件尺寸超出了约定公差。
+consistency	We need better consistency across production batches.	我们需要提高各生产批次的质量一致性。	Check the color consistency against the approved sample.	对照已确认的样品检查颜色一致性。
+consistent	The finish is consistent across all samples.	所有样品的表面处理都一致。	Keep the carton size consistent within this order.	这张订单中的纸箱尺寸要保持一致。
+variation	The buyer noticed a variation in color.	买方发现了颜色差异。	Record the variation between the tested samples.	记录检测样品之间的差异。
+variability	The report shows high variability in part thickness.	报告显示零件厚度波动较大。	Ask the factory how it controls production variability.	询问工厂如何控制生产波动。
+deviation	The deviation from the drawing needs explanation.	需要解释与图纸不符的偏差。	Record each deviation before approving the batch.	批准这个批次前记录每处偏差。
+conformity	We need evidence of conformity with the specification.	我们需要证明产品符合规格的材料。	The conformity assessment is not finished yet.	符合性评估还没有完成。
+conform	The parts must conform to the agreed drawing.	零件必须符合约定图纸。	Do these labels conform to the buyer's requirements?	这些标签符合买方要求吗？
+test	The test results are attached to this email.	这封邮件附有检验结果。	Can the factory test the sample again?	工厂能再次检测这个样品吗？
+laboratory	The laboratory received the samples yesterday.	检测实验室昨天收到了样品。	Which laboratory carried out this test?	这次检测由哪个实验室完成？
+lab	The lab needs two additional samples.	检测实验室还需要两个样品。	We are waiting for the lab report.	我们正在等待实验室报告。
+inspector	The inspector will visit the factory on Tuesday.	验货员周二会到工厂。	Ask the inspector to photograph the packaging.	请验货员拍摄包装照片。
+inspect	We need to inspect the goods before loading.	我们需要在装货前验货。	Can you inspect the replacement parts today?	你今天能检验这些替换件吗？
+verification	The document verification is still in progress.	单证核验仍在进行。	We need verification of the carton count.	我们需要核实纸箱数量。
+verify	Please verify the supplier's address.	请核实供应商地址。	We will verify the quantities before signing.	我们会在签字前核实数量。
+validation	The new packing method is awaiting validation.	新的包装方法正在等待验证。	The validation report includes transport test results.	验证报告包含运输测试结果。
+validate	We need to validate the revised packing method.	我们需要验证修改后的包装方法。	Can the lab validate this test procedure?	实验室能验证这个检测程序吗？
+audit	The supplier audit takes place next week.	供应商审核将在下周进行。	The audit report includes corrective actions.	审核报告包含纠正措施。
+auditor	The auditor asked for production records.	审核员要求查看生产记录。	Please arrange a meeting with the auditor.	请安排与审核员见面。
+assurance	The quality assurance team reviewed the process.	质量保证团队检查了这个流程。	We need written assurance that the issue was addressed.	我们需要书面保证，确认问题已得到处理。
+qc	The QC team checks the finished goods.	质量控制团队检查成品。	Share the QC results before dispatch.	发货前请提供质量控制结果。
+qa	The QA plan covers supplier and process reviews.	质量保证计划涵盖供应商与流程检查。	Who is responsible for QA on this order?	谁负责这张订单的质量保证工作？
+aql	The AQL value is stated in the sampling plan.	抽样方案写明了验收质量限。	Confirm the AQL before the inspection begins.	检验开始前确认验收质量限。
+iso	Which ISO standard does the buyer specify?	买方指定了哪项国际标准化组织标准？	Check the ISO standard number on this document.	检查这份文件上的国际标准化组织标准编号。
+ce	Does this product require CE marking?	这个产品需要欧洲合格标志吗？	Do not describe CE marking as an EU product approval.	不要把欧洲合格标志说成欧盟对产品的批准。
+rohs	The buyer requested the RoHS compliance documents.	买方要求提供有害物质限制合规文件。	Confirm which RoHS requirements apply to this equipment.	确认哪些有害物质限制要求适用于这个设备。
+reach	The customer asked for a REACH statement.	客户要求提供一份欧盟化学品法规声明。	We are checking the REACH information from our suppliers.	我们正在核对供应商提供的欧盟化学品法规信息。
+complaint	The complaint concerns damaged packaging.	这次客户投诉涉及包装受损。	Acknowledge the complaint before investigating it.	先确认收到投诉，再调查原因。
+complain	The buyer may complain about the late delivery.	买方可能会投诉交货延迟。	Customers can complain through this email address.	客户可以通过这个邮箱投诉。
+claim	The buyer submitted a claim for damaged goods.	买方针对受损货物提出了索赔。	We need photos to review the claim.	我们需要照片来核对索赔情况。
+claimant	The claimant supplied the delivery receipt.	索赔方提供了送货签收单。	Ask the claimant for the inspection photos.	请索赔方提供检验照片。
+compensation	The buyer requested compensation for the delay.	买方要求赔偿延误损失。	We are discussing the compensation amount.	我们正在讨论赔偿金额。
+compensate	The supplier offered to compensate the buyer.	供应商提出赔偿买方。	How will you compensate us for the missing items?	你们会如何赔偿缺失的产品？
+compensatory	The settlement includes a compensatory payment.	和解安排包含一笔补偿性付款。	Ask what the compensatory amount covers.	询问这笔补偿金额涵盖哪些损失。
+remedy	The proposed remedy is a replacement shipment.	提出的补救措施是另发一批替换货。	We need to agree on a remedy for the short delivery.	我们需要就少交货的补救措施达成一致。
+remedial	The factory has started remedial work.	工厂已经开始补救处理。	Send a schedule for the remedial action.	请发来补救行动的时间表。
+rectify	Please rectify the labeling error before dispatch.	请在发货前纠正标签错误。	The supplier has agreed to rectify the problem.	供应商已经同意纠正这个问题。
+rectification	The rectification plan needs a completion date.	整改计划需要写明完成日期。	We will inspect the goods after rectification.	我们会在整改后验货。
+replace	Please replace the damaged cartons.	请更换受损的纸箱。	Can you replace these parts before Friday?	你们能在周五前更换这些零件吗？
+replacement	The replacement parts will arrive separately.	替换件会单独送达。	We need a replacement for the damaged sample.	我们需要换一个样品，替代受损的那个。
+repair	The repair will take three working days.	维修需要三个工作日。	Please estimate the repair cost before starting.	开始维修前请估算费用。
+repairable	The damaged machine is repairable.	这台受损机器可以修复。	Ask the technician whether the unit is repairable.	询问技术人员这台设备是否能修复。
+returnable	Is this item returnable after inspection?	这件产品检验后可以退货吗？	The quotation says the sample is not returnable.	报价说明这个样品不可退货。
+rma	Please request an RMA before returning the unit.	退回设备前请申请退货授权。	Write the RMA number on the outer carton.	在外箱上写上退货授权编号。
+recall	The supplier announced a product recall.	供应商宣布了产品召回。	The recall notice lists the affected batches.	召回通知列出了受影响的批次。
+warrant	What performance does the supplier warrant?	供应商保证哪些性能？	Does the supplier warrant that the parts meet the drawing?	供应商是否保证零件符合图纸？
+coverage	Please explain the warranty coverage for this model.	请说明这个型号的保修范围。	We need to check the insurance coverage for water damage.	我们需要检查保险对水损的承保范围。
+exclusion	The exclusion is listed in the policy wording.	除外条款列在保单条文中。	Does this exclusion apply to our claim?	这个除外条款适用于我们的索赔吗？
+exclude	Does the warranty exclude normal wear?	保修是否排除正常磨损？	Please exclude the canceled items from the invoice.	请从发票中去掉已取消的项目。
+insurer	The insurer requested a survey report.	保险人要求提供查勘报告。	We sent the claim documents to the insurer.	我们把索赔文件发给了保险人。
+insured	The cargo is insured for the declared voyage.	货物已针对申报的航程投保。	Check the insured amount on the certificate.	核对保险凭证上的投保金额。
+underwriter	The underwriter asked for the packing details.	承保人要求提供包装细节。	We are waiting for the underwriter's decision.	我们正在等待承保人的决定。
+underwriting	The underwriting review requires more information.	承保审核需要更多信息。	Ask which documents are needed for underwriting.	询问承保需要哪些文件。
+premium	The premium is quoted separately from freight.	保险费与运费分开报价。	Has the insurance premium been paid?	保险费付了吗？
+policyholder	The policyholder name is incorrect on the form.	表格上的投保人名称不正确。	The policyholder must review the renewal documents.	投保人需要核对续保文件。
+beneficiary	The beneficiary is named in the letter of credit.	信用证中列明了受益人。	Please confirm the beneficiary bank details.	请确认受益人的银行信息。
+indemnification	The agreement contains an indemnification clause.	协议中有一项赔偿条款。	We are reviewing the requested indemnification amount.	我们正在核对要求赔偿的金额。
+salvage	The survey report gives an estimated salvage value.	查勘报告列出了估计残值。	Keep the damaged goods available for salvage assessment.	保留受损货物，以便评估残值。
+salvageable	Some cartons are damaged, but the goods are salvageable.	一些纸箱受损了，但货物还可以挽救。	The surveyor marked half the shipment as salvageable.	查勘人员将一半货物标为可挽救。
+subrogation	The insurer is reviewing possible subrogation after payment.	赔付后，保险人正在评估可能的代位求偿。	Keep the transport records for the subrogation review.	保留运输记录，供代位求偿审查使用。
+recovery	The recovery amount is shown in the claim file.	索赔档案列明了追回的金额。	We are still waiting for recovery from the carrier.	我们仍在等待向承运人追回款项。
+recover	We are trying to recover the unpaid balance.	我们正在尝试追回未付尾款。	Can we recover any costs under this agreement?	根据这个协议，能追回任何费用吗？
+recoverable	The insurer will review which costs are recoverable.	保险人将核对哪些费用可以追回。	Show the estimated recoverable amount separately.	单独列出预计可追回的金额。
+loss	The report estimates the loss from the damaged cargo.	报告估算了货损造成的损失。	We have not agreed on the loss amount.	我们还没有就损失金额达成一致。
+lost	The courier confirmed that the parcel was lost.	快递承运人确认包裹已丢失。	Which documents were inside the lost package?	丢失的包裹里有哪些文件？
+missing	Two cartons are missing from the delivery.	这次送货少了两箱。	Please list the missing parts in your message.	请在消息中列出缺失的零件。
+misplaced	The warehouse found the misplaced pallet.	仓库找到了错放的那托货。	The samples were misplaced during the move.	样品在搬运时放错了位置。
+shortfall	The buyer reported a shortfall of ten pieces.	买方报告数量少了十件。	We need to explain the shortfall before invoicing.	开票前，我们需要说明数量差额。
+discrepancy	There is a discrepancy between the invoice and packing list.	发票与装箱单存在不符点。	Please resolve the discrepancy in the carton count.	请解决纸箱数量不一致的问题。
+discrepant	The bank returned the discrepant documents.	银行退回了有不符点的单据。	Ask which details make the documents discrepant.	询问哪些细节造成了单据不符。
+nonconformity	The inspector recorded a labeling nonconformity.	验货员记录了一项标签不符合项。	The factory must respond to each nonconformity.	工厂必须回应每一项不符合项。
+underpayment	The underpayment appears to be a bank fee deduction.	少付的款项看起来是银行扣除的费用。	Please explain the underpayment on this invoice.	请解释这张发票为什么少付了款。
+unpaid	Three invoices remain unpaid.	还有三张发票的款项未付。	We sent a reminder about the unpaid balance.	我们发出了未付尾款提醒。
+prepaid	The invoice shows that the freight is prepaid.	发票显示运费已预付。	Please confirm whether the delivery charge is prepaid.	请确认配送费是否已预付。
+prepayment	The factory is waiting for the prepayment.	工厂正在等待预付款。	Please send a receipt for the prepayment.	请发一份预付款收据。
+advance	We received an advance against this order.	我们收到了这张订单的预付款。	The advance is shown separately on the statement.	对账单上单独列出了预付款。
+instalment	The next instalment is due on Friday.	下一笔分期款周五到期。	Please confirm the amount of each instalment.	请确认每笔分期付款的金额。
+installment	The final installment has not arrived yet.	最后一笔分期款还没到账。	We need a receipt for this installment.	我们需要这笔分期付款的收据。
+banking	Our banking contact will check the transfer.	我们的银行业务联系人会核查这笔转账。	Online banking shows the payment as pending.	网上银行显示这笔付款待处理。
+banker	The banker asked for the trade documents.	银行人员要求提供贸易单证。	We will discuss the payment terms with our banker.	我们会与银行人员讨论付款条件。
+draft	The buyer accepted the time draft.	买方承兑了这张远期汇票。	Please check the amount on the draft.	请核对汇票金额。
+cheque	The buyer sent a cheque for the balance.	买方寄来了支付尾款的支票。	Has the cheque cleared yet?	支票款已经到账了吗？
+check	The customer paid by check.	客户用支票付款。	Please check the bank details before sending payment.	汇款前请核对银行信息。
+lc	The LC has been issued by the buyer's bank.	买方银行已经开立信用证。	Please review the LC before shipment.	发运前请核对信用证。
+creditworthiness	The bank is reviewing the buyer's creditworthiness.	银行正在审查买方的资信状况。	We need current information on the customer's creditworthiness.	我们需要客户最新的资信信息。
+creditworthy	The insurer considers this buyer creditworthy.	保险人认为这个买方资信良好。	What evidence shows that the customer is creditworthy?	有什么材料表明客户资信良好？
+irrevocable	The buyer requested an irrevocable letter of credit.	买方要求开立不可撤销信用证。	Please confirm that the wording says irrevocable.	请确认条文写明不可撤销。
+revocable	The draft agreement describes the authorization as revocable.	协议草稿将这项授权描述为可撤销。	Ask the bank to explain the revocable arrangement.	请银行解释这个可撤销安排。
+revocation	We received notice of the authorization revocation.	我们收到了授权撤销通知。	The revocation date is missing from the notice.	通知中缺少撤销日期。
+revoke	The buyer wants to revoke the agent's authorization.	买方希望撤销代理的授权。	Who can revoke access to the payment account?	谁可以撤销付款账户的访问权限？
+sight	The draft is payable at sight.	这张汇票为即期付款汇票。	Please confirm whether payment is at sight.	请确认是否采用即期付款。
+usance	The buyer requested a ninety-day usance period.	买方要求九十天的远期付款期限。	Ask the bank to confirm the usance terms.	请银行确认远期付款条件。
+tenor	The draft has a tenor of sixty days.	这张汇票的期限为六十天。	Confirm how the tenor is calculated.	确认票据期限如何计算。
+maturity	The maturity date is shown on the draft.	汇票上列明了到期日。	We expect payment at maturity.	我们预计会在到期时收到付款。
+mature	These bills mature at the end of the month.	这些票据将在月底到期。	When does the payment obligation mature?	这项付款义务何时到期？
+acceptor	The acceptor has signed the bill.	承兑人已经在票据上签字。	Check the acceptor details with the bank.	与银行核对承兑人信息。
+endorsement	The bank asked us to review the endorsement.	银行请我们核对背书。	The endorsement is on the back of the document.	背书在单据背面。
+endorse	Who needs to endorse this bill?	谁需要为这张票据背书？	Ask the bank how to endorse the document correctly.	请银行说明如何正确为这份单据背书。
+endorser	The endorser name is unclear on the copy.	副本上的背书人名称看不清。	Please confirm who signed as the endorser.	请确认谁以背书人身份签了字。
+endorsee	The endorsee is named in the endorsement.	背书中列明了被背书人。	The bank needs the endorsee details.	银行需要被背书人信息。
+present	We will present the documents to the bank tomorrow.	我们明天会向银行提交单据。	Please present the original invoice, not a photocopy.	请提交发票原件，而不是复印件。
+presentation	The bank confirmed receipt of our presentation.	银行确认收到了我们提交的单据。	Prepare the documents for presentation this week.	准备好本周交单所需的文件。
+honor	The issuing bank confirmed it would honor the credit.	开证银行确认将兑付该信用证。	Ask when the bank will honor the accepted draft.	询问银行何时兑付已承兑汇票。
+dishonor	The bank sent a notice of dishonor.	银行发来了拒付通知。	What reason did the bank give for dishonor?	银行给出的拒付理由是什么？
+reconciliation	The reconciliation found two unmatched payments.	对账发现两笔付款未能匹配。	We need the bank statement for reconciliation.	我们需要银行流水来对账。
+reconcile	Please reconcile the payment with the invoice.	请核对这笔付款与发票。	We reconcile the account at the end of each month.	我们每月底会对这个账户进行对账。
+receivable	This receivable is still outstanding.	这笔应收款仍未收回。	The receivable is linked to the export invoice.	这笔应收款对应出口发票。
+billing	The billing address differs from the delivery address.	账单地址与送货地址不同。	Please contact our billing team about the duplicate charge.	请联系我们的计费团队，处理重复收费。
+billable	Is the extra inspection time billable?	额外的验货时间需要计费吗？	The quote lists the billable services.	报价列出了可计费的服务。
+invoicing	The invoicing team needs the final quantity.	开票团队需要最终数量。	We found an error in the invoicing details.	我们发现开票信息有误。
+voucher	Please attach the payment voucher.	请附上付款凭证。	The voucher does not show the invoice number.	这份凭证没有显示发票号码。
+settle	We plan to settle the balance this week.	我们计划本周结清尾款。	Can you settle the outstanding invoice today?	你们今天能付清这张未付发票吗？
+conversion	The conversion rate is shown on the bank receipt.	银行回执显示了货币兑换汇率。	Please confirm the currency conversion fee.	请确认货币兑换手续费。
+convert	We need to convert the payment into euros.	我们需要把这笔款兑换成欧元。	Which rate will the bank use to convert the funds?	银行会按哪个汇率兑换这笔资金？
+convertible	The bank will confirm whether this currency is convertible.	银行会确认这种货币是否可兑换。	We need payment in a convertible currency.	我们需要以可兑换货币收款。
+convertibility	Currency convertibility is part of the bank's review.	货币可兑换性是银行审核的一部分。	Ask about convertibility before agreeing on the payment currency.	商定付款币种前，询问其可兑换性。
+fluctuation	The exchange rate fluctuation affected the quote.	汇率波动影响了报价。	We recorded the fluctuation between order and payment.	我们记录了下单与付款之间的汇率波动。
+fluctuate	Freight prices can fluctuate during peak season.	旺季运费可能波动。	How much did the exchange rate fluctuate this week?	本周汇率波动了多少？
+hedging	The treasury team is reviewing the hedging costs.	资金管理团队正在核对套期保值成本。	Ask the bank to explain the hedging arrangement.	请银行解释套期保值安排。
+hedge	The finance team discussed whether to hedge the currency exposure.	财务团队讨论了是否对冲外汇敞口。	The bank described the terms of the proposed hedge.	银行说明了拟议套期保值方案的条件。
+fx	The FX rate appears on the transfer confirmation.	转账确认中列明了外汇汇率。	Who handles FX transactions for this order?	谁负责这张订单的外汇交易？
+forex	The bank's forex desk will provide a quote.	银行外汇交易台会提供报价。	Our finance team follows developments in the forex market.	我们的财务团队关注外汇市场动态。
+usd	The invoice is payable in USD.	这张发票以美元付款。	Please give us a quotation in USD.	请给我们一份美元报价。
+eur	The buyer requested a price in EUR.	买方要求以欧元报价。	We received the deposit in EUR.	我们收到的定金是欧元。
+gbp	This account accepts payments in GBP.	这个账户接受英镑付款。	The statement shows a balance in GBP.	对账单显示了英镑余额。
+cny	The factory quoted the local price in CNY.	工厂以人民币报出本地价格。	Please confirm the amount payable in CNY.	请确认需要支付的人民币金额。
+rmb	The supplier requested payment in RMB.	供应商要求用人民币付款。	Our quotation shows the equivalent amount in RMB.	我们的报价列出了人民币等值金额。
+jpy	The order total is shown in JPY.	订单总额以日元显示。	Can your bank receive a transfer in JPY?	你们的银行能接收日元汇款吗？
+swift	The bank will send a SWIFT message about the payment.	银行将发送有关这笔付款的金融电信报文。	Please provide the SWIFT reference for this transfer.	请提供这笔转账的金融电信报文参考号。
+iban	The IBAN on the invoice differs from your email.	发票上的国际银行账户号码与邮件中的不同。	Please confirm the IBAN through our usual contact.	请通过我们平时的联系人确认国际银行账户号码。
+bic	The bank asked for the beneficiary's BIC.	银行要求提供受益人银行的识别代码。	Please check the BIC before submitting the transfer.	提交转账前请核对银行识别代码。
+tt	The buyer requested payment by TT.	买方要求通过电汇付款。	Please send the TT payment confirmation.	请发送电汇付款确认。
+remit	We will remit the balance after checking the invoice.	核对发票后，我们会汇出尾款。	Which currency should we remit?	我们应该汇哪种货币？
+remitter	The remitter name is missing from the receipt.	回执中缺少汇款人名称。	Ask the remitter for the transfer reference.	向汇款人索取转账参考号。
+payee	The payee name must match our payment instructions.	收款人名称应与我们的付款指示一致。	Please confirm the payee before authorizing payment.	批准付款前请确认收款人。
+payer	The payer used a different company name.	付款人使用了不同的公司名称。	Who is the payer for this invoice?	这张发票的付款人是谁？
+recipient	The recipient has not seen the funds yet.	收款方还没看到款项到账。	Please confirm the recipient account details.	请确认收款方账户信息。
+sender	The sender provided a copy of the bank receipt.	汇款方提供了一份银行回执副本。	The bank needs the sender's full name.	银行需要汇款方的全名。
+interbank	The interbank transfer is still being processed.	银行间转账仍在处理中。	Ask whether an interbank fee was deducted.	询问是否扣除了银行间手续费。
+fee	The bank deducted a transfer fee.	银行扣除了一笔转账费用。	Does the quoted fee include document handling?	所报费用包含单证处理吗？
+commission	The agent's commission is listed separately.	代理佣金单独列出。	How is the commission calculated for this sale?	这笔销售的佣金如何计算？
+commissioning	The price includes installation but not commissioning.	价格包含安装，但不包含调试。	Our engineer will attend the commissioning next week.	我们的工程师下周会参加调试。
+markup	The markup is added to the purchase cost.	加价部分加在采购成本之上。	Please explain the markup in this quotation.	请说明这份报价中的加价。
+markdown	The markdown applies to the old stock only.	减价只针对旧库存。	The buyer asked for a larger markdown.	买方要求更大幅度减价。
+margin	Higher freight costs reduced our profit margin.	运费上涨降低了我们的利润率。	Please show the margin calculation for this order.	请列出这张订单的利润率计算。
+profit	The profit is lower after the extra storage charges.	扣除额外仓储费后，利润变少了。	We need to calculate the profit on this shipment.	我们需要计算这批货的利润。
+profitable	The order is still profitable after the discount.	折扣后，这张订单仍有利润。	Was this product line profitable last year?	这个产品系列去年有利润吗？
+profitability	The report compares profitability across product lines.	报告比较了各产品系列的盈利能力。	Return costs affect the profitability of this order.	退货费用影响这张订单的盈利能力。
+cost	The cost of packaging has increased.	包装成本上涨了。	Please break down the cost by item.	请按项目分列成本。
+costing	The costing sheet includes labor and packaging.	成本核算表包含人工和包装。	We need updated costing before sending the quote.	发送报价前，我们需要更新成本核算。
+expense	The extra inspection is an unexpected expense.	额外验货是一笔意料之外的支出。	Record the expense against this order.	把这笔费用记到这张订单上。
+expenditure	The report summarizes transport expenditure for the month.	报告汇总了当月运输支出。	This expenditure was not included in the original estimate.	原估算中没有包含这笔支出。
+budget	The freight quote is above our budget.	运费报价超出了预算。	Can we complete the shipment within the budget?	我们能在预算内完成这次发运吗？
+budgeting	The budgeting process starts before the new quarter.	新季度开始前，我们会着手编制预算。	Include returns and repairs in budgeting.	编制预算时计入退货和维修费用。
+turnover	Annual turnover increased despite fewer orders.	尽管订单减少，年营业额还是增长了。	We track inventory turnover by product group.	我们按产品组跟踪库存周转。
+revenue	Export revenue rose last quarter.	上季度出口收入增长了。	Show the revenue from this customer separately.	单独列出这个客户带来的收入。
+repatriation	The bank requested documents for the repatriation of funds.	银行要求提供资金汇回所需文件。	We are checking the charges for repatriation.	我们正在核对资金汇回费用。
+repatriate	The company plans to repatriate the overseas earnings.	公司计划汇回海外收益。	Ask the bank what documents we need to repatriate funds.	请银行说明汇回资金需要哪些文件。
+factoring	The bank explained the factoring arrangement.	银行解释了保理安排。	Ask which invoices are eligible for factoring.	询问哪些发票可以办理保理。
+factor	The factor asked for information about the buyer.	保理商要求提供买方信息。	We sent the receivables list to the factor.	我们把应收款清单发给了保理商。
+financing	The order needs financing before production starts.	订单在投产前需要融资。	The bank is reviewing our trade financing request.	银行正在审查我们的贸易融资申请。
+finance	Can the bank finance this export order?	银行能为这张出口订单融资吗？	We are discussing how to finance the equipment purchase.	我们正在讨论如何为设备采购融资。
+funding	The project is waiting for funding approval.	项目正在等待资金支持审批。	Confirm the funding source before placing the order.	下单前确认资金来源。
+fund	The fund is reserved for overseas expansion.	这笔资金专门用于海外扩张。	We need to fund production before receiving the balance.	收到尾款前，我们需要为生产提供资金。
+liquid	The report shows which assets are liquid.	报告列出了哪些资产流动性较强。	How liquid are the funds available for this order?	可用于这张订单的资金流动性如何？
+liquidity	The delayed payment has affected our liquidity.	延迟付款影响了我们的流动性。	The bank asked for an update on liquidity.	银行要求提供最新的流动性情况。
+solvency	The insurer requested information on the buyer's solvency.	保险人要求了解买方的偿付能力。	We are reviewing the supplier's solvency report.	我们正在核对供应商的偿付能力报告。
+insolvency	The company notified us of possible insolvency.	这家公司告知我们它可能无力偿债。	The insolvency notice affects our outstanding order.	无力偿债通知影响了我们尚未完成的订单。
+insolvent	The buyer may be insolvent, according to its statement.	根据买方的声明，它可能已无力偿债。	Ask the finance team to review the insolvent customer's balance.	请财务团队核对无力偿债客户的欠款。
+bankruptcy	The customer has filed for bankruptcy.	这个客户已经申请破产。	The bankruptcy notice was sent to our legal team.	破产通知已发给我们的法务团队。
+default	The bank reported a default on the loan.	银行报告这笔贷款出现了违约。	Check what the agreement says about default.	查看协议如何规定违约情形。
+arrears	The account is three months in arrears.	这个账户已经拖欠三个月的款项。	We sent a reminder about the arrears.	我们发出了拖欠款提醒。
+aging	The aging report groups invoices by days overdue.	账龄报告按逾期天数归组发票。	Please update the receivables aging report.	请更新应收款账龄报告。
+security	What security does the bank require for this facility?	银行为这项融资要求什么担保？	The agreement lists the security provided by the borrower.	协议列明了借款人提供的担保。
+unsecured	The offer describes the loan as unsecured.	报价文件将这笔贷款描述为无担保贷款。	Ask the bank to explain the unsecured credit terms.	请银行解释无担保授信条件。
+collateral	The bank requested details of the proposed collateral.	银行要求提供拟用抵押品的信息。	Which assets are listed as collateral?	哪些资产被列为抵押品？
+pledge	The pledge agreement covers the stored goods.	质押协议涵盖了仓储货物。	Our legal team is reviewing the pledge documents.	我们的法务团队正在审查质押文件。
+lien	The carrier mentioned a lien in its notice.	承运人在通知中提到了留置权。	Ask the legal team to review the lien clause.	请法务团队审查留置权条款。
+escrow	The payment will remain in escrow pending confirmation.	这笔付款将在确认前留在第三方托管中。	Who manages the escrow account for this transaction?	谁管理这笔交易的第三方托管账户？
+bond	The buyer requested a performance bond.	买方要求提供履约保证书。	Please check the expiry date on the bond.	请核对保证书上的到期日。
+surety	The surety asked for the contract documents.	保证人要求提供合同文件。	We need to confirm the identity of the surety.	我们需要确认保证人的身份。
