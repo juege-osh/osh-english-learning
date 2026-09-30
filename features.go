@@ -184,6 +184,15 @@ func newFeatures(dir string) (*features, error) {
 				return nil, fmt.Errorf("invalid industry word %d", id)
 			}
 		}
+		allowed := make(map[int]bool, len(sector.WordIDs))
+		for _, id := range sector.WordIDs {
+			allowed[id] = true
+		}
+		for id, label := range sector.DisplayWords {
+			if !allowed[id] || label == "" || len(label) > 40 {
+				return nil, fmt.Errorf("industry %s has invalid display word %d", sector.ID, id)
+			}
+		}
 		for _, id := range sector.WordIDs[:sector.CoreCount] {
 			if sector.Category == "industry" && sector.Glosses[id] == "" {
 				return nil, fmt.Errorf("industry %s lacks core meaning for %d", sector.ID, id)

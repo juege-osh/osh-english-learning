@@ -11,13 +11,14 @@ import (
 )
 
 type industry struct {
-	ID          string         `json:"id"`
-	Name        string         `json:"name"`
-	Category    string         `json:"category,omitempty"`
-	Description string         `json:"description"`
-	CoreCount   int            `json:"coreCount,omitempty"`
-	Glosses     map[int]string `json:"glosses,omitempty"`
-	WordIDs     []int          `json:"wordIds"`
+	ID           string         `json:"id"`
+	Name         string         `json:"name"`
+	Category     string         `json:"category,omitempty"`
+	Description  string         `json:"description"`
+	CoreCount    int            `json:"coreCount,omitempty"`
+	Glosses      map[int]string `json:"glosses,omitempty"`
+	DisplayWords map[int]string `json:"displayWords,omitempty"`
+	WordIDs      []int          `json:"wordIds"`
 }
 
 // Specialist terms live outside f.words, so main progression and competitive
@@ -27,6 +28,13 @@ func (f *features) industryWord(id int) quizWord {
 		return f.words[id-1]
 	}
 	return f.extraWords[id]
+}
+
+func (sector *industry) display(word quizWord) string {
+	if label := sector.DisplayWords[word.ID]; label != "" {
+		return label
+	}
+	return word.Word
 }
 
 func (sector *industry) gloss(word quizWord) string {
@@ -72,9 +80,10 @@ func (sector *industry) edition() string {
 	// Meaning edits and pool changes start a separate board, so scores from
 	// different question sets are never silently compared on the same day.
 	body, _ := json.Marshal(struct {
-		IDs     []int
-		Glosses map[int]string
-	}{pool, sector.Glosses})
+		IDs      []int
+		Glosses  map[int]string
+		Displays map[int]string `json:",omitempty"`
+	}{pool, sector.Glosses, sector.DisplayWords})
 	h := sha256.Sum256(body)
 	return fmt.Sprintf("%x", h[:6])
 }
@@ -95,7 +104,7 @@ func (f *features) industryChallenge(date string, sector *industry) []quizQuesti
 	for _, position := range perm[:20] {
 		word := f.industryWord(pool[position])
 		meaning := sector.gloss(word)
-		q := quizQuestion{ID: word.ID, Word: word.Word, Options: []quizOption{{ID: word.ID, Zh: meaning}}}
+		q := quizQuestion{ID: word.ID, Word: sector.display(word), Options: []quizOption{{ID: word.ID, Zh: meaning}}}
 		seen := map[string]bool{meaning: true}
 		optionIDs := pool
 		for len(q.Options) < 4 {

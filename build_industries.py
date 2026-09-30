@@ -40,6 +40,7 @@ for glossary in sorted((root / 'qa').glob('*_reviewed.tsv')):
             next_id += 1
 word_ids = {**main_ids, **extra_ids}
 confusables = json.loads((root / 'qa/industry_confusables.json').read_text())
+displays = json.loads((root / 'qa/industry_display.json').read_text())
 
 # A strong ECDICT subject label plus topical words in the displayed meaning or
 # English definition places useful vocabulary ahead of incidental polysemy.
@@ -147,6 +148,10 @@ for id_, name, description, tag, zh_words, en_words in specs:
     if len(initial)+len(selected)<500:
         raise RuntimeError(f'{id_} only has {len(initial)+len(selected)} related entries')
     route = {'id':id_,'name':name,'description':description,'category':'industry','coreCount':len(initial),'glosses':glosses,'wordIds':initial+selected}
+    route_displays = {str(word_ids[headword]): label for headword, label in displays.get(id_, {}).items()
+                      if headword in word_ids and word_ids[headword] in initial}
+    if route_displays:
+        route['displayWords'] = route_displays
     if route_examples:
         route['examples'] = route_examples
     groups = []

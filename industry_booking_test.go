@@ -2,7 +2,9 @@ package main
 
 import (
 	"bytes"
+	"crypto/sha256"
 	"encoding/json"
+	"fmt"
 	"net/http/httptest"
 	"testing"
 	"time"
@@ -304,7 +306,7 @@ func TestEditorialIndustryChallengePools(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	for id, count := range map[string]int{"ai_creator": 831, "healthcare": 753, "biology": 967} {
+	for id, count := range map[string]int{"ai_creator": 831, "healthcare": 753, "biology": 967, "foreign_trade": 774, "finance": 846} {
 		t.Run(id, func(t *testing.T) {
 			sector := f.findIndustry(id)
 			if sector == nil || sector.CoreCount != count || len(sector.WordIDs) != count || len(sector.Glosses) != count {
@@ -360,7 +362,7 @@ func TestSupplementalIndustryWordsStayOutsideMainRoute(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	if len(f.words) != 20000 || len(f.extraWords) != 245 {
+	if len(f.words) != 20000 || len(f.extraWords) != 631 {
 		t.Fatal("main or supplemental vocabulary size changed unexpectedly")
 	}
 	sector := f.findIndustry("biology")
@@ -384,7 +386,7 @@ func TestSupplementalIndustryWordsStayOutsideMainRoute(t *testing.T) {
 		date := time.Date(2026, 10, day, 0, 0, 0, 0, time.UTC).Format("2006-01-02")
 		for _, q := range f.industryChallenge(date, sector) {
 			appeared = appeared || q.ID > 20000
-			if q.Word != f.industryWord(q.ID).Word {
+			if q.Word != sector.display(f.industryWord(q.ID)) {
 				t.Fatal("specialist question does not resolve to its vocabulary")
 			}
 		}
@@ -411,6 +413,70 @@ func TestSupplementalIndustryWordsStayOutsideMainRoute(t *testing.T) {
 					t.Fatal("supplemental vocabulary changed an exam reference pool")
 				}
 			}
+		}
+	}
+}
+
+func TestIndustryAcronymsPreserveCanonicalProgressIDs(t *testing.T) {
+	f, err := newFeatures(t.TempDir())
+	if err != nil {
+		t.Fatal(err)
+	}
+	// Routes without display changes retain their previous leaderboard edition.
+	for _, sector := range f.industries {
+		if len(sector.DisplayWords) != 0 {
+			continue
+		}
+		pool := sector.WordIDs
+		if sector.Category == "industry" {
+			pool = pool[:sector.CoreCount]
+		}
+		body, _ := json.Marshal(struct {
+			IDs     []int
+			Glosses map[int]string
+		}{pool, sector.Glosses})
+		h := sha256.Sum256(body)
+		if sector.edition() != fmt.Sprintf("%x", h[:6]) {
+			t.Fatalf("unaffected board changed: %s", sector.ID)
+		}
+	}
+	seen := map[string]bool{}
+	for _, route := range []string{"foreign_trade", "finance", "biology"} {
+		sector := f.findIndustry(route)
+		for day := 1; day <= 31; day++ {
+			date := time.Date(2026, 10, day, 0, 0, 0, 0, time.UTC).Format("2006-01-02")
+			for _, q := range f.industryChallenge(date, sector) {
+				canonical := f.industryWord(q.ID)
+				if q.Word != sector.display(canonical) {
+					t.Fatal("acronym lost in ranked question")
+				}
+				if label := sector.DisplayWords[q.ID]; label != "" {
+					seen[label] = true
+					if canonical.Word == label {
+						t.Fatal("display formatting changed canonical headword")
+					}
+				}
+			}
+		}
+		edition := sector.edition()
+		sector.DisplayWords[sector.WordIDs[0]] = "Updated"
+		if sector.edition() == edition {
+			t.Fatal("display edit reused old question edition")
+		}
+	}
+	if len(seen) == 0 {
+		t.Fatal("no ranked acronym questions")
+	}
+	for route, label := range map[string]string{"finance": "IPO", "foreign_trade": "FOB", "biology": "DNA"} {
+		sector := f.findIndustry(route)
+		found := false
+		for id, display := range sector.DisplayWords {
+			if display == label {
+				found = sector.display(f.industryWord(id)) == label
+			}
+		}
+		if !found {
+			t.Fatalf("missing display label: %s", label)
 		}
 	}
 }
