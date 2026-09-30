@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """Disposable, multi-account HTTP smoke test. Use only against an isolated local state directory."""
-import json, secrets, urllib.request, urllib.error, http.cookiejar, zlib, struct, pathlib
+import json, secrets, urllib.request, urllib.error, http.cookiejar, zlib, struct, pathlib, os
+from urllib.parse import urlparse
 
-BASE = 'http://127.0.0.1:19005'
+BASE = os.environ.get('ENGLISH_QA_BASE_URL', 'http://127.0.0.1:19005').rstrip('/')
+assert urlparse(BASE).scheme == 'http' and urlparse(BASE).hostname in ('127.0.0.1', 'localhost'), 'smoke tests are local only'
 RUN = secrets.token_hex(3)
 checks=[]
 
