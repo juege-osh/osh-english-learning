@@ -298,3 +298,59 @@ func TestIndustryEditionSeparatesQuestionPools(t *testing.T) {
 		t.Fatal("meaning edit did not change the edition")
 	}
 }
+
+func TestEditorialIndustryChallengePools(t *testing.T) {
+	f, err := newFeatures(t.TempDir())
+	if err != nil {
+		t.Fatal(err)
+	}
+	for id, count := range map[string]int{"ai_creator": 831, "healthcare": 753} {
+		t.Run(id, func(t *testing.T) {
+			sector := f.findIndustry(id)
+			if sector == nil || sector.CoreCount != count || len(sector.WordIDs) != count || len(sector.Glosses) != count {
+				t.Fatal("editorial pool has missing meanings or trial padding")
+			}
+			allowed := map[int]bool{}
+			for _, wordID := range sector.WordIDs {
+				allowed[wordID] = true
+			}
+			beyondStart := false
+			for day := 1; day <= 30; day++ {
+				questions := f.industryChallenge(time.Date(2026, 10, day, 0, 0, 0, 0, time.UTC).Format("2006-01-02"), sector)
+				if len(questions) != 20 {
+					t.Fatal("wrong challenge length")
+				}
+				seen := map[int]bool{}
+				for _, q := range questions {
+					if !allowed[q.ID] || seen[q.ID] || len(q.Options) != 4 {
+						t.Fatal("invalid question")
+					}
+					seen[q.ID] = true
+					meanings := map[string]bool{}
+					found := false
+					for _, option := range q.Options {
+						if !allowed[option.ID] || meanings[option.Zh] || option.Zh != sector.Glosses[option.ID] {
+							t.Fatal("invalid editorial distractor")
+						}
+						meanings[option.Zh] = true
+						found = found || option.ID == q.ID
+					}
+					if !found {
+						t.Fatal("missing correct option")
+					}
+					for _, wordID := range sector.WordIDs[100:] {
+						beyondStart = beyondStart || wordID == q.ID
+					}
+				}
+			}
+			if !beyondStart {
+				t.Fatal("new meanings did not reach the leaderboard")
+			}
+			edition := sector.edition()
+			sector.Glosses[sector.WordIDs[100]] = "修改后的行业含义"
+			if edition == sector.edition() {
+				t.Fatal("edited meaning reused the old leaderboard")
+			}
+		})
+	}
+}

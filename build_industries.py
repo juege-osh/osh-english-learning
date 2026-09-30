@@ -12,6 +12,7 @@ root = Path(__file__).parent
 words = json.loads((root / 'data/words.json').read_text())
 prior = json.loads((root / 'data/industries.json').read_text())
 word_ids = {item['word'].lower(): item['id'] for item in words}
+confusables = json.loads((root / 'qa/industry_confusables.json').read_text())
 
 # A strong ECDICT subject label plus topical words in the displayed meaning or
 # English definition places useful vocabulary ahead of incidental polysemy.
@@ -121,6 +122,13 @@ for id_, name, description, tag, zh_words, en_words in specs:
     route = {'id':id_,'name':name,'description':description,'category':'industry','coreCount':len(initial),'glosses':glosses,'wordIds':initial+selected}
     if route_examples:
         route['examples'] = route_examples
+    groups = []
+    for headwords in confusables.get(id_, []):
+        group = [word_ids[headword] for headword in headwords if headword in word_ids and word_ids[headword] in initial]
+        if len(group) >= 2:
+            groups.append(group)
+    if groups:
+        route['confusableGroups'] = groups
     output.append(route)
 for x in prior:
     if x.get('category')=='exam':output.append(x)
