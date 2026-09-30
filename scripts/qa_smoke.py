@@ -85,7 +85,7 @@ def main():
     b.call('/api/industries/submit',{'sector':'biology','edition':biology['edition'],'name':b.name,'answers':[q['options'][0]['id'] for q in biology['questions']]})
     ok('生物专业词参与专项题及榜单',len(biology['questions'])==20 and len(b.call('/api/industries/leaderboard?sector=biology')['entries'])==1)
     route_data=a.call('/data/industries.json')
-    for route, count in [('foreign_trade',774),('finance',846)]:
+    for route, count in [('foreign_trade',774),('finance',846),('marketing',767),('law',850),('chemistry',932)]:
         sector=next(item for item in route_data if item['id']==route)
         base_words=a.call('/data/words.json')
         target_ids={sector.get('displayWords',{}).get(str(word['id']),word['word']):word['id'] for word in base_words+extra if word['id'] in sector['wordIds']}
