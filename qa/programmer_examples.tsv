@@ -199,3 +199,103 @@ reflection	We use reflection to find methods at runtime.	我们使用反射在�
 volatile	This Java field is marked volatile.	这个 Java 字段被标记为 volatile。	A volatile field does not make an increment operation atomic.	字段使用 volatile 并不能让递增操作成为原子操作。
 payload	The request payload contains the new profile data.	请求的有效载荷包含新的用户资料。	The payload is too large for this endpoint.	这个有效载荷对于这个接口来说太大了。
 header	The Authorization header is missing from this request.	这个请求缺少 Authorization 请求头。	The first bytes belong to the file header.	开头的这些字节属于文件头。
+cookie	The browser still has the old session cookie.	浏览器里还留着旧的会话Cookie。	Check whether the cookie is sent with this request.	检查这个请求是否携带了Cookie。
+credential	This credential has expired, so the connection was rejected.	这个凭据已过期，所以连接被拒绝了。	Don't include the credential in the error message.	别把凭据写进错误消息里。
+cipher	Which cipher does the existing client use?	现有客户端使用哪种加密算法？	The server and client don't agree on a supported cipher.	服务器和客户端没能协商出双方都支持的加密算法。
+asymmetric	The design uses asymmetric encryption for this exchange.	这个设计在这次交换中使用非对称加密。	Can you explain why this component needs an asymmetric key pair?	你能解释一下这个组件为什么需要非对称密钥对吗？
+salt	Which field stores the salt for this password hash?	哪个字段存储这个密码哈希的盐值？	The migration needs to preserve the existing salt.	这次迁移需要保留现有盐值。
+digest	The file's digest doesn't match the value in the manifest.	文件摘要与清单中的值不一致。	Compute the digest after the download finishes.	下载结束后再计算摘要。
+collision	The test checks how the map handles a hash collision.	这个测试检查映射如何处理哈希冲突。	We found a collision between two generated identifiers.	我们发现两个生成的标识符发生了冲突。
+boot	The machine won't boot after the update.	更新后，这台机器无法启动。	Check the boot log before replacing the drive.	更换硬盘前，先查看启动日志。
+driver	The new driver fixed the display issue.	新驱动修复了显示问题。	Which driver version is installed on this machine?	这台机器安装的是哪个驱动版本？
+interrupt	The interrupt handler needs to finish quickly.	这个中断处理程序需要快速完成。	We logged the interrupt to see when it arrived.	我们记录了这个中断，以查看它何时到达。
+peripheral	Does the system recognize this peripheral?	系统能识别这个外设吗？	Disconnect the peripheral and try the test again.	断开这个外设，再试一次测试。
+register	The register contains the address we were looking for.	这个寄存器里存着我们要找的地址。	We need to register the plugin before starting the application.	启动应用前，我们需要注册这个插件。
+microprocessor	Which microprocessor does the board use?	这块板使用哪种微处理器？	The test program runs directly on the microprocessor.	这个测试程序直接在微处理器上运行。
+motherboard	The motherboard has a spare slot for the network card.	这块主板有一个空槽可以安装网卡。	Check the motherboard model before ordering replacement parts.	订购替换零件前，先核对主板型号。
+circuit	The circuit diagram shows where the sensor connects.	电路图展示了传感器连接的位置。	We need to check the circuit before powering the board again.	再次给板子通电前，我们需要检查电路。
+circuitry	The circuitry near the power connector needs inspection.	电源接口附近的电路系统需要检查。	This document explains the board's control circuitry.	这份文档解释了电路板的控制电路系统。
+transistor	The diagram marks the transistor we need to inspect.	图中标出了我们需要检查的晶体管。	This transistor is part of the switching circuit.	这个晶体管是开关电路的一部分。
+bus	The devices share the same bus.	这些设备共用同一条总线。	We captured the bus traffic during startup.	我们抓取了启动期间的总线通信数据。
+folder	Put the generated files in a separate folder.	把生成的文件放进单独的文件夹。	The folder exists, but the process can't write to it.	文件夹存在，但这个进程无法往里写入。
+console	The console shows a warning before the page crashes.	页面崩溃前，控制台会显示一条警告。	Can you copy the full error from the console?	你能把控制台里的完整错误复制出来吗？
+prompt	Wait until the command prompt appears.	等到命令提示符出现。	The prompt changed after I activated the environment.	我激活环境后，命令提示符变了。
+monitor	We need to monitor the queue during the rollout.	逐步发布期间，我们需要监控队列。	The second monitor shows the logs while I debug.	我调试时，第二台显示器上显示日志。
+resource	This resource is released when the connection closes.	连接关闭时，这个资源会被释放。	Which resource is causing the startup failure?	哪个资源导致了启动失败？
+contention	Lock contention increased when we added more workers.	增加工作线程后，锁争用加剧了。	The profiler shows contention around this shared cache.	性能分析器显示，这个共享缓存周围存在资源争用。
+fragmentation	The report suggests memory fragmentation is increasing.	报告显示内存碎片化可能正在加剧。	We compared fragmentation before and after the long-running test.	我们比较了长时间运行测试前后的碎片化情况。
+allocation	The profiler points to a large allocation in this loop.	性能分析器指出，这个循环里有一处较大的内存分配。	Can we avoid this allocation on every request?	我们能避免每个请求都进行这次内存分配吗？
+garbage	Garbage collection ran several times during the test.	测试期间，垃圾回收运行了好几次。	The memory report includes objects waiting for garbage collection.	内存报告包含等待垃圾回收的对象。
+collector	The garbage collector reclaimed most of the temporary objects.	垃圾回收器回收了大部分临时对象。	Which collector is active in this runtime configuration?	这个运行时配置启用了哪种垃圾回收器？
+reclaim	The process didn't reclaim the memory after the job finished.	作业结束后，进程没有回收这部分内存。	We need to reclaim these buffers when the stream closes.	流关闭时，我们需要回收这些缓冲区。
+leak	The leak appears only after several reconnections.	这个泄漏问题只在多次重连后出现。	Let's reproduce the memory leak with a smaller test case.	我们用一个更小的测试用例复现内存泄漏吧。
+optimize	We should measure this code before we optimize it.	优化这段代码前，我们应该先测量它的表现。	Can we optimize the query without changing the result?	我们能在不改变结果的情况下优化查询吗？
+throughput	The throughput dropped when the database became busy.	数据库繁忙时，吞吐量下降了。	Measure throughput with the same workload for both versions.	用相同的工作负载测量两个版本的吞吐量。
+benchmark	Run the benchmark on the release build.	在发布构建上运行基准测试。	The benchmark uses larger files than our usual requests.	这个基准测试使用的文件比我们平时请求中的文件大。
+bottleneck	The database connection pool is the current bottleneck.	数据库连接池是当前的性能瓶颈。	Fixing this bottleneck should come before changing the UI.	修复这个性能瓶颈应该优先于修改界面。
+throttle	We need to throttle requests from this background job.	我们需要限制这个后台作业的请求速率。	Does the client throttle retries when the server is busy?	服务器繁忙时，客户端会限制重试的速率吗？
+quota	The account has reached its storage quota.	这个账号已达到存储配额。	Show the remaining quota before accepting another upload.	接收下一个上传前，先显示剩余配额。
+limit	The upload limit is lower in the test environment.	测试环境中的上传限制更低。	This limit should be configurable rather than hard-coded.	这个限制应该可以配置，而不是写死在代码里。
+rate	The request rate doubled after the new client was released.	新客户端发布后，请求速率翻了一倍。	Keep the rate steady while we compare response times.	比较响应时间时，让请求速率保持稳定。
+cursor	The API returns a cursor for the next page.	接口会返回一个用于下一页的游标。	Save the cursor if the batch stops halfway through.	如果批处理在中途停止，就保存这个游标。
+batch	This batch contains records from yesterday's import.	这批数据包含昨天导入的记录。	Split the batch if the transaction becomes too large.	如果事务变得太大，就拆分这个批次。
+bulk	The admin page supports bulk deletion of expired records.	管理页支持批量删除过期记录。	We need a preview before running the bulk update.	执行批量更新前，我们需要先预览结果。
+transactional	This update needs to be transactional.	这次更新需要具有事务性。	The transactional tests check what happens when the second write fails.	事务测试检查第二次写入失败时会发生什么。
+rollback	We prepared a rollback plan before the deployment.	部署前，我们准备了回滚方案。	The rollback restored the previous application version.	这次回滚恢复了之前的应用版本。
+isolation	Which isolation level does this transaction use?	这个事务使用哪种隔离级别？	The test checks isolation between two simultaneous updates.	这个测试检查两次同时更新之间的隔离性。
+connectivity	The health check tests connectivity to the database.	健康检查会测试数据库连接能力。	We lost connectivity after the network configuration changed.	网络配置更改后，我们失去了连接。
+notification	The notification arrived twice for the same event.	同一个事件的通知到了两次。	Send the notification only after the data has been saved.	只有在数据保存后，才发送通知。
+publisher	The publisher stopped sending messages after reconnecting.	消息发布者重连后停止发送消息了。	We need to know which publisher produced this event.	我们需要知道这个事件由哪个发布者产生。
+subscriber	This subscriber processes messages one at a time.	这个订阅者一次处理一条消息。	The subscriber needs to reconnect if the connection drops.	连接中断时，订阅者需要重新连接。
+subscribe	The client will subscribe to updates when the page opens.	页面打开时，客户端会订阅更新。	Can we subscribe to this topic without restarting the service?	我们能在不重启服务的情况下订阅这个主题吗？
+subscription	The subscription is removed when the user logs out.	用户退出登录时，这个订阅会被移除。	Check whether the old subscription is still active.	检查旧订阅是否仍然有效。
+dispatch	The scheduler will dispatch the job to an available worker.	调度器会把作业分派给空闲的工作进程。	Don't dispatch the event until the transaction commits.	事务提交前，别分派这个事件。
+dispatcher	The dispatcher puts incoming tasks into the queue.	任务分派器把传入的任务放进队列。	We added logs to see why the dispatcher stopped.	我们添加了日志，以查看任务分派器为什么停止了。
+broker	The broker accepted the message, but no consumer received it.	消息代理接收了消息，但没有消费者收到。	Check the broker status before restarting the client.	重启客户端前，先检查消息代理的状态。
+priority	This job has a lower priority than live requests.	这个作业的优先级低于实时请求。	We need to raise the priority of the failing checkout test.	我们需要提高这个失败的结算测试的处理优先级。
+worker	The worker exits after finishing its current job.	这个工作进程完成当前作业后会退出。	One worker is stuck waiting for a network response.	有一个工作线程卡在了等待网络响应的地方。
+job	The job failed before it wrote any records.	这个作业在写入任何记录前就失败了。	Can we restart the job from its last checkpoint?	我们能从上一个检查点重新启动这个作业吗？
+task	This task depends on the schema migration.	这个任务依赖数据库结构迁移。	The task is still running in the background.	这个任务仍在后台运行。
+background	Move the file conversion into a background job.	把文件转换移到后台作业里。	The background process needs the same permissions as the main application.	后台进程需要与主应用相同的权限。
+event	This event fires when the connection becomes ready.	连接准备好时，会触发这个事件。	We need to record the event before updating the counter.	更新计数器前，我们需要记录这个事件。
+handler	The handler returns an error when the field is missing.	字段缺失时，这个处理程序会返回错误。	Keep the handler small and move the parsing into a separate function.	让处理程序保持简短，把解析逻辑移到单独的函数里。
+listener	The event listener is still attached after the component closes.	组件关闭后，事件监听器仍然没有移除。	Remove the listener before creating another one.	创建新的监听器前，先移除旧监听器。
+trigger	This database trigger updates the audit table.	这个数据库触发器会更新审计表。	Which action should trigger the refresh?	哪个操作应该触发刷新？
+observer	The observer receives an update when the value changes.	值发生变化时，观察者会收到更新。	The observer needs to stop watching after the page closes.	页面关闭后，观察者需要停止监听。
+delegate	We can delegate this step to the existing parser.	我们可以把这一步交给现有的解析器处理。	The wrapper will delegate the request to the underlying client.	封装层会把请求转交给底层客户端。
+delegation	The design uses delegation instead of copying the same logic.	这个设计使用委托，而不是复制相同逻辑。	The delegation works, but the error isn't passed back correctly.	委托执行正常，但错误没有正确传回来。
+functional	We're trying a functional style for the data transformations.	我们正在尝试用函数式风格进行数据转换。	The functional approach makes each transformation easier to test.	这种函数式写法让每次转换更容易测试。
+procedure	The stored procedure takes an account ID as its input.	这个存储过程接收账号ID作为输入。	The procedure needs to handle the new column.	这个过程需要处理新列。
+procedural	This part of the code follows a procedural style.	这部分代码采用过程式风格。	Could you separate the procedural logic from the UI code?	你能把过程式逻辑与界面代码分开吗？
+engineering	The engineering team will review the migration plan.	工程团队会审查迁移方案。	Good engineering here means we can recover from a failed update.	在这里，做好工程设计意味着更新失败后我们能恢复。
+regression	Add a regression test for the login bug.	给这个登录问题加一个回归测试。	The regression appeared after we changed the cache key.	我们更改缓存键后，出现了这个回归问题。
+fixture	The fixture creates a temporary database for the test.	这个测试夹具会为测试创建临时数据库。	Reuse the fixture, but reset its data between tests.	复用这个测试夹具，但要在不同测试之间重置数据。
+mock	The mock returns a fixed response so the test stays predictable.	这个模拟对象返回固定响应，让测试结果保持可预测。	Our mock doesn't cover the timeout behavior yet.	我们的模拟对象还没有覆盖超时行为。
+stub	This stub replaces the external payment call in the test.	这个桩程序在测试中替代外部支付调用。	Make the stub return an error for this case.	让这个桩程序在这个用例中返回错误。
+harness	The test harness starts the server on a temporary port.	测试执行框架会在临时端口启动服务器。	Can the harness run these tests without internet access?	这个测试执行框架能在没有互联网连接的情况下运行这些测试吗？
+automation	The automation saves us from repeating the same setup steps.	这套自动化让我们不用反复执行相同的准备步骤。	We need a manual recovery path if the automation fails.	如果自动化失败，我们需要一条人工恢复途径。
+automated	The automated checks caught the broken link.	自动化检查发现了那个失效链接。	This change still needs a browser review after the automated tests.	这项修改在自动化测试之后，仍需要浏览器检查。
+coverage	The coverage report shows that the error path wasn't tested.	覆盖率报告显示，错误分支没有经过测试。	We improved coverage by testing the empty response case.	我们通过测试空响应用例提高了覆盖率。
+patch	The patch fixes the crash without changing the file format.	这个补丁修复了崩溃问题，同时没有改变文件格式。	Apply the patch to the test environment first.	先把补丁应用到测试环境。
+revision	Which revision introduced this change?	哪个修订版本引入了这项修改？	Save the revision number with the test results.	把修订版本号和测试结果一起保存。
+rollout	Pause the rollout if the error rate rises.	如果错误率上升，就暂停逐步发布。	The rollout starts with a small group of users.	这次逐步发布从一小群用户开始。
+environment	The issue only happens in the production environment.	这个问题只在生产环境里出现。	Create a separate environment for the integration tests.	给集成测试创建一个独立环境。
+flag	The debug flag should be off in this build.	这个构建应关闭调试开关。	We added a flag to enable the new parser for testing.	我们添加了一个开关，用于在测试时启用新解析器。
+option	This option changes how the client handles retries.	这个选项会改变客户端处理重试的方式。	The command rejects the option if its value is missing.	这个选项缺少值时，命令会拒绝执行。
+default	The default timeout is too short for large uploads.	默认超时时间对大文件上传来说太短了。	Use the default value only when the field is absent.	只有字段不存在时，才使用默认值。
+null	The response contains null instead of an empty list.	这个响应返回的是null，而不是空列表。	We need to handle null before reading this field.	读取这个字段前，我们需要处理null的情况。
+nil	The function returns nil when there is no matching record.	找不到匹配记录时，这个函数会返回nil。	Check for nil before calling a method on this pointer.	调用这个指针上的方法前，先检查它是否为nil。
+undefined	This property is undefined because the response didn't include it.	这个属性为undefined，因为响应里没有包含它。	The test should cover both an empty string and undefined.	测试应覆盖空字符串和undefined这两种情况。
+optional	The display name is optional during signup.	注册时，显示名称是可选的。	Make this argument optional for callers using the old interface.	让这个参数对使用旧接口的调用方保持可选。
+reference	The cache still holds a reference to the old object.	缓存中仍然保留着对旧对象的引用。	Pass the reference to the worker instead of copying the whole buffer.	把引用传给工作线程，而不是复制整个缓冲区。
+scope	This variable is outside the current scope.	这个变量不在当前作用域内。	Keep the temporary connection within the scope of this function.	让这个临时连接保持在该函数的作用域内。
+global	The global setting affects every request.	这个全局设置会影响每个请求。	Avoid changing global state in this test.	这个测试中避免更改全局状态。
+local	The local variable hides the name from the outer scope.	这个局部变量遮蔽了外层作用域中的同名变量。	I reproduced the issue in my local environment.	我在本地环境中复现了这个问题。
+private	This method should remain private to the class.	这个方法应当保持为类的私有方法。	The private repository contains the deployment scripts.	这个私有仓库包含部署脚本。
+public	The public API shouldn't expose that internal field.	公开接口不应暴露那个内部字段。	Changing this public method could break existing clients.	更改这个公有方法可能会让现有客户端出问题。
+static	The static assets are served from a separate directory.	静态资源从一个独立目录提供。	The static method doesn't need an instance of the class.	这个静态方法不需要类实例。
+dynamic	The page uses dynamic content from the API.	这个页面使用接口返回的动态内容。	We need to test the dynamic configuration after a reload.	重新加载后，我们需要测试动态配置。
+type	The type of this field changed in the new response.	新响应中，这个字段的数据类型变了。	Check the type before converting the value.	转换这个值之前，先检查数据类型。
+signature	The function signature changed when we added the new argument.	添加新参数后，函数签名变了。	Verify the signature before accepting the downloaded package.	接收下载的软件包前，先验证签名。
+contract	The API contract says this field must always be present.	接口契约规定，这个字段必须始终存在。	Our client follows the old contract, so the new response breaks it.	我们的客户端遵循旧契约，所以新响应让它无法正常运行。
+transport	The client uses HTTP as its transport.	这个客户端使用HTTP进行传输。	Which transport should the test server support?	测试服务器应该支持哪种传输方式？
