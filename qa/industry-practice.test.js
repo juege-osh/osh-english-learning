@@ -1,15 +1,16 @@
 'use strict';
 const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
 const words=require('../data/words.json'),industries=require('../data/industries.json'),C=require('../core.js');
+const extras=require('../data/industry_words.json'),industryWords=new Map([...words,...extras].map(w=>[w.id,w]));
 const elements=new Map(),spoken=[];
 function element(id){if(!elements.has(id))elements.set(id,{innerHTML:'',textContent:'',addEventListener(){},classList:{add(){},toggle(){}},style:{},selectedOptions:[]});return elements.get(id);}
-const context=vm.createContext({EnglishCore:C,inputWords:words,inputIndustries:industries,console,Map,Set,Date,JSON,Math,Promise,URLSearchParams,
+const context=vm.createContext({EnglishCore:C,inputExtras:extras,inputWords:words,inputIndustries:industries,console,Map,Set,Date,JSON,Math,Promise,URLSearchParams,
  document:{getElementById:element,addEventListener(){},querySelectorAll(){return []}},window:{addEventListener(){},scrollTo(){}},
  location:{hash:'#industries',search:''},localStorage:{setItem(){},getItem(){return null}},setTimeout(){},clearTimeout(){},setInterval(){},clearInterval(){},
  fetch:async()=>({ok:true,json:async()=>({date:'2026-09-30',entries:[]})}),say:t=>spoken.push(t)});
 vm.runInContext(fs.readFileSync(require.resolve('../app.js'),'utf8').replace('\ninit();','\n'),context);
 vm.runInContext(fs.readFileSync(require.resolve('../features-ui.js'),'utf8'),context);
-vm.runInContext("words=inputWords;industries=inputIndustries;all=new Map(words.map(w=>[String(w.id),w]));save=()=>{};confetti=()=>{};say=t=>spoken.push(t);",Object.assign(context,{spoken}));
+vm.runInContext("words=inputWords;industries=inputIndustries;all=new Map([...words,...inputExtras].map(w=>[String(w.id),w]));save=()=>{};confetti=()=>{};say=t=>spoken.push(t);",Object.assign(context,{spoken}));
 async function run(){
  await vm.runInContext('renderIndustries()',context);
  assert(element('app').innerHTML.includes('练精选 683 词'));
@@ -50,6 +51,20 @@ async function run(){
   vm.runInContext('industryPracticeNext();industryPracticeAnswer(0)',context);assert.equal(vm.runInContext(`industryWrong('${sector}').length`,context),1);vm.runInContext('header()',context);assert.equal(element('nav-due').textContent,1,'sidebar review badge must include specialist mistakes');
   vm.runInContext("industryPracticeStart('wrong');industryPracticeAnswer(industryPractice.items[0].id)",context);assert.equal(vm.runInContext(`industryWrong('${sector}').length`,context),0);vm.runInContext('header()',context);assert.equal(element('nav-due').textContent,0);
  }
+ await vm.runInContext("selectedIndustry='biology';renderIndustries()",context);
+ assert(element('app').innerHTML.includes('练精选 967 词'));
+ vm.runInContext("renderIndustryVocabulary('减数分裂')",context);
+ assert(element('industry-search-results').innerHTML.includes('meiosis'));
+ assert.equal(element('industry-search-status').textContent,'找到 1 词');
+ const meiosis=extras.find(w=>w.word==='meiosis');
+ vm.runInContext(`industryPracticeWord(${meiosis.id})`,context);assert(element('app').innerHTML.includes('_____'));
+ vm.runInContext('industryPracticeAnswer(0)',context);
+ assert.equal(vm.runInContext("industryWrong('biology').length",context),1);
+ assert(element('industry-feedback').innerHTML.includes('This diagram shows meiosis.'));
+ vm.runInContext(`actions['speak-industry-example']('biology:${meiosis.id}:1')`,context);assert.equal(spoken.at(-1),'Can you explain what happens during meiosis?');
+ vm.runInContext("industryPracticeStart('wrong');industryPracticeAnswer(industryPractice.items[0].id)",context);
+ assert.equal(vm.runInContext("industryWrong('biology').length",context),0);assert.equal(vm.runInContext('C.stats(p).learned',context),0);
+ vm.runInContext("renderIndustryVocabulary('<script>')",context);assert(element('industry-search-results').innerHTML.includes('暂时没收录'));
  // Cover the entire editorial cloze bank, not just the first visible question.
  for(const sector of industries.filter(s=>s.examples))for(const id of Object.keys(sector.examples).map(Number)){
   context.testSector=sector;context.testID=id;
@@ -59,9 +74,9 @@ async function run(){
    assert(!groups.some(g=>g.includes(other.id)),'cloze must not offer an editorial near-synonym');
    const target=new Set(sector.glosses[id].split(/[；;]/).map(s=>s.trim()));assert(!other.zh.split(/[；;]/).map(s=>s.trim()).some(s=>target.has(s)),'cloze must not offer an alternate spelling or identical sense');
   }
-  const options=C.choices(words[id-1],chosen,'word');assert.equal(options.length,4);assert.equal(new Set(options.map(x=>x.id)).size,4);
+  const options=C.choices(industryWords.get(id),chosen,'word');assert.equal(options.length,4);assert.equal(new Set(options.map(x=>x.id)).size,4);
  }
  assert.equal(vm.runInContext('C.stats(p).learned',context),0);
- console.log('PASS: three reviewed routes, all 300 cloze words without near-synonym distractors, correct bilingual audio text, separate progress, wrong-word review and removed-word filtering');
+ console.log('PASS: four reviewed routes, all 422 cloze words without near-synonym distractors, correct bilingual audio text, separate progress, wrong-word review and removed-word filtering');
 }
 run().catch(error=>{console.error(error);process.exitCode=1;});

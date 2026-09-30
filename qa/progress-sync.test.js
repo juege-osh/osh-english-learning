@@ -52,3 +52,7 @@ assert.equal(context.progressMerge(late,early).industries.programmer.answers['1'
 late.industries.programmer.answers['1']={correct:true,at:100};
 assert.equal(context.progressMerge(late,early).industries.programmer.answers['1'].correct,false);
 console.log('PASS: specialist review merges the latest answer and keeps failures on equal timestamps');
+
+const bioLocal=C.fresh(),bioCloud=C.fresh();bioLocal.industries={biology:{seen:[20001],answers:{'20001':{correct:false,at:100}}}};bioCloud.industries={biology:{seen:[20002],answers:{'20001':{correct:true,at:200}}}};
+const bioMerge=context.progressMerge(bioLocal,bioCloud);assert.deepEqual(Array.from(bioMerge.industries.biology.seen).sort(),[20001,20002]);assert.equal(bioMerge.industries.biology.answers['20001'].correct,true);assert(C.validate(bioMerge));assert.equal(C.stats(bioMerge).learned,0);
+console.log('PASS: supplemental specialist IDs merge across devices and never increase main-route progress');
