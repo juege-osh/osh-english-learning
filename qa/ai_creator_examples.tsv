@@ -200,3 +200,203 @@ factual	The factual details in the script need checking.	脚本中的事实细�
 faithfulness	Check the summary's faithfulness to the original interview.	检查摘要是否忠实于原始采访。	We assess faithfulness by comparing the answer with the supplied sources.	我们通过将回答与提供的来源对照，来评估它的忠实度。
 adversarial	The team uses adversarial tests to find weak points in the assistant.	团队用对抗性测试寻找助手的薄弱环节。	This adversarial prompt tried to make the model ignore the brief.	这条对抗性提示词试图让模型忽视需求说明。
 alignment	Check the alignment of the model's answers with our content guidelines.	检查模型的回答是否与我们的内容规范一致。	The team reviews alignment before letting the assistant publish drafts.	让助手发布草稿前，团队会检查它是否符合既定要求。
+fine	The export loses the fine texture on the fabric.	导出后，布料上的细致纹理丢失了。	Keep the fine lines around the eyes in this portrait.	这张肖像要保留眼睛周围细致的线条。
+tune	Can you tune the effect so the glow is less intense?	能调整一下效果，让发光没那么强吗？	We need to tune the model for short customer replies.	我们需要调整模型，让它适合生成简短的客户回复。
+adaptation	This adaptation turns the interview into a short animation.	这次改编把采访做成了一部短动画。	Model adaptation will use examples from our own support team.	模型适配会使用我们客服团队自己的例子。
+adapter	Load the style adapter before generating the next portrait.	生成下一张肖像前，先加载风格适配器。	Can this adapter work with the new base model?	这个适配器能配合新的基础模型使用吗？
+transfer	We are testing transfer learning with a small set of product photos.	我们正在用一小组产品照片测试迁移学习。	The team uses transfer learning rather than training the image model from scratch.	团队采用迁移学习，而不是从头训练图像模型。
+checkpoint	Which checkpoint did you use for the final image?	最终这张图用的是哪个模型检查点？	Save a checkpoint before the next training run.	开始下一轮训练前，先保存一个模型检查点。
+compression	The text becomes hard to read after image compression.	图像压缩后，文字变得难以辨认。	Compare both clips before choosing a compression setting.	选择压缩设置前，先对比这两段视频。
+distillation	Could distillation make this model small enough to run locally?	蒸馏能否让这个模型缩小到可以在本地运行？	After distillation, test whether the smaller model still follows the brief.	蒸馏后，测试一下小模型是否仍能遵循需求说明。
+teacher	The teacher model generates sample answers for training.	教师模型会生成用于训练的示例回答。	We check the teacher model's answers before using them in the dataset.	将教师模型的回答放入数据集前，我们会先检查。
+student	The student model is smaller, so we test it on the laptop.	学生模型更小，所以我们用笔记本测试它。	Does the student model preserve the tone of the teacher's replies?	学生模型能保留教师模型回复的语气吗？
+reward	The reward signal favors answers that match the supplied sources.	奖励信号偏向与提供的来源一致的回答。	Check whether the reward is encouraging the model to repeat phrases.	检查一下奖励信号是否在鼓励模型重复措辞。
+penalty	A repetition penalty reduced the repeated lines in this output.	重复惩罚项减少了这次输出中的重复句子。	The penalty should not remove names that the script needs to repeat.	惩罚项不应让剧本中必须重复的人名消失。
+temperature	Which temperature did you use for this run?	这一轮生成用了什么采样温度？	This model does not expose a temperature setting.	这个模型没有提供采样温度设置。
+threshold	Raise the threshold before automatically approving images.	自动通过图片前，先提高判定阈值。	How did you choose the threshold for flagging duplicate clips?	你是怎样选择标记重复视频片段的阈值的？
+confidence	A high confidence score does not prove the answer is correct.	置信度分数高，并不能证明回答正确。	Show the confidence score next to each predicted label.	在每个预测标签旁边显示置信度分数。
+uncertainty	The model should express uncertainty when the source is unclear.	来源不清楚时，模型应该表达不确定性。	We review predictions with high uncertainty before publishing them.	发布前，我们会审核不确定性较高的预测结果。
+output	The output has the right colors but the wrong camera angle.	输出结果的颜色对了，但镜头角度不对。	Can you save the output without adding a border?	能保存输出结果而不加边框吗？
+input	The input image is too small for this close-up.	输入图像太小，不适合做这个特写。	Keep a copy of the input so we can compare it with the result.	保留一份输入素材，方便我们与结果对比。
+instruction	Add an instruction to keep the character's jacket blue.	加一条指令，让角色的外套保持蓝色。	The model ignored the instruction about leaving space for the title.	模型没有遵循为标题留出空间的指令。
+assistant	The assistant can draft captions, but I review them before posting.	助手可以起草配文，但发布前我会检查。	Ask the assistant to summarize the changes between these two drafts.	请助手总结这两版草稿之间的变化。
+user	Let the user edit the prompt before starting generation.	开始生成前，让用户可以修改提示词。	The user should see the estimated cost before submitting the job.	提交任务前，用户应该看到预计费用。
+system	The system message defines how the assistant should handle missing information.	系统消息规定助手应如何处理缺失的信息。	Our system keeps the source files separate from the generated results.	我们的系统把源文件与生成结果分开保存。
+message	This message is too long for the caption field.	这条消息太长，放不进配文输入框。	Send a message when the video is ready for review.	视频可以审看时，发一条消息通知我。
+conversation	Keep the character notes in the same conversation.	把角色设定记录放在同一个对话里。	Can I export this conversation with the image references?	能把这段对话连同参考图一起导出吗？
+conversational	Give the narrator a relaxed, conversational tone.	让旁白带一点轻松的交谈语气。	This assistant needs conversational replies rather than formal reports.	这个助手需要交谈式回复，而不是正式报告。
+chat	Open a new chat for the second campaign.	为第二个宣传项目新建一个对话。	The reference image is attached in the chat above.	参考图附在上面的对话里。
+modality	Audio is the only input modality used in this test.	这次测试只使用音频这一种输入模态。	Does the model support more than one modality at the same time?	这个模型支持同时处理多种模态吗？
+reason	Ask the model to reason about the order of the scenes before drafting them.	起草场景前，先让模型推理一下场景顺序。	What is the reason for changing the character's costume here?	这里为什么要改变角色的服装？
+response	The response includes a title that was not in the brief.	回复中包含了需求说明里没有的标题。	Shorten the response without removing the source links.	缩短回复，但不要删掉来源链接。
+completion	The text completion repeats the opening sentence.	文本补全结果重复了开头的句子。	Save the completion with the prompt that produced it.	把补全文本和生成它的提示词一起保存。
+stream	The app shows the text stream as the answer arrives.	回答逐步返回时，应用会显示文本流。	The audio stream stops when I switch to another tab.	切换到另一个标签页时，音频流就停止了。
+latency	The extra review step increases latency before the first reply.	额外的审核步骤增加了首次回复前的延迟。	Measure latency on the same network when comparing these models.	对比这些模型时，在同一网络上测量延迟。
+throughput	We measure throughput by counting completed jobs per minute.	我们通过统计每分钟完成的任务数来测量吞吐量。	Higher throughput matters when we generate hundreds of product images.	要生成数百张产品图时，更高的吞吐量就很重要。
+compute	We do not have enough compute for another full training run today.	今天我们没有足够的计算资源再跑一轮完整训练。	Reserve some compute for testing the final model.	留一些计算资源用于测试最终模型。
+computational	This effect has a high computational cost at full resolution.	这个效果在全分辨率下需要较高的计算开销。	What are the computational requirements for running this model offline?	离线运行这个模型需要具备什么计算条件？
+processor	The video encoder is using most of the processor's capacity.	视频编码器占用了处理器的大部分计算能力。	Which processor will run the local model during the demo?	演示时，本地模型会在哪个处理器上运行？
+memory	Close the unused model to free up memory.	关闭不用的模型，释放内存。	This image size requires more memory than the laptop has available.	这个图像尺寸需要的内存超过了笔记本当前可用的内存。
+storage	We need more storage for the original video files.	我们需要更多存储空间来保存原始视频文件。	Check the storage location before exporting all the clips.	导出所有片段前，检查一下存储位置。
+server	The server is busy, so the new job is waiting.	服务器正忙，新任务还在等待。	Can the server return a clear error when generation fails?	生成失败时，服务器能返回明确的错误信息吗？
+cloud	The cloud service finished the render overnight.	云服务在夜里完成了渲染。	Check the upload settings before sending private footage to the cloud.	把私密视频发送到云端前，先检查上传设置。
+local	I use a local model when working offline.	离线工作时，我会使用本地模型。	Keep a local copy of the finished video as well.	也保留一份最终视频的本地副本。
+remote	The remote machine is still rendering the last scene.	远程机器还在渲染最后一个场景。	Can you check the remote job without downloading the whole video?	能不下载整段视频就查看远程任务吗？
+deployment	The deployment includes the model and the caption editor.	这次部署包含模型和配文编辑器。	Test file uploads after deployment, not just the home page.	部署后要测试文件上传，而不只是检查首页。
+deploy	Do not deploy this version until the preview works on a phone.	等预览在手机上正常运行后，再部署这个版本。	We can deploy the smaller model on the studio computer.	我们可以在工作室电脑上部署这个较小的模型。
+endpoint	Which endpoint accepts image uploads?	哪个接口端点接收图片上传？	The endpoint returns a job ID rather than the finished video.	这个接口端点返回任务编号，而不是完成的视频。
+interface	The interface should make the download button easy to find.	界面应该让下载按钮容易找到。	This interface accepts both a text prompt and a reference image.	这个接口同时接收文本提示词和参考图。
+application	The application saves a draft when I close the editor.	关闭编辑器时，应用会保存一份草稿。	Can the application show two image versions side by side?	这个应用能并排显示两个图片版本吗？
+integration	The integration sends approved captions to our publishing tool.	这项集成会把已审核的配文发送到我们的发布工具。	Test the integration with one image before importing the full collection.	导入整套素材前，先用一张图片测试这项集成。
+pipeline	Our pipeline adds subtitles after the voice track is approved.	我们的处理流水线会在配音通过审核后添加字幕。	Where does the pipeline store failed generation attempts?	这条处理流水线把生成失败的记录存在哪里？
+node	This node resizes the image before it reaches the video model.	这个节点会在图像送入视频模型前调整尺寸。	Connect the audio node to the preview player.	把音频节点连接到预览播放器。
+connection	The connection between these two nodes is missing.	这两个节点之间缺少连接。	A slow connection makes it hard to upload the reference video.	网络连接很慢，参考视频不容易上传。
+connector	The connector needs permission to read our asset folder.	这个连接器需要读取素材文件夹的权限。	Does the connector keep the original file names?	这个连接器会保留原始文件名吗？
+extension	This extension adds a caption panel to the editor.	这个扩展组件为编辑器增加了配文面板。	Disable the extension and check whether playback improves.	关闭这个扩展组件，看看播放是否变流畅。
+tool	Which tool did you use to remove the background?	你用哪个工具去掉了背景？	The tool should ask before overwriting an existing image.	覆盖已有图片前，工具应该先询问。
+utility	This utility checks whether any frames are missing.	这个工具程序会检查是否缺少帧。	Run the utility on a copy of the folder first.	先在文件夹的副本上运行这个工具程序。
+framework	The framework handles uploads and generation status updates.	这个框架负责处理上传和生成状态更新。	Does this framework support the model provider we use?	这个框架支持我们使用的模型服务商吗？
+library	The library contains sound effects that our team can use.	素材库里收录了团队可以使用的音效。	Update the image-processing library before testing this script.	测试这个脚本前，先更新图像处理库。
+module	The subtitle module is separate from the voice generator.	字幕模块与语音生成器是分开的。	Can we disable this module without stopping the editor?	能在不关闭编辑器的情况下停用这个模块吗？
+package	Install the package in the test environment first.	先在测试环境中安装这个软件包。	This package adds support for another video format.	这个软件包增加了对另一种视频格式的支持。
+dependency	The new dependency makes the app much larger.	新增的依赖项让应用大了很多。	Check whether this dependency is still needed for audio export.	检查一下音频导出是否还需要这个依赖项。
+version	Which version of the model created this image?	这张图是哪个版本的模型生成的？	Keep the previous version until we approve the new result.	等我们确认新结果后，再移除旧版本。
+update	The update fixes the broken audio preview.	这次更新修好了无法使用的音频预览。	Can you update the prompt without replacing the reference image?	能只更新提示词，不替换参考图吗？
+upgrade	We should test the upgrade with an old project.	我们应该用一个旧项目测试这次升级。	Does the upgrade change how the editor handles fonts?	这次升级会改变编辑器处理字体的方式吗？
+release	The release includes a new image comparison view.	这个发布版本增加了新的图片对比界面。	Write the release notes in language that creators understand.	用创作者能看懂的语言写版本说明。
+compatible	This font is compatible with the export tool.	这个字体与导出工具兼容。	Check whether the adapter is compatible with this model version.	检查一下适配器是否与这个模型版本兼容。
+compatibility	We are testing compatibility with the older project files.	我们正在测试对旧项目文件的兼容性。	The plugin page should list compatibility requirements clearly.	插件页面应该清楚列出兼容性要求。
+configuration	Save the configuration that produced the approved image.	保存生成已确认图片时所用的配置。	The configuration includes the model name and output size.	这份配置包含模型名称和输出尺寸。
+configure	Can you configure the editor to save drafts automatically?	能把编辑器配置成自动保存草稿吗？	We need to configure the upload limit before the public demo.	公开演示前，我们需要配置上传限制。
+preset	This preset gives the narration a warmer tone.	这个预设让旁白的音色更温暖。	Save the subtitle style as a preset for future videos.	把字幕样式保存成预设，方便以后的视频使用。
+default	The default image size is too small for the poster.	默认图像尺寸太小，不适合做海报。	Can users change the default voice before generating speech?	用户能在生成语音前修改默认声音吗？
+custom	We need a custom layout for the vertical trailer.	我们需要为竖屏预告片设计一个自定义布局。	This model can load a custom style adapter.	这个模型可以加载自定义风格适配器。
+customize	Let creators customize the subtitle colors.	让创作者可以自定义字幕颜色。	Can I customize this workflow without editing code?	我能不改代码就定制这个工作流吗？
+option	Choose the option that keeps the original aspect ratio.	选择保留原始宽高比的选项。	The export menu needs an option for saving audio only.	导出菜单需要一个只保存音频的选项。
+control	Use this control to adjust the strength of the effect.	用这个控件调整效果强度。	I need more control over the camera movement.	我需要更细致地控制镜头运动。
+slider	Move the slider a little to reduce the blur.	稍微移动滑块，减轻模糊效果。	The slider should show its current value next to it.	滑块旁边应该显示当前数值。
+button	The play button is hard to tap on a phone.	播放按钮在手机上不容易点到。	Add a button that restores the original image.	加一个恢复原图的按钮。
+panel	Open the audio panel to adjust the voice level.	打开音频面板，调整人声的音量。	The preview panel should stay visible while I edit the prompt.	我编辑提示词时，预览面板应该保持可见。
+dashboard	The dashboard shows how many jobs are still waiting.	控制面板会显示还有多少任务在等待。	Can the dashboard separate draft images from approved ones?	控制面板能把草稿图片与已确认的图片分开吗？
+workspace	Keep this client's assets in a separate workspace.	把这位客户的素材放在独立的工作区。	Invite the editor to the workspace before sending the review link.	发送审看链接前，先邀请剪辑师加入工作区。
+project	The project includes the script, audio, and reference images.	这个项目包含剧本、音频和参考图。	Make a copy of the project before changing the frame rate.	修改帧率前，先复制一份项目。
+asset	This asset is missing from the opening scene.	开场场景缺少这个素材。	Record where each asset came from when you import it.	导入时，记录每个素材的来源。
+resource	The team shares a resource folder for approved fonts.	团队共用一个资源文件夹，存放已确认可用的字体。	This tutorial is a useful resource for learning the editor.	这份教程是学习编辑器的实用资源。
+folder	Put the voice recordings in their own folder.	把录音放在单独的文件夹里。	This folder contains the images we have not reviewed yet.	这个文件夹里是我们尚未审核的图片。
+directory	The output directory is on the external drive.	输出目录位于外接硬盘上。	Check the directory before running the batch export.	批量导出前，检查一下目录。
+file	The file opens, but its audio track is silent.	文件能打开，但音轨没有声音。	Keep the source file alongside the exported video.	把源文件和导出的视频放在一起保存。
+path	The file path contains a space, so the script needs to handle it.	文件路径里有空格，脚本需要正确处理。	Show the full path when an image cannot be found.	找不到图片时，显示完整路径。
+link	Send me the preview link when the upload finishes.	上传完成后，把预览链接发给我。	This link opens the draft rather than the final video.	这个链接打开的是草稿，而不是最终视频。
+tag	Add a tag for the character's name so we can find the images later.	添加一个角色姓名标签，方便以后找图。	The tag should stay with the asset when we move it to another folder.	把素材移到另一个文件夹时，标签应该保留。
+category	Put these clips in the travel category.	把这些片段归入旅行类别。	Which category should we use for behind-the-scenes footage?	幕后花絮应该归入哪个类别？
+catalog	The asset catalog lists the source of each sound effect.	素材目录列出了每个音效的来源。	Search the catalog before generating another background.	生成另一个背景前，先搜索素材目录。
+collection	This collection contains all the approved character portraits.	这个素材集合包含所有已确认的角色肖像。	Can I share the collection without sharing the whole workspace?	我能只分享这个素材集合，而不分享整个工作区吗？
+archive	Move the finished project into the archive.	把已完成的项目移入归档区。	The archive includes the original prompts, not just the final images.	归档里包含原始提示词，而不只是最终图片。
+backup	Make a backup before updating the editor.	更新编辑器前，先做一份备份。	Have we tested whether this backup can actually be restored?	我们测试过这份备份是否真的能恢复吗？
+restore	Can you restore the version from yesterday?	能恢复昨天的版本吗？	We need to restore the missing font before exporting the poster.	导出海报前，我们需要恢复缺失的字体。
+import	Try to import one clip before adding the rest.	添加其余片段前，先试着导入一个片段。	Can the editor import captions with their timing intact?	编辑器能保留字幕时间信息进行导入吗？
+download	Let me download the original image, not just the preview.	让我下载原图，而不只是预览图。	The download should include the subtitle file as well.	下载内容也应该包含字幕文件。
+save	Please save the prompt before starting another generation.	开始另一次生成前，请先保存提示词。	Can I save this voice setting for the next episode?	我能保存这个声音设置，用于下一集吗？
+undo	Use undo to bring back the deleted title.	使用撤销功能恢复删掉的标题。	Can I undo this crop after closing the image editor?	关闭图像编辑器后，我还能撤销这次裁剪吗？
+reset	The reset button clears the style settings.	重置按钮会清除风格设置。	Do not reset the scene until we have saved a copy.	保存副本前，不要重置这个场景。
+duplicate	Can you duplicate this scene and change only the background?	能复制这个场景，只修改背景吗？	I want to duplicate the project before testing a different voice.	我想先复制项目，再试另一个声音。
+copy	Make a copy of the prompt that produced this result.	复制一份生成这个结果所用的提示词。	Can I copy the subtitle style to the next clip?	我能把字幕样式复制到下一个片段吗？
+paste	Please paste the corrected caption into the text field.	请把修改后的配文粘贴到文本框里。	When I paste the script, the paragraph breaks disappear.	我粘贴剧本时，分段消失了。
+delete	Do not delete the original recording after generating the voice track.	生成配音后，不要删掉原始录音。	Can users delete an uploaded image from their account?	用户能从账户中删除已上传的图片吗？
+remove	Please remove the watermark from our own draft overlay.	请移除我们自己加在草稿上的水印图层。	We need to remove the empty space at the start of the clip.	我们需要移除片段开头的空白部分。
+replace	Can you replace the background without changing the character?	能替换背景而不改变角色吗？	Please replace this temporary music with the approved track.	请把这段临时音乐替换成已确认可用的曲目。
+rename	Rename the exports so the scene numbers come first.	重命名导出文件，让场景编号排在最前面。	Can I rename an asset without breaking its links in the timeline?	我重命名素材后，它在时间线中的链接还能保持正常吗？
+select	Select the face before applying the correction.	应用修正前，先选中脸部。	Can I select several clips and lower their volume together?	我能选择多个片段，同时降低它们的音量吗？
+selection	The selection includes part of the background.	这个选区包含了一部分背景。	Expand the selection slightly so the edge blends better.	稍微扩大选区，让边缘融合得更自然。
+preview	The preview looks sharp, but the export looks blurry.	预览很清晰，但导出结果看起来模糊。	Show a preview before charging for the full render.	对完整渲染收费前，先展示预览。
+playback	Playback stops halfway through the second scene.	播放到第二个场景的一半时就停了。	Check playback with headphones before approving the voice mix.	确认人声混音前，戴耳机播放检查一下。
+player	The player should let me jump back five seconds.	播放器应该让我能往回跳五秒。	This player shows subtitles, but it cannot switch audio tracks.	这个播放器能显示字幕，但不能切换音轨。
+pause	Add a short pause before the final line.	最后一句台词前加一个短暂停顿。	Can I pause the preview without stopping the render?	我能暂停预览，而不停止渲染吗？
+resume	Click play to resume the video from this frame.	点击播放，从这一帧继续播放视频。	The player should resume where I left off.	播放器应该从我上次停下的位置继续播放。
+loop	Put the short animation on a loop while we discuss it.	我们讨论时，让这段短动画循环播放。	The loop has a visible jump between the last and first frames.	这个循环的末帧和首帧之间有明显跳变。
+repeat	Could you repeat that line with a softer voice?	能用更柔和的声音再说一遍那句台词吗？	The clip is set to repeat until the reviewer stops it.	这个片段设成了重复播放，直到审看者停止它。
+speed	Lower the playback speed so we can inspect the hand movement.	降低播放速度，方便我们检查手部动作。	At normal speed, the transition looks much smoother.	以正常速度播放时，这个转场看起来顺畅得多。
+duration	The total duration is longer than the brief allows.	总时长超过了需求说明规定的长度。	Show the duration of each clip next to its thumbnail.	在每个片段的缩略图旁显示时长。
+length	Reduce the length of the opening shot by two seconds.	把开场镜头缩短两秒。	What is the maximum clip length for this export format?	这种导出格式允许的最大片段长度是多少？
+sync	The lip movements are out of sync with the voice.	嘴唇动作与人声不同步。	Can you sync the subtitle timing with the revised recording?	能把字幕时间调整到与修改后的录音同步吗？
+synchronization	Audio synchronization is off after the frame-rate change.	修改帧率后，音频同步出现了偏差。	Check synchronization at both the start and end of the video.	在视频开头和结尾都检查一下同步情况。
+synchronize	We need to synchronize the captions with the final voice track.	我们需要让字幕与最终配音同步。	Can this editor synchronize footage from both cameras?	这个编辑器能同步两台摄像机的素材吗？
+synchronous	This synchronous call waits for the result before returning.	这个同步调用会等待结果后再返回。	A long synchronous operation freezes the preview in our current app.	在我们当前的应用中，耗时较长的同步操作会让预览卡住。
+parallel	The two clips are rendering in parallel.	这两个片段正在并行渲染。	Can the workflow run image generation and audio cleanup in parallel?	这个工作流能并行执行图像生成和音频清理吗？
+queue	The video is still in the generation queue.	这段视频还在生成队列里。	Show the queue position so creators know their job is waiting.	显示排队位置，让创作者知道任务正在等待。
+job	This job failed before it generated any frames.	这个任务还没生成任何帧就失败了。	Keep the job ID so we can find the result later.	保留任务编号，方便以后找到结果。
+task	The next task is to check the character's hands.	下一个任务是检查角色的手部。	Assign the subtitle task to someone who can review both languages.	把字幕任务交给能审校两种语言的人。
+status	The status still says rendering, but the video is ready.	视频已经完成，但状态仍显示正在渲染。	Can the status page explain why this job stopped?	状态页面能说明这个任务为什么停止吗？
+progress	The progress bar has not moved for several minutes.	进度条已经好几分钟没动了。	Show progress separately for upload and rendering.	把上传进度和渲染进度分开显示。
+pending	The pending jobs will start when a worker becomes available.	有空闲工作进程时，待处理任务就会开始。	This image is still pending review, so do not publish it yet.	这张图仍在等待审核，先不要发布。
+complete	Can you complete the sound check before the review meeting?	能在审看会议前完成声音检查吗？	The export is complete, but we still need to watch the whole video.	导出已经完成，但我们还需要完整看一遍视频。
+failure	The render failure happened during the final scene.	渲染失败发生在最后一个场景。	Record the failure message before trying the job again.	重试任务前，先记录失败信息。
+error	The error message does not say which file is missing.	错误信息没有说明缺少哪个文件。	This spelling error appears in every generated caption.	这个拼写错误出现在每条生成的配文里。
+cancel	Can I cancel the queued job before it starts?	我能在排队任务开始前取消它吗？	Please cancel this export; it uses the old voice track.	请取消这次导出，它用的是旧配音。
+quota	The account has no image-generation quota left today.	这个账户今天的图像生成额度用完了。	Check the quota before submitting all the scenes at once.	一次提交所有场景前，先检查额度。
+limit	The upload limit is too low for this reference video.	上传限制太低，这段参考视频传不上去。	Can we set a spending limit for each project?	我们能为每个项目设置支出上限吗？
+usage	The usage page separates image jobs from video jobs.	用量页面把图像任务与视频任务分开统计。	Check yesterday's usage before estimating this week's cost.	估算本周费用前，先看看昨天的用量。
+credit	The test image used one credit from the account.	这张测试图消耗了账户里的一个生成点数。	Give the photographer credit in the end titles.	在片尾字幕中为摄影师署名。
+subscription	Does this subscription include high-resolution downloads?	这个订阅包含高分辨率下载吗？	Check the renewal date before changing the subscription.	修改订阅前，先检查续订日期。
+billing	The billing page should show the cost of each generation.	计费页面应该显示每次生成的费用。	Who handles billing for the team's shared account?	谁负责团队共用账户的计费事务？
+cost	What is the cost of generating a ten-second clip?	生成一段十秒的视频要多少钱？	Include failed attempts when calculating the total production cost.	计算总制作成本时，也要计入失败尝试的费用。
+budget	We have enough budget for one more version of the scene.	我们的预算还够再做一个版本的场景。	Leave some budget for captions and sound editing.	留一些预算给字幕和声音剪辑。
+estimate	Can you estimate the cost before we start the batch?	开始批量生成前，能估算一下费用吗？	This estimate does not include another round of revisions.	这份估算没有包括再修改一轮的费用。
+permission	Do we have permission to use this recording in the trailer?	我们获得了在预告片中使用这段录音的许可吗？	The app asks for permission before accessing my photo folder.	应用访问我的照片文件夹前，会先请求权限。
+authorization	Keep the written authorization with the project files.	把书面授权和项目文件放在一起保存。	We need authorization from the speaker before cloning this voice.	克隆这个声音前，我们需要取得说话者的授权。
+ownership	The contract should explain ownership of the commissioned artwork.	合同应该说明委托创作作品的所有权。	Ask about ownership before handing over the source files.	交付源文件前，先问清楚所有权问题。
+owner	Who is the owner of the original recording?	原始录音的权利人是谁？	Contact the rights owner before reusing this song.	再次使用这首歌前，先联系权利人。
+creation	The notes explain how AI was used during the creation of the animation.	这些记录说明了动画创作过程中如何使用AI。	The tutorial walks through the creation of a short animated scene.	这份教程逐步介绍一个短动画场景的创作过程。
+original	The client wants an original character rather than a familiar movie hero.	客户想要一个原创角色，而不是大家熟悉的电影英雄。	Keep the original sketch so the illustrator can compare the changes.	保留原始草图，方便插画师对比修改内容。
+originality	The review checks originality as well as visual quality.	这次审看既检查原创性，也检查视觉质量。	A new file name tells us nothing about the image's originality.	一个新的文件名并不能说明图片有原创性。
+derivative	We need to ask whether the license allows a derivative work.	我们需要询问该许可是否允许创作衍生作品。	This derivative illustration uses elements from the earlier poster.	这幅衍生插画使用了之前海报中的元素。
+royalty	Does the music agreement include a royalty payment?	音乐协议包含版税支付吗？	The royalty report lists the videos that used the track.	版税报告列出了使用这首曲目的视频。
+commercial	Check the license before using the image in a commercial campaign.	把图片用于商业宣传前，先检查许可。	The brief says this video is for commercial use.	需求说明写明，这段视频将用于商业用途。
+commercialization	The team is discussing commercialization of its animation tool.	团队正在讨论动画工具的商业化。	We need a support plan before commercialization begins.	开始商业化前，我们需要制定支持服务方案。
+noncommercial	This project is a noncommercial student exhibition.	这个项目是一次非商业的学生作品展。	The client asked whether the recording permits noncommercial use.	客户询问这段录音是否允许非商业使用。
+infringement	The review flagged a possible copyright infringement for further checking.	审核标记了一项可能的版权侵权问题，留待进一步核查。	Send the infringement complaint to the person handling rights requests.	把侵权投诉转给负责权利相关请求的人。
+plagiarism	The editor raised a plagiarism concern about the opening paragraph.	编辑对开头一段提出了抄袭疑虑。	We review plagiarism reports against the original sources.	我们会把抄袭报告与原始来源对照检查。
+trademark	The image contains a trademark that was not in our prompt.	图片里出现了提示词中没有的商标。	Ask the client whether the trademark should appear in this scene.	问问客户，这个场景中是否应出现该商标。
+provenance	Keep the image's provenance record with the final export.	把图像的来源记录与最终导出文件一起保存。	The provenance record includes the source file and editing history.	来源记录包含源文件和编辑历史。
+disclosure	Add a short disclosure about the synthetic voice.	加一段简短说明，披露使用了合成声音。	Place the disclosure where viewers can actually read it.	把披露说明放在观众能看清的位置。
+transparent	We should be transparent about which scenes were AI-generated.	我们应该明确说明哪些场景由AI生成。	The report is transparent about the tests we have not completed.	报告如实说明了哪些测试尚未完成。
+transparency	The client asked for more transparency about the image sources.	客户要求更清楚地公开图片来源。	This log improves transparency by recording changes to the draft.	这份日志通过记录草稿修改，提高了过程的透明度。
+ethical	We discussed the ethical issues before making a synthetic presenter.	制作合成主持人前，我们讨论了相关伦理问题。	Is it ethical to imitate this person's voice without asking them?	没有询问本人就模仿其声音，符合伦理吗？
+ethics	The team has a meeting about the ethics of voice cloning.	团队会开会讨论声音克隆的伦理问题。	Include ethics in the training for new content reviewers.	在新内容审核员的培训中加入伦理相关内容。
+safety	Content safety is part of the review before publication.	发布前的审核包含内容安全检查。	The safety check flagged a violent image in the draft.	安全检查标记了草稿中的一张暴力图像。
+moderation	The moderation team reviews images reported by users.	内容审核团队会检查用户举报的图片。	Show a clear message when moderation blocks a generation request.	内容审核拦截生成请求时，要显示明确的信息。
+policy	Read the platform's policy on synthetic media before uploading.	上传前，先阅读平台的合成媒体政策。	Our policy asks reviewers to check the source of every music track.	我们的规定要求审核员检查每首音乐的来源。
+compliance	The compliance review covers the licenses for the stock footage.	合规审核会检查素材视频的使用许可。	Send the release draft to the compliance team for review.	把发布稿送给合规团队审核。
+restriction	Check whether the license has a restriction on editing the image.	检查许可是否限制修改图片。	The restriction prevents this account from exporting long videos.	这项限制让这个账户无法导出长视频。
+sensitive	Do not include sensitive client information in the prompt.	不要在提示词中加入敏感的客户信息。	The reviewer marked this scene as sensitive content.	审核员把这个场景标记为敏感内容。
+confidential	The unreleased script is confidential.	尚未发布的剧本需要保密。	Use a tool approved for confidential material when reviewing this footage.	审看这段视频时，使用获准处理保密资料的工具。
+personal	Remove personal details from the sample interview.	从示例采访中移除个人信息。	Does the upload contain anyone's personal contact information?	上传内容里是否包含任何人的个人联系方式？
+authenticity	We need to check the authenticity of this interview recording.	我们需要核查这份采访录音的真实性。	The label should not imply authenticity when the image is synthetic.	图像是合成的，标注就不应暗示它是真实影像。
+impersonation	The report describes a possible impersonation of a real presenter.	报告描述了一起可能冒充真实主持人的情况。	Check the platform's impersonation rules before publishing this avatar.	发布这个虚拟形象前，先检查平台有关冒充他人的规则。
+fraud	The account was reported for suspected fraud.	这个账户因涉嫌欺诈被举报了。	Our review looks for fraud involving fake endorsements.	我们的审核会排查利用虚假代言进行欺诈的情况。
+misleading	The title is misleading because the scene never happens in the video.	标题有误导性，因为视频里根本没有出现那个场景。	Do not present a synthetic interview as real; that would be misleading.	不要把合成采访当作真实采访呈现，那会误导观众。
+misinformation	The caption repeats misinformation about the event.	配文重复了有关该事件的错误信息。	Check the original report before sharing possible misinformation.	分享可能有误的信息前，先核对原始报道。
+verification	Source verification is still pending for this quote.	这句话的来源仍有待核验。	Keep a record of the verification steps for the reviewer.	记录核验步骤，供审核员查看。
+verify	Please verify the speaker's name against the original recording.	请对照原始录音核实说话者的姓名。	We should verify this date before adding it to the caption.	把这个日期写进配文前，我们应该先核实。
+fact	Treat the generated claim as something to check, not as a confirmed fact.	把模型生成的说法当作待核查的内容，而不是已确认的事实。	This fact comes from the interview, so keep the recording link.	这个事实来自采访，因此要保留录音链接。
+citation	The citation points to a page that does not support the claim.	这条引用指向的页面并不能支持该说法。	Add a citation next to the statistic in the script.	在剧本中的统计数字旁加上引用标注。
+source	What is the source of this background music?	这段背景音乐的来源是什么？	Keep the source link when you save the reference image.	保存参考图时，保留来源链接。
+evidence	We do not have enough evidence to include that claim in the video.	我们的证据不足，不能把那项说法写进视频。	Save the evidence used to check the quotation.	保存用于核查引文的证据。
+credibility	An invented quote would damage the channel's credibility.	编造引文会损害频道的可信度。	The editor questioned the credibility of this anonymous source.	编辑对这个匿名来源的可信度提出了质疑。
+credible	We need a credible source for the numbers in this chart.	这张图表里的数字需要有可信的来源。	The interview is useful, but we should check whether the claim is credible.	采访有参考价值，但我们应该核查那项说法是否可信。
+editor	The editor wants a shorter opening shot.	剪辑师想把开场镜头缩短一些。	Ask the editor to check the captions against the recording.	请编辑对照录音检查字幕。
+producer	The producer is coordinating the shoot and the review schedule.	制片人在协调拍摄和审看日程。	Tell the producer if another revision will affect the budget.	如果再修改一轮会影响预算，就告诉制片人。
+production	Production starts after the script and character designs are approved.	剧本和角色设计确认后，就开始制作。	Keep the reference images available throughout production.	整个制作过程中都要能随时查看参考图。
+director	The director asked for a longer pause before the reply.	导演要求在回答前多停顿一会儿。	Show the director both versions of the camera movement.	把两个版本的镜头运动都给导演看。
+cinematographer	The cinematographer wants softer light on the actor's face.	摄影指导想让演员脸上的光更柔和。	Discuss the reference shots with the cinematographer before filming.	拍摄前，和摄影指导讨论参考镜头。
+photographer	The photographer supplied a higher-resolution product image.	摄影师提供了一张分辨率更高的产品图。	Ask the photographer which photo best matches the lighting in this scene.	问问摄影师，哪张照片最符合这个场景的光线。
+photography	The brief calls for product photography with a plain background.	需求说明要求用纯色背景拍摄产品照片。	Her photography portfolio helped us choose a visual direction.	她的摄影作品集帮助我们确定了视觉方向。
+animator	The animator noticed that the feet slide across the floor.	动画师发现角色的脚在地板上滑动。	Give the animator a clear reference for the character's walk.	给动画师一份清楚展示角色走路动作的参考。
+illustrator	The illustrator needs the character's final costume design.	插画师需要角色的最终服装设计。	Let the illustrator know which details must stay consistent.	告诉插画师，哪些细节必须保持一致。
+artist	The artist drew three rough versions of the city skyline.	美术师画了三版城市天际线草图。	We should ask the artist before altering the commissioned painting.	修改委托创作的画作前，我们应该先询问艺术家。
+writer	The writer changed the ending to make the character's choice clearer.	作者修改了结尾，让角色的选择更清楚。	Send the interview notes to the writer before drafting the narration.	起草旁白前，把采访记录发给作者。
+screenwriter	The screenwriter added a quiet scene between the two arguments.	编剧在两场争执之间加了一个安静的场景。	Ask the screenwriter whether this line fits the character's background.	问问编剧，这句台词是否符合角色的背景。
+composer	The composer wrote a shorter theme for the opening titles.	作曲家为片头写了一段更短的主题音乐。	Give the composer the final scene timing before requesting new music.	请作曲家写新音乐前，先把最终场景时长给他。
+musician	The musician recorded another take with a slower tempo.	音乐人用更慢的速度又录了一遍。	Ask the musician which instrument should lead in this section.	问问音乐人，这一段应该由哪种乐器主奏。
+performer	The performer needs space to finish the gesture before the cut.	剪切前，需要给表演者留出时间完成动作。	Show the performer the reference movement before recording.	录制前，先把参考动作给表演者看。
+actor	The actor wants to hear the previous line before recording the reply.	录制回应的台词前，演员想先听一下上一句。	We need the actor's approval before using a synthetic version of their voice.	使用演员声音的合成版本前，我们需要获得演员的同意。

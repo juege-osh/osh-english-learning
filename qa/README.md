@@ -57,7 +57,7 @@
 
 `qa/basics.test.js`检查两次独立听音成功、选择题与输入填空各一次、缩写及弯引号、空答案、错题补练、音频播放成功后才解锁选项、播放失败与取消、复练本轮计数、保存格式及主线进度独立。`progress-sync.test.js`还检查课程互补槽位合并；账号进度接口检查合法课程结构、重复槽位拒绝和跨设备保存。课程不写入主线`words`或增加XP。
 
-`travel_reviewed.tsv`和`travel_examples.tsv`整理旅行709词及前100词的200句原创双语用法。它和其余九条行业合计2222个句子目标词、4444句；行业含义已有本站编辑层，余下5890个行业词尚需补句子。十条行业加七条考试，共17条路线；补充行业词库现有1407词，原有ID保持，新增只追加。
+`travel_reviewed.tsv`和`travel_examples.tsv`整理旅行709词及前100词的200句原创双语用法。它和其余九条行业合计2222个句子目标词、5844句；行业含义已有本站编辑层，余下5190个行业词尚需补句子。十条行业加七条考试，共17条路线；补充行业词库现有1407词，原有ID保持，新增只追加。
 
 专项答题反馈的释义和例句默认收起，用户展开后才看和听。手机导航显示4个常用入口，其他9个入口折叠到「更多」。
 
@@ -74,7 +74,7 @@
 本轮永久榜后端最终42项Go测试4.428秒、并发检测53.935秒、vet及47项四账号检查通过；此前34/43项记录是改造前基线。
 
 
-当前行业例句覆盖：程序员和旅行各300词配600句；生物222词配444句；法律及外贸、金融、AI创作、营销、医疗、化学六条路线各200词配400句。十行业合计2222词、4444句，仍5890词待补两句。
+当前行业例句覆盖：外贸、AI创作、医疗各400词配800句；程序员、金融、旅行各300词配600句；生物222词配444句；营销、法律、化学各200词配400句。十行业合计2922词、5844句，仍5190词待补两句。
 ## v1.26.1 行业用法补齐
 
 程序员、AI创作、医疗健康、旅行本次各增加100词的两句双语用法，共新增800句。四条路线现各覆盖200词、400句；十行业合计1422词、2844句，仍有6690词待补行业例句。此前版本中的前100词覆盖量是历史记录。主线词库、主线例句、场景与考试池保持不变，不增加主线进度。旅行的checked补充“托运的”，医疗的cranial补充“颅部的”，避免句子与释义不符。
@@ -110,3 +110,15 @@
 重启后低负载快照：生产CPU2.4%、RSS41.3MiB、运行文件23,412,911字节、状态20KiB、部署目录含历史441.8MiB；本机含Git673MiB。这不是并发容量。
 
 本批术语核对参考：US Courts词汇表 https://www.uscourts.gov/glossary ；IUPAC Gold Book荧光与发光条目 https://goldbook.iupac.org/terms/view/F02453 、https://goldbook.iupac.org/terms/view/L03641 。例句为本站编写，未复制原文。
+
+本批金融术语参考（仅核对词义，不复制正文或提供税务建议）：[IFRS IAS 36](https://www.ifrs.org/issued-standards/list-of-standards/ias-36-impairment-of-assets/) 和 [IRS Tax withholding](https://www.irs.gov/individuals/employees/tax-withholding)。减值、可收回金额和代扣税的例句为本站原创沟通用语。
+
+本批医疗词语参考 [MedlinePlus](https://medlineplus.gov/appendixa.html)；外贸术语参考 [WCO](https://www.wcoomd.org/en/topics/nomenclature.aspx)、[UNCTAD](https://unctad.org/topic/trade-agreements/generalized-system-of-preferences)、[OSHA SDS说明](https://www.osha.gov/sites/default/files/publications/OSHA3694.pdf)和[HCCH Apostille资料](https://www.hcch.net/en/instruments/conventions/specialised-sections/apostille)。customhouse按[Cambridge](https://dictionary.cambridge.org/dictionary/english/custom-house)的建筑含义调整中文。例句均为本站原创。
+
+## v1.26.4 大批行业用法补齐
+
+外贸、AI创作、医疗各新增200词400句；金融新增100词200句，共新增700词1400句。十行业目前2922词配5844句，仍5190词待补两句行业用法。customhouse的中文调整为海关大楼、海关办事处；对应例句讲的是建筑位置和入口。主线、考试池、1407条补充专业词、全部学习编号和此前例句保持不变。新增行业句子继续排除可能多解的同义词、英美拼写和重叠岗位名称，不将这些词的专业概念视为等同。
+
+42项Go测试4.338秒、vet、核心数据和全部2922个句子目标词检查通过，47项隔离四账号检查通过。真实预览走通distillation、abdominal、customhouse、impairment的句子选词与双语反馈，金融播放按钮可用，主线0保持，无控制台错误。仅改内容，未重复此前并发、小屏布局和联机全流程浏览器验收。
+
+本批源代码、数据和说明同步私有仓库，整仓字节核验后发布；正式站实际版本以 /api/health 为准。发布回执、运行文件哈希、回滚备份与资源采样记录在 /tmp/english-quest-v1264-evidence/verification.json。真实支付仍关闭，不把模拟支付结果当作实际扣款。
