@@ -15,7 +15,7 @@ async function run(){
  await vm.runInContext('renderIndustries()',context);
  assert(element('app').innerHTML.includes('练精选 683 词'));
  assert(!element('app').innerHTML.includes('试练扩展'));
- assert(element('app').innerHTML.includes('句子选词 · 100 词'));
+ assert(element('app').innerHTML.includes('句子选词 · 200 词'));
  vm.runInContext("industryPracticeStart('sentences')",context);
  assert(element('app').innerHTML.includes('_____'));
  assert(element('app').innerHTML.includes('这个算法处理大文件太慢了。'));
@@ -95,6 +95,6 @@ async function run(){
   const options=C.choices(industryWords.get(id),chosen,'word');assert.equal(options.length,4);assert.equal(new Set(options.map(x=>x.id)).size,4);
  }
  assert.equal(vm.runInContext('C.stats(p).learned',context),0);
- console.log('PASS: ten reviewed routes, all 1022 cloze words without near-synonym distractors, correct bilingual audio text, separate progress, wrong-word review and removed-word filtering');
+ console.log('PASS: ten reviewed routes, all '+industries.reduce((n,s)=>n+Object.keys(s.examples||{}).length,0)+' cloze words without near-synonym distractors, correct bilingual audio text, separate progress, wrong-word review and removed-word filtering');
 }
 run().catch(error=>{console.error(error);process.exitCode=1;});

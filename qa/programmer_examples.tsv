@@ -99,3 +99,103 @@ ram	This laptop has enough RAM for development.	这台笔记本电脑有足够�
 disk	The disk is almost full.	磁盘快满了。	Save the backup on a different disk.	把备份保存在另一块磁盘上。
 file	The file is too large to upload.	这个文件太大了，无法上传。	Please send me the log file.	请把日志文件发给我。
 upload	The upload failed.	上传失败了。	You can upload the file after signing in.	登录后就可以上传文件。
+download	The download stopped halfway through.	下载进行到一半就停了。	You can download the latest release from the project page.	你可以从项目页面下载最新版本。
+hash	Compare the file's hash with the published value.	把文件的哈希值和公布的值比一下。	The hash changed after we edited the file.	我们编辑文件后，它的哈希值变了。
+key	Keep the API key out of the repository.	不要把 API 密钥放进代码仓库。	This map uses a string as its key.	这个映射用字符串作为键。
+certificate	The certificate expires tomorrow.	这个数字证书明天到期。	The client rejected the certificate because the hostname did not match.	客户端拒绝了这个证书，因为主机名不匹配。
+proxy	The request goes through a proxy before reaching the server.	请求到达服务器前会经过代理服务器。	Is the proxy forwarding the original host header?	代理服务器有没有转发原始的 Host 请求头？
+firewall	The firewall is blocking the connection.	防火墙拦住了这个连接。	Check the firewall rules for this port.	检查一下这个端口对应的防火墙规则。
+load	CPU usage rises when the load increases.	负载增加时，CPU 使用率会上升。	The page takes too long to load.	这个页面加载得太久了。
+performance	We need to measure performance before changing the code.	改代码前，我们得先测一下性能。	How is performance under heavy traffic?	访问量很大时，性能怎么样？
+optimization	This optimization reduced memory usage.	这次优化降低了内存占用。	Does the optimization still produce the same results?	优化后的代码还能得到相同的结果吗？
+log	The log shows a timeout at nine o'clock.	日志显示九点钟发生了一次超时。	Please log the request ID, but leave out the password.	请记录请求 ID，密码不要写进日志。
+crash	We can reproduce the crash with an empty file.	用一个空文件就能复现这次崩溃。	Did the app crash before or after you clicked Save?	应用是在你点击保存前崩溃的，还是之后？
+stack	The stack trace points to this function.	调用栈信息指向了这个函数。	Push the next item onto the stack.	把下一项压入栈中。
+iteration	This iteration only processes one record.	这一次迭代只处理一条记录。	The loop stops after the tenth iteration.	循环在第十次迭代后结束。
+buffer	The buffer is full, so the producer has to wait.	缓冲区满了，生产者得等待。	Write the bytes to a buffer before sending them.	发送这些字节前，先把它们写进缓冲区。
+parse	We cannot parse the response because it is not valid JSON.	响应不是有效的 JSON，所以我们无法解析。	Which library do we use to parse this configuration file?	我们用哪个库解析这个配置文件？
+serial	The serial version runs these tasks one at a time.	串行版本每次只运行一个任务。	Let's compare serial processing with concurrent processing.	我们比较一下串行处理和并发处理吧。
+immutable	Python strings are immutable.	Python 字符串是不可变的。	Create a new value instead of modifying this immutable object.	这个对象不可变，应创建新值，而不是修改它。
+lambda	This lambda checks whether the number is positive.	这个匿名函数表达式用来判断数字是否为正。	The lambda is getting hard to read; a named function would be clearer.	这个匿名函数表达式越来越难读了，换成具名函数会更清楚。
+generic	This generic function works with several data types.	这个泛型函数可以处理多种数据类型。	We need a generic solution that both clients can use.	我们需要一个两个客户端都能使用的通用方案。
+pointer	The pointer is null here.	这里的指针是空指针。	Do not read through a pointer after its memory has been freed.	指针指向的内存释放后，不要再通过这个指针读取。
+synchronous	This synchronous call waits for the response before returning.	这个同步调用会等响应回来后才返回。	A slow synchronous request can freeze the user interface.	一个缓慢的同步请求可能让用户界面卡住。
+concurrent	We need to handle concurrent requests safely.	我们得安全地处理并发请求。	The bug only appears when two concurrent tasks update the same record.	只有两个并发任务更新同一条记录时，才会出现这个错误。
+atomic	Make the update atomic so readers never see half of it.	让这次更新成为原子操作，避免读取方看到只更新了一半的数据。	An atomic read does not make the whole operation thread-safe.	一次原子读取不代表整个操作都具备线程安全性。
+deadlock	Both threads are waiting for each other; this looks like a deadlock.	两个线程都在等对方，看起来发生了死锁。	We reproduced the deadlock by acquiring the locks in opposite orders.	我们按相反的顺序获取锁，复现了死锁。
+generator	The generator reads one row at a time.	这个生成器每次读取一行。	We already consumed the generator, so this loop has nothing left to read.	这个生成器已经被消费完了，这个循环没有剩余内容可读。
+yield	This generator can yield one result at a time.	这个生成器每次可以产出一个结果。	The next call will let the generator yield another value.	下一次调用会让生成器产出另一个值。
+await	Use await to get the result of this promise.	用 await 获取这个 Promise 的结果。	In JavaScript, await pauses this async function without blocking the main thread.	在 JavaScript 中，await 会暂停这个异步函数，而不会阻塞主线程。
+override	The subclass can override this method.	子类可以重写这个方法。	An environment variable will override the default setting here.	这里的环境变量会覆盖默认设置。
+overload	Can we overload this method to accept a string?	我们能不能重载这个方法，让它接受字符串？	In Java, you can overload a method with different parameter lists.	在 Java 中，可以用不同的形参列表重载一个方法。
+inheritance	The diagram shows the inheritance relationship between these classes.	这张图展示了这些类之间的继承关系。	We used inheritance to share behavior with the child class.	我们用继承让子类复用行为。
+abstraction	This abstraction hides the details of file storage.	这个抽象封装了文件存储的具体细节。	Do we really need another layer of abstraction here?	这里真的还需要再加一层抽象吗？
+abstract	In Java, you cannot directly instantiate an abstract class.	在 Java 中，不能直接实例化抽象类。	This abstract method has no implementation in the base class.	这个抽象方法在基类中没有具体实现。
+instance	Create a new instance for each test.	每个测试都创建一个新的实例。	These two variables refer to the same instance.	这两个变量引用的是同一个实例。
+attribute	The object has no attribute with that name.	这个对象没有这个名字的属性。	We use this attribute to store the user's preferred language.	我们用这个属性保存用户偏好的语言。
+argument	Pass the file path as the first argument.	把文件路径作为第一个实参传进去。	This argument must be a positive integer.	这个实参必须是正整数。
+parameter	The timeout parameter has a default value of five seconds.	超时参数的默认值是五秒。	The function declares a parameter named path.	这个函数声明了一个名为 path 的形参。
+operator	The plus operator behaves differently for numbers and strings in JavaScript.	在 JavaScript 中，加号运算符对数字和字符串的行为不同。	Use the equality operator to compare these values.	用相等运算符比较这些值。
+expression	This expression returns true when the list is empty.	列表为空时，这个表达式返回 true。	We evaluate the expression before calling the function.	调用函数前，我们先对这个表达式求值。
+statement	This return statement exits the function.	这条 return 语句会退出函数。	The compiler reports a missing semicolon after this statement.	编译器提示这条语句后少了一个分号。
+declaration	The declaration tells the compiler the variable's type.	这条声明告诉编译器变量的类型。	Move the declaration closer to where the variable is used.	把声明移到更靠近变量使用位置的地方。
+identifier	Choose an identifier that describes the value clearly.	选一个能清楚描述这个值的标识符。	This identifier starts with a letter.	这个标识符以字母开头。
+literal	The string literal needs closing quotation marks.	这个字符串字面量缺少结束引号。	Use a numeric literal here rather than a string.	这里用数字字面量，不要用字符串。
+constant	This constant stores the maximum upload size.	这个常量保存上传文件的最大大小。	In Java, this integer constant is declared final and cannot be reassigned.	在 Java 中，这个整数常量被声明为 final，不能重新赋值。
+vector	The vector contains one score for each item.	这个向量为每一项保存一个分数。	Check the length of the vector before computing the dot product.	计算点积前，先检查向量的长度。
+matrix	The matrix has three rows and four columns.	这个矩阵有三行四列。	We need to transpose the matrix before this calculation.	做这次计算前，我们需要先转置矩阵。
+array	The array is empty when the page first opens.	页面刚打开时，这个数组是空的。	Read the first element of the array after checking its length.	先检查数组的长度，再读取第一个元素。
+list	Add the new task to the end of the list.	把新任务加到列表末尾。	We need to sort the list by creation time.	我们需要按创建时间给列表排序。
+map	This map links a user ID to a profile.	这个映射把用户 ID 对应到用户资料。	Check whether the map already contains this key.	检查一下映射中是否已经有这个键。
+set	A set stores each distinct value only once.	集合中的每个不同值只保存一次。	Convert the list to a set to remove duplicates.	把列表转换成集合，去掉重复项。
+table	The table contains the order history.	这张数据表保存订单历史。	Which column is the primary key of this table?	这张表的主键是哪一列？
+tree	Each node in the tree can have child nodes.	树中的每个节点都可以有子节点。	We traverse the tree from its root.	我们从根节点开始遍历这棵树。
+heap	The smallest value is at the top of this min-heap.	这个最小堆的最小值位于堆顶。	Insert the next task into the heap according to its priority.	根据优先级，把下一个任务插入堆中。
+dictionary	The dictionary maps language codes to translated labels.	这个字典把语言代码映射到翻译后的标签。	Use a default value if the dictionary does not contain the key.	如果字典里没有这个键，就使用默认值。
+collection	The collection contains every item returned by the query.	这个数据集合包含查询返回的所有项。	Is this collection safe to modify during iteration?	遍历时修改这个集合安全吗？
+sequence	The sequence must keep the original order.	这个序列必须保留原来的顺序。	We process each value in the sequence once.	我们把序列中的每个值处理一次。
+search	The search returned no results.	这次搜索没有找到结果。	You can search the logs by request ID.	你可以用请求 ID 搜索日志。
+byte	One byte has eight bits in this format.	在这个格式中，一个字节有八位。	Read the next byte from the input stream.	从输入流中读取下一个字节。
+nibble	A nibble contains four bits.	一个半字节包含四个二进制位。	This hexadecimal digit represents one nibble.	这个十六进制数字表示一个半字节。
+character	The last character in the string is a space.	字符串的最后一个字符是空格。	The character looks correct on screen, but its code point is different.	这个字符在屏幕上看起来没问题，但它的码位不同。
+string	The string contains the user's display name.	这个字符串包含用户的显示名称。	Trim the string before checking whether it is empty.	检查字符串是否为空之前，先去掉两端的空白。
+decode	We need to decode these bytes as UTF-8.	我们需要按 UTF-8 解码这些字节。	The client cannot decode this response with the current settings.	按当前设置，客户端无法解码这个响应。
+encode	Which character set should we use to encode the file?	我们应该用哪种字符集编码这个文件？	Use a JSON library to encode the response body.	用 JSON 库编码响应体。
+compression	Compression reduced the size of the backup file.	压缩减小了备份文件的大小。	What level of compression does this archive use?	这个归档文件使用了哪个压缩级别？
+compress	We compress the log files before uploading them.	上传日志文件前，我们会先压缩。	Can we compress this response without adding too much CPU load?	我们能否压缩这个响应，同时避免增加太多 CPU 负载？
+decompression	Decompression failed because the archive was incomplete.	归档文件不完整，所以解压缩失败了。	Check the expected output size before starting decompression.	开始解压缩前，先检查预计解压出的大小。
+lexical	The lexical analyzer splits the source into tokens.	词法分析器把源代码分成词元。	This lexical error comes from an unclosed string literal.	这个词法错误是由未闭合的字符串字面量造成的。
+grammar	The parser checks the input against the language's grammar.	解析器会根据语言的语法规则检查输入。	We added a rule to the grammar for this new expression.	我们为这个新表达式向语法规则中添加了一条规则。
+semantic	The compiler reported a semantic error in this expression.	编译器报告这个表达式有一个语义错误。	We need a semantic check after parsing the code.	解析代码后，我们还需要进行语义检查。
+semantics	This change affects the semantics of the function.	这个改动影响了函数的语义。	The syntax is valid, but the semantics are wrong.	语法是合法的，但语义有问题。
+packet	The packet arrived after the connection had closed.	连接关闭后，这个数据包才到达。	We captured a packet to inspect its headers.	我们抓取了一个数据包，检查它的头部。
+router	The router is not forwarding traffic to this subnet.	路由器没有把流量转发到这个子网。	Check the router's routing table first.	先检查路由器的路由表。
+domain	The domain points to the old server.	这个域名指向旧服务器。	Who manages the DNS records for this domain?	谁负责管理这个域名的 DNS 记录？
+virtual	We run the service on a virtual machine.	我们在虚拟机上运行这个服务。	The test uses a virtual network interface.	这个测试使用虚拟网络接口。
+monolith	The monolith handles login, billing, and reporting.	这个单体应用负责登录、计费和报表。	We can deploy the monolith as one application.	我们可以把这个单体应用作为一个应用部署。
+redundancy	We added redundancy so one failed server would not stop the service.	我们增加了冗余，避免一台服务器故障就导致服务中断。	Redundancy helps with failures, but it does not replace a backup.	冗余有助于应对故障，但不能代替备份。
+replication	Replication copies changes to the other database server.	数据复制会把变更同步到另一台数据库服务器。	Check the replication lag before reading from the replica.	从副本读取前，先检查复制延迟。
+availability	We track availability as the percentage of time the service is usable.	我们用服务可用时间占比来跟踪可用性。	The network outage reduced availability this month.	这次网络中断降低了本月的可用性。
+reliability	We need better reliability for this payment service.	我们需要提高这个支付服务的可靠性。	Long-running tests can reveal problems with reliability.	长时间运行的测试可以暴露可靠性问题。
+resilience	We tested the system's resilience by disconnecting one server.	我们断开了一台服务器，测试系统的故障恢复能力。	Retry limits are part of our resilience plan.	限制重试次数是我们故障恢复方案的一部分。
+resilient	The service must be resilient to temporary network failures.	这个服务必须能应对临时网络故障并恢复。	A resilient system should recover without losing confirmed writes.	一个有故障恢复能力的系统应在恢复时保留已经确认的写入。
+durability	Check the durability settings before assuming a committed write will survive a crash.	先检查持久性设置，再判断已提交的写入能否在崩溃后保留下来。	We tested durability by restarting the database after a write.	我们在写入后重启数据库，测试数据的持久性。
+eventual	With eventual consistency, a new value may take time to appear on every replica.	采用最终一致性时，新值可能需要一段时间才会出现在所有副本上。	This service uses eventual consistency for profile updates.	这个服务的用户资料更新采用最终一致性。
+consistency	We need consistency between the account balance and the transaction history.	账户余额和交易记录需要保持一致。	What level of consistency does this storage system provide?	这个存储系统提供哪种级别的一致性？
+deterministic	With a fixed seed, this random-number generator is deterministic.	使用固定的种子后，这个伪随机数生成器的结果具有确定性。	This deterministic function gives the same output for the same input.	这个确定性函数对相同输入会给出相同输出。
+service	The service is running, but its health check is failing.	服务在运行，但健康检查未通过。	Restart the service after the configuration has been validated.	配置校验通过后，再重启服务。
+execute	The worker will execute this task after the current one finishes.	当前任务结束后，工作进程会执行这个任务。	Do not execute scripts from an untrusted source.	不要执行来源不可信的脚本。
+evaluation	Evaluation of this expression happens before the function call.	这个表达式会在函数调用前求值。	We recorded the result of each evaluation in the test.	我们在测试中记录了每次求值的结果。
+evaluate	The interpreter will evaluate the expression from left to right in this example.	在这个例子中，解释器会从左到右对表达式求值。	We need to evaluate the argument before passing its value to the function.	我们需要先对实参表达式求值，再把值传给函数。
+validate	Validate the input before saving it.	保存输入前，先进行校验。	How do we validate the format of this date?	我们如何验证这个日期的格式？
+validation	The request failed validation because the email field was empty.	请求未通过校验，因为邮箱字段是空的。	Client-side validation improves feedback, but the server still needs its own checks.	客户端校验能改善反馈体验，但服务器仍需要自行检查。
+verification	Signature verification failed for this file.	这个文件的签名核验失败了。	The verification step compares the downloaded file with the expected hash.	核验步骤会比较下载文件的哈希值和预期值。
+assert	We assert that the returned list has three items.	我们断言返回的列表有三项。	In this test, assert that the response status is 200.	在这个测试中，断言响应状态码为 200。
+assertion	The assertion failed because the result was null.	断言失败了，因为结果是空值。	Add an assertion for the empty-input case.	为输入为空的情况添加一个断言。
+annotate	Please annotate the function's parameters with their expected types.	请用注解标明函数参数的预期类型。	We annotate the return type to make the interface easier to understand.	我们标注返回类型，让接口更容易理解。
+annotation	This annotation tells the type checker what the function returns.	这个注解告诉类型检查器函数会返回什么类型。	The annotation helps the editor show useful hints.	这个注解有助于编辑器显示有用的提示。
+reflective	The framework uses reflective access to inspect object fields.	这个框架通过反射访问来检查对象字段。	We should measure the cost of this reflective call.	我们应测一下这次反射调用的开销。
+reflection	We use reflection to find methods at runtime.	我们使用反射在运行时查找方法。	Reflection lets this tool inspect a class without knowing its type in advance.	反射让这个工具在事先不知道具体类型的情况下检查一个类。
+volatile	This Java field is marked volatile.	这个 Java 字段被标记为 volatile。	A volatile field does not make an increment operation atomic.	字段使用 volatile 并不能让递增操作成为原子操作。
+payload	The request payload contains the new profile data.	请求的有效载荷包含新的用户资料。	The payload is too large for this endpoint.	这个有效载荷对于这个接口来说太大了。
+header	The Authorization header is missing from this request.	这个请求缺少 Authorization 请求头。	The first bytes belong to the file header.	开头的这些字节属于文件头。
