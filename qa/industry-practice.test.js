@@ -23,6 +23,7 @@ async function run(){
  const id=words.find(w=>w.word==='algorithm').id;
  vm.runInContext('industryPracticeAnswer('+id+')',context);
  assert(element('industry-feedback').innerHTML.includes('This algorithm is too slow for large files.'));
+ assert(element('industry-feedback').innerHTML.includes('<details class="answer-details">'));assert(!element('industry-feedback').innerHTML.includes('<details class="answer-details" open'),'answer explanation starts collapsed');
  assert(element('industry-feedback').innerHTML.includes("Let&#39;s try a simpler algorithm."));
  assert.equal(vm.runInContext('p.industries.programmer.seen.length',context),1);
  assert.equal(vm.runInContext('C.stats(p).learned',context),0,'industry practice must not inflate the main route');
@@ -40,7 +41,7 @@ async function run(){
  await vm.runInContext("selectedIndustry='marketing';renderIndustries()",context);
  assert(element('app').innerHTML.includes('练精选 767 词'));
  assert(!element('app').innerHTML.includes('试练扩展'));
- for(const [sector,headword,count,meaning] of [['healthcare','patient',753,'患者正在外面等候。'],['ai_creator','prompt',831,'能把提示词写得更具体一点吗？'],['foreign_trade','export',774,'我们向几个国家出口家具。'],['finance','asset',846,'我们需要把这项资产记入账目。'],['marketing','brand',767,'我们的品牌需要更清楚的表达。'],['law','law',850,'这份协议适用哪部法律？'],['chemistry','chemistry',932,'我正在写报告的化学部分。']]){
+ for(const [sector,headword,count,meaning] of [['healthcare','patient',753,'患者正在外面等候。'],['ai_creator','prompt',831,'能把提示词写得更具体一点吗？'],['foreign_trade','export',774,'我们向几个国家出口家具。'],['finance','asset',846,'我们需要把这项资产记入账目。'],['marketing','brand',767,'我们的品牌需要更清楚的表达。'],['law','law',850,'这份协议适用哪部法律？'],['chemistry','chemistry',932,'我正在写报告的化学部分。'],['travel','travel',709,'我一般背着背包出门。']]){
   await vm.runInContext(`selectedIndustry='${sector}';renderIndustries()`,context);
   assert(element('app').innerHTML.includes(`练精选 ${count} 词`));assert(!element('app').innerHTML.includes('试练扩展'));
   vm.runInContext("industryPracticeStart('sentences')",context);assert(element('app').innerHTML.includes(meaning));
@@ -94,6 +95,6 @@ async function run(){
   const options=C.choices(industryWords.get(id),chosen,'word');assert.equal(options.length,4);assert.equal(new Set(options.map(x=>x.id)).size,4);
  }
  assert.equal(vm.runInContext('C.stats(p).learned',context),0);
- console.log('PASS: nine reviewed routes, all 922 cloze words without near-synonym distractors, correct bilingual audio text, separate progress, wrong-word review and removed-word filtering');
+ console.log('PASS: ten reviewed routes, all 1022 cloze words without near-synonym distractors, correct bilingual audio text, separate progress, wrong-word review and removed-word filtering');
 }
 run().catch(error=>{console.error(error);process.exitCode=1;});
