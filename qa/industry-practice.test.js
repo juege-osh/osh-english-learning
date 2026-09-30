@@ -37,10 +37,10 @@ async function run(){
  assert.equal(vm.runInContext("industryWrong('programmer').length",context),0);
  vm.runInContext("p.industries.programmer.seen.push(20000)",context);
  assert.equal(vm.runInContext("industrySeen('programmer').length",context),2,'removed words must not count against the new route');
- await vm.runInContext("selectedIndustry='finance';renderIndustries()",context);
+ await vm.runInContext("selectedIndustry='marketing';renderIndustries()",context);
  assert(element('app').innerHTML.includes('练精选 100 词'));
  assert(element('app').innerHTML.includes('试练扩展 600 词'));
- for(const [sector,headword,count,meaning] of [['healthcare','patient',753,'患者正在外面等候。'],['ai_creator','prompt',831,'能把提示词写得更具体一点吗？']]){
+ for(const [sector,headword,count,meaning] of [['healthcare','patient',753,'患者正在外面等候。'],['ai_creator','prompt',831,'能把提示词写得更具体一点吗？'],['foreign_trade','export',774,'我们向几个国家出口家具。'],['finance','asset',846,'我们需要把这项资产记入账目。']]){
   await vm.runInContext(`selectedIndustry='${sector}';renderIndustries()`,context);
   assert(element('app').innerHTML.includes(`练精选 ${count} 词`));assert(!element('app').innerHTML.includes('试练扩展'));
   vm.runInContext("industryPracticeStart('sentences')",context);assert(element('app').innerHTML.includes(meaning));
@@ -65,6 +65,12 @@ async function run(){
  vm.runInContext("industryPracticeStart('wrong');industryPracticeAnswer(industryPractice.items[0].id)",context);
  assert.equal(vm.runInContext("industryWrong('biology').length",context),0);assert.equal(vm.runInContext('C.stats(p).learned',context),0);
  vm.runInContext("renderIndustryVocabulary('<script>')",context);assert(element('industry-search-results').innerHTML.includes('暂时没收录'));
+ await vm.runInContext("selectedIndustry='finance';renderIndustries();renderIndustryVocabulary('ipo')",context);
+ assert(element('industry-search-results').innerHTML.includes('<strong>IPO</strong>'));
+ const ipo=words.find(w=>w.word==='ipo');
+ vm.runInContext(`industryPracticeWord(${ipo.id});industryPracticeAnswer(${ipo.id});actions['speak-industry-word']('finance:${ipo.id}')`,context);
+ assert.equal(spoken.at(-1),'IPO');assert(element('industry-feedback').innerHTML.includes('preparing for its IPO.'));
+ assert.equal(vm.runInContext(`all.get('${ipo.id}').word`,context),'ipo');
  // Cover the entire editorial cloze bank, not just the first visible question.
  for(const sector of industries.filter(s=>s.examples))for(const id of Object.keys(sector.examples).map(Number)){
   context.testSector=sector;context.testID=id;
@@ -77,6 +83,6 @@ async function run(){
   const options=C.choices(industryWords.get(id),chosen,'word');assert.equal(options.length,4);assert.equal(new Set(options.map(x=>x.id)).size,4);
  }
  assert.equal(vm.runInContext('C.stats(p).learned',context),0);
- console.log('PASS: four reviewed routes, all 422 cloze words without near-synonym distractors, correct bilingual audio text, separate progress, wrong-word review and removed-word filtering');
+ console.log('PASS: six reviewed routes, all 622 cloze words without near-synonym distractors, correct bilingual audio text, separate progress, wrong-word review and removed-word filtering');
 }
 run().catch(error=>{console.error(error);process.exitCode=1;});
