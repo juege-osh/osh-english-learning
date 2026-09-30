@@ -45,3 +45,10 @@ console.log('PASS: industry-only study syncs and a later skip reset wins');
  assert.equal(await logout,true);
  console.log('PASS: logout waits for an in-flight cloud save');
 })().catch(error=>{console.error(error);process.exitCode=1;});
+// A later correction on another device clears an older specialist mistake.
+const early=C.fresh(),late=C.fresh();early.industries={programmer:{seen:[1],answers:{'1':{correct:false,at:100}}}};late.industries={programmer:{seen:[1],answers:{'1':{correct:true,at:200}}}};
+assert.equal(context.progressMerge(early,late).industries.programmer.answers['1'].correct,true);
+assert.equal(context.progressMerge(late,early).industries.programmer.answers['1'].correct,true);
+late.industries.programmer.answers['1']={correct:true,at:100};
+assert.equal(context.progressMerge(late,early).industries.programmer.answers['1'].correct,false);
+console.log('PASS: specialist review merges the latest answer and keeps failures on equal timestamps');

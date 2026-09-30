@@ -49,7 +49,7 @@ GLOSSES = {
     },
 }
 
-GLOSSES['programmer'].update(algorithm='算法',database='数据库',network='网络',protocol='通信协议',ram='随机存取内存')
+GLOSSES['programmer'].update(algorithm='算法',database='数据库',network='网络',protocol='通信协议',ram='随机存取内存',schema='数据库模式；数据结构')
 GLOSSES['foreign_trade'].update(client='客户',documentation='单证资料')
 GLOSSES['finance'].update(security='证券',bondholder='债券持有人',shareholder='股东',capitalise='资本化',ipo='首次公开募股')
 GLOSSES['marketing'].update(profit='利润',page='网页',generation='生成；获客',cost='成本',margin='利润率',spend='广告花费',bid='出价',optimization='优化',experiment='试验',identity='品牌形象')

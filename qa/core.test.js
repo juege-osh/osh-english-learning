@@ -20,10 +20,10 @@ for(const w of words.slice(0,1100))for(const item of examples[w.id]){
 for(const w of words){const opts=C.choices(w,words.slice(Math.max(0,w.id-150),Math.min(words.length,w.id+150)),'zh');assert.equal(opts.length,4);assert.equal(new Set(opts.map(o=>o.zh)).size,4);assert(opts.some(o=>o.id===w.id));}
 const expectedStart={programmer:'algorithm',foreign_trade:'export',finance:'asset',ai_creator:'prompt',marketing:'brand',healthcare:'patient',biology:'biology',law:'law',chemistry:'chemistry'};
 for(const sector of industries.filter(x=>x.category==='industry')){
- assert.equal(sector.coreCount,100);assert.equal(sector.wordIds.length,700);
+ const count=sector.id==='programmer'?683:700;assert.equal(sector.coreCount,sector.id==='programmer'?683:100);assert.equal(sector.wordIds.length,count);
  assert(Object.keys(sector.glosses).length>=100);
- assert(sector.wordIds.slice(0,100).every(id=>sector.glosses[id]));
- assert.equal(new Set(sector.wordIds).size,700);
+ assert(sector.wordIds.slice(0,sector.coreCount).every(id=>sector.glosses[id]));
+ assert.equal(new Set(sector.wordIds).size,count);
  assert(sector.wordIds.every(id=>id>=1&&id<=20000));
  assert.equal(words[sector.wordIds[0]-1].word,expectedStart[sector.id]);
 }
@@ -32,4 +32,7 @@ assert.equal(words[programmer.wordIds[100]-1].word,'download');
 assert.equal(programmer.glosses[programmer.wordIds[100]],'下载');
 const aiCreator=industries.find(x=>x.id==='ai_creator');assert.equal(words[aiCreator.wordIds[100]-1].word,'logo');
 assert.equal(aiCreator.glosses[aiCreator.wordIds[100]],'标志设计');
-console.log('PASS: 20,000 unique words, 120 phrases, nine 700-word industry routes with curated starts, unlock and boss gates, duplicate XP, cross-day mastery, failures, overdue reviews, import validation, 20,000 choice sets');
+assert.equal(Object.keys(programmer.glosses).length,683);assert.equal(Object.keys(programmer.examples).length,100);
+for(const id of programmer.wordIds.slice(0,100)){assert.equal(programmer.examples[id].length,2);for(const ex of programmer.examples[id]){assert(ex.translation);assert(new RegExp('\\b'+words[id-1].word+'\\b','i').test(ex.text));}}
+for(const wrong of ['mannequin','deixis','baseball','country','summer'])assert(!programmer.wordIds.some(id=>words[id-1].word===wrong));
+console.log('PASS: 20,000 unique words, 120 phrases, 683 reviewed programmer words with 200 bilingual examples and eight labelled trial routes, unlock and boss gates, duplicate XP, cross-day mastery, failures, overdue reviews, import validation, 20,000 choice sets');

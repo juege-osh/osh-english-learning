@@ -1,0 +1,101 @@
+# 原创开发沟通例句；每行词头、英文1、中文1、英文2、中文2。
+algorithm	This algorithm is too slow for large files.	这个算法处理大文件太慢了。	Let's try a simpler algorithm.	我们试试更简单的算法吧。
+database	The database is down.	数据库宕机了。	Back up the database before the update.	更新前先备份数据库。
+server	The server is not responding.	服务器没有响应。	We need to restart the server.	我们需要重启服务器。
+client	The client sends a request to the server.	客户端向服务器发送请求。	Please update the client first.	请先更新客户端。
+network	Is your network connection working?	你的网络连接正常吗？	The network is slow today.	今天网络很慢。
+protocol	Which protocol does this service use?	这个服务使用哪种协议？	Both devices use the same protocol.	两台设备使用相同的协议。
+function	What does this function return?	这个函数返回什么？	Keep this function short and simple.	把这个函数写得简短一点。
+variable	Give this variable a clear name.	给这个变量起个清楚的名字。	This variable stores the user ID.	这个变量保存用户ID。
+object	This object has three properties.	这个对象有三个属性。	Create a new object for each request.	为每次请求创建一个新对象。
+class	This class handles file uploads.	这个类负责处理文件上传。	We should split this class into smaller parts.	我们应该把这个类拆成更小的部分。
+method	Call this method after the download finishes.	下载完成后调用这个方法。	This method returns a list of names.	这个方法返回一个名字列表。
+interface	This interface has only one method.	这个接口只有一个方法。	The two services share the same interface.	这两个服务使用相同的接口。
+compiler	The compiler found an error.	编译器发现了一个错误。	Which compiler are you using?	你用的是哪个编译器？
+framework	This framework makes testing easier.	这个框架让测试更方便。	Let's use a framework we already know.	我们用一个已经熟悉的框架吧。
+library	We need a library for reading PDF files.	我们需要一个读取PDF文件的代码库。	Please check the library version.	请检查代码库的版本。
+module	This module handles payments.	这个模块处理支付。	Keep the module separate from the user interface.	让这个模块与用户界面分开。
+package	Install the package before running the script.	运行脚本前先安装这个软件包。	This package has no external dependencies.	这个软件包没有外部依赖。
+dependency	This dependency is out of date.	这个依赖项过时了。	Can we remove this dependency?	我们能移除这个依赖项吗？
+repository	The code is in a private repository.	代码在一个私有仓库里。	Clone the repository to your laptop.	把代码仓库克隆到你的笔记本电脑上。
+branch	Create a new branch for this feature.	为这个功能创建一个新分支。	Which branch should I use?	我应该使用哪个分支？
+commit	Please commit your changes before you leave.	离开前请提交你的改动。	This commit fixes the login bug.	这次提交修复了登录问题。
+merge	Can you merge this branch today?	你今天能合并这个分支吗？	We need to resolve the conflict before we merge.	合并之前，我们需要解决冲突。
+deploy	Let's deploy this change tomorrow.	我们明天部署这个改动吧。	Do not deploy until the tests pass.	测试通过后再部署。
+deployment	The deployment failed.	部署失败了。	We can roll back the deployment.	我们可以回滚这次部署。
+container	Run the service in a container.	把服务放在容器里运行。	This container needs more memory.	这个容器需要更多内存。
+cloud	Our backups are stored in the cloud.	我们的备份保存在云端。	Which cloud service do you use?	你用的是哪家云服务？
+cache	Clear the cache and try again.	清除缓存后再试一次。	The cache reduces database requests.	缓存减少了数据库请求。
+queue	Put the task in the queue.	把任务放进队列。	The queue is full.	队列满了。
+thread	This thread is waiting for a lock.	这个线程正在等待一个锁。	Use a separate thread for the long task.	用一个单独的线程处理这个耗时任务。
+process	The process uses too much memory.	这个进程占用了太多内存。	Stop the process before restarting the service.	重启服务前先停止这个进程。
+memory	We are running out of memory.	内存快用完了。	Check the memory usage first.	先检查内存占用。
+storage	We need more storage for the backups.	我们需要更多备份存储空间。	How much storage does this service use?	这个服务占用多少存储空间？
+security	We need to review the security settings.	我们需要检查安全设置。	Security is part of the design.	安全性是设计的一部分。
+encryption	This app uses encryption to protect your files.	这个应用用加密保护你的文件。	Keep the encryption key safe.	妥善保管加密密钥。
+authorization	The request failed the authorization check.	这个请求没有通过授权检查。	Add an authorization check before showing private data.	显示私人数据前先检查授权。
+token	The token has expired.	令牌已经过期了。	Do not put the token in the log.	不要把令牌写进日志。
+request	The request took too long.	这个请求耗时太长了。	Send a new request after you sign in.	登录后发送一个新请求。
+response	The response contains three items.	响应包含三个条目。	Check the response before reading the data.	读取数据前先检查响应。
+error	What does this error mean?	这个错误是什么意思？	The error only happens on mobile.	这个错误只出现在移动端。
+exception	Catch the exception and show a clear message.	捕获异常，并显示清楚的提示。	This exception happens when the file is missing.	缺少文件时会出现这个异常。
+query	This query is too slow.	这个查询太慢了。	Add an index to speed up the query.	添加索引来加快查询。
+index	This column needs an index.	这一列需要一个索引。	The index helps us find records faster.	这个索引帮助我们更快地找到记录。
+transaction	The transaction was rolled back.	事务已经回滚了。	Use a transaction for these two updates.	用一个事务处理这两次更新。
+latency	The latency is higher than usual.	延迟比平时高。	We need to reduce the network latency.	我们需要降低网络延迟。
+architecture	Can you explain the system architecture?	你能解释一下系统架构吗？	Keep the architecture simple for now.	目前先保持架构简单。
+software	Please update the software.	请更新软件。	This software works on both Mac and Windows.	这个软件在Mac和Windows上都能运行。
+hardware	This looks like a hardware problem.	这看起来是硬件问题。	The hardware is too old for this task.	这套硬件太旧了，处理不了这个任务。
+source	The source code is available in the repository.	源代码可以在仓库里找到。	Check the source before changing the behavior.	修改行为前先查看源代码。
+code	Can you review my code?	你能帮我审查代码吗？	This code is hard to read.	这段代码不太好读。
+data	The data is missing.	数据丢失了。	Do not delete the data before making a backup.	备份之前不要删除数据。
+spreadsheet	Export the results to a spreadsheet.	把结果导出到电子表格。	This spreadsheet contains the test results.	这个电子表格包含测试结果。
+internet	You need an internet connection to sign in.	登录需要连接互联网。	The app still works without internet access.	这个应用没有互联网连接也能使用。
+compile	Does the code compile on Linux?	这份代码能在Linux上编译吗？	Compile the program before running it.	运行程序前先编译。
+programmer	She is a programmer on our team.	她是我们团队的程序员。	Ask a programmer to review this change.	请一位程序员审查这个改动。
+program	The program stopped unexpectedly.	程序意外停止了。	Run the program from the terminal.	在终端里运行这个程序。
+application	The application takes too long to start.	这个应用启动太慢了。	Close the application and open it again.	关闭应用后重新打开。
+developer	The developer fixed the issue yesterday.	开发者昨天修复了这个问题。	Please contact the developer if the error happens again.	如果再次报错，请联系开发者。
+development	The feature is still in development.	这个功能还在开发中。	Set up your development environment first.	先配置你的开发环境。
+bug	I found a bug in the login page.	我在登录页面发现了一个问题。	Can you reproduce this bug?	你能复现这个问题吗？
+test	Run the test before you submit the change.	提交改动前先运行测试。	This test fails on Windows.	这个测试在Windows上失败了。
+unit	Write a unit test for this function.	为这个函数写一个单元测试。	This unit test checks the return value.	这个单元测试检查返回值。
+integration	The integration test covers the login flow.	集成测试覆盖了登录流程。	We found the issue during integration testing.	我们在集成测试中发现了这个问题。
+pipeline	The build pipeline failed.	构建流水线失败了。	Add the test to the pipeline.	把这个测试加入流水线。
+release	The next release includes this fix.	下个版本包含这个修复。	We need to test the release before it goes live.	这个版本上线前需要测试。
+version	Which version are you using?	你用的是哪个版本？	The latest version fixes this issue.	最新版本修复了这个问题。
+configuration	The configuration file is missing.	配置文件丢失了。	Check the configuration before starting the service.	启动服务前先检查配置。
+configure	How do I configure the database connection?	我该怎么配置数据库连接？	Configure the server before you start it.	启动服务器前先配置好。
+command	Copy this command into your terminal.	把这条命令复制到终端里。	This command prints the current version.	这条命令输出当前版本。
+terminal	Open a terminal in the project folder.	在项目文件夹里打开终端。	The error message is shown in the terminal.	错误信息显示在终端里。
+shell	Which shell do you use?	你用的是哪种命令行外壳？	Run the script in your shell.	在命令行外壳里运行这个脚本。
+script	This script creates a backup.	这个脚本创建备份。	Read the script before running it.	运行之前先阅读这个脚本。
+syntax	There is a syntax error on this line.	这一行有语法错误。	The syntax is different in this language.	这门语言的语法不一样。
+execution	Stop execution when an error occurs.	出现错误时停止执行。	The execution time is under one second.	执行时间不到一秒。
+binary	Download the binary for your operating system.	下载适合你操作系统的二进制文件。	The binary is ready to run.	这个二进制文件已经可以运行了。
+directory	Create a new directory for the logs.	为日志创建一个新目录。	The file is in the wrong directory.	文件放错目录了。
+path	Check the file path.	检查一下文件路径。	This path does not exist.	这个路径不存在。
+permission	You need permission to edit this file.	编辑这个文件需要权限。	The app does not have permission to use the camera.	这个应用没有使用摄像头的权限。
+password	Do not share your password.	不要分享你的密码。	Please enter your password again.	请再次输入密码。
+account	Create an account to save your progress.	创建账号来保存进度。	Your account is already signed in.	你的账号已经登录了。
+user	The user cannot open this page.	用户无法打开这个页面。	Show the user a clear error message.	给用户显示清楚的错误提示。
+session	Your session has expired.	你的会话已经过期了。	Start a new session after you sign in.	登录后开始一个新会话。
+browser	Try opening the page in another browser.	试着用另一个浏览器打开页面。	Your browser is out of date.	你的浏览器过时了。
+website	The website is not loading.	网站打不开。	The website works well on mobile.	这个网站在移动端很好用。
+web	This is a web application.	这是一个网页应用。	The web page is ready to publish.	这个网页已经可以发布了。
+migration	Run the migration before starting the new version.	启动新版本前先执行迁移。	Back up the database before the migration.	迁移前先备份数据库。
+schema	We need to update the database schema.	我们需要更新数据库模式。	The schema defines the tables and columns.	这个模式定义了数据表和列。
+backup	Do we have a recent backup?	我们有近期的备份吗？	Keep a backup before making changes.	修改前保留一份备份。
+restore	Can we restore the file from a backup?	我们能从备份恢复这个文件吗？	Restore the database before restarting the service.	重启服务前先恢复数据库。
+socket	The socket connection was closed.	套接字连接已关闭。	Create a socket before sending the data.	发送数据前先创建套接字。
+port	Which port is the service using?	这个服务使用哪个端口？	Another process is already using this port.	另一个进程已经占用了这个端口。
+bandwidth	We need more bandwidth for video calls.	视频通话需要更多带宽。	The upload uses too much bandwidth.	这次上传占用了太多带宽。
+endpoint	This endpoint returns the user profile.	这个接口端点返回用户资料。	Test the endpoint before changing the client.	修改客户端前先测试这个接口端点。
+gateway	The gateway returned an error.	网关返回了一个错误。	The request passes through the gateway.	这个请求经过网关。
+parallel	These tasks can run in parallel.	这些任务可以并行运行。	Parallel processing makes this task faster.	并行处理让这个任务更快。
+kernel	The kernel manages system resources.	内核管理系统资源。	This driver needs a newer kernel.	这个驱动程序需要更新的内核。
+processor	This processor has eight cores.	这个处理器有八个核心。	The processor is busy running another task.	处理器正在执行另一个任务。
+ram	This laptop has enough RAM for development.	这台笔记本电脑有足够的开发用内存。	The app uses too much RAM.	这个应用占用了太多内存。
+disk	The disk is almost full.	磁盘快满了。	Save the backup on a different disk.	把备份保存在另一块磁盘上。
+file	The file is too large to upload.	这个文件太大了，无法上传。	Please send me the log file.	请把日志文件发给我。
+upload	The upload failed.	上传失败了。	You can upload the file after signing in.	登录后就可以上传文件。
