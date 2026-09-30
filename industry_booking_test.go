@@ -306,7 +306,7 @@ func TestEditorialIndustryChallengePools(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	for id, count := range map[string]int{"ai_creator": 831, "healthcare": 753, "biology": 967, "foreign_trade": 774, "finance": 846} {
+	for id, count := range map[string]int{"ai_creator": 831, "healthcare": 753, "biology": 967, "foreign_trade": 774, "finance": 846, "marketing": 767, "law": 850, "chemistry": 932} {
 		t.Run(id, func(t *testing.T) {
 			sector := f.findIndustry(id)
 			if sector == nil || sector.CoreCount != count || len(sector.WordIDs) != count || len(sector.Glosses) != count {
@@ -362,7 +362,7 @@ func TestSupplementalIndustryWordsStayOutsideMainRoute(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	if len(f.words) != 20000 || len(f.extraWords) != 631 {
+	if len(f.words) != 20000 || len(f.extraWords) != 1331 {
 		t.Fatal("main or supplemental vocabulary size changed unexpectedly")
 	}
 	sector := f.findIndustry("biology")
