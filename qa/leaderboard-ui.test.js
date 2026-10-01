@@ -6,12 +6,13 @@ function element(id){if(!elements.has(id))elements.set(id,{innerHTML:'',textCont
 const entries=[{name:'最佳旅人',correct:20,timeMs:14500,submittedAt:Date.parse('2026-09-29T23:59:58Z')},{name:'<img src=x onerror=alert(1)>',correct:19,timeMs:1000,submittedAt:Date.parse('2026-09-30T00:01:00Z')}];
 const questions=Array.from({length:20},(_,i)=>({id:i+1,word:'word'+i,options:[{id:i+1,zh:'答案'},{id:100+i,zh:'其他'}]}));
 const responseData=new Map();
-const context=vm.createContext({EnglishCore:C,inputWords:words,inputIndustries:industries,inputExtras:extras,console,Map,Set,Date,JSON,Math,Promise,URLSearchParams,
+const context=vm.createContext({EnglishCore:C,inputWords:words,inputIndustries:industries,inputExtras:extras,AbortController,console,Map,Set,Date,JSON,Math,Promise,URLSearchParams,
  document:{getElementById:element,addEventListener(){},querySelectorAll(){return []}},window:{addEventListener(){},scrollTo(){}},location:{hash:'#daily',search:''},
  localStorage:{setItem(){},getItem(){return null}},setTimeout(){},clearTimeout(){},setInterval(){},clearInterval(){},
  fetch:async(url,options)=>{requests.push({url,options});const data=responseData.get(url);assert(data,'unmocked request '+url);return {ok:true,json:async()=>structuredClone(data)};}});
 vm.runInContext(fs.readFileSync(require.resolve('../app.js'),'utf8').replace('\ninit();','\n'),context);
 vm.runInContext(fs.readFileSync(require.resolve('../features-ui.js'),'utf8'),context);
+vm.runInContext(fs.readFileSync(require.resolve('../run-controls.js'),'utf8'),context);
 Object.assign(context,{notices});vm.runInContext("words=inputWords;industries=inputIndustries;all=new Map([...words,...inputExtras].map(w=>[String(w.id),w]));save=()=>{};toast=text=>notices.push(text);",context);
 async function run(){
  assert.equal(vm.runInContext("boardTime(Date.parse('2026-09-30T00:01:00Z'))",context),'2026-09-30 08:01:00');
@@ -30,7 +31,7 @@ async function run(){
  // Old deep links can still include a query string. API version, not the date,
  // determines challenge compatibility; repeat starts are never blocked by UI.
  vm.runInContext("location.hash='#daily?from=old-link'",context);await vm.runInContext('renderDaily()',context);assert(element('daily-board').innerHTML.includes('永久排行榜'));
- responseData.set('/api/daily?goal=10000',{period:'all-time',edition:'main-v3',attemptId:'main-attempt-1',goal:10000,questions,hasBest:true,submitted:true,best:entries[0]});
+ responseData.set('/api/daily?goal=10000',{period:'all-time',edition:'main-v3',attemptId:'main-attempt-1',goal:10000,elapsedMs:0,paused:false,freePause:false,restUsed:0,restLimit:20,restRemaining:20,serverNow:Date.now(),questions,hasBest:true,submitted:true,best:entries[0]});
  await vm.runInContext('dailyStart()',context);assert(element('app').innerHTML.includes('榜单挑战 1 / 20'));assert.equal(vm.runInContext('dailyEdition',context),'main-v3');
  for(let i=0;i<20;i++)vm.runInContext('dailyAnswer('+(i+1)+')',context);
  assert(element('app').innerHTML.includes('提交榜单成绩'));assert(element('app').innerHTML.includes('可多次挑战'));assert(!element('app').innerHTML.includes('只能提交一次'));element('daily-name').value='旅人';

@@ -688,3 +688,15 @@ prosthesis采用假肢、人工假体，matchup改为对阵，generational采用
 - [Cambridge hippocampus](https://dictionary.cambridge.org/dictionary/english/hippocampus)、[Merriam-Webster ultrasonic](https://www.merriam-webster.com/dictionary/ultrasonic)、[NASA occultation](https://science.nasa.gov/universe/exoplanets/an-eclipse-by-any-other-name-doing-science-with-transits-and-occultations/)：海马、超声及天体掩星术语。
 - [Merriam-Webster pur](https://www.merriam-webster.com/dictionary/pur)、[aga](https://www.merriam-webster.com/dictionary/aga)、[aureus](https://www.merriam-webster.com/dictionary/aureus)、[Collins palais](https://www.collinsdictionary.com/dictionary/english/palais)：古旧形式、称号、金币及旧式舞厅义。
 - [Merriam-Webster cabinetry](https://www.merriam-webster.com/dictionary/cabinetry)、[hula](https://www.merriam-webster.com/dictionary/hula)、[Oxford bugger](https://www.oxfordlearnersdictionaries.com/definition/english/bugger_1)：橱柜工艺、夏威夷传统舞蹈与冒犯语域。
+
+## v1.31.4 目标、休息与重来验收
+
+1. 在独立测试预览中打开目标下拉框，确认从1,000到20,000共20档。切换2,000、20,000，地图和个人页分别显示四次、四十次免费休息。
+2. 选1,000词，开始第一关，在题目中点休息，观察计时停止；继续后应仍是同题、输入不丢。免费休息两次后按钮禁用；「计时休息」的钟仍走。免费休息期间刷新再继续，不应重复扣次。
+3. 点主线重来，先检查清空提示；取消不应清空，确认后主线从头开始、用时归零、额度恢复。仅在独立测试数据做此项，不要清空站长实际进度。
+4. 排行榜选1,000词开始20题挑战。回答一题、休息、刷新，点继续本轮，应回第二题且休息次数不重置。用完两次后可计时休息；重来后新一轮从第一题开始，旧提交不能再使用；此前最好成绩仍在。
+5. 在390×844与正常桌面分别查看题目、休息面板和重来确认，操作可见，无横向溢出。跨标签重来应切新轮，登录身份变化不保留旧题输入。
+
+本批没有修改语言数据。主线前18,700词的常用中文义与两句双语覆盖量保持；18701–19300作者初稿仅暂存，尚未完成整批交叉审读或发布。完整20,000词语言编辑、44音专业听审、真人录音听审和真实支付仍不能宣称完成。检查实际数量与上线回执由`state/evidence-v1314/verification.json`记录，未通过的检查不得计为通过。
+
+本批功能检查通过：62项顶层Go测试（20个子测试另计）、vet、全量并发检查83.682秒、14套前端测试、47项全新隔离四账号检查。主线18项与榜单26项行为回归包含免费及计时休息、重复请求、整页刷新、昵称保存、切账号与新轮合并；实际Chrome验证1000词两次免费休息、用尽后计时继续、主线与榜单刷新恢复和重来，以及390×844与1366×620操作可见。语言数据377份与上版逐字节保持。完整源码同步与正式站上线结果以本批verification.json为准。
