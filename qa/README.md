@@ -2,7 +2,7 @@
 
 此目录包含前端逻辑测试及词库例句构建辅助脚本。
 
-`curate_starter_examples.py` 是前 100 词双语句子的人工编辑层。重新构建整份例句数据时，在补全和简体转换后，依次运行它、`curate_first500_examples.py`、`curate_common_examples.py`、`curate_next200_examples.py --apply`，以及第 701–1100 词四批对应的 `curate_*_example_gaps.py --apply`。再运行 `curate_main_1101_1500.py --apply`，前 1,500 词会恢复为每词两句双语例句。第 501–1500 词的编辑原稿存于 `data/curated_examples_*.tsv`。不要颠倒顺序。
+`curate_starter_examples.py` 是前 100 词双语句子的人工编辑层。重新构建整份例句数据时，在补全和简体转换后，依次运行它、`curate_first500_examples.py`、`curate_common_examples.py`、`curate_next200_examples.py --apply`，以及第 701–1100 词四批对应的 `curate_*_example_gaps.py --apply`。再依次运行 `curate_main_1101_1500.py --apply`、`curate_main_1501_1900.py --apply`，前 1,900 词会恢复为每词两句双语例句。第 501–1900 词的编辑原稿存于 `data/curated_examples_*.tsv`。不要颠倒顺序。
 
 `augment_bilingual_examples.py` 使用已下载的 Tatoeba 英中句子和关联表，从短句候选中优先选择有译文的例句。先不带参数运行并抽查结果；确认后加 `--apply`。完成语料补全及简体转换后，再执行上述人工编辑脚本。
 
@@ -230,3 +230,15 @@
 42项Go测试5.275秒、vet、主线前1500词双语目标与核心数据检查、全部8112行业句子目标检查通过。本次没有改布局与联机逻辑，未重复旧版并发和小屏布局检查。仓库与发布回执见/tmp/english-quest-v1271-evidence/verification.json。真实支付宝仍关闭。
 
 重建主线数据时，在旧版1101–1200常用义脚本之后运行 `python3 qa/curate_main_1101_1500.py --apply`，恢复本批300个常用义和400词800句；先不加参数可预览校验。它保留词号和原词典定义，原稿分别在四个 `curated_examples_1101_1200` 至 `1401_1500` TSV及三个 `curated_glosses_1201_1300` 至 `1401_1500` TSV。
+
+## v1.27.2 主线常用义与双语用法推进到1900词
+
+本批为第1501–1900词整理400个简短常用中文义，并编写800句日常双语用法。主线前1900词现在每词都有常用义和两句双语；原词号、词头和关卡顺序保留。例句覆盖出行、生活、学习和工作沟通，也区分常见多义，例如resolution的决心/分辨率、mirror的镜子/反映、signal的手机信号/示意。
+
+Tom、Tony、Leeds、Glasgow等人名地名，以及III、Corp.等数字或缩写，释义明确说明；原学习编号保留，不将它们算成新增实义词。gay使用现代常用含义。完整20000词尚未逐条完成语言编辑，前1900词的双语覆盖不代表全库审校完成。
+
+实际验收发现，词库原有五分钟缓存可能让刚刷新的页面继续显示旧释义。本批让题库JSON随刷新校验内容版本，未变化的文件仍通过ETag复用缓存；同时更新主线加载地址，避免沿用旧缓存。无需清掉学习记录或重新登录。十行业的8112个路线条目及16224句行业用法保持原内容。
+
+可在「我的词库」搜索capture、mirror、resolution或signal，展开「看两条例句」，查看中文并逐句播放；正常闯关使用同一批内容。建议先理解句子，再用速刷巩固。实际测试、仓库字节核对、上线回执和资源采样见/tmp/english-quest-v1272-evidence/verification.json。真实支付宝仍关闭，主线内容继续补齐。
+
+恢复第1501–1900词编辑层时，在前一批脚本后运行 `python3 qa/curate_main_1501_1900.py --apply`。四份例句TSV各100行、每词两句；四份常用义TSV各100行。先不带--apply可仅校验。
