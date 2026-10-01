@@ -2,7 +2,7 @@
 
 此目录包含前端逻辑测试及词库例句构建辅助脚本。
 
-`curate_starter_examples.py` 是前 100 词双语句子的人工编辑层。重新构建整份例句数据时，在补全和简体转换后，依次运行它、`curate_first500_examples.py`、`curate_common_examples.py`、`curate_next200_examples.py --apply`，以及第 701–1100 词四批对应的 `curate_*_example_gaps.py --apply`。再依次运行 `curate_main_1101_1500.py --apply`、`curate_main_1501_1900.py --apply`、`curate_main_1901_2300.py --apply`、`curate_main_2301_2700.py --apply`、`curate_main_2701_3100.py --apply`、`curate_main_3101_3500.py --apply`、`curate_main_3501_3900.py --apply`、`curate_main_3901_4300.py --apply`，前 4,300 词会恢复为每词两句双语例句。第 501–4300 词的编辑原稿存于 `data/curated_examples_*.tsv`。不要颠倒顺序。
+`curate_starter_examples.py` 是前 100 词双语句子的人工编辑层。重新构建整份例句数据时，在补全和简体转换后，依次运行它、`curate_first500_examples.py`、`curate_common_examples.py`、`curate_next200_examples.py --apply`，以及第 701–1100 词四批对应的 `curate_*_example_gaps.py --apply`。再依次运行 `curate_main_1101_1500.py --apply`、`curate_main_1501_1900.py --apply`、`curate_main_1901_2300.py --apply`、`curate_main_2301_2700.py --apply`、`curate_main_2701_3100.py --apply`、`curate_main_3101_3500.py --apply`、`curate_main_3501_3900.py --apply`、`curate_main_3901_4300.py --apply`、`curate_main_4301_4700.py --apply`，前 4,700 词会恢复为每词两句双语例句。第 501–4700 词的编辑原稿存于 `data/curated_examples_*.tsv`。不要颠倒顺序。
 
 `augment_bilingual_examples.py` 使用已下载的 Tatoeba 英中句子和关联表，从短句候选中优先选择有译文的例句。先不带参数运行并抽查结果；确认后加 `--apply`。完成语料补全及简体转换后，再执行上述人工编辑脚本。
 
@@ -295,3 +295,11 @@ bug区分虫子和程序错误，touchdown区分美式橄榄球达阵和飞机�
 spare区分备用与抽出时间，chemistry区分化学与人际默契，marble区分大理石与弹珠，manual区分手册与手动。ICI明确为历史企业缩写，姓名地名、Tel和ft等缩写注明用途，粗俗口语标注强度，不当作正式沟通建议。
 
 42项Go测试通过（5.118秒）、vet、前4300词核心检查、8112行业句子目标与app.js语法检查通过；47项隔离四账号检查通过。真实预览展开spare、chemistry、marble、manual的两句双语，并点击spare例句播放，未见控制台错误。仓库字节核验与发布回执见/tmp/english-quest-v1278-evidence/verification.json。只改语言内容，未重复并发与小屏布局验收。真实支付仍关闭，44音标专业逐条听审待完成。
+
+## v1.27.9 主线推进到4700词
+
+第4301–4700词新增400个常用中文义和800句双语日常用法。前4700词均有常用义与两句双语，完整20000词仍未逐条语言编辑。保留学习编号、词头顺序和完整原词典定义，范围外词条和行业场景内容不变。
+
+clutch区分离合器与手拿包，trillion采用现代常用的万亿，orthodox区分传统做法与东正教，rotate区分旋转与轮换。Du、Turner等姓名、英国地名，以及Los Angeles和El Paso里的地名组成部分明确注明；这些既有条目不当作新增实义词。例句逐词编写和审读，不用统一模板凑数。
+
+42项Go测试通过（初次5.463秒，最终缓存）、vet、前4700词核心检查、8112行业句子目标和app.js语法检查通过；47项隔离四账号检查通过。真实预览展开clutch、trillion、orthodox、rotate两句双语并点击rotate例句播放，无控制台错误。本批仅内容改动，没有重复并发或小屏布局验收。私有仓库字节核验、生产回执和资源采样见/tmp/english-quest-v1279-evidence/verification.json。真实支付仍关闭，44音标专业逐条听审待完成。
