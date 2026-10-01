@@ -2,7 +2,7 @@
 
 此目录包含前端逻辑测试及词库例句构建辅助脚本。
 
-`curate_starter_examples.py` 是前 100 词双语句子的人工编辑层。重新构建整份例句数据时，在补全和简体转换后，依次运行它、`curate_first500_examples.py`、`curate_common_examples.py`、`curate_next200_examples.py --apply`，以及第 701–1100 词四批对应的 `curate_*_example_gaps.py --apply`。再依次运行 `curate_main_1101_1500.py --apply`、`curate_main_1501_1900.py --apply`、`curate_main_1901_2300.py --apply`、`curate_main_2301_2700.py --apply`、`curate_main_2701_3100.py --apply`、`curate_main_3101_3500.py --apply`、`curate_main_3501_3900.py --apply`、`curate_main_3901_4300.py --apply`、`curate_main_4301_4700.py --apply`、`curate_main_4701_5100.py --apply`，前 5,100 词会恢复为每词两句双语例句。第 501–5100 词的编辑原稿存于 `data/curated_examples_*.tsv`。不要颠倒顺序。
+`curate_starter_examples.py` 是前 100 词双语句子的人工编辑层。重新构建整份例句数据时，在补全和简体转换后，依次运行它、`curate_first500_examples.py`、`curate_common_examples.py`、`curate_next200_examples.py --apply`，以及第 701–1100 词四批对应的 `curate_*_example_gaps.py --apply`。再依次运行 `curate_main_1101_1500.py --apply`、`curate_main_1501_1900.py --apply`、`curate_main_1901_2300.py --apply`、`curate_main_2301_2700.py --apply`、`curate_main_2701_3100.py --apply`、`curate_main_3101_3500.py --apply`、`curate_main_3501_3900.py --apply`、`curate_main_3901_4300.py --apply`、`curate_main_4301_4700.py --apply`、`curate_main_4701_5500.py --apply`，前 5,500 词会恢复为每词两句双语例句。第 501–5500 词的编辑原稿存于 `data/curated_examples_*.tsv`。不要颠倒顺序。
 
 `augment_bilingual_examples.py` 使用已下载的 Tatoeba 英中句子和关联表，从短句候选中优先选择有译文的例句。先不带参数运行并抽查结果；确认后加 `--apply`。完成语料补全及简体转换后，再执行上述人工编辑脚本。
 
@@ -314,3 +314,14 @@ umbrella区分雨伞和统领框架，bark区分犬吠和树皮，conductor区�
 42项Go测试5.301秒、vet、前5100词核心检查、8112行业句子目标及app.js语法检查通过；47项隔离四账号检查通过。真实预览展开vocabulary、umbrella、bark和conductor两句双语并点击conductor播放，无控制台错误。本批只改语言内容，未重复并发或小屏布局。私有仓库核验、发布结果及资源采样见/tmp/english-quest-v1280-evidence/verification.json。真实支付仍关闭，44音标专业逐条听审尚未完成。
 
 本批罕见词复核来源：franco运费用语见[法兰西学院词典](https://dictionnaire-academie.fr/article/A9F1549)及[Cambridge法英词典](https://dictionary.cambridge.org/us/dictionary/french-english/franco)；ruine收录情况见[Pharmacognosy Reviews植物化合物综述表](https://phcogrev.com/sites/default/files/PhcogRev-7-14-199.pdf)。仅说明原词库中罕见名称的性质，不提供化学操作或治疗指导。
+
+
+## v1.28.1 主线推进到5500词
+
+第5101–5500词新增400个常用中文义和800句日常双语，前5500词均覆盖。完整20000词仍未逐条语言编辑。保留学习编号、词头顺序和完整原词典定义，范围外词条与行业场景不变。
+
+recorder区分录音机和竖笛，server区分服务员与服务器；download修正为下载，不沿用旧词典的“卸载、下栽”。elk注明美式加拿大马鹿与英式驼鹿用法。姓名、VI/vi、DOS、oz、LJ、ORD及问卷术语subscale注明性质，粗俗用语标明强度。每词两句逐句审读，避免模板凑数。
+
+42项Go测试6.535秒、vet、前5500词核心检查、8112行业句子目标及app.js语法检查通过；47项隔离四账号检查通过。真实预览展开recorder、offset、server、download双语并点击download播放，无控制台错误。仅内容改动，未重复并发与小屏布局。私有仓库核验、生产回执与资源采样见/tmp/english-quest-v1281-evidence/verification.json。真实支付仍关闭，44音标专业听审未完成。
+
+本批术语核对来源：[American Heritage elk英美区别](https://ahdictionary.com/word/search.html?q=Elk)、[NPS加拿大马鹿](https://www.nps.gov/romo/learn/nature/elk.htm)、[美国法院起诉说明](https://www.uscourts.gov/glossary-legal-terms/indictment)、[英国司法人员称谓](https://www.judiciary.uk/guidance-and-resources/what-do-i-call-a-judge/)、[奥黑尔机场ORD](https://www.flychicago.com/ohare/pages/default.aspx)、[APA分量表例子](https://www.apa.org/pubs/books/supplemental/Making-Evidence-Based-Psychological-Treatments-Work-Older-Adults/Appendix2.1.pdf)。这些来源仅供核对词义，不是医疗或法律行动建议。
