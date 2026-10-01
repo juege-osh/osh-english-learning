@@ -2,7 +2,7 @@
 
 此目录包含前端逻辑测试及词库例句构建辅助脚本。
 
-`curate_starter_examples.py` 是前 100 词双语句子的人工编辑层。重新构建整份例句数据时，在补全和简体转换后，依次运行它、`curate_first500_examples.py`、`curate_common_examples.py`、`curate_next200_examples.py --apply`，以及第 701–1100 词四批对应的 `curate_*_example_gaps.py --apply`。再依次运行 `curate_main_1101_1500.py --apply`、`curate_main_1501_1900.py --apply`、`curate_main_1901_2300.py --apply`、`curate_main_2301_2700.py --apply`、`curate_main_2701_3100.py --apply`、`curate_main_3101_3500.py --apply`、`curate_main_3501_3900.py --apply`、`curate_main_3901_4300.py --apply`、`curate_main_4301_4700.py --apply`、`curate_main_4701_5100.py --apply`、`curate_main_5101_5500.py --apply`、`curate_main_5501_5900.py --apply`、`curate_main_5901_6300.py --apply`、`curate_main_6301_6700.py --apply`、`curate_main_6701_7100.py --apply`、`curate_main_7101_7900.py --apply`、`curate_main_7901_8500.py --apply`、`curate_main_8501_9100.py --apply`、`curate_main_9101_9700.py --apply`、`curate_main_9701_10300.py --apply`、`curate_main_10301_10900.py --apply`、`curate_main_10901_11500.py --apply`、`curate_main_11501_12100.py --apply`，前 12,100 词会恢复为每词两句双语例句。第 501–12100 词的编辑原稿存于 `data/curated_examples_*.tsv`。不要颠倒顺序。
+`curate_starter_examples.py` 是前 100 词双语句子的人工编辑层。重新构建整份例句数据时，在补全和简体转换后，依次运行它、`curate_first500_examples.py`、`curate_common_examples.py`、`curate_next200_examples.py --apply`，以及第 701–1100 词四批对应的 `curate_*_example_gaps.py --apply`。再依次运行 `curate_main_1101_1500.py --apply`、`curate_main_1501_1900.py --apply`、`curate_main_1901_2300.py --apply`、`curate_main_2301_2700.py --apply`、`curate_main_2701_3100.py --apply`、`curate_main_3101_3500.py --apply`、`curate_main_3501_3900.py --apply`、`curate_main_3901_4300.py --apply`、`curate_main_4301_4700.py --apply`、`curate_main_4701_5100.py --apply`、`curate_main_5101_5500.py --apply`、`curate_main_5501_5900.py --apply`、`curate_main_5901_6300.py --apply`、`curate_main_6301_6700.py --apply`、`curate_main_6701_7100.py --apply`、`curate_main_7101_7900.py --apply`、`curate_main_7901_8500.py --apply`、`curate_main_8501_9100.py --apply`、`curate_main_9101_9700.py --apply`、`curate_main_9701_10300.py --apply`、`curate_main_10301_10900.py --apply`、`curate_main_10901_11500.py --apply`、`curate_main_11501_12100.py --apply`、`curate_main_12101_12700.py --apply`，前 12,700 词会恢复为每词两句双语例句。第 501–12700 词的编辑原稿存于 `data/curated_examples_*.tsv`。不要颠倒顺序。
 
 `augment_bilingual_examples.py` 使用已下载的 Tatoeba 英中句子和关联表，从短句候选中优先选择有译文的例句。先不带参数运行并抽查结果；确认后加 `--apply`。完成语料补全及简体转换后，再执行上述人工编辑脚本。
 
@@ -505,3 +505,16 @@ prosthesis采用假肢、人工假体，matchup改为对阵，generational采用
 本批疑难词核验：[NPS卡津文化](https://www.nps.gov/jela/learn/historyculture/from-acadian-to-cajun.htm)、[英国下议院](https://www.parliament.uk/commons/)、[EPA污水污泥与生物固体](https://www.epa.gov/biosolids/basic-information-about-sewage-sludge-and-biosolids)、[英联邦官方介绍](https://thecommonwealth.org/about-us)、[Collins eyeglass](https://www.collinsdictionary.com/dictionary/english/eyeglass)、[Cambridge headquarter](https://dictionary.cambridge.org/dictionary/english/headquarter)。panick为过时拼写，现代通常写panic；Til为芝麻的别称。来源用于定义辨识，例句由本站另行编写。
 
 本批42项Go测试通过（5.421秒），vet、前12100词双语目标、8112行业句子目标、前端语法与47项隔离多账号检查通过。预览实际展开payback、biosolids、pallet、donut两句双语，payback播放按钮已点击，无控制台错误；主线0词保持。正式站核验与资源采样由本批verification.json记录。
+
+
+## v1.29.4 主线推进到12700词
+
+第12101–12700词新增600个常用中文义和1200句自然双语。主线前12700词都有简短常用义和两句双语，完整20000词尚余7300词继续编辑。学习编号、词头顺序和原完整词典定义保留，范围外词条、行业与场景内容不变。
+
+本批整理painstaking细致、inflatable可充气、walleye大眼梭鲈、marshmallow棉花糖等现代常用义；区分cam凸轮与摄像机、cameo客串与浮雕宝石、disinterested公正不偏私，避免沿用旧词典里不适合当前用法的释义。心理治疗师不一概称医生，医学词用于术语辨识和沟通。专名、少见单数及可能冒犯的口语注明性质。三名作者冻结原稿后，逐条交叉审读600个简义、1200句双语，再生成词库；每100词一份原稿，`qa/curate_main_12101_12700.py --apply`可重建。
+
+测试、仓库核验、浏览器与发布结果见 `/tmp/english-quest-v1294-evidence/verification.json`。只有内容变化，未重复此前并发与小屏布局验收。完整主线逐条语言编辑、音标专业听审、真实支付宝配置和本人试付、社交主页及微信群联系方式、协作者验证仍未全部完成。
+
+本批疑难词参考：[Charing Cross官方车站页](https://www.nationalrail.co.uk/stations/london-charing-cross/)、[NIST logistic模型说明](https://www.nist.gov/publications/logistic-function-data-analysis-program-logit)、[NHGRI双胞胎术语](https://www.genome.gov/genetics-glossary/identical-twins)、[Brooklands协和式客机馆藏](https://www.brooklandsmuseum.com/discover/concorde/)、[American Heritage walleye](https://ahdictionary.com/word/search.html?q=walleye)、[Oxford disinterested](https://www.oxfordlearnersdictionaries.com/definition/english/disinterested)。gall未一概译成虫瘿，参考[明尼苏达大学推广中心](https://extension.umn.edu/garden-and-home/yard-and-garden/yard-and-garden-insects/insect-and-mite-galls)；strikeout棒球译文按[MLB出局术语](https://www.mlb.com/glossary/standard-stats/out)区分半局。来源核对与本站编辑不等于全库专业审校认证。
+
+本批验证：42 项 Go 测试通过（7.321 秒），vet、前 12,700 词核心检查、8,112 个行业句子目标检查及前端语法检查通过；47 项隔离多账号检查通过。实际预览展开 painstaking、walleye、disinterested、marshmallow 的两句双语，点击例句播放，主线保持 0，控制台无错误。仅内容变更，未重复此前并发与小屏布局验收。发布回执以 /tmp/english-quest-v1294-evidence/verification.json 为准。
