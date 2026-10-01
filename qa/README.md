@@ -2,7 +2,7 @@
 
 此目录包含前端逻辑测试及词库例句构建辅助脚本。
 
-`curate_starter_examples.py` 是前 100 词双语句子的人工编辑层。重新构建整份例句数据时，在补全和简体转换后，依次运行它、`curate_first500_examples.py`、`curate_common_examples.py`、`curate_next200_examples.py --apply`，以及第 701–1100 词四批对应的 `curate_*_example_gaps.py --apply`。再依次运行 `curate_main_1101_1500.py --apply`、`curate_main_1501_1900.py --apply`、`curate_main_1901_2300.py --apply`、`curate_main_2301_2700.py --apply`、`curate_main_2701_3100.py --apply`、`curate_main_3101_3500.py --apply`、`curate_main_3501_3900.py --apply`、`curate_main_3901_4300.py --apply`、`curate_main_4301_4700.py --apply`、`curate_main_4701_5100.py --apply`、`curate_main_5101_5500.py --apply`、`curate_main_5501_5900.py --apply`、`curate_main_5901_6300.py --apply`、`curate_main_6301_6700.py --apply`、`curate_main_6701_7100.py --apply`，前 7,100 词会恢复为每词两句双语例句。第 501–7100 词的编辑原稿存于 `data/curated_examples_*.tsv`。不要颠倒顺序。
+`curate_starter_examples.py` 是前 100 词双语句子的人工编辑层。重新构建整份例句数据时，在补全和简体转换后，依次运行它、`curate_first500_examples.py`、`curate_common_examples.py`、`curate_next200_examples.py --apply`，以及第 701–1100 词四批对应的 `curate_*_example_gaps.py --apply`。再依次运行 `curate_main_1101_1500.py --apply`、`curate_main_1501_1900.py --apply`、`curate_main_1901_2300.py --apply`、`curate_main_2301_2700.py --apply`、`curate_main_2701_3100.py --apply`、`curate_main_3101_3500.py --apply`、`curate_main_3501_3900.py --apply`、`curate_main_3901_4300.py --apply`、`curate_main_4301_4700.py --apply`、`curate_main_4701_5100.py --apply`、`curate_main_5101_5500.py --apply`、`curate_main_5501_5900.py --apply`、`curate_main_5901_6300.py --apply`、`curate_main_6301_6700.py --apply`、`curate_main_6701_7100.py --apply`、`curate_main_7101_7900.py --apply`，前 7,900 词会恢复为每词两句双语例句。第 501–7900 词的编辑原稿存于 `data/curated_examples_*.tsv`。不要颠倒顺序。
 
 `augment_bilingual_examples.py` 使用已下载的 Tatoeba 英中句子和关联表，从短句候选中优先选择有译文的例句。先不带参数运行并抽查结果；确认后加 `--apply`。完成语料补全及简体转换后，再执行上述人工编辑脚本。
 
@@ -366,3 +366,19 @@ weekday改为工作日，thwart改为阻止、挫败；SSR补充开发中常用�
 本批罕见词与缩写核对来源：[Merriam-Webster的ye](https://www.merriam-webster.com/dictionary/ye)、[kemp](https://www.merriam-webster.com/dictionary/kemp)、[mungo](https://www.merriam-webster.com/dictionary/mungo)、[Collins的cor](https://www.collinsdictionary.com/dictionary/english/cor)、[Vue官方SSR说明](https://vuejs.org/guide/scaling-up/ssr)。THA对应Thailand见[MIT论文附表A.1](https://ceepr.mit.edu/wp-content/uploads/2021/09/2018-013.pdf)。本站句子为独立编写，没有复制词典例句。重建命令为`python3 qa/curate_main_6701_7100.py --apply`。
 
 本批42项Go测试通过（6.946秒）、vet、前7100词核心及8112行业句子目标检查、app.js语法检查通过；47项隔离四账号检查通过。实际预览展开durable、lousy、Lenin、weekday两句双语，weekday播放按钮已点击，主线0词保持，无控制台错误。
+
+
+## v1.28.6 罕见词与异体核对来源
+
+[limo词典释义](https://www.ahdictionary.com/word/search.html?q=limo)用于修正原中文“柠檬”；[Oxford的bach](https://www.oxfordlearnersdictionaries.com/definition/english/bach)核对新西兰度假小屋用法；[Collins的Dee](https://www.collinsdictionary.com/dictionary/english/dee)核对人名用法；[Boswell](https://www.collinsdictionary.com/dictionary/english/boswell)核对传记作者引申义；[wheeler](https://www.collinsdictionary.com/zh/dictionary/english/wheeler)核对带轮车辆的复合形式。本站例句独立编写，没有复制词典例句。
+
+
+## v1.28.6 主线推进到7900词
+
+第7101–7900词新增800个常用中文义和1600句自然双语，主线前7900词现每词都有简短中文义和两句双语。完整20000词仍在逐条编辑。原学习编号、词头顺序和完整词典定义保留，范围外词条、行业与场景内容保持不变。
+
+limo修正为豪华轿车，cranberry为蔓越莓，console补游戏机；Bach、Wagner、Dee等专名注明。两轮审读修正同声传译搭配、部分习语义、语气词和不自然中译；罕见用法保留真实语域，不用统一模板凑句子。
+
+本批42项Go测试通过（5.227秒）、vet、前7900词核心与8112行业句子目标检查、app.js语法检查通过；47项隔离四账号检查通过。实际预览展开footprint、paranoid、kinship、limo两句双语，并点击播放按钮，主线0词保持，无控制台错误。limo模糊搜索同时匹配limousine，已定位实际目标核验。只有内容变化，未重复并发或小屏布局验收。
+
+私有仓库整仓字节核验及生产发布结果见/tmp/english-quest-v1286-evidence/verification.json。真实支付仍关闭，44音标专业逐条听审尚未完成。
