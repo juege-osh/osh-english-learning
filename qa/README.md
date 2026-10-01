@@ -2,7 +2,7 @@
 
 此目录包含前端逻辑测试及词库例句构建辅助脚本。
 
-`curate_starter_examples.py` 是前 100 词双语句子的人工编辑层。重新构建整份例句数据时，在补全和简体转换后，依次运行它、`curate_first500_examples.py`、`curate_common_examples.py`、`curate_next200_examples.py --apply`，以及第 701–1100 词四批对应的 `curate_*_example_gaps.py --apply`。再依次运行 `curate_main_1101_1500.py --apply`、`curate_main_1501_1900.py --apply`、`curate_main_1901_2300.py --apply`、`curate_main_2301_2700.py --apply`、`curate_main_2701_3100.py --apply`、`curate_main_3101_3500.py --apply`、`curate_main_3501_3900.py --apply`、`curate_main_3901_4300.py --apply`、`curate_main_4301_4700.py --apply`、`curate_main_4701_5100.py --apply`、`curate_main_5101_5500.py --apply`、`curate_main_5501_5900.py --apply`、`curate_main_5901_6300.py --apply`、`curate_main_6301_6700.py --apply`、`curate_main_6701_7100.py --apply`、`curate_main_7101_7900.py --apply`、`curate_main_7901_8500.py --apply`、`curate_main_8501_9100.py --apply`、`curate_main_9101_9700.py --apply`、`curate_main_9701_10300.py --apply`、`curate_main_10301_10900.py --apply`、`curate_main_10901_11500.py --apply`、`curate_main_11501_12100.py --apply`、`curate_main_12101_12700.py --apply`、`curate_main_12701_13300.py --apply`，前 13,300 词会恢复为每词两句双语例句。第 501–13300 词的编辑原稿存于 `data/curated_examples_*.tsv`。不要颠倒顺序。
+`curate_starter_examples.py` 是前 100 词双语句子的人工编辑层。重新构建整份例句数据时，在补全和简体转换后，依次运行它、`curate_first500_examples.py`、`curate_common_examples.py`、`curate_next200_examples.py --apply`，以及第 701–1100 词四批对应的 `curate_*_example_gaps.py --apply`。再依次运行 `curate_main_1101_1500.py --apply`、`curate_main_1501_1900.py --apply`、`curate_main_1901_2300.py --apply`、`curate_main_2301_2700.py --apply`、`curate_main_2701_3100.py --apply`、`curate_main_3101_3500.py --apply`、`curate_main_3501_3900.py --apply`、`curate_main_3901_4300.py --apply`、`curate_main_4301_4700.py --apply`、`curate_main_4701_5100.py --apply`、`curate_main_5101_5500.py --apply`、`curate_main_5501_5900.py --apply`、`curate_main_5901_6300.py --apply`、`curate_main_6301_6700.py --apply`、`curate_main_6701_7100.py --apply`、`curate_main_7101_7900.py --apply`、`curate_main_7901_8500.py --apply`、`curate_main_8501_9100.py --apply`、`curate_main_9101_9700.py --apply`、`curate_main_9701_10300.py --apply`、`curate_main_10301_10900.py --apply`、`curate_main_10901_11500.py --apply`、`curate_main_11501_12100.py --apply`、`curate_main_12101_12700.py --apply`、`curate_main_12701_13300.py --apply`、`curate_main_13301_13900.py --apply`，前 13,900 词会恢复为每词两句双语例句。第 501–13900 词的编辑原稿存于 `data/curated_examples_*.tsv`。不要颠倒顺序。
 
 `augment_bilingual_examples.py` 使用已下载的 Tatoeba 英中句子和关联表，从短句候选中优先选择有译文的例句。先不带参数运行并抽查结果；确认后加 `--apply`。完成语料补全及简体转换后，再执行上述人工编辑脚本。
 
@@ -529,3 +529,24 @@ prosthesis采用假肢、人工假体，matchup改为对阵，generational采用
 42项Go测试、核心数据与行业句子检查、47项隔离四账号检查通过。浏览器实际展开autistic、stanza、coursework、burrito的两句双语并点击朗读；进度独立保存。仓库整仓核验与发布结果见 `/tmp/english-quest-v1295-evidence/verification.json`。只有内容变化，未重复此前并发与小屏布局验收。完整主线逐条语言编辑、音标专业听审、真实支付宝配置和本人试付、社交主页及微信群联系方式、协作者验证仍未全部完成。
 
 本批疑难用法参考：[NHS自闭症说明](https://www.nhs.uk/conditions/autism/what-is-autism/)、[NIST psi换算](https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b9)、[Smithsonian蓝草音乐](https://folkways.si.edu/bluegrass-folkways-american-roots-tradition/history/music/article/smithsonian)、[Oxford若虫](https://www.oxfordlearnersdictionaries.com/definition/english/nymph)、[Cambridge前缀pre-](https://dictionary.cambridge.org/dictionary/english/pre)、[Merriam-Webster femme](https://www.merriam-webster.com/dictionary/femme)、[Kew官网](https://www.kew.org/about-us/who-we-are)。
+
+
+## v1.29.6 主线推进到13900词
+
+第13301–13900词新增600个常用中文义和1200句自然双语。主线前13900词均有简短常用义和两句双语，完整20000词尚余6100词继续编辑。学习编号、词头顺序和原完整词典定义保留，范围外词条、行业和场景内容不变。
+
+本批纠正throwback怀旧事物、flak批评或防空炮火、virtuoso演奏大师、beeper寻呼机或蜂鸣器、tangy酸爽、matte哑光等旧误义；区分ventilator呼吸机与respirator呼吸防护器，ADHD和MRI采用正确医学缩写。Aires是Buenos Aires地名的一部分；mimick标为非标准拼写，现代规范形式是mimic；过时冒犯性称呼只用于辨识语域。三名作者完成自审并冻结后，逐条交叉审读600个简义和1200句双语，修正forebear和passively表达、greenish颜色译文及anaerobic无氧条件。每100词一份原稿，`qa/curate_main_13301_13900.py --apply`可重建。
+
+本批实际测试、浏览器、仓库整仓核验及发布结果见 `/tmp/english-quest-v1296-evidence/verification.json`。只有内容变化，未重复此前并发与小屏布局验收。完整主线逐条语言编辑、音标专业听审、真实支付宝配置和本人试付、社交主页及微信群联系方式、协作者验证仍未全部完成。
+
+
+本批疑难词来源：Alamo与CFC按史迹官网和EPA资料；pont按南非英语词典；MRI按NHS，respirator按NIOSH；nat采用大学田野研究术语表，Dow采用指数编制机构定义。
+- https://www.thealamo.org/
+- https://www.epa.gov/ods-phaseout
+- https://dsae.co.za/entry/pont/e05722
+- https://www.nhs.uk/tests-and-treatments/mri-scan/
+- https://www.cdc.gov/niosh/ppe/php/community-respirators-masks/types-of-respirators-and-masks.html
+- https://hawksites.newpaltz.edu/natpwe/resources/nat-religion/
+- https://www.spglobal.com/spdji/en/indices/equity/dow-jones-industrial-average/
+
+本批42项Go测试通过（5.390秒），vet、前13900词核心检查、8112行业句子目标、前端语法和47项隔离四账号检查通过。隔离浏览器实际展开throwback、ventilator、beeper、cappuccino的两句双语，点击朗读，无控制台错误；主线0词保持。用户预览与生产验收回执由本批verification.json记录。
