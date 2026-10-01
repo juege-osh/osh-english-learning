@@ -2,7 +2,7 @@
 
 此目录包含前端逻辑测试及词库例句构建辅助脚本。
 
-`curate_starter_examples.py` 是前 100 词双语句子的人工编辑层。重新构建整份例句数据时，在补全和简体转换后，依次运行它、`curate_first500_examples.py`、`curate_common_examples.py`、`curate_next200_examples.py --apply`，以及第 701–1100 词四批对应的 `curate_*_example_gaps.py --apply`。再依次运行 `curate_main_1101_1500.py --apply`、`curate_main_1501_1900.py --apply`、`curate_main_1901_2300.py --apply`、`curate_main_2301_2700.py --apply`、`curate_main_2701_3100.py --apply`、`curate_main_3101_3500.py --apply`、`curate_main_3501_3900.py --apply`、`curate_main_3901_4300.py --apply`、`curate_main_4301_4700.py --apply`、`curate_main_4701_5100.py --apply`、`curate_main_5101_5500.py --apply`、`curate_main_5501_5900.py --apply`、`curate_main_5901_6300.py --apply`、`curate_main_6301_6700.py --apply`、`curate_main_6701_7100.py --apply`、`curate_main_7101_7900.py --apply`、`curate_main_7901_8500.py --apply`，前 8,500 词会恢复为每词两句双语例句。第 501–8500 词的编辑原稿存于 `data/curated_examples_*.tsv`。不要颠倒顺序。
+`curate_starter_examples.py` 是前 100 词双语句子的人工编辑层。重新构建整份例句数据时，在补全和简体转换后，依次运行它、`curate_first500_examples.py`、`curate_common_examples.py`、`curate_next200_examples.py --apply`，以及第 701–1100 词四批对应的 `curate_*_example_gaps.py --apply`。再依次运行 `curate_main_1101_1500.py --apply`、`curate_main_1501_1900.py --apply`、`curate_main_1901_2300.py --apply`、`curate_main_2301_2700.py --apply`、`curate_main_2701_3100.py --apply`、`curate_main_3101_3500.py --apply`、`curate_main_3501_3900.py --apply`、`curate_main_3901_4300.py --apply`、`curate_main_4301_4700.py --apply`、`curate_main_4701_5100.py --apply`、`curate_main_5101_5500.py --apply`、`curate_main_5501_5900.py --apply`、`curate_main_5901_6300.py --apply`、`curate_main_6301_6700.py --apply`、`curate_main_6701_7100.py --apply`、`curate_main_7101_7900.py --apply`、`curate_main_7901_8500.py --apply`、`curate_main_8501_9100.py --apply`，前 9,100 词会恢复为每词两句双语例句。第 501–9100 词的编辑原稿存于 `data/curated_examples_*.tsv`。不要颠倒顺序。
 
 `augment_bilingual_examples.py` 使用已下载的 Tatoeba 英中句子和关联表，从短句候选中优先选择有译文的例句。先不带参数运行并抽查结果；确认后加 `--apply`。完成语料补全及简体转换后，再执行上述人工编辑脚本。
 
@@ -403,3 +403,24 @@ limo修正为豪华轿车，cranberry为蔓越莓，console补游戏机；Bach�
 42项Go测试通过（5.225秒）、vet、前8500词核心与8112行业句子目标检查、app.js语法检查通过；47项隔离四账号检查通过。实际预览展开blueberry、loophole、worldview和stakeholder的两句双语，并点击播放按钮，主线0词保持，无控制台错误。仅内容变化，未重复并发或小屏布局验收。
 
 发布结果、仓库字节核验和资源采样见 `/tmp/english-quest-v1287-evidence/verification.json`。真实支付仍关闭，专业音标听审和完整主线逐词编辑尚未完成。
+
+## v1.28.8 词义核验来源
+
+本批例句为本站编写；以下辞典仅用于核对词义、语域和用法，没有搬用辞典例句。
+
+- [Cambridge：squadron](https://dictionary.cambridge.org/dictionary/english/squadron)：飞行或海军中队，不一概译成整支舰队。
+- [Cambridge：paramedic](https://dictionary.cambridge.org/us/dictionary/english/paramedic)：急救医护人员，修正原词典中的伞兵军医释义。
+- [Cambridge：pretest](https://dictionary.cambridge.org/dictionary/english/pretest)：正式测试之前的测试，不是预测。
+- [Oxford：macho](https://www.oxfordlearnersdictionaries.com/us/definition/english/macho)：通常带批评意味的强悍男性气概，修正原词典的疾病义。
+- [Dictionaries of the Scots Language：monie / mony](https://www.dsl.ac.uk/entry/snd00076823)：many 的苏格兰语形式，注明方言性质。
+
+
+## v1.28.8 主线推进到9100词
+
+第8501–9100词新增600个常用中文义和1200句自然双语，主线前9100词现每词都有简短中文义和两句双语。完整20000词仍需继续编辑，尚余10900词。原学习编号、词头顺序和完整词典定义保留，范围外词条、行业与场景内容不变。
+
+本批修正bailout的财政救助、paramedic的急救医护人员、pretest的前测及macho的现代常用义。squadron注明中队或分舰队；mony注明苏格兰方言。专名、缩写、历史用法和强冒犯性词语均说明性质，侮辱词例句只用于辨识语域。三份作者批次冻结后逐条交叉审读，修正thrift商店过窄译法及部分搭配；每100词一份编辑原稿，`qa/curate_main_8501_9100.py --apply`可恢复。
+
+42项Go测试通过（5.072秒）、vet、前9100词核心与8112行业句子目标检查、app.js语法检查通过；47项隔离四账号检查通过。实际预览展开bailout、paramedic、macho和resilience的两句双语，并点击播放按钮，主线0词保持，无控制台错误。仅内容变化，未重复并发或小屏布局验收。
+
+正式发布、仓库逐文件核验和资源采样的回执见本机`/tmp/english-quest-v1288-evidence/verification.json`。真实支付宝配置及本人试付、社交主页和微信群联系方式、协作者通行密钥验证仍待本人处理。结构检查和逐词编写不等于全库专业语言审校完成。
