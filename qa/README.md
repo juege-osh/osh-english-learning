@@ -2,7 +2,7 @@
 
 此目录包含前端逻辑测试及词库例句构建辅助脚本。
 
-`curate_starter_examples.py` 是前 100 词双语句子的人工编辑层。重新构建整份例句数据时，在补全和简体转换后，依次运行它、`curate_first500_examples.py`、`curate_common_examples.py`、`curate_next200_examples.py --apply`，以及第 701–1100 词四批对应的 `curate_*_example_gaps.py --apply`。再依次运行 `curate_main_1101_1500.py --apply`、`curate_main_1501_1900.py --apply`、`curate_main_1901_2300.py --apply`、`curate_main_2301_2700.py --apply`、`curate_main_2701_3100.py --apply`、`curate_main_3101_3500.py --apply`、`curate_main_3501_3900.py --apply`、`curate_main_3901_4300.py --apply`、`curate_main_4301_4700.py --apply`、`curate_main_4701_5100.py --apply`、`curate_main_5101_5500.py --apply`、`curate_main_5501_5900.py --apply`、`curate_main_5901_6300.py --apply`、`curate_main_6301_6700.py --apply`、`curate_main_6701_7100.py --apply`、`curate_main_7101_7900.py --apply`、`curate_main_7901_8500.py --apply`、`curate_main_8501_9100.py --apply`、`curate_main_9101_9700.py --apply`、`curate_main_9701_10300.py --apply`、`curate_main_10301_10900.py --apply`，前 10,900 词会恢复为每词两句双语例句。第 501–10900 词的编辑原稿存于 `data/curated_examples_*.tsv`。不要颠倒顺序。
+`curate_starter_examples.py` 是前 100 词双语句子的人工编辑层。重新构建整份例句数据时，在补全和简体转换后，依次运行它、`curate_first500_examples.py`、`curate_common_examples.py`、`curate_next200_examples.py --apply`，以及第 701–1100 词四批对应的 `curate_*_example_gaps.py --apply`。再依次运行 `curate_main_1101_1500.py --apply`、`curate_main_1501_1900.py --apply`、`curate_main_1901_2300.py --apply`、`curate_main_2301_2700.py --apply`、`curate_main_2701_3100.py --apply`、`curate_main_3101_3500.py --apply`、`curate_main_3501_3900.py --apply`、`curate_main_3901_4300.py --apply`、`curate_main_4301_4700.py --apply`、`curate_main_4701_5100.py --apply`、`curate_main_5101_5500.py --apply`、`curate_main_5501_5900.py --apply`、`curate_main_5901_6300.py --apply`、`curate_main_6301_6700.py --apply`、`curate_main_6701_7100.py --apply`、`curate_main_7101_7900.py --apply`、`curate_main_7901_8500.py --apply`、`curate_main_8501_9100.py --apply`、`curate_main_9101_9700.py --apply`、`curate_main_9701_10300.py --apply`、`curate_main_10301_10900.py --apply`、`curate_main_10901_11500.py --apply`，前 11,500 词会恢复为每词两句双语例句。第 501–11500 词的编辑原稿存于 `data/curated_examples_*.tsv`。不要颠倒顺序。
 
 `augment_bilingual_examples.py` 使用已下载的 Tatoeba 英中句子和关联表，从短句候选中优先选择有译文的例句。先不带参数运行并抽查结果；确认后加 `--apply`。完成语料补全及简体转换后，再执行上述人工编辑脚本。
 
@@ -477,3 +477,18 @@ prosthesis采用假肢、人工假体，matchup改为对阵，generational采用
 - [auspice](https://www.dictionary.com/browse/auspice)：单数较罕见的吉兆用法。
 
 本批已通过42项Go测试（6.232秒）、静态检查、前10900词核心数据与8112行业句子检查及47项隔离四账号检查。预览实际展开ledger、vibe、silicone、camcorder两句双语并点击播放，无控制台错误，主线0词保持。生产发布及私有仓库逐文件核对以本批verification.json回执为准；本批仅内容变更，未重复此前并发与小屏布局验收。
+
+
+## v1.29.2 主线推进到11500词
+
+第10901–11500词新增600个常用中文义和1200句自然双语，主线前11500词现每词都有简短中文义和两句双语。完整20000词尚余8500词继续编辑。原学习编号、词头顺序和完整词典定义保留，范围外词条、行业与场景内容不变。
+
+本批区分complimentary的免费与赞许、clipboard的写字板与剪贴板、marquee的大帐篷与剧院招牌，percentile修正为百分位数，BSL注明英国手语。Goldberg按姓氏解释，mmm采用满意的语气词；人名、缩写、方言和少见形式说明语域。医学词例句围绕沟通与报告，不作诊断或用药建议。三份作者原稿冻结后逐句交叉审读，修正increment与forcibly搭配、部分译文添加的含义。每100词一份原稿，`qa/curate_main_10901_11500.py --apply`可重建。
+
+本批后端、词库目标与隔离四账号检查、浏览器核验结果见 `/tmp/english-quest-v1292-evidence/verification.json`。仅内容变化，不重复此前并发或小屏布局验收。真实支付宝配置与本人试付、社交主页和微信群联系方式、协作者验证仍待本人处理；完整主线专业语言审校与音标逐条听审尚未完成。
+
+本批核验来源：[NIST百分位数说明](https://itl.nist.gov/div898/handbook/prc/section2/prc262.htm)、[WHO DALY定义](https://www.who.int/data/gho/data/themes/mortality-and-global-health-estimates/global-health-estimates-leading-causes-of-dalys)、[英国政府BSL计划](https://www.gov.uk/government/publications/british-sign-language-5-year-plan-department-for-business-and-trade)。来源用于核对定义，例句为本站另行编写。
+
+核验补充：[CPS manslaughter](https://www.cps.gov.uk/types-crime/violent-crime)、[GNU dup](https://www.gnu.org/software/libc/manual/2.26/html_node/Duplicating-Descriptors.html)、[Collins qqv](https://www.collinsdictionary.com/dictionary/english/qqv)、[Collins cose](https://api.collinsdictionary.com/dictionary/english/cose)、[Siemens HMI](https://www.siemens.com/en-gb/products/simatic-hmi/)、[Moodle LMS](https://docs.moodle.org/500/en/About_Moodle)、[RSPCA](https://www.rspca.org.uk/en/whatwedo/whoweare)。manslaughter不一概等同于过失杀人；少见形式注明语域，不冒充常用口语。
+
+本批已通过42项Go测试（5.175秒）、静态检查、前11500词核心数据与8112行业句子检查及47项隔离四账号检查。预览实际展开furry、healthcare、broadband、blackberry两句双语并点击播放，无控制台错误，主线0词保持。生产发布及私有仓库逐文件核对以本批verification.json回执为准；本批仅内容变更，未重复此前并发与小屏布局验收。
