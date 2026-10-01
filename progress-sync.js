@@ -1,5 +1,5 @@
 'use strict';
-let cloudRevision=0,cloudEnabled=false,cloudDirty=false,cloudTimer=null,cloudStarting=null,cloudFlight=null;
+let cloudRevision=0,cloudEnabled=false,cloudDirty=false,cloudTimer=null,cloudStarting=null,cloudFlight=null,cloudAccountOwner='',cloudEpoch=0,cloudAbort=null;
 function progressStatus(message){if(typeof document==='undefined')return;const el=document.getElementById('cloud-status');if(el)el.textContent=message;}
 
 // Merge the data immediately, but don't rebuild the page underneath an answer
@@ -73,63 +73,80 @@ function progressSchedule(){
  cloudTimer=setTimeout(progressFlush,1800);
 }
 
+// Call when an account generation changes, before replacing local account state.
+function progressInvalidate(){
+ cloudEpoch++;clearTimeout(cloudTimer);cloudAbort?.abort();cloudAbort=null;
+ cloudEnabled=false;cloudDirty=false;cloudRevision=0;cloudFlight=null;cloudStarting=null;
+}
+function progressCurrent(token,owner){return token===cloudEpoch&&owner===cloudAccountOwner;}
+async function progressAccountChanged(token){
+ if(token!==cloudEpoch)return;progressInvalidate();return progressStart();
+}
 function progressFlush(){
  if(cloudFlight)return cloudFlight;
  if(!cloudEnabled||!cloudDirty)return Promise.resolve(true);
- cloudDirty=false;const snapshot=JSON.stringify(p);
- cloudFlight=(async()=>{
+ const token=cloudEpoch,owner=cloudAccountOwner,snapshot=JSON.stringify(p);cloudDirty=false;
+ const abort=typeof AbortController==='undefined'?null:new AbortController();cloudAbort=abort;
+ const request=(async()=>{
   try{
-   const r=await fetch('/api/progress',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({revision:cloudRevision,progress:JSON.parse(snapshot)})});
+   const r=await fetch('/api/progress',{method:'POST',headers:{'Content-Type':'application/json','X-Study-Owner':owner},body:JSON.stringify({revision:cloudRevision,progress:JSON.parse(snapshot)}),...(abort?{signal:abort.signal}:{})});
+   if(!progressCurrent(token,owner))return false;
+   if(r.status===403){await progressAccountChanged(token);return false;}
    if(r.status===409){
-    const latest=await fetch('/api/progress').then(x=>x.json());
-    if(C.validate(latest.progress)){p=progressMerge(p,latest.progress);localStorage.setItem(KEY,JSON.stringify(p));progressRefreshView();}
+    const read=await fetch('/api/progress',{headers:{'X-Study-Owner':owner},...(abort?{signal:abort.signal}:{})});
+    if(!progressCurrent(token,owner))return false;
+    if(read.status===403){await progressAccountChanged(token);return false;}
+    if(!read.ok)throw Error('sync unavailable');
+    const latest=await read.json();if(!progressCurrent(token,owner))return false;
+    if(latest.owner!==owner)throw Error('account changed');
+    if(!C.validate(latest.progress))throw Error('invalid progress');
+    p=progressMerge(p,latest.progress);localStorage.setItem(KEY,JSON.stringify(p));progressRefreshView();
     cloudRevision=latest.revision;cloudDirty=true;
    }else if(!r.ok)throw Error('sync failed');
-   else{const result=await r.json();cloudRevision=result.revision;if(JSON.stringify(p)!==snapshot)cloudDirty=true;}
+   else{const result=await r.json();if(!progressCurrent(token,owner))return false;if(result.owner!==owner)throw Error('account changed');cloudRevision=result.revision;if(JSON.stringify(p)!==snapshot)cloudDirty=true;}
    progressStatus(cloudDirty?'本机已保存 · 正在同步到账号':'已同步到账号 · 可跨设备继续');
-  }catch{cloudDirty=true;progressStatus('本机已保存 · 云端暂未同步，请稍后重试');}
-  finally{cloudFlight=null;if(cloudDirty&&cloudEnabled){clearTimeout(cloudTimer);cloudTimer=setTimeout(progressFlush,5000);}}
-  return !cloudDirty;
- })();
- return cloudFlight;
+  }catch{if(progressCurrent(token,owner)){cloudDirty=true;progressStatus('本机已保存 · 云端暂未同步，请稍后重试');}}
+  finally{if(progressCurrent(token,owner)){cloudFlight=null;cloudAbort=null;if(cloudDirty&&cloudEnabled){clearTimeout(cloudTimer);cloudTimer=setTimeout(progressFlush,5000);}}}
+  return progressCurrent(token,owner)&&!cloudDirty;
+ })();cloudFlight=request;return request;
 }
 
-async function progressStart(){
+function progressStart(){
  if(cloudStarting)return cloudStarting;
- cloudStarting=(async()=>{
+ const token=cloudEpoch;
+ const request=(async()=>{
   try{
-   const account=await fetch('/api/account').then(r=>r.json());
+   const response=await fetch('/api/account');if(token!==cloudEpoch)return false;if(!response.ok)throw Error('account unavailable');
+   const account=await response.json();if(token!==cloudEpoch)return false;
+   const owner=account.registered?String(account.id||''):'';
+   if(account.registered&&!owner)throw Error('account identity missing');
+   if(cloudAccountOwner&&cloudAccountOwner!==owner){p=C.fresh();localStorage.setItem(KEY,JSON.stringify(p));cloudAccountOwner=owner;progressInvalidate();return await progressStart();}
+   cloudAccountOwner=owner;
+   if(typeof StudyTools!=='undefined'){await StudyTools.session(account);if(!progressCurrent(token,owner))return false;}
    if(!account.registered){cloudEnabled=false;progressStatus('进度保存在此设备 · 登录后可跨设备同步');return false;}
-   const r=await fetch('/api/progress');if(!r.ok)throw Error('sync unavailable');
-   const remote=await r.json();cloudRevision=remote.revision;
+   const r=await fetch('/api/progress',{headers:{'X-Study-Owner':owner}});if(!progressCurrent(token,owner))return false;
+   if(r.status===403){await progressAccountChanged(token);return false;}if(!r.ok)throw Error('sync unavailable');
+   const remote=await r.json();if(!progressCurrent(token,owner))return false;if(remote.owner!==owner)throw Error('account changed');cloudRevision=remote.revision;
    if(C.validate(remote.progress)){
     const merged=progressMerge(p,remote.progress);
     if(JSON.stringify(merged)!==JSON.stringify(p)){
      p=merged;localStorage.setItem(KEY,JSON.stringify(p));
-     mapChapter=Math.ceil(currentLevel()/100);mapPage=Math.floor(((currentLevel()-1)%100)/20);
-     progressRefreshView();
+     mapChapter=Math.ceil(currentLevel()/100);mapPage=Math.floor(((currentLevel()-1)%100)/20);progressRefreshView();
     }
    }
    cloudEnabled=true;
-   if(!C.validate(remote.progress)||JSON.stringify(remote.progress)!==JSON.stringify(p)){
-    progressSchedule();clearTimeout(cloudTimer);
-    return await progressFlush();
-   }
-   progressStatus('已同步到账号 · 可跨设备继续');
-   return true;
-  }catch{cloudEnabled=false;progressStatus('本机已保存 · 云端暂不可用');toast('云端同步暂时不可用。进度仍保存在此设备，可先导出备份。');return false;}
- })();
- try{return await cloudStarting;}finally{cloudStarting=null;}
+   if(!C.validate(remote.progress)||JSON.stringify(remote.progress)!==JSON.stringify(p)){progressSchedule();clearTimeout(cloudTimer);return await progressFlush();}
+   progressStatus('已同步到账号 · 可跨设备继续');return true;
+  }catch{if(token===cloudEpoch){cloudEnabled=false;progressStatus('本机已保存 · 云端暂不可用');toast('云端同步暂时不可用。进度仍保存在此设备，可先导出备份。');}return false;}
+  finally{if(token===cloudEpoch)cloudStarting=null;}
+ })();cloudStarting=request;return request;
 }
 
 async function progressBeforeLogout(){
- clearTimeout(cloudTimer);
- for(let attempt=0;attempt<3&&(cloudDirty||cloudFlight);attempt++){
-  const ok=await progressFlush();
-  if(ok)break;
- }
+ const token=cloudEpoch;
+ if(typeof StudyTools!=='undefined'&&!(await StudyTools.beforeLogout()))return false;
+ if(token!==cloudEpoch)return false;clearTimeout(cloudTimer);
+ for(let attempt=0;attempt<3&&(cloudDirty||cloudFlight);attempt++){const ok=await progressFlush();if(token!==cloudEpoch)return false;if(ok)break;}
  if(cloudDirty||cloudFlight){toast('云端尚未保存成功，请先导出进度再退出。');return false;}
- cloudEnabled=false;cloudDirty=false;cloudRevision=0;
- progressStatus('进度保存在此设备 · 登录后可跨设备同步');
- return true;
+ progressInvalidate();progressStatus('进度保存在此设备 · 登录后可跨设备同步');return true;
 }

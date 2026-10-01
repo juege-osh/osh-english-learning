@@ -11,8 +11,8 @@ func TestStaticAssets(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	if len(files) != 66 {
-		t.Fatalf("expected 66 public assets, got %d", len(files))
+	if len(files) != 76 {
+		t.Fatalf("expected 76 public assets, got %d", len(files))
 	}
 	if extra := files["/data/industry_words.json"]; len(extra.data) == 0 || extra.etag == "" {
 		t.Fatal("specialist vocabulary was not included in public assets")

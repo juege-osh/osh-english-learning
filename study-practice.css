@@ -1,0 +1,104 @@
+/* Namespaced so the existing main, basic and industry exercises keep their layout. */
+.study-practice{--sp-border:#dce5f0;--sp-blue:#245fb6;--sp-muted:#5d6d83;max-width:980px;margin:0 auto;color:var(--ink,#252b3e);font-family:inherit;padding-bottom:12px}
+.study-practice *{box-sizing:border-box}
+.study-practice [hidden]{display:none!important}
+.study-practice h1{font-size:24px;line-height:1.3;margin:0 0 5px}
+.study-practice h2{font-size:23px;margin:0 0 10px}
+.sp-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:13px}
+.sp-heading p{font-size:13px;line-height:1.5;color:var(--sp-muted);margin:0}
+.study-practice .sp-button{font:inherit;font-size:13px;font-weight:650;line-height:1.35;min-height:42px;border:1px solid var(--sp-border);border-radius:11px;padding:9px 14px;background:#fff;color:#344966;cursor:pointer;box-shadow:none;white-space:normal}
+.study-practice .sp-button:hover:enabled{background:#edf4ff;border-color:#9fbde6}
+.study-practice .sp-button:disabled{opacity:.48;cursor:default}
+.study-practice .sp-button:focus-visible,.study-practice input:focus-visible,.study-practice textarea:focus-visible,.study-practice select:focus-visible,.study-practice summary:focus-visible{outline:3px solid #8baeff;outline-offset:2px}
+.study-practice .sp-primary{background:var(--sp-blue);color:#fff;border-color:var(--sp-blue)}
+.study-practice .sp-primary:hover:enabled{background:#184d9b;color:#fff}
+.study-practice .sp-secondary{background:#eaf3ff;color:#195eac;border-color:#bed6f2}
+.study-practice .sp-muted{background:#f7f9fd;color:#596b82}
+.sp-tabs{display:flex;gap:7px;margin-bottom:12px}
+.study-practice .sp-tabs .sp-button{min-height:38px;padding:7px 15px}
+.study-practice .sp-selected{background:#ecf2ff;border-color:#84a8e8;color:#1b4e9c}
+.sp-progress{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px;font-size:12px;color:var(--sp-muted);margin-bottom:10px}
+.sp-progress>div{flex-basis:100%;height:5px;border-radius:5px;background:#e5edf7;overflow:hidden}
+.sp-progress i{display:block;height:100%;background:#518be0;border-radius:5px;transition:width .15s}
+.sp-settings{margin-bottom:12px;background:#f6f8fc;border:1px solid var(--sp-border);border-radius:10px;padding:9px 12px;font-size:12px;color:var(--sp-muted)}
+.sp-settings summary{cursor:pointer;font-weight:650;min-height:20px}
+.sp-settings-grid{display:flex;flex-wrap:wrap;align-items:end;gap:9px;margin-top:10px}
+.sp-settings label{display:grid;gap:4px;flex:1;min-width:100px}
+.sp-settings input,.sp-settings select{font:inherit;color:#344966;background:#fff;border:1px solid #c9d8ec;border-radius:7px;min-height:36px;width:100%;padding:5px 8px}
+.sp-settings p{margin:9px 0 0;line-height:1.4}
+.sp-card{border:1px solid var(--sp-border);border-radius:17px;padding:22px 25px;background:#fff;min-width:0;box-shadow:0 3px 15px #24467006}
+.sp-listening-cue{text-align:center;font-size:37px;line-height:1.2;color:#457acd;margin:0 0 6px}
+.sp-prompt{font-size:14px;line-height:1.5;margin:8px 0 12px;text-align:center;color:#536784}
+.sp-input-label{display:block;font-size:13px;font-weight:650;margin-bottom:6px}
+.study-practice textarea[data-sp-input]{display:block;width:100%;min-height:76px;max-height:180px;resize:vertical;border:1px solid #c6d5e8;border-radius:10px;background:#fbfdff;padding:12px 14px;font-family:inherit;font-size:18px;line-height:1.5;color:#27334b}
+.study-practice textarea[data-sp-input]:disabled{opacity:1;background:#f5f7fb;color:#4c5e78}
+.sp-small{font-size:12px;line-height:1.55;color:var(--sp-muted);margin:7px 0}
+.sp-bilingual{text-align:center;padding:10px 0}
+.sp-english{font-size:clamp(24px,3.5vw,36px);font-weight:650;line-height:1.4;margin:0 0 12px;overflow-wrap:anywhere}
+.sp-chinese{font-size:16px;line-height:1.65;color:#546985;margin:0;overflow-wrap:anywhere}
+.sp-recognition{display:flex;gap:9px;justify-content:center}
+.study-practice .sp-recognition .sp-button{flex:1;max-width:180px;min-height:44px}
+.study-practice .sp-recognition [aria-pressed=true]{opacity:1;border:2px solid #5184cf}
+.sp-word-list{display:flex;flex-wrap:wrap;justify-content:center;gap:5px;margin-top:8px}
+.study-practice .sp-token{padding:5px 9px;min-height:34px;font-size:14px;background:#f7faff}
+.sp-record-row{display:flex;align-items:center;gap:12px;margin:12px 0 7px}
+.sp-record-row span{font-size:12px;line-height:1.5;color:var(--sp-muted)}
+.sp-record-row .sp-record{flex-shrink:0}
+.study-practice audio{display:block;width:min(100%,450px);height:38px;margin:10px 0}
+.sp-feedback:empty{display:none}
+.sp-feedback{margin-top:13px;padding:13px 15px;border-radius:11px;border:1px solid #d9e5f0;font-size:14px;line-height:1.45}
+.sp-correct{background:#f0faf4;border-color:#b4ddc5;color:#256142}
+.sp-wrong{background:#fff5f3;border-color:#f1c5bc;color:#903c30}
+.sp-answer{display:grid;grid-template-columns:70px minmax(0,1fr);gap:4px 8px;margin:9px 0 0;align-items:baseline}
+.sp-answer>span{font-size:11px;color:#65758a}
+.sp-answer p{margin:0;color:#2e425f;overflow-wrap:anywhere;line-height:1.6;font-size:15px}
+.sp-actions{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:8px;margin-top:12px;padding:10px 0;background:#fff}
+.sp-actions [data-sp-action=replay]{margin-right:auto}
+.sp-notice{min-height:20px;margin:3px 0;font-size:12px;line-height:1.5;color:#526c92}
+.sp-shortcuts{font-size:11px;margin:5px 0 0;color:#8190a5;text-align:right}
+.sp-results{text-align:center}
+.sp-result-number{font-size:25px;font-weight:750;color:#275b9e;margin:12px 0}
+.sp-results>p{line-height:1.6}
+.sp-wrong-list{list-style:none;padding:0;margin:15px 0 0;text-align:left;max-height:230px;overflow:auto;border:1px solid #e4eaf3;border-radius:10px}
+.sp-wrong-list li{display:flex;gap:15px;padding:9px 12px;border-bottom:1px solid #e4eaf3;font-size:13px;line-height:1.5}
+.sp-wrong-list li:last-child{border-bottom:0}
+.sp-wrong-list b{flex:1;overflow-wrap:anywhere}
+.sp-wrong-list span{flex:1;color:#5f6f86;overflow-wrap:anywhere}
+.sp-empty{padding:40px 20px;text-align:center}
+@media(min-width:681px){.sp-actions{position:sticky;bottom:0;z-index:3;border-top:1px solid #e5edf6;border-bottom:1px solid #e5edf6}.sp-card{padding:19px 23px}}
+@media(max-width:680px){.study-practice{padding-bottom:112px}.sp-heading{align-items:flex-start}.study-practice h1{font-size:21px}.sp-heading p{font-size:12px}.sp-heading .sp-button{min-width:85px;padding:8px}.sp-card{padding:17px 15px}.sp-tabs .sp-button{flex:1}.sp-english{font-size:25px}.sp-chinese{font-size:15px}.sp-settings-grid{gap:8px}.sp-settings label{min-width:115px}.sp-actions{position:fixed;left:12px;right:12px;bottom:calc(78px + env(safe-area-inset-bottom));z-index:8;border:1px solid #d4e0ef;border-radius:13px;margin:13px 0 4px;padding:8px;box-shadow:0 -3px 15px #28496712;background:#fff;gap:6px}.study-practice .sp-actions .sp-button{min-height:44px;padding:8px 9px;font-size:12px;flex:1}.sp-actions [data-sp-action=replay]{margin-right:0}.study-practice .sp-actions [data-sp-action=stop-audio]{flex-basis:29%;order:4}.sp-actions [data-sp-action=favorite]{order:5;flex-basis:29%}.sp-actions [data-sp-next]{order:3}.sp-actions [data-sp-check]{order:2}.sp-notice{font-size:11px}.sp-shortcuts{display:none}.sp-answer{grid-template-columns:55px minmax(0,1fr)}.sp-record-row{align-items:flex-start}.sp-result-number{font-size:22px}.sp-wrong-list li{flex-direction:column;gap:3px}.sp-wrong-list{max-height:250px}}
+@media(max-width:360px){.study-practice .sp-actions .sp-button{padding:8px 7px}.sp-settings label{min-width:95px}.sp-heading{gap:6px}}
+@media(prefers-reduced-motion:reduce){.sp-progress i{transition:none}}
+/* Make room for the exercise itself while preserving the host's sidebar and return route. */
+.shell:has(.study-practice) .journey-progress{display:none}
+.shell:has(.study-practice) .topbar{height:58px}
+.shell:has(.study-practice) main{padding-top:18px;padding-bottom:18px}
+html[data-theme=dark] .study-practice{--sp-border:#414d65;--sp-blue:#5b8eda;--sp-muted:#b3bfd3;color:#e5ebf7}
+html[data-theme=dark] .sp-card,html[data-theme=dark] .sp-actions{background:#242c3d;border-color:#414d65;box-shadow:none}
+html[data-theme=dark] .sp-settings{background:#20293a;border-color:#414d65}
+html[data-theme=dark] .study-practice .sp-button{background:#29354b;color:#d4e1f6;border-color:#50617c}
+html[data-theme=dark] .study-practice .sp-button:hover:enabled{background:#344766;border-color:#7ca3dd}
+html[data-theme=dark] .study-practice .sp-primary{background:#326dbd;border-color:#5d91d6;color:#fff}
+html[data-theme=dark] .study-practice .sp-primary:hover:enabled{background:#427fca;color:#fff}
+html[data-theme=dark] .study-practice .sp-secondary,html[data-theme=dark] .study-practice .sp-selected{background:#2b4266;color:#d1e3ff;border-color:#7398ce}
+html[data-theme=dark] .study-practice .sp-muted,html[data-theme=dark] .study-practice .sp-token{background:#283246;color:#cad7ec}
+html[data-theme=dark] .sp-progress>div{background:#38465d}
+html[data-theme=dark] .sp-progress i{background:#7fa8ee}
+html[data-theme=dark] .sp-listening-cue{color:#91b8f5}
+html[data-theme=dark] .sp-prompt,html[data-theme=dark] .sp-chinese,html[data-theme=dark] .sp-record-row span{color:#bbc9df}
+html[data-theme=dark] .study-practice textarea[data-sp-input],html[data-theme=dark] .sp-settings input,html[data-theme=dark] .sp-settings select{background:#1c2536;color:#e4ecfa;border-color:#5a6d8a}
+html[data-theme=dark] .study-practice textarea[data-sp-input]:disabled{background:#252e40;color:#d0dbee}
+html[data-theme=dark] .sp-correct{background:#203d31;color:#bde8cb;border-color:#538268}
+html[data-theme=dark] .sp-wrong{background:#452b30;color:#ffd0c5;border-color:#956065}
+html[data-theme=dark] .sp-answer p{color:#e1eafb}
+html[data-theme=dark] .sp-answer>span,html[data-theme=dark] .sp-small{color:#bec9db}
+html[data-theme=dark] .sp-notice{color:#b9cdec}
+html[data-theme=dark] .sp-shortcuts{color:#a9b8cf}
+html[data-theme=dark] .sp-result-number{color:#a7c8ff}
+html[data-theme=dark] .sp-wrong-list,html[data-theme=dark] .sp-wrong-list li{border-color:#45536b}
+html[data-theme=dark] .sp-wrong-list span{color:#bdcbe0}
+@media(max-width:680px){.shell:has(.study-practice) .topbar{height:50px;padding:0 12px}.shell:has(.study-practice) .topbar strong{font-size:15px}.shell:has(.study-practice) .top-progress{display:none}.shell:has(.study-practice) main{padding:12px}.study-practice{padding-bottom:120px}}
+
+/* Once checked, the feedback already includes the answer and the typed mistake. Avoid repeating them above it. */
+.study-practice.sp-answered .sp-listening-cue,.study-practice.sp-answered .sp-card>.sp-prompt,.study-practice.sp-answered .sp-input-label,.study-practice.sp-answered textarea[data-sp-input],.study-practice.sp-answered #sp-answer-help{display:none}
+.study-practice.sp-answered .sp-feedback{margin-top:0}

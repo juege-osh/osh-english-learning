@@ -13,6 +13,7 @@ import (
 const maxProgressBytes = 8 << 20
 
 type cloudProgress struct {
+	Owner    string          `json:"owner"`
 	Revision int64           `json:"revision"`
 	Updated  int64           `json:"updated"`
 	Progress json.RawMessage `json:"progress"`
@@ -38,8 +39,12 @@ func (f *features) progressForAccount(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "请先登录", http.StatusUnauthorized)
 		return
 	}
+	if owner := r.Header.Get("X-Study-Owner"); owner != "" && owner != a.ID {
+		http.Error(w, "账号已切换，请刷新页面", http.StatusForbidden)
+		return
+	}
 	path := f.progressPath(a.ID)
-	current := cloudProgress{}
+	current := cloudProgress{Owner: a.ID}
 	if b, err := os.ReadFile(path); err == nil {
 		if err = json.Unmarshal(b, &current); err != nil {
 			http.Error(w, "进度暂时无法读取", http.StatusInternalServerError)
@@ -49,6 +54,7 @@ func (f *features) progressForAccount(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "进度暂时无法读取", http.StatusInternalServerError)
 		return
 	}
+	current.Owner = a.ID
 	if r.Method == http.MethodGet {
 		writeJSON(w, current)
 		return
@@ -63,7 +69,7 @@ func (f *features) progressForAccount(w http.ResponseWriter, r *http.Request) {
 		}
 		return
 	}
-	current = cloudProgress{Revision: current.Revision + 1, Updated: time.Now().Unix(), Progress: input.Progress}
+	current = cloudProgress{Owner: a.ID, Revision: current.Revision + 1, Updated: time.Now().Unix(), Progress: input.Progress}
 	b, err := json.Marshal(current)
 	if err != nil || atomicJSON(path, b) != nil {
 		http.Error(w, "进度保存失败", http.StatusInternalServerError)

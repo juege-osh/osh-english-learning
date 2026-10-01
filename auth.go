@@ -167,7 +167,7 @@ func (f *features) accountState(w http.ResponseWriter, r *http.Request) {
 		writeJSON(w, map[string]any{"registered": false})
 		return
 	}
-	writeJSON(w, map[string]any{"registered": true, "name": a.Name, "email": a.Email, "admin": a.Admin})
+	writeJSON(w, map[string]any{"registered": true, "id": a.ID, "name": a.Name, "email": a.Email, "admin": a.Admin})
 }
 func (f *features) accountRegister(w http.ResponseWriter, r *http.Request) {
 	f.accountLoginOrRegister(w, r, true)
