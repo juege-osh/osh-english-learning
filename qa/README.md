@@ -2,7 +2,7 @@
 
 此目录包含前端逻辑测试及词库例句构建辅助脚本。
 
-`curate_starter_examples.py` 是前 100 词双语句子的人工编辑层。重新构建整份例句数据时，在补全和简体转换后，依次运行它、`curate_first500_examples.py`、`curate_common_examples.py`、`curate_next200_examples.py --apply`，以及第 701–1100 词四批对应的 `curate_*_example_gaps.py --apply`。前 1,100 词就会恢复为每词两句双语例句；后 600 词的可编辑原稿存于 `data/curated_examples_*.tsv`。不要颠倒顺序。
+`curate_starter_examples.py` 是前 100 词双语句子的人工编辑层。重新构建整份例句数据时，在补全和简体转换后，依次运行它、`curate_first500_examples.py`、`curate_common_examples.py`、`curate_next200_examples.py --apply`，以及第 701–1100 词四批对应的 `curate_*_example_gaps.py --apply`。再运行 `curate_main_1101_1500.py --apply`，前 1,500 词会恢复为每词两句双语例句。第 501–1500 词的编辑原稿存于 `data/curated_examples_*.tsv`。不要颠倒顺序。
 
 `augment_bilingual_examples.py` 使用已下载的 Tatoeba 英中句子和关联表，从短句候选中优先选择有译文的例句。先不带参数运行并抽查结果；确认后加 `--apply`。完成语料补全及简体转换后，再执行上述人工编辑脚本。
 
@@ -20,7 +20,7 @@
 
 `curate_first500_glosses.py` 在 `build_vocab.py` 后运行，为第 101–500 词补上简短常用中文义；接着运行 `curate_next200_glosses.py --apply`、`curate_next100_glosses.py --apply` 和第 801–1100 词三批 `curate_next100_glosses_*` 脚本，处理第 501–1100 词。这些编辑层都保留 ECDICT 原释义供展开查看。重建 `data/words.json` 后必须重跑。
 
-第 1101–1200 词的简短中文义由 `curate_next100_glosses_1101_1200.py --apply` 写回，原稿在 `data/curated_glosses_1101_1200.tsv`。紧接第 1001–1100 词编辑层运行；这一批尚未补齐两句双语例句。
+第 1101–1200 词的简短中文义由 `curate_next100_glosses_1101_1200.py --apply` 写回，原稿在 `data/curated_glosses_1101_1200.tsv`。紧接第 1001–1100 词编辑层运行；这一批的两句双语例句现由 `curate_main_1101_1500.py --apply` 恢复。
 
 `codes_test.go` 覆盖站长生成、登录兑换、月卡30天/年卡365天/永久权益、重启及重复使用拒绝。`community_test.go` 覆盖主页保存、入群信息的权限隔离、过期权益和不安全链接拒绝。`scripts/qa_smoke.py` 现有47项隔离多账号检查；不可对正式站运行。
 
@@ -217,3 +217,16 @@
 化学用法另核对 [IUPAC吸着](https://goldbook.iupac.org/terms/view/S05769/plain)、[IUPAC分散度](https://goldbook.iupac.org/terms/view/12226/plain)、[OpenStax电解](https://openstax.org/books/chemistry-2e/pages/17-7-electrolysis)、[NIST单位量名](https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-8)和[FDA生物相容性评估](https://www.fda.gov/medical-devices/biocompatibility-assessment-resource-center/basics-biocompatibility-information-needed-assessment-fda)。不混淆质量/重量、molarity/molality、eluent/eluate、silicon/silicone/silica；吸着是泛称，不能只等同表面吸附。
 
 本批42项Go测试通过（最终11.968秒）、vet、核心数据及全部8112个行业句子目标检查通过；47项隔离四账号检查通过。实际预览走通surety、EBITDA、actress、biocompatibility，答后展开两句反馈，金融播放按钮已点击；主线0保持，无控制台错误。本次未重跑布局和并发检查。
+
+
+## v1.27.1 主线常用义与双语用法推进到1500词
+
+为第1101–1500词编写400词800句日常双语用法，为第1201–1500词整理300个简短常用中文义。现在主线前1500词都有两句双语用法和简短中文义；原词号、关卡顺序与完整词典定义保留，十行业词表和16224句行业例句保持原内容。遇到同词多义，用两句展示常见含义，例如bear的熊/忍受、novel的小说/新颖、ring的戒指/响铃。
+
+少量原始词头是人名或语气词：Henry为人名，mhm为应答音，eg为e.g.的无点写法，释义已有提示。这些条目沿用既有编号，不将它们冒充新增实义词。完整20000词仍未逐条编辑，不能把前1500词的覆盖说成全词库语言审校完成。
+
+在「我的词库」输入mental、advice、equipment或expand，点搜索，再展开「看两条例句」，可查看中文并逐句朗读；正常闯关也会使用新例句。建议先理解用法，再用速刷巩固，错词单独复习。
+
+42项Go测试5.275秒、vet、主线前1500词双语目标与核心数据检查、全部8112行业句子目标检查通过。本次没有改布局与联机逻辑，未重复旧版并发和小屏布局检查。仓库与发布回执见/tmp/english-quest-v1271-evidence/verification.json。真实支付宝仍关闭。
+
+重建主线数据时，在旧版1101–1200常用义脚本之后运行 `python3 qa/curate_main_1101_1500.py --apply`，恢复本批300个常用义和400词800句；先不加参数可预览校验。它保留词号和原词典定义，原稿分别在四个 `curated_examples_1101_1200` 至 `1401_1500` TSV及三个 `curated_glosses_1201_1300` 至 `1401_1500` TSV。
