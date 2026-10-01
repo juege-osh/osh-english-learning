@@ -186,3 +186,6 @@
  .live-question-workspace .race-scoreboard span{font-size:11px}
 }
 @media(prefers-reduced-motion:reduce){.question-workspace *{scroll-behavior:auto}}
+
+/* Keep example playback and favorite controls independently clickable. */
+.study-examples p{padding-right:104px;min-height:44px}.study-examples button[data-action]{right:52px}.study-examples button[data-study-sentence]{right:0}
