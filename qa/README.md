@@ -2,7 +2,7 @@
 
 此目录包含前端逻辑测试及词库例句构建辅助脚本。
 
-`curate_starter_examples.py` 是前 100 词双语句子的人工编辑层。重新构建整份例句数据时，在补全和简体转换后，依次运行它、`curate_first500_examples.py`、`curate_common_examples.py`、`curate_next200_examples.py --apply`，以及第 701–1100 词四批对应的 `curate_*_example_gaps.py --apply`。再依次运行 `curate_main_1101_1500.py --apply`、`curate_main_1501_1900.py --apply`、`curate_main_1901_2300.py --apply`、`curate_main_2301_2700.py --apply`，前 2,700 词会恢复为每词两句双语例句。第 501–2700 词的编辑原稿存于 `data/curated_examples_*.tsv`。不要颠倒顺序。
+`curate_starter_examples.py` 是前 100 词双语句子的人工编辑层。重新构建整份例句数据时，在补全和简体转换后，依次运行它、`curate_first500_examples.py`、`curate_common_examples.py`、`curate_next200_examples.py --apply`，以及第 701–1100 词四批对应的 `curate_*_example_gaps.py --apply`。再依次运行 `curate_main_1101_1500.py --apply`、`curate_main_1501_1900.py --apply`、`curate_main_1901_2300.py --apply`、`curate_main_2301_2700.py --apply`、`curate_main_2701_3100.py --apply`，前 3,100 词会恢复为每词两句双语例句。第 501–3100 词的编辑原稿存于 `data/curated_examples_*.tsv`。不要颠倒顺序。
 
 `augment_bilingual_examples.py` 使用已下载的 Tatoeba 英中句子和关联表，从短句候选中优先选择有译文的例句。先不带参数运行并抽查结果；确认后加 `--apply`。完成语料补全及简体转换后，再执行上述人工编辑脚本。
 
@@ -263,3 +263,11 @@ Tom、Tony、Leeds、Glasgow等人名地名，以及III、Corp.等数字或缩�
 在「我的词库」搜索remote、counter、roger或mall，展开「看两条例句」查看翻译并播放；主线刷题使用同一批内容。建议先理解两句的具体含义，再切速刷巩固。
 
 42项Go测试通过（最终5.085秒）、vet、前2700词核心检查、8112行业句子目标检查和app.js语法检查通过；47项隔离四账号检查通过。真实预览走通上述四词双语展开并点击mall例句播放，无控制台错误。仅内容改动，未重复并发或小屏布局验收。仓库核对、发布回执和资源采样见/tmp/english-quest-v1274-evidence/verification.json。真实支付仍关闭，44音标专业逐条听审待完成。
+
+## v1.27.5 主线推进到3100词
+
+第2701–3100词新增400个常用中文义和800句自然双语用法，前3100词均有简明中文义与两句双语。完整20000词仍未逐条编辑。保留原学习编号、词头顺序和完整词典定义，范围外词条及十行业内容不变。
+
+jet区分喷气式飞机与喷射流，moderate区分适度与主持讨论，correlation明确相关性不能证明因果关系，developer使用开发沟通常见句子。人名、地名和缩写按实际用途注明；粗俗口语标注用语性质。
+
+新增八份TSV及qa/curate_main_2701_3100.py，可重建本批数据。42项Go测试通过（5.186秒）、vet、前3100词核心检查、8112行业句子目标检查和app.js语法检查通过；47项隔离四账号检查通过。预览实际展开jet、moderate、correlation、developer双语并点击developer例句播放，无控制台错误。本批仅内容改动，未重复并发及小屏布局检查。仓库核验、生产回执及资源采样见/tmp/english-quest-v1275-evidence/verification.json。真实支付仍关闭，44音标专业逐条听审待完成。
