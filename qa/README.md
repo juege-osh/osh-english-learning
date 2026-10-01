@@ -2,7 +2,7 @@
 
 此目录包含前端逻辑测试及词库例句构建辅助脚本。
 
-`curate_starter_examples.py` 是前 100 词双语句子的人工编辑层。重新构建整份例句数据时，在补全和简体转换后，依次运行它、`curate_first500_examples.py`、`curate_common_examples.py`、`curate_next200_examples.py --apply`，以及第 701–1100 词四批对应的 `curate_*_example_gaps.py --apply`。再依次运行 `curate_main_1101_1500.py --apply`、`curate_main_1501_1900.py --apply`、`curate_main_1901_2300.py --apply`、`curate_main_2301_2700.py --apply`、`curate_main_2701_3100.py --apply`、`curate_main_3101_3500.py --apply`、`curate_main_3501_3900.py --apply`、`curate_main_3901_4300.py --apply`、`curate_main_4301_4700.py --apply`，前 4,700 词会恢复为每词两句双语例句。第 501–4700 词的编辑原稿存于 `data/curated_examples_*.tsv`。不要颠倒顺序。
+`curate_starter_examples.py` 是前 100 词双语句子的人工编辑层。重新构建整份例句数据时，在补全和简体转换后，依次运行它、`curate_first500_examples.py`、`curate_common_examples.py`、`curate_next200_examples.py --apply`，以及第 701–1100 词四批对应的 `curate_*_example_gaps.py --apply`。再依次运行 `curate_main_1101_1500.py --apply`、`curate_main_1501_1900.py --apply`、`curate_main_1901_2300.py --apply`、`curate_main_2301_2700.py --apply`、`curate_main_2701_3100.py --apply`、`curate_main_3101_3500.py --apply`、`curate_main_3501_3900.py --apply`、`curate_main_3901_4300.py --apply`、`curate_main_4301_4700.py --apply`、`curate_main_4701_5100.py --apply`，前 5,100 词会恢复为每词两句双语例句。第 501–5100 词的编辑原稿存于 `data/curated_examples_*.tsv`。不要颠倒顺序。
 
 `augment_bilingual_examples.py` 使用已下载的 Tatoeba 英中句子和关联表，从短句候选中优先选择有译文的例句。先不带参数运行并抽查结果；确认后加 `--apply`。完成语料补全及简体转换后，再执行上述人工编辑脚本。
 
@@ -303,3 +303,14 @@ spare区分备用与抽出时间，chemistry区分化学与人际默契，marble
 clutch区分离合器与手拿包，trillion采用现代常用的万亿，orthodox区分传统做法与东正教，rotate区分旋转与轮换。Du、Turner等姓名、英国地名，以及Los Angeles和El Paso里的地名组成部分明确注明；这些既有条目不当作新增实义词。例句逐词编写和审读，不用统一模板凑数。
 
 42项Go测试通过（初次5.463秒，最终缓存）、vet、前4700词核心检查、8112行业句子目标和app.js语法检查通过；47项隔离四账号检查通过。真实预览展开clutch、trillion、orthodox、rotate两句双语并点击rotate例句播放，无控制台错误。本批仅内容改动，没有重复并发或小屏布局验收。私有仓库字节核验、生产回执和资源采样见/tmp/english-quest-v1279-evidence/verification.json。真实支付仍关闭，44音标专业逐条听审待完成。
+
+
+## v1.28.0 主线推进到5100词
+
+第4701–5100词新增400个常用中文义和800句日常双语用法，前5100词均覆盖。完整20000词仍未逐条语言编辑。保留学习编号、词头顺序和完整原词典定义，范围外词条及行业场景内容不变。
+
+umbrella区分雨伞和统领框架，bark区分犬吠和树皮，conductor区分乐队指挥和导体，navy区分海军和深蓝色。姓名地名、ANC/bp/lb缩写、franco外来贸易用语、ruine罕见化学名均注明性质；不把原有罕见条目冒充常见口语。
+
+42项Go测试5.301秒、vet、前5100词核心检查、8112行业句子目标及app.js语法检查通过；47项隔离四账号检查通过。真实预览展开vocabulary、umbrella、bark和conductor两句双语并点击conductor播放，无控制台错误。本批只改语言内容，未重复并发或小屏布局。私有仓库核验、发布结果及资源采样见/tmp/english-quest-v1280-evidence/verification.json。真实支付仍关闭，44音标专业逐条听审尚未完成。
+
+本批罕见词复核来源：franco运费用语见[法兰西学院词典](https://dictionnaire-academie.fr/article/A9F1549)及[Cambridge法英词典](https://dictionary.cambridge.org/us/dictionary/french-english/franco)；ruine收录情况见[Pharmacognosy Reviews植物化合物综述表](https://phcogrev.com/sites/default/files/PhcogRev-7-14-199.pdf)。仅说明原词库中罕见名称的性质，不提供化学操作或治疗指导。
