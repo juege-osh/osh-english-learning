@@ -2,7 +2,7 @@
 
 此目录包含前端逻辑测试及词库例句构建辅助脚本。
 
-`curate_starter_examples.py` 是前 100 词双语句子的人工编辑层。重新构建整份例句数据时，在补全和简体转换后，依次运行它、`curate_first500_examples.py`、`curate_common_examples.py`、`curate_next200_examples.py --apply`，以及第 701–1100 词四批对应的 `curate_*_example_gaps.py --apply`。再依次运行 `curate_main_1101_1500.py --apply`、`curate_main_1501_1900.py --apply`、`curate_main_1901_2300.py --apply`、`curate_main_2301_2700.py --apply`、`curate_main_2701_3100.py --apply`、`curate_main_3101_3500.py --apply`、`curate_main_3501_3900.py --apply`、`curate_main_3901_4300.py --apply`、`curate_main_4301_4700.py --apply`、`curate_main_4701_5100.py --apply`、`curate_main_5101_5500.py --apply`、`curate_main_5501_5900.py --apply`、`curate_main_5901_6300.py --apply`、`curate_main_6301_6700.py --apply`、`curate_main_6701_7100.py --apply`、`curate_main_7101_7900.py --apply`、`curate_main_7901_8500.py --apply`、`curate_main_8501_9100.py --apply`、`curate_main_9101_9700.py --apply`、`curate_main_9701_10300.py --apply`、`curate_main_10301_10900.py --apply`、`curate_main_10901_11500.py --apply`、`curate_main_11501_12100.py --apply`、`curate_main_12101_12700.py --apply`、`curate_main_12701_13300.py --apply`、`curate_main_13301_13900.py --apply`、`curate_main_13901_14500.py --apply`、`curate_main_14501_15100.py --apply`、`curate_main_15101_15700.py --apply`、`curate_main_15701_16300.py --apply`、`curate_main_16301_16900.py --apply`，前 16,900 词会恢复为每词两句双语例句。第 501–16900 词的编辑原稿存于 `data/curated_examples_*.tsv`。不要颠倒顺序。
+`curate_starter_examples.py` 是前 100 词双语句子的人工编辑层。重新构建整份例句数据时，在补全和简体转换后，依次运行它、`curate_first500_examples.py`、`curate_common_examples.py`、`curate_next200_examples.py --apply`，以及第 701–1100 词四批对应的 `curate_*_example_gaps.py --apply`。再依次运行 `curate_main_1101_1500.py --apply`、`curate_main_1501_1900.py --apply`、`curate_main_1901_2300.py --apply`、`curate_main_2301_2700.py --apply`、`curate_main_2701_3100.py --apply`、`curate_main_3101_3500.py --apply`、`curate_main_3501_3900.py --apply`、`curate_main_3901_4300.py --apply`、`curate_main_4301_4700.py --apply`、`curate_main_4701_5100.py --apply`、`curate_main_5101_5500.py --apply`、`curate_main_5501_5900.py --apply`、`curate_main_5901_6300.py --apply`、`curate_main_6301_6700.py --apply`、`curate_main_6701_7100.py --apply`、`curate_main_7101_7900.py --apply`、`curate_main_7901_8500.py --apply`、`curate_main_8501_9100.py --apply`、`curate_main_9101_9700.py --apply`、`curate_main_9701_10300.py --apply`、`curate_main_10301_10900.py --apply`、`curate_main_10901_11500.py --apply`、`curate_main_11501_12100.py --apply`、`curate_main_12101_12700.py --apply`、`curate_main_12701_13300.py --apply`、`curate_main_13301_13900.py --apply`、`curate_main_13901_14500.py --apply`、`curate_main_14501_15100.py --apply`、`curate_main_15101_15700.py --apply`、`curate_main_15701_16300.py --apply`、`curate_main_16301_16900.py --apply`、`curate_main_16901_17500.py --apply`，前 17,500 词会恢复为每词两句双语例句。第 501–17500 词的编辑原稿存于 `data/curated_examples_*.tsv`。不要颠倒顺序。
 
 `augment_bilingual_examples.py` 使用已下载的 Tatoeba 英中句子和关联表，从短句候选中优先选择有译文的例句。先不带参数运行并抽查结果；确认后加 `--apply`。完成语料补全及简体转换后，再执行上述人工编辑脚本。
 
@@ -640,3 +640,16 @@ prosthesis采用假肢、人工假体，matchup改为对阵，generational采用
 实际浏览器检查覆盖创建句子库、收藏笔记、整句听写、日历和PNG下载；PNG实际下载后解码与目视检查。1366×620、390×844检查答题与口语操作可见。录音和识别的自动化测试使用模拟音频，不能当成真人发音评分或专业听审。AI生产联调须实际获得上游回复再记成功，503或示例回复不算通过。证据在已忽略的 `state/evidence-v1310/`；最终服务版本、测试数及发布回执以verification为准。
 
 本批最终检查：55项Go测试通过（7.616秒），完整并发检测通过（76.250秒），vet通过；11套前端检查、47项隔离四账号检查和20项学习工具接口检查通过。桌面1366×620及手机390×844口语页面无输入区遮挡；深色和打乱顺序设置保存后刷新可恢复。语音识别、录音的自动化检查使用模拟设备，实际麦克风授权与录音试听由使用者完成，不作为发音评分。真实AI供应商短请求已返回，正式站两轮口语对话及发布结果由state/evidence-v1310/verification.json记录。
+
+
+## v1.31.1 主线推进到17500词
+
+第16901–17500词新增600个简短常用中文义、1200句双语用法。前17500词都有常用义和两句双语，完整20000词还剩2500词继续编辑。三名作者自审并冻结后，逐条交叉审读600个释义与1200句双语，再生成词库。12份TSV与 `qa/curate_main_16901_17500.py --apply` 可重建本批内容。
+
+本批修正probate遗嘱认证程序、rhinestone仿钻石饰品、congregant宗教会众成员、potluck各自带菜聚餐、stardust星尘及魅力等旧义；buzzard与sycamore注明英美区别，TAI采用国际原子时的官方缩写。alm只确认德语高山牧场，明确英语词头性质待核；少见词与冒犯用语不当作普通口语。原学习编号、词头顺序、完整词典定义、范围外词条与例句及十行业内容保留；最终TSV与JSON一致。
+
+全库18543词至少一句有中文，18019词两句有中文；这些是译文覆盖数量，不代表全库专业语言审校完成。已有听写、口语和个人学习工具继续使用；没有加入视频。本批测试、实际浏览器、仓库同步核对及发布结果以 `state/evidence-v1311/verification.json` 为准。仅内容和加载版本变化，未重复此前并发和小屏布局验收。
+
+疑难词核对来源：[MW buzzard](https://www.merriam-webster.com/dictionary/buzzard)、[Oxford sycamore](https://www.oxfordlearnersdictionaries.com/us/definition/english/sycamore)、[Cambridge Alm德英条目](https://dictionary.cambridge.org/us/dictionary/german-english/alm)、[BIPM TAI](https://www.bipm.org/en/time-department/utc)、[MW Mongol](https://www.merriam-webster.com/dictionary/Mongol)、[Cambridge potluck](https://dictionary.cambridge.org/dictionary/english/pot-luck)、[NASA星尘](https://www.nasa.gov/news-release/silicate-stardust-traces-histories-of-dust-in-the-galaxy/)、[IFRS materiality](https://www.ifrs.org/issued-standards/list-of-standards/materiality-practice-statement/)。
+
+本批55项Go测试通过（6.254秒），vet、前17500词核心数据、8112行业句子目标和应用语法检查通过；47项全新隔离四账号检查通过。隔离浏览器实际展开rhinestone、probate、potluck、weeknight的两句双语，点击weeknight例句朗读，主线0词保持，无控制台错误。本批没有重新运行并发及小屏布局检查。
