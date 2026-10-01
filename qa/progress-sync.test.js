@@ -35,12 +35,12 @@ console.log('PASS: industry-only study syncs and a later skip reset wins');
  context.p=C.fresh();context.KEY='progress';context.localStorage={setItem(){}};
  context.fetch=()=>new Promise(resolve=>{finishRequest=resolve;});
  context.toast=()=>{};context.header=()=>{};context.route=()=>{};context.session=null;
- vm.runInContext('cloudEnabled=true;cloudDirty=true;cloudRevision=0',context);
+ vm.runInContext('cloudEnabled=true;cloudDirty=true;cloudRevision=0;cloudAccountOwner="a"',context);
  const saving=context.progressFlush();
  const logout=context.progressBeforeLogout().then(ok=>{loggedOut=true;return ok;});
  await Promise.resolve();
  assert.equal(loggedOut,false,'logout must wait for an in-flight save');
- finishRequest({ok:true,status:200,json:async()=>({revision:1})});
+ finishRequest({ok:true,status:200,json:async()=>({owner:"a",revision:1})});
  assert.equal(await saving,true);
  assert.equal(await logout,true);
  console.log('PASS: logout waits for an in-flight cloud save');
@@ -80,7 +80,7 @@ console.log('PASS: two open tabs preserve complementary grammar checks through a
   const surface=el('app');surface.querySelector=()=>/class="[^"]*\b(question-workspace|question-card|race-question)\b/.test(surface.innerHTML)?{}:null;surface.querySelectorAll=()=>drafts;surface.contains=x=>drafts.includes(x);
   const doc={getElementById:el,activeElement:null,addEventListener(){},querySelectorAll(){return [];}};
   const ctx=vm.createContext({EnglishCore:C,inputWords,inputIndustries,inputExtras,console,Map,Set,Date,JSON,Math,Promise,URLSearchParams,document:doc,window:{addEventListener(){},scrollTo(){}},location:{hash:'#industries',search:''},localStorage:{setItem(k,v){writes.push(JSON.parse(v));},getItem(){return null;}},setTimeout(){return 1;},clearTimeout(){},setInterval(){return 1;},clearInterval(){},
-   fetch:async(url,options)=>{if(url==='/api/account')return {ok:true,json:async()=>({registered:true})};if(url==='/api/progress'&&options?.method==='POST'){posts.push(JSON.parse(options.body));postCount++;return conflict&&postCount===1?{status:409}:{ok:true,status:200,json:async()=>({revision:8})};}if(url==='/api/progress')return new Promise(resolve=>{release=data=>resolve({ok:true,json:async()=>data});});throw Error('unexpected request '+url);}});
+   fetch:async(url,options)=>{if(url==='/api/account')return {ok:true,json:async()=>({registered:true,id:"a"})};if(url==='/api/progress'&&options?.method==='POST'){posts.push(JSON.parse(options.body));postCount++;return conflict&&postCount===1?{status:409}:{ok:true,status:200,json:async()=>({owner:"a",revision:8})};}if(url==='/api/progress')return new Promise(resolve=>{release=data=>resolve({ok:true,json:async()=>({owner:"a",...data})});});throw Error('unexpected request '+url);}});
   vm.runInContext(appText,ctx);vm.runInContext(featureText,ctx);vm.runInContext(syncText,ctx);
   Object.assign(ctx,{onHeader:()=>headers++,onRoute:()=>{routes++;surface.innerHTML='idle view refreshed';},onSave:()=>writes.push(JSON.parse(vm.runInContext('JSON.stringify(p)',ctx)))});
   vm.runInContext("words=inputWords;industries=inputIndustries;all=new Map([...words,...inputExtras].map(w=>[String(w.id),w]));loaded=true;header=onHeader;route=onRoute;save=onSave;toast=()=>{};confetti=()=>{};",ctx);
@@ -89,7 +89,7 @@ console.log('PASS: two open tabs preserve complementary grammar checks through a
  const questions=Array.from({length:20},(_,i)=>({id:i+1,word:'word'+i,options:[{id:i+1,zh:'正确'},{id:100+i,zh:'其他'}]}));
  async function check(mode,view){
   const h=harness(mode==='conflict'),run=code=>vm.runInContext(code,h.ctx);h.ctx.questions=questions;
-  const operation=mode==='conflict'?(run('cloudEnabled=true;cloudDirty=true'),run('progressFlush()')):run('progressStart()');
+  const operation=mode==='conflict'?(run('cloudEnabled=true;cloudDirty=true;cloudAccountOwner="a"'),run('progressFlush()')):run('progressStart()');
   for(let n=0;n<12&&!h.ready();n++)await Promise.resolve();assert(h.ready(),'deferred cloud read began');
   let expectedRoutes=0;
   if(view==='industry'){run("industryPracticeStart('sentences');industryPracticeAnswer(industryPractice.items[0].id)");}
@@ -131,4 +131,41 @@ console.log('PASS: two open tabs preserve complementary grammar checks through a
  assert.equal(storage.routes(),1,'storage handler must refresh idle view despite stale specialty session');assert.equal(runStorage('p.levels[3]'),100);
  console.log('PASS: actual cross-tab storage handler preserves a live specialty answer and refreshes an idle page; unloaded-helper fallback remains covered');
 
+})().catch(error=>{console.error(error);process.exitCode=1;});
+
+// Deliberately defer transport and JSON separately: cookie changes can happen
+// between either await, so checking only the first response is insufficient.
+(async()=>{
+ const source=fs.readFileSync(require.resolve('../progress-sync.js'),'utf8');
+ function h(){
+  const pending=[],writes=[],requests=[];
+  const ctx=vm.createContext({C,console,AbortController,p:C.fresh(),KEY:'progress',localStorage:{setItem(k,v){writes.push(JSON.parse(v));}},setTimeout(){return 1;},clearTimeout(){},toast(){},header(){},route(){},currentLevel(){return 1;},fetch:(url,options)=>{requests.push({url,options});return new Promise(resolve=>pending.push(resolve));}});
+  vm.runInContext(source,ctx);return {ctx,pending,writes,requests,run:s=>vm.runInContext(s,ctx)};
+ }
+ const tick=async()=>{for(let i=0;i<15;i++)await Promise.resolve();};
+ const remote=C.fresh();remote.levels[9]=100;
+ let t=h(),task=t.ctx.progressStart();
+ t.ctx.progressInvalidate();t.pending.shift()({ok:true,json:async()=>({registered:true,id:'a'})});await task;
+ assert.equal(t.requests.length,1);assert.equal(t.run('cloudEnabled'),false);assert.equal(t.writes.length,0);
+ t=h();task=t.ctx.progressStart();t.pending.shift()({ok:true,json:async()=>({registered:true,id:'a'})});await tick();
+ assert.equal(t.requests[1].options.headers['X-Study-Owner'],'a');
+ let jsonFinish;t.pending.shift()({ok:true,json:()=>new Promise(r=>jsonFinish=r)});await tick();t.ctx.progressInvalidate();jsonFinish({owner:'a',revision:9,progress:remote});await task;
+ assert.equal(t.ctx.p.levels[9],undefined);assert.equal(t.writes.length,0);assert.equal(t.run('cloudEnabled'),false);
+ t=h();t.run('cloudEnabled=true;cloudDirty=true;cloudAccountOwner="a"');task=t.ctx.progressFlush();t.pending.shift()({status:409});await tick();
+ assert.equal(t.requests[1].options.headers['X-Study-Owner'],'a');t.ctx.progressInvalidate();t.pending.shift()({ok:true,json:async()=>({owner:'b',revision:9,progress:remote})});await task;
+ assert.equal(t.ctx.p.levels[9],undefined);assert.equal(t.writes.length,0);
+ t=h();t.run('cloudEnabled=true;cloudDirty=true;cloudAccountOwner="a"');task=t.ctx.progressFlush();t.pending.shift()({ok:true,status:200,json:async()=>({owner:'b',revision:7})});await task;
+ assert.equal(t.run('cloudRevision'),0);assert.equal(t.run('cloudDirty'),true,'wrong-owner success must stay unsaved');
+ t=h();task=t.ctx.progressStart();await t.ctx.progressBeforeLogout();t.pending.shift()({ok:true,json:async()=>({registered:true,id:'a'})});await task;
+ assert.equal(t.run('cloudEnabled'),false);assert.equal(t.requests.length,1,'logout cancels pending bootstrap');
+ t=h();t.run('cloudEnabled=true;cloudDirty=true;cloudAccountOwner="a"');const old=t.ctx.progressFlush();t.ctx.progressInvalidate();t.run('cloudEnabled=true;cloudDirty=true;cloudAccountOwner="b"');const fresh=t.ctx.progressFlush();
+ t.pending.shift()({ok:true,status:200,json:async()=>({owner:'a',revision:99})});await old;
+ assert.equal(t.run('cloudRevision'),0);assert.equal(t.run('cloudFlight'),fresh,'old finally must not clear new flight');
+ t.pending.shift()({ok:true,status:200,json:async()=>({owner:'b',revision:1})});await fresh;assert.equal(t.run('cloudRevision'),1);
+ t=h();t.ctx.p.levels[1]=100;t.run('cloudEnabled=true;cloudDirty=true;cloudAccountOwner="a"');task=t.ctx.progressFlush();t.pending.shift()({status:403});await tick();
+ t.pending.shift()({ok:true,json:async()=>({registered:true,id:'b'})});await tick();
+ t.pending.shift()({ok:true,json:async()=>({registered:true,id:'b'})});await tick();
+ assert.equal(t.requests.at(-1).options.headers['X-Study-Owner'],'b');t.pending.shift()({ok:true,json:async()=>({owner:'b',revision:2,progress:C.fresh()})});await task;
+ assert.equal(t.ctx.p.levels[1],undefined,'403 account refresh must not upload previous owner progress');assert.equal(t.run('cloudAccountOwner'),'b');
+ console.log('PASS: stale bootstrap/body/conflict/save replies, logout bootstrap, replacement flight and 403 account refresh remain isolated');
 })().catch(error=>{console.error(error);process.exitCode=1;});

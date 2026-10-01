@@ -632,3 +632,11 @@ prosthesis采用假肢、人工假体，matchup改为对阵，generational采用
 本批42项Go测试4.679秒、vet、前16900词核心检查、8112行业句子目标检查和应用语法检查通过。四账号隔离验收、真实浏览器、仓库整包核验与生产发布结果见持久证据 `state/evidence-v1301/verification.json`。只改内容，不重复此前并发和小屏布局验收。全库18152词至少一句有中文，17528词两句有中文，这些数量不等同于全库专业语言审校完成；44音参考录音仍待专业逐条听审。
 
 本批罕见形式及专业义核对：Merriam-Webster 的 [modus](https://www.merriam-webster.com/dictionary/modus)、[doldrum](https://www.merriam-webster.com/dictionary/doldrum)、[napa cabbage](https://www.merriam-webster.com/dictionary/napa%20cabbage)、[stoneware](https://www.merriam-webster.com/dictionary/stoneware)、[pol](https://www.merriam-webster.com/dictionary/pol)、[vita](https://www.merriam-webster.com/dictionary/vita)、[shalt](https://www.merriam-webster.com/dictionary/shalt)、[angina](https://www.merriam-webster.com/dictionary/angina)、[enchilada](https://www.merriam-webster.com/dictionary/enchilada)，以及 Oxford 的 [unflattering](https://www.oxfordlearnersdictionaries.com/definition/english/unflattering)。这些来源用于核对含义；本批句子由本站编写，没有抄录词典例句。
+
+## v1.31.0学习工具验收
+
+新增 `study-core.test.js`、`study-practice.test.js`、`study-speaking.test.js`、`study-tools-contract.test.js`，配合原7套前端检查。合约测试使用模拟DOM和Blob，不当作真实图片导出或真人发音验收。`study-api-smoke.py`仅可对本机隔离端口运行，检查账号隔离、Owner拒绝、冲突和持久化。Go新增学习资料结构、账号绑定、AI代理隐私和异步同步测试。所有测试数据不可迁到正式站。
+
+实际浏览器检查覆盖创建句子库、收藏笔记、整句听写、日历和PNG下载；PNG实际下载后解码与目视检查。1366×620、390×844检查答题与口语操作可见。录音和识别的自动化测试使用模拟音频，不能当成真人发音评分或专业听审。AI生产联调须实际获得上游回复再记成功，503或示例回复不算通过。证据在已忽略的 `state/evidence-v1310/`；最终服务版本、测试数及发布回执以verification为准。
+
+本批最终检查：55项Go测试通过（7.616秒），完整并发检测通过（76.250秒），vet通过；11套前端检查、47项隔离四账号检查和20项学习工具接口检查通过。桌面1366×620及手机390×844口语页面无输入区遮挡；深色和打乱顺序设置保存后刷新可恢复。语音识别、录音的自动化检查使用模拟设备，实际麦克风授权与录音试听由使用者完成，不作为发音评分。真实AI供应商短请求已返回，正式站两轮口语对话及发布结果由state/evidence-v1310/verification.json记录。
