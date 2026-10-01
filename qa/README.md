@@ -2,7 +2,7 @@
 
 此目录包含前端逻辑测试及词库例句构建辅助脚本。
 
-`curate_starter_examples.py` 是前 100 词双语句子的人工编辑层。重新构建整份例句数据时，在补全和简体转换后，依次运行它、`curate_first500_examples.py`、`curate_common_examples.py`、`curate_next200_examples.py --apply`，以及第 701–1100 词四批对应的 `curate_*_example_gaps.py --apply`。再依次运行 `curate_main_1101_1500.py --apply`、`curate_main_1501_1900.py --apply`、`curate_main_1901_2300.py --apply`、`curate_main_2301_2700.py --apply`、`curate_main_2701_3100.py --apply`、`curate_main_3101_3500.py --apply`、`curate_main_3501_3900.py --apply`、`curate_main_3901_4300.py --apply`、`curate_main_4301_4700.py --apply`、`curate_main_4701_5100.py --apply`、`curate_main_5101_5500.py --apply`、`curate_main_5501_5900.py --apply`、`curate_main_5901_6300.py --apply`、`curate_main_6301_6700.py --apply`、`curate_main_6701_7100.py --apply`、`curate_main_7101_7900.py --apply`、`curate_main_7901_8500.py --apply`、`curate_main_8501_9100.py --apply`、`curate_main_9101_9700.py --apply`、`curate_main_9701_10300.py --apply`、`curate_main_10301_10900.py --apply`、`curate_main_10901_11500.py --apply`、`curate_main_11501_12100.py --apply`、`curate_main_12101_12700.py --apply`、`curate_main_12701_13300.py --apply`、`curate_main_13301_13900.py --apply`、`curate_main_13901_14500.py --apply`、`curate_main_14501_15100.py --apply`、`curate_main_15101_15700.py --apply`，前 15,700 词会恢复为每词两句双语例句。第 501–15700 词的编辑原稿存于 `data/curated_examples_*.tsv`。不要颠倒顺序。
+`curate_starter_examples.py` 是前 100 词双语句子的人工编辑层。重新构建整份例句数据时，在补全和简体转换后，依次运行它、`curate_first500_examples.py`、`curate_common_examples.py`、`curate_next200_examples.py --apply`，以及第 701–1100 词四批对应的 `curate_*_example_gaps.py --apply`。再依次运行 `curate_main_1101_1500.py --apply`、`curate_main_1501_1900.py --apply`、`curate_main_1901_2300.py --apply`、`curate_main_2301_2700.py --apply`、`curate_main_2701_3100.py --apply`、`curate_main_3101_3500.py --apply`、`curate_main_3501_3900.py --apply`、`curate_main_3901_4300.py --apply`、`curate_main_4301_4700.py --apply`、`curate_main_4701_5100.py --apply`、`curate_main_5101_5500.py --apply`、`curate_main_5501_5900.py --apply`、`curate_main_5901_6300.py --apply`、`curate_main_6301_6700.py --apply`、`curate_main_6701_7100.py --apply`、`curate_main_7101_7900.py --apply`、`curate_main_7901_8500.py --apply`、`curate_main_8501_9100.py --apply`、`curate_main_9101_9700.py --apply`、`curate_main_9701_10300.py --apply`、`curate_main_10301_10900.py --apply`、`curate_main_10901_11500.py --apply`、`curate_main_11501_12100.py --apply`、`curate_main_12101_12700.py --apply`、`curate_main_12701_13300.py --apply`、`curate_main_13301_13900.py --apply`、`curate_main_13901_14500.py --apply`、`curate_main_14501_15100.py --apply`、`curate_main_15101_15700.py --apply`、`curate_main_15701_16300.py --apply`，前 16,300 词会恢复为每词两句双语例句。第 501–16300 词的编辑原稿存于 `data/curated_examples_*.tsv`。不要颠倒顺序。
 
 `augment_bilingual_examples.py` 使用已下载的 Tatoeba 英中句子和关联表，从短句候选中优先选择有译文的例句。先不带参数运行并抽查结果；确认后加 `--apply`。完成语料补全及简体转换后，再执行上述人工编辑脚本。
 
@@ -607,3 +607,17 @@ prosthesis采用假肢、人工假体，matchup改为对阵，generational采用
 - [历史服装词典rever](https://www.gutenberg.org/cache/epub/76299/pg76299-images.html)、[Collins acet](https://www.collinsdictionary.com/dictionary/english/acet)、[美国大屠杀纪念馆swastika背景](https://encyclopedia.ushmm.org/content/en/article/history-of-the-swastika)。
 
 根代理逐条审读600简义及1200句双语，修正fundholder比较对象、duplex双面打印、gumbo译文、amp搭配、plantain语境、rubbery鱿鱼与squelch湿响。作者和交叉审读结束后冻结TSV，应用后的JSON与最终原稿一致。
+
+## v1.30.0 主线推进到16300词与预览恢复
+
+第15701–16300词新增600个简短中文义和1200句双语用法。前16300词均有简明释义与两句双语，完整20000词尚余3700词继续编辑。编号、词头顺序、原完整词典定义、范围外词条及行业场景内容保留。三名作者自审并冻结后，逐条交叉审读600个简义与1200句双语；12份TSV和 `qa/curate_main_15701_16300.py --apply` 可重建本批数据。
+
+本批整理sax萨克斯、sundae圣代、nirvana涅槃等常见义，区分python蟒蛇与编程语言、sandbox沙坑与沙盒环境。postpon说明古苏格兰语旧拼法，thril的原库释义缺少可靠依据，明确待核；NICH注明医学缩写和可靠出处。修正换挡的主语、细节与投诉的英文搭配，以及鱼类和鲸类例句中范围过宽的表述。逐词编写和结构检查不等于全词库专业语言审校完成。
+
+2026年10月2日本机重启后，旧 `/tmp` 预览程序、测试状态和本地验收文件已丢失；这些历史路径仅记录当时的位置。正式站仍正常，未复制或更改正式站账号。预览已改用持久目录 `~/Library/Application Support/EnglishQuestPreview/`，登录当前macOS用户后自动启动，只使用模拟支付；旧临时测试账号没有恢复。可用 `scripts/install_preview_macos.py` 安装已在本机编译的程序。后续证据保存在项目已忽略的 `state/evidence-v1300/`。
+
+本批测试与线上发布回执以 `state/evidence-v1300/verification.json` 为准。专业音标逐条听审、真实支付宝配置与本人试付、社交主页微信群联系、协作者验证仍待完成。本批未改布局或竞技规则，未重复此前并发和小屏布局验收。
+
+本批疑难词来源：[NICH/NCBI MedGen](https://www.ncbi.nlm.nih.gov/medgen/698685)、[REALTOR/NAR会员商标](https://www.nar.realtor/membership-marks-manual/license-to-use-the-marks)、[postpon/旧苏格兰语](https://dsl.ac.uk/entry/snd/postpone)、[thril历史异体记录](https://dsl.ac.uk/entry/dost00086253)、[chaise](https://www.merriam-webster.com/dictionary/chaise)、[Sabine](https://www.merriam-webster.com/dictionary/Sabine)、[ell](https://www.merriam-webster.com/dictionary/ell)、[minutia](https://www.merriam-webster.com/dictionary/minutia)、[yardage](https://www.merriam-webster.com/dictionary/yardage)、[pansy冒犯语域](https://www.oxfordlearnersdictionaries.com/us/definition/english/pansy)。thril的历史异体不足以确认原库“联络小巷”的释义，例句只用于辨认词形。
+
+本批42项Go测试通过（5.001秒），vet、前16300词核心检查、8112行业句子目标、前端语法及47项隔离四账号检查通过。隔离浏览器实际展开vegan、sandbox、nirvana、sundae的两句双语并点击朗读，主线0词保持，无控制台错误；持久预览19004的sundae也已展开和试播。仓库整仓核验、正式站结果和资源采样由本批verification.json记录。
