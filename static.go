@@ -61,7 +61,7 @@ func serveStatic(files map[string]staticAsset) http.HandlerFunc {
 		w.Header().Set("Content-Type", file.contentType)
 		w.Header().Set("ETag", file.etag)
 		w.Header().Set("Cache-Control", "public, max-age=300")
-		if name == "/index.html" || path.Ext(name) == ".js" || path.Ext(name) == ".css" {
+		if name == "/index.html" || path.Ext(name) == ".js" || path.Ext(name) == ".css" || path.Ext(name) == ".json" {
 			w.Header().Set("Cache-Control", "no-cache")
 		}
 		w.Header().Set("X-Content-Type-Options", "nosniff")

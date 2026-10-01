@@ -23,8 +23,8 @@ func TestStaticAssets(t *testing.T) {
 	}
 	handler := serveStatic(files)
 	// Browser reloads must revalidate the application after a deployment; large
-	// vocabulary files retain their five-minute cache and conditional ETag.
-	for _, name := range []string{"/", "/member-ui.js", "/style.css"} {
+	// vocabulary files also revalidate, retaining their conditional ETag.
+	for _, name := range []string{"/", "/member-ui.js", "/style.css", "/data/words.json", "/data/examples.json", "/data/industries.json"} {
 		rr := httptest.NewRecorder()
 		handler.ServeHTTP(rr, httptest.NewRequest(http.MethodGet, name, nil))
 		if rr.Header().Get("Cache-Control") != "no-cache" || rr.Header().Get("ETag") == "" {
