@@ -2,7 +2,7 @@
 
 此目录包含前端逻辑测试及词库例句构建辅助脚本。
 
-`curate_starter_examples.py` 是前 100 词双语句子的人工编辑层。重新构建整份例句数据时，在补全和简体转换后，依次运行它、`curate_first500_examples.py`、`curate_common_examples.py`、`curate_next200_examples.py --apply`，以及第 701–1100 词四批对应的 `curate_*_example_gaps.py --apply`。再依次运行 `curate_main_1101_1500.py --apply`、`curate_main_1501_1900.py --apply`、`curate_main_1901_2300.py --apply`、`curate_main_2301_2700.py --apply`、`curate_main_2701_3100.py --apply`、`curate_main_3101_3500.py --apply`、`curate_main_3501_3900.py --apply`、`curate_main_3901_4300.py --apply`、`curate_main_4301_4700.py --apply`、`curate_main_4701_5100.py --apply`、`curate_main_5101_5500.py --apply`、`curate_main_5501_5900.py --apply`、`curate_main_5901_6700.py --apply`，前 6,700 词会恢复为每词两句双语例句。第 501–6700 词的编辑原稿存于 `data/curated_examples_*.tsv`。不要颠倒顺序。
+`curate_starter_examples.py` 是前 100 词双语句子的人工编辑层。重新构建整份例句数据时，在补全和简体转换后，依次运行它、`curate_first500_examples.py`、`curate_common_examples.py`、`curate_next200_examples.py --apply`，以及第 701–1100 词四批对应的 `curate_*_example_gaps.py --apply`。再依次运行 `curate_main_1101_1500.py --apply`、`curate_main_1501_1900.py --apply`、`curate_main_1901_2300.py --apply`、`curate_main_2301_2700.py --apply`、`curate_main_2701_3100.py --apply`、`curate_main_3101_3500.py --apply`、`curate_main_3501_3900.py --apply`、`curate_main_3901_4300.py --apply`、`curate_main_4301_4700.py --apply`、`curate_main_4701_5100.py --apply`、`curate_main_5101_5500.py --apply`、`curate_main_5501_5900.py --apply`、`curate_main_5901_6300.py --apply`、`curate_main_6301_6700.py --apply`、`curate_main_6701_7100.py --apply`，前 7,100 词会恢复为每词两句双语例句。第 501–7100 词的编辑原稿存于 `data/curated_examples_*.tsv`。不要颠倒顺序。
 
 `augment_bilingual_examples.py` 使用已下载的 Tatoeba 英中句子和关联表，从短句候选中优先选择有译文的例句。先不带参数运行并抽查结果；确认后加 `--apply`。完成语料补全及简体转换后，再执行上述人工编辑脚本。
 
@@ -354,3 +354,15 @@ default区分默认设置与违约，aerial区分航拍和英式天线，present
 tablet区分平板电脑与药片，moonlight区分月光与兼职，conserve采用常用的节约、保护义；broccoli修正为西兰花，outreach采用主动联络和社区服务义。专名、缩写、罕见形式及强烈粗俗口语注明性质。跨代理审读修正了landowner译文添加未发生行为、data breach搭配、tablet药品包装语境等问题。
 
 适当测试、实际浏览器核验、私有仓库整仓字节比较及发布资源回执见/tmp/english-quest-v1284-evidence/verification.json。本批仅语言内容变化，未重复并发或小屏布局验收。真实支付仍关闭，44音标专业逐条听审尚未完成。
+
+## v1.28.5 主线推进到7100词
+
+第6701–7100词新增400个常用中文义和800句自然双语，主线前7100词现在每词都有简短中文义和两句双语。完整20000词仍在逐条编辑。学习编号、词头顺序和完整原词典定义保留，范围外词条及行业场景内容不变。
+
+weekday改为工作日，thwart改为阻止、挫败；SSR补充开发中常用的服务端渲染。overtime区分加班与加时赛，pod区分豆荚与海豚群。人名、国家代码、历史机构和罕见纺织词注明用途。交叉审读修正了社交用语、martyr中译和例句未覆盖到的常用义，未用统一模板凑句子。
+
+本批测试、实际浏览器核验、私有仓库整仓字节比较和发布资源回执见/tmp/english-quest-v1285-evidence/verification.json。只有语言内容改动，未重复并发或小屏布局验收。真实支付仍关闭，44音标专业逐条听审尚未完成。
+
+本批罕见词与缩写核对来源：[Merriam-Webster的ye](https://www.merriam-webster.com/dictionary/ye)、[kemp](https://www.merriam-webster.com/dictionary/kemp)、[mungo](https://www.merriam-webster.com/dictionary/mungo)、[Collins的cor](https://www.collinsdictionary.com/dictionary/english/cor)、[Vue官方SSR说明](https://vuejs.org/guide/scaling-up/ssr)。THA对应Thailand见[MIT论文附表A.1](https://ceepr.mit.edu/wp-content/uploads/2021/09/2018-013.pdf)。本站句子为独立编写，没有复制词典例句。重建命令为`python3 qa/curate_main_6701_7100.py --apply`。
+
+本批42项Go测试通过（6.946秒）、vet、前7100词核心及8112行业句子目标检查、app.js语法检查通过；47项隔离四账号检查通过。实际预览展开durable、lousy、Lenin、weekday两句双语，weekday播放按钮已点击，主线0词保持，无控制台错误。
