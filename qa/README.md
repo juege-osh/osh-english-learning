@@ -2,7 +2,7 @@
 
 此目录包含前端逻辑测试及词库例句构建辅助脚本。
 
-`curate_starter_examples.py` 是前 100 词双语句子的人工编辑层。重新构建整份例句数据时，在补全和简体转换后，依次运行它、`curate_first500_examples.py`、`curate_common_examples.py`、`curate_next200_examples.py --apply`，以及第 701–1100 词四批对应的 `curate_*_example_gaps.py --apply`。再依次运行 `curate_main_1101_1500.py --apply`、`curate_main_1501_1900.py --apply`、`curate_main_1901_2300.py --apply`、`curate_main_2301_2700.py --apply`、`curate_main_2701_3100.py --apply`、`curate_main_3101_3500.py --apply`、`curate_main_3501_3900.py --apply`、`curate_main_3901_4300.py --apply`、`curate_main_4301_4700.py --apply`、`curate_main_4701_5100.py --apply`、`curate_main_5101_5500.py --apply`、`curate_main_5501_5900.py --apply`、`curate_main_5901_6300.py --apply`、`curate_main_6301_6700.py --apply`、`curate_main_6701_7100.py --apply`、`curate_main_7101_7900.py --apply`、`curate_main_7901_8500.py --apply`、`curate_main_8501_9100.py --apply`、`curate_main_9101_9700.py --apply`、`curate_main_9701_10300.py --apply`、`curate_main_10301_10900.py --apply`、`curate_main_10901_11500.py --apply`、`curate_main_11501_12100.py --apply`、`curate_main_12101_12700.py --apply`、`curate_main_12701_13300.py --apply`、`curate_main_13301_13900.py --apply`，前 13,900 词会恢复为每词两句双语例句。第 501–13900 词的编辑原稿存于 `data/curated_examples_*.tsv`。不要颠倒顺序。
+`curate_starter_examples.py` 是前 100 词双语句子的人工编辑层。重新构建整份例句数据时，在补全和简体转换后，依次运行它、`curate_first500_examples.py`、`curate_common_examples.py`、`curate_next200_examples.py --apply`，以及第 701–1100 词四批对应的 `curate_*_example_gaps.py --apply`。再依次运行 `curate_main_1101_1500.py --apply`、`curate_main_1501_1900.py --apply`、`curate_main_1901_2300.py --apply`、`curate_main_2301_2700.py --apply`、`curate_main_2701_3100.py --apply`、`curate_main_3101_3500.py --apply`、`curate_main_3501_3900.py --apply`、`curate_main_3901_4300.py --apply`、`curate_main_4301_4700.py --apply`、`curate_main_4701_5100.py --apply`、`curate_main_5101_5500.py --apply`、`curate_main_5501_5900.py --apply`、`curate_main_5901_6300.py --apply`、`curate_main_6301_6700.py --apply`、`curate_main_6701_7100.py --apply`、`curate_main_7101_7900.py --apply`、`curate_main_7901_8500.py --apply`、`curate_main_8501_9100.py --apply`、`curate_main_9101_9700.py --apply`、`curate_main_9701_10300.py --apply`、`curate_main_10301_10900.py --apply`、`curate_main_10901_11500.py --apply`、`curate_main_11501_12100.py --apply`、`curate_main_12101_12700.py --apply`、`curate_main_12701_13300.py --apply`、`curate_main_13301_13900.py --apply`、`curate_main_13901_14500.py --apply`，前 14,500 词会恢复为每词两句双语例句。第 501–14500 词的编辑原稿存于 `data/curated_examples_*.tsv`。不要颠倒顺序。
 
 `augment_bilingual_examples.py` 使用已下载的 Tatoeba 英中句子和关联表，从短句候选中优先选择有译文的例句。先不带参数运行并抽查结果；确认后加 `--apply`。完成语料补全及简体转换后，再执行上述人工编辑脚本。
 
@@ -550,3 +550,25 @@ prosthesis采用假肢、人工假体，matchup改为对阵，generational采用
 - https://www.spglobal.com/spdji/en/indices/equity/dow-jones-industrial-average/
 
 本批42项Go测试通过（5.390秒），vet、前13900词核心检查、8112行业句子目标、前端语法和47项隔离四账号检查通过。隔离浏览器实际展开throwback、ventilator、beeper、cappuccino的两句双语，点击朗读，无控制台错误；主线0词保持。用户预览与生产验收回执由本批verification.json记录。
+
+
+## v1.29.7 主线推进到14500词
+
+第13901–14500词新增600个常用中文义和1200句自然双语。主线前14500词均有常用中文义和两句双语，完整20000词尚余5500词继续编辑。学习编号、词头顺序和原完整词典定义保留，范围外词条、行业和场景内容不变。
+
+本批改正upload上传、firewall防火墙、layup上篮、carousel旋转木马等旧误义；区分header页眉与头球、materialistic物质至上与哲学唯物主义。专名、缩写和口语语域注明性质。三名作者完成自审并冻结后，逐条交叉审读600个简义和1200句双语；每100词一份原稿，`qa/curate_main_13901_14500.py --apply`可重建。
+
+本批实际测试、浏览器、仓库核验和发布结果见 `/tmp/english-quest-v1297-evidence/verification.json`。只有内容变化，未重复并发与小屏布局验收。完整主线语言编辑、音标专业听审、真实支付宝配置与本人试付、社交主页及微信群联系方式、协作者验证仍未全部完成。
+
+本批42项Go测试通过（5.664秒），vet、前14500词核心检查、8112行业句子目标、前端语法及47项隔离四账号检查通过。隔离浏览器实际展开upload、materialistic、layup、carousel两句双语，点击朗读，无控制台错误；主线0词保持。用户预览、仓库核验及生产结果由本批verification.json承接。
+
+本批疑难词核对来源：
+- https://www.fisheries.noaa.gov/species/steelhead
+- https://dictionary.cambridge.org/dictionary/english/geordie
+- https://www.nationalarchives.gov.uk/help-with-your-research/research-guides/domesday-book/
+- https://www.merriam-webster.com/dictionary/condor
+- https://www.hants.gov.uk/
+- https://developer.mozilla.org/en-US/docs/Glossary/DOM
+- https://www.collinsdictionary.com/dictionary/english/clint
+- https://www.collinsdictionary.com/dictionary/english/gypsy
+- https://datatracker.ietf.org/doc/html/rfc8866
