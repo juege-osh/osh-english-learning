@@ -189,3 +189,13 @@
 
 /* Keep example playback and favorite controls independently clickable. */
 .study-examples p{padding-right:104px;min-height:44px}.study-examples button[data-action]{right:52px}.study-examples button[data-study-sentence]{right:0}
+
+/* Timed rounds retain the current question while the native rest dialog is open. */
+.goal-options select{max-width:100%;min-width:140px;min-height:44px;padding:8px 12px;border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--ink);font:inherit}
+.side-goals select{width:100%;min-width:0}
+.run-toolbar{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 12px;border:1px solid #dcd6f6;border-radius:14px;background:#f4f0ff;flex-shrink:0}
+.run-toolbar>span{display:flex;align-items:center;gap:10px;flex-wrap:wrap;min-width:0}.run-toolbar b{font-variant-numeric:tabular-nums;font-size:17px}.run-toolbar small{color:var(--muted);font-size:12px}
+.run-toolbar>div{display:flex;gap:6px;flex-shrink:0}.run-toolbar button{min-height:44px;padding:8px 12px;font-size:13px}
+.run-summary{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0 0 18px;padding:16px 20px}.run-summary h3,.run-summary p{margin:0 0 5px}.run-summary small{color:var(--muted);font-size:12px}.run-summary b{font-variant-numeric:tabular-nums}
+.run-dialog{width:min(460px,calc(100vw - 32px));border:1px solid var(--line);border-radius:24px;padding:28px;color:var(--ink);box-shadow:0 18px 65px #23243c25;text-align:center}.run-dialog::backdrop{background:#23243c88;backdrop-filter:blur(4px)}.run-dialog h2{font-size:23px;margin:8px 0 14px}.run-dialog p{font-size:14px;line-height:1.7}.run-dialog button{min-height:44px}.run-dialog .button-row{justify-content:center}.run-rest-icon{font-size:42px}.run-rest-clock{font-size:36px;display:block;font-variant-numeric:tabular-nums}
+@media(max-width:760px){.run-toolbar{padding:5px 8px;gap:6px}.run-toolbar>span{gap:0;display:block}.run-toolbar small{display:block;font-size:11px}.run-toolbar button{padding:8px;font-size:12px}.run-summary{align-items:flex-start;flex-direction:column;padding:14px}.run-dialog{padding:22px}.goal-options{min-width:0}.goal-options select{min-width:0;width:100%}}

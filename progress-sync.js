@@ -1,5 +1,5 @@
 'use strict';
-let cloudRevision=0,cloudEnabled=false,cloudDirty=false,cloudTimer=null,cloudStarting=null,cloudFlight=null,cloudAccountOwner='',cloudEpoch=0,cloudAbort=null;
+let cloudRevision=0,cloudEnabled=false,cloudDirty=false,cloudTimer=null,cloudStarting=null,cloudFlight=null,cloudAccountOwner='',cloudAccountKnown=false,cloudEpoch=0,cloudAbort=null;
 function progressStatus(message){if(typeof document==='undefined')return;const el=document.getElementById('cloud-status');if(el)el.textContent=message;}
 
 // Merge the data immediately, but don't rebuild the page underneath an answer
@@ -26,17 +26,20 @@ function progressViewBusy(){
  }
  return false;
 }
-function progressRefreshView(){
+function progressRefreshView(accountChanged=false){
+ if(typeof mainRunProgressChanged==='function')mainRunProgressChanged();
  if(typeof header==='function')header();
- if(typeof loaded!=='undefined'&&loaded&&!progressViewBusy())route();
+ if(typeof loaded!=='undefined'&&loaded&&(accountChanged||!progressViewBusy()))route();
 }
 
 function progressMerge(local,remote){
  if(!C.validate(remote))return local;
  if(!C.validate(local))return remote;
- const hasLocal=Object.keys(local.words).length||Object.keys(local.levels).length||Object.keys(local.missions).length||Object.values(local.industries||{}).some(entry=>(entry?.seen||[]).length||Object.keys(entry?.skipped||{}).length)||Object.values(local.basics||{}).some(entry=>Object.keys(entry).length);
+ const hasLocal=!!local.mainRun||Object.keys(local.words).length||Object.keys(local.levels).length||Object.keys(local.missions).length||Object.values(local.industries||{}).some(entry=>(entry?.seen||[]).length||Object.keys(entry?.skipped||{}).length)||Object.values(local.basics||{}).some(entry=>Object.keys(entry).length);
  if(!hasLocal)return remote;
  const out={...remote,...local};
+ const generation=C.compareRuns(local.mainRun,remote.mainRun),sameGeneration=generation===0;
+ const mainSource=generation>0?local:remote;
  for(const key of ['levels','bosses','missions']){
   out[key]={...remote[key],...local[key]};
   for(const [id,score]of Object.entries(remote[key]))out[key][id]=Math.max(score,out[key][id]||0);
@@ -48,6 +51,7 @@ function progressMerge(local,remote){
   const chosen=aEvent>bEvent?a:bEvent>aEvent?b:a.days.length>b.days.length?a:b;
   out.words[id]={...chosen,first:Math.min(a.first,b.first),wrong:Math.max(a.wrong,b.wrong),seen:Math.max(a.seen,b.seen)};
  }
+ if(!sameGeneration){out.levels={...mainSource.levels};out.bosses={...mainSource.bosses};for(const key of Object.keys(out.words))if(/^\d+$/.test(key))delete out.words[key];for(const [key,record]of Object.entries(mainSource.words))if(/^\d+$/.test(key))out.words[key]=record;out.goal=mainSource.goal;}
  out.days={...remote.days,...local.days};
  for(const [day,count]of Object.entries(remote.days))out.days[day]=Math.max(count,out.days[day]||0);
  out.industries={...remote.industries,...local.industries};
@@ -62,7 +66,8 @@ function progressMerge(local,remote){
  }
  if(local.basics||remote.basics)out.basics=C.mergeBasics(local.basics,remote.basics);
  out.xp=Math.min(450000,Math.max(local.xp,remote.xp,Object.keys(out.levels).length*100+Object.keys(out.bosses).length*150+Object.keys(out.missions).length*80));
- out.totalTimeMs=Math.max(local.totalTimeMs||0,remote.totalTimeMs||0);
+ if(local.mainRun||remote.mainRun){out.mainRun=C.mergeRun(local.mainRun,remote.mainRun);if(sameGeneration&&out.mainRun.resetAt===0){const legacyBase=Math.max(local.mainRun?0:local.totalTimeMs||0,remote.mainRun?0:remote.totalTimeMs||0);out.mainRun.elapsedMs=Math.max(out.mainRun.elapsedMs,legacyBase);}const nonMain=p=>Math.max(0,p.xp-Math.max(p.mainRun?.mainXp||0,C.inferredMainXp(p)));out.xp=Math.min(450000,Math.max(nonMain(local),nonMain(remote),Object.keys(out.missions).length*80)+Math.max(out.mainRun.mainXp,C.inferredMainXp(out)));}
+ out.totalTimeMs=sameGeneration?Math.max(local.totalTimeMs||0,remote.totalTimeMs||0):(mainSource.totalTimeMs||0);
  return C.validate(out)?out:local;
 }
 
@@ -75,6 +80,7 @@ function progressSchedule(){
 
 // Call when an account generation changes, before replacing local account state.
 function progressInvalidate(){
+ if(typeof runControlsAccountChanged==='function')runControlsAccountChanged();
  cloudEpoch++;clearTimeout(cloudTimer);cloudAbort?.abort();cloudAbort=null;
  cloudEnabled=false;cloudDirty=false;cloudRevision=0;cloudFlight=null;cloudStarting=null;
 }
@@ -120,8 +126,8 @@ function progressStart(){
    const account=await response.json();if(token!==cloudEpoch)return false;
    const owner=account.registered?String(account.id||''):'';
    if(account.registered&&!owner)throw Error('account identity missing');
-   if(cloudAccountOwner&&cloudAccountOwner!==owner){p=C.fresh();localStorage.setItem(KEY,JSON.stringify(p));cloudAccountOwner=owner;progressInvalidate();return await progressStart();}
-   cloudAccountOwner=owner;
+   if((cloudAccountKnown||cloudAccountOwner)&&cloudAccountOwner!==owner){p=C.fresh();localStorage.setItem(KEY,JSON.stringify(p));cloudAccountOwner=owner;cloudAccountKnown=true;progressInvalidate();if(typeof mapChapter!=='undefined')mapChapter=1;if(typeof mapPage!=='undefined')mapPage=0;progressRefreshView(true);return await progressStart();}
+   cloudAccountOwner=owner;cloudAccountKnown=true;
    if(typeof StudyTools!=='undefined'){await StudyTools.session(account);if(!progressCurrent(token,owner))return false;}
    if(!account.registered){cloudEnabled=false;progressStatus('进度保存在此设备 · 登录后可跨设备同步');return false;}
    const r=await fetch('/api/progress',{headers:{'X-Study-Owner':owner}});if(!progressCurrent(token,owner))return false;

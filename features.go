@@ -433,7 +433,7 @@ func (f *features) createMemberCode(w http.ResponseWriter, r *http.Request) {
 func dailyDate() string {
 	return time.Now().In(time.FixedZone("北京时间", 8*3600)).Format("2006-01-02")
 }
-func validGoal(goal int) bool               { return goal == 5000 || goal == 10000 || goal == 20000 }
+func validGoal(goal int) bool               { return goal >= 1000 && goal <= 20000 && goal%1000 == 0 }
 func dailyKey(date string, goal int) string { return fmt.Sprintf("%s:%d", date, goal) }
 func (f *features) challenge(_ string, goal int) []quizQuestion {
 	seed := sha256.Sum256([]byte(fmt.Sprintf("english-quest-permanent-v1:%s:%d", f.mainEdition(goal), goal)))
@@ -457,6 +457,10 @@ func (f *features) challenge(_ string, goal int) []quizQuestion {
 	return out
 }
 func (f *features) dailyQuiz(w http.ResponseWriter, r *http.Request) {
+	if !sameOrigin(r) {
+		http.Error(w, "request denied", 403)
+		return
+	}
 	if r.Method != "GET" {
 		http.Error(w, "method not allowed", 405)
 		return
@@ -485,8 +489,13 @@ func (f *features) dailyQuiz(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	best, hasBest := bestEntry(f.data.Daily[board], id)
+	timer := attemptTimer(attemptID, goal, f.data.Attempts[attemptID], time.Now().UnixMilli())
 	f.mu.Unlock()
-	writeJSON(w, map[string]any{"date": date, "goal": goal, "period": "all-time", "edition": f.mainEdition(goal), "questions": f.challenge(date, goal), "attemptId": attemptID, "submitted": false, "hasBest": hasBest, "best": publicEntry(best, hasBest)})
+	response := map[string]any{"date": date, "goal": goal, "period": "all-time", "edition": f.mainEdition(goal), "questions": f.challenge(date, goal), "attemptId": attemptID, "submitted": false, "hasBest": hasBest, "best": publicEntry(best, hasBest)}
+	for key, value := range timer {
+		response[key] = value
+	}
+	writeJSON(w, response)
 }
 func cleanName(s string) string {
 	s = strings.TrimSpace(s)
@@ -501,6 +510,10 @@ func cleanName(s string) string {
 	return s
 }
 func (f *features) dailySubmit(w http.ResponseWriter, r *http.Request) {
+	if !sameOrigin(r) {
+		http.Error(w, "request denied", 403)
+		return
+	}
 	if r.Method != "POST" || r.Header.Get("Content-Type") != "application/json" {
 		http.Error(w, "JSON POST required", 405)
 		return
@@ -535,7 +548,10 @@ func (f *features) dailySubmit(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "请先开始永久榜挑战；每轮只能提交一次", 400)
 		return
 	}
-	start := attempt.Started
+	if attempt.PauseAt != 0 {
+		http.Error(w, "请先继续挑战再提交", http.StatusConflict)
+		return
+	}
 	correct := 0
 	for i, q := range f.challenge(date, body.Goal) {
 		if q.ID == body.Answers[i] {
@@ -543,7 +559,7 @@ func (f *features) dailySubmit(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 	now := time.Now().UnixMilli()
-	elapsed := now - start
+	elapsed := boardElapsed(attempt, now)
 	if elapsed < 1000 {
 		elapsed = 1000
 	}

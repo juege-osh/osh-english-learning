@@ -120,9 +120,14 @@ func (f *features) accountUsername(user string) string {
 }
 
 type boardAttempt struct {
-	User    string `json:"user"`
-	Board   string `json:"board"`
-	Started int64  `json:"started"`
+	User      string `json:"user"`
+	Board     string `json:"board"`
+	Started   int64  `json:"started"`
+	PauseAt   int64  `json:"pauseAt,omitempty"`
+	RestMs    int64  `json:"restMs,omitempty"`
+	RestUsed  int    `json:"restUsed,omitempty"`
+	FreePause bool   `json:"freePause,omitempty"`
+	Revision  int64  `json:"revision,omitempty"`
 }
 
 func (f *features) beginBoardAttempt(board, user string) (string, error) {

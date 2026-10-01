@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"errors"
+	"math"
 	"net/http"
 	"os"
 	"path/filepath"
@@ -90,11 +91,13 @@ func validProgressDocument(raw json.RawMessage) bool {
 		Words   map[string]json.RawMessage `json:"words"`
 		Days    map[string]json.RawMessage `json:"days"`
 		Basics  json.RawMessage            `json:"basics"`
+		Goal    json.RawMessage            `json:"goal"`
+		MainRun json.RawMessage            `json:"mainRun"`
 	}
 	if json.Unmarshal(raw, &p) != nil || p.Version != 1 || p.XP < 0 || p.XP > 450000 || p.Levels == nil || p.Bosses == nil || p.Words == nil || p.Days == nil {
 		return false
 	}
-	return len(p.Levels) <= 2000 && len(p.Bosses) <= 200 && len(p.Words) <= 20120 && len(p.Days) <= 10000 && validBasicProgress(p.Basics)
+	return len(p.Levels) <= 2000 && len(p.Bosses) <= 200 && len(p.Words) <= 20120 && len(p.Days) <= 10000 && validBasicProgress(p.Basics) && validProgressGoal(p.Goal) && validMainRun(p.MainRun)
 }
 
 var phonicsProgressID = regexp.MustCompile(`^p(0[1-9]|[1-3][0-9]|4[0-4])$`)
@@ -135,4 +138,86 @@ func validBasicProgress(raw json.RawMessage) bool {
 		}
 	}
 	return true
+}
+
+func validProgressGoal(raw json.RawMessage) bool {
+	if len(raw) == 0 {
+		return true
+	}
+	goal, ok := mainRunNumber(raw)
+	return ok && validGoal(int(goal))
+}
+
+var mainRunID = regexp.MustCompile(`^[a-zA-Z0-9_-]{1,100}$`)
+
+// Mirror Core.validateRun. Missing legacy runs remain valid; explicit null,
+// unknown fields, fractional timestamps and unsafe JavaScript integers do not.
+func validMainRun(raw json.RawMessage) bool {
+	if len(raw) == 0 {
+		return true
+	}
+	var fields map[string]json.RawMessage
+	if json.Unmarshal(raw, &fields) != nil || len(fields) != 12 {
+		return false
+	}
+	var id string
+	if json.Unmarshal(fields["id"], &id) != nil || !mainRunID.MatchString(id) {
+		return false
+	}
+	nums := map[string]int64{}
+	for _, key := range []string{"resetAt", "startedAt", "elapsedMs", "restUsed", "correct", "wrong", "mainXp", "updatedAt"} {
+		data, exists := fields[key]
+		value, ok := mainRunNumber(data)
+		if !exists || !ok {
+			return false
+		}
+		nums[key] = value
+	}
+	if nums["mainXp"] > 230000 || nums["restUsed"] > 40 {
+		return false
+	}
+	if string(fields["paused"]) != "true" && string(fields["paused"]) != "false" {
+		return false
+	}
+	paused := string(fields["paused"]) == "true"
+	nullable := map[string]*int64{}
+	for _, key := range []string{"runningSince", "finishedAt"} {
+		data, exists := fields[key]
+		if !exists {
+			return false
+		}
+		if string(data) == "null" {
+			nullable[key] = nil
+			continue
+		}
+		value, ok := mainRunNumber(data)
+		if !ok {
+			return false
+		}
+		nullable[key] = &value
+	}
+	if nums["resetAt"] > nums["startedAt"] || nums["startedAt"] > nums["updatedAt"] {
+		return false
+	}
+	running, finished := nullable["runningSince"], nullable["finishedAt"]
+	for _, value := range []*int64{running, finished} {
+		if value != nil && (*value < nums["startedAt"] || *value > nums["updatedAt"]) {
+			return false
+		}
+	}
+	if finished != nil && (paused || running != nil) {
+		return false
+	}
+	return paused || finished != nil || running != nil
+}
+
+func mainRunNumber(raw json.RawMessage) (int64, bool) {
+	if len(raw) == 0 || string(raw) == "null" {
+		return 0, false
+	}
+	var n float64
+	if json.Unmarshal(raw, &n) != nil || n < 0 || n > 9007199254740991 || math.Trunc(n) != n {
+		return 0, false
+	}
+	return int64(n), true
 }

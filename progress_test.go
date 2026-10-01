@@ -119,3 +119,88 @@ func TestProgressOwnerBindingAndIsolation(t *testing.T) {
 		t.Fatalf("isolated: %s", w.Body.String())
 	}
 }
+
+func TestProgressTwentyGoalsAndMainRunSchema(t *testing.T) {
+	base := map[string]any{"version": 1, "xp": 0, "levels": map[string]any{}, "bosses": map[string]any{}, "words": map[string]any{}, "days": map[string]any{}}
+	check := func() bool { b, _ := json.Marshal(base); return validProgressDocument(b) }
+	if !check() {
+		t.Fatal("legacy document rejected")
+	}
+	for _, g := range mainGoals() {
+		base["goal"] = g
+		if !check() {
+			t.Fatal("valid goal", g)
+		}
+	}
+	for _, g := range []any{0, 1500, 20001, nil, "1000", 1000.5} {
+		base["goal"] = g
+		if check() {
+			t.Fatal("invalid goal accepted", g)
+		}
+	}
+	base["goal"] = 1000
+	run := map[string]any{"id": "run_1", "resetAt": 0, "startedAt": 100, "elapsedMs": 25, "runningSince": 100, "paused": false, "finishedAt": nil, "restUsed": 0, "correct": 1, "wrong": 0, "mainXp": 100, "updatedAt": 200}
+	base["mainRun"] = run
+	if !check() {
+		t.Fatal("valid active run rejected")
+	}
+	for _, key := range []string{"resetAt", "startedAt", "elapsedMs", "restUsed", "correct", "wrong", "mainXp", "updatedAt"} {
+		old := run[key]
+		for _, bad := range []any{nil, -1, 1.5, 9007199254740992.0, "100"} {
+			run[key] = bad
+			if check() {
+				t.Fatalf("accepted %s=%v", key, bad)
+			}
+		}
+		run[key] = old
+	}
+	for key, bad := range map[string]any{"id": "../bad", "restUsed": 41, "mainXp": 230001, "paused": nil, "runningSince": 99, "finishedAt": 201, "resetAt": 101, "startedAt": 201} {
+		old := run[key]
+		run[key] = bad
+		if check() {
+			t.Fatalf("accepted %s=%v", key, bad)
+		}
+		run[key] = old
+	}
+	run["extra"] = 0
+	if check() {
+		t.Fatal("unknown run field")
+	}
+	delete(run, "extra")
+	delete(run, "correct")
+	if check() {
+		t.Fatal("missing run field")
+	}
+	run["correct"] = 1
+	run["paused"] = true
+	run["runningSince"] = nil
+	run["restUsed"] = 40
+	if !check() {
+		t.Fatal("free pause or smaller goal quota rejected")
+	}
+	run["runningSince"] = 100
+	if !check() {
+		t.Fatal("paid pause rejected")
+	}
+	run["paused"] = false
+	run["runningSince"] = nil
+	if check() {
+		t.Fatal("active run without clock")
+	}
+	run["finishedAt"] = 200
+	if !check() {
+		t.Fatal("finished run rejected")
+	}
+	run["paused"] = true
+	if check() {
+		t.Fatal("finished paused run")
+	}
+	base["mainRun"] = nil
+	if check() {
+		t.Fatal("explicit null run")
+	}
+	delete(base, "mainRun")
+	if !check() {
+		t.Fatal("legacy document after tests")
+	}
+}

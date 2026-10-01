@@ -1,11 +1,13 @@
 (function(root,factory){if(typeof module==='object'&&module.exports)module.exports=factory();else root.EnglishCore=factory();})(typeof globalThis!=='undefined'?globalThis:this,function(){
 'use strict';
 const DAY=86400000;
+const GOALS=Object.freeze(Array.from({length:20},(_,i)=>(i+1)*1000));
+const validGoal=n=>GOALS.includes(n);
 const dayKey=(t=Date.now())=>{const d=new Date(t);return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;};
 const normalize=s=>String(s).toLowerCase().trim().replace(/[’‘]/g,"'").replace(/[.,!?;:]+$/,'').replace(/\s+/g,' ');
 const shuffle=arr=>{let a=arr.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
 function fresh(){return {version:1,xp:0,goal:10000,pet:'cat',levels:{},bosses:{},missions:{},words:{},industries:{},days:{},dailyGoal:20};}
-function goal(p){return [5000,10000,20000].includes(p.goal)?p.goal:10000;}
+function goal(p){return validGoal(p.goal)?p.goal:10000;}
 function unlocked(p,n){if(n===1)return true;if(n<1||n>goal(p)/10||!p.levels[n-1])return false;return (n-1)%10!==0||!!p.bosses[n-1];}
 function mastered(r,now=Date.now()){return !!r&&r.days.length>=3&&r.production&&r.last-r.first>=7*DAY&&r.last>=r.failed&&r.due>now;}
 function record(p,id,correct,production=false,now=Date.now()){
@@ -13,11 +15,63 @@ function record(p,id,correct,production=false,now=Date.now()){
  r.seen++;p.days[date]=(p.days[date]||0)+1;
  if(correct){r.last=now;if(!r.days.includes(date)){r.days.push(date);r.days=r.days.slice(-8);const intervals=[1,3,7,14,30];r.due=now+intervals[Math.min(r.days.length-1,4)]*DAY;}r.production=r.production||production;}
  else{r.failed=now;r.days=[];r.production=false;r.wrong++;r.due=now+10*60*1000;}
- p.words[key]=r;return r;
+ p.words[key]=r;if(/^\d+$/.test(key)&&p.mainRun){p.mainRun[correct?'correct':'wrong']++;p.mainRun.updatedAt=Math.max(p.mainRun.updatedAt,now);}return r;
 }
-function complete(p,type,id,score){let table=type==='level'?p.levels:type==='boss'?p.bosses:p.missions;const first=!table[id];table[id]=Math.max(table[id]||0,score);if(first)p.xp+=type==='level'?100:type==='boss'?150:80;return first;}
+function complete(p,type,id,score){let table=type==='level'?p.levels:type==='boss'?p.bosses:p.missions;const first=!table[id];table[id]=Math.max(table[id]||0,score);if(first){const award=type==='level'?100:type==='boss'?150:80;p.xp+=award;if(p.mainRun&&(type==='level'||type==='boss'))p.mainRun.mainXp+=award;}return first;}
 function stats(p,now=Date.now()){const target=goal(p),records=Object.entries(p.words).filter(([k])=>/^\d+$/.test(k)&&+k<=target);return {learned:records.length,mastered:records.filter(([,v])=>mastered(v,now)).length,due:Object.values(p.words).filter(v=>v.due<=now).length,passed:Object.keys(p.levels).filter(k=>+k<=target/10).length,phraseLearned:Object.keys(p.words).filter(k=>k.startsWith('p')).length,wrongUnique:records.filter(([,v])=>v.wrong>0).length};}
-function rank(wrong,target=10000){if(![5000,10000,20000].includes(target)||!Number.isSafeInteger(wrong)||wrong<0||wrong>target)throw Error('Invalid rank');if(wrong===0)return {name:'最强王者',stage:'',order:10};const bands=[{max:100,name:'王者',order:9},{max:200,name:'宗师',order:8},{max:500,name:'大师',order:7},{max:1000,name:'钻石',order:6},{max:2000,name:'翡翠',order:5},{max:3000,name:'铂金',order:4},{max:4000,name:'黄金',order:3},{max:5000,name:'白银',order:2},{max:10000,name:'青铜',order:1}];let low=1;for(const b of bands){const top=Math.round(b.max*target/10000);if(wrong<=top){const width=top-low+1,part=Math.min(2,Math.floor((top-wrong)*3/width));return {name:b.name,stage:['初级','中级','高级'][part],order:b.order};}low=top+1;}}
+function rank(wrong,target=10000){if(!validGoal(target)||!Number.isSafeInteger(wrong)||wrong<0||wrong>target)throw Error('Invalid rank');if(wrong===0)return {name:'最强王者',stage:'',order:10};const bands=[{max:100,name:'王者',order:9},{max:200,name:'宗师',order:8},{max:500,name:'大师',order:7},{max:1000,name:'钻石',order:6},{max:2000,name:'翡翠',order:5},{max:3000,name:'铂金',order:4},{max:4000,name:'黄金',order:3},{max:5000,name:'白银',order:2},{max:10000,name:'青铜',order:1}];let low=1;for(const b of bands){const top=Math.round(b.max*target/10000);if(wrong<=top){const width=top-low+1,part=Math.min(2,Math.floor((top-wrong)*3/width));return {name:b.name,stage:['初级','中级','高级'][part],order:b.order};}low=top+1;}}
+const runKeys=['id','resetAt','startedAt','elapsedMs','runningSince','paused','finishedAt','restUsed','correct','wrong','mainXp','updatedAt'];
+const runNumber=n=>Number.isSafeInteger(n)&&n>=0;
+function validateRun(r){
+ if(r===undefined)return true;
+ if(!r||typeof r!=='object'||Array.isArray(r)||Object.keys(r).length!==runKeys.length||Object.keys(r).some(k=>!runKeys.includes(k)))return false;
+ if(typeof r.id!=='string'||! /^[a-zA-Z0-9_-]{1,100}$/.test(r.id)||!['resetAt','startedAt','elapsedMs','restUsed','correct','wrong','mainXp','updatedAt'].every(k=>runNumber(r[k]))||r.mainXp>230000||r.restUsed>40||typeof r.paused!=='boolean')return false;
+ if(!(r.runningSince===null||runNumber(r.runningSince))||!(r.finishedAt===null||runNumber(r.finishedAt)))return false;
+ return r.resetAt<=r.startedAt&&r.startedAt<=r.updatedAt&&(r.runningSince===null||r.startedAt<=r.runningSince&&r.runningSince<=r.updatedAt)&&(r.finishedAt===null||r.startedAt<=r.finishedAt&&r.finishedAt<=r.updatedAt)&&!(r.finishedAt!==null&&(r.paused||r.runningSince!==null))&&(r.paused||r.finishedAt!==null||r.runningSince!==null);
+}
+function runTime(now){if(!runNumber(now))throw Error('计时时间无效');return now;}
+function runId(now,id){const value=id===undefined?('run_'+now+'_'+(typeof crypto!=='undefined'&&crypto.randomUUID?crypto.randomUUID().replace(/-/g,''):Math.random().toString(36).slice(2)+Math.random().toString(36).slice(2))):id;if(typeof value!=='string'||! /^[a-zA-Z0-9_-]{1,100}$/.test(value))throw Error('本轮编号无效');return value;}
+function inferredMainXp(p){return Object.keys(p.levels||{}).length*100+Object.keys(p.bosses||{}).length*150;}
+function runStart(p,now=Date.now(),id){
+ if(p.mainRun)return p.mainRun;
+ runTime(now);
+ p.mainRun={id:runId(now,id),resetAt:0,startedAt:now,elapsedMs:runNumber(p.totalTimeMs)?p.totalTimeMs:0,runningSince:now,paused:false,finishedAt:null,restUsed:0,correct:0,wrong:0,mainXp:0,updatedAt:now};return p.mainRun;
+}
+function runElapsed(p,now=Date.now()){
+ runTime(now);const r=p.mainRun;if(!r)return runNumber(p.totalTimeMs)?p.totalTimeMs:0;
+ return r.elapsedMs+(r.runningSince===null?0:Math.max(0,now-r.runningSince));
+}
+function runPause(p,now=Date.now()){
+ const r=runStart(p,now),limit=goal(p)/1000*2;now=Math.max(runTime(now),r.updatedAt);
+ if(r.paused)return {freePaused:r.runningSince===null,used:r.restUsed,limit,run:r};
+ if(r.finishedAt!==null)return {freePaused:false,used:r.restUsed,limit,run:r};
+ if(r.restUsed>=limit){r.paused=true;r.updatedAt=now;return {freePaused:false,used:r.restUsed,limit,run:r};}
+ r.elapsedMs=runElapsed(p,now);r.runningSince=null;r.paused=true;r.restUsed++;r.updatedAt=now;p.totalTimeMs=r.elapsedMs;
+ return {freePaused:true,used:r.restUsed,limit,run:r};
+}
+function runResume(p,now=Date.now()){
+ const r=runStart(p,now);now=Math.max(runTime(now),r.updatedAt);
+ if(r.paused){r.paused=false;if(r.runningSince===null)r.runningSince=now;r.updatedAt=now;}return r;
+}
+function runFinish(p,now=Date.now()){
+ const r=runStart(p,now);now=Math.max(runTime(now),r.updatedAt);
+ if(r.finishedAt===null){r.elapsedMs=runElapsed(p,now);r.runningSince=null;r.paused=false;r.finishedAt=now;r.updatedAt=now;p.totalTimeMs=r.elapsedMs;}return r;
+}
+function runRestart(p,now=Date.now(),id){
+ runTime(now);const old=p.mainRun;
+ const mainXp=Math.max(old?.mainXp||0,inferredMainXp(p));
+ const nextId=runId(now,id);if(old&&nextId===old.id)throw Error('重新开始需要新的本轮编号');
+ p.words=Object.fromEntries(Object.entries(p.words||{}).filter(([key])=>!/^\d+$/.test(key)));p.levels={};p.bosses={};p.xp=Math.max(0,p.xp-mainXp);p.totalTimeMs=0;
+ p.mainRun={id:nextId,resetAt:Math.max(1,now,(old?.resetAt||0)+1),startedAt:Math.max(1,now,(old?.resetAt||0)+1),elapsedMs:0,runningSince:Math.max(1,now,(old?.resetAt||0)+1),paused:false,finishedAt:null,restUsed:0,correct:0,wrong:0,mainXp:0,updatedAt:Math.max(1,now,(old?.resetAt||0)+1)};return p.mainRun;
+}
+function compareRuns(a,b){const x=a?.resetAt||0,y=b?.resetAt||0;if(x===0&&y===0)return 0;if(x!==y)return x-y;return a.id===b.id?0:(a.id>b.id?1:-1);}
+function mergeRun(a,b){
+ if(!a)return b?{...b}:undefined;if(!b)return {...a};
+ if(compareRuns(a,b)!==0)return {...(compareRuns(a,b)>0?a:b)};
+ const selected=a.updatedAt>b.updatedAt?a:b.updatedAt>a.updatedAt?b:JSON.stringify(a)>JSON.stringify(b)?a:b;
+ const elapsed=r=>r.elapsedMs+(r.runningSince===null?0:Math.max(0,selected.updatedAt-r.runningSince));
+ return {...selected,elapsedMs:Math.max(elapsed(selected),a.elapsedMs,b.elapsedMs),runningSince:selected.runningSince===null?null:selected.updatedAt,restUsed:Math.max(a.restUsed,b.restUsed),correct:Math.max(a.correct,b.correct),wrong:Math.max(a.wrong,b.wrong),mainXp:Math.max(a.mainXp,b.mainXp)};
+}
 function validateBasics(value){
  if(value===undefined)return true;
  if(!value||typeof value!=='object'||Array.isArray(value)||Object.keys(value).some(k=>!['phonics','grammar'].includes(k)))return false;
@@ -52,7 +106,7 @@ function mergeBasics(a={},b={}){
  }return out;
 }
 function validate(p){
- if(!p||p.version!==1||!Number.isSafeInteger(p.xp)||p.xp<0||p.xp>450000||!(p.goal===undefined||[5000,10000,20000].includes(p.goal))||!(p.pet===undefined||['cat','dog','rabbit','mouse','hamster','fox','bear','panda','koala','tiger','lion','wolf','monkey','pig','cow','sheep','horse','unicorn','deer','giraffe','elephant','zebra','hippo','rhino','camel','kangaroo','sloth','otter','hedgehog','squirrel','raccoon','snake','turtle','frog','crocodile','penguin','owl','duck','swan','peacock','chick','fish','dolphin','whale','octopus','crab','butterfly','bee','ladybug','dragon'].includes(p.pet)))return false;
+ if(!p||p.version!==1||!Number.isSafeInteger(p.xp)||p.xp<0||p.xp>450000||!(p.goal===undefined||validGoal(p.goal))||!(p.pet===undefined||['cat','dog','rabbit','mouse','hamster','fox','bear','panda','koala','tiger','lion','wolf','monkey','pig','cow','sheep','horse','unicorn','deer','giraffe','elephant','zebra','hippo','rhino','camel','kangaroo','sloth','otter','hedgehog','squirrel','raccoon','snake','turtle','frog','crocodile','penguin','owl','duck','swan','peacock','chick','fish','dolphin','whale','octopus','crab','butterfly','bee','ladybug','dragon'].includes(p.pet)))return false;
  for(const key of ['levels','bosses','missions','words','days'])if(!p[key]||typeof p[key]!=='object'||Array.isArray(p[key]))return false;
  if(Object.keys(p.words).length>20120||Object.keys(p.levels).length>2000)return false;
  for(const [id,r] of Object.entries(p.words))if(!/^(?:[1-9]\d{0,3}|1\d{4}|20000|p(?:[1-9]\d?|1[01]\d|120))$/.test(id)||!r||!Array.isArray(r.days)||r.days.length>8||r.days.some(d=>!/^\d{4}-\d{2}-\d{2}$/.test(d))||new Set(r.days).size!==r.days.length||!['first','last','due','failed','wrong','seen'].every(k=>Number.isFinite(r[k])&&r[k]>=0)||typeof r.production!=='boolean')return false;
@@ -60,8 +114,8 @@ function validate(p){
  for(const [id,score]of Object.entries(p.bosses))if(!/^\d+$/.test(id)||+id<10||+id>2000||+id%10!==0||!Number.isFinite(score)||score<80||score>100)return false;
  for(const[id,score]of Object.entries(p.missions))if(!/^(dev|ai|travel)0[1-4]$/.test(id)||!Number.isFinite(score)||score<80||score>100)return false;
  for(const [key,count]of Object.entries(p.days))if(!/^\d{4}-\d{2}-\d{2}$/.test(key)||!Number.isSafeInteger(count)||count<0)return false;
- return [10,20,30,50].includes(p.dailyGoal)&&validateBasics(p.basics);
+ return [10,20,30,50].includes(p.dailyGoal)&&validateBasics(p.basics)&&validateRun(p.mainRun);
 }
 function choices(w,pool,field){const correct=w[field];const different=shuffle(pool.filter(v=>v.id!==w.id&&v[field]&&v[field]!==correct));const out=[w],seen=new Set([correct]);for(const v of different){if(!seen.has(v[field])){out.push(v);seen.add(v[field]);}if(out.length===4)break;}return shuffle(out);}
-return {DAY,dayKey,normalize,shuffle,fresh,goal,unlocked,mastered,record,complete,stats,rank,validate,choices,validateBasics,basicEntry,studyBasic,recordBasic,mergeBasics};
+return {GOALS,validGoal,runStart,runElapsed,runPause,runResume,runRestart,runFinish,validateRun,compareRuns,mergeRun,inferredMainXp,DAY,dayKey,normalize,shuffle,fresh,goal,unlocked,mastered,record,complete,stats,rank,validate,choices,validateBasics,basicEntry,studyBasic,recordBasic,mergeBasics};
 });

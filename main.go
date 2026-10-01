@@ -11,7 +11,7 @@ import (
 	"time"
 )
 
-//go:embed index.html style.css app.js features-ui.js member-ui.js chat-ui.js progress-sync.js core.js basics-ui.js game-effects.js game-effects.css guide-ui.js guide.css qrcode.min.js study-core.js study-ui.js study-ui.css study-practice.js study-practice.css study-speaking.js study-speaking.css manifest.webmanifest app-icon.svg service-worker.js data/words.json data/scenarios.json data/examples.json data/industries.json data/industry_words.json data/phonics.json data/grammar.json audio/phonics/p*.ogg provenance/phonics-audio.md
+//go:embed index.html style.css app.js run-controls.js features-ui.js member-ui.js chat-ui.js progress-sync.js core.js basics-ui.js game-effects.js game-effects.css guide-ui.js guide.css qrcode.min.js study-core.js study-ui.js study-ui.css study-practice.js study-practice.css study-speaking.js study-speaking.css manifest.webmanifest app-icon.svg service-worker.js data/words.json data/scenarios.json data/examples.json data/industries.json data/industry_words.json data/phonics.json data/grammar.json audio/phonics/p*.ogg provenance/phonics-audio.md
 var assets embed.FS
 
 func main() {
@@ -100,6 +100,7 @@ func main() {
 	mux.HandleFunc("/api/bookings/review", f.bookingReview)
 	mux.HandleFunc("/api/daily", f.dailyQuiz)
 	mux.HandleFunc("/api/daily/submit", f.dailySubmit)
+	mux.HandleFunc("/api/daily/attempt", f.dailyAttempt)
 	mux.HandleFunc("/api/daily/leaderboard", f.leaderboard)
 	mux.HandleFunc("/api/industries", f.industryCatalog)
 	mux.HandleFunc("/api/industries/challenge", f.industryQuiz)
@@ -133,7 +134,7 @@ func main() {
 	mux.HandleFunc("/api/friends/remove", f.friendRemove)
 	mux.HandleFunc("/api/health", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/json")
-		json.NewEncoder(w).Encode(map[string]interface{}{"ok": true, "service": "english-quest", "version": "1.31.3", "words": 20000, "levels": 2000, "goals": []int{5000, 10000, 20000}, "scenario_missions": 12, "phrases": 120, "tracks": len(f.industries), "industry_tracks": 10, "exam_tracks": 7, "progress_storage": "browser-local-and-account-cloud", "permanent_leaderboard": true, "proof_applications": true, "member_bookings": true, "live_races": true, "duo_teams": true, "friends": true, "chat_channels": len(chatChannels), "personal_study_tools": true, "dictation": true, "sentence_shadowing": true, "oral_dialogue": true, "phonics": 44, "grammar_points": 36, "payment": paymentSummary(f)})
+		json.NewEncoder(w).Encode(map[string]interface{}{"ok": true, "service": "english-quest", "version": "1.31.4", "words": 20000, "levels": 2000, "goals": mainGoals(), "scenario_missions": 12, "phrases": 120, "tracks": len(f.industries), "industry_tracks": 10, "exam_tracks": 7, "progress_storage": "browser-local-and-account-cloud", "permanent_leaderboard": true, "proof_applications": true, "member_bookings": true, "live_races": true, "duo_teams": true, "friends": true, "chat_channels": len(chatChannels), "personal_study_tools": true, "dictation": true, "sentence_shadowing": true, "oral_dialogue": true, "phonics": 44, "grammar_points": 36, "payment": paymentSummary(f)})
 	})
 	mux.HandleFunc("/", serveStatic(staticFiles))
 	addr := fmt.Sprintf("127.0.0.1:%d", *port)
