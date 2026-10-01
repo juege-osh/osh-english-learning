@@ -2,7 +2,7 @@
 
 此目录包含前端逻辑测试及词库例句构建辅助脚本。
 
-`curate_starter_examples.py` 是前 100 词双语句子的人工编辑层。重新构建整份例句数据时，在补全和简体转换后，依次运行它、`curate_first500_examples.py`、`curate_common_examples.py`、`curate_next200_examples.py --apply`，以及第 701–1100 词四批对应的 `curate_*_example_gaps.py --apply`。再依次运行 `curate_main_1101_1500.py --apply`、`curate_main_1501_1900.py --apply`、`curate_main_1901_2300.py --apply`、`curate_main_2301_2700.py --apply`、`curate_main_2701_3100.py --apply`、`curate_main_3101_3500.py --apply`、`curate_main_3501_3900.py --apply`、`curate_main_3901_4300.py --apply`、`curate_main_4301_4700.py --apply`、`curate_main_4701_5100.py --apply`、`curate_main_5101_5500.py --apply`、`curate_main_5501_5900.py --apply`、`curate_main_5901_6300.py --apply`、`curate_main_6301_6700.py --apply`、`curate_main_6701_7100.py --apply`、`curate_main_7101_7900.py --apply`、`curate_main_7901_8500.py --apply`、`curate_main_8501_9100.py --apply`，前 9,100 词会恢复为每词两句双语例句。第 501–9100 词的编辑原稿存于 `data/curated_examples_*.tsv`。不要颠倒顺序。
+`curate_starter_examples.py` 是前 100 词双语句子的人工编辑层。重新构建整份例句数据时，在补全和简体转换后，依次运行它、`curate_first500_examples.py`、`curate_common_examples.py`、`curate_next200_examples.py --apply`，以及第 701–1100 词四批对应的 `curate_*_example_gaps.py --apply`。再依次运行 `curate_main_1101_1500.py --apply`、`curate_main_1501_1900.py --apply`、`curate_main_1901_2300.py --apply`、`curate_main_2301_2700.py --apply`、`curate_main_2701_3100.py --apply`、`curate_main_3101_3500.py --apply`、`curate_main_3501_3900.py --apply`、`curate_main_3901_4300.py --apply`、`curate_main_4301_4700.py --apply`、`curate_main_4701_5100.py --apply`、`curate_main_5101_5500.py --apply`、`curate_main_5501_5900.py --apply`、`curate_main_5901_6300.py --apply`、`curate_main_6301_6700.py --apply`、`curate_main_6701_7100.py --apply`、`curate_main_7101_7900.py --apply`、`curate_main_7901_8500.py --apply`、`curate_main_8501_9100.py --apply`、`curate_main_9101_9700.py --apply`，前 9,700 词会恢复为每词两句双语例句。第 501–9700 词的编辑原稿存于 `data/curated_examples_*.tsv`。不要颠倒顺序。
 
 `augment_bilingual_examples.py` 使用已下载的 Tatoeba 英中句子和关联表，从短句候选中优先选择有译文的例句。先不带参数运行并抽查结果；确认后加 `--apply`。完成语料补全及简体转换后，再执行上述人工编辑脚本。
 
@@ -424,3 +424,25 @@ limo修正为豪华轿车，cranberry为蔓越莓，console补游戏机；Bach�
 42项Go测试通过（5.072秒）、vet、前9100词核心与8112行业句子目标检查、app.js语法检查通过；47项隔离四账号检查通过。实际预览展开bailout、paramedic、macho和resilience的两句双语，并点击播放按钮，主线0词保持，无控制台错误。仅内容变化，未重复并发或小屏布局验收。
 
 正式发布、仓库逐文件核验和资源采样的回执见本机`/tmp/english-quest-v1288-evidence/verification.json`。真实支付宝配置及本人试付、社交主页和微信群联系方式、协作者通行密钥验证仍待本人处理。结构检查和逐词编写不等于全库专业语言审校完成。
+
+## v1.28.9 缩写与词义核验
+
+- [NHGRI PCR 词条](https://www.genome.gov/genetics-glossary/Polymerase-Chain-Reaction-PCR)：PCR是扩增特定DNA片段的实验室技术，不仅指某一种病毒检测。
+- [苏格兰职业资格说明](https://www.sqa.org.uk/sqa/2.html)与[Aena机场目录](https://www.aena.es/en/airlines/airports-and-destinations/our-airports.html)：SVQ在职业教育和航班语境有不同含义，两句分别示范，不能只靠缩写判定。
+- [WHO缩写说明](https://www.who.int/docs/default-source/documents/about-us/transformation/who_transformation_update_-29jan2020.pdf)：WHA为世界卫生大会；[Medicaid官网](https://www.medicaid.gov/medicaid)说明美国医疗补助项目。例句不承诺任何人的资格。
+- [皇家莎士比亚剧团](https://www.rsc.org.uk/about-us)、[德国社民党纲领](https://www.spd.de/fileadmin/Dokumente/Beschluesse/Grundsatzprogramme/hamburger_programm_englisch.pdf)核对RSC和SPD；[制造商无碳复写纸说明](https://www.telepaper.com/products/ncr-carbonless-paper/)核对NCR。
+- [民间舞资料](https://www.cdss.org/elibrary/dart/introduction.htm)核对contra dance；[Anthony Caro官网](https://www.anthonycaro.org/about)核对人名；[球队官网](https://www.mfc.co.uk/news/2025/august/11/open-training-session-next-monday/)核对Boro昵称。
+- [Macurco原厂操作手册的经销商存档](https://www.alarmax.com/customer/docs/skudocs/macurco-cx-xx-operation-manual-rev-2-1-0-.pdf)使用bUZ表示蜂鸣器设置。buz只作为少见的设备缩写介绍，不教成普通动词。
+
+这些资料用于核对词义，本站例句另行编写。医疗、法律句子只示范语言用法。
+
+
+## v1.28.9 主线推进到9700词
+
+第9101–9700词新增600个常用中文义和1200句自然双语，主线前9700词现每词都有简短中文义和两句双语。完整20000词尚余10300词继续编辑。编号、词头顺序和完整原词典定义保留，范围之外的词条、行业与场景内容不变。
+
+本批把relive改为重温、genus注明生物分类的属，adamant采用坚决的现代用法，cumin改为孜然，publicist采用宣传公关人员；sushi不再概括成生鱼片。SVQ分别示范机场代码和职业资格，PCR与WHA注明技术和机构语境；少见缩写不冒充日常实义词。三份作者批次冻结后，逐条审读600词1200句，修正移民居留身份、预订事故与人手不足等译文。每100词一份原稿，`qa/curate_main_9101_9700.py --apply`可重建。
+
+42项Go测试通过（6.276秒）、vet、前9700词核心与8112行业句子目标检查、app.js语法检查通过；47项隔离四账号检查通过。实际预览展开genus、adamant、cumin和sushi的两句双语，并点击例句播放按钮，主线0词保持，无控制台错误。仅内容变化，未重复并发或小屏布局验收。
+
+发布、私有仓库逐文件核验和资源采样的回执见本机`/tmp/english-quest-v1289-evidence/verification.json`。真实支付宝仍待配置与本人试付，社交主页、微信群联系方式和协作者验证仍待本人处理。逐词编写与结构检查不等于全库专业语言审校完成。
