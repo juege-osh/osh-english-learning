@@ -2,7 +2,7 @@
 
 此目录包含前端逻辑测试及词库例句构建辅助脚本。
 
-`curate_starter_examples.py` 是前 100 词双语句子的人工编辑层。重新构建整份例句数据时，在补全和简体转换后，依次运行它、`curate_first500_examples.py`、`curate_common_examples.py`、`curate_next200_examples.py --apply`，以及第 701–1100 词四批对应的 `curate_*_example_gaps.py --apply`。再依次运行 `curate_main_1101_1500.py --apply`、`curate_main_1501_1900.py --apply`、`curate_main_1901_2300.py --apply`、`curate_main_2301_2700.py --apply`、`curate_main_2701_3100.py --apply`、`curate_main_3101_3500.py --apply`、`curate_main_3501_3900.py --apply`、`curate_main_3901_4300.py --apply`、`curate_main_4301_4700.py --apply`、`curate_main_4701_5100.py --apply`、`curate_main_5101_5500.py --apply`、`curate_main_5501_5900.py --apply`、`curate_main_5901_6300.py --apply`、`curate_main_6301_6700.py --apply`、`curate_main_6701_7100.py --apply`、`curate_main_7101_7900.py --apply`、`curate_main_7901_8500.py --apply`、`curate_main_8501_9100.py --apply`、`curate_main_9101_9700.py --apply`、`curate_main_9701_10300.py --apply`、`curate_main_10301_10900.py --apply`、`curate_main_10901_11500.py --apply`、`curate_main_11501_12100.py --apply`、`curate_main_12101_12700.py --apply`、`curate_main_12701_13300.py --apply`、`curate_main_13301_13900.py --apply`、`curate_main_13901_14500.py --apply`、`curate_main_14501_15100.py --apply`、`curate_main_15101_15700.py --apply`、`curate_main_15701_16300.py --apply`、`curate_main_16301_16900.py --apply`、`curate_main_16901_17500.py --apply`、`curate_main_17501_18100.py --apply`、`curate_main_18101_18700.py --apply`、`curate_main_18701_19300.py --apply`，前 19,300 词会恢复为每词两句双语例句。第 501–19300 词的编辑原稿存于 `data/curated_examples_*.tsv`。不要颠倒顺序。
+`curate_starter_examples.py` 是前 100 词双语句子的人工编辑层。重新构建整份例句数据时，在补全和简体转换后，依次运行它、`curate_first500_examples.py`、`curate_common_examples.py`、`curate_next200_examples.py --apply`，以及第 701–1100 词四批对应的 `curate_*_example_gaps.py --apply`。再依次运行 `curate_main_1101_1500.py --apply`、`curate_main_1501_1900.py --apply`、`curate_main_1901_2300.py --apply`、`curate_main_2301_2700.py --apply`、`curate_main_2701_3100.py --apply`、`curate_main_3101_3500.py --apply`、`curate_main_3501_3900.py --apply`、`curate_main_3901_4300.py --apply`、`curate_main_4301_4700.py --apply`、`curate_main_4701_5100.py --apply`、`curate_main_5101_5500.py --apply`、`curate_main_5501_5900.py --apply`、`curate_main_5901_6300.py --apply`、`curate_main_6301_6700.py --apply`、`curate_main_6701_7100.py --apply`、`curate_main_7101_7900.py --apply`、`curate_main_7901_8500.py --apply`、`curate_main_8501_9100.py --apply`、`curate_main_9101_9700.py --apply`、`curate_main_9701_10300.py --apply`、`curate_main_10301_10900.py --apply`、`curate_main_10901_11500.py --apply`、`curate_main_11501_12100.py --apply`、`curate_main_12101_12700.py --apply`、`curate_main_12701_13300.py --apply`、`curate_main_13301_13900.py --apply`、`curate_main_13901_14500.py --apply`、`curate_main_14501_15100.py --apply`、`curate_main_15101_15700.py --apply`、`curate_main_15701_16300.py --apply`、`curate_main_16301_16900.py --apply`、`curate_main_16901_17500.py --apply`、`curate_main_17501_18100.py --apply`、`curate_main_18101_18700.py --apply`、`curate_main_18701_19300.py --apply`、`curate_main_19301_20000.py --apply`，全部20,000词会恢复为每词两句双语例句。第501–20000词的编辑原稿存于 `data/curated_examples_*.tsv`。不要颠倒顺序。
 
 `augment_bilingual_examples.py` 使用已下载的 Tatoeba 英中句子和关联表，从短句候选中优先选择有译文的例句。先不带参数运行并抽查结果；确认后加 `--apply`。完成语料补全及简体转换后，再执行上述人工编辑脚本。
 
@@ -74,7 +74,7 @@
 本轮永久榜后端最终42项Go测试4.428秒、并发检测53.935秒、vet及47项四账号检查通过；此前34/43项记录是改造前基线。
 
 
-当前十条行业路线共8112个学习条目，每个条目都有两句本站编写的双语行业用法，共16224句。程序员683、外贸774、金融846、AI创作831、营销767、医疗753、生物967、法律850、化学与材料932、旅行709，均已补齐。不同路线可能包含相同词，8112不是去重后的词汇数。主线20,000词的逐条语言编辑和44音标的专业听审仍待完成。
+当前十条行业路线共8112个学习条目，每个条目都有两句本站编写的双语行业用法，共16224句。程序员683、外贸774、金融846、AI创作831、营销767、医疗753、生物967、法律850、化学与材料932、旅行709，均已补齐。不同路线可能包含相同词，8112不是去重后的词汇数。主线20,000词已完成初步内容整理；全库专业语言审校和44音标的专业听审仍待完成。
 ## v1.26.1 行业用法补齐
 
 程序员、AI创作、医疗健康、旅行本次各增加100词的两句双语用法，共新增800句。四条路线现各覆盖200词、400句；十行业合计1422词、2844句，仍有6690词待补行业例句。此前版本中的前100词覆盖量是历史记录。主线词库、主线例句、场景与考试池保持不变，不增加主线进度。旅行的checked补充“托运的”，医疗的cranial补充“颅部的”，避免句子与释义不符。
@@ -721,3 +721,30 @@ prosthesis采用假肢、人工假体，matchup改为对阵，generational采用
 - [Merriam-Webster nonmedical](https://www.merriam-webster.com/dictionary/nonmedical)、[tannin](https://www.merriam-webster.com/dictionary/tannin)、[dystrophy](https://www.merriam-webster.com/dictionary/dystrophy)：非医疗、涩味与医学词义；仅教语言，未提供诊疗建议。
 - [英国气象局分点与季节](https://weather.metoffice.gov.uk/learn-about/weather/seasons/equinox-and-solstice)、[BIPM SI前缀](https://www.bipm.org/en/measurement-units/si-prefixes)、[澳大利亚CoE](https://www.studyaustralia.gov.au/en/plan-your-move/visa-application-process)、[英国OU](https://about.open.ac.uk/governance-ou/legal-regulatory-and-charitable-status)：半球语境、单位大小写和具体机构缩写。
 - [Merriam-Webster tellin](https://www.merriam-webster.com/dictionary/tellin)、[descendent](https://www.merriam-webster.com/dictionary/descendent)、[Russ](https://www.merriam-webster.com/dictionary/russ)、[lauder](https://www.merriam-webster.com/dictionary/lauder)与[Collins Cavendish](https://www.collinsdictionary.com/us/dictionary/english/cavendish)：罕见词、异体拼写、旧语与专名。keye未获可靠核义，保留待核标注。
+
+
+## v1.31.6：初步内容整理完成，转向质量核查
+
+本批整理第19301–20000词，新增700个简短中文义和1400句双语用法。主线20,000个词条现都有初步中文释义或性质说明，以及两句双语例句；有中文译文的词条覆盖20,000/20,000，两句都有译文的覆盖也为20,000/20,000。这是内容覆盖量，不是专业审校结论，也不表示原词表全部都是现代常用实义词。
+
+原学习ID、词头顺序、原完整词典正文、范围外词条与例句及行业内容保留。罕见形式、古旧用法、专名、缩写和冒犯性表达按具体性质说明；第19220词keye仍待可靠核义，不猜现代通用义。下一步重点核查词义、句子自然度、译文忠实度及语域。全库专业语言审校、44音参考录音的专业逐条听审和真人录音试听仍未完成。
+
+新增14份编辑原稿：`data/curated_glosses_19301_19400.tsv`至`curated_glosses_19901_20000.tsv`及对应的7份`curated_examples_*.tsv`，每份100词；由 `qa/curate_main_19301_20000.py` 校验，不带参数只预览，确认后加 `--apply`。重建整库时，先完成原始构建、语料补全与简体转换，再按既有顺序恢复各批人工编辑层；本批脚本紧接 `qa/curate_main_18701_19300.py --apply` 运行。不要先应用编辑层，再用原始构建覆盖它；详细顺序见 `qa/README.md`。
+
+本批62项顶层Go测试、20个子测试通过，Go检查6.812秒；vet、核心数据、行业练习、app语法及47项全新隔离四账号检查通过。47项不含需提权的站长审核与预约。Mac与Linux各77份完整嵌入资源逐字节核对通过，共154项。实际预览、整仓同步和发布结果见 `state/evidence-v1316/verification.json`；正式站版本以 `/api/health` 为准。本批未重复全量race、全套前端、小屏布局或真实付费AI请求，朗读按钮点击也不等于真人听审。入口更新为app?v55、words?v14、examples?v13，普通浏览器刷新后验收新内容。
+
+本批核义参考（释义和例句由本站编写）：
+
+- [CDC日本脑炎疫苗说明](https://www.cdc.gov/vaccines/hcp/current-vis/japanese-encephalitis.html)：JE为日本脑炎的医学缩写；条目只用于术语辨识和交流。
+- [Merriam-Webster bimonthly](https://www.merriam-webster.com/dictionary/bimonthly)：保留“每两个月一次”和“每月两次”两义，例句分别写明频率。
+- [Michael Caine官方传记](https://www.michaelcaine.com/biography)：Caine为姓氏，不误作Cain。
+- [NCI cytokine](https://www.cancer.gov/publications/dictionaries/cancer-terms/def/cytokine)：细胞因子术语；不提供诊断或用药建议。
+
+补充核义来源：
+
+- [Merriam-Webster Hermes](https://www.merriam-webster.com/dictionary/Hermes)、[bicep](https://www.merriam-webster.com/dictionary/bicep)、[flack](https://www.merriam-webster.com/dictionary/flack)、[Magdalene](https://www.merriam-webster.com/dictionary/Magdalene)：专名、变体与公关宣传含义。
+- [英国圣公会 churchwarden](https://www.churchofengland.org/life-events/vocations/step-2-discover-ways-serve/churchwarden-parish-officer)：堂区职务，不把parish译成教区。
+- [英国真菌学会 Cortinarius 检索表](https://www.britmycolsoc.org.uk/application/files/1615/2455/1908/Keys_-_THE_GENUS_CORTINARIUS_I_by_P_D_Orton.pdf)：cortina为蛛网状菌幕。
+- [Merriam-Webster nitrous](https://www.merriam-webster.com/dictionary/nitrous)：限定亚硝及一氧化二氮语境，不泛称所有含氮化合物。
+- [Cambridge nr](https://dictionary.cambridge.org/us/dictionary/english/nr)、[seater](https://dictionary.cambridge.org/us/dictionary/english/seater)、[BIPM SI前缀](https://www.bipm.org/en/measurement-units/si-prefixes)：地址缩写、复合构词与微克/纳秒单位。
+- [Scala官网](https://www.scala-lang.org/)、[NIH MeSH前庭阶](https://www.ncbi.nlm.nih.gov/mesh/68054738)：编程语言专名与解剖义分开说明。
