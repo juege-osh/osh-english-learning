@@ -2,7 +2,7 @@
 
 此目录包含前端逻辑测试及词库例句构建辅助脚本。
 
-`curate_starter_examples.py` 是前 100 词双语句子的人工编辑层。重新构建整份例句数据时，在补全和简体转换后，依次运行它、`curate_first500_examples.py`、`curate_common_examples.py`、`curate_next200_examples.py --apply`，以及第 701–1100 词四批对应的 `curate_*_example_gaps.py --apply`。再依次运行 `curate_main_1101_1500.py --apply`、`curate_main_1501_1900.py --apply`、`curate_main_1901_2300.py --apply`、`curate_main_2301_2700.py --apply`、`curate_main_2701_3100.py --apply`、`curate_main_3101_3500.py --apply`、`curate_main_3501_3900.py --apply`、`curate_main_3901_4300.py --apply`、`curate_main_4301_4700.py --apply`、`curate_main_4701_5100.py --apply`、`curate_main_5101_5500.py --apply`、`curate_main_5501_5900.py --apply`、`curate_main_5901_6300.py --apply`、`curate_main_6301_6700.py --apply`、`curate_main_6701_7100.py --apply`、`curate_main_7101_7900.py --apply`、`curate_main_7901_8500.py --apply`、`curate_main_8501_9100.py --apply`、`curate_main_9101_9700.py --apply`、`curate_main_9701_10300.py --apply`，前 10,300 词会恢复为每词两句双语例句。第 501–10300 词的编辑原稿存于 `data/curated_examples_*.tsv`。不要颠倒顺序。
+`curate_starter_examples.py` 是前 100 词双语句子的人工编辑层。重新构建整份例句数据时，在补全和简体转换后，依次运行它、`curate_first500_examples.py`、`curate_common_examples.py`、`curate_next200_examples.py --apply`，以及第 701–1100 词四批对应的 `curate_*_example_gaps.py --apply`。再依次运行 `curate_main_1101_1500.py --apply`、`curate_main_1501_1900.py --apply`、`curate_main_1901_2300.py --apply`、`curate_main_2301_2700.py --apply`、`curate_main_2701_3100.py --apply`、`curate_main_3101_3500.py --apply`、`curate_main_3501_3900.py --apply`、`curate_main_3901_4300.py --apply`、`curate_main_4301_4700.py --apply`、`curate_main_4701_5100.py --apply`、`curate_main_5101_5500.py --apply`、`curate_main_5501_5900.py --apply`、`curate_main_5901_6300.py --apply`、`curate_main_6301_6700.py --apply`、`curate_main_6701_7100.py --apply`、`curate_main_7101_7900.py --apply`、`curate_main_7901_8500.py --apply`、`curate_main_8501_9100.py --apply`、`curate_main_9101_9700.py --apply`、`curate_main_9701_10300.py --apply`、`curate_main_10301_10900.py --apply`，前 10,900 词会恢复为每词两句双语例句。第 501–10900 词的编辑原稿存于 `data/curated_examples_*.tsv`。不要颠倒顺序。
 
 `augment_bilingual_examples.py` 使用已下载的 Tatoeba 英中句子和关联表，从短句候选中优先选择有译文的例句。先不带参数运行并抽查结果；确认后加 `--apply`。完成语料补全及简体转换后，再执行上述人工编辑脚本。
 
@@ -458,3 +458,22 @@ prosthesis采用假肢、人工假体，matchup改为对阵，generational采用
 私有仓库逐文件核验、生产发布和低负载资源采样见本机 `/tmp/english-quest-v1290-evidence/verification.json`。真实支付宝仍待配置与本人试付，主页、微信群联系方式和协作者验证仍待本人处理。逐词编写与结构检查不等于全库专业语言审校完成。
 
 本批特殊含义核验来源：[NCI prosthesis](https://www.cancer.gov/publications/dictionaries/cancer-terms/def/prosthesis)、[Cambridge queer](https://dictionary.cambridge.org/dictionary/english/queer)、[ITU DER编码规则](https://www.itu.int/rec/T-REC-X.690/en)、[联合国 LAS](https://dppa.un.org/en/node/103474)、[WHO职业倦怠说明](https://www.who.int/standards/classifications/frequently-asked-questions/burn-out-an-occupational-phenomenon)、[Apple iPod历史公告](https://www.apple.com/newsroom/2022/05/the-music-lives-on/)。来源用于核对含义，例句为本站另行编写，职业倦怠沟通例句不作临床诊断。
+
+
+## v1.29.1 主线推进到10900词
+
+第10301–10900词新增600个常用中文义和1200句自然双语，主线前10900词现每词都有简短中文义和两句双语。完整20000词尚余9100词继续编辑。原学习编号、词头顺序和完整词典定义保留，范围外词条、行业与场景内容不变。
+
+本批区分cervical颈部和宫颈、silicone硅胶与silicon硅、muzzle动物鼻口和口套；ledger采用账簿、vibe采用氛围、camcorder采用便携摄像机、bandwidth补充可用精力。人名、地名、SAE回邮信封和罕见单数auspice注明语境。三份作者原稿冻结后，逐条审读600义1200句，修正sweetly系动词搭配、subdue语境、agonizing不自然表达及backbencher职务范围。每100词一份原稿，`qa/curate_main_10301_10900.py --apply`可重建。
+
+本批后端、词库目标与隔离四账号检查、浏览器核验结果见 `/tmp/english-quest-v1291-evidence/verification.json`。仅内容变化，不重复此前并发或小屏布局验收。真实支付宝配置与本人试付、社交主页和微信群联系方式、协作者验证仍待本人处理；完整主线专业语言审校与音标逐条听审尚未完成。
+
+本批核验来源：
+- [IUPAC dalton](https://goldbook.iupac.org/terms/view/D01514)：质量单位，保留完整旧词典但常用义不沿用过时定义。
+- [英国议会 backbencher](https://www.parliament.uk/site-information/glossary/backbenches/)：不是政府部长或反对党前座发言人的议员。
+- [Cambridge self-addressed envelope](https://dictionary.cambridge.org/dictionary/english/self-addressed-envelope)：SAE的回邮信封语境。
+- [Collins langley](https://www.collinsdictionary.com/dictionary/english/langley)：辐射能量单位。
+- [American Heritage comp](https://www.ahdictionary.com/word/search.html?q=comp)：免费赠品或免费提供。
+- [auspice](https://www.dictionary.com/browse/auspice)：单数较罕见的吉兆用法。
+
+本批已通过42项Go测试（6.232秒）、静态检查、前10900词核心数据与8112行业句子检查及47项隔离四账号检查。预览实际展开ledger、vibe、silicone、camcorder两句双语并点击播放，无控制台错误，主线0词保持。生产发布及私有仓库逐文件核对以本批verification.json回执为准；本批仅内容变更，未重复此前并发与小屏布局验收。
