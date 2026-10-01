@@ -2,7 +2,7 @@
 
 此目录包含前端逻辑测试及词库例句构建辅助脚本。
 
-`curate_starter_examples.py` 是前 100 词双语句子的人工编辑层。重新构建整份例句数据时，在补全和简体转换后，依次运行它、`curate_first500_examples.py`、`curate_common_examples.py`、`curate_next200_examples.py --apply`，以及第 701–1100 词四批对应的 `curate_*_example_gaps.py --apply`。再依次运行 `curate_main_1101_1500.py --apply`、`curate_main_1501_1900.py --apply`、`curate_main_1901_2300.py --apply`、`curate_main_2301_2700.py --apply`、`curate_main_2701_3100.py --apply`、`curate_main_3101_3500.py --apply`、`curate_main_3501_3900.py --apply`、`curate_main_3901_4300.py --apply`、`curate_main_4301_4700.py --apply`、`curate_main_4701_5100.py --apply`、`curate_main_5101_5500.py --apply`、`curate_main_5501_5900.py --apply`、`curate_main_5901_6300.py --apply`、`curate_main_6301_6700.py --apply`、`curate_main_6701_7100.py --apply`、`curate_main_7101_7900.py --apply`、`curate_main_7901_8500.py --apply`、`curate_main_8501_9100.py --apply`、`curate_main_9101_9700.py --apply`、`curate_main_9701_10300.py --apply`、`curate_main_10301_10900.py --apply`、`curate_main_10901_11500.py --apply`、`curate_main_11501_12100.py --apply`、`curate_main_12101_12700.py --apply`、`curate_main_12701_13300.py --apply`、`curate_main_13301_13900.py --apply`、`curate_main_13901_14500.py --apply`、`curate_main_14501_15100.py --apply`、`curate_main_15101_15700.py --apply`、`curate_main_15701_16300.py --apply`、`curate_main_16301_16900.py --apply`、`curate_main_16901_17500.py --apply`、`curate_main_17501_18100.py --apply`、`curate_main_18101_18700.py --apply`，前 18,700 词会恢复为每词两句双语例句。第 501–18700 词的编辑原稿存于 `data/curated_examples_*.tsv`。不要颠倒顺序。
+`curate_starter_examples.py` 是前 100 词双语句子的人工编辑层。重新构建整份例句数据时，在补全和简体转换后，依次运行它、`curate_first500_examples.py`、`curate_common_examples.py`、`curate_next200_examples.py --apply`，以及第 701–1100 词四批对应的 `curate_*_example_gaps.py --apply`。再依次运行 `curate_main_1101_1500.py --apply`、`curate_main_1501_1900.py --apply`、`curate_main_1901_2300.py --apply`、`curate_main_2301_2700.py --apply`、`curate_main_2701_3100.py --apply`、`curate_main_3101_3500.py --apply`、`curate_main_3501_3900.py --apply`、`curate_main_3901_4300.py --apply`、`curate_main_4301_4700.py --apply`、`curate_main_4701_5100.py --apply`、`curate_main_5101_5500.py --apply`、`curate_main_5501_5900.py --apply`、`curate_main_5901_6300.py --apply`、`curate_main_6301_6700.py --apply`、`curate_main_6701_7100.py --apply`、`curate_main_7101_7900.py --apply`、`curate_main_7901_8500.py --apply`、`curate_main_8501_9100.py --apply`、`curate_main_9101_9700.py --apply`、`curate_main_9701_10300.py --apply`、`curate_main_10301_10900.py --apply`、`curate_main_10901_11500.py --apply`、`curate_main_11501_12100.py --apply`、`curate_main_12101_12700.py --apply`、`curate_main_12701_13300.py --apply`、`curate_main_13301_13900.py --apply`、`curate_main_13901_14500.py --apply`、`curate_main_14501_15100.py --apply`、`curate_main_15101_15700.py --apply`、`curate_main_15701_16300.py --apply`、`curate_main_16301_16900.py --apply`、`curate_main_16901_17500.py --apply`、`curate_main_17501_18100.py --apply`、`curate_main_18101_18700.py --apply`、`curate_main_18701_19300.py --apply`，前 19,300 词会恢复为每词两句双语例句。第 501–19300 词的编辑原稿存于 `data/curated_examples_*.tsv`。不要颠倒顺序。
 
 `augment_bilingual_examples.py` 使用已下载的 Tatoeba 英中句子和关联表，从短句候选中优先选择有译文的例句。先不带参数运行并抽查结果；确认后加 `--apply`。完成语料补全及简体转换后，再执行上述人工编辑脚本。
 
@@ -700,3 +700,24 @@ prosthesis采用假肢、人工假体，matchup改为对阵，generational采用
 本批没有修改语言数据。主线前18,700词的常用中文义与两句双语覆盖量保持；18701–19300作者初稿仅暂存，尚未完成整批交叉审读或发布。完整20,000词语言编辑、44音专业听审、真人录音听审和真实支付仍不能宣称完成。检查实际数量与上线回执由`state/evidence-v1314/verification.json`记录，未通过的检查不得计为通过。
 
 本批功能检查通过：62项顶层Go测试（20个子测试另计）、vet、全量并发检查83.682秒、14套前端测试、47项全新隔离四账号检查。主线18项与榜单26项行为回归包含免费及计时休息、重复请求、整页刷新、昵称保存、切账号与新轮合并；实际Chrome验证1000词两次免费休息、用尽后计时继续、主线与榜单刷新恢复和重来，以及390×844与1366×620操作可见。语言数据377份与上版逐字节保持。完整源码同步与正式站上线结果以本批verification.json为准。
+
+## v1.31.5 主线推进到19300词
+
+第18701–19300词新增600个简短中文义和1200句双语用法。复用此前暂存的真实初稿，三人分别交叉审读，整批600义、1200句又逐条复核；修正44个词的57处字段后冻结，再写入题库。前19300词已完成这一层初步编辑，最后700词继续补齐。
+
+本批修正chipotle烟熏干制辣椒、skimmer剪嘴鸥、rune日耳曼文字、valedictorian毕业致辞代表等定义范围；tannin用茶的涩味，equinox明确北半球春季，nonmedical改用非医疗费用语境。古旧词、专名、缩写及冒犯性表达标明性质。keye的现代通用义未获可靠确认，明确待核，保留原词号，不猜词义。
+
+学习编号、词头顺序、原完整词典及范围外19400个词和例句对象保持。377个既有data文件仅words/examples变化，行业内容不变。12份最终TSV与JSON精确匹配，可用 `qa/curate_main_18701_19300.py --apply` 重建；Mac和Linux各77个嵌入资源完整字节核对通过。全库19609词至少一句有中文，19480词两句有中文；这是覆盖数量，不代表整份词库专业语言审校完成。
+
+本批62项顶层Go测试（另有20子测试）、vet、前19300词核心目标、8112行业句子目标、专项前端、app语法和47项全新隔离四账号检查通过；这47项不含需提权的站长审核与预约，本批未重复对应后台验收。隔离页实际展开chipotle、tannin、equinox和quiche两句双语；quiche的44px朗读按钮中心命中朗读，实际点击后收藏仍为☆，无控制台错误，主线保持0。只改内容和加载版本，未重复全量并发、小屏布局或真实AI付费请求；播放点击不替代真人听审。
+
+本批预览、整仓同步和发布结果以 `state/evidence-v1315/verification.json` 为准。入口更新为app?v54、words?v13、examples?v12；正式浏览器普通刷新后再验收新内容。20档目标、分段休息、重新挑战及既有听写口语工具保持，不添加视频。44音专业听审、真人录音试听和真实支付仍未完成。
+
+
+本批核义来源：
+
+- [Merriam-Webster rune](https://www.merriam-webster.com/dictionary/rune)、[chipotle](https://www.merriam-webster.com/dictionary/chipotle)、[buckskin](https://www.merriam-webster.com/dictionary/buckskin)、[skein](https://www.merriam-webster.com/dictionary/skein)：文字范围、辣椒工艺、马的毛色和雁鸭群用法。
+- [Cambridge valedictorian](https://dictionary.cambridge.org/us/dictionary/english/valedictorian)、[salacious](https://dictionary.cambridge.org/us/dictionary/english/salacious)、[Oxford puritan](https://www.oxfordlearnersdictionaries.com/definition/english/puritan_1)、[American Heritage skimmer](https://ahdictionary.com/word/search.html?q=skimmer)：身份、语域及鸟名。
+- [Merriam-Webster nonmedical](https://www.merriam-webster.com/dictionary/nonmedical)、[tannin](https://www.merriam-webster.com/dictionary/tannin)、[dystrophy](https://www.merriam-webster.com/dictionary/dystrophy)：非医疗、涩味与医学词义；仅教语言，未提供诊疗建议。
+- [英国气象局分点与季节](https://weather.metoffice.gov.uk/learn-about/weather/seasons/equinox-and-solstice)、[BIPM SI前缀](https://www.bipm.org/en/measurement-units/si-prefixes)、[澳大利亚CoE](https://www.studyaustralia.gov.au/en/plan-your-move/visa-application-process)、[英国OU](https://about.open.ac.uk/governance-ou/legal-regulatory-and-charitable-status)：半球语境、单位大小写和具体机构缩写。
+- [Merriam-Webster tellin](https://www.merriam-webster.com/dictionary/tellin)、[descendent](https://www.merriam-webster.com/dictionary/descendent)、[Russ](https://www.merriam-webster.com/dictionary/russ)、[lauder](https://www.merriam-webster.com/dictionary/lauder)与[Collins Cavendish](https://www.collinsdictionary.com/us/dictionary/english/cavendish)：罕见词、异体拼写、旧语与专名。keye未获可靠核义，保留待核标注。
