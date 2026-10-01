@@ -2,7 +2,7 @@
 
 此目录包含前端逻辑测试及词库例句构建辅助脚本。
 
-`curate_starter_examples.py` 是前 100 词双语句子的人工编辑层。重新构建整份例句数据时，在补全和简体转换后，依次运行它、`curate_first500_examples.py`、`curate_common_examples.py`、`curate_next200_examples.py --apply`，以及第 701–1100 词四批对应的 `curate_*_example_gaps.py --apply`。再依次运行 `curate_main_1101_1500.py --apply`、`curate_main_1501_1900.py --apply`、`curate_main_1901_2300.py --apply`、`curate_main_2301_2700.py --apply`、`curate_main_2701_3100.py --apply`、`curate_main_3101_3500.py --apply`、`curate_main_3501_3900.py --apply`、`curate_main_3901_4300.py --apply`、`curate_main_4301_4700.py --apply`、`curate_main_4701_5100.py --apply`、`curate_main_5101_5500.py --apply`、`curate_main_5501_5900.py --apply`，前 5,900 词会恢复为每词两句双语例句。第 501–5900 词的编辑原稿存于 `data/curated_examples_*.tsv`。不要颠倒顺序。
+`curate_starter_examples.py` 是前 100 词双语句子的人工编辑层。重新构建整份例句数据时，在补全和简体转换后，依次运行它、`curate_first500_examples.py`、`curate_common_examples.py`、`curate_next200_examples.py --apply`，以及第 701–1100 词四批对应的 `curate_*_example_gaps.py --apply`。再依次运行 `curate_main_1101_1500.py --apply`、`curate_main_1501_1900.py --apply`、`curate_main_1901_2300.py --apply`、`curate_main_2301_2700.py --apply`、`curate_main_2701_3100.py --apply`、`curate_main_3101_3500.py --apply`、`curate_main_3501_3900.py --apply`、`curate_main_3901_4300.py --apply`、`curate_main_4301_4700.py --apply`、`curate_main_4701_5100.py --apply`、`curate_main_5101_5500.py --apply`、`curate_main_5501_5900.py --apply`、`curate_main_5901_6300.py --apply`，前 6,300 词会恢复为每词两句双语例句。第 501–6300 词的编辑原稿存于 `data/curated_examples_*.tsv`。不要颠倒顺序。
 
 `augment_bilingual_examples.py` 使用已下载的 Tatoeba 英中句子和关联表，从短句候选中优先选择有译文的例句。先不带参数运行并抽查结果；确认后加 `--apply`。完成语料补全及简体转换后，再执行上述人工编辑脚本。
 
@@ -336,3 +336,12 @@ recorder区分录音机和竖笛，server区分服务员与服务器；download�
 receipt用于收据沟通，replicate用于复现，commute与commuter区分通勤行为和通勤者；ROS补机器人软件框架用法，并保留只读存储器上下文。royalty区分王室和版税；姓名、地名、缩写、calory罕见拼写与destine较少使用的形式均注明性质，不把罕见词当日常口语。
 
 42项Go测试最终5.252秒、vet、前5900词核心及8112行业句子目标检查、app.js语法检查通过；47项隔离四账号检查通过。真实预览展开receipt、replicate、ROS、commute的两句双语并点击例句播放，无控制台错误。仅内容变化，未重复并发与小屏布局。仓库核验、发布及资源回执见/tmp/english-quest-v1282-evidence/verification.json。真实支付仍关闭，44音标专业听审未完成。
+
+
+## v1.28.3 主线推进到6300词
+
+第5901–6300词新增400个简短常用义、800句自然双语，前6300词均覆盖。完整20000词仍未逐条语言编辑。保留学习编号、原词头顺序和完整词典定义，范围外对象与行业场景不变。
+
+default区分默认设置与违约，aerial区分航拍和英式天线，presently区分目前与不久。hmm改为思考语气词，Gloria、Saunders、Vic等优先注明常见姓名用法，保留原词典专业义。医学词仅作沟通和描述，未提供诊断或治疗建议。
+
+本批适当测试、实际浏览器检查、私有仓库整仓核验、上线回执与资源快照见/tmp/english-quest-v1283-evidence/verification.json。仅语言内容变化，没有重复并发或小屏布局验收。真实支付仍关闭，44音标专业逐条听审仍待完成。
