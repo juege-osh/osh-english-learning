@@ -1,0 +1,5869 @@
+{
+  "range": [
+    7001,
+    7200
+  ],
+  "reviewed_words": 200,
+  "reviewed_bilingual_examples": 400,
+  "status": "frozen_review_only",
+  "base_head": "2ab38d3933ad8d07fe34c590ac3d58a38c4a489f",
+  "input_sha256": {
+    "data/words.json": "7d01fcf0531caf1b109d2592d92860fcbda5fd06b24159274991738b1f4b1aba",
+    "data/examples.json": "5ad92ffb69ee42b5471bc2de0ee2573f81a2995dcb8e024ea835e1568466474c"
+  },
+  "review_method": "按稳定词序逐条读en、zh及两句英文与中文，人工决定保留/更改/保持空值；程序只组装记录和检查范围，不用关键词筛选代替语言审读。",
+  "policy": "保留正确基本义，不要求一条定义穷尽所有义项；但完全错义、导致主要用法偏离的窄义、跨词性错配和错误事实提出修改。缺少同形专名支持不猜具体人物，可清空en退回中文题。",
+  "counts": {
+    "empty": 10,
+    "changed": 86,
+    "unchanged": 104
+  },
+  "clear_en_count": 3,
+  "reviews": [
+    {
+      "id": 7001,
+      "word": "asphalt",
+      "status": "empty",
+      "reason": "现en为空；逐句对照当前“沥青”后保留空值，按任务不新增题干，不猜专名或缩写扩写。",
+      "current_en": "",
+      "current_zh": "沥青",
+      "contexts": [
+        {
+          "text": "The workers laid fresh asphalt on the road.",
+          "translation": "工人们在路上铺了新的沥青。",
+          "source": "original"
+        },
+        {
+          "text": "The asphalt was still warm in the evening.",
+          "translation": "到了晚上，沥青路面仍然是热的。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7002,
+      "word": "mortar",
+      "status": "changed",
+      "reason": "原定义为迫击炮；两句分别是砌砖砂浆和捣香料的研钵。",
+      "current_en": "a muzzle-loading high-angle gun with a short barrel that fires shells at high elevations for a short range",
+      "current_zh": "砂浆；研钵",
+      "contexts": [
+        {
+          "text": "The builder used mortar to hold the bricks together.",
+          "translation": "建筑工用砂浆把砖块砌在一起。",
+          "source": "original"
+        },
+        {
+          "text": "She crushed the spices in a mortar.",
+          "translation": "她用研钵捣碎了香料。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7003,
+      "word": "subscription",
+      "status": "unchanged",
+      "reason": "期刊定期付款订阅义与杂志到期、取消订阅相容，不为在线例句泛化定义。",
+      "current_en": "a payment for consecutive issues of a newspaper or magazine for a given period of time",
+      "current_zh": "订阅；订阅费",
+      "contexts": [
+        {
+          "text": "My magazine subscription expires next month.",
+          "translation": "我的杂志订阅下个月到期。",
+          "source": "original"
+        },
+        {
+          "text": "Can I cancel the subscription online?",
+          "translation": "我能在网上取消订阅吗？",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7004,
+      "word": "liable",
+      "status": "changed",
+      "reason": "原定义仅法律诉讼，未说明责任，也不能解释门容易卡住。",
+      "current_en": "subject to legal action",
+      "current_zh": "负有责任的；容易……的",
+      "contexts": [
+        {
+          "text": "You may be liable for the cost of the repairs.",
+          "translation": "你可能需要承担维修费用。",
+          "source": "original"
+        },
+        {
+          "text": "This door is liable to stick in wet weather.",
+          "translation": "这扇门在潮湿天气里容易卡住。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7005,
+      "word": "savor",
+      "status": "unchanged",
+      "reason": "欣赏品味的taste义可引申到享受时刻，两个例句没有要求另立无关词义。",
+      "current_en": "taste appreciatively",
+      "current_zh": "细细品味；享受",
+      "contexts": [
+        {
+          "text": "Take your time and savor the meal.",
+          "translation": "慢慢吃，好好品尝这顿饭。",
+          "source": "original"
+        },
+        {
+          "text": "I want to savor this moment before we leave.",
+          "translation": "离开前，我想好好享受这一刻。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7006,
+      "word": "demonstrator",
+      "status": "changed",
+      "reason": "原定义仅教学演示助手；示威者和商品演示员两句都未准确覆盖。",
+      "current_en": "a teacher or teacher's assistant who demonstrates the principles that are being taught",
+      "current_zh": "示威者；演示人员",
+      "contexts": [
+        {
+          "text": "A demonstrator held a sign outside the building.",
+          "translation": "一名示威者在大楼外举着标语牌。",
+          "source": "original"
+        },
+        {
+          "text": "The product demonstrator showed us how the vacuum worked.",
+          "translation": "产品演示员给我们展示了吸尘器的使用方法。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7007,
+      "word": "kemp",
+      "status": "changed",
+      "reason": "Alt. of Kempty仅交叉引用，不能独立解释粗硬毛，且另句为姓氏；本批不猜罕见词定义，退回中文题。",
+      "current_en": "Alt. of Kempty",
+      "current_zh": "粗硬毛（羊毛术语）；肯普（姓氏）",
+      "contexts": [
+        {
+          "text": "The inspector found kemp in the wool sample.",
+          "translation": "检验员在羊毛样品中发现了粗硬毛。",
+          "source": "original"
+        },
+        {
+          "text": "Mr Kemp will meet us at the station.",
+          "translation": "肯普先生会在车站和我们碰面。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7008,
+      "word": "greenpeace",
+      "status": "unchanged",
+      "reason": "环境保护组织的性质与其报告、活动两例一致，保留。",
+      "current_en": "an international organization that works for environmental conservation and the preservation of endangered species",
+      "current_zh": "绿色和平组织（Greenpeace）",
+      "contexts": [
+        {
+          "text": "She read a report published by Greenpeace.",
+          "translation": "她读了一份绿色和平组织发布的报告。",
+          "source": "original"
+        },
+        {
+          "text": "The article mentions a Greenpeace campaign.",
+          "translation": "这篇文章提到了一项绿色和平组织的活动。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7009,
+      "word": "microscope",
+      "status": "unchanged",
+      "reason": "小物体放大观察仪器可辨识显微镜，两句观察及盖好仪器均相容。",
+      "current_en": "magnifier of the image of small objects",
+      "current_zh": "显微镜",
+      "contexts": [
+        {
+          "text": "We looked at the sample under a microscope.",
+          "translation": "我们在显微镜下观察了样品。",
+          "source": "original"
+        },
+        {
+          "text": "Please cover the microscope when you've finished.",
+          "translation": "用完后请盖好显微镜。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7010,
+      "word": "spear",
+      "status": "changed",
+      "reason": "长矛义正确，但英文完全无叉取食物动词义，补充例2用法。",
+      "current_en": "a long pointed rod used as a tool or weapon",
+      "current_zh": "长矛；叉取（食物）",
+      "contexts": [
+        {
+          "text": "The museum has an ancient spear on display.",
+          "translation": "博物馆展出了一支古代长矛。",
+          "source": "original"
+        },
+        {
+          "text": "Use your fork to spear the potato.",
+          "translation": "用叉子叉起那块土豆。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7011,
+      "word": "characterization",
+      "status": "unchanged",
+      "reason": "描述显著特征可涵盖小说人物刻画和对工作的描述，保留。",
+      "current_en": "the act of describing distinctive characteristics or essential features",
+      "current_zh": "人物刻画；特征描述",
+      "contexts": [
+        {
+          "text": "The novel is known for its strong characterization.",
+          "translation": "这部小说以出色的人物塑造闻名。",
+          "source": "original"
+        },
+        {
+          "text": "I disagree with that characterization of her work.",
+          "translation": "我不认同对她工作的那种描述。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7012,
+      "word": "weekday",
+      "status": "changed",
+      "reason": "原定义把星期六是否计入写成可选，与当前明确周一至周五相冲突。",
+      "current_en": "any day except Sunday (and sometimes except Saturday)",
+      "current_zh": "工作日（周一至周五）",
+      "contexts": [
+        {
+          "text": "The office is open every weekday.",
+          "translation": "办公室每个工作日都开放。",
+          "source": "original"
+        },
+        {
+          "text": "It's usually quieter here on a weekday.",
+          "translation": "这里在工作日通常更安静。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7013,
+      "word": "bloc",
+      "status": "changed",
+      "reason": "原定义仅国家联盟；例2为选民集团，扩至共同利益群体。",
+      "current_en": "a group of countries in special alliance",
+      "current_zh": "集团；联盟",
+      "contexts": [
+        {
+          "text": "The countries formed a trading bloc.",
+          "translation": "这些国家组成了一个贸易集团。",
+          "source": "original"
+        },
+        {
+          "text": "The proposal was opposed by a bloc of voters.",
+          "translation": "一个选民集团反对这项提案。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7014,
+      "word": "dorm",
+      "status": "unchanged",
+      "reason": "大学学生住宿建筑与大一宿舍、图书馆附近宿舍一致，词性标签不属本轮错义。",
+      "current_en": "n a college or university building containing living quarters for students",
+      "current_zh": "宿舍（非正式，dormitory的缩写）",
+      "contexts": [
+        {
+          "text": "I shared a dorm room in my first year.",
+          "translation": "我大一时和别人合住一间宿舍。",
+          "source": "original"
+        },
+        {
+          "text": "The dorm is a ten-minute walk from the library.",
+          "translation": "宿舍距离图书馆步行十分钟。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7015,
+      "word": "ledge",
+      "status": "changed",
+      "reason": "原定义限山脊或水下凸起；窗台不属于该范围，改为岩架或突出壁架。",
+      "current_en": "a projecting ridge on a mountain or submerged under water",
+      "current_zh": "岩架；壁架",
+      "contexts": [
+        {
+          "text": "A pigeon landed on the window ledge.",
+          "translation": "一只鸽子落在了窗台上。",
+          "source": "original"
+        },
+        {
+          "text": "The climber rested on a narrow ledge.",
+          "translation": "登山者在一处狭窄的岩石平台上休息。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7016,
+      "word": "overtime",
+      "status": "changed",
+      "reason": "原英文仅加班，不能覆盖比赛进入加时赛。",
+      "current_en": "work done in addition to regular working hours",
+      "current_zh": "加班；加时赛",
+      "contexts": [
+        {
+          "text": "I worked overtime twice this week.",
+          "translation": "我这周加了两次班。",
+          "source": "original"
+        },
+        {
+          "text": "The game went into overtime.",
+          "translation": "比赛进入了加时赛。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7017,
+      "word": "mediation",
+      "status": "unchanged",
+      "reason": "中立第三方协助解决分歧，准确解释庭外调解及纠纷解决。",
+      "current_en": "a negotiation to resolve differences that is conducted by some impartial party",
+      "current_zh": "调解",
+      "contexts": [
+        {
+          "text": "They agreed to try mediation before going to court.",
+          "translation": "他们同意先尝试调解，再考虑诉讼。",
+          "source": "original"
+        },
+        {
+          "text": "The dispute was settled through mediation.",
+          "translation": "这场纠纷通过调解解决了。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7018,
+      "word": "occupant",
+      "status": "changed",
+      "reason": "原定义要求长期居住或出生于当地，不能覆盖车内乘员。",
+      "current_en": "n someone who lives at a particular place for a prolonged period or who was born there",
+      "current_zh": "居住者；占用者",
+      "contexts": [
+        {
+          "text": "The previous occupant left some furniture behind.",
+          "translation": "上一位住户留下了一些家具。",
+          "source": "original"
+        },
+        {
+          "text": "Each occupant of the car was wearing a seat belt.",
+          "translation": "车上的每个人都系着安全带。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7019,
+      "word": "bitterness",
+      "status": "changed",
+      "reason": "原定义粗暴怨愤的举止太窄，例1为茶的苦味。",
+      "current_en": "a rough and bitter manner",
+      "current_zh": "苦涩；怨恨",
+      "contexts": [
+        {
+          "text": "The tea had a slight bitterness.",
+          "translation": "这茶带着一点苦味。",
+          "source": "original"
+        },
+        {
+          "text": "He spoke about the decision without bitterness.",
+          "translation": "他谈起这个决定时没有怨恨。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7020,
+      "word": "chimney",
+      "status": "unchanged",
+      "reason": "烟气经建筑排出的垂直通道，解释烟囱冒烟和维修，保留长而正确的定义。",
+      "current_en": "a vertical flue that provides a path through which smoke from a fire is carried away through the wall or roof of a building",
+      "current_zh": "烟囱",
+      "contexts": [
+        {
+          "text": "Smoke rose from the chimney.",
+          "translation": "烟从烟囱里升了起来。",
+          "source": "original"
+        },
+        {
+          "text": "The old chimney needs to be repaired.",
+          "translation": "旧烟囱需要维修。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7021,
+      "word": "lateral",
+      "status": "unchanged",
+      "reason": "侧向或横向含义明确；平级调部门的lateral move是该空间义的常见比喻。",
+      "current_en": "situated at or extending to the side",
+      "current_zh": "侧面的；横向的",
+      "contexts": [
+        {
+          "text": "The exercise involves a lateral movement.",
+          "translation": "这项练习包含一个侧向动作。",
+          "source": "original"
+        },
+        {
+          "text": "She made a lateral move to another department.",
+          "translation": "她平级调到了另一个部门。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7022,
+      "word": "aroma",
+      "status": "unchanged",
+      "reason": "令人愉快的独特气味，适用于面包和咖啡香气。",
+      "current_en": "a distinctive odor that is pleasant",
+      "current_zh": "香气",
+      "contexts": [
+        {
+          "text": "The aroma of fresh bread filled the kitchen.",
+          "translation": "新鲜面包的香气弥漫在厨房里。",
+          "source": "original"
+        },
+        {
+          "text": "This coffee has a rich aroma.",
+          "translation": "这种咖啡香气浓郁。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7023,
+      "word": "lithuania",
+      "status": "unchanged",
+      "reason": "波罗的海沿岸欧洲国家，与旅游和首都例句相容。",
+      "current_en": "a republic in northeastern Europe on the Baltic Sea",
+      "current_zh": "立陶宛（国家名）",
+      "contexts": [
+        {
+          "text": "We spent a week traveling around Lithuania.",
+          "translation": "我们在立陶宛各地旅行了一周。",
+          "source": "original"
+        },
+        {
+          "text": "Vilnius is the capital of Lithuania.",
+          "translation": "维尔纽斯是立陶宛的首都。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7024,
+      "word": "groove",
+      "status": "empty",
+      "reason": "现en为空；逐句对照当前“沟槽；进入状态（get into a groove中）”后保留空值，按任务不新增题干，不猜专名或缩写扩写。",
+      "current_en": "",
+      "current_zh": "沟槽；进入状态（get into a groove中）",
+      "contexts": [
+        {
+          "text": "The cable fits into a groove in the wall.",
+          "translation": "电缆嵌在墙上的一道槽里。",
+          "source": "original"
+        },
+        {
+          "text": "I finally got into a groove with my new routine.",
+          "translation": "我终于适应了新的日常安排。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7025,
+      "word": "kgb",
+      "status": "unchanged",
+      "reason": "原苏联安全机构的历史性质与纪录片、档案两例相容。",
+      "current_en": "n formerly the predominant security police organization of Soviet Russia",
+      "current_zh": "克格勃（原苏联国家安全机构，KGB）",
+      "contexts": [
+        {
+          "text": "The documentary discusses the history of the KGB.",
+          "translation": "这部纪录片讲述了克格勃的历史。",
+          "source": "original"
+        },
+        {
+          "text": "The archive contains reports about the KGB.",
+          "translation": "档案馆里保存着有关克格勃的报告。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7026,
+      "word": "relay",
+      "status": "unchanged",
+      "reason": "逐人传递的动作涵盖转达消息和接力传递，不需模板重写。",
+      "current_en": "the act of passing something along from one person or group to another",
+      "current_zh": "转达；接力",
+      "contexts": [
+        {
+          "text": "Please relay the message to the rest of the team.",
+          "translation": "请把这条消息转达给团队的其他人。",
+          "source": "original"
+        },
+        {
+          "text": "She ran the final leg of the relay.",
+          "translation": "她跑了接力赛的最后一棒。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7027,
+      "word": "thwart",
+      "status": "changed",
+      "reason": "原定义为划艇横座板，两例均是阻挠计划或欺诈。",
+      "current_en": "a crosspiece spreading the gunnels of a boat; used as a seat in a rowboat",
+      "current_zh": "阻止；挫败",
+      "contexts": [
+        {
+          "text": "The heavy rain could thwart our picnic plans.",
+          "translation": "大雨可能会打乱我们的野餐计划。",
+          "source": "original"
+        },
+        {
+          "text": "The extra checks helped thwart the attempted fraud.",
+          "translation": "额外的检查帮助阻止了这次欺诈企图。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7028,
+      "word": "buffet",
+      "status": "changed",
+      "reason": "原英文为餐具柜；两句为自助餐和强风反复冲击。",
+      "current_en": "a piece of furniture that stands at the side of a dining room; has shelves and drawers",
+      "current_zh": "自助餐；反复冲击",
+      "contexts": [
+        {
+          "text": "Breakfast is served as a buffet.",
+          "translation": "早餐以自助餐形式供应。",
+          "source": "original"
+        },
+        {
+          "text": "Strong winds can buffet the boat.",
+          "translation": "强风会猛烈冲击这艘船。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7029,
+      "word": "benny",
+      "status": "changed",
+      "reason": "原定义锁定喜剧演员Jack Benny，但两例只指名字为Benny的人，不能推断同一历史人物；退回中文识别题。",
+      "current_en": "United States comedian known for his timeing and delivery and self-effacing humor (1894-1974)",
+      "current_zh": "本尼（人名）",
+      "contexts": [
+        {
+          "text": "Benny offered to help carry the bags.",
+          "translation": "本尼提出帮忙拿包。",
+          "source": "original"
+        },
+        {
+          "text": "I left a message for Benny at reception.",
+          "translation": "我在接待处给本尼留了言。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7030,
+      "word": "stint",
+      "status": "changed",
+      "reason": "原定义分配的工作份额，未表达短期任职和两年工作时间。",
+      "current_en": "an individual's prescribed share of work",
+      "current_zh": "一段任职或工作时间",
+      "contexts": [
+        {
+          "text": "She had a short stint as a tour guide.",
+          "translation": "她短暂地做过一段时间导游。",
+          "source": "original"
+        },
+        {
+          "text": "He spent a two-year stint working abroad.",
+          "translation": "他在国外工作过两年。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7031,
+      "word": "ye",
+      "status": "empty",
+      "reason": "现en为空；逐句对照当前“你们（古语）；the的仿古写法”后保留空值，按任务不新增题干，不猜专名或缩写扩写。",
+      "current_en": "",
+      "current_zh": "你们（古语）；the的仿古写法",
+      "contexts": [
+        {
+          "text": "The actor shouted 'Hear ye!' to get the crowd's attention.",
+          "translation": "演员喊着“诸位，请听！”，引起人群注意。",
+          "source": "original"
+        },
+        {
+          "text": "The sign reads 'Ye Olde Tea Shoppe'.",
+          "translation": "招牌用仿古写法写着“老茶铺”。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7032,
+      "word": "fin",
+      "status": "empty",
+      "reason": "现en为空；逐句对照当前“鱼鳍”后保留空值，按任务不新增题干，不猜专名或缩写扩写。",
+      "current_en": "",
+      "current_zh": "鱼鳍",
+      "contexts": [
+        {
+          "text": "We saw a fin above the water.",
+          "translation": "我们看见一片鳍露出了水面。",
+          "source": "original"
+        },
+        {
+          "text": "The fish had a damaged fin.",
+          "translation": "这条鱼有一片鳍受了伤。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7033,
+      "word": "dispense",
+      "status": "changed",
+      "reason": "原定义为给予豁免；实际句子是机器提供热水及dispense with省去介绍。",
+      "current_en": "grant a dispensation; grant an exemption",
+      "current_zh": "配发；省去（dispense with中）",
+      "contexts": [
+        {
+          "text": "The machine can dispense hot water.",
+          "translation": "这台机器可以提供热水。",
+          "source": "original"
+        },
+        {
+          "text": "We can dispense with the formal introductions.",
+          "translation": "我们可以省去正式的介绍环节。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7034,
+      "word": "jog",
+      "status": "changed",
+      "reason": "原定义突然变向，两例为慢跑和唤起记忆。",
+      "current_en": "a sharp change in direction",
+      "current_zh": "慢跑；唤起记忆（jog one's memory中）",
+      "contexts": [
+        {
+          "text": "I go for a jog before breakfast.",
+          "translation": "我在早餐前去慢跑。",
+          "source": "original"
+        },
+        {
+          "text": "The photo might jog your memory.",
+          "translation": "这张照片也许能唤起你的记忆。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7035,
+      "word": "awfully",
+      "status": "changed",
+      "reason": "原定义只有词性标签和泛称intensifiers，没有具体程度；可与许多强化副词混淆。",
+      "current_en": "r used as intensifiers",
+      "current_zh": "非常；极其",
+      "contexts": [
+        {
+          "text": "It's awfully quiet in here.",
+          "translation": "这里真安静。",
+          "source": "original"
+        },
+        {
+          "text": "I'm awfully sorry about the delay.",
+          "translation": "非常抱歉耽误了时间。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7036,
+      "word": "clough",
+      "status": "unchanged",
+      "reason": "狭窄山谷定义与第二句一致；第一句是同形姓氏，不将谷义强加为姓氏含义，已列方言性质。",
+      "current_en": "A cleft in a hill; a ravine; a narrow valley.",
+      "current_zh": "克拉夫（姓氏）；山谷（英方言）",
+      "contexts": [
+        {
+          "text": "Mr Clough called while you were out.",
+          "translation": "你不在时，克拉夫先生来过电话。",
+          "source": "original"
+        },
+        {
+          "text": "We followed the stream through a narrow clough.",
+          "translation": "我们沿着溪流穿过一条狭窄的山谷。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7037,
+      "word": "cruelty",
+      "status": "unchanged",
+      "reason": "蓄意造成痛苦的残忍行为，可用于动物虐待和言语伤害。",
+      "current_en": "a cruel act; a deliberate infliction of pain and suffering",
+      "current_zh": "残忍；虐待",
+      "contexts": [
+        {
+          "text": "The charity campaigns against animal cruelty.",
+          "translation": "这家慈善机构倡导反对虐待动物。",
+          "source": "original"
+        },
+        {
+          "text": "She was shocked by the cruelty of his remarks.",
+          "translation": "他的话那么刻薄，让她很吃惊。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7038,
+      "word": "cor",
+      "status": "changed",
+      "reason": "原定义希伯来容量单位，两例都是英式感叹词。",
+      "current_en": "A Hebrew measure of capacity; a homer.",
+      "current_zh": "哇（英非正式感叹）",
+      "contexts": [
+        {
+          "text": "Cor, that cake looks amazing!",
+          "translation": "哇，那个蛋糕看着太棒了！",
+          "source": "original"
+        },
+        {
+          "text": "Cor, it's cold out here!",
+          "translation": "哇，外面真冷啊！",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7039,
+      "word": "lantern",
+      "status": "unchanged",
+      "reason": "透明保护罩内的灯，适用于提灯与纸灯笼。",
+      "current_en": "light in a transparent protective case",
+      "current_zh": "灯笼；提灯",
+      "contexts": [
+        {
+          "text": "We carried a lantern along the dark path.",
+          "translation": "我们提着灯笼走过漆黑的小路。",
+          "source": "original"
+        },
+        {
+          "text": "A paper lantern hung above the door.",
+          "translation": "门上方挂着一盏纸灯笼。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7040,
+      "word": "plateau",
+      "status": "changed",
+      "reason": "原英文高原正确，但不涵盖例2进步停滞阶段。",
+      "current_en": "n a relatively flat highland",
+      "current_zh": "高原；停滞阶段",
+      "contexts": [
+        {
+          "text": "The road climbs onto a high plateau.",
+          "translation": "这条路向上延伸到一片高原。",
+          "source": "original"
+        },
+        {
+          "text": "My progress has reached a plateau.",
+          "translation": "我的进步进入了停滞期。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7041,
+      "word": "slaughter",
+      "status": "changed",
+      "reason": "原定义只杀动物，与例1战争中平民屠杀不兼容。",
+      "current_en": "the killing of animals (as for food)",
+      "current_zh": "屠杀；屠宰",
+      "contexts": [
+        {
+          "text": "The book describes the slaughter of civilians during the war.",
+          "translation": "这本书描写了战争期间对平民的屠杀。",
+          "source": "original"
+        },
+        {
+          "text": "The report discusses the slaughter of animals for food.",
+          "translation": "报告讨论了为获取食物而屠宰动物的问题。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7042,
+      "word": "cosmetic",
+      "status": "changed",
+      "reason": "原定义化妆用品名词；两例为外观损伤及化妆包的形容词用法。",
+      "current_en": "a toiletry designed to beautify the body",
+      "current_zh": "化妆的；表面的；外观上的",
+      "contexts": [
+        {
+          "text": "The damage is mostly cosmetic.",
+          "translation": "损伤主要在外观上。",
+          "source": "original"
+        },
+        {
+          "text": "She bought a small cosmetic bag for the trip.",
+          "translation": "她为这次旅行买了一个小化妆包。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7043,
+      "word": "serbia",
+      "status": "changed",
+      "reason": "原定义为南斯拉夫历史区域，不能作为现今国家的准确识别题干。",
+      "current_en": "a historical region in central and northern Yugoslavia; Serbs settled the region in the 6th and 7th centuries",
+      "current_zh": "塞尔维亚（国家名）",
+      "contexts": [
+        {
+          "text": "We took a bus to Serbia.",
+          "translation": "我们乘公共汽车去了塞尔维亚。",
+          "source": "original"
+        },
+        {
+          "text": "Belgrade is the capital of Serbia.",
+          "translation": "贝尔格莱德是塞尔维亚的首都。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7044,
+      "word": "heroine",
+      "status": "changed",
+      "reason": "原英文限虚构作品的主要正面女角色，例2为现实中救援女英雄。",
+      "current_en": "the main good female character in a work of fiction",
+      "current_zh": "女主角；女英雄",
+      "contexts": [
+        {
+          "text": "The heroine solves the mystery herself.",
+          "translation": "女主角自己解开了这个谜。",
+          "source": "original"
+        },
+        {
+          "text": "She became a local heroine after the rescue.",
+          "translation": "那次救援之后，她成了当地的女英雄。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7045,
+      "word": "retrospect",
+      "status": "unchanged",
+      "reason": "思考过去的事，与两句in retrospect一致。",
+      "current_en": "contemplation of things past",
+      "current_zh": "回顾（常用于in retrospect）",
+      "contexts": [
+        {
+          "text": "In retrospect, we should have booked earlier.",
+          "translation": "回过头看，我们当时应该早点预订。",
+          "source": "original"
+        },
+        {
+          "text": "The decision seems reasonable in retrospect.",
+          "translation": "现在回想起来，这个决定似乎很合理。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7046,
+      "word": "trot",
+      "status": "changed",
+      "reason": "原定义限四足动物对角步态，不能直接解释人在例2小跑。",
+      "current_en": "a gait faster than a walk; diagonally opposite legs strike the ground together",
+      "current_zh": "小跑；快步走",
+      "contexts": [
+        {
+          "text": "The horse moved at a gentle trot.",
+          "translation": "那匹马轻快地小跑着。",
+          "source": "original"
+        },
+        {
+          "text": "I had to trot to keep up with the children.",
+          "translation": "我得小跑才能跟上孩子们。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7047,
+      "word": "socialize",
+      "status": "unchanged",
+      "reason": "参与社交、与他人来往，准确对应外出及俱乐部交际。",
+      "current_en": "take part in social activities; interact with others",
+      "current_zh": "社交；与人交往",
+      "contexts": [
+        {
+          "text": "I don't feel like going out to socialize tonight.",
+          "translation": "今晚我不想出去社交。",
+          "source": "original"
+        },
+        {
+          "text": "The club gives people a chance to socialize.",
+          "translation": "这个俱乐部让人们有机会交际。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7048,
+      "word": "jake",
+      "status": "empty",
+      "reason": "现en为空；逐句对照当前“杰克（人名）”后保留空值，按任务不新增题干，不猜专名或缩写扩写。",
+      "current_en": "",
+      "current_zh": "杰克（人名）",
+      "contexts": [
+        {
+          "text": "Jake is waiting for us outside.",
+          "translation": "杰克在外面等我们。",
+          "source": "original"
+        },
+        {
+          "text": "I borrowed the camera from Jake.",
+          "translation": "我从杰克那里借了相机。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7049,
+      "word": "mingle",
+      "status": "unchanged",
+      "reason": "混合或参与，适用于人际交谈和香气相混。",
+      "current_en": "get involved or mixed-up with",
+      "current_zh": "交际；混合",
+      "contexts": [
+        {
+          "text": "People began to mingle after the presentation.",
+          "translation": "演讲结束后，人们开始相互交谈。",
+          "source": "original"
+        },
+        {
+          "text": "The smell of coffee seemed to mingle with the scent of flowers.",
+          "translation": "咖啡香似乎和花香混在了一起。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7050,
+      "word": "clubhouse",
+      "status": "unchanged",
+      "reason": "社交俱乐部使用的建筑，与会所午饭及设施相容。",
+      "current_en": "a building that is occupied by a social club",
+      "current_zh": "俱乐部会所",
+      "contexts": [
+        {
+          "text": "We met for lunch at the clubhouse.",
+          "translation": "我们在俱乐部会所碰面吃午饭。",
+          "source": "original"
+        },
+        {
+          "text": "The clubhouse has showers and changing rooms.",
+          "translation": "俱乐部会所有淋浴间和更衣室。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7051,
+      "word": "ibid",
+      "status": "empty",
+      "reason": "现en为空；逐句对照当前“同上（书面引用缩写）”后保留空值，按任务不新增题干，不猜专名或缩写扩写。",
+      "current_en": "",
+      "current_zh": "同上（书面引用缩写）",
+      "contexts": [
+        {
+          "text": "The next footnote uses ibid to refer to the same source.",
+          "translation": "下一条脚注用ibid指代同一个来源。",
+          "source": "original"
+        },
+        {
+          "text": "Use ibid only when the previous reference is clear.",
+          "translation": "只有前一条引用明确时才使用ibid。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7052,
+      "word": "pony",
+      "status": "changed",
+      "reason": "原定义限美国西部牧场马，不能准确解释普通小马。",
+      "current_en": "a range horse of the western United States",
+      "current_zh": "小马",
+      "contexts": [
+        {
+          "text": "The child rode a small pony.",
+          "translation": "那个孩子骑着一匹小马。",
+          "source": "original"
+        },
+        {
+          "text": "A pony was grazing beside the fence.",
+          "translation": "一匹小马在围栏边吃草。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7053,
+      "word": "peripheral",
+      "status": "changed",
+      "reason": "原定义仅以电缆连接CPU的外围设备，遗漏次要问题且连接方式限制不必要。",
+      "current_en": "(computer science) electronic equipment connected by cable to the CPU of a computer",
+      "current_zh": "次要的；外围设备",
+      "contexts": [
+        {
+          "text": "The article focuses on a peripheral issue.",
+          "translation": "这篇文章关注的是一个次要问题。",
+          "source": "original"
+        },
+        {
+          "text": "A printer is a common computer peripheral.",
+          "translation": "打印机是一种常见的计算机外围设备。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7054,
+      "word": "grapple",
+      "status": "changed",
+      "reason": "原英文只有抓握摔跤义，不涵盖处理预算难题。",
+      "current_en": "to grip or seize, as in a wrestling match",
+      "current_zh": "努力解决；扭打",
+      "contexts": [
+        {
+          "text": "We still have to grapple with the budget problem.",
+          "translation": "我们仍得努力解决预算问题。",
+          "source": "original"
+        },
+        {
+          "text": "The two wrestlers began to grapple.",
+          "translation": "两名摔跤手开始扭打。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7055,
+      "word": "hospitality",
+      "status": "unchanged",
+      "reason": "欢迎来宾的款待义成立；酒店餐饮行业名称与该服务性质相容，不补全所有行业分类。",
+      "current_en": "n kindness in welcoming guests or strangers",
+      "current_zh": "热情款待；酒店餐饮业",
+      "contexts": [
+        {
+          "text": "Thank you for your warm hospitality.",
+          "translation": "感谢你的热情款待。",
+          "source": "original"
+        },
+        {
+          "text": "She works in the hospitality industry.",
+          "translation": "她在酒店餐饮服务行业工作。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7056,
+      "word": "floral",
+      "status": "unchanged",
+      "reason": "花的构成、类似或联想，解释花纹和花香。",
+      "current_en": "resembling or made of or suggestive of flowers",
+      "current_zh": "花卉的；花卉图案的",
+      "contexts": [
+        {
+          "text": "I chose a dress with a floral pattern.",
+          "translation": "我选了一条带花卉图案的裙子。",
+          "source": "original"
+        },
+        {
+          "text": "The soap has a light floral scent.",
+          "translation": "这种香皂带着淡淡的花香。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7057,
+      "word": "centerpiece",
+      "status": "unchanged",
+      "reason": "中央或最重要部分，兼容桌上中心装饰和项目核心。",
+      "current_en": "the central or most important feature",
+      "current_zh": "中心摆设；核心部分",
+      "contexts": [
+        {
+          "text": "A bowl of flowers was the centerpiece of the table.",
+          "translation": "桌子中央摆着一碗花作装饰。",
+          "source": "original"
+        },
+        {
+          "text": "The new library is the centerpiece of the development.",
+          "translation": "新图书馆是这个开发项目的核心部分。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7058,
+      "word": "reed",
+      "status": "changed",
+      "reason": "原英文仅芦苇植物，无法解释单簧管簧片。",
+      "current_en": "tall woody perennial grasses with hollow slender stems especially of the genera Arundo and Phragmites",
+      "current_zh": "芦苇；簧片",
+      "contexts": [
+        {
+          "text": "A tall reed grew at the edge of the pond.",
+          "translation": "池塘边长着一株高高的芦苇。",
+          "source": "original"
+        },
+        {
+          "text": "The musician replaced the reed in her clarinet.",
+          "translation": "那位音乐家更换了单簧管的簧片。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7059,
+      "word": "imperative",
+      "status": "changed",
+      "reason": "原定义为紧急职责名词，两例是必要的形容词和语法祈使形式。",
+      "current_en": "some duty that is essential and urgent",
+      "current_zh": "至关重要的；祈使语气",
+      "contexts": [
+        {
+          "text": "It is imperative that we leave on time.",
+          "translation": "我们必须准时出发。",
+          "source": "original"
+        },
+        {
+          "text": "The teacher explained the imperative form of the verb.",
+          "translation": "老师讲解了这个动词的祈使形式。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7060,
+      "word": "congratulate",
+      "status": "unchanged",
+      "reason": "express congratulations虽含同根名词，但动作明确，对新工作和团队成功祝贺相容。",
+      "current_en": "express congratulations",
+      "current_zh": "祝贺",
+      "contexts": [
+        {
+          "text": "I'd like to congratulate you on your new job.",
+          "translation": "我想祝贺你找到新工作。",
+          "source": "original"
+        },
+        {
+          "text": "We should congratulate the team on their success.",
+          "translation": "我们应该祝贺团队取得成功。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7061,
+      "word": "compression",
+      "status": "unchanged",
+      "reason": "体积变小或被压紧的过程/结果，可解释图像压缩和发动机压缩。",
+      "current_en": "the process or result of becoming smaller or pressed together",
+      "current_zh": "压缩",
+      "contexts": [
+        {
+          "text": "Image compression can reduce the file size.",
+          "translation": "图像压缩可以减小文件大小。",
+          "source": "original"
+        },
+        {
+          "text": "The engineer checked the compression in the engine.",
+          "translation": "工程师检查了发动机里的压缩情况。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7062,
+      "word": "herr",
+      "status": "unchanged",
+      "reason": "原定义后半明确等同Mr的德语称谓，两个Herr加姓氏例句适配；前半不够精炼但不需改变核心。",
+      "current_en": "a German man; used before the name as a title equivalent to Mr in English",
+      "current_zh": "先生（德语称谓）",
+      "contexts": [
+        {
+          "text": "The letter is addressed to Herr Weber.",
+          "translation": "这封信是写给韦伯先生的。",
+          "source": "original"
+        },
+        {
+          "text": "Herr Schmidt will lead the tour.",
+          "translation": "施密特先生会带大家参观。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7063,
+      "word": "seriousness",
+      "status": "changed",
+      "reason": "原定义引起恐惧痛苦的性质，偏离问题严重性和认真态度。",
+      "current_en": "the quality of arousing fear or distress",
+      "current_zh": "严重性；认真态度",
+      "contexts": [
+        {
+          "text": "I didn't realize the seriousness of the problem.",
+          "translation": "我没有意识到这个问题有多严重。",
+          "source": "original"
+        },
+        {
+          "text": "She answered with complete seriousness.",
+          "translation": "她非常认真地回答了问题。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7064,
+      "word": "grammar",
+      "status": "unchanged",
+      "reason": "研究句法词形的语言学领域，与复习基础语法及规则相容。",
+      "current_en": "the branch of linguistics that deals with syntax and morphology (and sometimes also deals with semantics)",
+      "current_zh": "语法",
+      "contexts": [
+        {
+          "text": "I need to review some basic grammar.",
+          "translation": "我需要复习一些基础语法。",
+          "source": "original"
+        },
+        {
+          "text": "The app gives simple explanations of grammar rules.",
+          "translation": "这个应用用简单的话解释语法规则。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7065,
+      "word": "indifferent",
+      "status": "unchanged",
+      "reason": "不关心义正确对应结果；一般评价是另一个已列义项，现定义本身明确正确，保留。",
+      "current_en": "showing no care or concern in attitude or action",
+      "current_zh": "漠不关心的；一般的",
+      "contexts": [
+        {
+          "text": "He seemed indifferent to the result.",
+          "translation": "他似乎对结果毫不在意。",
+          "source": "original"
+        },
+        {
+          "text": "The restaurant got an indifferent review.",
+          "translation": "这家餐厅得到了一则评价一般的评论。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7066,
+      "word": "railway",
+      "status": "changed",
+      "reason": "原定义经营列车运输的商业组织，不能直接涵盖车站和铁路连接。",
+      "current_en": "line that is the commercial organization responsible for operating a system of transportation for trains that pull passengers or freight",
+      "current_zh": "铁路",
+      "contexts": [
+        {
+          "text": "The railway station is near the town center.",
+          "translation": "火车站靠近镇中心。",
+          "source": "original"
+        },
+        {
+          "text": "The village has no direct railway connection.",
+          "translation": "这个村庄没有直达的铁路线路。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7067,
+      "word": "citation",
+      "status": "changed",
+      "reason": "原英文正式表彰，与两句文献出处标注完全错义。",
+      "current_en": "an official award (as for bravery or service) usually given as formal public statement",
+      "current_zh": "引用；出处标注",
+      "contexts": [
+        {
+          "text": "Please add a citation for that claim.",
+          "translation": "请为那项论断补充出处。",
+          "source": "original"
+        },
+        {
+          "text": "The citation includes the author's name and publication date.",
+          "translation": "这条引文标注包含作者姓名和出版日期。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7068,
+      "word": "dude",
+      "status": "changed",
+      "reason": "原英文仅称呼用语，例2是第三人称指一个男子。",
+      "current_en": "n an informal form of address for a man",
+      "current_zh": "老兄；伙计（非正式）",
+      "contexts": [
+        {
+          "text": "Hey dude, are you coming with us?",
+          "translation": "嘿，伙计，你要和我们一起去吗？",
+          "source": "original"
+        },
+        {
+          "text": "That dude helped me fix my bike.",
+          "translation": "那个家伙帮我修好了自行车。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7069,
+      "word": "respectful",
+      "status": "unchanged",
+      "reason": "表现尊重，与分歧时礼貌和尊重的信件相容。",
+      "current_en": "full of or exhibiting respect",
+      "current_zh": "尊重他人的；恭敬的",
+      "contexts": [
+        {
+          "text": "Try to be respectful when you disagree.",
+          "translation": "即使意见不同，也尽量保持尊重。",
+          "source": "original"
+        },
+        {
+          "text": "She wrote a respectful letter to the manager.",
+          "translation": "她给经理写了一封措辞礼貌的信。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7070,
+      "word": "humidity",
+      "status": "unchanged",
+      "reason": "空气中的湿气，解释室内湿度和测量湿度。",
+      "current_en": "wetness in the atmosphere",
+      "current_zh": "湿度",
+      "contexts": [
+        {
+          "text": "The humidity made the room feel uncomfortable.",
+          "translation": "潮湿让房间里很不舒服。",
+          "source": "original"
+        },
+        {
+          "text": "This device measures temperature and humidity.",
+          "translation": "这个设备可以测量温度和湿度。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7071,
+      "word": "eternity",
+      "status": "unchanged",
+      "reason": "无尽时间与永远在一起一致，漫长等待为夸张用法。",
+      "current_en": "time without end",
+      "current_zh": "永恒；极长的一段时间",
+      "contexts": [
+        {
+          "text": "We seemed to wait for an eternity.",
+          "translation": "我们仿佛等了很久很久。",
+          "source": "original"
+        },
+        {
+          "text": "They promised to stay together for eternity.",
+          "translation": "他们承诺永远在一起。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7072,
+      "word": "kylie",
+      "status": "changed",
+      "reason": "原英文为澳大利亚回旋镖，两例和zh仅为人名；泛指名字不足以形成唯一英英题，退回中文题。",
+      "current_en": "an Australian boomerang; one side flat and the other convex",
+      "current_zh": "凯莉（人名）",
+      "contexts": [
+        {
+          "text": "Kylie offered to drive us home.",
+          "translation": "凯莉提出开车送我们回家。",
+          "source": "original"
+        },
+        {
+          "text": "Have you seen the message from Kylie?",
+          "translation": "你看见凯莉发的消息了吗？",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7073,
+      "word": "martyr",
+      "status": "unchanged",
+      "reason": "为原则受苦者与烈士、把自己当受苦者的比喻相容。",
+      "current_en": "one who suffers for the sake of principle",
+      "current_zh": "殉道者；独自揽事受累的人",
+      "contexts": [
+        {
+          "text": "The monument honors a local martyr.",
+          "translation": "这座纪念碑纪念一位当地烈士。",
+          "source": "original"
+        },
+        {
+          "text": "Don't make yourself a martyr by doing all the work alone.",
+          "translation": "别把所有活都揽下来，让自己一个人受累。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7074,
+      "word": "synagogue",
+      "status": "unchanged",
+      "reason": "犹太会众礼拜地点，与街对面和历史教堂例句相容。",
+      "current_en": "(Judaism) the place of worship for a Jewish congregation",
+      "current_zh": "犹太教堂",
+      "contexts": [
+        {
+          "text": "The synagogue is just across the street.",
+          "translation": "犹太教堂就在街对面。",
+          "source": "original"
+        },
+        {
+          "text": "We visited a historic synagogue with a local guide.",
+          "translation": "我们在当地导游带领下参观了一座历史悠久的犹太教堂。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7075,
+      "word": "ominous",
+      "status": "unchanged",
+      "reason": "预示坏事的性质，适用于不祥沉默和乌云。",
+      "current_en": "s threatening or foreshadowing evil or tragic developments",
+      "current_zh": "不祥的；令人担忧的",
+      "contexts": [
+        {
+          "text": "There was an ominous silence after the announcement.",
+          "translation": "宣布消息后，现场陷入了令人不安的沉默。",
+          "source": "original"
+        },
+        {
+          "text": "Those dark clouds look ominous.",
+          "translation": "那些乌云看上去预示着坏天气。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7076,
+      "word": "howl",
+      "status": "unchanged",
+      "reason": "长而响的嚎叫，适用于狗叫及风的拟人化呼啸。",
+      "current_en": "a long loud emotional utterance",
+      "current_zh": "嚎叫；呼啸",
+      "contexts": [
+        {
+          "text": "We heard a dog howl in the distance.",
+          "translation": "我们听见远处有狗在嚎叫。",
+          "source": "original"
+        },
+        {
+          "text": "The wind began to howl around the house.",
+          "translation": "风开始在房子周围呼啸。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7077,
+      "word": "pod",
+      "status": "changed",
+      "reason": "原英文仅豆荚，第二句为一群海豚。",
+      "current_en": "the vessel that contains the seeds of a plant (not the seeds themselves)",
+      "current_zh": "豆荚；海豚等的一群",
+      "contexts": [
+        {
+          "text": "She opened a pea pod and counted the peas.",
+          "translation": "她打开一个豌豆荚，数了数里面的豌豆。",
+          "source": "original"
+        },
+        {
+          "text": "A pod of dolphins swam beside the boat.",
+          "translation": "一群海豚在船边游过。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7078,
+      "word": "cricket",
+      "status": "changed",
+      "reason": "原英文仅蟋蟀，第一句为板球运动。",
+      "current_en": "leaping insect; male makes chirping noises by rubbing the forewings together",
+      "current_zh": "板球；蟋蟀",
+      "contexts": [
+        {
+          "text": "The children played cricket in the park.",
+          "translation": "孩子们在公园里打板球。",
+          "source": "original"
+        },
+        {
+          "text": "A cricket was chirping outside the window.",
+          "translation": "一只蟋蟀在窗外鸣叫。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7079,
+      "word": "modernization",
+      "status": "unchanged",
+      "reason": "使外观或行为现代化，与车站和工厂改造相容。",
+      "current_en": "making modern in appearance or behavior",
+      "current_zh": "现代化",
+      "contexts": [
+        {
+          "text": "The modernization of the station took two years.",
+          "translation": "车站的现代化改造花了两年时间。",
+          "source": "original"
+        },
+        {
+          "text": "The factory needs further modernization.",
+          "translation": "这家工厂还需要进一步的现代化改造。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7080,
+      "word": "rotten",
+      "status": "unchanged",
+      "reason": "腐坏义正确解释苹果；rotten weather为已列糟糕义的比喻延伸，定义无错误断言。",
+      "current_en": "having decayed or disintegrated; usually implies foulness",
+      "current_zh": "腐烂的；糟糕的",
+      "contexts": [
+        {
+          "text": "That apple is rotten inside.",
+          "translation": "那个苹果里面烂了。",
+          "source": "original"
+        },
+        {
+          "text": "We've had rotten weather all week.",
+          "translation": "这一周的天气一直很糟糕。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7081,
+      "word": "eligibility",
+      "status": "unchanged",
+      "reason": "满足资格的状态，虽然同根eligible但语义准确，与申请及资格条件相容。",
+      "current_en": "the quality or state of being eligible",
+      "current_zh": "资格；符合条件",
+      "contexts": [
+        {
+          "text": "Check your eligibility before applying.",
+          "translation": "申请前先确认自己是否符合资格。",
+          "source": "original"
+        },
+        {
+          "text": "The website explains the eligibility requirements.",
+          "translation": "网站说明了申请资格要求。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7082,
+      "word": "deceive",
+      "status": "unchanged",
+      "reason": "不诚实、欺骗，解释个人欺骗和表象误导。",
+      "current_en": "be false to; be dishonest with",
+      "current_zh": "欺骗",
+      "contexts": [
+        {
+          "text": "I didn't mean to deceive you.",
+          "translation": "我并不是有意要骗你。",
+          "source": "original"
+        },
+        {
+          "text": "Appearances can deceive us.",
+          "translation": "外表有时会误导我们。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7083,
+      "word": "mungo",
+      "status": "unchanged",
+      "reason": "破碎废布制成纤维材料，虽句尾不够完整，仍对应现有再生羊毛辨识句；不凭陌生工艺术语推断新增精细范围。",
+      "current_en": "A fibrous material obtained by deviling rags or the remnants",
+      "current_zh": "短纤维再生羊毛（较少用纺织术语）",
+      "contexts": [
+        {
+          "text": "The textile label mentions mungo as a recycled wool fiber.",
+          "translation": "纺织品标签提到mungo，指一种再生羊毛纤维。",
+          "source": "original"
+        },
+        {
+          "text": "The old glossary defines mungo as short, low-quality reclaimed wool.",
+          "translation": "旧词汇表把mungo解释为纤维短、品质较差的再生羊毛。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7084,
+      "word": "crane",
+      "status": "changed",
+      "reason": "原英文锁定美国作家，实际两句为起重机和鹤。",
+      "current_en": "United States writer (1871-1900)",
+      "current_zh": "起重机；鹤",
+      "contexts": [
+        {
+          "text": "A crane lifted the beam into place.",
+          "translation": "起重机把横梁吊到了指定位置。",
+          "source": "original"
+        },
+        {
+          "text": "We watched a crane walking through the shallow water.",
+          "translation": "我们看着一只鹤在浅水中行走。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7085,
+      "word": "ethanol",
+      "status": "unchanged",
+      "reason": "发酵蒸馏酒里的致醉成分及溶剂用途，准确辨识乙醇；虽长，不仅因长度改正确定义。",
+      "current_en": "n the intoxicating agent in fermented and distilled liquors; used pure or denatured as a solvent or in medicines and colognes and cleaning solutions and rocket fuel; proposed as a renewable clean-burning additive to gasoline",
+      "current_zh": "乙醇",
+      "contexts": [
+        {
+          "text": "The label says the product contains ethanol.",
+          "translation": "标签上说这种产品含有乙醇。",
+          "source": "original"
+        },
+        {
+          "text": "The textbook explains the structure of ethanol.",
+          "translation": "教材解释了乙醇的结构。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7086,
+      "word": "vodka",
+      "status": "unchanged",
+      "reason": "未陈年无色烈酒，能解释饮料及未开封瓶装伏特加；不把其他生产地排除。",
+      "current_en": "unaged colorless liquor originating in Russia",
+      "current_zh": "伏特加",
+      "contexts": [
+        {
+          "text": "He ordered a vodka with orange juice.",
+          "translation": "他点了一杯伏特加兑橙汁。",
+          "source": "original"
+        },
+        {
+          "text": "The bottle of vodka was still unopened.",
+          "translation": "那瓶伏特加还没开封。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7087,
+      "word": "farmhouse",
+      "status": "unchanged",
+      "reason": "农民及家人居住的房屋，解释住宿及农舍厨房。",
+      "current_en": "house for a farmer and family",
+      "current_zh": "农舍",
+      "contexts": [
+        {
+          "text": "We stayed in an old farmhouse near the village.",
+          "translation": "我们住在村子附近的一座老农舍里。",
+          "source": "original"
+        },
+        {
+          "text": "The farmhouse has a large kitchen.",
+          "translation": "这座农舍有一个大厨房。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7088,
+      "word": "relic",
+      "status": "unchanged",
+      "reason": "古代遗留物，可解释博物馆遗物和旧时代规则的比喻。",
+      "current_en": "an antiquity that has survived from the distant past",
+      "current_zh": "遗物；遗迹",
+      "contexts": [
+        {
+          "text": "The museum displays a relic from the ancient city.",
+          "translation": "博物馆陈列着一件来自那座古城的遗物。",
+          "source": "original"
+        },
+        {
+          "text": "The rule is a relic of a different era.",
+          "translation": "这条规定是另一个时代留下来的产物。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7089,
+      "word": "hype",
+      "status": "unchanged",
+      "reason": "夸张且可能误导的宣传，虽动词表达但名词hype对应同一行为及产物，非错义。",
+      "current_en": "publicize in an exaggerated and often misleading manner",
+      "current_zh": "夸张宣传；炒作",
+      "contexts": [
+        {
+          "text": "Don't believe all the hype around the product.",
+          "translation": "别全信围绕这个产品的炒作。",
+          "source": "original"
+        },
+        {
+          "text": "The film failed to live up to the hype.",
+          "translation": "这部电影没有宣传得那么好。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7090,
+      "word": "tha",
+      "status": "empty",
+      "reason": "现en为空；逐句对照当前“泰国的三字母国家代码（THA）”后保留空值，按任务不新增题干，不猜专名或缩写扩写。",
+      "current_en": "",
+      "current_zh": "泰国的三字母国家代码（THA）",
+      "contexts": [
+        {
+          "text": "The table lists Thailand under the code THA.",
+          "translation": "表格用代码THA列出泰国。",
+          "source": "original"
+        },
+        {
+          "text": "Select THA if the form asks for Thailand's three-letter country code.",
+          "translation": "如果表格要求填写泰国的三字母国家代码，请选择THA。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7091,
+      "word": "lightweight",
+      "status": "changed",
+      "reason": "原定义轻量级职业拳击手，实际两句是轻便夹克和轻量应用。",
+      "current_en": "a professional boxer who weighs between 131 and 135 pounds",
+      "current_zh": "轻便的；轻量级的",
+      "contexts": [
+        {
+          "text": "This lightweight jacket is easy to pack.",
+          "translation": "这件轻便夹克很好收进包里。",
+          "source": "original"
+        },
+        {
+          "text": "We need a lightweight app for older phones.",
+          "translation": "我们需要一款适合旧手机的轻量应用。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7092,
+      "word": "jeopardy",
+      "status": "unchanged",
+      "reason": "遭受损失不幸的可能性，准确对应项目和工作处于危险。",
+      "current_en": "n a source of danger; a possibility of incurring loss or misfortune",
+      "current_zh": "危险（常用于in jeopardy）",
+      "contexts": [
+        {
+          "text": "The delay put the whole project in jeopardy.",
+          "translation": "延误使整个项目陷入了险境。",
+          "source": "original"
+        },
+        {
+          "text": "His job could be in jeopardy.",
+          "translation": "他的工作可能保不住了。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7093,
+      "word": "offseason",
+      "status": "empty",
+      "reason": "现en为空；逐句对照当前“休赛期；淡季”后保留空值，按任务不新增题干，不猜专名或缩写扩写。",
+      "current_en": "",
+      "current_zh": "休赛期；淡季",
+      "contexts": [
+        {
+          "text": "The players train during the offseason.",
+          "translation": "球员们在休赛期训练。",
+          "source": "original"
+        },
+        {
+          "text": "Hotels are often cheaper in the offseason.",
+          "translation": "酒店在淡季通常更便宜。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7094,
+      "word": "vie",
+      "status": "unchanged",
+      "reason": "参与竞争争取目标，解释合同和第一名竞争。",
+      "current_en": "v compete for something; engage in a contest; measure oneself against others",
+      "current_zh": "争夺；竞争",
+      "contexts": [
+        {
+          "text": "Several companies will vie for the contract.",
+          "translation": "几家公司将争取这份合同。",
+          "source": "original"
+        },
+        {
+          "text": "The two teams continue to vie for first place.",
+          "translation": "这两支球队继续争夺第一名。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7095,
+      "word": "programmer",
+      "status": "unchanged",
+      "reason": "设计编写测试程序的人，与职业及程序错误交流相容。",
+      "current_en": "a person who designs and writes and tests computer programs",
+      "current_zh": "程序员",
+      "contexts": [
+        {
+          "text": "She works as a programmer for a small company.",
+          "translation": "她在一家小公司做程序员。",
+          "source": "original"
+        },
+        {
+          "text": "Ask the programmer whether the bug has been fixed.",
+          "translation": "问问程序员这个程序错误是否修好了。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7096,
+      "word": "ssr",
+      "status": "empty",
+      "reason": "现en为空；逐句对照当前“服务端渲染（SSR，开发缩写）”后保留空值，按任务不新增题干，不猜专名或缩写扩写。",
+      "current_en": "",
+      "current_zh": "服务端渲染（SSR，开发缩写）",
+      "contexts": [
+        {
+          "text": "We use SSR to generate the page on the server.",
+          "translation": "我们用服务端渲染在服务器上生成页面。",
+          "source": "original"
+        },
+        {
+          "text": "The guide explains when SSR might be useful.",
+          "translation": "这份指南解释了服务端渲染在什么情况下可能有用。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7097,
+      "word": "crow",
+      "status": "unchanged",
+      "reason": "粗声鸣叫的黑鸟，与乌鸦落在围栏一致，as the crow flies为相同鸟名习语。",
+      "current_en": "black birds having a raucous call",
+      "current_zh": "乌鸦；直线距离（as the crow flies中）",
+      "contexts": [
+        {
+          "text": "A crow landed on the garden fence.",
+          "translation": "一只乌鸦落在了花园围栏上。",
+          "source": "original"
+        },
+        {
+          "text": "The village is five miles away as the crow flies.",
+          "translation": "村庄距这里的直线距离为五英里。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7098,
+      "word": "gastrin",
+      "status": "changed",
+      "reason": "原英文生理细节冗长并有小肠刺激部位表述疑点；改为权威来源支持的胃酸分泌核心作用，只作术语辨识。",
+      "current_en": "polypeptide hormone secreted by the mucous lining of the stomach; when peptides and amino acids are present in the small intestine the secretion of gastric acid is stimulated",
+      "current_zh": "胃泌素",
+      "contexts": [
+        {
+          "text": "The lecture explains the role of gastrin in digestion.",
+          "translation": "这堂课解释了胃泌素在消化过程中的作用。",
+          "source": "original"
+        },
+        {
+          "text": "She asked what the gastrin test was for.",
+          "translation": "她问胃泌素检测是检查什么的。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7099,
+      "word": "variability",
+      "status": "unchanged",
+      "reason": "容易变化的性质，解释年度数据及配送时间变化。",
+      "current_en": "the quality of being subject to variation",
+      "current_zh": "变化程度；变异性",
+      "contexts": [
+        {
+          "text": "The data shows considerable variability from year to year.",
+          "translation": "这些数据表明不同年份之间存在相当大的变化。",
+          "source": "original"
+        },
+        {
+          "text": "We need to allow for variability in delivery times.",
+          "translation": "我们需要考虑配送时间可能出现的变化。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7100,
+      "word": "empowerment",
+      "status": "changed",
+      "reason": "原英文仅法律认可授权，不涵盖年轻人自主能力和员工参与决策。",
+      "current_en": "n the act of conferring legality or sanction or formal warrant",
+      "current_zh": "赋予自主权；增强自主能力",
+      "contexts": [
+        {
+          "text": "The program focuses on the empowerment of young people.",
+          "translation": "这个项目着重帮助年轻人增强自主能力。",
+          "source": "original"
+        },
+        {
+          "text": "Employee empowerment can give staff more say in decisions.",
+          "translation": "赋予员工自主权能让他们更多地参与决策。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7101,
+      "word": "footprint",
+      "status": "changed",
+      "reason": "原定义只有脚印，缺少例2碳足迹义。",
+      "current_en": "a mark of a foot or shoe on a surface",
+      "current_zh": "脚印；足迹；碳足迹",
+      "contexts": [
+        {
+          "text": "There's a muddy footprint on the kitchen floor.",
+          "translation": "厨房地板上有一个泥脚印。",
+          "source": "original"
+        },
+        {
+          "text": "The company wants to reduce its carbon footprint.",
+          "translation": "这家公司希望减少碳足迹。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7102,
+      "word": "churn",
+      "status": "changed",
+      "reason": "原定义是搅乳器容器；两句为搅制黄油动词和员工流动。",
+      "current_en": "a vessel in which cream is agitated to separate butterfat from buttermilk",
+      "current_zh": "搅制黄油；人员流动",
+      "contexts": [
+        {
+          "text": "Use a wooden paddle to churn the cream.",
+          "translation": "用木桨搅打稀奶油，制成黄油。",
+          "source": "original"
+        },
+        {
+          "text": "High staff churn makes it hard to keep a stable team.",
+          "translation": "员工频繁流动使团队难以保持稳定。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7103,
+      "word": "materialize",
+      "status": "unchanged",
+      "reason": "出现或成为现实，两句分别计划实现和人影出现，兼容。",
+      "current_en": "v come into being; become reality",
+      "current_zh": "实现；突然出现",
+      "contexts": [
+        {
+          "text": "Our plans for a weekend trip didn't materialize.",
+          "translation": "我们周末出游的计划没有实现。",
+          "source": "original"
+        },
+        {
+          "text": "A figure seemed to materialize out of the fog.",
+          "translation": "雾中似乎突然出现了一个人影。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7104,
+      "word": "unfinished",
+      "status": "unchanged",
+      "reason": "未达到预期终态，可解释三明治未吃完和浴室未装修完。",
+      "current_en": "not brought to the desired final state",
+      "current_zh": "未完成的；没做完的",
+      "contexts": [
+        {
+          "text": "I left an unfinished sandwich on the table.",
+          "translation": "我把没吃完的三明治留在了桌上。",
+          "source": "original"
+        },
+        {
+          "text": "The upstairs bathroom is still unfinished.",
+          "translation": "楼上的浴室还没装修完。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7105,
+      "word": "irregular",
+      "status": "changed",
+      "reason": "原英文有瑕疵的低价商品名词，两例是形状和工作时间不规律。",
+      "current_en": "merchandise that has imperfections; usually sold at a reduced price without the brand name",
+      "current_zh": "不规则的；不固定的",
+      "contexts": [
+        {
+          "text": "The room has an irregular shape.",
+          "translation": "这个房间的形状不规则。",
+          "source": "original"
+        },
+        {
+          "text": "She works irregular hours at the hotel.",
+          "translation": "她在酒店工作，上班时间不固定。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7106,
+      "word": "anguish",
+      "status": "unchanged",
+      "reason": "极度精神痛苦，解释神态和失去家园的悲痛。",
+      "current_en": "extreme mental distress",
+      "current_zh": "极度痛苦；悲痛",
+      "contexts": [
+        {
+          "text": "Her face showed the anguish she couldn't put into words.",
+          "translation": "她脸上流露出无法用言语表达的痛苦。",
+          "source": "original"
+        },
+        {
+          "text": "He spoke with anguish about losing his home.",
+          "translation": "他痛苦地谈起失去家园的事。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7107,
+      "word": "decree",
+      "status": "changed",
+      "reason": "原定义限法院卷宗中的判令；例1是国王法令，补足发令主体。",
+      "current_en": "a legally binding command or decision entered on the court record (as if issued by a court or judge)",
+      "current_zh": "法令；正式命令",
+      "contexts": [
+        {
+          "text": "The king issued a decree closing the city gates.",
+          "translation": "国王下令关闭城门。",
+          "source": "original"
+        },
+        {
+          "text": "The old decree is displayed in the museum.",
+          "translation": "那份旧法令陈列在博物馆里。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7108,
+      "word": "abstraction",
+      "status": "unchanged",
+      "reason": "不依附具体实例的概念，主抽象概念义成立；抽象绘画为该性质的艺术应用。",
+      "current_en": "a concept or idea not associated with any specific instance",
+      "current_zh": "抽象概念；抽象化；抽象艺术",
+      "contexts": [
+        {
+          "text": "The idea is hard to explain without some abstraction.",
+          "translation": "要解释这个想法，很难完全避开抽象概念。",
+          "source": "original"
+        },
+        {
+          "text": "Her paintings moved from portraits toward abstraction.",
+          "translation": "她的绘画从肖像逐渐转向抽象风格。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7109,
+      "word": "transitional",
+      "status": "unchanged",
+      "reason": "与转变相关，解释过渡职位和过渡历史阶段。",
+      "current_en": "of or relating to or characterized by transition",
+      "current_zh": "过渡的；过渡时期的",
+      "contexts": [
+        {
+          "text": "This is a transitional role until we hire a manager.",
+          "translation": "在招到经理之前，这只是一个过渡职位。",
+          "source": "original"
+        },
+        {
+          "text": "The museum covers a transitional period in local history.",
+          "translation": "博物馆介绍了当地历史上的一个过渡时期。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7110,
+      "word": "collaborator",
+      "status": "changed",
+      "reason": "原英文为与占领军合作的人；两句为电影和展览合作伙伴。",
+      "current_en": "someone who collaborates with an enemy occupying force",
+      "current_zh": "合作伙伴；合作者",
+      "contexts": [
+        {
+          "text": "She's been my collaborator on three film projects.",
+          "translation": "她和我合作过三个电影项目。",
+          "source": "original"
+        },
+        {
+          "text": "The artist found a new collaborator for the exhibition.",
+          "translation": "这位艺术家为展览找到了新的合作伙伴。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7111,
+      "word": "downturn",
+      "status": "unchanged",
+      "reason": "商业经济活动恶化，直接对应销售下降和经济低迷。",
+      "current_en": "a worsening of business or economic activity",
+      "current_zh": "下降；衰退；经济低迷",
+      "contexts": [
+        {
+          "text": "The shop closed after a sharp downturn in sales.",
+          "translation": "销售额大幅下滑后，这家店关门了。",
+          "source": "original"
+        },
+        {
+          "text": "The town struggled during the economic downturn.",
+          "translation": "经济低迷期间，这个小镇过得很艰难。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7112,
+      "word": "indefinitely",
+      "status": "unchanged",
+      "reason": "未确定的期限，解释无限期推迟和不能一直放箱子。",
+      "current_en": "to an indefinite extent; for an indefinite time",
+      "current_zh": "无限期地；一直",
+      "contexts": [
+        {
+          "text": "The match has been postponed indefinitely.",
+          "translation": "比赛已被无限期推迟。",
+          "source": "original"
+        },
+        {
+          "text": "We can't leave these boxes here indefinitely.",
+          "translation": "我们不能一直把这些箱子放在这里。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7113,
+      "word": "prominence",
+      "status": "unchanged",
+      "reason": "广为人知或杰出的显著状态，成名直接适配；新闻突出为同词显著性的另一应用。",
+      "current_en": "the state of being prominent: widely known or eminent",
+      "current_zh": "显著；突出；声望",
+      "contexts": [
+        {
+          "text": "The singer rose to prominence after her second album.",
+          "translation": "这位歌手在第二张专辑发行后成名了。",
+          "source": "original"
+        },
+        {
+          "text": "The front page gives unusual prominence to this story.",
+          "translation": "头版给了这条新闻格外显眼的位置。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7114,
+      "word": "butcher",
+      "status": "changed",
+      "reason": "原定义仅肉类零售商，例2英国用法指肉店。",
+      "current_en": "a retailer of meat",
+      "current_zh": "肉店老板；肉店；屠夫",
+      "contexts": [
+        {
+          "text": "Ask the butcher to cut the meat into small pieces.",
+          "translation": "请肉店老板把肉切成小块。",
+          "source": "original"
+        },
+        {
+          "text": "There's a butcher near the bus stop.",
+          "translation": "公交站附近有一家肉店。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7115,
+      "word": "lesion",
+      "status": "unchanged",
+      "reason": "局部身体结构异常变化，符合肝病变和皮肤病变，未给诊断治疗建议。",
+      "current_en": "any localized abnormal structural change in a bodily part",
+      "current_zh": "病变；受损组织",
+      "contexts": [
+        {
+          "text": "The scan showed a small lesion in the liver.",
+          "translation": "扫描显示肝脏有一处小病变。",
+          "source": "original"
+        },
+        {
+          "text": "The doctor photographed the skin lesion for the record.",
+          "translation": "医生拍下皮肤病变的照片，存入病历。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7116,
+      "word": "temperament",
+      "status": "changed",
+      "reason": "原定义过度激动易怒，不能解释平和性情或一般性情差异。",
+      "current_en": "excessive emotionalism or irritability and excitability (especially when displayed openly)",
+      "current_zh": "性情；气质；脾气",
+      "contexts": [
+        {
+          "text": "Her calm temperament makes her easy to work with.",
+          "translation": "她性情温和，合作起来很轻松。",
+          "source": "original"
+        },
+        {
+          "text": "The twins differ greatly in temperament.",
+          "translation": "这对双胞胎的性情很不一样。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7117,
+      "word": "thankful",
+      "status": "unchanged",
+      "reason": "感激的感受或表现，符合安全到家的庆幸和感谢邻居。",
+      "current_en": "a feeling or showing gratitude",
+      "current_zh": "感激的；庆幸的",
+      "contexts": [
+        {
+          "text": "I'm thankful that everyone got home safely.",
+          "translation": "大家都平安到家，我很庆幸。",
+          "source": "original"
+        },
+        {
+          "text": "We're thankful for all the help from our neighbors.",
+          "translation": "我们很感激邻居们给予的帮助。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7118,
+      "word": "muster",
+      "status": "changed",
+      "reason": "原英文军人集合名词，实际两句为鼓起勇气及召集志愿者的动词。",
+      "current_en": "a gathering of military personnel for duty",
+      "current_zh": "鼓起；召集；集合",
+      "contexts": [
+        {
+          "text": "I couldn't muster the courage to ask her.",
+          "translation": "我没能鼓起勇气问她。",
+          "source": "original"
+        },
+        {
+          "text": "We need to muster enough volunteers for Saturday.",
+          "translation": "我们需要为周六的活动召集足够的志愿者。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7119,
+      "word": "democratization",
+      "status": "unchanged",
+      "reason": "使制度民主化，两个国家地区历史讨论相容。",
+      "current_en": "the action of making something democratic",
+      "current_zh": "民主化",
+      "contexts": [
+        {
+          "text": "The lecture traced the country's path to democratization.",
+          "translation": "这场讲座回顾了这个国家走向民主化的历程。",
+          "source": "original"
+        },
+        {
+          "text": "The book examines democratization in several regions.",
+          "translation": "这本书探讨了几个地区的民主化进程。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7120,
+      "word": "promoter",
+      "status": "changed",
+      "reason": "原英文支持者泛义，不能准确对应演出和拳击活动组织推广者。",
+      "current_en": "someone who is an active supporter and advocate",
+      "current_zh": "活动主办人；推广者",
+      "contexts": [
+        {
+          "text": "The concert promoter moved the show to a larger venue.",
+          "translation": "演出主办方把音乐会改到了更大的场地。",
+          "source": "original"
+        },
+        {
+          "text": "He works as a promoter for local boxing events.",
+          "translation": "他负责推广和组织当地的拳击赛事。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7121,
+      "word": "cannon",
+      "status": "unchanged",
+      "reason": "大型火炮通常带轮，与城堡火炮和历史重演相容；usually非绝对条件。",
+      "current_en": "a large artillery gun that is usually on wheels",
+      "current_zh": "大炮；火炮",
+      "contexts": [
+        {
+          "text": "An old cannon stands outside the castle.",
+          "translation": "城堡外立着一门旧火炮。",
+          "source": "original"
+        },
+        {
+          "text": "We heard a cannon fire during the reenactment.",
+          "translation": "历史重演活动中，我们听到了火炮发射的声音。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7122,
+      "word": "oblivious",
+      "status": "unchanged",
+      "reason": "未有意识察觉，解释未察觉雨及时间。",
+      "current_en": "(followed by `to' or `of') lacking conscious awareness of",
+      "current_zh": "未察觉的；浑然不知的",
+      "contexts": [
+        {
+          "text": "He was oblivious to the rain until his shirt was soaked.",
+          "translation": "直到衬衫湿透，他才发现下雨了。",
+          "source": "original"
+        },
+        {
+          "text": "She kept talking, oblivious to the time.",
+          "translation": "她一直说个不停，完全没注意时间。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7123,
+      "word": "narcotic",
+      "status": "unchanged",
+      "reason": "能产生麻木或昏沉的药物，风险说明与药品法律及麻醉性止痛药词语交流相容；不提供服药建议。",
+      "current_en": "a drug that produces numbness or stupor; often taken for pleasure or to reduce pain; extensive use can lead to addiction",
+      "current_zh": "麻醉药；麻醉性药物",
+      "contexts": [
+        {
+          "text": "The museum exhibit discusses laws on narcotic drugs.",
+          "translation": "这项博物馆展览介绍了有关麻醉药品的法律。",
+          "source": "original"
+        },
+        {
+          "text": "The report mentioned a missing bottle of a narcotic painkiller.",
+          "translation": "报告提到一瓶麻醉性止痛药不见了。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7124,
+      "word": "bodily",
+      "status": "unchanged",
+      "reason": "与身体相关，准确解释身体功能和人身伤害。",
+      "current_en": "of or relating to or belonging to the body",
+      "current_zh": "身体的；肉体的",
+      "contexts": [
+        {
+          "text": "The course covers basic bodily functions.",
+          "translation": "这门课程介绍人体的基本功能。",
+          "source": "original"
+        },
+        {
+          "text": "The sign warns visitors about the risk of bodily injury.",
+          "translation": "标牌提醒游客注意人身伤害的风险。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7125,
+      "word": "multitude",
+      "status": "changed",
+      "reason": "原定义一大群人；两例是花朵和问题，不能限定人群。",
+      "current_en": "a large gathering of people",
+      "current_zh": "大量；众多",
+      "contexts": [
+        {
+          "text": "A multitude of tiny flowers covered the hillside.",
+          "translation": "山坡上开满了小花。",
+          "source": "original"
+        },
+        {
+          "text": "The old house has a multitude of problems.",
+          "translation": "这座老房子有一大堆问题。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7126,
+      "word": "knit",
+      "status": "changed",
+      "reason": "原英文编织面料名词，实际例句为编织和使想法结合的动词。",
+      "current_en": "a fabric made by knitting",
+      "current_zh": "编织；使结合",
+      "contexts": [
+        {
+          "text": "My aunt taught me to knit a scarf.",
+          "translation": "我姑姑教我织围巾。",
+          "source": "original"
+        },
+        {
+          "text": "We need to knit these separate ideas into one story.",
+          "translation": "我们需要把这些零散的想法串成一个故事。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7127,
+      "word": "vault",
+      "status": "changed",
+      "reason": "原英文为墓室，现zh和两句为保险库、跳跃，兼顾zh另列拱顶。",
+      "current_en": "a burial chamber (usually underground)",
+      "current_zh": "保险库；跳跃；拱顶",
+      "contexts": [
+        {
+          "text": "The jewels are kept in a locked vault.",
+          "translation": "珠宝存放在上锁的保险库里。",
+          "source": "original"
+        },
+        {
+          "text": "He cleared the fence with a quick vault.",
+          "translation": "他迅速一跃，翻过了围栏。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7128,
+      "word": "chilly",
+      "status": "changed",
+      "reason": "原英文缺乏情绪表达，无法涵盖气温冷及冷淡目光。",
+      "current_en": "not characterized by emotion",
+      "current_zh": "寒冷的；冷淡的",
+      "contexts": [
+        {
+          "text": "It's a bit chilly in here with the window open.",
+          "translation": "窗户开着，这里有点冷。",
+          "source": "original"
+        },
+        {
+          "text": "She gave me a chilly look and walked away.",
+          "translation": "她冷冷地看了我一眼，走开了。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7129,
+      "word": "degrade",
+      "status": "changed",
+      "reason": "原英文侵蚀降低地势，与塑料降解和图像质量下降不兼容。",
+      "current_en": "reduce the level of land, as by erosion",
+      "current_zh": "降解；使质量下降",
+      "contexts": [
+        {
+          "text": "Sunlight can degrade the plastic over time.",
+          "translation": "阳光会使这种塑料逐渐降解。",
+          "source": "original"
+        },
+        {
+          "text": "Repeated copying can degrade the image quality.",
+          "translation": "反复复制会降低图像质量。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7130,
+      "word": "cloak",
+      "status": "unchanged",
+      "reason": "覆盖遮蔽物，可涵盖裹肩斗篷及薄雾掩盖的比喻。",
+      "current_en": "anything that covers or conceals",
+      "current_zh": "斗篷；掩盖",
+      "contexts": [
+        {
+          "text": "He wrapped a wool cloak around his shoulders.",
+          "translation": "他把羊毛斗篷裹在肩上。",
+          "source": "original"
+        },
+        {
+          "text": "A cloak of mist hid the valley.",
+          "translation": "山谷笼罩在一层薄雾之中。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7131,
+      "word": "drummer",
+      "status": "unchanged",
+      "reason": "打鼓的人，解释乐队鼓手及招募鼓手。",
+      "current_en": "someone who plays a drum",
+      "current_zh": "鼓手",
+      "contexts": [
+        {
+          "text": "Our drummer broke a stick halfway through the song.",
+          "translation": "我们的鼓手在歌曲唱到一半时打断了一根鼓棒。",
+          "source": "original"
+        },
+        {
+          "text": "The band is looking for a new drummer.",
+          "translation": "乐队正在找新鼓手。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7132,
+      "word": "vitality",
+      "status": "changed",
+      "reason": "原英文只富有精力的风格，过窄，例句是儿童带来活力和老年人生命力。",
+      "current_en": "an energetic style",
+      "current_zh": "活力；生命力",
+      "contexts": [
+        {
+          "text": "The children brought fresh vitality to the quiet house.",
+          "translation": "孩子们给这座安静的房子带来了新的活力。",
+          "source": "original"
+        },
+        {
+          "text": "Even in old age, she had remarkable vitality.",
+          "translation": "即使到了晚年，她依然精力充沛。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7133,
+      "word": "playful",
+      "status": "unchanged",
+      "reason": "有趣兴奋的性质，适用于幼犬玩咬和诙谐语气。",
+      "current_en": "full of fun and high spirits",
+      "current_zh": "爱玩耍的；俏皮的",
+      "contexts": [
+        {
+          "text": "The puppy gave my hand a playful bite.",
+          "translation": "小狗闹着玩，轻轻咬了我的手一下。",
+          "source": "original"
+        },
+        {
+          "text": "His playful tone made it clear he was joking.",
+          "translation": "他俏皮的语气让人听得出是在开玩笑。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7134,
+      "word": "mildly",
+      "status": "unchanged",
+      "reason": "适度程度，与稍微惊讶及微辣一致，未错误限定温和情绪。",
+      "current_en": "to a moderate degree",
+      "current_zh": "稍微；温和地",
+      "contexts": [
+        {
+          "text": "I was mildly surprised by his answer.",
+          "translation": "他的回答让我有点惊讶。",
+          "source": "original"
+        },
+        {
+          "text": "The sauce is only mildly spicy.",
+          "translation": "这个酱只是微辣。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7135,
+      "word": "convoy",
+      "status": "unchanged",
+      "reason": "一起行驶的车辆队列，与卡车车队和结伴车辆相容。",
+      "current_en": "a procession of land vehicles traveling together",
+      "current_zh": "车队；护送队伍",
+      "contexts": [
+        {
+          "text": "A convoy of trucks passed through the village.",
+          "translation": "一支卡车车队驶过村庄。",
+          "source": "original"
+        },
+        {
+          "text": "Our cars traveled in a convoy to the campsite.",
+          "translation": "我们的几辆车结伴驶向营地。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7136,
+      "word": "cumulative",
+      "status": "unchanged",
+      "reason": "连续加算增加，准确解释累计数和累积影响。",
+      "current_en": "s increasing by successive addition",
+      "current_zh": "累计的；累积的",
+      "contexts": [
+        {
+          "text": "The report shows the cumulative total for the year.",
+          "translation": "报告列出了今年的累计总数。",
+          "source": "original"
+        },
+        {
+          "text": "Small delays had a cumulative effect on the schedule.",
+          "translation": "一次次小延误累积起来，影响了日程。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7137,
+      "word": "lag",
+      "status": "unchanged",
+      "reason": "运动进展发展中落后，包含声画延迟和电脑性能落后。",
+      "current_en": "hang (back) or fall (behind) in movement, progress, development, etc.",
+      "current_zh": "延迟；落后",
+      "contexts": [
+        {
+          "text": "There's a slight lag between the sound and the picture.",
+          "translation": "声音和画面之间有一点延迟。",
+          "source": "original"
+        },
+        {
+          "text": "The older computers lag behind the newer models.",
+          "translation": "这些旧电脑的性能落后于新款。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7138,
+      "word": "nylon",
+      "status": "unchanged",
+      "reason": "坚韧有弹性的合成纤维及聚酰胺材料，解释夹克和绳索。",
+      "current_en": "a thermoplastic polyamide; a family of strong resilient synthetic fibers",
+      "current_zh": "尼龙",
+      "contexts": [
+        {
+          "text": "This jacket is made from lightweight nylon.",
+          "translation": "这件夹克是用轻质尼龙做的。",
+          "source": "original"
+        },
+        {
+          "text": "The nylon rope slipped through my hands.",
+          "translation": "尼龙绳从我手中滑了过去。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7139,
+      "word": "disruptive",
+      "status": "unchanged",
+      "reason": "具有扰乱秩序的性质，解释课堂行为和搬迁扰动。",
+      "current_en": "characterized by unrest or disorder or insubordination",
+      "current_zh": "扰乱秩序的；造成干扰的",
+      "contexts": [
+        {
+          "text": "The teacher spoke to him about his disruptive behavior.",
+          "translation": "老师就他扰乱课堂的行为和他谈了话。",
+          "source": "original"
+        },
+        {
+          "text": "Moving offices was more disruptive than we expected.",
+          "translation": "搬办公室带来的影响比我们预想的大。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7140,
+      "word": "flank",
+      "status": "changed",
+      "reason": "原英文限军队海军队形侧翼，实际两句为山侧和马侧腹。",
+      "current_en": "the side of military or naval formation",
+      "current_zh": "侧面；侧腹",
+      "contexts": [
+        {
+          "text": "A small path runs along the hill's eastern flank.",
+          "translation": "一条小路沿着山的东侧延伸。",
+          "source": "original"
+        },
+        {
+          "text": "The horse had a white patch on its flank.",
+          "translation": "那匹马的侧腹有一块白斑。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7141,
+      "word": "diploma",
+      "status": "unchanged",
+      "reason": "证明完成学业的文件，与毕业证展示和申请条件相容。",
+      "current_en": "a document certifying the successful completion of a course of study",
+      "current_zh": "毕业证书；文凭",
+      "contexts": [
+        {
+          "text": "She framed her diploma and hung it above the desk.",
+          "translation": "她把毕业证裱起来，挂在书桌上方。",
+          "source": "original"
+        },
+        {
+          "text": "You need a high school diploma to apply for this course.",
+          "translation": "申请这门课程需要高中毕业证。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7142,
+      "word": "unconstitutional",
+      "status": "unchanged",
+      "reason": "违反宪法的一般义先行明确；美国宪法是举例性追加，两句泛指法院及禁令没有明确排除。",
+      "current_en": "not consistent with or according to a constitution; contrary to the U.S. Constitution",
+      "current_zh": "违宪的",
+      "contexts": [
+        {
+          "text": "The court declared the law unconstitutional.",
+          "translation": "法院宣布这项法律违宪。",
+          "source": "original"
+        },
+        {
+          "text": "The debate centered on whether the ban was unconstitutional.",
+          "translation": "争论的焦点是这项禁令是否违宪。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7143,
+      "word": "lash",
+      "status": "changed",
+      "reason": "原英文仅鞭子的皮条，未覆盖睫毛和lash out发怒，兼顾zh猛抽义。",
+      "current_en": "leather strip that forms the flexible part of a whip",
+      "current_zh": "睫毛；猛抽；发怒（lash out中）",
+      "contexts": [
+        {
+          "text": "A single lash had fallen onto her cheek.",
+          "translation": "一根睫毛落在了她的脸颊上。",
+          "source": "original"
+        },
+        {
+          "text": "Try not to lash out at people when you're tired.",
+          "translation": "疲惫时，尽量别冲别人发火。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7144,
+      "word": "outskirts",
+      "status": "unchanged",
+      "reason": "城镇外围地区，符合住所和工厂城郊。",
+      "current_en": "outlying areas (as of a city or town)",
+      "current_zh": "郊区；市郊",
+      "contexts": [
+        {
+          "text": "We live on the outskirts of the city.",
+          "translation": "我们住在城市郊区。",
+          "source": "original"
+        },
+        {
+          "text": "The factory moved to the outskirts to get more space.",
+          "translation": "工厂为了扩大场地搬到了城郊。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7145,
+      "word": "abide",
+      "status": "changed",
+      "reason": "原定义居住，实际两例为遵守和不能容忍。",
+      "current_en": "v dwell",
+      "current_zh": "遵守（abide by）；容忍",
+      "contexts": [
+        {
+          "text": "All guests must abide by the campsite rules.",
+          "translation": "所有游客都必须遵守营地规定。",
+          "source": "original"
+        },
+        {
+          "text": "I can't abide the sound of someone chewing loudly.",
+          "translation": "我受不了别人嚼东西时发出很大的声音。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7146,
+      "word": "enclose",
+      "status": "changed",
+      "reason": "原英文只有围住并混入破损引语，缺少附上收据复印件义。",
+      "current_en": "close in; darkness enclosed him\"",
+      "current_zh": "附上；围住",
+      "contexts": [
+        {
+          "text": "Please enclose a copy of your receipt.",
+          "translation": "请附上一份收据复印件。",
+          "source": "original"
+        },
+        {
+          "text": "Tall stone walls enclose the garden.",
+          "translation": "高高的石墙围住了花园。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7147,
+      "word": "accumulation",
+      "status": "unchanged",
+      "reason": "积累的行为，亦可指积累结果，与落叶堆积和错误累加相容。",
+      "current_en": "the act of accumulating",
+      "current_zh": "积累；堆积",
+      "contexts": [
+        {
+          "text": "The drain was blocked by an accumulation of leaves.",
+          "translation": "排水口被堆积的树叶堵住了。",
+          "source": "original"
+        },
+        {
+          "text": "An accumulation of small mistakes caused the delay.",
+          "translation": "一连串小错误积累起来，造成了延误。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7148,
+      "word": "insulation",
+      "status": "changed",
+      "reason": "原英文隔离状态，实际两句为屋顶保温材料和电线绝缘层。",
+      "current_en": "the state of being isolated or detached",
+      "current_zh": "保温材料；绝缘层",
+      "contexts": [
+        {
+          "text": "The roof needs better insulation to keep the house warm.",
+          "translation": "屋顶需要更好的保温层，才能让屋里保持温暖。",
+          "source": "original"
+        },
+        {
+          "text": "The electrician checked the insulation around the wires.",
+          "translation": "电工检查了电线外面的绝缘层。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7149,
+      "word": "fluctuation",
+      "status": "changed",
+      "reason": "原定义wave motion为波动运动，不能明确解释水压和销售量起伏。",
+      "current_en": "a wave motion",
+      "current_zh": "波动；起伏",
+      "contexts": [
+        {
+          "text": "There's some fluctuation in water pressure at night.",
+          "translation": "夜间的水压有些波动。",
+          "source": "original"
+        },
+        {
+          "text": "The chart shows a seasonal fluctuation in sales.",
+          "translation": "图表显示销售额随季节波动。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7150,
+      "word": "darken",
+      "status": "unchanged",
+      "reason": "变暗或更暗，与房间和云层变暗兼容；及物例是使该过程发生。",
+      "current_en": "become dark or darker",
+      "current_zh": "变暗；使变暗",
+      "contexts": [
+        {
+          "text": "These curtains will darken the room enough for a film.",
+          "translation": "拉上这些窗帘，房间就暗得足以看电影了。",
+          "source": "original"
+        },
+        {
+          "text": "The clouds began to darken as we drove home.",
+          "translation": "我们开车回家时，云层开始变暗。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7151,
+      "word": "imprison",
+      "status": "unchanged",
+      "reason": "关进监牢或限制自由，解释王子囚禁和批评者监禁。",
+      "current_en": "lock up or confine, in or as in a jail",
+      "current_zh": "监禁；囚禁",
+      "contexts": [
+        {
+          "text": "The king ordered his guards to imprison the rival prince.",
+          "translation": "国王命令卫兵囚禁那位敌对的王子。",
+          "source": "original"
+        },
+        {
+          "text": "The novel describes a regime that would imprison its critics.",
+          "translation": "小说描写了一个会把批评者关进监狱的政权。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7152,
+      "word": "irritate",
+      "status": "changed",
+      "reason": "原英文仅刺激发炎义，遗漏敲击声惹恼人的用法。",
+      "current_en": "excite to an abnormal condition, or chafe or inflame",
+      "current_zh": "惹恼；刺激（皮肤等）",
+      "contexts": [
+        {
+          "text": "That constant tapping is starting to irritate me.",
+          "translation": "那不停的敲击声开始让我烦躁了。",
+          "source": "original"
+        },
+        {
+          "text": "The rough collar can irritate your skin.",
+          "translation": "粗糙的衣领可能会刺激皮肤。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7153,
+      "word": "flare",
+      "status": "changed",
+      "reason": "原定义向外扩张形状，实际两句为照明弹和情绪突然爆发。",
+      "current_en": "a shape that spreads outward",
+      "current_zh": "照明弹；突然发作",
+      "contexts": [
+        {
+          "text": "A bright flare lit up the night sky.",
+          "translation": "一枚明亮的照明弹照亮了夜空。",
+          "source": "original"
+        },
+        {
+          "text": "Tempers can flare when everyone is tired.",
+          "translation": "大家都累的时候，很容易发脾气。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7154,
+      "word": "momentarily",
+      "status": "unchanged",
+      "reason": "很短一瞬，准确解释黑屏和司机短暂分神。",
+      "current_en": "for an instant or moment",
+      "current_zh": "短暂地；片刻",
+      "contexts": [
+        {
+          "text": "The screen went black momentarily.",
+          "translation": "屏幕短暂地黑了一下。",
+          "source": "original"
+        },
+        {
+          "text": "The driver was momentarily distracted by a loud noise.",
+          "translation": "一声巨响让司机短暂地分了神。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7155,
+      "word": "retaliation",
+      "status": "unchanged",
+      "reason": "针对伤害的回击行为，与担心举报报复及刮车报复相容。",
+      "current_en": "action taken in return for an injury or offense",
+      "current_zh": "报复",
+      "contexts": [
+        {
+          "text": "She feared retaliation after reporting the problem.",
+          "translation": "她举报问题后担心遭到报复。",
+          "source": "original"
+        },
+        {
+          "text": "He scratched the car in retaliation for the broken window.",
+          "translation": "他为了报复窗户被打破，刮花了那辆车。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7156,
+      "word": "tasty",
+      "status": "unchanged",
+      "reason": "味觉愉快，解释汤和三明治可口。",
+      "current_en": "pleasing to the sense of taste",
+      "current_zh": "好吃的；可口的",
+      "contexts": [
+        {
+          "text": "This soup is surprisingly tasty.",
+          "translation": "这汤意外地好喝。",
+          "source": "original"
+        },
+        {
+          "text": "We found a little shop selling tasty sandwiches.",
+          "translation": "我们找到一家卖美味三明治的小店。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7157,
+      "word": "cape",
+      "status": "changed",
+      "reason": "原英文海角正确，但例1斗篷义未覆盖。",
+      "current_en": "a strip of land projecting into a body of water",
+      "current_zh": "斗篷；海角",
+      "contexts": [
+        {
+          "text": "The actor wore a long red cape.",
+          "translation": "演员穿着一件红色长斗篷。",
+          "source": "original"
+        },
+        {
+          "text": "We stopped at the cape to watch the waves.",
+          "translation": "我们在海角停下来观浪。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7158,
+      "word": "unpopular",
+      "status": "unchanged",
+      "reason": "不受赞同，与居民不喜欢收费及取消旅行决定相容。",
+      "current_en": "regarded with disfavor or lacking general approval",
+      "current_zh": "不受欢迎的；不得人心的",
+      "contexts": [
+        {
+          "text": "The new parking fees are unpopular with residents.",
+          "translation": "居民不喜欢新推出的停车收费。",
+          "source": "original"
+        },
+        {
+          "text": "He made an unpopular decision to cancel the trip.",
+          "translation": "他决定取消旅行，这个决定不受欢迎。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7159,
+      "word": "worsen",
+      "status": "unchanged",
+      "reason": "变得更糟，及物为使该过程发生，解释洪灾及关系恶化。",
+      "current_en": "grow worse",
+      "current_zh": "恶化；使更糟",
+      "contexts": [
+        {
+          "text": "More rain could worsen the flooding.",
+          "translation": "更多降雨可能使洪灾加重。",
+          "source": "original"
+        },
+        {
+          "text": "Don't let one argument worsen an already tense relationship.",
+          "translation": "别让一次争吵把已经紧张的关系弄得更糟。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7160,
+      "word": "haircut",
+      "status": "changed",
+      "reason": "原英文只有剪后发型，例1need a haircut是理发行为。",
+      "current_en": "the style in which hair has been cut",
+      "current_zh": "理发；发型",
+      "contexts": [
+        {
+          "text": "I need a haircut before the wedding.",
+          "translation": "婚礼前我得去理个发。",
+          "source": "original"
+        },
+        {
+          "text": "Your new haircut really suits you.",
+          "translation": "你的新发型很适合你。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7161,
+      "word": "archaeology",
+      "status": "changed",
+      "reason": "原定义限定史前人类；考古也研究有文字记载时期，按权威词典去掉错误时期限制。",
+      "current_en": "n the branch of anthropology that studies prehistoric people and their cultures",
+      "current_zh": "考古学",
+      "contexts": [
+        {
+          "text": "She studied archaeology at university.",
+          "translation": "她在大学学的是考古学。",
+          "source": "original"
+        },
+        {
+          "text": "The museum has a room devoted to local archaeology.",
+          "translation": "博物馆有一个展厅专门介绍当地的考古发现。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7162,
+      "word": "devour",
+      "status": "changed",
+      "reason": "原定义彻底摧毁，与吃饼干和如饥似渴读小说不兼容。",
+      "current_en": "destroy completely",
+      "current_zh": "狼吞虎咽地吃；如饥似渴地读",
+      "contexts": [
+        {
+          "text": "The kids will devour these cookies in minutes.",
+          "translation": "孩子们几分钟就能把这些饼干吃光。",
+          "source": "original"
+        },
+        {
+          "text": "I tend to devour a good mystery in one sitting.",
+          "translation": "遇到好看的悬疑小说，我往往一口气读完。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7163,
+      "word": "hefty",
+      "status": "changed",
+      "reason": "原英文仅重量和大小，例1是高昂价格。",
+      "current_en": "of considerable weight and size",
+      "current_zh": "沉重的；大量的；价格高的",
+      "contexts": [
+        {
+          "text": "The suitcase came with a hefty price tag.",
+          "translation": "这个行李箱的价格很高。",
+          "source": "original"
+        },
+        {
+          "text": "He lifted a hefty bag of soil into the car.",
+          "translation": "他把一大袋沉甸甸的土搬进车里。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7164,
+      "word": "parasite",
+      "status": "changed",
+      "reason": "原定义断言不杀死宿主不可靠，删绝对排除，保留寄居取食核心义；仅术语辨识。",
+      "current_en": "an animal or plant that lives in or on a host (another animal or plant); it obtains nourishment from the host without benefiting or killing the host",
+      "current_zh": "寄生虫；寄生生物",
+      "contexts": [
+        {
+          "text": "The documentary showed a parasite living inside a fish.",
+          "translation": "纪录片展示了一种生活在鱼体内的寄生虫。",
+          "source": "original"
+        },
+        {
+          "text": "This parasite depends on a host to survive.",
+          "translation": "这种寄生生物依靠宿主生存。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7165,
+      "word": "simplify",
+      "status": "unchanged",
+      "reason": "使更简单减少复杂性，与说明简化和流程少一步相容。",
+      "current_en": "make simpler or easier or reduce in complexity or extent",
+      "current_zh": "简化",
+      "contexts": [
+        {
+          "text": "Can we simplify the instructions for new users?",
+          "translation": "我们能把说明简化一下，方便新用户吗？",
+          "source": "original"
+        },
+        {
+          "text": "Removing one step would simplify the whole process.",
+          "translation": "少一个步骤，整个流程就会更简单。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7166,
+      "word": "cock",
+      "status": "changed",
+      "reason": "原英文只粗俗阴茎义，两例均公鸡，兼顾zh第二义并明确粗俗语域。",
+      "current_en": "obscene terms for penis",
+      "current_zh": "公鸡；阴茎（粗俗用语）",
+      "contexts": [
+        {
+          "text": "The cock crowed before sunrise.",
+          "translation": "太阳升起前，公鸡就打鸣了。",
+          "source": "original"
+        },
+        {
+          "text": "The farmer kept one cock with the hens.",
+          "translation": "农夫养了一只公鸡和一群母鸡。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7167,
+      "word": "thicken",
+      "status": "unchanged",
+      "reason": "使更稠或厚，与酱汁和雾浓度变化相容。",
+      "current_en": "make thick or thicker",
+      "current_zh": "变稠；变浓；加厚",
+      "contexts": [
+        {
+          "text": "Let the sauce thicken before you serve it.",
+          "translation": "等酱汁变稠再上桌。",
+          "source": "original"
+        },
+        {
+          "text": "The fog began to thicken after sunset.",
+          "translation": "日落后，雾开始变浓。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7168,
+      "word": "yep",
+      "status": "empty",
+      "reason": "现en为空；逐句对照当前“是；嗯（口语）”后保留空值，按任务不新增题干，不猜专名或缩写扩写。",
+      "current_en": "",
+      "current_zh": "是；嗯（口语）",
+      "contexts": [
+        {
+          "text": "Yep, I left the keys on the counter.",
+          "translation": "嗯，我把钥匙留在柜台上了。",
+          "source": "original"
+        },
+        {
+          "text": "She nodded and said yep when I offered her some tea.",
+          "translation": "我问她要不要茶，她点头说要。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7169,
+      "word": "handkerchief",
+      "status": "unchanged",
+      "reason": "擦眼鼻等用的小方布，与擦眼镜和随身棉手帕相容。",
+      "current_en": "a square piece of cloth used for wiping the eyes or nose or as a costume accessory",
+      "current_zh": "手帕",
+      "contexts": [
+        {
+          "text": "He wiped his glasses with a clean handkerchief.",
+          "translation": "他用一块干净的手帕擦了擦眼镜。",
+          "source": "original"
+        },
+        {
+          "text": "My grandmother always carried a cotton handkerchief.",
+          "translation": "我祖母总是随身带着一块棉手帕。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7170,
+      "word": "noticeable",
+      "status": "unchanged",
+      "reason": "可被感知，能解释明显裂缝及几乎不可察觉的差异。",
+      "current_en": "capable or worthy of being perceived",
+      "current_zh": "明显的；能察觉的",
+      "contexts": [
+        {
+          "text": "There's a noticeable crack in the wall.",
+          "translation": "墙上有一道明显的裂缝。",
+          "source": "original"
+        },
+        {
+          "text": "The new fan is quieter, but the difference is barely noticeable.",
+          "translation": "新风扇更安静，但差别几乎听不出来。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7171,
+      "word": "sensory",
+      "status": "unchanged",
+      "reason": "涉及或来自感官，解释感官游乐区和感觉信息。",
+      "current_en": "involving or derived from the senses",
+      "current_zh": "感官的；感觉的",
+      "contexts": [
+        {
+          "text": "The playground has a sensory area with lights and textures.",
+          "translation": "游乐场有一个感官体验区，里面有灯光和不同质感的材料。",
+          "source": "original"
+        },
+        {
+          "text": "The film describes how sensory information reaches the brain.",
+          "translation": "影片介绍了感官信息如何传到大脑。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7172,
+      "word": "complementary",
+      "status": "changed",
+      "reason": "原英文逻辑命题互为否定的技术义，例句是互补技能和色彩，不等同逻辑否定。",
+      "current_en": "of words or propositions so related that each is the negation of the other",
+      "current_zh": "互补的；相互补充的",
+      "contexts": [
+        {
+          "text": "Their complementary skills made them a strong team.",
+          "translation": "他们的技能相互补充，组成了一支强大的团队。",
+          "source": "original"
+        },
+        {
+          "text": "The designer chose complementary colors for the poster.",
+          "translation": "设计师给海报选用了互补色。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7173,
+      "word": "envy",
+      "status": "unchanged",
+      "reason": "希望拥有别人东西的羡慕嫉妒，解释花园和新自行车。",
+      "current_en": "a feeling of grudging admiration and desire to have something that is possessed by another",
+      "current_zh": "羡慕；嫉妒",
+      "contexts": [
+        {
+          "text": "I envy you having a garden this big.",
+          "translation": "我真羡慕你有这么大的花园。",
+          "source": "original"
+        },
+        {
+          "text": "She looked at his new bike with envy.",
+          "translation": "她羡慕地看着他的新自行车。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7174,
+      "word": "dictionary",
+      "status": "unchanged",
+      "reason": "按字母排序并提供词信息的工具书，解释查发音和袖珍词典。",
+      "current_en": "a reference book containing an alphabetical list of words with information about them",
+      "current_zh": "词典；字典",
+      "contexts": [
+        {
+          "text": "Check the pronunciation in a dictionary.",
+          "translation": "查一下词典里的发音。",
+          "source": "original"
+        },
+        {
+          "text": "My pocket dictionary is falling apart.",
+          "translation": "我的袖珍词典快散架了。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7175,
+      "word": "curiously",
+      "status": "changed",
+      "reason": "原英文仅奇怪地，例1是孩子好奇观察。",
+      "current_en": "in a manner differing from the usual or expected",
+      "current_zh": "好奇地；奇怪地",
+      "contexts": [
+        {
+          "text": "The child looked curiously into the box.",
+          "translation": "孩子好奇地往盒子里看。",
+          "source": "original"
+        },
+        {
+          "text": "Curiously, both clocks stopped at the same time.",
+          "translation": "奇怪的是，两个钟同时停了。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7176,
+      "word": "radiate",
+      "status": "unchanged",
+      "reason": "发出射线或波，解释散发热量，街道向外放射为同一方向性比喻。",
+      "current_en": "send out rays or waves",
+      "current_zh": "散发；向四周延伸",
+      "contexts": [
+        {
+          "text": "The stone walls radiate heat long after sunset.",
+          "translation": "日落很久后，石墙还在散发热量。",
+          "source": "original"
+        },
+        {
+          "text": "Several narrow streets radiate from the main square.",
+          "translation": "几条狭窄的街道从主广场向四周延伸。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7177,
+      "word": "whereby",
+      "status": "unchanged",
+      "reason": "by which准确表达通过此方式，两句制度/计划引导从句一致。",
+      "current_en": "By which; -- used relatively.",
+      "current_zh": "通过这种方式（较正式）",
+      "contexts": [
+        {
+          "text": "We agreed on a system whereby everyone takes a turn.",
+          "translation": "我们商定了一套让每个人轮流参与的办法。",
+          "source": "original"
+        },
+        {
+          "text": "They set up a scheme whereby students can borrow laptops.",
+          "translation": "他们设立了一项让学生可以借用笔记本电脑的计划。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7178,
+      "word": "pry",
+      "status": "changed",
+      "reason": "原英文仅撬开，例1是窥探私生活。",
+      "current_en": "to move or force, especially in an effort to get something open",
+      "current_zh": "窥探；撬开",
+      "contexts": [
+        {
+          "text": "Don't pry into her private life.",
+          "translation": "别打听她的私生活。",
+          "source": "original"
+        },
+        {
+          "text": "Use the flat end to pry the lid open.",
+          "translation": "用扁平的一端把盖子撬开。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7179,
+      "word": "dresser",
+      "status": "changed",
+      "reason": "原英文穿着某种风格的人，实际为抽屉柜和演员服装助理。",
+      "current_en": "a person who dresses in a particular way",
+      "current_zh": "抽屉柜；演员服装助理",
+      "contexts": [
+        {
+          "text": "I keep my socks in the top drawer of the dresser.",
+          "translation": "我把袜子放在五斗柜的最上层抽屉里。",
+          "source": "original"
+        },
+        {
+          "text": "The actor's dresser helped him change between scenes.",
+          "translation": "演员的服装助理帮他在场与场之间换衣服。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7180,
+      "word": "denomination",
+      "status": "changed",
+      "reason": "原英文仅教派，例1为纸币面额。",
+      "current_en": "a group of religious congregations having its own organization and a distinctive faith",
+      "current_zh": "面额；教派",
+      "contexts": [
+        {
+          "text": "Can you give me notes of a smaller denomination?",
+          "translation": "能给我换成面额小一点的纸币吗？",
+          "source": "original"
+        },
+        {
+          "text": "The two churches belong to the same denomination.",
+          "translation": "这两所教堂属于同一个教派。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7181,
+      "word": "consolidation",
+      "status": "changed",
+      "reason": "原定义聚成固体块，过度物理化，实际两个例句是办公室和学校组织合并，兼顾zh巩固。",
+      "current_en": "combining into a solid mass",
+      "current_zh": "合并；巩固",
+      "contexts": [
+        {
+          "text": "The consolidation of three offices reduced our rent.",
+          "translation": "三个办公室合并后，我们的租金减少了。",
+          "source": "original"
+        },
+        {
+          "text": "The report describes the consolidation of several local schools.",
+          "translation": "报告介绍了几所当地学校的合并。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7182,
+      "word": "customary",
+      "status": "unchanged",
+      "reason": "遵循惯例习俗，解释脱鞋习惯及惯常到达时间。",
+      "current_en": "in accordance with convention or custom",
+      "current_zh": "惯常的；习俗上的",
+      "contexts": [
+        {
+          "text": "It's customary to remove your shoes at the door.",
+          "translation": "通常进门时要脱鞋。",
+          "source": "original"
+        },
+        {
+          "text": "She arrived at her customary time, just after eight.",
+          "translation": "她照常在八点刚过时到了。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7183,
+      "word": "enrol",
+      "status": "unchanged",
+      "reason": "正式注册为参与者，适配课程报名及线上注册。",
+      "current_en": "v register formally as a participant or member",
+      "current_zh": "报名；注册（英式拼写）",
+      "contexts": [
+        {
+          "text": "I'd like to enrol in the evening photography class.",
+          "translation": "我想报名参加晚间摄影课。",
+          "source": "original"
+        },
+        {
+          "text": "You can enrol online before the end of the month.",
+          "translation": "你可以在月底前在线报名。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7184,
+      "word": "stigma",
+      "status": "changed",
+      "reason": "原英文植物柱头，两句为寻求帮助和精神疾病的污名。",
+      "current_en": "the apical end of the style where deposited pollen enters the pistil",
+      "current_zh": "污名；耻辱感",
+      "contexts": [
+        {
+          "text": "There is still a stigma attached to asking for help.",
+          "translation": "寻求帮助仍然会被一些人视为丢脸的事。",
+          "source": "original"
+        },
+        {
+          "text": "The campaign aims to reduce the stigma around mental illness.",
+          "translation": "这项宣传活动旨在减少人们对精神疾病的污名。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7185,
+      "word": "bitterly",
+      "status": "changed",
+      "reason": "原英文仅怨恨，例2是bitterly cold程度加强。",
+      "current_en": "with bitterness, in a resentful manner",
+      "current_zh": "痛苦地；强烈地；极其",
+      "contexts": [
+        {
+          "text": "She complained bitterly about the long wait.",
+          "translation": "她对长时间的等待满腹怨言。",
+          "source": "original"
+        },
+        {
+          "text": "It was bitterly cold outside the station.",
+          "translation": "车站外面冷得刺骨。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7186,
+      "word": "mystical",
+      "status": "unchanged",
+      "reason": "与神秘主义相关，解释神秘象征和音乐营造的神秘感。",
+      "current_en": "a relating to or characteristic of mysticism",
+      "current_zh": "神秘的；神秘主义的",
+      "contexts": [
+        {
+          "text": "The story is full of mystical symbols and strange dreams.",
+          "translation": "故事里充满了神秘的符号和奇异的梦。",
+          "source": "original"
+        },
+        {
+          "text": "The music gave the scene a mystical feel.",
+          "translation": "音乐让这一幕有了一种神秘感。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7187,
+      "word": "humane",
+      "status": "unchanged",
+      "reason": "关注减轻痛苦的性质，解释流浪动物照顾及监狱人道条件。",
+      "current_en": "marked or motivated by concern with the alleviation of suffering",
+      "current_zh": "人道的；仁慈的",
+      "contexts": [
+        {
+          "text": "The shelter tries to find humane ways to care for stray animals.",
+          "translation": "收容所尽力以人道的方式照顾流浪动物。",
+          "source": "original"
+        },
+        {
+          "text": "The report calls for more humane prison conditions.",
+          "translation": "报告呼吁改善监狱条件，使其更符合人道要求。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7188,
+      "word": "grate",
+      "status": "changed",
+      "reason": "原英文只有炉栅，例1是刨奶酪碎。",
+      "current_en": "a frame of iron bars to hold a fire",
+      "current_zh": "刨碎；炉栅",
+      "contexts": [
+        {
+          "text": "Could you grate some cheese over the pasta?",
+          "translation": "你能在意面上刨些奶酪碎吗？",
+          "source": "original"
+        },
+        {
+          "text": "We cleaned the ashes from the fireplace grate.",
+          "translation": "我们清理了壁炉炉栅上的灰烬。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7189,
+      "word": "metallic",
+      "status": "changed",
+      "reason": "原英文金属纱线织物名词，两句是金属外观与金属碰撞声形容词。",
+      "current_en": "a fabric made of a yarn that is partly or entirely of metal",
+      "current_zh": "金属的；有金属质感的",
+      "contexts": [
+        {
+          "text": "The lid has a shiny metallic finish.",
+          "translation": "盖子表面有一层亮亮的金属光泽。",
+          "source": "original"
+        },
+        {
+          "text": "A metallic clanging sound came from the garage.",
+          "translation": "车库里传来了金属碰撞的哐当声。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7190,
+      "word": "boycott",
+      "status": "unchanged",
+      "reason": "以拒绝交易抗议政策，准确覆盖食堂抵制；抵制比赛是同种拒绝参与抗议，不作全义扩写。",
+      "current_en": "a group's refusal to have commercial dealings with some organization in protest against its policies",
+      "current_zh": "抵制；联合抵制",
+      "contexts": [
+        {
+          "text": "Students organized a boycott of the cafeteria.",
+          "translation": "学生们组织了一场抵制食堂的活动。",
+          "source": "original"
+        },
+        {
+          "text": "Several fans decided to boycott the match.",
+          "translation": "几名球迷决定抵制这场比赛。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7191,
+      "word": "skim",
+      "status": "changed",
+      "reason": "原英文为液体表面薄层名词，实际是略读和撇浮沫两个动词用法。",
+      "current_en": "a thin layer covering the surface of a liquid",
+      "current_zh": "略读；撇去浮沫",
+      "contexts": [
+        {
+          "text": "I'll skim the report before the meeting.",
+          "translation": "开会前我会快速浏览一下报告。",
+          "source": "original"
+        },
+        {
+          "text": "Use a spoon to skim the foam off the soup.",
+          "translation": "用勺子撇去汤上的浮沫。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7192,
+      "word": "referee",
+      "status": "unchanged",
+      "reason": "确保体育公平的比赛官员，例1裁判直接相容；例2动词是担任同一角色。",
+      "current_en": "(sports) the chief official (as in boxing or American football) who is expected to ensure fair play",
+      "current_zh": "裁判；担任裁判",
+      "contexts": [
+        {
+          "text": "The referee blew the whistle to end the match.",
+          "translation": "裁判吹哨结束了比赛。",
+          "source": "original"
+        },
+        {
+          "text": "Who will referee our game on Saturday?",
+          "translation": "周六的比赛谁来当裁判？",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7193,
+      "word": "pudding",
+      "status": "changed",
+      "reason": "原英文限定不甜的烤制菜肴，与巧克力及米布丁甜点相反，按词典甜点义改写。",
+      "current_en": "any of various soft thick unsweetened baked dishes",
+      "current_zh": "布丁",
+      "contexts": [
+        {
+          "text": "Would you like some chocolate pudding?",
+          "translation": "你想来点巧克力布丁吗？",
+          "source": "original"
+        },
+        {
+          "text": "We had rice pudding for dessert.",
+          "translation": "我们餐后吃了米布丁。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7194,
+      "word": "digit",
+      "status": "unchanged",
+      "reason": "数字体系的单个符号，解释电话号码末位及密码数字。",
+      "current_en": "one of the elements that collectively form a system of numeration",
+      "current_zh": "数字；数位",
+      "contexts": [
+        {
+          "text": "I typed the last digit of the phone number wrong.",
+          "translation": "我把电话号码的最后一位数字输错了。",
+          "source": "original"
+        },
+        {
+          "text": "Your password should contain at least one digit.",
+          "translation": "你的密码应至少包含一个数字。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7195,
+      "word": "alas",
+      "status": "changed",
+      "reason": "原英文翼形结构名词疑似alas误作ala复数，与两例感叹词完全错配。",
+      "current_en": "n a flat wing-shaped process or winglike part of an organism",
+      "current_zh": "唉；可惜（文学或诙谐用语）",
+      "contexts": [
+        {
+          "text": "Alas, the last slice of cake was already gone.",
+          "translation": "唉，最后一块蛋糕已经没了。",
+          "source": "original"
+        },
+        {
+          "text": "The weather looked promising, but alas, it rained all afternoon.",
+          "translation": "天气看着不错，可惜下了一下午的雨。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7196,
+      "word": "intuition",
+      "status": "unchanged",
+      "reason": "不经明确理性过程的认识，解释异常预感和选颜色直觉。",
+      "current_en": "instinctive knowing (without the use of rational processes)",
+      "current_zh": "直觉",
+      "contexts": [
+        {
+          "text": "My intuition told me something was wrong.",
+          "translation": "直觉告诉我有什么地方不对。",
+          "source": "original"
+        },
+        {
+          "text": "She relies on intuition when choosing colors.",
+          "translation": "她选颜色时靠的是直觉。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7197,
+      "word": "accustomed",
+      "status": "unchanged",
+      "reason": "习惯或适应且常接to，两个例句句法语义一致。",
+      "current_en": "(often followed by `to') in the habit of or adapted to",
+      "current_zh": "习惯于……的",
+      "contexts": [
+        {
+          "text": "I'm accustomed to getting up before sunrise.",
+          "translation": "我习惯了在日出前起床。",
+          "source": "original"
+        },
+        {
+          "text": "It took him weeks to become accustomed to the noise.",
+          "translation": "他花了好几周才习惯那噪声。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7198,
+      "word": "reckon",
+      "status": "changed",
+      "reason": "原英文考虑因素，不能清楚解释口语认为和估计修理费。",
+      "current_en": "take account of",
+      "current_zh": "认为；估计（口语）",
+      "contexts": [
+        {
+          "text": "I reckon we can finish this by Friday.",
+          "translation": "我觉得我们周五前能做完。",
+          "source": "original"
+        },
+        {
+          "text": "How much do you reckon the repairs will cost?",
+          "translation": "你估计维修要花多少钱？",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7199,
+      "word": "canon",
+      "status": "changed",
+      "reason": "原英文规则体系仅对应zh教规一侧，未表达文学经典群和作品官方设定。",
+      "current_en": "a rule or especially body of rules or principles generally established as valid and fundamental in a field or art or philosophy",
+      "current_zh": "经典作品群；官方设定；教规",
+      "contexts": [
+        {
+          "text": "The novel is now part of the literary canon.",
+          "translation": "这部小说如今已被列入文学经典。",
+          "source": "original"
+        },
+        {
+          "text": "Fans argued about whether the new story belonged in the canon.",
+          "translation": "粉丝们争论新故事是否属于官方设定。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7200,
+      "word": "restrictive",
+      "status": "unchanged",
+      "reason": "起限制作用，解释着装约束和规则限制。",
+      "current_en": "serving to restrict",
+      "current_zh": "限制性的；约束严格的",
+      "contexts": [
+        {
+          "text": "The dress code feels too restrictive for a casual office.",
+          "translation": "对一个氛围随意的办公室来说，着装要求有点太严格了。",
+          "source": "original"
+        },
+        {
+          "text": "These restrictive rules leave little room for changes.",
+          "translation": "这些限制性规定几乎不给调整留下空间。",
+          "source": "original"
+        }
+      ]
+    }
+  ],
+  "changes": [
+    {
+      "id": 7002,
+      "word": "mortar",
+      "field": "en",
+      "before": "a muzzle-loading high-angle gun with a short barrel that fires shells at high elevations for a short range",
+      "after": "A mixture used to join bricks, or a bowl in which ingredients are crushed.",
+      "reason": "原定义为迫击炮；两句分别是砌砖砂浆和捣香料的研钵。",
+      "contexts": [
+        {
+          "text": "The builder used mortar to hold the bricks together.",
+          "translation": "建筑工用砂浆把砖块砌在一起。",
+          "source": "original"
+        },
+        {
+          "text": "She crushed the spices in a mortar.",
+          "translation": "她用研钵捣碎了香料。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7004,
+      "word": "liable",
+      "field": "en",
+      "before": "subject to legal action",
+      "after": "Legally responsible for something, or likely to suffer from a particular problem.",
+      "reason": "原定义仅法律诉讼，未说明责任，也不能解释门容易卡住。",
+      "contexts": [
+        {
+          "text": "You may be liable for the cost of the repairs.",
+          "translation": "你可能需要承担维修费用。",
+          "source": "original"
+        },
+        {
+          "text": "This door is liable to stick in wet weather.",
+          "translation": "这扇门在潮湿天气里容易卡住。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7006,
+      "word": "demonstrator",
+      "field": "en",
+      "before": "a teacher or teacher's assistant who demonstrates the principles that are being taught",
+      "after": "A person who joins a protest or shows others how a product works.",
+      "reason": "原定义仅教学演示助手；示威者和商品演示员两句都未准确覆盖。",
+      "contexts": [
+        {
+          "text": "A demonstrator held a sign outside the building.",
+          "translation": "一名示威者在大楼外举着标语牌。",
+          "source": "original"
+        },
+        {
+          "text": "The product demonstrator showed us how the vacuum worked.",
+          "translation": "产品演示员给我们展示了吸尘器的使用方法。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7007,
+      "word": "kemp",
+      "field": "en",
+      "before": "Alt. of Kempty",
+      "after": "",
+      "reason": "Alt. of Kempty仅交叉引用，不能独立解释粗硬毛，且另句为姓氏；本批不猜罕见词定义，退回中文题。",
+      "contexts": [
+        {
+          "text": "The inspector found kemp in the wool sample.",
+          "translation": "检验员在羊毛样品中发现了粗硬毛。",
+          "source": "original"
+        },
+        {
+          "text": "Mr Kemp will meet us at the station.",
+          "translation": "肯普先生会在车站和我们碰面。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7010,
+      "word": "spear",
+      "field": "en",
+      "before": "a long pointed rod used as a tool or weapon",
+      "after": "A weapon with a long shaft and pointed tip; also, to pierce food with a fork.",
+      "reason": "长矛义正确，但英文完全无叉取食物动词义，补充例2用法。",
+      "contexts": [
+        {
+          "text": "The museum has an ancient spear on display.",
+          "translation": "博物馆展出了一支古代长矛。",
+          "source": "original"
+        },
+        {
+          "text": "Use your fork to spear the potato.",
+          "translation": "用叉子叉起那块土豆。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7012,
+      "word": "weekday",
+      "field": "en",
+      "before": "any day except Sunday (and sometimes except Saturday)",
+      "after": "A day from Monday to Friday, rather than a weekend day.",
+      "reason": "原定义把星期六是否计入写成可选，与当前明确周一至周五相冲突。",
+      "contexts": [
+        {
+          "text": "The office is open every weekday.",
+          "translation": "办公室每个工作日都开放。",
+          "source": "original"
+        },
+        {
+          "text": "It's usually quieter here on a weekday.",
+          "translation": "这里在工作日通常更安静。",
+          "source": "original"
+        }
+      ],
+      "source": {
+        "url": "https://www.oxfordlearnersdictionaries.com/definition/english/weekday",
+        "support": "完整官方词条：排除周六和周日。"
+      }
+    },
+    {
+      "id": 7013,
+      "word": "bloc",
+      "field": "en",
+      "before": "a group of countries in special alliance",
+      "after": "A group of countries or people acting together to pursue shared interests.",
+      "reason": "原定义仅国家联盟；例2为选民集团，扩至共同利益群体。",
+      "contexts": [
+        {
+          "text": "The countries formed a trading bloc.",
+          "translation": "这些国家组成了一个贸易集团。",
+          "source": "original"
+        },
+        {
+          "text": "The proposal was opposed by a bloc of voters.",
+          "translation": "一个选民集团反对这项提案。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7015,
+      "word": "ledge",
+      "field": "en",
+      "before": "a projecting ridge on a mountain or submerged under water",
+      "after": "A narrow shelf of rock on a cliff, or a projecting shelf such as one below a window.",
+      "reason": "原定义限山脊或水下凸起；窗台不属于该范围，改为岩架或突出壁架。",
+      "contexts": [
+        {
+          "text": "A pigeon landed on the window ledge.",
+          "translation": "一只鸽子落在了窗台上。",
+          "source": "original"
+        },
+        {
+          "text": "The climber rested on a narrow ledge.",
+          "translation": "登山者在一处狭窄的岩石平台上休息。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7016,
+      "word": "overtime",
+      "field": "en",
+      "before": "work done in addition to regular working hours",
+      "after": "Extra work beyond normal hours, or extra playing time used to decide a tied game.",
+      "reason": "原英文仅加班，不能覆盖比赛进入加时赛。",
+      "contexts": [
+        {
+          "text": "I worked overtime twice this week.",
+          "translation": "我这周加了两次班。",
+          "source": "original"
+        },
+        {
+          "text": "The game went into overtime.",
+          "translation": "比赛进入了加时赛。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7018,
+      "word": "occupant",
+      "field": "en",
+      "before": "n someone who lives at a particular place for a prolonged period or who was born there",
+      "after": "A person who lives in or is using a building, room, or vehicle.",
+      "reason": "原定义要求长期居住或出生于当地，不能覆盖车内乘员。",
+      "contexts": [
+        {
+          "text": "The previous occupant left some furniture behind.",
+          "translation": "上一位住户留下了一些家具。",
+          "source": "original"
+        },
+        {
+          "text": "Each occupant of the car was wearing a seat belt.",
+          "translation": "车上的每个人都系着安全带。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7019,
+      "word": "bitterness",
+      "field": "en",
+      "before": "a rough and bitter manner",
+      "after": "A bitter taste, or lasting anger and resentment about unfair treatment.",
+      "reason": "原定义粗暴怨愤的举止太窄，例1为茶的苦味。",
+      "contexts": [
+        {
+          "text": "The tea had a slight bitterness.",
+          "translation": "这茶带着一点苦味。",
+          "source": "original"
+        },
+        {
+          "text": "He spoke about the decision without bitterness.",
+          "translation": "他谈起这个决定时没有怨恨。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7027,
+      "word": "thwart",
+      "field": "en",
+      "before": "a crosspiece spreading the gunnels of a boat; used as a seat in a rowboat",
+      "after": "To prevent a plan or attempt from succeeding.",
+      "reason": "原定义为划艇横座板，两例均是阻挠计划或欺诈。",
+      "contexts": [
+        {
+          "text": "The heavy rain could thwart our picnic plans.",
+          "translation": "大雨可能会打乱我们的野餐计划。",
+          "source": "original"
+        },
+        {
+          "text": "The extra checks helped thwart the attempted fraud.",
+          "translation": "额外的检查帮助阻止了这次欺诈企图。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7028,
+      "word": "buffet",
+      "field": "en",
+      "before": "a piece of furniture that stands at the side of a dining room; has shelves and drawers",
+      "after": "A meal where people serve themselves; also, to hit something repeatedly with force.",
+      "reason": "原英文为餐具柜；两句为自助餐和强风反复冲击。",
+      "contexts": [
+        {
+          "text": "Breakfast is served as a buffet.",
+          "translation": "早餐以自助餐形式供应。",
+          "source": "original"
+        },
+        {
+          "text": "Strong winds can buffet the boat.",
+          "translation": "强风会猛烈冲击这艘船。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7029,
+      "word": "benny",
+      "field": "en",
+      "before": "United States comedian known for his timeing and delivery and self-effacing humor (1894-1974)",
+      "after": "",
+      "reason": "原定义锁定喜剧演员Jack Benny，但两例只指名字为Benny的人，不能推断同一历史人物；退回中文识别题。",
+      "contexts": [
+        {
+          "text": "Benny offered to help carry the bags.",
+          "translation": "本尼提出帮忙拿包。",
+          "source": "original"
+        },
+        {
+          "text": "I left a message for Benny at reception.",
+          "translation": "我在接待处给本尼留了言。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7030,
+      "word": "stint",
+      "field": "en",
+      "before": "an individual's prescribed share of work",
+      "after": "A period spent doing a particular job or activity.",
+      "reason": "原定义分配的工作份额，未表达短期任职和两年工作时间。",
+      "contexts": [
+        {
+          "text": "She had a short stint as a tour guide.",
+          "translation": "她短暂地做过一段时间导游。",
+          "source": "original"
+        },
+        {
+          "text": "He spent a two-year stint working abroad.",
+          "translation": "他在国外工作过两年。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7033,
+      "word": "dispense",
+      "field": "en",
+      "before": "grant a dispensation; grant an exemption",
+      "after": "To supply something, or to manage without it when followed by 'with'.",
+      "reason": "原定义为给予豁免；实际句子是机器提供热水及dispense with省去介绍。",
+      "contexts": [
+        {
+          "text": "The machine can dispense hot water.",
+          "translation": "这台机器可以提供热水。",
+          "source": "original"
+        },
+        {
+          "text": "We can dispense with the formal introductions.",
+          "translation": "我们可以省去正式的介绍环节。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7034,
+      "word": "jog",
+      "field": "en",
+      "before": "a sharp change in direction",
+      "after": "To run at a gentle pace, or to prompt someone to remember something.",
+      "reason": "原定义突然变向，两例为慢跑和唤起记忆。",
+      "contexts": [
+        {
+          "text": "I go for a jog before breakfast.",
+          "translation": "我在早餐前去慢跑。",
+          "source": "original"
+        },
+        {
+          "text": "The photo might jog your memory.",
+          "translation": "这张照片也许能唤起你的记忆。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7035,
+      "word": "awfully",
+      "field": "en",
+      "before": "r used as intensifiers",
+      "after": "To a very great degree, used informally to emphasize something.",
+      "reason": "原定义只有词性标签和泛称intensifiers，没有具体程度；可与许多强化副词混淆。",
+      "contexts": [
+        {
+          "text": "It's awfully quiet in here.",
+          "translation": "这里真安静。",
+          "source": "original"
+        },
+        {
+          "text": "I'm awfully sorry about the delay.",
+          "translation": "非常抱歉耽误了时间。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7038,
+      "word": "cor",
+      "field": "en",
+      "before": "A Hebrew measure of capacity; a homer.",
+      "after": "An informal British exclamation expressing surprise or admiration.",
+      "reason": "原定义希伯来容量单位，两例都是英式感叹词。",
+      "contexts": [
+        {
+          "text": "Cor, that cake looks amazing!",
+          "translation": "哇，那个蛋糕看着太棒了！",
+          "source": "original"
+        },
+        {
+          "text": "Cor, it's cold out here!",
+          "translation": "哇，外面真冷啊！",
+          "source": "original"
+        }
+      ],
+      "source": {
+        "url": "https://www.oxfordlearnersdictionaries.com/definition/english/cor",
+        "support": "完整官方词条：英式、过时、非正式感叹，用于惊讶、喜悦或赞叹。"
+      }
+    },
+    {
+      "id": 7040,
+      "word": "plateau",
+      "field": "en",
+      "before": "n a relatively flat highland",
+      "after": "A broad area of high, flat land, or a stage when progress stops improving.",
+      "reason": "原英文高原正确，但不涵盖例2进步停滞阶段。",
+      "contexts": [
+        {
+          "text": "The road climbs onto a high plateau.",
+          "translation": "这条路向上延伸到一片高原。",
+          "source": "original"
+        },
+        {
+          "text": "My progress has reached a plateau.",
+          "translation": "我的进步进入了停滞期。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7041,
+      "word": "slaughter",
+      "field": "en",
+      "before": "the killing of animals (as for food)",
+      "after": "The killing of animals for food, or the violent killing of many people.",
+      "reason": "原定义只杀动物，与例1战争中平民屠杀不兼容。",
+      "contexts": [
+        {
+          "text": "The book describes the slaughter of civilians during the war.",
+          "translation": "这本书描写了战争期间对平民的屠杀。",
+          "source": "original"
+        },
+        {
+          "text": "The report discusses the slaughter of animals for food.",
+          "translation": "报告讨论了为获取食物而屠宰动物的问题。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7042,
+      "word": "cosmetic",
+      "field": "en",
+      "before": "a toiletry designed to beautify the body",
+      "after": "Related to makeup or appearance, including changes that affect only the surface.",
+      "reason": "原定义化妆用品名词；两例为外观损伤及化妆包的形容词用法。",
+      "contexts": [
+        {
+          "text": "The damage is mostly cosmetic.",
+          "translation": "损伤主要在外观上。",
+          "source": "original"
+        },
+        {
+          "text": "She bought a small cosmetic bag for the trip.",
+          "translation": "她为这次旅行买了一个小化妆包。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7043,
+      "word": "serbia",
+      "field": "en",
+      "before": "a historical region in central and northern Yugoslavia; Serbs settled the region in the 6th and 7th centuries",
+      "after": "A country in southeastern Europe whose capital is Belgrade.",
+      "reason": "原定义为南斯拉夫历史区域，不能作为现今国家的准确识别题干。",
+      "contexts": [
+        {
+          "text": "We took a bus to Serbia.",
+          "translation": "我们乘公共汽车去了塞尔维亚。",
+          "source": "original"
+        },
+        {
+          "text": "Belgrade is the capital of Serbia.",
+          "translation": "贝尔格莱德是塞尔维亚的首都。",
+          "source": "original"
+        }
+      ],
+      "source": {
+        "url": "https://www.srbija.gov.rs/tekst/en/130127/basic-info.php",
+        "support": "塞尔维亚政府官方搜索正文确认国家正式名称及首都。"
+      }
+    },
+    {
+      "id": 7044,
+      "word": "heroine",
+      "field": "en",
+      "before": "the main good female character in a work of fiction",
+      "after": "A main female character in a story, or a woman admired for brave actions.",
+      "reason": "原英文限虚构作品的主要正面女角色，例2为现实中救援女英雄。",
+      "contexts": [
+        {
+          "text": "The heroine solves the mystery herself.",
+          "translation": "女主角自己解开了这个谜。",
+          "source": "original"
+        },
+        {
+          "text": "She became a local heroine after the rescue.",
+          "translation": "那次救援之后，她成了当地的女英雄。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7046,
+      "word": "trot",
+      "field": "en",
+      "before": "a gait faster than a walk; diagonally opposite legs strike the ground together",
+      "after": "A horse's pace using diagonal pairs of legs; also, to move at a light, quick run.",
+      "reason": "原定义限四足动物对角步态，不能直接解释人在例2小跑。",
+      "contexts": [
+        {
+          "text": "The horse moved at a gentle trot.",
+          "translation": "那匹马轻快地小跑着。",
+          "source": "original"
+        },
+        {
+          "text": "I had to trot to keep up with the children.",
+          "translation": "我得小跑才能跟上孩子们。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7052,
+      "word": "pony",
+      "field": "en",
+      "before": "a range horse of the western United States",
+      "after": "A small horse, often ridden by children.",
+      "reason": "原定义限美国西部牧场马，不能准确解释普通小马。",
+      "contexts": [
+        {
+          "text": "The child rode a small pony.",
+          "translation": "那个孩子骑着一匹小马。",
+          "source": "original"
+        },
+        {
+          "text": "A pony was grazing beside the fence.",
+          "translation": "一匹小马在围栏边吃草。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7053,
+      "word": "peripheral",
+      "field": "en",
+      "before": "(computer science) electronic equipment connected by cable to the CPU of a computer",
+      "after": "Secondary or on the edge; as a noun, equipment such as a printer linked to a computer.",
+      "reason": "原定义仅以电缆连接CPU的外围设备，遗漏次要问题且连接方式限制不必要。",
+      "contexts": [
+        {
+          "text": "The article focuses on a peripheral issue.",
+          "translation": "这篇文章关注的是一个次要问题。",
+          "source": "original"
+        },
+        {
+          "text": "A printer is a common computer peripheral.",
+          "translation": "打印机是一种常见的计算机外围设备。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7054,
+      "word": "grapple",
+      "field": "en",
+      "before": "to grip or seize, as in a wrestling match",
+      "after": "To struggle with a difficult problem or wrestle closely with someone.",
+      "reason": "原英文只有抓握摔跤义，不涵盖处理预算难题。",
+      "contexts": [
+        {
+          "text": "We still have to grapple with the budget problem.",
+          "translation": "我们仍得努力解决预算问题。",
+          "source": "original"
+        },
+        {
+          "text": "The two wrestlers began to grapple.",
+          "translation": "两名摔跤手开始扭打。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7058,
+      "word": "reed",
+      "field": "en",
+      "before": "tall woody perennial grasses with hollow slender stems especially of the genera Arundo and Phragmites",
+      "after": "A tall waterside plant, or a thin vibrating strip used in certain wind instruments.",
+      "reason": "原英文仅芦苇植物，无法解释单簧管簧片。",
+      "contexts": [
+        {
+          "text": "A tall reed grew at the edge of the pond.",
+          "translation": "池塘边长着一株高高的芦苇。",
+          "source": "original"
+        },
+        {
+          "text": "The musician replaced the reed in her clarinet.",
+          "translation": "那位音乐家更换了单簧管的簧片。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7059,
+      "word": "imperative",
+      "field": "en",
+      "before": "some duty that is essential and urgent",
+      "after": "Essential or urgent; in grammar, a verb form used to give an order or instruction.",
+      "reason": "原定义为紧急职责名词，两例是必要的形容词和语法祈使形式。",
+      "contexts": [
+        {
+          "text": "It is imperative that we leave on time.",
+          "translation": "我们必须准时出发。",
+          "source": "original"
+        },
+        {
+          "text": "The teacher explained the imperative form of the verb.",
+          "translation": "老师讲解了这个动词的祈使形式。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7063,
+      "word": "seriousness",
+      "field": "en",
+      "before": "the quality of arousing fear or distress",
+      "after": "The importance or severity of something, or an earnest attitude without joking.",
+      "reason": "原定义引起恐惧痛苦的性质，偏离问题严重性和认真态度。",
+      "contexts": [
+        {
+          "text": "I didn't realize the seriousness of the problem.",
+          "translation": "我没有意识到这个问题有多严重。",
+          "source": "original"
+        },
+        {
+          "text": "She answered with complete seriousness.",
+          "translation": "她非常认真地回答了问题。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7066,
+      "word": "railway",
+      "field": "en",
+      "before": "line that is the commercial organization responsible for operating a system of transportation for trains that pull passengers or freight",
+      "after": "A system of tracks and services used by trains to carry people or goods.",
+      "reason": "原定义经营列车运输的商业组织，不能直接涵盖车站和铁路连接。",
+      "contexts": [
+        {
+          "text": "The railway station is near the town center.",
+          "translation": "火车站靠近镇中心。",
+          "source": "original"
+        },
+        {
+          "text": "The village has no direct railway connection.",
+          "translation": "这个村庄没有直达的铁路线路。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7067,
+      "word": "citation",
+      "field": "en",
+      "before": "an official award (as for bravery or service) usually given as formal public statement",
+      "after": "A reference naming the source of information quoted or used in a piece of writing.",
+      "reason": "原英文正式表彰，与两句文献出处标注完全错义。",
+      "contexts": [
+        {
+          "text": "Please add a citation for that claim.",
+          "translation": "请为那项论断补充出处。",
+          "source": "original"
+        },
+        {
+          "text": "The citation includes the author's name and publication date.",
+          "translation": "这条引文标注包含作者姓名和出版日期。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7068,
+      "word": "dude",
+      "field": "en",
+      "before": "n an informal form of address for a man",
+      "after": "An informal word for a man, often used when speaking to him.",
+      "reason": "原英文仅称呼用语，例2是第三人称指一个男子。",
+      "contexts": [
+        {
+          "text": "Hey dude, are you coming with us?",
+          "translation": "嘿，伙计，你要和我们一起去吗？",
+          "source": "original"
+        },
+        {
+          "text": "That dude helped me fix my bike.",
+          "translation": "那个家伙帮我修好了自行车。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7072,
+      "word": "kylie",
+      "field": "en",
+      "before": "an Australian boomerang; one side flat and the other convex",
+      "after": "",
+      "reason": "原英文为澳大利亚回旋镖，两例和zh仅为人名；泛指名字不足以形成唯一英英题，退回中文题。",
+      "contexts": [
+        {
+          "text": "Kylie offered to drive us home.",
+          "translation": "凯莉提出开车送我们回家。",
+          "source": "original"
+        },
+        {
+          "text": "Have you seen the message from Kylie?",
+          "translation": "你看见凯莉发的消息了吗？",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7077,
+      "word": "pod",
+      "field": "en",
+      "before": "the vessel that contains the seeds of a plant (not the seeds themselves)",
+      "after": "A case containing a plant's seeds, or a group of whales or dolphins.",
+      "reason": "原英文仅豆荚，第二句为一群海豚。",
+      "contexts": [
+        {
+          "text": "She opened a pea pod and counted the peas.",
+          "translation": "她打开一个豌豆荚，数了数里面的豌豆。",
+          "source": "original"
+        },
+        {
+          "text": "A pod of dolphins swam beside the boat.",
+          "translation": "一群海豚在船边游过。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7078,
+      "word": "cricket",
+      "field": "en",
+      "before": "leaping insect; male makes chirping noises by rubbing the forewings together",
+      "after": "A bat-and-ball team sport, or a small jumping insect known for its chirping sound.",
+      "reason": "原英文仅蟋蟀，第一句为板球运动。",
+      "contexts": [
+        {
+          "text": "The children played cricket in the park.",
+          "translation": "孩子们在公园里打板球。",
+          "source": "original"
+        },
+        {
+          "text": "A cricket was chirping outside the window.",
+          "translation": "一只蟋蟀在窗外鸣叫。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7084,
+      "word": "crane",
+      "field": "en",
+      "before": "United States writer (1871-1900)",
+      "after": "A machine for lifting heavy loads, or a tall, long-legged water bird.",
+      "reason": "原英文锁定美国作家，实际两句为起重机和鹤。",
+      "contexts": [
+        {
+          "text": "A crane lifted the beam into place.",
+          "translation": "起重机把横梁吊到了指定位置。",
+          "source": "original"
+        },
+        {
+          "text": "We watched a crane walking through the shallow water.",
+          "translation": "我们看着一只鹤在浅水中行走。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7091,
+      "word": "lightweight",
+      "field": "en",
+      "before": "a professional boxer who weighs between 131 and 135 pounds",
+      "after": "Not heavy, or designed to use few computing resources.",
+      "reason": "原定义轻量级职业拳击手，实际两句是轻便夹克和轻量应用。",
+      "contexts": [
+        {
+          "text": "This lightweight jacket is easy to pack.",
+          "translation": "这件轻便夹克很好收进包里。",
+          "source": "original"
+        },
+        {
+          "text": "We need a lightweight app for older phones.",
+          "translation": "我们需要一款适合旧手机的轻量应用。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7098,
+      "word": "gastrin",
+      "field": "en",
+      "before": "polypeptide hormone secreted by the mucous lining of the stomach; when peptides and amino acids are present in the small intestine the secretion of gastric acid is stimulated",
+      "after": "A hormone that stimulates the stomach to produce acid for digestion.",
+      "reason": "原英文生理细节冗长并有小肠刺激部位表述疑点；改为权威来源支持的胃酸分泌核心作用，只作术语辨识。",
+      "contexts": [
+        {
+          "text": "The lecture explains the role of gastrin in digestion.",
+          "translation": "这堂课解释了胃泌素在消化过程中的作用。",
+          "source": "original"
+        },
+        {
+          "text": "She asked what the gastrin test was for.",
+          "translation": "她问胃泌素检测是检查什么的。",
+          "source": "original"
+        }
+      ],
+      "source": {
+        "url": "https://www.niddk.nih.gov/health-information/digestive-diseases/zollinger-ellison-syndrome",
+        "support": "官方正文解释gastrin刺激胃产生胃酸；仅用于释义，不提炼治疗建议。"
+      }
+    },
+    {
+      "id": 7100,
+      "word": "empowerment",
+      "field": "en",
+      "before": "n the act of conferring legality or sanction or formal warrant",
+      "after": "Giving people more authority or control over decisions that affect their lives.",
+      "reason": "原英文仅法律认可授权，不涵盖年轻人自主能力和员工参与决策。",
+      "contexts": [
+        {
+          "text": "The program focuses on the empowerment of young people.",
+          "translation": "这个项目着重帮助年轻人增强自主能力。",
+          "source": "original"
+        },
+        {
+          "text": "Employee empowerment can give staff more say in decisions.",
+          "translation": "赋予员工自主权能让他们更多地参与决策。",
+          "source": "original"
+        }
+      ],
+      "source": {
+        "url": "https://www.oxfordlearnersdictionaries.com/definition/english/empowerment",
+        "support": "完整官方词条：对自身生活更多控制，及获得行动权力。"
+      }
+    },
+    {
+      "id": 7101,
+      "word": "footprint",
+      "field": "en",
+      "before": "a mark of a foot or shoe on a surface",
+      "after": "A mark left by a foot, or the environmental impact of an activity, especially greenhouse gas emissions.",
+      "reason": "原定义只有脚印，缺少例2碳足迹义。",
+      "contexts": [
+        {
+          "text": "There's a muddy footprint on the kitchen floor.",
+          "translation": "厨房地板上有一个泥脚印。",
+          "source": "original"
+        },
+        {
+          "text": "The company wants to reduce its carbon footprint.",
+          "translation": "这家公司希望减少碳足迹。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7102,
+      "word": "churn",
+      "field": "en",
+      "before": "a vessel in which cream is agitated to separate butterfat from buttermilk",
+      "after": "To stir cream to make butter; as a noun, frequent changes in staff or customers.",
+      "reason": "原定义是搅乳器容器；两句为搅制黄油动词和员工流动。",
+      "contexts": [
+        {
+          "text": "Use a wooden paddle to churn the cream.",
+          "translation": "用木桨搅打稀奶油，制成黄油。",
+          "source": "original"
+        },
+        {
+          "text": "High staff churn makes it hard to keep a stable team.",
+          "translation": "员工频繁流动使团队难以保持稳定。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7105,
+      "word": "irregular",
+      "field": "en",
+      "before": "merchandise that has imperfections; usually sold at a reduced price without the brand name",
+      "after": "Not following a regular pattern, shape, or schedule.",
+      "reason": "原英文有瑕疵的低价商品名词，两例是形状和工作时间不规律。",
+      "contexts": [
+        {
+          "text": "The room has an irregular shape.",
+          "translation": "这个房间的形状不规则。",
+          "source": "original"
+        },
+        {
+          "text": "She works irregular hours at the hotel.",
+          "translation": "她在酒店工作，上班时间不固定。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7107,
+      "word": "decree",
+      "field": "en",
+      "before": "a legally binding command or decision entered on the court record (as if issued by a court or judge)",
+      "after": "An official order issued by a ruler, government, or court.",
+      "reason": "原定义限法院卷宗中的判令；例1是国王法令，补足发令主体。",
+      "contexts": [
+        {
+          "text": "The king issued a decree closing the city gates.",
+          "translation": "国王下令关闭城门。",
+          "source": "original"
+        },
+        {
+          "text": "The old decree is displayed in the museum.",
+          "translation": "那份旧法令陈列在博物馆里。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7110,
+      "word": "collaborator",
+      "field": "en",
+      "before": "someone who collaborates with an enemy occupying force",
+      "after": "A person who works with others on a shared project.",
+      "reason": "原英文为与占领军合作的人；两句为电影和展览合作伙伴。",
+      "contexts": [
+        {
+          "text": "She's been my collaborator on three film projects.",
+          "translation": "她和我合作过三个电影项目。",
+          "source": "original"
+        },
+        {
+          "text": "The artist found a new collaborator for the exhibition.",
+          "translation": "这位艺术家为展览找到了新的合作伙伴。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7114,
+      "word": "butcher",
+      "field": "en",
+      "before": "a retailer of meat",
+      "after": "A person who prepares and sells meat, or the shop where this is done.",
+      "reason": "原定义仅肉类零售商，例2英国用法指肉店。",
+      "contexts": [
+        {
+          "text": "Ask the butcher to cut the meat into small pieces.",
+          "translation": "请肉店老板把肉切成小块。",
+          "source": "original"
+        },
+        {
+          "text": "There's a butcher near the bus stop.",
+          "translation": "公交站附近有一家肉店。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7116,
+      "word": "temperament",
+      "field": "en",
+      "before": "excessive emotionalism or irritability and excitability (especially when displayed openly)",
+      "after": "A person's usual emotional nature and way of reacting to things.",
+      "reason": "原定义过度激动易怒，不能解释平和性情或一般性情差异。",
+      "contexts": [
+        {
+          "text": "Her calm temperament makes her easy to work with.",
+          "translation": "她性情温和，合作起来很轻松。",
+          "source": "original"
+        },
+        {
+          "text": "The twins differ greatly in temperament.",
+          "translation": "这对双胞胎的性情很不一样。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7118,
+      "word": "muster",
+      "field": "en",
+      "before": "a gathering of military personnel for duty",
+      "after": "To gather people or resources, or find the courage or energy needed to act.",
+      "reason": "原英文军人集合名词，实际两句为鼓起勇气及召集志愿者的动词。",
+      "contexts": [
+        {
+          "text": "I couldn't muster the courage to ask her.",
+          "translation": "我没能鼓起勇气问她。",
+          "source": "original"
+        },
+        {
+          "text": "We need to muster enough volunteers for Saturday.",
+          "translation": "我们需要为周六的活动召集足够的志愿者。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7120,
+      "word": "promoter",
+      "field": "en",
+      "before": "someone who is an active supporter and advocate",
+      "after": "A person who organizes or publicizes an event, especially a concert or sports contest.",
+      "reason": "原英文支持者泛义，不能准确对应演出和拳击活动组织推广者。",
+      "contexts": [
+        {
+          "text": "The concert promoter moved the show to a larger venue.",
+          "translation": "演出主办方把音乐会改到了更大的场地。",
+          "source": "original"
+        },
+        {
+          "text": "He works as a promoter for local boxing events.",
+          "translation": "他负责推广和组织当地的拳击赛事。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7125,
+      "word": "multitude",
+      "field": "en",
+      "before": "a large gathering of people",
+      "after": "A very large number of people or things.",
+      "reason": "原定义一大群人；两例是花朵和问题，不能限定人群。",
+      "contexts": [
+        {
+          "text": "A multitude of tiny flowers covered the hillside.",
+          "translation": "山坡上开满了小花。",
+          "source": "original"
+        },
+        {
+          "text": "The old house has a multitude of problems.",
+          "translation": "这座老房子有一大堆问题。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7126,
+      "word": "knit",
+      "field": "en",
+      "before": "a fabric made by knitting",
+      "after": "To make fabric by looping yarn together, or join separate parts into a whole.",
+      "reason": "原英文编织面料名词，实际例句为编织和使想法结合的动词。",
+      "contexts": [
+        {
+          "text": "My aunt taught me to knit a scarf.",
+          "translation": "我姑姑教我织围巾。",
+          "source": "original"
+        },
+        {
+          "text": "We need to knit these separate ideas into one story.",
+          "translation": "我们需要把这些零散的想法串成一个故事。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7127,
+      "word": "vault",
+      "field": "en",
+      "before": "a burial chamber (usually underground)",
+      "after": "A secure room for valuables, a jump over an obstacle, or an arched ceiling.",
+      "reason": "原英文为墓室，现zh和两句为保险库、跳跃，兼顾zh另列拱顶。",
+      "contexts": [
+        {
+          "text": "The jewels are kept in a locked vault.",
+          "translation": "珠宝存放在上锁的保险库里。",
+          "source": "original"
+        },
+        {
+          "text": "He cleared the fence with a quick vault.",
+          "translation": "他迅速一跃，翻过了围栏。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7128,
+      "word": "chilly",
+      "field": "en",
+      "before": "not characterized by emotion",
+      "after": "Uncomfortably cold, or unfriendly in manner.",
+      "reason": "原英文缺乏情绪表达，无法涵盖气温冷及冷淡目光。",
+      "contexts": [
+        {
+          "text": "It's a bit chilly in here with the window open.",
+          "translation": "窗户开着，这里有点冷。",
+          "source": "original"
+        },
+        {
+          "text": "She gave me a chilly look and walked away.",
+          "translation": "她冷冷地看了我一眼，走开了。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7129,
+      "word": "degrade",
+      "field": "en",
+      "before": "reduce the level of land, as by erosion",
+      "after": "To break down a material or make something worse in quality or condition.",
+      "reason": "原英文侵蚀降低地势，与塑料降解和图像质量下降不兼容。",
+      "contexts": [
+        {
+          "text": "Sunlight can degrade the plastic over time.",
+          "translation": "阳光会使这种塑料逐渐降解。",
+          "source": "original"
+        },
+        {
+          "text": "Repeated copying can degrade the image quality.",
+          "translation": "反复复制会降低图像质量。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7132,
+      "word": "vitality",
+      "field": "en",
+      "before": "an energetic style",
+      "after": "Energy, liveliness, and the ability to remain strong and active.",
+      "reason": "原英文只富有精力的风格，过窄，例句是儿童带来活力和老年人生命力。",
+      "contexts": [
+        {
+          "text": "The children brought fresh vitality to the quiet house.",
+          "translation": "孩子们给这座安静的房子带来了新的活力。",
+          "source": "original"
+        },
+        {
+          "text": "Even in old age, she had remarkable vitality.",
+          "translation": "即使到了晚年，她依然精力充沛。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7140,
+      "word": "flank",
+      "field": "en",
+      "before": "the side of military or naval formation",
+      "after": "The side of a person's or animal's body, or the side of a hill or formation.",
+      "reason": "原英文限军队海军队形侧翼，实际两句为山侧和马侧腹。",
+      "contexts": [
+        {
+          "text": "A small path runs along the hill's eastern flank.",
+          "translation": "一条小路沿着山的东侧延伸。",
+          "source": "original"
+        },
+        {
+          "text": "The horse had a white patch on its flank.",
+          "translation": "那匹马的侧腹有一块白斑。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7143,
+      "word": "lash",
+      "field": "en",
+      "before": "leather strip that forms the flexible part of a whip",
+      "after": "An eyelash; also, to strike with a whip or angrily attack someone with words.",
+      "reason": "原英文仅鞭子的皮条，未覆盖睫毛和lash out发怒，兼顾zh猛抽义。",
+      "contexts": [
+        {
+          "text": "A single lash had fallen onto her cheek.",
+          "translation": "一根睫毛落在了她的脸颊上。",
+          "source": "original"
+        },
+        {
+          "text": "Try not to lash out at people when you're tired.",
+          "translation": "疲惫时，尽量别冲别人发火。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7145,
+      "word": "abide",
+      "field": "en",
+      "before": "v dwell",
+      "after": "To obey rules or agreements, or tolerate someone or something unpleasant.",
+      "reason": "原定义居住，实际两例为遵守和不能容忍。",
+      "contexts": [
+        {
+          "text": "All guests must abide by the campsite rules.",
+          "translation": "所有游客都必须遵守营地规定。",
+          "source": "original"
+        },
+        {
+          "text": "I can't abide the sound of someone chewing loudly.",
+          "translation": "我受不了别人嚼东西时发出很大的声音。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7146,
+      "word": "enclose",
+      "field": "en",
+      "before": "close in; darkness enclosed him\"",
+      "after": "To surround something, or include an item with a letter or package.",
+      "reason": "原英文只有围住并混入破损引语，缺少附上收据复印件义。",
+      "contexts": [
+        {
+          "text": "Please enclose a copy of your receipt.",
+          "translation": "请附上一份收据复印件。",
+          "source": "original"
+        },
+        {
+          "text": "Tall stone walls enclose the garden.",
+          "translation": "高高的石墙围住了花园。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7148,
+      "word": "insulation",
+      "field": "en",
+      "before": "the state of being isolated or detached",
+      "after": "Material that reduces heat loss or prevents electricity passing where it should not.",
+      "reason": "原英文隔离状态，实际两句为屋顶保温材料和电线绝缘层。",
+      "contexts": [
+        {
+          "text": "The roof needs better insulation to keep the house warm.",
+          "translation": "屋顶需要更好的保温层，才能让屋里保持温暖。",
+          "source": "original"
+        },
+        {
+          "text": "The electrician checked the insulation around the wires.",
+          "translation": "电工检查了电线外面的绝缘层。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7149,
+      "word": "fluctuation",
+      "field": "en",
+      "before": "a wave motion",
+      "after": "A change up and down in a level, amount, or value.",
+      "reason": "原定义wave motion为波动运动，不能明确解释水压和销售量起伏。",
+      "contexts": [
+        {
+          "text": "There's some fluctuation in water pressure at night.",
+          "translation": "夜间的水压有些波动。",
+          "source": "original"
+        },
+        {
+          "text": "The chart shows a seasonal fluctuation in sales.",
+          "translation": "图表显示销售额随季节波动。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7152,
+      "word": "irritate",
+      "field": "en",
+      "before": "excite to an abnormal condition, or chafe or inflame",
+      "after": "To annoy someone or cause soreness or discomfort in a part of the body.",
+      "reason": "原英文仅刺激发炎义，遗漏敲击声惹恼人的用法。",
+      "contexts": [
+        {
+          "text": "That constant tapping is starting to irritate me.",
+          "translation": "那不停的敲击声开始让我烦躁了。",
+          "source": "original"
+        },
+        {
+          "text": "The rough collar can irritate your skin.",
+          "translation": "粗糙的衣领可能会刺激皮肤。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7153,
+      "word": "flare",
+      "field": "en",
+      "before": "a shape that spreads outward",
+      "after": "A bright signal light, or to start burning or become intense suddenly.",
+      "reason": "原定义向外扩张形状，实际两句为照明弹和情绪突然爆发。",
+      "contexts": [
+        {
+          "text": "A bright flare lit up the night sky.",
+          "translation": "一枚明亮的照明弹照亮了夜空。",
+          "source": "original"
+        },
+        {
+          "text": "Tempers can flare when everyone is tired.",
+          "translation": "大家都累的时候，很容易发脾气。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7157,
+      "word": "cape",
+      "field": "en",
+      "before": "a strip of land projecting into a body of water",
+      "after": "A loose sleeveless outer garment, or a piece of land extending into the sea.",
+      "reason": "原英文海角正确，但例1斗篷义未覆盖。",
+      "contexts": [
+        {
+          "text": "The actor wore a long red cape.",
+          "translation": "演员穿着一件红色长斗篷。",
+          "source": "original"
+        },
+        {
+          "text": "We stopped at the cape to watch the waves.",
+          "translation": "我们在海角停下来观浪。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7160,
+      "word": "haircut",
+      "field": "en",
+      "before": "the style in which hair has been cut",
+      "after": "The act of cutting someone's hair, or the style produced by that cutting.",
+      "reason": "原英文只有剪后发型，例1need a haircut是理发行为。",
+      "contexts": [
+        {
+          "text": "I need a haircut before the wedding.",
+          "translation": "婚礼前我得去理个发。",
+          "source": "original"
+        },
+        {
+          "text": "Your new haircut really suits you.",
+          "translation": "你的新发型很适合你。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7161,
+      "word": "archaeology",
+      "field": "en",
+      "before": "n the branch of anthropology that studies prehistoric people and their cultures",
+      "after": "The study of past societies through objects, buildings, and other physical remains.",
+      "reason": "原定义限定史前人类；考古也研究有文字记载时期，按权威词典去掉错误时期限制。",
+      "contexts": [
+        {
+          "text": "She studied archaeology at university.",
+          "translation": "她在大学学的是考古学。",
+          "source": "original"
+        },
+        {
+          "text": "The museum has a room devoted to local archaeology.",
+          "translation": "博物馆有一个展厅专门介绍当地的考古发现。",
+          "source": "original"
+        }
+      ],
+      "source": {
+        "url": "https://www.oxfordlearnersdictionaries.com/definition/english/archaeology",
+        "support": "完整官方词条涵盖历史文化及时期，并非仅史前。"
+      }
+    },
+    {
+      "id": 7162,
+      "word": "devour",
+      "field": "en",
+      "before": "destroy completely",
+      "after": "To eat very quickly and eagerly, or read something with great enthusiasm.",
+      "reason": "原定义彻底摧毁，与吃饼干和如饥似渴读小说不兼容。",
+      "contexts": [
+        {
+          "text": "The kids will devour these cookies in minutes.",
+          "translation": "孩子们几分钟就能把这些饼干吃光。",
+          "source": "original"
+        },
+        {
+          "text": "I tend to devour a good mystery in one sitting.",
+          "translation": "遇到好看的悬疑小说，我往往一口气读完。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7163,
+      "word": "hefty",
+      "field": "en",
+      "before": "of considerable weight and size",
+      "after": "Very heavy or large; also used for a large price or amount.",
+      "reason": "原英文仅重量和大小，例1是高昂价格。",
+      "contexts": [
+        {
+          "text": "The suitcase came with a hefty price tag.",
+          "translation": "这个行李箱的价格很高。",
+          "source": "original"
+        },
+        {
+          "text": "He lifted a hefty bag of soil into the car.",
+          "translation": "他把一大袋沉甸甸的土搬进车里。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7164,
+      "word": "parasite",
+      "field": "en",
+      "before": "an animal or plant that lives in or on a host (another animal or plant); it obtains nourishment from the host without benefiting or killing the host",
+      "after": "An organism that lives in or on a host and takes nourishment from it.",
+      "reason": "原定义断言不杀死宿主不可靠，删绝对排除，保留寄居取食核心义；仅术语辨识。",
+      "contexts": [
+        {
+          "text": "The documentary showed a parasite living inside a fish.",
+          "translation": "纪录片展示了一种生活在鱼体内的寄生虫。",
+          "source": "original"
+        },
+        {
+          "text": "This parasite depends on a host to survive.",
+          "translation": "这种寄生生物依靠宿主生存。",
+          "source": "original"
+        }
+      ],
+      "source": {
+        "url": "https://www.oxfordlearnersdictionaries.com/definition/english/parasite",
+        "support": "完整官方词条以依附宿主取食定义；不提供必定不杀宿主保证。"
+      }
+    },
+    {
+      "id": 7166,
+      "word": "cock",
+      "field": "en",
+      "before": "obscene terms for penis",
+      "after": "A male chicken; also a vulgar word for the penis.",
+      "reason": "原英文只粗俗阴茎义，两例均公鸡，兼顾zh第二义并明确粗俗语域。",
+      "contexts": [
+        {
+          "text": "The cock crowed before sunrise.",
+          "translation": "太阳升起前，公鸡就打鸣了。",
+          "source": "original"
+        },
+        {
+          "text": "The farmer kept one cock with the hens.",
+          "translation": "农夫养了一只公鸡和一群母鸡。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7172,
+      "word": "complementary",
+      "field": "en",
+      "before": "of words or propositions so related that each is the negation of the other",
+      "after": "Working well together because each adds something the other lacks.",
+      "reason": "原英文逻辑命题互为否定的技术义，例句是互补技能和色彩，不等同逻辑否定。",
+      "contexts": [
+        {
+          "text": "Their complementary skills made them a strong team.",
+          "translation": "他们的技能相互补充，组成了一支强大的团队。",
+          "source": "original"
+        },
+        {
+          "text": "The designer chose complementary colors for the poster.",
+          "translation": "设计师给海报选用了互补色。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7175,
+      "word": "curiously",
+      "field": "en",
+      "before": "in a manner differing from the usual or expected",
+      "after": "In an interested, questioning way, or in a strange and unexpected way.",
+      "reason": "原英文仅奇怪地，例1是孩子好奇观察。",
+      "contexts": [
+        {
+          "text": "The child looked curiously into the box.",
+          "translation": "孩子好奇地往盒子里看。",
+          "source": "original"
+        },
+        {
+          "text": "Curiously, both clocks stopped at the same time.",
+          "translation": "奇怪的是，两个钟同时停了。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7178,
+      "word": "pry",
+      "field": "en",
+      "before": "to move or force, especially in an effort to get something open",
+      "after": "To ask unwanted personal questions, or force something open with a lever.",
+      "reason": "原英文仅撬开，例1是窥探私生活。",
+      "contexts": [
+        {
+          "text": "Don't pry into her private life.",
+          "translation": "别打听她的私生活。",
+          "source": "original"
+        },
+        {
+          "text": "Use the flat end to pry the lid open.",
+          "translation": "用扁平的一端把盖子撬开。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7179,
+      "word": "dresser",
+      "field": "en",
+      "before": "a person who dresses in a particular way",
+      "after": "A chest of drawers, or someone who helps an actor put on stage clothes.",
+      "reason": "原英文穿着某种风格的人，实际为抽屉柜和演员服装助理。",
+      "contexts": [
+        {
+          "text": "I keep my socks in the top drawer of the dresser.",
+          "translation": "我把袜子放在五斗柜的最上层抽屉里。",
+          "source": "original"
+        },
+        {
+          "text": "The actor's dresser helped him change between scenes.",
+          "translation": "演员的服装助理帮他在场与场之间换衣服。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7180,
+      "word": "denomination",
+      "field": "en",
+      "before": "a group of religious congregations having its own organization and a distinctive faith",
+      "after": "The value printed on money, or a branch of a religion with its own organization.",
+      "reason": "原英文仅教派，例1为纸币面额。",
+      "contexts": [
+        {
+          "text": "Can you give me notes of a smaller denomination?",
+          "translation": "能给我换成面额小一点的纸币吗？",
+          "source": "original"
+        },
+        {
+          "text": "The two churches belong to the same denomination.",
+          "translation": "这两所教堂属于同一个教派。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7181,
+      "word": "consolidation",
+      "field": "en",
+      "before": "combining into a solid mass",
+      "after": "The joining of separate parts into one, or the strengthening of something established.",
+      "reason": "原定义聚成固体块，过度物理化，实际两个例句是办公室和学校组织合并，兼顾zh巩固。",
+      "contexts": [
+        {
+          "text": "The consolidation of three offices reduced our rent.",
+          "translation": "三个办公室合并后，我们的租金减少了。",
+          "source": "original"
+        },
+        {
+          "text": "The report describes the consolidation of several local schools.",
+          "translation": "报告介绍了几所当地学校的合并。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7184,
+      "word": "stigma",
+      "field": "en",
+      "before": "the apical end of the style where deposited pollen enters the pistil",
+      "after": "Social shame or disapproval associated with a condition, action, or group.",
+      "reason": "原英文植物柱头，两句为寻求帮助和精神疾病的污名。",
+      "contexts": [
+        {
+          "text": "There is still a stigma attached to asking for help.",
+          "translation": "寻求帮助仍然会被一些人视为丢脸的事。",
+          "source": "original"
+        },
+        {
+          "text": "The campaign aims to reduce the stigma around mental illness.",
+          "translation": "这项宣传活动旨在减少人们对精神疾病的污名。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7185,
+      "word": "bitterly",
+      "field": "en",
+      "before": "with bitterness, in a resentful manner",
+      "after": "With strong anger or sadness, or to an extreme degree, especially of cold.",
+      "reason": "原英文仅怨恨，例2是bitterly cold程度加强。",
+      "contexts": [
+        {
+          "text": "She complained bitterly about the long wait.",
+          "translation": "她对长时间的等待满腹怨言。",
+          "source": "original"
+        },
+        {
+          "text": "It was bitterly cold outside the station.",
+          "translation": "车站外面冷得刺骨。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7188,
+      "word": "grate",
+      "field": "en",
+      "before": "a frame of iron bars to hold a fire",
+      "after": "To shred food by rubbing it against sharp holes, or a metal frame holding a fire.",
+      "reason": "原英文只有炉栅，例1是刨奶酪碎。",
+      "contexts": [
+        {
+          "text": "Could you grate some cheese over the pasta?",
+          "translation": "你能在意面上刨些奶酪碎吗？",
+          "source": "original"
+        },
+        {
+          "text": "We cleaned the ashes from the fireplace grate.",
+          "translation": "我们清理了壁炉炉栅上的灰烬。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7189,
+      "word": "metallic",
+      "field": "en",
+      "before": "a fabric made of a yarn that is partly or entirely of metal",
+      "after": "Made of metal, or resembling metal in sound or appearance.",
+      "reason": "原英文金属纱线织物名词，两句是金属外观与金属碰撞声形容词。",
+      "contexts": [
+        {
+          "text": "The lid has a shiny metallic finish.",
+          "translation": "盖子表面有一层亮亮的金属光泽。",
+          "source": "original"
+        },
+        {
+          "text": "A metallic clanging sound came from the garage.",
+          "translation": "车库里传来了金属碰撞的哐当声。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7191,
+      "word": "skim",
+      "field": "en",
+      "before": "a thin layer covering the surface of a liquid",
+      "after": "To read quickly for the main points, or remove a layer from a liquid's surface.",
+      "reason": "原英文为液体表面薄层名词，实际是略读和撇浮沫两个动词用法。",
+      "contexts": [
+        {
+          "text": "I'll skim the report before the meeting.",
+          "translation": "开会前我会快速浏览一下报告。",
+          "source": "original"
+        },
+        {
+          "text": "Use a spoon to skim the foam off the soup.",
+          "translation": "用勺子撇去汤上的浮沫。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7193,
+      "word": "pudding",
+      "field": "en",
+      "before": "any of various soft thick unsweetened baked dishes",
+      "after": "A dessert, often soft and creamy or made with rice, chocolate, or other ingredients.",
+      "reason": "原英文限定不甜的烤制菜肴，与巧克力及米布丁甜点相反，按词典甜点义改写。",
+      "contexts": [
+        {
+          "text": "Would you like some chocolate pudding?",
+          "translation": "你想来点巧克力布丁吗？",
+          "source": "original"
+        },
+        {
+          "text": "We had rice pudding for dessert.",
+          "translation": "我们餐后吃了米布丁。",
+          "source": "original"
+        }
+      ],
+      "source": {
+        "url": "https://www.oxfordlearnersdictionaries.com/definition/english/pudding",
+        "support": "完整官方词条列甜点、米布丁和巧克力布丁，亦有咸味次义；本次对应甜点用法。"
+      }
+    },
+    {
+      "id": 7195,
+      "word": "alas",
+      "field": "en",
+      "before": "n a flat wing-shaped process or winglike part of an organism",
+      "after": "An exclamation expressing regret, sadness, or disappointment.",
+      "reason": "原英文翼形结构名词疑似alas误作ala复数，与两例感叹词完全错配。",
+      "contexts": [
+        {
+          "text": "Alas, the last slice of cake was already gone.",
+          "translation": "唉，最后一块蛋糕已经没了。",
+          "source": "original"
+        },
+        {
+          "text": "The weather looked promising, but alas, it rained all afternoon.",
+          "translation": "天气看着不错，可惜下了一下午的雨。",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7198,
+      "word": "reckon",
+      "field": "en",
+      "before": "take account of",
+      "after": "To think or suppose, or estimate an amount, especially in informal speech.",
+      "reason": "原英文考虑因素，不能清楚解释口语认为和估计修理费。",
+      "contexts": [
+        {
+          "text": "I reckon we can finish this by Friday.",
+          "translation": "我觉得我们周五前能做完。",
+          "source": "original"
+        },
+        {
+          "text": "How much do you reckon the repairs will cost?",
+          "translation": "你估计维修要花多少钱？",
+          "source": "original"
+        }
+      ]
+    },
+    {
+      "id": 7199,
+      "word": "canon",
+      "field": "en",
+      "before": "a rule or especially body of rules or principles generally established as valid and fundamental in a field or art or philosophy",
+      "after": "Accepted works or rules; in fiction, the events recognized as part of the official story.",
+      "reason": "原英文规则体系仅对应zh教规一侧，未表达文学经典群和作品官方设定。",
+      "contexts": [
+        {
+          "text": "The novel is now part of the literary canon.",
+          "translation": "这部小说如今已被列入文学经典。",
+          "source": "original"
+        },
+        {
+          "text": "Fans argued about whether the new story belonged in the canon.",
+          "translation": "粉丝们争论新故事是否属于官方设定。",
+          "source": "original"
+        }
+      ]
+    }
+  ],
+  "sources_checked": [
+    {
+      "id": 7012,
+      "url": "https://www.oxfordlearnersdictionaries.com/definition/english/weekday",
+      "support": "完整官方词条：排除周六和周日。"
+    },
+    {
+      "id": 7038,
+      "url": "https://www.oxfordlearnersdictionaries.com/definition/english/cor",
+      "support": "完整官方词条：英式、过时、非正式感叹，用于惊讶、喜悦或赞叹。"
+    },
+    {
+      "id": 7043,
+      "url": "https://www.srbija.gov.rs/tekst/en/130127/basic-info.php",
+      "support": "塞尔维亚政府官方搜索正文确认国家正式名称及首都。"
+    },
+    {
+      "id": 7098,
+      "url": "https://www.niddk.nih.gov/health-information/digestive-diseases/zollinger-ellison-syndrome",
+      "support": "官方正文解释gastrin刺激胃产生胃酸；仅用于释义，不提炼治疗建议。"
+    },
+    {
+      "id": 7100,
+      "url": "https://www.oxfordlearnersdictionaries.com/definition/english/empowerment",
+      "support": "完整官方词条：对自身生活更多控制，及获得行动权力。"
+    },
+    {
+      "id": 7161,
+      "url": "https://www.oxfordlearnersdictionaries.com/definition/english/archaeology",
+      "support": "完整官方词条涵盖历史文化及时期，并非仅史前。"
+    },
+    {
+      "id": 7164,
+      "url": "https://www.oxfordlearnersdictionaries.com/definition/english/parasite",
+      "support": "完整官方词条以依附宿主取食定义；不提供必定不杀宿主保证。"
+    },
+    {
+      "id": 7193,
+      "url": "https://www.oxfordlearnersdictionaries.com/definition/english/pudding",
+      "support": "完整官方词条列甜点、米布丁和巧克力布丁，亦有咸味次义；本次对应甜点用法。"
+    },
+    {
+      "id": 7036,
+      "url": "https://www.collinsdictionary.com/dictionary/english/clough",
+      "support": "完整词条标英式方言的狭窄峡谷；当前谷义正确，保持en，不把姓氏例绑定某个名人。"
+    },
+    {
+      "id": 7083,
+      "url": "https://www.collinsdictionary.com/dictionary/english/mungo",
+      "support": "已读官方词条及官方搜索摘要，确认废羊毛再生材料/织物义，保持当前相关纤维释义。"
+    }
+  ],
+  "unchanged_fields": [
+    "id",
+    "word",
+    "zh",
+    "full",
+    "phonetic",
+    "rank",
+    "chapter",
+    "examples及来源元数据"
+  ],
+  "product_modified": false,
+  "question_path": "app.js buildQueue: chapter>=8且w.en非空使用definition；qBase直接用w.en作题干；清空en将回到choice-zh。此轮200词都在第8章，未更改出题代码。",
+  "limitations": [
+    "未承诺随机近邻四选一在所有组合语义唯一；本次先纠正题干本身。",
+    "人名识别例句不能证明某个历史名人身份；Benny和Kylie清空仅避开错题，不否认旧字典义。",
+    "常见基础词原创改写未逐个联网；需外部事实核实的日期范围、国家、术语和感叹语域列出已取得官方来源。"
+  ],
+  "humanizer_self_review": {
+    "complete": true,
+    "reviewed_replacement_definitions": 83,
+    "cleared_without_replacement": 3,
+    "notes": "逐句复读原创英文，删掉套话与无用修饰；复核主体、词性、多义衔接。末次改footprint/lash/abide去除直接答案词；trot保留马匹对角步态帮助区别附近jog。所有替换定义10–103字符，无目标词独立泄漏。"
+  },
+  "checks": {
+    "complete_order": true,
+    "all_200_statuses": true,
+    "all_400_context_pairs_present": true,
+    "proposals_match_current_before": true,
+    "replacements_no_target_word_leak": true,
+    "input_hashes_unchanged_at_freeze": true,
+    "actual_product_write": false,
+    "language_review_not_structure_only": true
+  },
+  "attempted_but_not_used_sources": [
+    {
+      "url": "https://www.btb.termiumplus.gc.ca/tpv2alpha/alpha-eng.html?i=&index=alt&lang=eng&srchtxt=KEMP",
+      "result": "打开失败，不作为新定义证据；kemp仅建议清空无信息交叉引用。"
+    }
+  ]
+}

@@ -770,3 +770,11 @@ prosthesis采用假肢、人工假体，matchup改为对阵，generational采用
 核义参考：[ECDICT固定源文件](https://github.com/skywind3000/ECDICT/blob/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b/ecdict.csv)、[Mayhew与Skeat中古英语词典](https://www.gutenberg.org/cache/epub/10625/pg10625-images.html)、[古苏格兰语词典](https://dsl.ac.uk/entry/dost00086253)、[Collins德语Alm](https://www.collinsdictionary.com/dictionary/german-english/alm)、[Cisco路由器](https://www.cisco.com/site/us/en/learn/topics/small-business/what-is-a-router.html)、[Cisco防火墙](https://www.cisco.com/site/us/en/learn/topics/security/what-is-a-firewall.html)、[Oxford cola](https://www.oxfordlearnersdictionaries.com/definition/english/cola)。其他原始资料及访问限制见四份research记录，不把未打开或邻近字形资料当作确定原义。
 
 本批检查通过：62项顶层Go、20个子测试（6.871秒）、vet、20k核心、8112行业句子目标、12项实际函数英英出题与判分、8项来源渲染、47项全新隔离四账号检查。47项不含站长审核预约；支付为模拟。Mac/Linux各77完整嵌入资源共154项字节匹配。隔离页面实际展开keye、thril、WHE与Alm性质/双语；19004实际展开Alm并点击44px朗读，收藏保持☆，未做真人听审。仅内容与来源说明变更，未重复全量race、全套前端、小屏布局或付费AI请求。
+
+## v1.31.9：第8章英英辅助定义质量审读
+
+本批逐项对照主线7001–7600共600词的英文定义、现有中文义及1200句英文语境，修257个en字段：251条定义改为对应当前用法，另六项错配专名或无法可靠出题的定义清空，按现有规则回退中文选择题。正确的314项和原空值29项保留。mortar不再用迫击炮解释砂浆/研钵，coax不再用同轴线解释劝说，lest不再误为五十；zip、blockbuster、puddle分别对应拉链、卖座作品和地面水洼。
+
+只改英文辅助字段。学习ID、词头顺序、中文常用义、原完整词典、音标、所有例句和行业题库保留。全部20,000词的两句双语覆盖保持；本批600词审读不代表全词库专业语言审校完成。44音专业听审、真人麦克风授权和录音试听尚未完成。
+
+三份分段审稿及最终补丁已冻结。重建时，在所有历史编辑层、701–1100质量补丁和v1318来源补丁之后运行 `python3 qa/review_definitions_7001_7600.py --apply`；此脚本只写words.json，不写examples.json。实际产品第8章起仅对非空en出英英题；本批回归直接调用现有出题、渲染和判分函数。最终测试、普通浏览器刷新、私有仓库全文件核对和发布结果见 `state/evidence-v1319/verification.json`，不要把点击朗读当作真人音频听审。
