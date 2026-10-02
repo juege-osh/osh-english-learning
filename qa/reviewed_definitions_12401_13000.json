@@ -1,0 +1,876 @@
+{
+  "version": "1.32.8",
+  "range": [
+    12401,
+    13000
+  ],
+  "status": "frozen",
+  "base_head": "2ce5e39999879874d2472961f22c1609c93e13ec",
+  "reviewed_words": 600,
+  "reviewed_english_example_contexts": 1200,
+  "changed_words": 95,
+  "replaced_definitions": 94,
+  "cleared_mismatched_definitions": 1,
+  "existing_empty_en_preserved": 23,
+  "unchanged_correct": 482,
+  "reports": [
+    {
+      "range": [
+        12401,
+        12600
+      ],
+      "file": "qa/review_definitions_12401_12600.json",
+      "path": "/tmp/english-v1328-review-12401-12600.json",
+      "sha256": "fac2bb8dc92e8eb05172767094d0b583660b871be1d5680646eb600db07f6728",
+      "counts": {
+        "unchanged": 160,
+        "empty": 7,
+        "changed": 33
+      }
+    },
+    {
+      "range": [
+        12601,
+        12800
+      ],
+      "file": "qa/review_definitions_12601_12800.json",
+      "path": "/tmp/english-v1328-review-12601-12800.json",
+      "sha256": "c962893ceb7c9469d31ca9a4ca360c9bcf4eae4385f57e828827e0fa2cf067e4",
+      "counts": {
+        "unchanged": 166,
+        "empty": 7,
+        "changed": 27,
+        "cleared": 1
+      }
+    },
+    {
+      "range": [
+        12801,
+        13000
+      ],
+      "file": "qa/review_definitions_12801_13000.json",
+      "path": "/tmp/english-v1328-review-12801-13000.json",
+      "sha256": "4cc7acd7b38e10b1db0bed3db949787fbf166268000bb9fc15613bdf4b05b9c6",
+      "counts": {
+        "unchanged": 154,
+        "empty": 9,
+        "changed": 37,
+        "cleared": 0
+      }
+    }
+  ],
+  "root_review": "root逐项读完600个现存en、中文义及1200组完整双语，再逐项审读三份作者冻结稿全部修改建议与理由；保留正确另一基本义和原空，不要求列全多义。作者读取原完整词典，root不把结构检查当语言审校。作者与整批交叉审读冻结后apply。",
+  "root_sources_checked": [
+    {
+      "url": "https://www.cdc.gov/infection-control/hcp/disinfection-sterilization/glossary.html",
+      "supports": "root实际读取灭菌定义涵盖所有可存活微生物，不仅细菌；这里只核术语，不指导灭菌操作。"
+    },
+    {
+      "url": "https://encyclopedia.ushmm.org/content/en/article/introduction-to-the-holocaust",
+      "supports": "root实际读取历史专名The Holocaust是纳粹及同谋对欧洲犹太人的系统迫害与谋杀，不将其简化为任意大火或战争。"
+    },
+    {
+      "url": "https://www.merriam-webster.com/dictionary/chloride",
+      "supports": "root实际读取化合物与单价氯阴离子两种定义，不将任意含氯氧阴离子混作chloride，也不只限离子盐排除共价氯化物。"
+    },
+    {
+      "url": "https://chem.libretexts.org/Courses/Howard_University/General_Chemistry:_An_Atoms_First_Approach/Unit_2:__Molecular_Structure/Chapter_4:_Ionic_Bonding/Chapter_4.4:_Naming_Ionic_Compounds",
+      "supports": "root实际读取Howard课程教材，氯离子和氯酸根/高氯酸根命名区分。"
+    },
+    {
+      "url": "https://learning.physics.iastate.edu/siphon",
+      "supports": "root实际读取大学演示教材，重力使液体向下流动，管中压差伴随；不把空气压力写作普遍唯一驱动力。"
+    },
+    {
+      "url": "https://kirkmcd.princeton.edu/examples/siphon.pdf",
+      "supports": "root检索摘要可见，直接open内部错误未取正文，不声称阅读全文。"
+    },
+    {
+      "url": "https://www.law.cornell.edu/wex/libel",
+      "supports": "root实际读取书面及其他持久形式损害名誉的基础术语，原定义不应把仅印刷及恶意作为所有情形条件；不作个案法律建议。"
+    }
+  ],
+  "root_adjustments": [
+    {
+      "id": 12852,
+      "word": "pomegranate",
+      "author_after": "a round fruit with a tough skin and many seeds surrounded by juicy red flesh",
+      "final_after": "shrub or small tree native to southwestern Asia having large red many-seeded fruit",
+      "reason": "原en是成立的另一基本义，中文词头也涵盖；仅因例句主要使用果实或比喻义，不足以否定石榴树或实体瓶颈，保留正确基本义，不凑数重写。"
+    },
+    {
+      "id": 12893,
+      "word": "bottleneck",
+      "author_after": "a point that restricts movement or slows progress",
+      "final_after": "the narrow part of a bottle near the top",
+      "reason": "原en是成立的另一基本义，中文词头也涵盖；仅因例句主要使用果实或比喻义，不足以否定石榴树或实体瓶颈，保留正确基本义，不凑数重写。"
+    }
+  ],
+  "boundaries": [
+    "只修改en，ID顺序词头中文音标完整原词典全部examples保持。",
+    "正确其他基本多义和原空保留，不凑数重写。",
+    "不代表全库专业语言审校，未做真人听审。"
+  ],
+  "changes": [
+    {
+      "id": 12403,
+      "word": "outage",
+      "field": "en",
+      "before": "the amount of something (as whiskey or oil) lost in storage or transportation",
+      "after": "a period when a supply or service stops working or is unavailable",
+      "reason": "原定义讲储运物料损耗；停电和网络中断两句均是服务停止供应。"
+    },
+    {
+      "id": 12417,
+      "word": "revolutionise",
+      "field": "en",
+      "before": "v fill with revolutionary ideas",
+      "after": "to change the way something works completely",
+      "reason": "原义是灌输革命思想；工具改变工作方式及印刷革新都指彻底改变事物。"
+    },
+    {
+      "id": 12418,
+      "word": "mercenary",
+      "field": "en",
+      "before": "a person hired to fight for another country than their own",
+      "after": "a soldier who fights for money rather than loyalty to a cause",
+      "reason": "受雇作战义成立，但原义把国籍不同列为必要条件；官方词典允许为付费国家或团体作战，删去国籍限制。"
+    },
+    {
+      "id": 12421,
+      "word": "fleshy",
+      "field": "en",
+      "before": "usually describes a large person who is fat but has a large frame to carry it",
+      "after": "having thick, soft flesh or pulp",
+      "reason": "原义只描述体型肥胖的人；两句是多肉叶片和果实肉质中心，改为厚软肉质。"
+    },
+    {
+      "id": 12430,
+      "word": "eureka",
+      "field": "en",
+      "before": "a town in northwest California on an arm of the Pacific Ocean",
+      "after": "an exclamation of delight at finding or understanding something",
+      "reason": "原义绑定加州城市；两句均是发现东西或实验成功后的欢呼。"
+    },
+    {
+      "id": 12448,
+      "word": "sterilize",
+      "field": "en",
+      "before": "make free from bacteria",
+      "after": "to remove or destroy all microorganisms on or in something",
+      "reason": "原义只说去除细菌，未准确区分灭菌和一般消毒；CDC包括所有微生物和细菌芽孢。这里只辨识术语。"
+    },
+    {
+      "id": 12454,
+      "word": "putter",
+      "field": "en",
+      "before": "a golfer who is putting",
+      "after": "a golf club used for short, gentle shots towards the hole",
+      "reason": "原义是推杆球手；现常用义和第一句是推杆球杆。保留正确器具基本义，不为花园闲忙再加义。"
+    },
+    {
+      "id": 12457,
+      "word": "luscious",
+      "field": "en",
+      "before": "s having strong sexual appeal",
+      "after": "rich and delicious in taste, often sweet or juicy",
+      "reason": "原义仅指性感；两句是桃子和巧克力馅的美味，符合现食物义。"
+    },
+    {
+      "id": 12466,
+      "word": "thickly",
+      "field": "en",
+      "before": "spoken with poor articulation as if with a thick tongue",
+      "after": "in a thick layer or with many things close together",
+      "reason": "原义限定含混发音；两句分别是黄油厚涂和树木密生。"
+    },
+    {
+      "id": 12467,
+      "word": "mannequin",
+      "field": "en",
+      "before": "a woman who wears clothes to display fashions",
+      "after": "a human-shaped model used to display clothes",
+      "reason": "原义指女性时装模特这一旧用法；现中文及两句都是展示服装的人体假人，不限定性别。"
+    },
+    {
+      "id": 12491,
+      "word": "reprisal",
+      "field": "en",
+      "before": "a retaliatory action against an enemy in wartime",
+      "after": "an act of retaliation for an earlier harmful act",
+      "reason": "原义限定战时敌对行动；证人害怕报复的语境无战争条件，官方词典也支持一般报复。"
+    },
+    {
+      "id": 12496,
+      "word": "eastwards",
+      "field": "en",
+      "before": "n the cardinal compass point that is at 90 degrees",
+      "after": "towards the east",
+      "reason": "原定义是90度罗盘方位名词；两句修饰移动方向，词头为向东的副词。"
+    },
+    {
+      "id": 12497,
+      "word": "hiatus",
+      "field": "en",
+      "before": "a missing piece (as a gap in a manuscript)",
+      "after": "a temporary pause or interruption in an activity",
+      "reason": "原义限定手稿缺失片段；乐队和教学两句均指活动间歇。"
+    },
+    {
+      "id": 12499,
+      "word": "individualistic",
+      "field": "en",
+      "before": "with minimally restricted freedom in commerce",
+      "after": "valuing personal independence or expressing a distinctive personal style",
+      "reason": "原义限定商业自由；两句分别是个人风格和重视个体独立的文化，官方词典支持此用法。"
+    },
+    {
+      "id": 12501,
+      "word": "epidemiology",
+      "field": "en",
+      "before": "the branch of medical science dealing with the transmission and control of disease",
+      "after": "the study of patterns and causes of health conditions in populations",
+      "reason": "原义只讲疾病传播及控制，易误限于传染病；CDC定义包括人群中健康状态或事件的分布及决定因素。"
+    },
+    {
+      "id": 12504,
+      "word": "southwards",
+      "field": "en",
+      "before": "n the cardinal compass point that is at 180 degrees",
+      "after": "towards the south",
+      "reason": "原定义是180度罗盘方位名词；行走和鸟飞行均用向南的副词。"
+    },
+    {
+      "id": 12505,
+      "word": "zealot",
+      "field": "en",
+      "before": "a member of an ancient Jewish sect in Judea in the first century who fought to the death against the Romans and who killed or persecuted Jews who collaborated with the Romans",
+      "after": "a person fanatically devoted to a belief or cause",
+      "reason": "原义绑定古代犹太派别；两句是一般政治或观念狂热者，无古代身份依据。"
+    },
+    {
+      "id": 12507,
+      "word": "oblique",
+      "field": "en",
+      "before": "any grammatical case other than the nominative",
+      "after": "sloping at an angle, or indirect rather than openly stated",
+      "reason": "原义讲非主格语法格；现中文及两句是斜角或间接提及。"
+    },
+    {
+      "id": 12513,
+      "word": "selfishness",
+      "field": "en",
+      "before": "stinginess resulting from a concern for your own welfare and a disregard of others",
+      "after": "concern for your own needs with little regard for other people",
+      "reason": "原義把自私等同于吝啬；合租和行为反省中的自私并不限于金钱或财物分享。"
+    },
+    {
+      "id": 12515,
+      "word": "toaster",
+      "field": "en",
+      "before": "someone who proposes a toast; someone who drinks to the health of success of someone or some venture",
+      "after": "an electric appliance that browns slices of bread",
+      "reason": "原义是祝酒人；厨房台面和拔插头两句均指烤面包机。"
+    },
+    {
+      "id": 12520,
+      "word": "impotence",
+      "field": "en",
+      "before": "an inability (usually of the male animal) to copulate",
+      "after": "lack of power to act, or inability to get or maintain an erection firm enough for sex",
+      "reason": "原义泛指不能交配，未准确表达勃起功能障碍；两句分别是无能为力和医疗术语，NIDDK支持后者精确定义。"
+    },
+    {
+      "id": 12533,
+      "word": "cobblestone",
+      "field": "en",
+      "before": "n rectangular paving stone with curved top; once used to make roads",
+      "after": "a rounded stone used to pave a road or path",
+      "reason": "原义把铺路石限定为长方形曲顶石；官方学习词典使用圆石定义，符合现鹅卵石铺路义。"
+    },
+    {
+      "id": 12535,
+      "word": "unfriendly",
+      "field": "en",
+      "before": "not easy to understand or use",
+      "after": "unkind or unwelcoming towards other people",
+      "reason": "原义讲难理解或难使用的系统；接待员和入口氛围都指对人不友好。"
+    },
+    {
+      "id": 12540,
+      "word": "neutralise",
+      "field": "en",
+      "before": "v get rid of (someone who may be a threat) by killing",
+      "after": "to cancel an effect or make a substance neither acidic nor alkaline",
+      "reason": "原义限定杀死威胁者；中和酸与抵消进攻优势两句均不涉及杀人。"
+    },
+    {
+      "id": 12543,
+      "word": "exasperation",
+      "field": "en",
+      "before": "actions that cause great irritation (or even anger)",
+      "after": "a feeling of intense annoyance or frustration",
+      "reason": "原义是引起恼怒的行为；叹气和声音中的气恼均指情绪状态。"
+    },
+    {
+      "id": 12546,
+      "word": "gaudy",
+      "field": "en",
+      "before": "(Britain) a celebratory reunion feast or entertainment held a college",
+      "after": "too bright or heavily decorated in a way that looks tasteless",
+      "reason": "原义是英国学院庆祝宴会；两句描述装饰和画框花哨俗气，词性及对象错配。"
+    },
+    {
+      "id": 12557,
+      "word": "carnivore",
+      "field": "en",
+      "before": "a terrestrial or aquatic flesh-eating mammal",
+      "after": "an animal that feeds on other animals",
+      "reason": "原义将食肉动物限于哺乳动物；食肉和食草的食性分类不以哺乳纲为必要条件。"
+    },
+    {
+      "id": 12561,
+      "word": "fixate",
+      "field": "en",
+      "before": "attach (oneself) to a person or thing in a neurotic way",
+      "after": "to dwell on one thing so much that it is hard to turn your attention away",
+      "reason": "原义把精神病理性依附列为条件；日常纠结负面评论及小细节无需此诊断，官方词典支持过分关注。"
+    },
+    {
+      "id": 12576,
+      "word": "stuffy",
+      "field": "en",
+      "before": "affected with a sensation of stoppage or obstruction",
+      "after": "lacking fresh air, or excessively formal and old-fashioned",
+      "reason": "原义指身体堵塞感；关窗房间的闷与俱乐部古板均非此义。"
+    },
+    {
+      "id": 12583,
+      "word": "cleanliness",
+      "field": "en",
+      "before": "the habit of keeping free of superficial imperfections",
+      "after": "the state or habit of keeping yourself or your surroundings free from dirt",
+      "reason": "原义讲表面瑕疵，易误把清洁当无缺陷；厨房与酒店均是无污垢的清洁状态。"
+    },
+    {
+      "id": 12585,
+      "word": "whittle",
+      "field": "en",
+      "before": "English aeronautical engineer who invented the jet aircraft engine (1907-1996)",
+      "after": "to shape wood by cutting off small pieces, or gradually reduce something",
+      "reason": "原义绑定航空工程师Whittle；削刻木雕和缩减清单均为普通动词。"
+    },
+    {
+      "id": 12588,
+      "word": "ouch",
+      "field": "en",
+      "before": "A socket or bezel holding a precious stone; hence, a jewel or",
+      "after": "an exclamation used when something suddenly hurts",
+      "reason": "原义是宝石扣座且句子截断；两句哎哟都是表达疼痛的感叹词。"
+    },
+    {
+      "id": 12600,
+      "word": "barbaric",
+      "field": "en",
+      "before": "unrestrained and crudely rich",
+      "after": "extremely cruel or brutally violent",
+      "reason": "原义讲粗野奢华风格；袭击和统治者残酷行为均指野蛮残忍。"
+    },
+    {
+      "id": 12610,
+      "word": "blight",
+      "field": "en",
+      "before": "a state or condition being blighted",
+      "after": "a disease that damages plants; something that spoils a place or prospects",
+      "reason": "现定义依赖同根词循环解释，不能辨识植物病害及破坏景观的事物；改为可理解的病害与损害义。"
+    },
+    {
+      "id": 12613,
+      "word": "weld",
+      "field": "en",
+      "before": "United States abolitionist (1803-1895)",
+      "after": "to join metal parts using heat or pressure; a joint made this way",
+      "reason": "旧en指一位美国废奴人士，两句却是金属焊接和焊缝，替换为对应的工艺及接头义。"
+    },
+    {
+      "id": 12616,
+      "word": "urinate",
+      "field": "en",
+      "before": "pass after the manner of urine",
+      "after": "to release urine from the body",
+      "reason": "旧句pass after the manner of urine不自然且未说清排出尿液；按辞典核实改为身体排尿动作。"
+    },
+    {
+      "id": 12638,
+      "word": "savory",
+      "field": "en",
+      "before": "any of several aromatic herbs or subshrubs of the genus Satureja having spikes of flowers attractive to bees",
+      "after": "salty rather than sweet, or pleasantly flavorful",
+      "reason": "旧en是香薄荷属植物，两句与当前中文却是咸味食物和诱人香味；改为咸而不甜或可口的食物义。"
+    },
+    {
+      "id": 12651,
+      "word": "puck",
+      "field": "en",
+      "before": "a mischievous sprite of English folklore",
+      "after": "a flat disc of hard rubber used in ice hockey",
+      "reason": "旧en是英国民间精灵，两句与现中文均为冰球，替换为冰球运动使用的硬橡胶圆盘。"
+    },
+    {
+      "id": 12652,
+      "word": "palsy",
+      "field": "en",
+      "before": "a condition marked by uncontrollable tremor",
+      "after": "weakness, paralysis, or loss of control in muscles",
+      "reason": "旧en把不受控制的震颤当必要条件，与麻痹、脑性瘫痪及面瘫语境不符；医学机构资料支持肌肉无力、瘫痪或控制困难。"
+    },
+    {
+      "id": 12664,
+      "word": "wiper",
+      "field": "en",
+      "before": "a worker who wipes",
+      "after": "a moving blade that clears rain or dirt from a vehicle window",
+      "reason": "旧en仅是擦拭工人，两句均为车辆雨刷和雨刷片；改为清除车辆窗上雨水或污物的活动刮片。"
+    },
+    {
+      "id": 12684,
+      "word": "disservice",
+      "field": "en",
+      "before": "an act intended to help that turns out badly",
+      "after": "an action that harms rather than helps someone",
+      "reason": "忽视问题和失实评论也能造成损害，不必原想帮忙；去掉旧en强制善意意图的限定。"
+    },
+    {
+      "id": 12688,
+      "word": "skipper",
+      "field": "en",
+      "before": "a student who fails to attend classes",
+      "after": "the person in charge of a boat or ship",
+      "reason": "旧en为逃课学生，两句均是船长，改为掌管船只的人；不补不必要人物身份。"
+    },
+    {
+      "id": 12693,
+      "word": "welshman",
+      "field": "en",
+      "before": "a native or resident of Wales",
+      "after": "a man from Wales",
+      "reason": "旧en只说威尔士居民而不限性别，中文及两句明确男子；补上man以区分威尔士人泛称。"
+    },
+    {
+      "id": 12695,
+      "word": "humanism",
+      "field": "en",
+      "before": "the doctrine emphasizing a person's capacity for self-realization through reason; rejects religion and the supernatural",
+      "after": "a way of thinking that emphasizes human values, dignity, and potential",
+      "reason": "文艺复兴语境不能一律排除宗教；博物馆资料有基督教人文主义，改为强调人类价值、尊严和潜能的思想。"
+    },
+    {
+      "id": 12707,
+      "word": "holocaust",
+      "field": "en",
+      "before": "an act of mass destruction and loss of life (especially in war or by fire)",
+      "after": "the Nazi regime's systematic persecution and mass murder of European Jews",
+      "reason": "现中文与两例明确指历史Holocaust，旧泛称火灾或战争大规模毁灭不能辨识该专名；改为纳粹政权对欧洲犹太人的系统迫害和大规模谋杀。"
+    },
+    {
+      "id": 12715,
+      "word": "interrogator",
+      "field": "en",
+      "before": "n a questioner who is excessively harsh",
+      "after": "someone who questions another person closely to obtain information",
+      "reason": "审问者不必过度严厉，现语境也未确立这种必要特征；去掉强制excessively harsh，只说明为获取信息而仔细询问的人。"
+    },
+    {
+      "id": 12724,
+      "word": "moron",
+      "field": "en",
+      "before": "a city in Argentina, to the west of Buenos Aires",
+      "after": "an insulting word for someone considered very stupid",
+      "reason": "旧en是阿根廷城市，与对同事的辱骂和用词说明不符；改成侮辱性称呼，不恢复旧临床智力分级。"
+    },
+    {
+      "id": 12729,
+      "word": "strauss",
+      "field": "en",
+      "before": "German composer of many operas; collaborated with librettist Hugo von Hoffmannsthal to produce several operas (1864-1949)",
+      "after": "",
+      "reason": "旧定义锁定Richard Strauss，例句却为Johann与普通Mr Strauss；官方来源只确认Richard生平，不能证明该姓唯一所指，清空回退中文。"
+    },
+    {
+      "id": 12732,
+      "word": "roach",
+      "field": "en",
+      "before": "a roll of hair brushed back from the forehead",
+      "after": "an informal name for a cockroach; a small freshwater fish",
+      "reason": "旧en是往后梳的发卷，两例明确蟑螂与淡水鱼，按辞典改为这两个对应常用义，不否认旧发型义另存在。"
+    },
+    {
+      "id": 12739,
+      "word": "underage",
+      "field": "en",
+      "before": "dependent by virtue of youth",
+      "after": "younger than the legally permitted age for a particular activity",
+      "reason": "俱乐部与饮酒场景强调法定最低年龄，不是由于年轻而依赖别人；改为尚未达到该活动法定年龄。"
+    },
+    {
+      "id": 12745,
+      "word": "wart",
+      "field": "en",
+      "before": "any small rounded protuberance (as on certain plants or animals)",
+      "after": "a small rough growth on the skin caused by a virus",
+      "reason": "两例均为皮肤上的疣，旧任意植物或动物小凸起过泛，可混同其他皮肤肿物；NHS支持病毒导致的粗糙小皮肤生长物。"
+    },
+    {
+      "id": 12749,
+      "word": "eire",
+      "field": "en",
+      "before": "n a republic consisting of 26 of 32 counties comprising the island of Ireland; achieved independence from the United Kingdom in 1921",
+      "after": "the Irish-language name for Ireland",
+      "reason": "官方宪法确认Éire是爱尔兰名称；旧en把1921条约年份写成独立年份混淆，改为爱尔兰的爱尔兰语名称，不增加政治时间断言。"
+    },
+    {
+      "id": 12760,
+      "word": "slider",
+      "field": "en",
+      "before": "freshwater turtle of United States and South America; frequently raised commercially; some young sold as pets",
+      "after": "a control moved along a track to adjust a setting; a small hamburger",
+      "reason": "旧en为淡水龟，两句均为控制滑块和迷你汉堡；辞典分别支持两例，替换题意，不否认龟的另一个有效同形义。"
+    },
+    {
+      "id": 12764,
+      "word": "ponce",
+      "field": "en",
+      "before": "a man who is effeminate in his manner and fussy in the way he dresses",
+      "after": "an offensive British slang word for a man seen as pretentious or effeminate; also a pimp",
+      "reason": "两例明确标冒犯词和被编辑删掉的辱称，旧en把女性化当中性事实；改为被说成装腔或女性化男性的英式冒犯性俚语，并列皮条客义。"
+    },
+    {
+      "id": 12775,
+      "word": "syllabus",
+      "field": "en",
+      "before": "n an integrated course of academic studies",
+      "after": "an outline of the topics and requirements of a course",
+      "reason": "课程教材与教师更新大纲均为课程内容计划，不是课程本身；改为列出课程主题及要求的提纲。"
+    },
+    {
+      "id": 12782,
+      "word": "perceptive",
+      "field": "en",
+      "before": "of or relating to perception",
+      "after": "quick to notice or understand things that others may miss",
+      "reason": "两例赞许评论洞察力及察觉别人被冷落，旧任何知觉相关过泛；按辞典改为敏于察觉理解别人容易漏掉的事。"
+    },
+    {
+      "id": 12787,
+      "word": "pander",
+      "field": "en",
+      "before": "arrange for sexual partners for others",
+      "after": "to please people by giving in to their wishes, often in a way that deserves criticism",
+      "reason": "两例均为pander to迎合潮流或听众，旧安排性伙伴错配该用法；改为通过满足他人欲望争取好感并带批评色彩。"
+    },
+    {
+      "id": 12788,
+      "word": "condensation",
+      "field": "en",
+      "before": "(psychoanalysis) an unconscious process whereby two ideas or images combine into a single symbol; especially in dreams",
+      "after": "the change of a gas into liquid, or the liquid formed; a shortened version of longer material",
+      "reason": "冷窗水珠与精简长报告不是梦中意象合并；辞典核实冷凝及文章缩编义，替换当前出题定义。"
+    },
+    {
+      "id": 12795,
+      "word": "hypnosis",
+      "field": "en",
+      "before": "a state that resembles sleep but that is induced by suggestion",
+      "after": "a state of focused attention in which a person is more responsive to suggestions",
+      "reason": "讲座与研究讨论催眠，APA资料强调聚焦注意和对暗示的反应，旧睡眠相似状态易误导；改为注意聚焦且更易响应暗示的状态，不断言必睡或完全受控。"
+    },
+    {
+      "id": 12799,
+      "word": "ethereal",
+      "field": "en",
+      "before": "of or containing or dissolved in ether",
+      "after": "delicate and otherworldly, as if not quite real",
+      "reason": "合唱声音及晨雾美景都是空灵缥缈，旧en只说醚的化学性质错配当前题意；辞典支持轻盈、精致或超现实，改为自然的空灵说明，保留完整词典化学义不动。"
+    },
+    {
+      "id": 12805,
+      "word": "scavenger",
+      "field": "en",
+      "before": "a chemical agent that is added to a chemical mixture to counteract the effects of impurities",
+      "after": "an animal that feeds on dead animals or discarded matter",
+      "reason": "旧en仅化学清除剂，与秃鹫食腐及中文食腐动物错配；改动物常用义。"
+    },
+    {
+      "id": 12807,
+      "word": "panoramic",
+      "field": "en",
+      "before": "s as from an altitude or distance",
+      "after": "showing a broad view of an area",
+      "reason": "旧en仅剩高度或距离片段，遗漏全景宽阔视野核心；阳台景观和照片均需全景义。"
+    },
+    {
+      "id": 12809,
+      "word": "bluegrass",
+      "field": "en",
+      "before": "any of various grasses of the genus Poa",
+      "after": "a style of American country music played on acoustic string instruments such as the banjo and fiddle",
+      "reason": "旧en为早熟禾，两句均是蓝草音乐；依词典音乐义修正。"
+    },
+    {
+      "id": 12815,
+      "word": "queasy",
+      "field": "en",
+      "before": "s causing or able to cause nausea",
+      "after": "feeling sick in the stomach or uneasy about something",
+      "reason": "旧en为引起恶心，两句都是感到恶心或不安；改为感受者状态。"
+    },
+    {
+      "id": 12816,
+      "word": "windrow",
+      "field": "en",
+      "before": "A row or line of hay raked together for the purpose of",
+      "after": "a long row of cut hay or other vegetation gathered for drying, or material piled in a similar row",
+      "reason": "旧en在for the purpose of处断句，无法完成目的信息；保留晾干草料长条堆并兼顾风吹落叶条堆，非泛化任意草。"
+    },
+    {
+      "id": 12821,
+      "word": "libel",
+      "field": "en",
+      "before": "a false and malicious publication printed for the purpose of defaming a living person",
+      "after": "a published false statement in writing or another lasting form that harms someone's reputation",
+      "reason": "旧en把印刷及恶意目的等均当必要条件；按Cornell书面等形式名誉侵害基本义修正，不作法律个案判断。"
+    },
+    {
+      "id": 12824,
+      "word": "fissure",
+      "field": "en",
+      "before": "(anatomy) a long narrow slit or groove that divides an organ into lobes",
+      "after": "a narrow crack or split, or a division between people or groups",
+      "reason": "旧en仅器官裂隙，与岩石裂缝及群体分歧错配；采用物理及比喻裂隙义。"
+    },
+    {
+      "id": 12835,
+      "word": "grounding",
+      "field": "en",
+      "before": "fastening electrical equipment to earth",
+      "after": "basic training or knowledge in a subject",
+      "reason": "旧en仅电气接地，中文及两句为基础知识及停飞；选第一句明确的学科基础义，不强求所有多义。"
+    },
+    {
+      "id": 12841,
+      "word": "fussy",
+      "field": "en",
+      "before": "s annoyed and irritable",
+      "after": "hard to please about details, or decorated with too many small details",
+      "reason": "旧en仅易怒，与咖啡挑剔和设计繁琐的两句错配；采用词典挑剔及过度装饰义。"
+    },
+    {
+      "id": 12842,
+      "word": "pivot",
+      "field": "en",
+      "before": "the person in a rank around whom the others wheel and maneuver",
+      "after": "a point or shaft around which something turns; to change direction or strategy",
+      "reason": "旧en仅队形绕转中心的人，与门转轴及营销转向错配；按转轴及转向义修正。"
+    },
+    {
+      "id": 12853,
+      "word": "quaker",
+      "field": "en",
+      "before": "one who quakes and trembles with (or as with) fear",
+      "after": "a member of the Religious Society of Friends",
+      "reason": "旧en为因恐惧发抖的人，两句为贵格会成员；改宗教身份，不绑定个人。"
+    },
+    {
+      "id": 12858,
+      "word": "nab",
+      "field": "en",
+      "before": "tag the base runner to get him out",
+      "after": "to catch or arrest someone, or grab something quickly",
+      "reason": "旧en为棒球触杀，两句为抓人及抢到座位；改抓获及迅速取得。"
+    },
+    {
+      "id": 12869,
+      "word": "onerous",
+      "field": "en",
+      "before": "s not easily borne; wearing; I only had to greet the guests\"",
+      "after": "burdensome and difficult to deal with",
+      "reason": "旧en混入无关的招呼客人残句与孤立引号；保留繁重基本义并去污染内容。"
+    },
+    {
+      "id": 12871,
+      "word": "alexandria",
+      "field": "en",
+      "before": "a town in Louisiana on the Red River",
+      "after": "a city and port in northern Egypt; also the name of cities in the United States",
+      "reason": "旧en仅路易斯安那城，两句明确埃及及弗吉尼亚城；可靠地理词条支持同名城市，不将两句定位为路易斯安那。"
+    },
+    {
+      "id": 12874,
+      "word": "nemesis",
+      "field": "en",
+      "before": "(Greek mythology) the goddess of divine retribution and vengeance",
+      "after": "a powerful rival or a cause of someone's downfall",
+      "reason": "旧en仅希腊复仇女神，两句为劲敌和败亡原因；按普通名词义修正。"
+    },
+    {
+      "id": 12875,
+      "word": "annihilate",
+      "field": "en",
+      "before": "v kill in large numbers",
+      "after": "to destroy completely or defeat overwhelmingly",
+      "reason": "旧en仅大量杀人，两句为毁建筑和比赛大胜；不应误教为杀戮。"
+    },
+    {
+      "id": 12877,
+      "word": "peacock",
+      "field": "en",
+      "before": "European butterfly having reddish-brown wings each marked with a purple eyespot",
+      "after": "a male peafowl with long, colorful feathers that spread into a fan",
+      "reason": "旧en为欧洲蝴蝶，两句为开屏的鸟；改雄孔雀基本义。"
+    },
+    {
+      "id": 12880,
+      "word": "hoover",
+      "field": "en",
+      "before": "United States industrialist who manufactured vacuum cleaners (1849-1932)",
+      "after": "a vacuum cleaner, especially in British English; to clean with one",
+      "reason": "旧en绑定美国工业家，两句为吸尘器及清扫动作；改设备和英式动词义，不修改词头。"
+    },
+    {
+      "id": 12886,
+      "word": "sleazy",
+      "field": "en",
+      "before": "of cloth; thin and loosely woven",
+      "after": "shabby or unpleasant, especially in a morally disreputable way",
+      "reason": "旧en仅轻薄疏织面料，两句为低俗场所及不正当交易；改现代贬义。"
+    },
+    {
+      "id": 12889,
+      "word": "entanglement",
+      "field": "en",
+      "before": "n an intricate trap that entangles or ensnares its victim",
+      "after": "a state of being tangled together or caught in a complicated involvement",
+      "reason": "旧en要求有诱捕受害者的陷阱；线缆缠结和感情纠葛不必有陷阱，修正错误必要条件。"
+    },
+    {
+      "id": 12898,
+      "word": "lance",
+      "field": "en",
+      "before": "move quickly, as if by cutting one's way",
+      "after": "a long spear with a pointed metal tip, traditionally used by mounted soldiers",
+      "reason": "旧en为快速向前移动，两句为骑士长矛及兵器展陈；改武器基本义。"
+    },
+    {
+      "id": 12907,
+      "word": "decomposition",
+      "field": "en",
+      "before": "the analysis of a vector field",
+      "after": "the process of breaking down into simpler substances, especially through decay",
+      "reason": "旧en为向量场分析，两句及中文均为有机物腐烂分解；改物质分解。"
+    },
+    {
+      "id": 12908,
+      "word": "demonize",
+      "field": "en",
+      "before": "make into a demon",
+      "after": "to portray someone or something as evil or very bad",
+      "reason": "旧en字面变成魔鬼，两句为描绘别人或行业极坏；明确描绘行为。"
+    },
+    {
+      "id": 12925,
+      "word": "perestroika",
+      "field": "en",
+      "before": "an economic policy adopted in the former Soviet Union; intended to increase automation and labor efficiency but it led eventually to the end of central planning in the Russian economy",
+      "after": "the program of economic and political reform begun in the Soviet Union under Mikhail Gorbachev in the 1980s",
+      "reason": "旧en狭定自动化劳动效率政策且附单线历史因果；用词典经济及政治改革历史概念，不附无法由该来源支持的因果。"
+    },
+    {
+      "id": 12939,
+      "word": "barter",
+      "field": "en",
+      "before": "an equal exchange",
+      "after": "to exchange goods or services for other goods or services without using money",
+      "reason": "旧en仅等价交换，不能区分现金交易且不必等价；补非货币交换核心。"
+    },
+    {
+      "id": 12957,
+      "word": "bemused",
+      "field": "en",
+      "before": "deeply absorbed in thought",
+      "after": "confused or puzzled by something",
+      "reason": "旧en为沉浸思考，中文及两句为困惑；采用匹配的困惑义，不否定另一思考义。"
+    },
+    {
+      "id": 12961,
+      "word": "regent",
+      "field": "en",
+      "before": "members of a governing board",
+      "after": "a person who rules temporarily in place of a monarch who is too young, absent, or unable to rule",
+      "reason": "旧en为治理董事会成员，两句是君主的摄政者；改代理统治者。"
+    },
+    {
+      "id": 12972,
+      "word": "consign",
+      "field": "en",
+      "before": "commit forever; commit irrevocably",
+      "after": "to hand something over for care, sale, or delivery, or send it to a particular destination",
+      "reason": "旧en强制永久不可撤销，与把画委托拍卖错配；保留交付及送往目的地而不要求永久。"
+    },
+    {
+      "id": 12974,
+      "word": "interagency",
+      "field": "en",
+      "before": "Intermediate agency.",
+      "after": "involving cooperation or activity between two or more agencies",
+      "reason": "旧en把机构之间误写为中间机构；改跨机构关系。"
+    },
+    {
+      "id": 12983,
+      "word": "chloride",
+      "field": "en",
+      "before": "any compound containing a chlorine atom",
+      "after": "a compound of chlorine with another element or group, such as a salt of hydrochloric acid; also a chlorine ion with one negative charge",
+      "reason": "旧en任意含氯化合物过泛，不能区分氯酸盐等；依词典化合物及单价氯阴离子义，不仅限定离子盐而排除共价氯化物。"
+    },
+    {
+      "id": 12984,
+      "word": "mangrove",
+      "field": "en",
+      "before": "a tropical tree or shrub bearing fruit that germinates while still on the tree and having numerous prop roots that eventually form an impenetrable mass and are important in land building",
+      "after": "a tree or shrub that grows in tropical or subtropical coastal waters, or a forest of these plants",
+      "reason": "旧en将胎生及大量支柱根等部分特征泛用于全部类型；NOAA以热带亚热带潮间带树灌木识别，支柱根只说many，改共同生境义。"
+    },
+    {
+      "id": 12987,
+      "word": "partake",
+      "field": "en",
+      "before": "have some of the qualities or attributes of something",
+      "after": "to join in an activity or have a share of food or drink",
+      "reason": "旧en为具有某物属性，两句为参与讨论和用餐；改参与及享用。"
+    },
+    {
+      "id": 12996,
+      "word": "embroil",
+      "field": "en",
+      "before": "force into some kind of situation, condition, or course of action",
+      "after": "to involve someone in a conflict or difficult situation",
+      "reason": "旧en泛指被迫进入任意状态，遗漏争端困难核心；两句均卷入纠纷。"
+    },
+    {
+      "id": 12999,
+      "word": "siphon",
+      "field": "en",
+      "before": "a tube running from the liquid in a vessel to a lower level outside the vessel so that atmospheric pressure forces the liquid through the tube",
+      "after": "a tube that carries liquid up over a higher point and down to a lower level under gravity",
+      "reason": "旧en用大气压力作为虹吸驱动力的概括不充分；大学演示教材明确重力使液体下流及压差，ACS原始研究摘要证实真空可运行；定义保留管、上升越顶及下流到更低处，不作唯一微观机制断言。"
+    },
+    {
+      "id": 13000,
+      "word": "solicitation",
+      "field": "en",
+      "before": "an entreaty addressed to someone of superior status",
+      "after": "a request for something, especially donations or business",
+      "reason": "旧en强制向高地位者恳求，两句募捐和禁止招揽均无等级条件；改一般请求及商业招揽。"
+    }
+  ]
+}
