@@ -1,0 +1,942 @@
+{
+  "version": "1.32.1",
+  "range": [
+    8201,
+    8800
+  ],
+  "status": "frozen",
+  "base_head": "edd73ba052fbf1395b47ea527650d146ee4446f9",
+  "reviewed_words": 600,
+  "reviewed_english_example_contexts": 1200,
+  "changed_words": 109,
+  "replaced_definitions": 105,
+  "cleared_mismatched_definitions": 4,
+  "existing_empty_en_preserved": 28,
+  "unchanged_correct": 463,
+  "reports": [
+    {
+      "range": "8201-8400",
+      "file": "qa/review_definitions_8201_8400.json",
+      "sha256": "80f0292c4083ad260fd0acf0d6ffd3ab8951f3ecdda730556d12336234b15e75",
+      "counts": {
+        "unchanged": 155,
+        "changed": 36,
+        "empty": 9
+      }
+    },
+    {
+      "range": "8401-8600",
+      "file": "qa/review_definitions_8401_8600.json",
+      "sha256": "e045a874d7063624c5d6aa105eda8a287f8b09770989625280bffb517f5cd422",
+      "counts": {
+        "unchanged": 154,
+        "empty": 9,
+        "changed": 37
+      }
+    },
+    {
+      "range": "8601-8800",
+      "file": "qa/review_definitions_8601_8800.json",
+      "sha256": "a2e42ef72019cb6dd2081afeb8e4f5ef1d49a9cb727d49f74a60d081e1fe79f9",
+      "counts": {
+        "unchanged": 154,
+        "empty": 10,
+        "changed": 36
+      }
+    }
+  ],
+  "root_review": "Root逐项读600个现存en、中文义和1200句英文语境，再审三作者全部修改建议；正确基本义和原空保留。作者稿与整批审读冻结后才apply。",
+  "root_sources_checked": [
+    {
+      "url": "https://www.nist.gov/pml/special-publication-811/nist-guide-si-chapter-4-two-classes-si-units-and-si-prefixes",
+      "supports": "voltage为电势差，volt=W/A，不是每单位时间的能量。"
+    },
+    {
+      "url": "https://home.cern/science/physics/subatomic-particles/",
+      "supports": "neutron是复合粒子，不是elementary粒子。"
+    },
+    {
+      "url": "https://www.niams.nih.gov/health-topics/osteoporosis",
+      "supports": "骨质疏松与骨量、结构改变及多种风险因素有关，不能概称单因缺钙。"
+    }
+  ],
+  "changes": [
+    {
+      "id": 8208,
+      "word": "storyteller",
+      "field": "en",
+      "before": "someone who tells lies",
+      "after": "A person who tells stories, especially to entertain an audience.",
+      "reason": "原义是说谎的人，两句都是给别人讲故事的人；改为对应讲故事这一常用义。"
+    },
+    {
+      "id": 8215,
+      "word": "backbone",
+      "field": "en",
+      "before": "fortitude and determination",
+      "after": "The spine; also, the main support or essential part of an organization or system.",
+      "reason": "原义仅为勇气和毅力，与图示脊柱及小企业作为支柱的两句均不对应。"
+    },
+    {
+      "id": 8216,
+      "word": "nope",
+      "field": "en",
+      "before": "A bullfinch.",
+      "after": "An informal way of saying no.",
+      "reason": "原义为灰雀这一旧义，两句均是口语否定回答，不是鸟名。"
+    },
+    {
+      "id": 8218,
+      "word": "furiously",
+      "field": "en",
+      "before": "(of the elements) in a wild and stormy manner",
+      "after": "With great anger, force, or intense effort.",
+      "reason": "原义限定自然元素的暴风般运动，两句分别是气愤摇头及拼命打字。"
+    },
+    {
+      "id": 8231,
+      "word": "receptor",
+      "field": "en",
+      "before": "a cellular structure that is postulated to exist in order to mediate between a chemical agent that acts on nervous tissue and the physiological response",
+      "after": "A molecule in or on a cell that binds a particular substance and triggers a response.",
+      "reason": "原义将受体称为假定存在且限于神经组织的结构，属于过时限制；细胞受体已有明确分子含义。"
+    },
+    {
+      "id": 8235,
+      "word": "voltage",
+      "field": "en",
+      "before": "the rate at which energy is drawn from a source that produces a flow of electricity in a circuit; expressed in volts",
+      "after": "The difference in electrical potential between two points, measured in volts.",
+      "reason": "原义把电压说成能量从电源被取用的速率，混淆功率与电势差；标签和电池读数均指电压。"
+    },
+    {
+      "id": 8238,
+      "word": "seminary",
+      "field": "en",
+      "before": "a private place of education for the young",
+      "after": "A school or college that trains people for religious ministry.",
+      "reason": "原义为青少年的私立学校这一旧用法，当前中文与两句指神学院。"
+    },
+    {
+      "id": 8247,
+      "word": "dissipate",
+      "field": "en",
+      "before": "live a life of pleasure, especially with respect to alcoholic consumption",
+      "after": "To gradually disappear or spread out until no longer concentrated.",
+      "reason": "原义是沉溺享乐、尤其饮酒，两句指雾气及怒气渐渐消散。"
+    },
+    {
+      "id": 8255,
+      "word": "pediatrician",
+      "field": "en",
+      "before": "n a specialist in the care of babies",
+      "after": "A doctor who specializes in the health and illnesses of children.",
+      "reason": "原义只写照护婴儿的专家，既未指明医生，也把儿科的对象错误限定为婴儿。"
+    },
+    {
+      "id": 8269,
+      "word": "obscene",
+      "field": "en",
+      "before": "designed to incite to indecency or lust",
+      "after": "Sexually offensive or indecent; also, shockingly excessive.",
+      "reason": "原义将有意引发淫欲当成必要条件，不能准确解释粗俗语言；巨额开支例句另为令人愤慨的夸张义。"
+    },
+    {
+      "id": 8280,
+      "word": "tenet",
+      "field": "en",
+      "before": "n a religious doctrine that is proclaimed as true without proof",
+      "after": "A principle or belief forming part of a philosophy, religion, or system of ideas.",
+      "reason": "原义限定未经证明便宣称为真的宗教教义，不能解释诚实这一处世原则，并加入不必要的评价。"
+    },
+    {
+      "id": 8281,
+      "word": "straddle",
+      "field": "en",
+      "before": "a noncommittal or equivocal position",
+      "after": "To sit with a leg on each side of something, or extend across both sides of a boundary.",
+      "reason": "原义是含糊不表态的立场；两句是跨坐自行车和横跨行政边界。"
+    },
+    {
+      "id": 8282,
+      "word": "longitudinal",
+      "field": "en",
+      "before": "of or relating to lines of longitude",
+      "after": "Running along the length of something; in research, following subjects over a period of time.",
+      "reason": "原义只指经线，而两句及中文指沿长度方向的裂缝与长期追踪研究。"
+    },
+    {
+      "id": 8287,
+      "word": "insanity",
+      "field": "en",
+      "before": "relatively permanent disorder of the mind",
+      "after": "Extreme foolishness; also, a legal or older term for severe mental illness.",
+      "reason": "原义把精神失常断言为相对永久的病状，既过强也未标明旧称；两句分别是夸张批评和法律术语。"
+    },
+    {
+      "id": 8289,
+      "word": "rustic",
+      "field": "en",
+      "before": "an unsophisticated country person",
+      "after": "Having a simple style typical of the countryside.",
+      "reason": "原义为不谙世故的乡下人，当前两句均以形容词描述木屋及咖啡馆乡村风格。"
+    },
+    {
+      "id": 8292,
+      "word": "rigor",
+      "field": "en",
+      "before": "n something hard to endure",
+      "after": "Thoroughness, precision, and strict standards in work or thought.",
+      "reason": "原义是难以忍受的事物，与实验和思考的严谨用法不对应。"
+    },
+    {
+      "id": 8293,
+      "word": "flux",
+      "field": "en",
+      "before": "the rate of flow of energy or particles across a given surface",
+      "after": "A state of continuous change or movement.",
+      "reason": "原义取物理学穿过表面的能量或粒子流率，中文及例句是计划不断变化或助焊剂；选前者的正确基本义。"
+    },
+    {
+      "id": 8297,
+      "word": "sling",
+      "field": "en",
+      "before": "a highball with liquor and water with sugar and lemon or lime juice",
+      "after": "A strap or piece of cloth used to support an injured arm; also, to throw something casually.",
+      "reason": "原义取一种混合酒，与支撑手臂的吊带及把包扔上后座两句均无关。"
+    },
+    {
+      "id": 8305,
+      "word": "amidst",
+      "field": "en",
+      "before": "Alt. of Amid",
+      "after": "In the middle of, or surrounded by, something.",
+      "reason": "原内容只是另一词形的交叉引用，未解释含义；两句是混乱之中及树木环绕。"
+    },
+    {
+      "id": 8311,
+      "word": "condemnation",
+      "field": "en",
+      "before": "(law) the act of condemning (as land forfeited for public use) or judging to be unfit for use (as a food product or an unsafe building)",
+      "after": "A strong expression of disapproval, especially of something considered wrong.",
+      "reason": "原义取征用土地或判定建筑不适用的法律义，两句均指对决定或暴力的谴责。"
+    },
+    {
+      "id": 8318,
+      "word": "gothic",
+      "field": "en",
+      "before": "extinct East Germanic language of the ancient Goths; the only surviving record being fragments of a 4th-century translation of the Bible by Bishop Ulfilas",
+      "after": "Relating to medieval pointed-arch architecture, or fiction with dark, mysterious settings.",
+      "reason": "原义为古代哥特人的语言，当前中文和两句指建筑风格与小说类型。"
+    },
+    {
+      "id": 8321,
+      "word": "flop",
+      "field": "en",
+      "before": "someone who is unsuccessful",
+      "after": "Something that fails badly; also, to fall or sit down heavily and loosely.",
+      "reason": "原义只指不成功的人，两句分别是失败的电影与一头倒在沙发上的动作。"
+    },
+    {
+      "id": 8322,
+      "word": "revel",
+      "field": "en",
+      "before": "unrestrained merrymaking",
+      "after": "To enjoy something greatly, often expressed with in.",
+      "reason": "原义只取狂欢名词，两句均为revel in动词，且第一句是享受安静而非喧闹狂欢。"
+    },
+    {
+      "id": 8324,
+      "word": "tidy",
+      "field": "en",
+      "before": "receptacle that holds odds and ends (as sewing materials)",
+      "after": "Neat and well arranged; also, to put things in order.",
+      "reason": "原义取装零碎物品的容器，两句是整洁的桌面和收拾厨房。"
+    },
+    {
+      "id": 8336,
+      "word": "divisive",
+      "field": "en",
+      "before": "s dissenting (especially dissenting with the majority opinion)",
+      "after": "Causing disagreement or hostility between people.",
+      "reason": "原义是持异议、尤其反对多数人的意见，与提议或话题引起分裂的因果方向不同。"
+    },
+    {
+      "id": 8348,
+      "word": "soundtrack",
+      "field": "en",
+      "before": "sound recording on a narrow strip of a motion picture film",
+      "after": "The music and other recorded sound accompanying a film or television program.",
+      "reason": "原义仅为胶片窄条上的声音录制，无法说明当前作为原声专辑及场景配乐的现代常用义。"
+    },
+    {
+      "id": 8351,
+      "word": "unanswered",
+      "field": "en",
+      "before": "not returned in kind",
+      "after": "Not answered or given a reply.",
+      "reason": "原义是没有得到同样方式的回报，与消息无人回复和问题未解答不对应。"
+    },
+    {
+      "id": 8353,
+      "word": "pulpit",
+      "field": "en",
+      "before": "n a platform raised above the surrounding level to give prominence to the person on it",
+      "after": "A raised stand in a church from which a minister speaks to the congregation.",
+      "reason": "原义只是任何突出讲者的高台，未包含讲道台的教堂及宗教用途，容易与舞台混淆。"
+    },
+    {
+      "id": 8358,
+      "word": "bullshit",
+      "field": "en",
+      "before": "obscene words for unacceptable behavior",
+      "after": "Nonsense or dishonest talk; also, to deceive someone with such talk, in vulgar language.",
+      "reason": "原义只说用于不可接受行为的脏话，没有定义胡扯或骗人的谈话；两句分别为借口和欺骗性说法。"
+    },
+    {
+      "id": 8364,
+      "word": "levee",
+      "field": "en",
+      "before": "a formal reception of visitors or guests (as at a royal court)",
+      "after": "A raised bank or wall beside a river that helps prevent flooding.",
+      "reason": "原义取王室等场合的正式接待仪式，两句均指河边防洪堤。"
+    },
+    {
+      "id": 8369,
+      "word": "stale",
+      "field": "en",
+      "before": "urinate, of cattle and horses",
+      "after": "No longer fresh; also, dull or unoriginal through being repeated too often.",
+      "reason": "原义取牛马排尿这一罕用动词，两句为不新鲜的面包及陈旧的想法。"
+    },
+    {
+      "id": 8382,
+      "word": "realist",
+      "field": "en",
+      "before": "a philosopher who believes that universals are real and exist independently of anyone thinking of them",
+      "after": "A person who faces situations practically, or an artist who depicts everyday life as it is.",
+      "reason": "原义是相信共相独立存在的哲学派别，两句为务实的人及描绘日常生活的写实画家。"
+    },
+    {
+      "id": 8389,
+      "word": "runaway",
+      "field": "en",
+      "before": "an easy victory",
+      "after": "A person who has left home without permission; also, extremely successful or out of control.",
+      "reason": "原义仅指轻易获胜，与离家出走的人及runaway success的修饰用法不对应。"
+    },
+    {
+      "id": 8390,
+      "word": "envoy",
+      "field": "en",
+      "before": "a diplomat having less authority than an ambassador",
+      "after": "A representative sent by a government or organization to carry out a special mission.",
+      "reason": "原义限定权力比大使小的外交人员，不能概括当代special envoy，也不必一律按使节等级理解。"
+    },
+    {
+      "id": 8392,
+      "word": "sucker",
+      "field": "en",
+      "before": "a shoot arising from a plant's roots",
+      "after": "A person who is easily deceived, or someone strongly attracted to a particular thing, informally.",
+      "reason": "原义为植物根部长出的萌蘖，两句都是口语中容易受骗或对某物着迷的人。"
+    },
+    {
+      "id": 8399,
+      "word": "chopper",
+      "field": "en",
+      "before": "informal terms for a human `tooth'",
+      "after": "An informal word for a helicopter; also, a tool or machine used to cut things into pieces.",
+      "reason": "原义取人的牙齿这一口语义，两句为救援直升机和切洋葱的切碎器。"
+    },
+    {
+      "id": 8404,
+      "word": "traction",
+      "field": "en",
+      "before": "(orthopedics) the act of pulling on a bone or limb (as in a fracture) to relieve pressure or align parts in a special way during healing",
+      "after": "The grip between a surface and moving wheels or feet; also support or progress for an idea or plan.",
+      "reason": "旧义为骨科牵引，两句及当前中文为抓地力和获得支持，现题面错配。"
+    },
+    {
+      "id": 8407,
+      "word": "rodent",
+      "field": "en",
+      "before": "relatively small placental mammals having a single pair of constantly growing incisor teeth specialized for gnawing",
+      "after": "A mammal with one pair of continuously growing front teeth in each jaw, adapted for gnawing.",
+      "reason": "旧定义只写一对门齿而未区分上下颌；机构资料确认上下颌各一对，避免教成总共一对。"
+    },
+    {
+      "id": 8409,
+      "word": "lame",
+      "field": "en",
+      "before": "a fabric interwoven with threads of metal",
+      "after": "Unable to walk normally because of a weak or injured leg; also weak or unconvincing.",
+      "reason": "旧义为金属丝织物lamé，与蹩脚借口和跛马两句不符。"
+    },
+    {
+      "id": 8411,
+      "word": "analog",
+      "field": "en",
+      "before": "n something having the property of being analogous to something else",
+      "after": "Using continuously varying physical signals, or showing measurements with hands or a pointer on a dial.",
+      "reason": "旧义为相似对应物这一名词，未说明模拟记录或指针时钟的技术含义。"
+    },
+    {
+      "id": 8417,
+      "word": "faulty",
+      "field": "en",
+      "before": "characterized by errors; not agreeing with a model or not following established rules; the wrong side of the road\"",
+      "after": "Containing errors or defects; not working correctly.",
+      "reason": "旧定义混入the wrong side of the road和残留引号，且未清楚表达充电器有故障；删除串入的无关文本。"
+    },
+    {
+      "id": 8424,
+      "word": "wilt",
+      "field": "en",
+      "before": "any plant disease characterized by drooping and shriveling; usually caused by parasites attacking the roots",
+      "after": "To droop or lose firmness, especially through heat or lack of water; also to lose energy.",
+      "reason": "旧义为通常由寄生物致根部病害的植物疾病，不适合受热花朵蔫或人精神萎靡；不把普通萎蔫等同疾病。"
+    },
+    {
+      "id": 8428,
+      "word": "thy",
+      "field": "en",
+      "before": "Of thee, or belonging to thee; the more common form of",
+      "after": "An old-fashioned possessive form meaning 'your', used when addressing one person.",
+      "reason": "旧定义截断在the more common form of，改为完整古体物主形式说明；不猜丢失的后文。"
+    },
+    {
+      "id": 8429,
+      "word": "botanical",
+      "field": "en",
+      "before": "a drug made from part of a plant (as the bark or root or leaves)",
+      "after": "Relating to plants or the scientific study of plants.",
+      "reason": "旧义为植物制药物这一名词，两句均是植物或植物学相关的形容词。"
+    },
+    {
+      "id": 8433,
+      "word": "savage",
+      "field": "en",
+      "before": "a member of an uncivilized people",
+      "after": "Fierce, violent or extremely harsh.",
+      "reason": "旧义为所谓未开化民族成员的冒犯称呼，两句均形容猛烈抨击或风暴，不能把旧人群称呼当本题定义。"
+    },
+    {
+      "id": 8435,
+      "word": "tack",
+      "field": "en",
+      "before": "the heading or position of a vessel relative to the trim of its sails",
+      "after": "A small short nail; to fasten something with one; also a way of approaching a problem.",
+      "reason": "旧义为船只相对风帆的航向，两句均非航海语境，分别钉通知和改变策略。"
+    },
+    {
+      "id": 8439,
+      "word": "styling",
+      "field": "en",
+      "before": "v designate by an identifying term",
+      "after": "The way something is designed or arranged to achieve a particular appearance.",
+      "reason": "旧义为以某个称谓称呼的动词，两句为汽车造型和发型打理这一名词。"
+    },
+    {
+      "id": 8443,
+      "word": "stakeholder",
+      "field": "en",
+      "before": "someone entrusted to hold the stakes for two or more persons betting against one another; must deliver the stakes to the winner",
+      "after": "A person or organization with an interest in, or affected by, an activity or decision.",
+      "reason": "旧义只指保管赌资的人，当前两句为项目利益相关方。"
+    },
+    {
+      "id": 8465,
+      "word": "angular",
+      "field": "en",
+      "before": "measured by an angle or by the rate of change of an angle",
+      "after": "Relating to angles, or having sharp corners or a thin, bony outline.",
+      "reason": "旧义专指以角度或角度变化率计量的技术量；两句形容设计和脸部棱角，改为当前形状义并保留角相关含义。"
+    },
+    {
+      "id": 8469,
+      "word": "patronage",
+      "field": "en",
+      "before": "(politics) granting favors or giving contracts or making appointments to office in return for political support",
+      "after": "The business customers give a shop or service, or support given by a sponsor.",
+      "reason": "旧义为交换政治支持的职位或利益分配，两句均为普通光顾或捐赠赞助，不需要政治交换。"
+    },
+    {
+      "id": 8471,
+      "word": "bikini",
+      "field": "en",
+      "before": "an atoll in the Marshall Islands; formerly used by the United States as a site for testing nuclear weapons",
+      "after": "A two-piece swimsuit.",
+      "reason": "旧义为马绍尔群岛的核试验岛礁，两句均为泳装。"
+    },
+    {
+      "id": 8476,
+      "word": "villa",
+      "field": "en",
+      "before": "Mexican revolutionary leader (1877-1923)",
+      "after": "A large or comfortable house, often used for holidays.",
+      "reason": "旧义为墨西哥革命领袖，两句均是租住的别墅。"
+    },
+    {
+      "id": 8477,
+      "word": "zest",
+      "field": "en",
+      "before": "add herbs or spices to",
+      "after": "The thin outer peel of a citrus fruit, used for flavoring; also lively enthusiasm and enjoyment.",
+      "reason": "旧义为添加香料这一动词，两句为柠檬外皮或生活热情。"
+    },
+    {
+      "id": 8482,
+      "word": "proactive",
+      "field": "en",
+      "before": "descriptive of any event or stimulus or process that has an effect on events or stimuli or processes that occur subsequently",
+      "after": "Taking the initiative to prevent problems or create opportunities, rather than simply reacting to events.",
+      "reason": "旧义是前一事件影响后续事件的心理学技术含义，不能准确说明两句主动解决问题的行为。"
+    },
+    {
+      "id": 8505,
+      "word": "squadron",
+      "field": "en",
+      "before": "a cavalry unit consisting of two or more troops and headquarters and supporting arms",
+      "after": "A military unit of aircraft and their crews, or a group of warships.",
+      "reason": "旧义为骑兵中队，当前中文和两句均为飞行中队；不把骑兵单位当航空定义。"
+    },
+    {
+      "id": 8509,
+      "word": "ramification",
+      "field": "en",
+      "before": "an arrangement of branching parts",
+      "after": "A consequence of an action or decision, often complicated or unexpected.",
+      "reason": "旧义为分枝结构，两句均是行动或决定的后果。"
+    },
+    {
+      "id": 8511,
+      "word": "grope",
+      "field": "en",
+      "before": "the act of groping; and instance of groping",
+      "after": "To search by feeling with your hands, especially in the dark; also to struggle to find words or ideas.",
+      "reason": "旧定义用groping循环解释且有and instance笔误，不能提供可理解的辨义信息；两句为摸开关和搜寻词句。"
+    },
+    {
+      "id": 8514,
+      "word": "microbe",
+      "field": "en",
+      "before": "a minute life form (especially a disease-causing bacterium); the term is not in technical use",
+      "after": "A microscopic life form or biological agent, such as a bacterium, fungus or virus.",
+      "reason": "旧句称该词不用于技术语境，但CDC专业资料明确使用并定义该术语；删除错误使用限制。"
+    },
+    {
+      "id": 8518,
+      "word": "serene",
+      "field": "en",
+      "before": "completely clear and fine",
+      "after": "Calm, peaceful and untroubled.",
+      "reason": "旧义为天气完全晴朗，两句为平静湖面或沉着的人，当前中文未教天气晴朗义。"
+    },
+    {
+      "id": 8530,
+      "word": "suppression",
+      "field": "en",
+      "before": "the failure to develop some part or organ",
+      "after": "The act of stopping, restraining or reducing an activity, expression or unwanted effect.",
+      "reason": "旧义为某器官未发育，两句均为压制异议或抑制噪声。"
+    },
+    {
+      "id": 8534,
+      "word": "fowler",
+      "field": "en",
+      "before": "English lexicographer who wrote a well-known book on English usage (1858-1933)",
+      "after": "",
+      "reason": "旧义为特定男性词典编纂者Henry Watson Fowler，当前两句只是普通姓氏Fowler；清空英文题，不凭姓氏推断具体历史人物，也不添加泛用姓名多解题。"
+    },
+    {
+      "id": 8535,
+      "word": "neutron",
+      "field": "en",
+      "before": "an elementary particle with 0 charge and mass about equal to a proton; enters into the structure of the atomic nucleus",
+      "after": "An electrically neutral particle found in atomic nuclei, with a mass close to that of a proton.",
+      "reason": "旧定义称其为elementary particle；CERN确认其为夸克组成的复合粒子，删除错误基本粒子分类，保留电中性与核组成信息。"
+    },
+    {
+      "id": 8545,
+      "word": "retarded",
+      "field": "en",
+      "before": "relatively slow in mental or emotional or physical development",
+      "after": "Slowed or delayed; the former use for a person with an intellectual disability is offensive.",
+      "reason": "旧定义不标语域地描述人群发展缓慢，与化学反应减慢和旧称冒犯的现有教学语境不符。"
+    },
+    {
+      "id": 8552,
+      "word": "subsidise",
+      "field": "en",
+      "before": "v secure the assistance of by granting a subsidy, as of nations or military forces",
+      "after": "To help pay the cost of an activity, service or product.",
+      "reason": "旧定义把资助写成换取协助，公交补贴与学生出行资助不要求接受者提供政治或军事帮助。"
+    },
+    {
+      "id": 8556,
+      "word": "dope",
+      "field": "en",
+      "before": "slang terms for inside information",
+      "after": "An informal word for drugs; as a slang adjective, very good or impressive.",
+      "reason": "旧义为内幕消息，两句及中文为毒品或很酷的；不将毒品定义限为某一物质或特定法律状态。"
+    },
+    {
+      "id": 8560,
+      "word": "braille",
+      "field": "en",
+      "before": "French educator who lost his sight at the age of three and who invented a system of writing and printing for sightless people (1809-1852)",
+      "after": "A writing system using raised dot patterns that can be read by touch.",
+      "reason": "旧义为发明者Louis Braille这一人名，两句均为可触读的文字系统。"
+    },
+    {
+      "id": 8565,
+      "word": "osteoporosis",
+      "field": "en",
+      "before": "abnormal loss of bony tissue resulting in fragile porous bones attributable to a lack of calcium; most common in postmenopausal women",
+      "after": "A condition in which bones lose density and strength, making them more likely to break.",
+      "reason": "旧定义把骨质疏松归因于缺钙，过于单一；NHS列骨重建失衡及多种风险因素，改为疾病特征，不提供诊疗建议。"
+    },
+    {
+      "id": 8569,
+      "word": "acoustic",
+      "field": "en",
+      "before": "a remedy for hearing loss or deafness",
+      "after": "Relating to sound; for musical instruments, producing sound naturally rather than electronically.",
+      "reason": "旧义为治疗听力损失的药物，两句均为原声乐器或声学设计。"
+    },
+    {
+      "id": 8574,
+      "word": "obsessive",
+      "field": "en",
+      "before": "a person who has obsessions",
+      "after": "Thinking about or doing something to an excessive degree, with difficulty stopping.",
+      "reason": "旧定义是有强迫执念的人这一名词，两句形容过度关注细节或整洁的行为，不应以人物名词定义代替性质。"
+    },
+    {
+      "id": 8578,
+      "word": "legion",
+      "field": "en",
+      "before": "association of ex-servicemen",
+      "after": "A large military unit, especially in ancient Rome; also, very numerous.",
+      "reason": "旧义为退伍军人协会，第一例古罗马军团并非退役团体，第二例为众多的形容词。"
+    },
+    {
+      "id": 8592,
+      "word": "sectarian",
+      "field": "en",
+      "before": "a member of a sect",
+      "after": "Relating to a religious or political faction, especially showing prejudice against other groups.",
+      "reason": "旧定义只指教派成员，两句均为宗派相关冲突或分歧这一形容词，当前中文不教成员名词义。"
+    },
+    {
+      "id": 8594,
+      "word": "brittle",
+      "field": "en",
+      "before": "caramelized sugar cooled in thin sheets",
+      "after": "Easily broken or cracked rather than bent.",
+      "reason": "旧义为薄糖片，两句形容塑料或饼干容易碎。"
+    },
+    {
+      "id": 8597,
+      "word": "foray",
+      "field": "en",
+      "before": "a sudden short attack",
+      "after": "A brief visit or attempt at a new activity; also a short, sudden raid.",
+      "reason": "旧义只有短暂袭击，两句并非袭击，分别是尝试爵士乐和逛市场；保留合法袭击义但说明当前用法。"
+    },
+    {
+      "id": 8601,
+      "word": "cloudy",
+      "field": "en",
+      "before": "lacking definite form or limits",
+      "after": "covered with clouds, or not clear because of suspended particles",
+      "reason": "原en是不明确边界的意思，两句是多云天气和浑浊水。"
+    },
+    {
+      "id": 8602,
+      "word": "thrift",
+      "field": "en",
+      "before": "any of numerous sun-loving low-growing evergreens of the genus Armeria having round heads of pink or white flowers",
+      "after": "careful use of money and resources to avoid waste",
+      "reason": "原en为海石竹属植物，与节俭及二手商店两句错配。"
+    },
+    {
+      "id": 8609,
+      "word": "burke",
+      "field": "en",
+      "before": "British statesman famous for his oratory; pleaded the cause of the American colonists in British Parliament and defended the parliamentary system (1729-1797)",
+      "after": "",
+      "reason": "旧en特指Edmund Burke，但两句是未确定身份的普通姓氏人物，不假定他们是历史人物。"
+    },
+    {
+      "id": 8611,
+      "word": "slug",
+      "field": "en",
+      "before": "a unit of mass equal to the mass that accelerates at 1 foot/sec/sec when acted upon by a force of 1 pound; approximately 14.5939 kilograms",
+      "after": "a soft-bodied animal resembling a snail without a visible shell, or a large swallow of a drink",
+      "reason": "原en是英制质量单位，与蛞蝓及一大口饮料均错配。"
+    },
+    {
+      "id": 8612,
+      "word": "understandably",
+      "field": "en",
+      "before": "r in an intelligible manner",
+      "after": "in a way that is reasonable or easy to sympathize with",
+      "reason": "原en是表达清楚可懂，实际两句是疲累/难过可以理解的评价。"
+    },
+    {
+      "id": 8616,
+      "word": "scold",
+      "field": "en",
+      "before": "someone (especially a woman) who annoys people by constantly finding fault",
+      "after": "to speak angrily to someone because of their behavior",
+      "reason": "原en为爱挑错的人且特别限定女性，两句为责骂动作。"
+    },
+    {
+      "id": 8618,
+      "word": "upbringing",
+      "field": "en",
+      "before": "properties acquired during a person's formative years",
+      "after": "the way a child is raised and cared for, especially within a family",
+      "reason": "原en是成长时期获得的特性，upbringing实际指抚养教养方式及成长经历。"
+    },
+    {
+      "id": 8620,
+      "word": "intolerance",
+      "field": "en",
+      "before": "impatience with annoyances",
+      "after": "unwillingness to accept others, or an inability to tolerate a food or substance",
+      "reason": "原en只讲对烦恼不耐烦，与宗教不宽容及乳糖不耐受两个实际义不对应。"
+    },
+    {
+      "id": 8638,
+      "word": "hacker",
+      "field": "en",
+      "before": "someone who plays golf poorly",
+      "after": "a person skilled in computers who may gain access to systems, with or without permission",
+      "reason": "原en为差劲高尔夫球手，两句均为计算机技术及安全语境。"
+    },
+    {
+      "id": 8642,
+      "word": "imprint",
+      "field": "en",
+      "before": "a distinctive influence",
+      "after": "a mark made by pressing or printing something, or to make such a mark",
+      "reason": "原en仅独特影响，两句为鞋印和印标志的具体动作。"
+    },
+    {
+      "id": 8654,
+      "word": "teresa",
+      "field": "en",
+      "before": "Indian nun and missionary in the Roman Catholic Church (born of Albanian parents in what is now Macedonia); dedicated to helping the poor in India (1910-1997)",
+      "after": "",
+      "reason": "旧en特指Mother Teresa；两句只识别女性名，不能把未确定身份者讲成该历史人物。"
+    },
+    {
+      "id": 8660,
+      "word": "apricot",
+      "field": "en",
+      "before": "Asian tree having clusters of usually white blossoms and edible fruit resembling the peach",
+      "after": "a small yellow-orange fruit with a stone, or the tree that bears it",
+      "reason": "原en仅定义树，两句均为杏子果实或杏酱。"
+    },
+    {
+      "id": 8670,
+      "word": "soho",
+      "field": "en",
+      "before": "a district in southwestern Manhattan noted for its shops and restaurants and galleries and artist's lofts",
+      "after": "a district in central London known for entertainment, restaurants, and shops",
+      "reason": "原en特指纽约曼哈顿地区，当前中文及两句中译明确伦敦苏活区。"
+    },
+    {
+      "id": 8672,
+      "word": "skid",
+      "field": "en",
+      "before": "one of a pair of planks used to make a track for rolling or sliding objects",
+      "after": "to slide without control, or an instance of such sliding",
+      "reason": "原en为搬运用滑道木板，与车辆打滑及滑痕均错配。"
+    },
+    {
+      "id": 8673,
+      "word": "hospice",
+      "field": "en",
+      "before": "a lodging for travelers (especially one kept by a monastic order)",
+      "after": "care for people near the end of life, or a place providing such care",
+      "reason": "原en为旅行者客栈，中文及两句是临终关怀机构。"
+    },
+    {
+      "id": 8684,
+      "word": "winery",
+      "field": "en",
+      "before": "distillery where wine is made",
+      "after": "a place where wine is made",
+      "reason": "原en把酒庄称为distillery，葡萄酒酿造不等于蒸馏制酒。"
+    },
+    {
+      "id": 8686,
+      "word": "balk",
+      "field": "en",
+      "before": "the area on a billiard table behind the balkline",
+      "after": "to hesitate or refuse to proceed, often because of an objection or difficulty",
+      "reason": "原en为台球台区域，两句为因为价格或工作量而犹豫不愿。"
+    },
+    {
+      "id": 8692,
+      "word": "covent",
+      "field": "en",
+      "before": "A convent or monastery.",
+      "after": "",
+      "reason": "旧en是convent古拼法，但当前词条仅伦敦地名组成部分；保留中文识别，不当普通修道院义教。"
+    },
+    {
+      "id": 8694,
+      "word": "jihad",
+      "field": "en",
+      "before": "a holy war waged by Muslims against infidels",
+      "after": "a religious struggle in Islam, including spiritual effort and sometimes armed conflict",
+      "reason": "原en一概表述为对异教徒的宗教战争，缺少宗教修行性质，且战争对象限定过度。"
+    },
+    {
+      "id": 8696,
+      "word": "estimation",
+      "field": "en",
+      "before": "n a document appraising the value of something (as for insurance or taxation)",
+      "after": "a judgment about something, or the process of calculating an approximate amount",
+      "reason": "原en为估值文件，两句为个人判断及估算费用过程。"
+    },
+    {
+      "id": 8697,
+      "word": "kingston",
+      "field": "en",
+      "before": "a town on the Hudson River in New York",
+      "after": "the capital of Jamaica; also a city in Ontario, Canada",
+      "reason": "原en只指定纽约城镇，两句明确牙买加首都和加拿大安大略省城市。"
+    },
+    {
+      "id": 8700,
+      "word": "sprig",
+      "field": "en",
+      "before": "an ornament that resembles a spray of leaves or flowers",
+      "after": "a small stem or branch bearing leaves or flowers",
+      "reason": "原en是枝叶形装饰物，两句均为真实薄荷或迷迭香小枝。"
+    },
+    {
+      "id": 8708,
+      "word": "audible",
+      "field": "en",
+      "before": "a football play is changed orally after both teams have assumed their positions at the line of scrimmage",
+      "after": "able to be heard",
+      "reason": "原en为美式橄榄球临场改战术，两句是声音听得见的形容词。"
+    },
+    {
+      "id": 8713,
+      "word": "grad",
+      "field": "en",
+      "before": "one-hundredth of a right angle",
+      "after": "an informal word for someone who has completed a course of study",
+      "reason": "原en为直角百分之一的角度单位，两句为毕业生。"
+    },
+    {
+      "id": 8714,
+      "word": "pixel",
+      "field": "en",
+      "before": "(computer science) the smallest discrete component of an image or picture on a CRT screen (usually a colored dot)",
+      "after": "a single small element of a digital image or display",
+      "reason": "原en把像素限制到CRT屏幕，数字图像或其他屏幕同样有像素。"
+    },
+    {
+      "id": 8729,
+      "word": "wrench",
+      "field": "en",
+      "before": "a sharp strain on muscles or ligaments",
+      "after": "a tool for gripping and turning nuts or bolts; also to pull or twist something forcefully",
+      "reason": "原en为肌肉韧带扭伤，中文及两句为扳手和猛拽。"
+    },
+    {
+      "id": 8730,
+      "word": "sublime",
+      "field": "en",
+      "before": "vaporize and then condense right back again",
+      "after": "extremely beautiful, impressive, or excellent",
+      "reason": "原en为升华化学动作，与景色及表演的赞美义错配。"
+    },
+    {
+      "id": 8739,
+      "word": "aye",
+      "field": "en",
+      "before": "Alt. of Ay",
+      "after": "a word meaning yes, especially in voting or dialect speech",
+      "reason": "原en只有Ay的交叉参见，不能给出投票赞成的含义。"
+    },
+    {
+      "id": 8749,
+      "word": "rover",
+      "field": "en",
+      "before": "an adult member of the Boy Scouts movement",
+      "after": "a vehicle used to explore a planet or moon, or a person who wanders from place to place",
+      "reason": "原en仅童子军成人成员，与探测车和漫游者两句均错配。"
+    },
+    {
+      "id": 8750,
+      "word": "internship",
+      "field": "en",
+      "before": "the position of a medical intern",
+      "after": "a temporary period of work that provides experience or training",
+      "reason": "原en只限定医学实习医师职位，两句为博物馆和编辑实习。"
+    },
+    {
+      "id": 8754,
+      "word": "chatter",
+      "field": "en",
+      "before": "the rapid series of noises made by the parts of a machine",
+      "after": "informal talk, or a series of short quick sounds such as those made by birds",
+      "reason": "原en仅机械零件的快速噪声，两句为闲聊及鸟叫。"
+    },
+    {
+      "id": 8757,
+      "word": "interrogate",
+      "field": "en",
+      "before": "transmit (a signal) for setting off an appropriate response, as in telecommunication",
+      "after": "to question someone closely or formally",
+      "reason": "原en为电信询问信号，两句为审问和盘问。"
+    },
+    {
+      "id": 8760,
+      "word": "visitation",
+      "field": "en",
+      "before": "any disaster or catastrophe",
+      "after": "the act of visiting, including an officially allowed visit to a patient or child",
+      "reason": "原en为灾祸，两句为探视时间及父亲探视权。"
+    },
+    {
+      "id": 8761,
+      "word": "hypertension",
+      "field": "en",
+      "before": "n a common disorder in which blood pressure remains abnormally high (a reading of 140/90 mm Hg or greater)",
+      "after": "a condition in which blood pressure remains persistently too high",
+      "reason": "旧en把140/90固定为所有诊断的统一阈值；不同指南分类不同，术语题保留持续血压过高基本义。"
+    },
+    {
+      "id": 8763,
+      "word": "zucchini",
+      "field": "en",
+      "before": "marrow squash plant whose fruit are eaten when small",
+      "after": "a long green summer squash eaten as a vegetable, or the plant that bears it",
+      "reason": "原en仅定义植物，两句实际为切开食用和烤食的西葫芦果实。"
+    },
+    {
+      "id": 8773,
+      "word": "brew",
+      "field": "en",
+      "before": "drink made by steeping and boiling and fermenting rather than distilling",
+      "after": "to prepare a drink by steeping or fermenting, or to begin to develop",
+      "reason": "原en为酿制饮料名词，两句是冲咖啡及麻烦酝酿的动词。"
+    }
+  ],
+  "boundaries": [
+    "只改en，不更换ID、词头、中文义、原完整词典、音标、任何例句或行业池。",
+    "已有正确基本义不为了穷尽第二义重写，原空en不填。",
+    "来源只支持相应事实，不表示全部内容经过专业语言审校。"
+  ]
+}
