@@ -1,6 +1,7 @@
 import csv,json,re,hashlib,pathlib,collections
 root=pathlib.Path(__file__).parent
 source=pathlib.Path('/tmp/english-ecdict-full.csv')
+assert hashlib.sha256(source.read_bytes()).hexdigest() == '1a6947e04785db63613a92e14903cdae7954f7e84860b10e68e5c7cbb3f9c3cf', 'Use the verified historical ECDICT snapshot; do not silently rebuild learning IDs from a different source.'
 rows=list(csv.DictReader(source.open(encoding='utf-8')))
 by={r['word']:r for r in rows}
 def eligible(r):
@@ -138,6 +139,6 @@ for i,r in enumerate(selected):
  short=basic.get(r['word'],short)
  words.append(dict(id=i+1,word=r['word'],zh=short,full=('常用：'+short+'\n' if r['word'] in basic else '')+r['translation'].replace('\\n','\n'),phonetic=r['phonetic'],en=definition,rank=rank(r),chapter=i//1000+1))
 (root/'data/words.json').write_text(json.dumps(words,ensure_ascii=False,separators=(',',':')))
-manifest=dict(source='https://github.com/skywind3000/ECDICT',source_file='ecdict.csv',source_sha256=hashlib.sha256(source.read_bytes()).hexdigest(),license='MIT',count=len(words),unique=len({w['word'] for w in words}),levels=2000,chapter_count=20,selection='Frequency ordered; exclude explicit inflection lemmas and proper-name translations; first 100 words hand selected; derived lexemes count separately, not as word families.',qa='Structural checks passed; source definitions are not individually editorially reviewed.',generated_at='2026-09-29')
+manifest=dict(source_commit='bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b',source_identity_verified='2026-10-02: exact full CSV SHA256; identity verification is not linguistic review.',source='https://github.com/skywind3000/ECDICT',source_file='ecdict.csv',source_sha256=hashlib.sha256(source.read_bytes()).hexdigest(),license='MIT',count=len(words),unique=len({w['word'] for w in words}),levels=2000,chapter_count=20,selection='Frequency ordered using ECDICT frq, falling back to bnc; lowercase ASCII entries with Chinese definitions are selected. Explicit inflection lemmas and a limited set of translation labels are filtered; this heuristic does not exclude every proper name, foreign-language component, abbreviation or Roman numeral. The 102-entry opening list is hand selected; derived lexemes count separately, not as word families.',qa='Structural checks passed; source definitions are not individually editorially reviewed.',generated_at='2026-09-29')
 (root/'provenance/vocabulary.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2))
 print(json.dumps({'words':len(words),'eligible':len(pool),'first':words[0],'last':words[-1]},ensure_ascii=False))
