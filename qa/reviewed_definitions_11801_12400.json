@@ -1,0 +1,891 @@
+{
+  "version": "1.32.7",
+  "range": [
+    11801,
+    12400
+  ],
+  "status": "frozen",
+  "base_head": "0e93b7c94ea4769111f5380e3dd0736fef998ecd",
+  "reviewed_words": 600,
+  "reviewed_english_example_contexts": 1200,
+  "changed_words": 99,
+  "replaced_definitions": 98,
+  "cleared_mismatched_definitions": 1,
+  "existing_empty_en_preserved": 21,
+  "unchanged_correct": 480,
+  "reports": [
+    {
+      "range": [
+        11801,
+        12000
+      ],
+      "file": "qa/review_definitions_11801_12000.json",
+      "path": "/tmp/english-v1327-review-11801-12000.json",
+      "sha256": "333dd3959ddd0397a5eb02b7b91757914e00cee5b7cfb791b227fa48f9a5a54b",
+      "counts": {
+        "unchanged": 164,
+        "empty": 8,
+        "changed": 28
+      }
+    },
+    {
+      "range": [
+        12001,
+        12200
+      ],
+      "file": "qa/review_definitions_12001_12200.json",
+      "path": "/tmp/english-v1327-review-12001-12200.json",
+      "sha256": "d9e2c215fb2005ac02412242a4a594f05cd53692596ea157d34149b69908a297",
+      "counts": {
+        "unchanged": 157,
+        "changed": 40,
+        "empty": 3
+      }
+    },
+    {
+      "range": [
+        12201,
+        12400
+      ],
+      "file": "qa/review_definitions_12201_12400.json",
+      "path": "/tmp/english-v1327-review-12201-12400.json",
+      "sha256": "eb0cc1d0ff234b33662fddd01789f081df4b5b721406de91ba263ea073d9a20e",
+      "counts": {
+        "unchanged": 159,
+        "empty": 10,
+        "changed": 31
+      }
+    }
+  ],
+  "root_review": "root逐项读完600个现存en、中文义及1200组完整双语，再逐项审读三个冻结作者稿的全部修改建议与理由；保留正确另一基本义和原空，不要求列全多义。作者读取原完整词典，root不将结构检查当语言审校。最终采纳作者建议，不改作者冻结稿。全部作者及整批跨审冻结后apply。",
+  "root_sources_checked": [
+    {
+      "url": "https://www.cdc.gov/port-health/legal-authorities/isolation-quarantine.html",
+      "supports": "root实际读取：quarantine针对暴露者观察是否发病，不仅针对已病患者；不引入个案法律建议。"
+    },
+    {
+      "url": "https://www.ibm.com/think/topics/mainframe",
+      "supports": "root实际读取：大型机为持续高容量事务处理，不要求固定100至400用户或独立空调房。"
+    },
+    {
+      "url": "https://nationalzoo.si.edu/animals/giant-panda",
+      "supports": "root实际读取官方动物页面，支持大熊猫属熊类。"
+    },
+    {
+      "url": "https://goldbook.iupac.org/terms/view/P04524",
+      "supports": "root直接读取403，不能声称成功抓取；作者pH原始来源记录保留，新释义避免氢原子和无条件阈值。"
+    },
+    {
+      "url": "https://www.nps.gov/articles/species-spotlight-striped-skunk.htm",
+      "supports": "root实际读取臭鼬独立科及防御喷液，保留简短动物辨识。"
+    },
+    {
+      "url": "https://www.networkrail.co.uk/who-we-are/our-history/iconic-infrastructure/the-history-of-charing-cross-station/",
+      "supports": "root实际读取完整Charing Cross站名，不据此给独立charing猜烧炭义。"
+    },
+    {
+      "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/hb/nbshandbook94.pdf",
+      "supports": "root直接open因25MB内容过大未取全文；作者干量比例来源记录保留，不虚称root读取成功。"
+    }
+  ],
+  "root_adjustments": [],
+  "boundaries": [
+    "只修改en；学习ID顺序、词头、中文、音标、完整原词典及全部examples保持。",
+    "正确另一基本义与21原空保留，不为凑数覆盖所有多义。",
+    "本批逐词比对不代表全库专业语言审校，未做真人音频听审。"
+  ],
+  "changes": [
+    {
+      "id": 11806,
+      "word": "aromatic",
+      "field": "en",
+      "before": "(chemistry) of or relating to or containing one or more benzene rings",
+      "after": "having a noticeable, pleasant smell",
+      "reason": "原en只讲苯环化学结构，两句均指香草和茶的芳香；选择当前日常基本义，避免把芳香性化学概念限于苯环。"
+    },
+    {
+      "id": 11810,
+      "word": "resultant",
+      "field": "en",
+      "before": "the final point in a process",
+      "after": "produced as a consequence of something",
+      "reason": "原en指过程的终点，不能解释由风暴引起的洪水及随之产生的需求变化；改为结果性的形容词义。"
+    },
+    {
+      "id": 11813,
+      "word": "lacrosse",
+      "field": "en",
+      "before": "a game invented by American Indians; now played by two teams who use long-handled rackets to catch and carry and throw the ball toward the opponents' goal",
+      "after": "a team sport in which players use sticks with net pockets to catch and throw a ball into a goal",
+      "reason": "该运动使用带网兜的球杆而非普通球拍；官方规则确认stick及net，简述运动本身不加入历史族称。"
+    },
+    {
+      "id": 11829,
+      "word": "filibuster",
+      "field": "en",
+      "before": "a legislator who gives long speeches in an effort to delay or obstruct legislation that he (or she) opposes",
+      "after": "a long speech or other delaying tactic used to obstruct legislative action",
+      "reason": "原en把词定义为议员本人，但两句及中文均指阻挠议事的发言或程序行为；改正对象。"
+    },
+    {
+      "id": 11837,
+      "word": "soprano",
+      "field": "en",
+      "before": "a female singer",
+      "after": "the highest singing voice or a singer with that voice, usually a woman or boy",
+      "reason": "原en仅称女歌手，无法区分其他女声声部，也排除了童声；补充最高声区这一识别特征。"
+    },
+    {
+      "id": 11840,
+      "word": "ecologically",
+      "field": "en",
+      "before": "with respect to ecology; economically, it is a disaster\"",
+      "after": "in relation to living organisms and their environment",
+      "reason": "原en混入economically示例和残余引号；保留生态关系的含义，去除错词杂文。"
+    },
+    {
+      "id": 11841,
+      "word": "entrant",
+      "field": "en",
+      "before": "a commodity that enters competition with established merchandise",
+      "after": "a person or organization joining a competition, activity, or market",
+      "reason": "原en限定为商品，与参赛者提交照片及公司进入市场不符；改为参与者或新进入者。"
+    },
+    {
+      "id": 11845,
+      "word": "fervent",
+      "field": "en",
+      "before": "extremely hot",
+      "after": "showing very strong feeling or enthusiasm",
+      "reason": "原en是极热的旧义，两句均为热切希望及热情支持；改为强烈感情或热忱。"
+    },
+    {
+      "id": 11849,
+      "word": "commonwealth",
+      "field": "en",
+      "before": "the official name of some states in the United States (Massachusetts and Pennsylvania and Virginia and Kentucky) and associated territories (Puerto Rico)",
+      "after": "a group of countries united by shared interests; also a state or federation",
+      "reason": "原en限定若干美国州的官方称号，与英联邦及澳大利亚联邦语境错配；采用当前中文已列的联合体与国家基本义，不固定成员数。"
+    },
+    {
+      "id": 11850,
+      "word": "extortion",
+      "field": "en",
+      "before": "an exorbitant charge",
+      "after": "obtaining money or something else through threats or force",
+      "reason": "原en只指高额收费，未说明敲诈勒索的强迫性质；两句均为犯罪指控或骗局。"
+    },
+    {
+      "id": 11864,
+      "word": "commune",
+      "field": "en",
+      "before": "the smallest administrative district of several European countries",
+      "after": "a community sharing work and possessions; to feel a close connection with someone or something",
+      "reason": "原en仅列欧洲行政区，与群居生活及commune with nature错配；采用已列公社群体和静心交流义。"
+    },
+    {
+      "id": 11872,
+      "word": "northward",
+      "field": "en",
+      "before": "n the cardinal compass point that is at 0 or 360 degrees",
+      "after": "toward the north or moving in that direction",
+      "reason": "原en讲0或360度的罗盘方位点，不是两句的向北迁徙与行驶；改为方向性的副词或形容词义。"
+    },
+    {
+      "id": 11875,
+      "word": "domino",
+      "field": "en",
+      "before": "United States rhythm and blues pianist and singer and composer (born in 1928)",
+      "after": "a rectangular gaming tile marked with dots on its two halves",
+      "reason": "原en误绑美国音乐人，当前中文及两句为骨牌和骨牌效应；改为骨牌基本义。"
+    },
+    {
+      "id": 11877,
+      "word": "preempt",
+      "field": "en",
+      "before": "acquire for oneself before others can do so",
+      "after": "to act first to prevent or forestall something, or to replace a scheduled broadcast",
+      "reason": "原en抢先取得物品不对应预先化解批评及替换节目；字典证实预先制止和节目替换。"
+    },
+    {
+      "id": 11882,
+      "word": "baritone",
+      "field": "en",
+      "before": "a male singer",
+      "after": "a male singing voice between tenor and bass, or a singer with that voice",
+      "reason": "原en仅称男歌手，无法与男高音或男低音区分；补充中间声区，不强制补全乐器义。"
+    },
+    {
+      "id": 11887,
+      "word": "prank",
+      "field": "en",
+      "before": "dress or decorate showily or gaudily",
+      "after": "a trick played on someone as a joke",
+      "reason": "原en指华丽打扮，与无害的恶作剧及老师不喜欢的恶作剧完全错配。"
+    },
+    {
+      "id": 11896,
+      "word": "hapless",
+      "field": "en",
+      "before": "deserving or inciting pity",
+      "after": "unlucky or repeatedly affected by misfortune",
+      "reason": "原en仅讲值得怜悯，不能准确区分倒霉与一般可怜；丢行李和连续转错弯均体现运气差。"
+    },
+    {
+      "id": 11901,
+      "word": "slur",
+      "field": "en",
+      "before": "(music) a curved line spanning notes that are to be played legato",
+      "after": "an insulting remark or accusation that harms someone’s reputation",
+      "reason": "原en是音乐连音符，两句均为品格诋毁或种族侮辱，中文常用义未列音乐义。"
+    },
+    {
+      "id": 11915,
+      "word": "canonical",
+      "field": "en",
+      "before": "a appearing in a biblical canon",
+      "after": "accepted as authoritative or standard within a field",
+      "reason": "原en限定圣经正典，与文学经典及软件标准格式错配；采用权威认可或标准的共同含义。"
+    },
+    {
+      "id": 11933,
+      "word": "outpouring",
+      "field": "en",
+      "before": "n a natural flow of ground water",
+      "after": "a large or strong expression of emotion, support, or other feelings",
+      "reason": "原en指地下水自然流出，两句均为大量支持或倾诉悲伤；改为情感与支持涌现。"
+    },
+    {
+      "id": 11941,
+      "word": "derby",
+      "field": "en",
+      "before": "n a felt hat that is round and hard with a narrow brim",
+      "after": "a sporting contest, especially between local rival teams",
+      "reason": "原en为圆顶硬帽，当前中文及两句是本地球队德比与钓鱼比赛；采用赛事义。"
+    },
+    {
+      "id": 11945,
+      "word": "terminally",
+      "field": "en",
+      "before": "at the end",
+      "after": "in a way involving an illness expected to cause death",
+      "reason": "原en笼统的末尾不能解释两句terminally ill；改为致命疾病相关副词义，只辨识术语不判断具体患者。"
+    },
+    {
+      "id": 11949,
+      "word": "rebuff",
+      "field": "en",
+      "before": "a deliberate discourteous act (usually as an expression of anger or disapproval)",
+      "after": "a firm rejection, or to reject someone or something firmly",
+      "reason": "原en笼统的不礼貌行为不等同断然拒绝；请求遭拒和拒绝记者问题都要求拒绝义。"
+    },
+    {
+      "id": 11950,
+      "word": "irritable",
+      "field": "en",
+      "before": "abnormally sensitive to a stimulus",
+      "after": "easily annoyed or angered",
+      "reason": "原en是对刺激异常敏感的生理义，与睡眠不足或疲倦导致烦躁不符；采用人的易怒基本义。"
+    },
+    {
+      "id": 11953,
+      "word": "fang",
+      "field": "en",
+      "before": "a Bantu language spoken in Cameroon",
+      "after": "a long, pointed tooth, especially one used for biting or injecting venom",
+      "reason": "原en误取非洲语言名称，两句都是动物尖牙或毒牙；改为牙齿义。"
+    },
+    {
+      "id": 11971,
+      "word": "renter",
+      "field": "en",
+      "before": "an owner of property who receives payment for its use by another person",
+      "after": "someone who pays to use property owned by another person",
+      "reason": "原en把renter定义为收款的业主，而中文及两句明确为付租承租人；选与语境对应的一方，不否认其他商业用法。"
+    },
+    {
+      "id": 11983,
+      "word": "quarantine",
+      "field": "en",
+      "before": "enforced isolation of patients suffering from a contagious disease in order to prevent the spread of disease",
+      "after": "separation of people, animals, or goods that may carry disease to prevent its spread",
+      "reason": "原en限定已患传染病的患者，混淆隔离治疗与检疫；官方材料明确检疫可针对已暴露但尚未发病者，也保留动物检疫语境。"
+    },
+    {
+      "id": 11997,
+      "word": "acidic",
+      "field": "en",
+      "before": "being or containing an acid; of a solution having an excess of hydrogen atoms (having a pH of less than 7)",
+      "after": "having the properties of an acid or a sour taste",
+      "reason": "原en把酸性溶液说成多余氢原子，正确术语涉及氢离子活度；改用酸的性质及酸味，避免给出无温度条件的固定pH阈值。"
+    },
+    {
+      "id": 12003,
+      "word": "spank",
+      "field": "en",
+      "before": "a slap with the flat of the hand",
+      "after": "to hit someone on the bottom with an open hand",
+      "reason": "旧定义仅为手掌拍打，未辨明中文和两句均指打屁股；补上身体部位，避免把一般拍掌都当此词。"
+    },
+    {
+      "id": 12004,
+      "word": "nerd",
+      "field": "en",
+      "before": "an intelligent but single-minded expert in a particular technical field or profession",
+      "after": "an informal word for someone deeply interested in a subject, sometimes seen as socially awkward",
+      "reason": "旧定义要求是技术或职业专家，历史迷和校园书呆子不必符合；改为痴迷某领域、可能显得不善社交的口语性质。"
+    },
+    {
+      "id": 12008,
+      "word": "aficionado",
+      "field": "en",
+      "before": "a fan of bull fighting",
+      "after": "an enthusiastic and knowledgeable admirer of a subject or activity",
+      "reason": "旧英文仅限斗牛迷，与咖啡和电影爱好者两句错配；改为有热情且熟悉某领域的爱好者。"
+    },
+    {
+      "id": 12015,
+      "word": "rectify",
+      "field": "en",
+      "before": "math: determine the length of",
+      "after": "to correct a mistake or put something right",
+      "reason": "旧英文是求曲线长度的数学义，与中文及两句纠错不符；改为改正错误或使事情正确。"
+    },
+    {
+      "id": 12020,
+      "word": "payload",
+      "field": "en",
+      "before": "n the front part of a guided missile or rocket or torpedo that carries the nuclear or explosive charge or the chemical or biological agents",
+      "after": "the useful load carried by a vehicle, aircraft, or rocket",
+      "reason": "旧英文仅讲携带杀伤装药的弹头，与卫星有效载荷及车辆载重不符；采用运载工具承载的有效负荷基本义，不限定武器。"
+    },
+    {
+      "id": 12022,
+      "word": "bushel",
+      "field": "en",
+      "before": "a United States dry measure equal to 4 pecks or 2152.42 cubic inches",
+      "after": "a dry measure equal to four pecks, used especially for grain and fruit",
+      "reason": "四配克正确，但旧2152.42立方英寸与NIST的2150.42不符；保留干量四配克定义并去掉错误数值。"
+    },
+    {
+      "id": 12029,
+      "word": "midterm",
+      "field": "en",
+      "before": "the middle of the gestation period",
+      "after": "at or near the middle of a period, especially an academic term",
+      "reason": "旧英文限定妊娠中期，与期中考试和项目中期评审错配；改为一段时期的中间阶段。"
+    },
+    {
+      "id": 12030,
+      "word": "interrelated",
+      "field": "en",
+      "before": "v be in a relationship with",
+      "after": "connected with one another",
+      "reason": "旧英文是单向存在关系的动词释义，两句与中文都是相互关联的形容词；改为互相连接。"
+    },
+    {
+      "id": 12032,
+      "word": "squatter",
+      "field": "en",
+      "before": "someone who settles lawfully on government land with the intent to acquire title to it",
+      "after": "a person who occupies land or a building without the owner's permission",
+      "reason": "旧英文强调合法占住政府土地取产权，与擅自占住废弃房屋错配；改为未经业主允许占住土地或建筑的人。"
+    },
+    {
+      "id": 12037,
+      "word": "predisposition",
+      "field": "en",
+      "before": "an inclination beforehand to interpret statements in a particular way",
+      "after": "an existing tendency to behave in a certain way or develop a condition",
+      "reason": "旧定义只讲解释陈述的偏向，无法涵盖一般性格倾向及疾病易感性；改为预先存在的倾向，不把易感性说成必然发病。"
+    },
+    {
+      "id": 12048,
+      "word": "snip",
+      "field": "en",
+      "before": "a small piece of anything (especially a piece that has been snipped off)",
+      "after": "to make a small cut with scissors; a small cut made this way",
+      "reason": "旧定义仅为剪下的小片，两句讲剪线动作与剪口，中文也没有小片义；改为剪刀剪切动作或剪口。"
+    },
+    {
+      "id": 12054,
+      "word": "til",
+      "field": "en",
+      "before": "& conj. See Till.",
+      "after": "a name for sesame used especially in South Asia",
+      "reason": "旧See Till不是可出题定义，且混入直到义；Collins明确此名词是南亚芝麻名称，符合两句食谱与印度杂货店。"
+    },
+    {
+      "id": 12061,
+      "word": "inversion",
+      "field": "en",
+      "before": "the layer of air near the earth is cooler than an overlying layer",
+      "after": "a reversal of the usual order or position",
+      "reason": "旧英文是逆温层学科义，与诗歌倒装和排列颠倒的常用义错配；采用常规顺序或位置的反转。"
+    },
+    {
+      "id": 12074,
+      "word": "vortex",
+      "field": "en",
+      "before": "n the shape of something rotating rapidly",
+      "after": "a mass of water or air spinning around a central point",
+      "reason": "旧英文只说旋转物的形状，会把一般旋转物也包括进来；改为水或空气绕中心旋转的流体基本义。"
+    },
+    {
+      "id": 12082,
+      "word": "leach",
+      "field": "en",
+      "before": "the process of leaching",
+      "after": "to move out of a material or into another substance by dissolving in liquid",
+      "reason": "旧英文只用自身派生词循环解释，且名词过程与动词用法不合；改为溶入液体后从材料中迁移出来，符合雨水淋出和化学物渗入。"
+    },
+    {
+      "id": 12088,
+      "word": "shaker",
+      "field": "en",
+      "before": "a person who wields power and influence",
+      "after": "a container used to shake out its contents or mix liquids by shaking",
+      "reason": "旧英文为有权势者，与盐瓶及鸡尾酒摇壶错配；改为摇出内容物或摇动混液的容器。"
+    },
+    {
+      "id": 12089,
+      "word": "peck",
+      "field": "en",
+      "before": "a British imperial capacity measure (liquid or dry) equal to 2 gallons",
+      "after": "a dry measure equal to a quarter of a bushel",
+      "reason": "旧定义允许液量，权威词典明确为干量；保留正确容量基本义，改为四分之一蒲式耳，不为啄和亲吻强制扩写。"
+    },
+    {
+      "id": 12100,
+      "word": "chauffeur",
+      "field": "en",
+      "before": "a man paid to drive a privately owned car",
+      "after": "a person employed to drive a private car for someone else",
+      "reason": "旧定义把司机限定男性，职业不以性别为必要条件；保留受雇为人开私家车的基本义。"
+    },
+    {
+      "id": 12103,
+      "word": "scribe",
+      "field": "en",
+      "before": "French playwright (1791-1861)",
+      "after": "a person who writes or copies documents, often by hand",
+      "reason": "旧英文锁定法国剧作家，与手抄文献人员和会议记录人员错配；改为抄写或记录文件的人。"
+    },
+    {
+      "id": 12112,
+      "word": "federalist",
+      "field": "en",
+      "before": "a member of a former political party in the United States that favored a strong centralized federal government",
+      "after": "a supporter of sharing power between a central government and regional governments",
+      "reason": "旧英文限定美国历史党派成员，与两句一般联邦制支持者错配；改为支持中央与地区政府分享权力的制度者。"
+    },
+    {
+      "id": 12115,
+      "word": "neurotic",
+      "field": "en",
+      "before": "a person suffering from neurosis",
+      "after": "informally, excessively anxious or worried, often unreasonably",
+      "reason": "旧英文定义为患神经症的人，两句和中文都是口语过分焦虑形容词，不宜将行为直接诊断为疾病；改为非正式过分焦虑。"
+    },
+    {
+      "id": 12117,
+      "word": "splatter",
+      "field": "en",
+      "before": "n the noise of something spattering or sputtering explosively",
+      "after": "to splash liquid in scattered drops; a patch of drops left by such a splash",
+      "reason": "旧英文是飞溅声，与溅油动作和颜料斑点错配；改为液滴散溅及留下的斑点。"
+    },
+    {
+      "id": 12128,
+      "word": "obedient",
+      "field": "en",
+      "before": "dutifully complying with the commands or instructions of those in authority; the refractory remain unburdened\"- Edmund Burke",
+      "after": "willing to follow commands or instructions",
+      "reason": "旧英文后半混入断裂引文及作者署名，不能作为完整题干；保留服从指令的核心，去掉串入文本。"
+    },
+    {
+      "id": 12129,
+      "word": "parched",
+      "field": "en",
+      "before": "toasted or roasted slightly",
+      "after": "extremely dry or very thirsty",
+      "reason": "旧英文是略烘烤，与田地干透和极度口渴错配；改为极干或很渴。"
+    },
+    {
+      "id": 12130,
+      "word": "cam",
+      "field": "en",
+      "before": "a river in east central England that flows past Cambridge to join the Ouse River",
+      "after": "a shaped moving part that makes another machine part move; an informal short form of camera",
+      "reason": "旧英文为剑河地名，与发动机凸轮和行车记录仪错配；用已核机械部件基本义及camera口语简称，不把同形河名当现语境证据。"
+    },
+    {
+      "id": 12137,
+      "word": "choreography",
+      "field": "en",
+      "before": "the representation of dancing by symbols as music is represented by notes",
+      "after": "the planning and arrangement of dance movements",
+      "reason": "旧英文是舞谱符号记录，与创作音乐剧舞蹈动作及配合音乐的编舞错配；改为舞蹈动作设计安排。"
+    },
+    {
+      "id": 12139,
+      "word": "irrespective",
+      "field": "en",
+      "before": "r in spite of everything; without regard to drawbacks",
+      "after": "without considering or being affected by something, usually followed by of",
+      "reason": "旧英文的in spite of everything和drawbacks添加无关条件，与不论年龄或人数不符；改为不考虑或不受某因素影响。"
+    },
+    {
+      "id": 12147,
+      "word": "virulent",
+      "field": "en",
+      "before": "infectious; having the ability to cause disease",
+      "after": "capable of causing severe disease; intensely hostile or hateful",
+      "reason": "旧英文只说能够致病或有传染性，没有高致病强度，且不含恶毒批评用法；改为可造成严重疾病或强烈恶意。"
+    },
+    {
+      "id": 12149,
+      "word": "meld",
+      "field": "en",
+      "before": "announce for a score; of cards in a card game",
+      "after": "to combine or blend smoothly into one",
+      "reason": "旧英文是牌局报牌得分，与烹饪传统和合唱声音融合错配；改为混合成整体。"
+    },
+    {
+      "id": 12163,
+      "word": "groundbreaking",
+      "field": "en",
+      "before": "the ceremonial breaking of the ground to formally begin a construction project",
+      "after": "introducing important new ideas or methods",
+      "reason": "旧英文是开工破土仪式，与开创研究和突破电影错配；改为引入重要新思想或方法。"
+    },
+    {
+      "id": 12170,
+      "word": "passer",
+      "field": "en",
+      "before": "a person who passes as a member of a different ethnic or racial group",
+      "after": "a player who sends the ball to a teammate",
+      "reason": "旧英文为冒充另一族群成员的人，与四分卫及队内传球手错配；改为把球传给队友的运动员。"
+    },
+    {
+      "id": 12172,
+      "word": "sunglass",
+      "field": "en",
+      "before": "a convex lens that focuses the rays of the sun; used to start a fire",
+      "after": "used before a noun to refer to glasses with dark lenses that protect the eyes from sunlight",
+      "reason": "旧英文为聚光生火透镜，与太阳镜盒和展示区定语错配；官方产品用法确认sunglass case，建议说明用在名词前的太阳镜相关性质。"
+    },
+    {
+      "id": 12173,
+      "word": "contraption",
+      "field": "en",
+      "before": "n a device or control that is very useful for a particular job",
+      "after": "a machine or device that looks unusual or complicated",
+      "reason": "旧英文仅说对某任务非常有用的器具，遗漏怪异复杂且可能不好用的性质；改为看起来奇怪或复杂的装置。"
+    },
+    {
+      "id": 12174,
+      "word": "consummate",
+      "field": "en",
+      "before": "fulfill sexually",
+      "after": "extremely skilled or accomplished",
+      "reason": "旧英文为性交完成动作，与专业人士和娴熟技能的形容词错配；改为极为熟练出色。"
+    },
+    {
+      "id": 12178,
+      "word": "pretension",
+      "field": "en",
+      "before": "a false or unsupportable quality",
+      "after": "an attempt to seem more important, impressive, or refined than one really is",
+      "reason": "旧英文仅说虚假或无依据的性质，未表达装腔自命不凡；改为试图显得比实际更重要或高雅的行为。"
+    },
+    {
+      "id": 12180,
+      "word": "sear",
+      "field": "en",
+      "before": "make very hot and dry",
+      "after": "to burn or brown the surface with intense heat",
+      "reason": "旧英文只说加热并干燥，无法辨认中文及两句的表面焦化；改为强热使表面烧灼或变褐，不添加锁住汁液的烹调断言。"
+    },
+    {
+      "id": 12185,
+      "word": "charing",
+      "field": "en",
+      "before": "v burn to charcoal",
+      "after": "",
+      "reason": "旧英文为烧炭动词，与两句Charing Cross车站地名错配；官方仅证实整个站名，无法据此给独立charing编写唯一可判别定义，清空回退。"
+    },
+    {
+      "id": 12188,
+      "word": "zap",
+      "field": "en",
+      "before": "a sudden event that imparts energy or excitement, usually with a dramatic impact",
+      "after": "informally, to heat quickly in a microwave or destroy something suddenly",
+      "reason": "旧英文只讲突发激动能量事件，与微波炉快速加热和删除文件错配；改为相应非正式动词义。"
+    },
+    {
+      "id": 12189,
+      "word": "bohemian",
+      "field": "en",
+      "before": "a native or inhabitant of Bohemia in the Czech Republic",
+      "after": "living or behaving in an unconventional way, especially among artists",
+      "reason": "旧英文仅为波希米亚居民，与咖啡馆艺术气息和艺术家生活错配；改为尤其艺术圈不拘常规的生活方式。"
+    },
+    {
+      "id": 12193,
+      "word": "skunk",
+      "field": "en",
+      "before": "American musteline mammal typically ejecting an intensely malodorous fluid when startled; in some classifications put in a separate subfamily Mephitinae",
+      "after": "a usually black-and-white mammal that can spray a strong-smelling liquid when threatened",
+      "reason": "旧musteline和Mephitinae分类已不合现代独立臭鼬科；NPS明确分类变化，改为可喷恶臭液体防御的哺乳动物，不要求每次受惊都喷射。"
+    },
+    {
+      "id": 12201,
+      "word": "optic",
+      "field": "en",
+      "before": "n the organ of sight",
+      "after": "relating to the eye, vision, or light",
+      "reason": "旧释把词当作眼睛器官的名词；视神经与光纤两句需要视觉、光学相关的形容词。"
+    },
+    {
+      "id": 12205,
+      "word": "emblazon",
+      "field": "en",
+      "before": "decorate with heraldic arms",
+      "after": "to display a name, symbol, or design prominently on a surface",
+      "reason": "旧释仅限纹章装饰；队徽及姓名首字母的现代印饰不要求是正式纹章，采用醒目展示的通常义。"
+    },
+    {
+      "id": 12207,
+      "word": "checker",
+      "field": "en",
+      "before": "an attendant who checks coats or baggage",
+      "after": "a person or tool that checks something for accuracy or validity",
+      "reason": "旧释是寄存衣物或行李的服务员；拼写检查工具及检票员两句都在检验内容。"
+    },
+    {
+      "id": 12230,
+      "word": "crucifix",
+      "field": "en",
+      "before": "representation of the cross on which Jesus died",
+      "after": "a cross bearing an image of Jesus Christ on it",
+      "reason": "旧释只说耶稣受难十字架的再现，未区分普通十字架与带耶稣像的受难十字架；两句及中文均有受难像。"
+    },
+    {
+      "id": 12233,
+      "word": "vestibule",
+      "field": "en",
+      "before": "any of various bodily cavities leading to another cavity (as of the ear or vagina)",
+      "after": "a small entrance hall between the outside door and the inside of a building",
+      "reason": "旧释是身体腔道的解剖学前庭；两句明确建筑物的门厅。"
+    },
+    {
+      "id": 12251,
+      "word": "tenacious",
+      "field": "en",
+      "before": "a good at remembering",
+      "after": "persistent and unwilling to give up or let go",
+      "reason": "旧释只是善于记忆；坚持奔走的倡导者与顽强生长的杂草都指不轻易放弃、顽强。"
+    },
+    {
+      "id": 12262,
+      "word": "maroon",
+      "field": "en",
+      "before": "a person who is stranded (as on an island)",
+      "after": "dark brownish-red; to leave someone stranded in an isolated place",
+      "reason": "旧释是受困者名词；第一句围巾颜色为栗红色，第二句是使人受困的动词。"
+    },
+    {
+      "id": 12269,
+      "word": "gall",
+      "field": "en",
+      "before": "a skin sore caused by chafing",
+      "after": "shameless boldness; an abnormal swelling of plant tissue",
+      "reason": "旧释为摩擦造成的皮肤疮；厚着脸皮的要求及橡树叶瘿瘤两句都不指皮肤病。"
+    },
+    {
+      "id": 12271,
+      "word": "westwards",
+      "field": "en",
+      "before": "n the cardinal compass point that is a 270 degrees",
+      "after": "toward the west",
+      "reason": "旧释是西方罗盘方位的名词，而词头及两句均表示朝西的方向副词。"
+    },
+    {
+      "id": 12275,
+      "word": "nondescript",
+      "field": "en",
+      "before": "a person is not easily classified and not very interesting",
+      "after": "lacking distinctive or interesting features",
+      "reason": "旧释限定无法分类的人；楼房和汽车两句为不起眼、没有鲜明特点的形容词。"
+    },
+    {
+      "id": 12277,
+      "word": "turban",
+      "field": "en",
+      "before": "a traditional Muslim headdress consisting of a long scarf wrapped around the head",
+      "after": "a head covering made by wrapping a long piece of cloth around the head or a cap",
+      "reason": "旧释只标穆斯林头饰，容易把多种文化、宗教使用的缠头巾教成单一宗教标志；不从例句衣饰猜人物宗教。"
+    },
+    {
+      "id": 12282,
+      "word": "religiosity",
+      "field": "en",
+      "before": "exaggerated or affected piety and religious zeal",
+      "after": "the degree or quality of religious belief and devotion",
+      "reason": "旧释要求宗教虔诚夸大或装腔作势；调查及跨代研究用中性宗教倾向、虔诚程度，不能预设虚伪。"
+    },
+    {
+      "id": 12284,
+      "word": "rowdy",
+      "field": "en",
+      "before": "n a cruel and brutal fellow",
+      "after": "noisy and disorderly in behavior",
+      "reason": "旧释是残酷粗暴者名词；人群及酒吧两句只说明喧闹失控，不必有残酷行为。"
+    },
+    {
+      "id": 12294,
+      "word": "deformed",
+      "field": "en",
+      "before": "so badly formed or out of shape as to be ugly",
+      "after": "distorted or different from the usual shape",
+      "reason": "旧释要求异常严重到丑陋；塑料盖变形及陶罐稍有变形不必达到严重、丑陋的程度。"
+    },
+    {
+      "id": 12296,
+      "word": "secession",
+      "field": "en",
+      "before": "an Austrian school of art and architecture parallel to the French art nouveau in the 1890s",
+      "after": "formal withdrawal from a country, organization, or group",
+      "reason": "旧释特指十九世纪奥地利艺术流派；两句讨论政治脱离，没有艺术运动语境。"
+    },
+    {
+      "id": 12297,
+      "word": "panda",
+      "field": "en",
+      "before": "n large black-and-white herbivorous mammal of bamboo forests of China and Tibet; in some classifications considered a member of the bear family or of a separate family Ailuropodidae",
+      "after": "a black-and-white bear native to China that feeds mainly on bamboo",
+      "reason": "旧释仍把大熊猫所属科写成不确定，也笼统列西藏分布；官方动物园明确熊类及中国中南部山地分布，保留简短现代辨识，不沿用过时分类悬置。"
+    },
+    {
+      "id": 12303,
+      "word": "snuff",
+      "field": "en",
+      "before": "the charred portion of a candlewick",
+      "after": "powdered tobacco used especially by inhaling through the nose; to put out a flame, usually with out",
+      "reason": "旧释只指烧焦的烛芯；鼻烟盒及snuff out熄灭蜡烛分别是鼻烟与掐灭。"
+    },
+    {
+      "id": 12305,
+      "word": "tantalising",
+      "field": "en",
+      "before": "v harass with persistent criticism or carping",
+      "after": "arousing strong desire or interest, sometimes by seeming out of reach",
+      "reason": "旧释为持续批评、挑剔地骚扰；香气及预告片都指诱人、勾起兴趣。"
+    },
+    {
+      "id": 12312,
+      "word": "scourge",
+      "field": "en",
+      "before": "a whip used to inflict punishment (often used for pedantic humor)",
+      "after": "something that causes widespread suffering or trouble",
+      "reason": "旧释为惩罚用鞭，附迂腐幽默限定；无家可归及腐败两句均指造成苦难的祸害。"
+    },
+    {
+      "id": 12324,
+      "word": "sympathizer",
+      "field": "en",
+      "before": "commiserates with someone who has had misfortune",
+      "after": "a person who supports a cause or shares another person’s feelings",
+      "reason": "旧释只说对不幸者表示怜悯；运动及团体支持者两句都不要求有人遭遇不幸。"
+    },
+    {
+      "id": 12325,
+      "word": "bleach",
+      "field": "en",
+      "before": "the whiteness that results from removing the color from something",
+      "after": "to remove color or make something lighter; a substance used for whitening or removing stains",
+      "reason": "旧释为漂白产生的白色状态；第一句是褪色行动，第二句是漂白剂，不能当作结果颜色。"
+    },
+    {
+      "id": 12360,
+      "word": "undefeated",
+      "field": "en",
+      "before": "victorious",
+      "after": "not having lost a contest or suffered a defeat",
+      "reason": "旧释victorious等同获胜，未说明没有败绩；不败也可包含平局，改为未输的辨识义。"
+    },
+    {
+      "id": 12361,
+      "word": "bridal",
+      "field": "en",
+      "before": "archaic terms for a wedding or wedding feast",
+      "after": "relating to a bride or wedding, or intended for a newly married couple",
+      "reason": "旧释为婚礼或婚宴的古词名词；婚纱店及新婚套房两句均是现代形容词。"
+    },
+    {
+      "id": 12362,
+      "word": "mainframe",
+      "field": "en",
+      "before": "a large digital computer serving 100-400 users and occupying a special air-conditioned room",
+      "after": "a large, powerful computer used for high-volume data processing and transactions",
+      "reason": "旧释给定100至400用户和专用空调房的必要条件，已经过时且非大型机定义；IBM说明其高性能和大量持续处理能力，不以固定用户数限制。"
+    },
+    {
+      "id": 12369,
+      "word": "dabble",
+      "field": "en",
+      "before": "dip a foot or hand briefly into a liquid",
+      "after": "to take a casual or occasional interest in an activity, usually with in",
+      "reason": "旧释为手脚短暂伸入液体；水彩画与园艺两句是业余涉猎，不指玩水。"
+    },
+    {
+      "id": 12374,
+      "word": "wobbly",
+      "field": "en",
+      "before": "a member of the Industrial Workers of the World",
+      "after": "unsteady and likely to move from side to side",
+      "reason": "旧释误取大写Wobbly的工会成员名称；椅子与腿两句均表示摇晃不稳。"
+    },
+    {
+      "id": 12377,
+      "word": "speculator",
+      "field": "en",
+      "before": "someone who makes conjectures without knowing the facts",
+      "after": "a person who buys assets hoping to profit from changes in their value",
+      "reason": "旧释是没有事实依据的推测者；房地产及画作两句为希望资产升值而购买的投机者，不据同形义把投资当猜谜。"
+    },
+    {
+      "id": 12381,
+      "word": "outfitter",
+      "field": "en",
+      "before": "someone who sells men's clothes",
+      "after": "a person or business that supplies clothing or equipment, especially for outdoor activities",
+      "reason": "旧释只指男装销售者；两句为帐篷、睡袋及徒步装备供应，既不限男子，也不限服装。"
+    },
+    {
+      "id": 12384,
+      "word": "medallion",
+      "field": "en",
+      "before": "any of various large ancient Greek coins",
+      "after": "a large medal worn or displayed as an ornament; a round decorative panel",
+      "reason": "旧释只指古希腊大钱币；项链纪念章及入口圆形浮雕都没有古希腊钱币信息。"
+    },
+    {
+      "id": 12392,
+      "word": "walleye",
+      "field": "en",
+      "before": "strabismus in which one or both eyes are directed outward",
+      "after": "a North American freshwater fish with large eyes, commonly caught for food",
+      "reason": "旧释为外斜视；餐馆烤鱼及湖中钓鱼两句明确北美淡水食用鱼，不把同形医学义当食物定义。"
+    },
+    {
+      "id": 12399,
+      "word": "infraction",
+      "field": "en",
+      "before": "n a crime less serious than a felony",
+      "after": "a violation of a rule, agreement, or law",
+      "reason": "旧释以比重罪轻的犯罪作定义；裁判违规及学校作弊不必构成犯罪，改为违反规则或法律的通常义。"
+    }
+  ]
+}
