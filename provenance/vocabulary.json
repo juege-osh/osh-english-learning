@@ -7,7 +7,9 @@
   "unique": 20000,
   "levels": 2000,
   "chapter_count": 20,
-  "selection": "Frequency ordered; exclude explicit inflection lemmas and proper-name translations; first 100 words hand selected; derived lexemes count separately, not as word families.",
+  "selection": "Frequency ordered using ECDICT frq, falling back to bnc; lowercase ASCII entries with Chinese definitions are selected. Explicit inflection lemmas and a limited set of translation labels are filtered; this heuristic does not exclude every proper name, foreign-language component, abbreviation or Roman numeral. The 102-entry opening list is hand selected; derived lexemes count separately, not as word families.",
   "qa": "Structural checks passed; source definitions are not individually editorially reviewed.",
-  "generated_at": "2026-09-29"
+  "generated_at": "2026-09-29",
+  "source_commit": "bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b",
+  "source_identity_verified": "2026-10-02: exact full CSV SHA256; identity verification is not linguistic review."
 }
