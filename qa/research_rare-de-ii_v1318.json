@@ -1,0 +1,329 @@
+{
+  "version": "1.31.8",
+  "status": "frozen_read_only_research",
+  "checked_at_utc": "2026-10-02T00:40:22.377137+00:00",
+  "entries": [
+    {
+      "id": 847,
+      "position_1_based": 847,
+      "stable_head": "de",
+      "rank": 928,
+      "chapter": 1,
+      "current_word_object": {
+        "id": 847,
+        "word": "de",
+        "zh": "外语姓名、地名中的连接成分",
+        "full": "常用：外语姓名、地名中的连接成分\n[化] 非对映体过量\n[医] 铥(69号元素铥的别名,1916年Eder离得的假想元素)",
+        "phonetic": "di:",
+        "en": "n a Mid-Atlantic state; one of the original 13 colonies",
+        "rank": 928,
+        "chapter": 1
+      },
+      "current_examples": [
+        {
+          "text": "Have you been to Rio de Janeiro?",
+          "translation": "你去过里约热内卢吗？",
+          "source": "original"
+        },
+        {
+          "text": "I read about Charles de Gaulle.",
+          "translation": "我读过关于夏尔·戴高乐的文章。",
+          "source": "original"
+        }
+      ],
+      "examples_assessment": "de 两句是外语地名/姓名成分，ii 两句是罗马数字编号；英语句子本身自然，中译对应，没有把它们作为普通英语独立词教授。",
+      "target_case_insensitive_once": true,
+      "industry_or_exam_routes_using_id": []
+    },
+    {
+      "id": 1024,
+      "position_1_based": 1024,
+      "stable_head": "ii",
+      "rank": 1130,
+      "chapter": 2,
+      "current_word_object": {
+        "id": 1024,
+        "word": "ii",
+        "zh": "罗马数字二（II）",
+        "full": "常用：罗马数字二（II）\nabbr. 微光（Image Intensification）",
+        "phonetic": "",
+        "en": "n the cardinal number that is the sum of one and one or a numeral representing this number",
+        "rank": 1130,
+        "chapter": 2
+      },
+      "current_examples": [
+        {
+          "text": "World War II ended in 1945.",
+          "translation": "第二次世界大战于 1945 年结束。",
+          "source": "original"
+        },
+        {
+          "text": "Please read Chapter II tonight.",
+          "translation": "今晚请读第二章。",
+          "source": "original"
+        }
+      ],
+      "examples_assessment": "de 两句是外语地名/姓名成分，ii 两句是罗马数字编号；英语句子本身自然，中译对应，没有把它们作为普通英语独立词教授。",
+      "target_case_insensitive_once": true,
+      "industry_or_exam_routes_using_id": []
+    }
+  ],
+  "findings": [
+    {
+      "word_id": 847,
+      "field": "en",
+      "current": "n a Mid-Atlantic state; one of the original 13 colonies",
+      "problem": "遗留英文定义指美国特拉华州（缩写 DE），与当前外语姓名地名成分义及两句例句不一致。",
+      "recommendation": "后续编辑层可清空错误英英定义或另写带性质说明的准确定义，保持词头和ID；不要拿此定义教法语/葡语de。",
+      "runtime_boundary": "app.js:135 通常仅第8章起会以 en 生成英英题，847在第1章，未证明此错误已在当前主线常规题出现。"
+    },
+    {
+      "word_id": 847,
+      "field": "phonetic",
+      "current": "di:",
+      "problem": "di:不能统一代表法语/葡语姓名地名中的de。",
+      "recommendation": "后续显示层应注明外语成分按所在名字读，或避免展示单一英语音标；不是直接修改词头。"
+    },
+    {
+      "word_id": 1024,
+      "field": "word",
+      "current": "ii",
+      "problem": "存储词头小写满足既有ASCII规则；例句使用标准II。",
+      "recommendation": "性质标记和显示II可保留，读句按数词解释；不将其描述为普通英语词汇，独立词头浏览器TTS是否正确读二未经真人听验。"
+    }
+  ],
+  "provenance": {
+    "actual_manifest": {
+      "source": "https://github.com/skywind3000/ECDICT",
+      "source_file": "ecdict.csv",
+      "source_sha256": "1a6947e04785db63613a92e14903cdae7954f7e84860b10e68e5c7cbb3f9c3cf",
+      "license": "MIT",
+      "count": 20000,
+      "unique": 20000,
+      "levels": 2000,
+      "chapter_count": 20,
+      "selection": "Frequency ordered; exclude explicit inflection lemmas and proper-name translations; first 100 words hand selected; derived lexemes count separately, not as word families.",
+      "qa": "Structural checks passed; source definitions are not individually editorially reviewed.",
+      "generated_at": "2026-09-29"
+    },
+    "actual_selection_script": "build_vocab.py",
+    "code_observed": "eligible要求小写ASCII、中文释义、frq或bnc>0，排除若干译文标签及屈折lemma；rank优先frq，缺时bnc，排序后id=i+1。过滤是启发式，不能保证所有外语成分和数字被排除。",
+    "python_wordfreq_attribution": "未发现此词库由Python wordfreq库构建的证据；当前可确认来源是ECDICT及其词频字段。",
+    "original_csv_available": false,
+    "limitation": "/tmp/english-ecdict-full.csv当前不存在。源文件SHA仅从既有manifest读取，未重新验证原CSV或de/ii原始行、各frq/bnc数值。当前rank928/1130来自产品快照，不冒充原始词频重算。"
+  },
+  "sources": [
+    {
+      "url": "https://www.collinsdictionary.com/dictionary/french-english/de",
+      "support": "法语de是介词等，常有of/from义；支持外语连接成分性质，不支持普通英语独立词，也不证明具体词频排名。"
+    },
+    {
+      "url": "https://www.collinsdictionary.com/dictionary/portuguese-english/de",
+      "support": "葡语de的介词性质和of/from类译义；支持Rio de Janeiro中的外语成分范围，不用于断言所有语言同一读音。"
+    },
+    {
+      "url": "https://dictionary.cambridge.org/us/dictionary/english/roman-numeral",
+      "support": "明确列出II=2，支持罗马数字性质。"
+    },
+    {
+      "url": "https://www.merriam-webster.com/dictionary/DE",
+      "support": "DE可缩写Delaware，de-另为前缀；不能把这两个条目与专名中的de混成同一目标义。"
+    },
+    {
+      "url": "https://github.com/skywind3000/ECDICT/blob/master/README.md?plain=1",
+      "support": "原项目说明bnc为英国国家语料库词频顺序，frq为当代语料库词频顺序，并说明词条查询/排序大小写不敏感；不是原始两个词条的逐行核验。"
+    }
+  ],
+  "code_dependencies": [
+    {
+      "path": "build_vocab.py",
+      "lines": [
+        5,
+        19,
+        135
+      ],
+      "observation": "词头决定选词去重，序位决定ID/chapter；重建后所有编辑层按稳定词头与范围应用，删除重排会波及后续条目。"
+    },
+    {
+      "path": "core.js",
+      "lines": [
+        14,
+        18,
+        20,
+        21,
+        62,
+        112
+      ],
+      "observation": "p.words以数字ID记录复习/掌握/错词；levels/bosses保存关卡与经验，validator限制主线1–20000，无词头或内容版本绑定。"
+    },
+    {
+      "path": "app.js",
+      "lines": [
+        118,
+        120,
+        121,
+        149
+      ],
+      "observation": "每关按数组位置取10词；综合题取100词切片；复习按历史ID解析新all表；句子历史使用ex-ID-index。"
+    },
+    {
+      "path": "progress-sync.js",
+      "lines": [
+        34,
+        45,
+        54,
+        69
+      ],
+      "observation": "主线记录同ID合并，只按mainRun代际resetAt区分；没有词库ID迁移机制，旧客户端/备份可带回同ID旧掌握。"
+    },
+    {
+      "path": "progress.go",
+      "lines": [
+        17,
+        23,
+        87,
+        97
+      ],
+      "observation": "账户云进度按owner存JSON、revision；version1进度与Words数字键验证，未绑定词库内容版。"
+    },
+    {
+      "path": "run-controls.js",
+      "lines": [
+        25,
+        26
+      ],
+      "observation": "checkpoint存session及输入，恢复时把w/items/options依数字ID重映射到当前词库；同ID替换会将旧题答案/草稿挂到新词。"
+    },
+    {
+      "path": "study-ui.js",
+      "lines": [
+        4,
+        18,
+        20,
+        23,
+        24,
+        40
+      ],
+      "observation": "独立收藏、认识标记、笔记、学习日历、错题均由word:ID或sentence:ex-ID-index等键保存，值又缓存旧en/zh。"
+    },
+    {
+      "path": "study-core.js",
+      "lines": [
+        105,
+        129
+      ],
+      "observation": "独立study云同步按at/tombstone合并，必须有幂等迁移及新时间戳，不能只删本机键。"
+    },
+    {
+      "path": "permanent_boards.go",
+      "lines": [
+        14,
+        19
+      ],
+      "observation": "主线榜edition取目标范围f.words内容哈希，改词头/释义自动进入不同榜版，不能直接合并新旧成绩。"
+    },
+    {
+      "path": "features.go",
+      "lines": [
+        439,
+        494,
+        538
+      ],
+      "observation": "永久挑战种子/提交校验使用mainEdition；旧题attempt和daily checkpoint需结束或明确版拒绝。"
+    },
+    {
+      "path": "features-ui.js",
+      "lines": [
+        29,
+        30,
+        32
+      ],
+      "observation": "daily checkpoint保存题目、选项数字ID、answers与edition；迁移不能保留旧答题到新词。"
+    }
+  ],
+  "recommendation": "当前保留847/de与1024/ii及现有四句，只修性质标记或不匹配的辅助字段最稳妥；这是混入形式辨识，不宣称两个都是普通英语独立单词。若未来替换，先独立设计和验收词库迁移，禁止复用这两个旧ID继承旧掌握。",
+  "migration_requirements": [
+    {
+      "scope": "内容身份与版本",
+      "required": "先定义旧ID/词头到新词身份映射、迁移版本和墓碑；不要直接把新英语词写进847或1024，也不要无映射删除重排剩余19998词。当前id1–20000/每关10词限制意味着新增身份须同步改映射和校验。"
+    },
+    {
+      "scope": "主线本地与云进度",
+      "required": "对旧词掌握、复习天数、到期、错词留存或归档，新词从未学开始；同步迁移本机/账户云/导入备份并幂等执行，防离线旧端或多标签同ID合并复活旧记录。不能把全主线重来当无损单词迁移。"
+    },
+    {
+      "scope": "关卡及统计",
+      "required": "若排序或关卡变动，制定levels/bosses解锁和mainXp/xp、计时、correct/wrong/学词统计保留政策。原第85关和第103关已通关不能自动等同新词已学；需增补学习或明确关卡补练。历史days练习量不应随意改写。"
+    },
+    {
+      "scope": "checkpoint与在途答题",
+      "required": "结束/失效旧main session、输入草稿、配对状态和自动下一题；daily/竞技/榜单attempt按内容版隔离，旧版提交拒绝，不把旧答案迁入新题。"
+    },
+    {
+      "scope": "独立学习工具",
+      "required": "映射或归档word/sentence收藏、笔记、认识标记、day/error及自建书引用，处理缓存item.en/zh；旧词历史应保留为旧词，而非改成新词。云端tombstone、revision与账号隔离同步迁移。"
+    },
+    {
+      "scope": "引用及重建链",
+      "required": "重建examples键、ex-ID-index身份、各编辑TSV/审校补丁、考试/行业wordIds及出处；这两个ID当前不在任何industry/exam路线，但重排会影响其他路线大量引用。保持原字典数据出处，新增词另标来源。"
+    },
+    {
+      "scope": "发布与回归",
+      "required": "升级内容版本、缓存和所有词库身份相关前后端验证；验证刷新、多标签、离线旧云、账号切换、备份导入、重建幂等及榜版隔离，另有可回滚快照。"
+    }
+  ],
+  "boundaries": [
+    "仅只读研究与建议，无词头替换、迁移实现、项目写入、部署或浏览器操作。",
+    "源性质的可靠核实不等于原词频名单全量净化完成。",
+    "speechSynthesis独立de/ii读法未听验；两个名字内部de各语言发音不同，不统一建议一个读音。"
+  ],
+  "input_sha256": {
+    "data/words.json": "58f2bf27a8c88697e867ced7658931b32a53579b54f76485f516d5fae7fb298f",
+    "data/examples.json": "139c2ee4f6c867ca846cf393357698f147155d581baf144396694caeab624551",
+    "provenance/vocabulary.json": "3b8007b5bae1321f336a1f908ee8066955adbd6e8ecaa0df5397e75bf8030304",
+    "build_vocab.py": "d0495c8cab0f13605f4f3b958a34f2667ce0d0b7ec0ac9348c80dd4a73968944",
+    "core.js": "a6b7f2843d1f3f2e28ea81f79805174bb0bfb02c4f2cbb6931dcc78a85377f63",
+    "progress-sync.js": "c76f5c8c3ff3b0f745ed3feb355a3ec5a2e82f91700ca2a9fa4597cabdae47ee",
+    "run-controls.js": "160c649ba89484febcb43fed572ec13954a1a4e63cebfda70b4f2d06a8d0e951",
+    "study-ui.js": "1eb36894fd5e480b19804d5c3437000c10f1eb0d27b0c38137e3882ba03a2dd3",
+    "study-core.js": "11539d26e7b9712b71e8a6c0fd07a65ed64ebade35c9da18829e3b406f637289",
+    "permanent_boards.go": "3e15f4cff545d24305fee32d5e4ce7ffb73c475ea21168b5b519a65a8fff103b"
+  },
+  "minimal_edit_proposal": {
+    "word_id": 847,
+    "word": "de",
+    "changes": [
+      {
+        "field": "en",
+        "before": "n a Mid-Atlantic state; one of the original 13 colonies",
+        "after": "",
+        "reason": "与当前外语专名成分义不匹配的Delaware定义，清空以免混义。"
+      },
+      {
+        "field": "phonetic",
+        "before": "di:",
+        "after": "",
+        "reason": "不能把单一英语音标套用于法/葡专名中的de。"
+      }
+    ],
+    "preserve": [
+      "id=847",
+      "word=de",
+      "rank=928",
+      "chapter=1",
+      "zh",
+      "full原词典尾部",
+      "两条现有例句"
+    ],
+    "sources": [
+      "https://www.collinsdictionary.com/dictionary/french-english/de",
+      "https://www.collinsdictionary.com/dictionary/portuguese-english/de"
+    ],
+    "boundary": "仅建议取消不匹配的辅助字段，未改项目，未替换ID；不重写或认证full中的旧专业词义。"
+  },
+  "provenance_selection_revision_proposal": {
+    "current": "Frequency ordered; exclude explicit inflection lemmas and proper-name translations; first 100 words hand selected; derived lexemes count separately, not as word families.",
+    "suggested": "Frequency ordered using ECDICT frq, falling back to bnc; lowercase ASCII entries with Chinese definitions are selected. Explicit inflection lemmas and entries whose translations match a limited set of proper-name or inflection labels are filtered; this heuristic does not exclude every proper name, foreign-language component, abbreviation or Roman numeral. Opening words are hand selected; derived lexemes count separately, not as word families.",
+    "reason": "eligible只检查有限的中文标签和lemma，不能被理解为所有专名已筛净；只说明实际实现，源名称仍为ECDICT。"
+  }
+}

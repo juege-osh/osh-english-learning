@@ -1,0 +1,266 @@
+{
+  "status": "frozen_read_only_research",
+  "scope": [
+    "whe",
+    "alm"
+  ],
+  "source_file_verification": {
+    "local_csv_present": false,
+    "download_in_memory_only": true,
+    "url": "https://raw.githubusercontent.com/skywind3000/ECDICT/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b/ecdict.csv",
+    "commit": "bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b",
+    "bytes": 65933428,
+    "sha256": "1a6947e04785db63613a92e14903cdae7954f7e84860b10e68e5c7cbb3f9c3cf",
+    "matches_project_manifest": true
+  },
+  "rank_trace": {
+    "status": "ECDICT原行与项目rank已精确定位；BNC原文/频次/原始排名算法尚未定位",
+    "project_formula": "int(frq or 0) or int(bnc or 0) or 999999",
+    "selection": "build_vocab.py先放100词起步表，再按rank排序过滤后的词，ID是学习序号而非语料排名。",
+    "per_word": {
+      "whe": {
+        "word_id": 15389,
+        "rank": 18202,
+        "frq": 0,
+        "bnc": 18202,
+        "rank_comes_from": "bnc fallback",
+        "original_row": {
+          "word": "whe",
+          "phonetic": "",
+          "definition": "",
+          "translation": "abbr. water hammer eliminator 水锤（击）作用消除器",
+          "pos": "",
+          "collins": "",
+          "oxford": "",
+          "tag": "",
+          "bnc": "18202",
+          "frq": "0",
+          "exchange": "",
+          "detail": "",
+          "audio": ""
+        }
+      },
+      "alm": {
+        "word_id": 17176,
+        "rank": 20361,
+        "frq": 0,
+        "bnc": 20361,
+        "rank_comes_from": "bnc fallback",
+        "original_row": {
+          "word": "alm",
+          "phonetic": "ɑ:m",
+          "definition": "",
+          "translation": "n. 救济品,高山草旬",
+          "pos": "",
+          "collins": "",
+          "oxford": "",
+          "tag": "",
+          "bnc": "20361",
+          "frq": "0",
+          "exchange": "s:alms",
+          "detail": "",
+          "audio": ""
+        }
+      }
+    },
+    "sources": [
+      {
+        "url": "https://raw.githubusercontent.com/skywind3000/ECDICT/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b/ecdict.csv",
+        "type": "词库作者原始CSV（固定commit）",
+        "status": "confirmed",
+        "supports": "实读完整65933428字节CSV，SHA256与本项目provenance/vocabulary.json一致；定位到whe、alm原始行及bnc/frq/释义。",
+        "does_not_support": "不能替代工程缩写原始规范、英语词头的权威收录或BNC原文语境。"
+      },
+      {
+        "url": "https://github.com/skywind3000/ECDICT/blob/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b/README.md",
+        "type": "词库作者字段文档",
+        "status": "confirmed",
+        "supports": "bnc标为英国国家语料库词频顺序，frq标为当代语料库词频顺序。",
+        "does_not_support": "未给这两词逐条原文出处、频次、排名算法版本；README对BNC覆盖时代的描述不能替代BNC官方说明。"
+      },
+      {
+        "url": "https://www.natcorp.ox.ac.uk/corpus/",
+        "type": "BNC官方资料",
+        "status": "confirmed",
+        "supports": "BNC覆盖20世纪后期的英式英语，1991开始、1994完成；承认语料中会出现外语词。",
+        "does_not_support": "不能由出现或排名直接认定是现代常用英语独立词，也不能从排名确认具体词义。"
+      },
+      {
+        "url": "https://www.natcorp.ox.ac.uk/faq.xml?ID=resources",
+        "type": "BNC官方相关资源",
+        "status": "confirmed",
+        "supports": "提供作者词频表和检索方向。",
+        "does_not_support": "本轮未取得对应排名的BNC原始上下文，不能认定其原义。"
+      }
+    ]
+  },
+  "items": [
+    {
+      "word": "whe",
+      "word_id": 15389,
+      "current": {
+        "entry": {
+          "id": 15389,
+          "word": "whe",
+          "zh": "WHE罕见缩写（工程等语境，含义须按文档确认）",
+          "full": "常用：WHE罕见缩写（工程等语境，含义须按文档确认）\nabbr. water hammer eliminator 水锤（击）作用消除器",
+          "phonetic": "",
+          "en": "",
+          "rank": 18202,
+          "chapter": 16
+        },
+        "examples": [
+          {
+            "text": "The manual uses WHE as an equipment label.",
+            "translation": "手册把WHE用作设备标记。",
+            "source": "original"
+          },
+          {
+            "text": "What does WHE stand for in this diagram?",
+            "translation": "这个图中的WHE代表什么？",
+            "source": "original"
+          }
+        ]
+      },
+      "status": "旧工程扩写仍待核；WHO机构用法已确认，但不可替代旧源语境",
+      "sources": [
+        {
+          "url": "https://www.who.int/europe/emergencies/our-work-in-emergencies",
+          "type": "机构官方资料",
+          "status": "confirmed",
+          "supports": "WHE明确用于WHO Health Emergencies Programme这一具体机构项目。",
+          "does_not_support": "不能证明本项目ECDICT的whe/BNC18202指该项目；也不能证明water hammer eliminator扩写。"
+        },
+        {
+          "url": "https://www.who.int/emergencies/risk-assessment/rapid-risk-assessment",
+          "type": "机构官方资料",
+          "status": "confirmed",
+          "supports": "WHO Health Emergencies Programme缩写WHE；该项目2016年建立。",
+          "does_not_support": "与1994年完成的原BNC年代不同，不可把这个现代释义当作旧BNC排名的直接来源。"
+        }
+      ],
+      "old_expansion_check": {
+        "status": "unconfirmed",
+        "expansion": "water hammer eliminator",
+        "research": "检索精确扩写与WHE，以及厂商/工程资料组合，未找到可靠规范或厂商原件直接对应。搜索出现聚合缩写站，未采纳为证据。",
+        "boundary": "未找到不等于不存在；完整原词典中的旧扩写保留来源属性。"
+      },
+      "clear_deviations": [
+        {
+          "field": "zh/examples[0]",
+          "finding": "现简义虽然要求按文档确认，仍把工程语境放在前面；设备手册例句沿用了未获原件支持的工程假设。不是已证实词义错误，而是语境证据不足。"
+        }
+      ],
+      "minimal_suggestion": {
+        "change_id": false,
+        "preserve_original_dictionary": true,
+        "gloss": "WHE缩写（原扩写待核，须按语境确认）",
+        "example_0_optional": {
+          "text": "The document does not explain what WHE means.",
+          "translation": "这份文件没有解释WHE是什么意思。"
+        },
+        "example_1": "现有询问图中缩写含义的句子可保留。",
+        "verified_alternative": "若另教WHO项目，明确标注WHO Health Emergencies Programme语境；不能声称这是原词频行指向。"
+      },
+      "pending": [
+        "water hammer eliminator的可靠工程缩写出处",
+        "BNC18202对应的原文、词形归并及排名版本"
+      ]
+    },
+    {
+      "word": "alm",
+      "word_id": 17176,
+      "current": {
+        "entry": {
+          "id": 17176,
+          "word": "alm",
+          "zh": "高山牧场（德语词；英语词头性质待核）",
+          "full": "常用：高山牧场（德语词；英语词头性质待核）\nn. 救济品,高山草旬",
+          "phonetic": "ɑ:m",
+          "en": "",
+          "rank": 20361,
+          "chapter": 18
+        },
+        "examples": [
+          {
+            "text": "The guide called the mountain pasture an alm.",
+            "translation": "导游把这片高山牧场称为alm。",
+            "source": "original"
+          },
+          {
+            "text": "The sign used alm, the German word for a mountain pasture.",
+            "translation": "牌子用了德语alm，意思是高山牧场。",
+            "source": "original"
+          }
+        ]
+      },
+      "status": "德语Alm高山牧场义已确认；英语独立词头性质与源救济品义仍待核",
+      "sources": [
+        {
+          "url": "https://www.duden.de/rechtschreibung/Alm",
+          "type": "德语权威词典",
+          "status": "confirmed",
+          "supports": "德语阴性名词Alm指夏季用作放牧的山地草场，标准德语名词首字母大写。",
+          "does_not_support": "没有证明小写alm作为现代通用英语独立词头，也不支持“救济品”。"
+        },
+        {
+          "url": "https://www.collinsdictionary.com/dictionary/german-english/alm",
+          "type": "出版社德英词典",
+          "status": "confirmed",
+          "supports": "Alm译为alpine pasture，列德语名词变格。",
+          "does_not_support": "这是德英翻译词条，不是英语牧场义词头收录。"
+        },
+        {
+          "url": "https://unstats.un.org/unsd/geoinfo/ungegn/docs/4th-uncsgn-docs/E_conf_74_3_Add1.pdf",
+          "type": "联合国地名标准化原始资料",
+          "status": "confirmed",
+          "supports": "German栏内Alm对应alpine pasture；支持地名成分语境。",
+          "does_not_support": "不能证明该形式为通用英语独立词。"
+        },
+        {
+          "url": "https://www.dbges.de/assets/Mitteilungen-der-DBG/Mitteilungen-der-DBG-1986_46.pdf",
+          "type": "德国土壤学会原始论文集",
+          "status": "confirmed",
+          "supports": "1986年英文论文以Alm (Alpine Pasture) Farming in Bavaria解释德语农牧术语，并用Almen等形式。",
+          "does_not_support": "只证明英语专业文本会引用德语术语，不等于成为常用英语词头。"
+        },
+        {
+          "url": "https://www.collinsdictionary.com/dictionary/english/alm",
+          "type": "出版社英语词典",
+          "status": "confirmed",
+          "supports": "该URL实际重定向展示大写ALM，释义audio-lingual method。",
+          "does_not_support": "不支持小写alm的高山牧场或救济品义；不得拿URL相同冒充已核实原词义。"
+        }
+      ],
+      "clear_deviations": [
+        {
+          "field": "examples[0].text/examples[1].text",
+          "finding": "句子明确教德语词，却写小写alm；德语名词标准写法应为Alm。稳定原词头alm无需随展示改ID。"
+        },
+        {
+          "field": "phonetic",
+          "finding": "现ɑ:m来自ECDICT；德语来源发音为[alm]。用于德语词说明时不应把继承的英语式音标当作已确认德语发音。"
+        },
+        {
+          "field": "full original tail",
+          "finding": "原表“高山草旬”是异常中文形式，不能当作经过本站校订的定义；“救济品”和s:alms提示可能混入其他词形，现无可靠单数alm义来源，不能直接归因或修成alms。"
+        }
+      ],
+      "minimal_suggestion": {
+        "change_id": false,
+        "preserve_original_dictionary": true,
+        "gloss": "现“高山牧场（德语词；英语词头性质待核）”可保留。",
+        "examples": "仅将德语被解释词的展示由alm改Alm；两句语义与高山牧场对应，无需全句重写。",
+        "phonetic": "先标原词典音标待核；若要展示德语音标，另加语言标签和Collins德英词典来源，不冒充通用英语发音。",
+        "original_dictionary_notice": "旧原文继续留作来源记录；可在待核说明中提醒“救济品、高山草旬”未经确认。",
+        "avoid": "不拿大写ALM缩写词条证明当前小写alm牧场义；不替换为ALM或alms。"
+      },
+      "pending": [
+        "小写alm牧场义是否被权威英语词典收录及具体语域",
+        "BNC20361原文与归并方式",
+        "ECDICT救济品义和s:alms来源"
+      ]
+    }
+  ],
+  "boundary": "humanizer自审完成；仅来源核查和最小建议。未修改产品、原稿、编号，未操作浏览器或发布；仅写此/tmp报告。"
+}

@@ -1,0 +1,158 @@
+{
+  "version": "1.31.8",
+  "status": "frozen_after_root_cross_review",
+  "changes": [
+    {
+      "word_id": 847,
+      "word": "de",
+      "field": "en",
+      "before": "n a Mid-Atlantic state; one of the original 13 colonies",
+      "after": "",
+      "reason": "原英英义对应DE特拉华州，不对应现专名中的de。"
+    },
+    {
+      "word_id": 847,
+      "word": "de",
+      "field": "phonetic",
+      "before": "di:",
+      "after": "",
+      "reason": "法语、葡语姓名中的de不能用单一继承英语音标。"
+    },
+    {
+      "word_id": 15389,
+      "word": "whe",
+      "field": "gloss",
+      "before": "WHE罕见缩写（工程等语境，含义须按文档确认）",
+      "after": "WHE缩写（原库工程义待核；按文档确认）",
+      "reason": "未证实原工程扩写，其他已确认现代缩写不可代替原语料语境。"
+    },
+    {
+      "word_id": 15389,
+      "word": "whe",
+      "field": "text",
+      "before": "The manual uses WHE as an equipment label.",
+      "after": "The manual does not explain what WHE stands for.",
+      "reason": "不擅断WHE一定是设备标记。",
+      "example_index": 0
+    },
+    {
+      "word_id": 15389,
+      "word": "whe",
+      "field": "translation",
+      "before": "手册把WHE用作设备标记。",
+      "after": "手册没有解释WHE代表什么。",
+      "reason": "与修改后识别句对应。",
+      "example_index": 0
+    },
+    {
+      "word_id": 17176,
+      "word": "alm",
+      "field": "phonetic",
+      "before": "ɑ:m",
+      "after": "",
+      "reason": "当前展示德语Alm，继承ɑ:m不能作为已确认的德语读音。"
+    },
+    {
+      "word_id": 17176,
+      "word": "alm",
+      "field": "text",
+      "before": "The guide called the mountain pasture an alm.",
+      "after": "The guide called the mountain pasture an Alm.",
+      "reason": "德语名词首字母大写；存储学习词头仍alm。",
+      "example_index": 0
+    },
+    {
+      "word_id": 17176,
+      "word": "alm",
+      "field": "translation",
+      "before": "导游把这片高山牧场称为alm。",
+      "after": "导游把这片高山牧场称为Alm。",
+      "reason": "德语名词展示大小写与英文对应。",
+      "example_index": 0
+    },
+    {
+      "word_id": 17176,
+      "word": "alm",
+      "field": "text",
+      "before": "The sign used alm, the German word for a mountain pasture.",
+      "after": "The sign used Alm, the German word for a mountain pasture.",
+      "reason": "德语名词首字母大写；存储学习词头仍alm。",
+      "example_index": 1
+    },
+    {
+      "word_id": 17176,
+      "word": "alm",
+      "field": "translation",
+      "before": "牌子用了德语alm，意思是高山牧场。",
+      "after": "牌子用了德语Alm，意思是高山牧场。",
+      "reason": "德语名词展示大小写与英文对应。",
+      "example_index": 1
+    },
+    {
+      "word_id": 19220,
+      "word": "keye",
+      "field": "gloss",
+      "before": "词形待核（原词表如此；现代通用义未确认）",
+      "after": "中古英语key的旧拼法；原库医学义待核",
+      "reason": "原著及哈佛历史词表支持字形，不能据此恢复原医用释义。"
+    },
+    {
+      "word_id": 16000,
+      "word": "thril",
+      "field": "gloss",
+      "before": "罕见旧词；原库释义待核",
+      "after": "历史异体有记录；原库释义待核",
+      "reason": "古苏格兰语词典记录形式，不足以证明原名词小巷义。"
+    },
+    {
+      "word_id": 13222,
+      "word": "router",
+      "field": "en",
+      "before": "a worker who routes shipments for distribution and delivery",
+      "after": "A device that connects computer networks and forwards data packets between them.",
+      "reason": "原创简短释义与当前常用中文义和用法一致；避免旧源首义错配实际英英题。"
+    },
+    {
+      "word_id": 14338,
+      "word": "firewall",
+      "field": "en",
+      "before": "(colloquial) the application of maximum thrust",
+      "after": "Hardware or software that allows or blocks network traffic according to security rules.",
+      "reason": "原创简短释义与当前常用中文义和用法一致；避免旧源首义错配实际英英题。"
+    },
+    {
+      "word_id": 14890,
+      "word": "cola",
+      "field": "en",
+      "before": "large genus of African trees bearing kola nuts",
+      "after": "A sweet, dark brown fizzy soft drink of the type made by Coca-Cola and Pepsi.",
+      "reason": "原创简短释义与当前常用中文义和用法一致；避免旧源首义错配实际英英题。"
+    }
+  ],
+  "reviewed_word_ids": [
+    847,
+    1024,
+    13222,
+    14338,
+    14890,
+    15389,
+    16000,
+    17176,
+    19220
+  ],
+  "unchanged_reviewed_ids": [
+    1024
+  ],
+  "source_reports": {
+    "qa/research_rare-keye-thril_v1318.json": "f04f16e4a8ae1a42a4fbef77ffc23c34b3731fea1b1270493044196d6ae361a6",
+    "qa/research_rare-whe-alm_v1318.json": "f3a9b6abee11767b92cc90bf48b0c4b01f2b79699b747b0620542caee3b896cb",
+    "qa/research_rare-de-ii_v1318.json": "e78a80cf2a896792b5953de00cb9ac70aa7debb1d097a7d0785ed54a7d5eb743",
+    "qa/research_english-definitions_v1318.json": "0eff50f550c81b3dcb76c1af34bea34826cd885591317335b1d47e1873766d65"
+  },
+  "boundaries": [
+    "word/id/rank/chapter及原完整词典尾部保留；不是词库迁移。",
+    "现代医学keye、小巷thril、工程WHE及独立英语alm仍待核；历史/外语事实不代替这些原义。",
+    "英语辅助定义尚未全量逐条审读；本批只核三处明确错配。",
+    "性质识别句不冒充已确认的现代词义用法。"
+  ]
+}

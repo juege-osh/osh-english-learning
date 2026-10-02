@@ -1,0 +1,275 @@
+{
+  "version": "1.31.8",
+  "status": "frozen_readonly_research",
+  "checked_at_utc": "2026-10-02T00:40:54.699310+00:00",
+  "scope": [
+    "keye id19220",
+    "thril id16000"
+  ],
+  "humanizer_review": "已自审结论和理由：按字形、年代、语言和来源范围分别陈述；不把历史、专名或检索无结果扩写成现代通用义。",
+  "source_provenance": {
+    "project_manifest": {
+      "source": "https://github.com/skywind3000/ECDICT",
+      "source_file": "ecdict.csv",
+      "source_sha256": "1a6947e04785db63613a92e14903cdae7954f7e84860b10e68e5c7cbb3f9c3cf",
+      "license": "MIT",
+      "count": 20000,
+      "unique": 20000,
+      "levels": 2000,
+      "chapter_count": 20,
+      "selection": "Frequency ordered; exclude explicit inflection lemmas and proper-name translations; first 100 words hand selected; derived lexemes count separately, not as word families.",
+      "qa": "Structural checks passed; source definitions are not individually editorially reviewed.",
+      "generated_at": "2026-09-29"
+    },
+    "upstream_csv_sha256": "1a6947e04785db63613a92e14903cdae7954f7e84860b10e68e5c7cbb3f9c3cf",
+    "exact_manifest_sha256_match": true,
+    "upstream_csv_rows": 770611,
+    "original_local_csv_present": false,
+    "local_build_script": "build_vocab.py",
+    "selection_trace": "两词小写、原中文含汉字且bnc>0，未有0:lemma字段，能通过既有粗筛；名字/旧拼法没有可靠释义时也可能被粗筛纳入。没有据此验证现代常用身份。"
+  },
+  "local_materials_read": [
+    "data/words.json",
+    "data/examples.json",
+    "build_vocab.py",
+    "provenance/vocabulary.json",
+    "qa/README.md",
+    "data/curated_glosses_15901_16000.tsv",
+    "data/curated_examples_15901_16000.tsv",
+    "data/curated_glosses_19201_19300.tsv",
+    "data/curated_examples_19201_19300.tsv"
+  ],
+  "entries": [
+    {
+      "word_id": 19220,
+      "word": "keye",
+      "current_word": {
+        "id": 19220,
+        "word": "keye",
+        "zh": "词形待核（原词表如此；现代通用义未确认）",
+        "full": "常用：词形待核（原词表如此；现代通用义未确认）\n [医]键控器, 定时器",
+        "phonetic": "'ki:",
+        "en": "",
+        "rank": 22760,
+        "chapter": 20
+      },
+      "current_examples": [
+        {
+          "text": "The editor marked keye for a spelling check.",
+          "translation": "编辑标出了keye，准备核对拼写。",
+          "source": "original"
+        },
+        {
+          "text": "We could not confirm the meaning of keye in this glossary.",
+          "translation": "我们无法确认这份词表中keye的含义。",
+          "source": "original"
+        }
+      ],
+      "original_ecdict_row": {
+        "word": "keye",
+        "phonetic": "'ki:",
+        "definition": "",
+        "translation": " [医]键控器, 定时器",
+        "pos": "",
+        "collins": "",
+        "oxford": "",
+        "tag": "",
+        "bnc": "22760",
+        "frq": "0",
+        "exchange": "",
+        "detail": "",
+        "audio": ""
+      },
+      "rank_trace": {
+        "current_rank": 22760,
+        "formula": "int(frq or 0) or int(bnc or 0) or 999999",
+        "selected_field": "bnc",
+        "source_frq": 0,
+        "source_bnc": 22760,
+        "meaning": "当前rank是构建脚本优先frq、无有效frq再取bnc的上游位次，学习ID另按筛选后的顺序编号；0不应解释成现代语料中绝对零次。"
+      },
+      "status": "modern_common_meaning_unconfirmed_keep_pending",
+      "historical_status": "historical_middle_english_key_form_confirmed",
+      "assessment": "原字形在中古英语key义中有可靠历史记录；原库医学键控器/定时器仍未取得可靠医学词典支持。专名或其他语言同形不能填充现代通用义。",
+      "required_actions": [
+        "保留原word_id、词头、原完整词典正文和rank，不擅自改号或替换为key/thrill。",
+        "继续保留现代通用义待核和现有词形辨认句；不能把这两句算作已确认词义用法示范。",
+        "原完整词典旧释义应被说明为上游未核内容，不能用它恢复已撤回的确定简义。"
+      ],
+      "optional_gloss_proposal": {
+        "before": "词形待核（原词表如此；现代通用义未确认）",
+        "after": "中古英语key的旧拼法；原库医学义待核",
+        "reason": "补充已确认的历史性质，仍不确认现代通用义；仅建议，未修改项目。"
+      },
+      "modern_meaning_changes": []
+    },
+    {
+      "word_id": 16000,
+      "word": "thril",
+      "current_word": {
+        "id": 16000,
+        "word": "thril",
+        "zh": "罕见旧词；原库释义待核",
+        "full": "常用：罕见旧词；原库释义待核\n 联络小巷",
+        "phonetic": "θ'rɪl",
+        "en": "",
+        "rank": 18937,
+        "chapter": 16
+      },
+      "current_examples": [
+        {
+          "text": "The editor flagged thril as an unfamiliar spelling.",
+          "translation": "编辑把thril标为不熟悉的拼写。",
+          "source": "original"
+        },
+        {
+          "text": "Check the original source before interpreting thril.",
+          "translation": "解释thril之前，请核对原始来源。",
+          "source": "original"
+        }
+      ],
+      "original_ecdict_row": {
+        "word": "thril",
+        "phonetic": "θ'rɪl",
+        "definition": "",
+        "translation": " 联络小巷",
+        "pos": "",
+        "collins": "",
+        "oxford": "",
+        "tag": "",
+        "bnc": "18937",
+        "frq": "0",
+        "exchange": "p:thrilled/d:thrilled/i:thrilling",
+        "detail": "",
+        "audio": ""
+      },
+      "rank_trace": {
+        "current_rank": 18937,
+        "formula": "int(frq or 0) or int(bnc or 0) or 999999",
+        "selected_field": "bnc",
+        "source_frq": 0,
+        "source_bnc": 18937,
+        "meaning": "当前rank是构建脚本优先frq、无有效frq再取bnc的上游位次，学习ID另按筛选后的顺序编号；0不应解释成现代语料中绝对零次。"
+      },
+      "status": "modern_common_meaning_unconfirmed_keep_pending",
+      "historical_status": "older_scots_variant_attested_but_current_dictionary_sense_unconfirmed",
+      "assessment": "历史词典有Thril异体，且存在不同词条义；原库联络小巷未得到精确字形及现代语域证实。thirl矿业连接通道只属邻近形式证据。原exchange与thrill相同是源库质量警讯，不足以宣布是thrill错拼。",
+      "required_actions": [
+        "保留原word_id、词头、原完整词典正文和rank，不擅自改号或替换为key/thrill。",
+        "继续保留现代通用义待核和现有词形辨认句；不能把这两句算作已确认词义用法示范。",
+        "原完整词典旧释义应被说明为上游未核内容，不能用它恢复已撤回的确定简义。"
+      ],
+      "optional_gloss_proposal": {
+        "before": "罕见旧词；原库释义待核",
+        "after": "历史异体有记录；原库释义待核",
+        "reason": "补充已确认的历史性质，仍不确认现代通用义；仅建议，未修改项目。"
+      },
+      "modern_meaning_changes": []
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/skywind3000/ECDICT/master/ecdict.csv",
+      "access": "成功逐行读取上游全部770611条CSV，未保存源文件",
+      "source_sha256": "1a6947e04785db63613a92e14903cdae7954f7e84860b10e68e5c7cbb3f9c3cf",
+      "supports": "原词头、原中文释义、音标、bnc/frq/exchange等字段；完整SHA与项目provenance/vocabulary.json一致，可确认入库来源。",
+      "does_not_support": "中文释义的专业可靠性、现代通用义、原BNC词频处理的具体正确性。"
+    },
+    {
+      "url": "https://github.com/skywind3000/ECDICT",
+      "access": "成功读取原仓库说明",
+      "supports": "bnc字段被定义为BNC词频顺序，frq为当代语料词频顺序；数据库来源为混合收集和自动标注。",
+      "does_not_support": "README对BNC时间范围的描述不能代替BNC官方文档；记录本身不证明keye/thril是现代常用词。"
+    },
+    {
+      "url": "https://www.gutenberg.org/cache/epub/10625/pg10625-images.html",
+      "access": "成功读取Mayhew和Skeat《A Concise Dictionary of Middle English》的原著转录，Keye词条",
+      "supports": "1888年中古英语词典将Keye列为名词key，属于历史英语词形证据。",
+      "does_not_support": "现代医学键控器/定时器释义；现代普通英语中使用keye代替key的适当性。"
+    },
+    {
+      "url": "https://chaucer.fas.harvard.edu/pages/glossary",
+      "access": "成功读取哈佛Chaucer词汇表",
+      "supports": "keie n.(1)列key义，统计keye 10、keyes 1，属于特定历史文本的拼写与用例证据。",
+      "does_not_support": "现代通用词频、现代医学术语；10次不能推广为现代语料频率。"
+    },
+    {
+      "url": "https://dsl.ac.uk/entry/dost00086253",
+      "access": "成功读取DOST Thirl v.1，1375–1640的引文",
+      "supports": "古苏格兰语Thirl/Thril等形式用于穿刺、穿透、开凿通道，字形确有历史记载。",
+      "does_not_support": "现代英语thril的通用义；原库名词“联络小巷”不能仅从历史动词开凿通道直接推出。"
+    },
+    {
+      "url": "https://dsl.ac.uk/entry/dost/thirll_n",
+      "access": "搜索结果成功读取DOST词条正文摘要",
+      "supports": "同形Thril等另有古苏格兰语奴隶/农奴等名词义，表明历史异体需依词条和语境判断。",
+      "does_not_support": "原库“联络小巷”或现代常用义；不能任取此历史义替换主线简义。"
+    },
+    {
+      "url": "https://dsl.ac.uk/entry/snd/thirl_v1_n1",
+      "access": "成功读取SND词条",
+      "supports": "thirl（不是当前词头thril）在煤矿用语中可指连接两个采掘工作处的横向通道。",
+      "does_not_support": "当前thril词头就是该矿业词的断言；也不支持译成普通街道小巷。"
+    },
+    {
+      "url": "https://www.kilgarriff.co.uk/bnc-readme.html",
+      "access": "成功读取原频率表作者文档",
+      "supports": "raw表为语形/POS组合频率，不能自动当作已核实普通词义；名称、变体、词性需分别检查。",
+      "does_not_support": "ECDICT两词具体rank的再现；不同语料版本和排序规则不能直接混同。"
+    },
+    {
+      "url": "https://www.kilgarriff.co.uk/BNClists/all.al.gz",
+      "access": "浏览工具不支持gzip，随后Python只读下载到内存并解压完整938972行",
+      "observed_rows": [
+        "1 keye nn1-np0 1",
+        "1 keye np0 1"
+      ],
+      "thril_exact_case_insensitive_rows": [],
+      "supports": "所查raw表中keye仅两条各1次记录，一条专名一条普通名词/专名未决；不能支持医学释义或现代常用身份。",
+      "does_not_support": "没有thril精确行只限该表，不证明词不存在，也不能否定历史字形；未取得原语境，不能判定keye行具体指谁。"
+    },
+    {
+      "url": "https://www.kilgarriff.co.uk/BNClists/poscodes.html",
+      "access": "成功读取从BNC手册摘出的POS代码定义",
+      "supports": "NP0为专有名词；NN1-NP0为单数普通名词或专有名词的不确定标注。",
+      "does_not_support": "从POS标签确定keye实际词义或医用含义。"
+    },
+    {
+      "url": "https://kaikki.org/dictionary/Middle%20English/meaning/k/ke/keye.html",
+      "access": "读取搜索呈现的词条详细内容，仅作检索线索",
+      "supports": "Wiktionary衍生数据另列历史key与quay两组keye，用于定位更可靠历史词典。",
+      "does_not_support": "不是本次医学义的原始出处，不单独作为现代词义认定依据。"
+    },
+    {
+      "url": "https://www.merriam-webster.com/dictionary/keye",
+      "access": "工具无法访问该URL",
+      "supports": "无可用词条内容",
+      "does_not_support": "不能据此断言未收录或不存在。"
+    },
+    {
+      "url": "https://www.merriam-webster.com/dictionary/thril",
+      "access": "工具无法访问该URL",
+      "supports": "无可用词条内容",
+      "does_not_support": "不能据此断言未收录或不存在。"
+    },
+    {
+      "url": "https://quod.lib.umich.edu/m/middle-english-dictionary/dictionary?search_id=search&search_field=all&q=keye",
+      "access": "工具无法访问该检索URL",
+      "supports": "无直接MED条目内容；本次历史义由原著转录与哈佛历史词汇表交叉支持",
+      "does_not_support": "不能把未打开的MED条目当作本次已读来源。"
+    },
+    {
+      "url": "https://truthbook.com/urantia-book-viewer-core/1924-Websters-Dictionary-Edition/LETTER-T.pdf",
+      "access": "搜索出现thril字样，正文读取因文件20MB超工具限制失败",
+      "supports": "仅有检索线索，未完成页图/原词条验证",
+      "does_not_support": "可能为扫描/OCR或音标命中，不采用其内容认定当前词头释义。"
+    }
+  ],
+  "conclusion": "两词均继续待核现代通用义。已追踪到与原构建记录SHA完全一致的ECDICT条目，并确认历史字形证据；这些证据不足以恢复原库医学/小巷释义。未修改产品、浏览器或部署。",
+  "project_source_sha256": {
+    "data/words.json": "58f2bf27a8c88697e867ced7658931b32a53579b54f76485f516d5fae7fb298f",
+    "data/examples.json": "139c2ee4f6c867ca846cf393357698f147155d581baf144396694caeab624551",
+    "build_vocab.py": "d0495c8cab0f13605f4f3b958a34f2667ce0d0b7ec0ac9348c80dd4a73968944",
+    "provenance/vocabulary.json": "3b8007b5bae1321f336a1f908ee8066955adbd6e8ecaa0df5397e75bf8030304"
+  }
+}

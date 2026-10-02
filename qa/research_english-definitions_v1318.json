@@ -1,0 +1,323 @@
+{
+  "scope": "router 13222 / firewall 14338 / cola 14890，仅提出三个en字段修订",
+  "status": "frozen_review_only",
+  "product_modified": false,
+  "suggestions": [
+    {
+      "word_id": 13222,
+      "word": "router",
+      "current_word": {
+        "id": 13222,
+        "word": "router",
+        "zh": "路由器；铣槽机",
+        "full": "常用：路由器；铣槽机\n[计] 路由器",
+        "phonetic": "'ru:tә(r), 'raj-",
+        "en": "a worker who routes shipments for distribution and delivery",
+        "rank": 15815,
+        "chapter": 14
+      },
+      "current_examples": [
+        {
+          "text": "The router is on the shelf by the window.",
+          "translation": "路由器在窗边的架子上。",
+          "source": "original"
+        },
+        {
+          "text": "We replaced the old router last week.",
+          "translation": "我们上周换掉了旧路由器。",
+          "source": "original"
+        }
+      ],
+      "suggested_change": {
+        "field": "en",
+        "before": "a worker who routes shipments for distribution and delivery",
+        "after": "A device that connects computer networks and forwards data packets between them."
+      },
+      "reason": "当前英文是派送路线安排工人；两条中文和常用义均指网络设备。新题干以连接不同网络和数据包转发限定路由器，区别于单纯交换机、调制解调器。",
+      "sources": [
+        {
+          "url": "https://www.cisco.com/site/us/en/learn/topics/small-business/what-is-a-router.html",
+          "access": "完整网页已读取",
+          "support": "连接计算机网络，依据数据包目的地选择路径并转发；这里限定网络设备义，不采用派送工人或铣槽机义。"
+        }
+      ],
+      "semantic_review": {
+        "status": "confirmed_primary_sense_mismatch",
+        "examples_reviewed": 2,
+        "examples_match_proposed_sense": true,
+        "definition_is_original_paraphrase": true,
+        "humanizer_review": "三条逐句审读；使用直接、具体的英文描述，不搬用词典整句，不夸大能力或混写不相关义项。",
+        "unchanged_fields": [
+          "id",
+          "word",
+          "zh",
+          "full",
+          "phonetic",
+          "rank",
+          "chapter",
+          "examples"
+        ],
+        "candidate_pool_review": "按实际makeQuestion切片读取约300词候选池并检查近邻词义；未见另一个明显符合建议定义的词。该人工核对不能替代对所有未来题库的语义唯一性保证。",
+        "candidate_words": [
+          {
+            "id": 13222,
+            "word": "router",
+            "zh": "路由器；铣槽机"
+          }
+        ]
+      }
+    },
+    {
+      "word_id": 14338,
+      "word": "firewall",
+      "current_word": {
+        "id": 14338,
+        "word": "firewall",
+        "zh": "防火墙",
+        "full": "常用：防火墙\n[计] 放火墙, 隔离",
+        "phonetic": "",
+        "en": "(colloquial) the application of maximum thrust",
+        "rank": 17087,
+        "chapter": 15
+      },
+      "current_examples": [
+        {
+          "text": "The firewall blocked access to the site.",
+          "translation": "防火墙阻止了访问这个网站。",
+          "source": "original"
+        },
+        {
+          "text": "Our network needs a properly configured firewall.",
+          "translation": "我们的网络需要一个配置妥当的防火墙。",
+          "source": "original"
+        }
+      ],
+      "suggested_change": {
+        "field": "en",
+        "before": "(colloquial) the application of maximum thrust",
+        "after": "Hardware or software that allows or blocks network traffic according to security rules."
+      },
+      "reason": "当前英文是最大推力的口语义；两句明确是配置和阻挡网络访问。新题干写安全规则控制网络流量，区别于仅查杀病毒的软件。",
+      "sources": [
+        {
+          "url": "https://www.cisco.com/site/us/en/learn/topics/security/what-is-a-firewall.html",
+          "access": "官方搜索结果提供完整正文",
+          "support": "依据安全规则允许或阻止网络流量，可作为硬件或软件；不声称阻止全部攻击。"
+        },
+        {
+          "url": "https://dictionary.cambridge.org/us/dictionary/english/firewall",
+          "access": "官方搜索缓存完整词条；直接打开403",
+          "support": "计算机防火墙的设备或程序义，支持现有两句网络安全用法。"
+        }
+      ],
+      "semantic_review": {
+        "status": "confirmed_primary_sense_mismatch",
+        "examples_reviewed": 2,
+        "examples_match_proposed_sense": true,
+        "definition_is_original_paraphrase": true,
+        "humanizer_review": "三条逐句审读；使用直接、具体的英文描述，不搬用词典整句，不夸大能力或混写不相关义项。",
+        "unchanged_fields": [
+          "id",
+          "word",
+          "zh",
+          "full",
+          "phonetic",
+          "rank",
+          "chapter",
+          "examples"
+        ],
+        "candidate_pool_review": "按实际makeQuestion切片读取约300词候选池并检查近邻词义；未见另一个明显符合建议定义的词。该人工核对不能替代对所有未来题库的语义唯一性保证。",
+        "candidate_words": [
+          {
+            "id": 14338,
+            "word": "firewall",
+            "zh": "防火墙"
+          },
+          {
+            "id": 14385,
+            "word": "sdp",
+            "zh": "会话描述协议（网络缩写）；社会民主党（缩写）"
+          }
+        ]
+      }
+    },
+    {
+      "word_id": 14890,
+      "word": "cola",
+      "current_word": {
+        "id": 14890,
+        "word": "cola",
+        "zh": "可乐；结肠或冒号的复数形式（专业）",
+        "full": "常用：可乐；结肠或冒号的复数形式（专业）\n结肠, 冒号, 科朗\n[化] 可乐果; 可乐果属; 可乐果干子叶",
+        "phonetic": "'kәulә",
+        "en": "large genus of African trees bearing kola nuts",
+        "rank": 17680,
+        "chapter": 15
+      },
+      "current_examples": [
+        {
+          "text": "I'd like a cola with ice.",
+          "translation": "我想要一杯加冰的可乐。",
+          "source": "original"
+        },
+        {
+          "text": "She spilled cola on the table.",
+          "translation": "她把可乐洒在了桌上。",
+          "source": "original"
+        }
+      ],
+      "suggested_change": {
+        "field": "en",
+        "before": "large genus of African trees bearing kola nuts",
+        "after": "A sweet, dark brown fizzy soft drink of the type made by Coca-Cola and Pepsi."
+      },
+      "reason": "当前英文是植物属，无法对应点饮料和洒饮料两句。新题干限定可乐类深色汽水，避免仅写soft drink而可同时指任意汽水。",
+      "sources": [
+        {
+          "url": "https://www.oxfordlearnersdictionaries.com/definition/english/cola",
+          "access": "完整官方词条已读取",
+          "support": "甜味棕色无酒精汽水，列出Coca-Cola、Coke、Pepsi作为相关品牌；也有树木次义。品牌仅帮助限定饮料类别，不把cola等同一个商标。"
+        },
+        {
+          "url": "https://dictionary.cambridge.org/es/diccionario/esencial-ingles-britanico/cola",
+          "access": "官方搜索结果完整词条",
+          "support": "甜味深棕色带气泡饮料及一杯或一罐的可数用法；两句分别对应可数和不可数用法。"
+        }
+      ],
+      "semantic_review": {
+        "status": "confirmed_primary_sense_mismatch",
+        "examples_reviewed": 2,
+        "examples_match_proposed_sense": true,
+        "definition_is_original_paraphrase": true,
+        "humanizer_review": "三条逐句审读；使用直接、具体的英文描述，不搬用词典整句，不夸大能力或混写不相关义项。",
+        "unchanged_fields": [
+          "id",
+          "word",
+          "zh",
+          "full",
+          "phonetic",
+          "rank",
+          "chapter",
+          "examples"
+        ],
+        "candidate_pool_review": "按实际makeQuestion切片读取约300词候选池并检查近邻词义；未见另一个明显符合建议定义的词。该人工核对不能替代对所有未来题库的语义唯一性保证。",
+        "candidate_words": [
+          {
+            "id": 14890,
+            "word": "cola",
+            "zh": "可乐；结肠或冒号的复数形式（专业）"
+          }
+        ]
+      }
+    }
+  ],
+  "question_generation": {
+    "actual_path": [
+      {
+        "file": "app.js",
+        "line": 166,
+        "function": "init",
+        "behavior": "加载/data/words.json?v=15到words；例句单独加载，不能覆盖w.en。"
+      },
+      {
+        "file": "app.js",
+        "line": 118,
+        "function": "startLevel",
+        "behavior": "每关取连续10词，关号ceil(id/10)。"
+      },
+      {
+        "file": "app.js",
+        "line": 134,
+        "function": "buildQueue",
+        "behavior": "按关号计算章节；第8章起且w.en非空，第一轮题直接生成definition。"
+      },
+      {
+        "file": "app.js",
+        "line": 117,
+        "function": "makeQuestion",
+        "behavior": "definition使用C.choices(w,pool,word)，近邻词约300项候选，最终通常四选一。"
+      },
+      {
+        "file": "core.js",
+        "line": 119,
+        "function": "choices",
+        "behavior": "按word文字去重，不检验候选词与题干的语义唯一性。"
+      },
+      {
+        "file": "app.js",
+        "line": 137,
+        "function": "qBase",
+        "behavior": "definition题干title直接等于w.en。"
+      },
+      {
+        "file": "app.js",
+        "line": 138,
+        "function": "renderQuestion",
+        "behavior": "将qBase.title经esc显示为题干；选项显示o.word。"
+      },
+      {
+        "file": "app.js",
+        "line": 142,
+        "function": "answer",
+        "behavior": "选择题按目标词ID判对，不按定义文字做语义判断。"
+      }
+    ],
+    "runtime_check": "用Node VM抽取当前实际buildQueue/makeQuestion/qBase函数并加载真实EnglishCore，逐词启动对应关卡的首轮题；无浏览器、服务器、产品写入。",
+    "runtime_results": [
+      {
+        "word_id": 13222,
+        "level": 1323,
+        "chapter": 14,
+        "type": "definition",
+        "title": "a worker who routes shipments for distribution and delivery",
+        "option_ids": [
+          13080,
+          13180,
+          13222,
+          13153
+        ],
+        "correct_option_present": true
+      },
+      {
+        "word_id": 14338,
+        "level": 1434,
+        "chapter": 15,
+        "type": "definition",
+        "title": "(colloquial) the application of maximum thrust",
+        "option_ids": [
+          14338,
+          14359,
+          14316,
+          14438
+        ],
+        "correct_option_present": true
+      },
+      {
+        "word_id": 14890,
+        "level": 1489,
+        "chapter": 15,
+        "type": "definition",
+        "title": "large genus of African trees bearing kola nuts",
+        "option_ids": [
+          14762,
+          14860,
+          14890,
+          14897
+        ],
+        "correct_option_present": true
+      }
+    ],
+    "conclusion": "三词均位于第8章后，en非空，已实际验证生成definition题，故现错义会直接成为题干。"
+  },
+  "input_hashes": {
+    "data/words.json": "58f2bf27a8c88697e867ced7658931b32a53579b54f76485f516d5fae7fb298f",
+    "data/examples.json": "139c2ee4f6c867ca846cf393357698f147155d581baf144396694caeab624551",
+    "app.js": "12f665c9db5ebc04c6085e7ce7777ea6abbfb730c99b562f5a767c036a27a763",
+    "core.js": "a6b7f2843d1f3f2e28ea81f79805174bb0bfb02c4f2cbb6931dcc78a85377f63"
+  },
+  "limitations": [
+    "词典403记录为读取限制，未把失败页面当有效来源；使用已取得的官方正文或官方搜索缓存。",
+    "这里没有建议修改zh/full或例句；旧full中的其他拼写或词义问题不在本次修改范围。",
+    "三条定义仅提出待root审读应用；当前产品未更新。"
+  ]
+}

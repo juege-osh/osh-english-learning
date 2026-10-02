@@ -755,3 +755,18 @@ prosthesis采用假肢、人工假体，matchup改为对阵，generational采用
 审读400简义800句，含167词334句外部语料，修64词71字段。四份 `reviewed_examples_701_800.json` 至 `reviewed_examples_1001_1100.json` 为冻结的稀疏修订记录。重建原批次后最后运行 `python3 qa/review_main_701_1100.py --apply`；它校验前后值、稳定ID和原来源字段，保留完整词典尾部。`example-provenance.test.js` 用实际渲染函数检查外部原译链接、本站校订标志、简体转换、本站原创及安全转义。最终独立范围检查和发布结果见持久回执。
 
 释义参考：[NASA月食说明](https://science.nasa.gov/moon/eclipses/)、[Cambridge go ahead](https://dictionary.cambridge.org/dictionary/english/go-ahead)、[Cambridge civil](https://dictionary.cambridge.org/dictionary/english/civil)、[Cambridge firm](https://dictionary.cambridge.org/dictionary/english/firm)、[Merriam-Webster recognize](https://www.merriam-webster.com/dictionary/recognize)、[Merriam-Webster sister](https://www.merriam-webster.com/dictionary/sister)。其余词典来源随四份修订记录保留；保留正确语料，不为凑数量重写。
+
+
+## v1.31.8：核查待核词，修正英英题错义
+
+本批核查keye、thril、WHE、Alm、de和II的原词库字段、历史字形及外语性质。上游固定版本ECDICT完整CSV的SHA256与项目原记录一致；rank按frq优先、缺时bnc取值，不是学习ID，也不能证明现代常用程度。词表只做有限规则过滤，仍含专名、外语成分、缩写和历史形式。
+
+保留所有词号、词头顺序和原词典正文，实际修8词15字段。router、firewall和cola的英英题不再用派送工人、最大推力和植物属义；分别采用网络设备、安全规则与可乐饮料义。de取消错配的特拉华州英英义和单一英语音标，Alm识别句按德语名词大写并撤下错配音标。keye补充中古英语key字形记录，thril注明历史异体；原医用、小巷和WHE工程扩写仍待核，不因找到同形缩写就宣布核实。
+
+四份 `qa/research_*_v1318.json` 保存已核来源与支持边界；`qa/reviewed_auxiliary_v1318.json` 保存具体前后值。重建所有历史编辑层后，先恢复701–1100质量修订，再运行 `python3 qa/review_auxiliary_v1318.py --apply`。正确句子保留，不替换旧ID或继承成别的词的学习进度。
+
+主线20000词、40000双语例句和十行业8112路线条目、16224行业双语例句的覆盖量保持；覆盖不等于全库专业审校。英英辅助定义尚未全量审读，44音专业听审、真人录音试听及真实支付仍未完成。本批测试、整仓同步、预览与正式发布结果见 `state/evidence-v1318/verification.json`。
+
+核义参考：[ECDICT固定源文件](https://github.com/skywind3000/ECDICT/blob/bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b/ecdict.csv)、[Mayhew与Skeat中古英语词典](https://www.gutenberg.org/cache/epub/10625/pg10625-images.html)、[古苏格兰语词典](https://dsl.ac.uk/entry/dost00086253)、[Collins德语Alm](https://www.collinsdictionary.com/dictionary/german-english/alm)、[Cisco路由器](https://www.cisco.com/site/us/en/learn/topics/small-business/what-is-a-router.html)、[Cisco防火墙](https://www.cisco.com/site/us/en/learn/topics/security/what-is-a-firewall.html)、[Oxford cola](https://www.oxfordlearnersdictionaries.com/definition/english/cola)。其他原始资料及访问限制见四份research记录，不把未打开或邻近字形资料当作确定原义。
+
+本批检查通过：62项顶层Go、20个子测试（6.871秒）、vet、20k核心、8112行业句子目标、12项实际函数英英出题与判分、8项来源渲染、47项全新隔离四账号检查。47项不含站长审核预约；支付为模拟。Mac/Linux各77完整嵌入资源共154项字节匹配。隔离页面实际展开keye、thril、WHE与Alm性质/双语；19004实际展开Alm并点击44px朗读，收藏保持☆，未做真人听审。仅内容与来源说明变更，未重复全量race、全套前端、小屏布局或付费AI请求。
