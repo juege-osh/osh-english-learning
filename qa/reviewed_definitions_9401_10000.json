@@ -1,0 +1,935 @@
+{
+  "version": "1.32.3",
+  "range": [
+    9401,
+    10000
+  ],
+  "status": "frozen",
+  "base_head": "831df46163d98bca3d84e04be7672826e2ac5dc4",
+  "reviewed_words": 600,
+  "reviewed_english_example_contexts": 1200,
+  "changed_words": 106,
+  "replaced_definitions": 105,
+  "cleared_mismatched_definitions": 1,
+  "existing_empty_en_preserved": 23,
+  "unchanged_correct": 471,
+  "reports": [
+    {
+      "range": "9401-9600",
+      "file": "qa/review_definitions_9401_9600.json",
+      "sha256": "6a5cca2cd6e9170123ae958b3f2acf21847a1ed4a2f36447dbca35d2540848b0",
+      "counts": {
+        "unchanged": 158,
+        "changed": 36,
+        "empty": 6
+      }
+    },
+    {
+      "range": "9601-9800",
+      "file": "qa/review_definitions_9601_9800.json",
+      "sha256": "a800ab17ce1601612f139e6a7f329dbc8e4e0ac99db5dc1f07fd964aefad9a95",
+      "counts": {
+        "unchanged": 161,
+        "empty": 5,
+        "changed": 34
+      }
+    },
+    {
+      "range": "9801-10000",
+      "file": "qa/review_definitions_9801_10000.json",
+      "sha256": "380c5f97bbee96d67c692a630a90a54d7c21652ab06c635ed01f0493209d6963",
+      "counts": {
+        "unchanged": 153,
+        "changed": 35,
+        "empty": 12
+      }
+    }
+  ],
+  "root_review": "root实际逐项读600个现存en、中文义及1200组双语，再读三作者105项建议全部接受；另按Oxford来源修plop无依据限制，单列root adjustment。所有作者及整批审读冻结后才apply。",
+  "root_sources_checked": [
+    {
+      "url": "https://www.energy.gov/science/doe-explainsneutrinos",
+      "supports": "中微子具有非零极小质量，不能教零质量。"
+    },
+    {
+      "url": "https://www.who.int/teams/maternal-newborn-child-adolescent-health-and-ageing/maternal-health/midwifery",
+      "supports": "midwife是有资格的从业者，不限女性。"
+    },
+    {
+      "url": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/pathologist",
+      "supports": "通过细胞及组织检查辨识疾病的专业范围。"
+    },
+    {
+      "url": "https://japan-food.jetro.go.jp/en/recipe/111.html",
+      "supports": "醋调味米饭和蔬菜寿司说明不必生鱼。"
+    },
+    {
+      "url": "https://www.oxfordlearnersdictionaries.com/definition/english/plop_1",
+      "supports": "落水短声不要求物体圆形或无水花。"
+    }
+  ],
+  "root_adjustments": [
+    {
+      "id": 9727,
+      "author_after": "the noise of a rounded object dropping into a liquid without a splash",
+      "final_after": "a short sound made when something drops into liquid; to drop or put something down with this sound",
+      "reason": "root复核Oxford原页面后，去掉物体必须圆形及绝不溅水这两个无依据的必要限制；保留扑通声和放下动作基本义。"
+    }
+  ],
+  "boundaries": [
+    "仅en辅助定义；学习ID、词头、中文义、音标、完整原词典和全部例句保持。",
+    "buz只可证实具体厂商命令，不证实通用词头性质；清en回退中文，继续待核。",
+    "正确基本义和原空保留；不强求每个多义全部展开。",
+    "覆盖不是全库专业语言审校，未验收真人音频。"
+  ],
+  "changes": [
+    {
+      "id": 9414,
+      "word": "dementia",
+      "field": "en",
+      "before": "mental deterioration of organic or functional origin",
+      "after": "An ongoing decline in memory, thinking, and other mental abilities that interferes with daily life.",
+      "reason": "原义将器质性和功能性来源并列，且泛称精神退化；NHS 将其说明为脑功能持续下降的症状群。改为日常生活受影响的认知能力下降，避免旧病因分类误导。"
+    },
+    {
+      "id": 9419,
+      "word": "gaping",
+      "field": "en",
+      "before": "v look with amazement; look stupidly",
+      "after": "Wide open or very large and obvious, especially of a hole or gap.",
+      "reason": "原en解释惊讶地盯着看的动词，两句均是形容屋顶大洞或时间线明显缺口的形容词，词义及词性错配。"
+    },
+    {
+      "id": 9430,
+      "word": "blackout",
+      "field": "en",
+      "before": "a suspension of radio or tv broadcasting",
+      "after": "A loss of electrical power or a temporary loss of consciousness; also, a restriction on news or broadcasts.",
+      "reason": "原en只指广播暂停；当前两句分别停电和意识短暂丧失。保留信息封锁类义并纠正实际常用义错配。"
+    },
+    {
+      "id": 9440,
+      "word": "saviour",
+      "field": "en",
+      "before": "n a teacher and prophet born in Bethlehem and active in Nazareth; his life and sermons form the basis for Christianity (circa 4 BC - AD 29)",
+      "after": "Someone who rescues others from danger or serious difficulty.",
+      "reason": "原en只写耶稣的传记；两句指找到护照的人和救助村民的医生，属于普通救星而非指定宗教人物。"
+    },
+    {
+      "id": 9444,
+      "word": "espionage",
+      "field": "en",
+      "before": "the systematic use of spies to get military or political secrets",
+      "after": "The secret gathering of another country’s or company’s confidential information through spying.",
+      "reason": "原义限定军事或政治秘密，排除了第一句明确的工业间谍活动；Oxford 也列出刺探公司秘密。"
+    },
+    {
+      "id": 9457,
+      "word": "delve",
+      "field": "en",
+      "before": "v turn up, loosen, or remove earth",
+      "after": "To investigate a subject deeply or search carefully for information.",
+      "reason": "原en仅是翻松或移除土壤；两句都用 delve into 表示深入探究历史或家事，应采用实际研究义。"
+    },
+    {
+      "id": 9470,
+      "word": "adamant",
+      "field": "en",
+      "before": "impervious to pleas, persuasion, requests, reason; she would have none of him\"- W.Churchill",
+      "after": "Firmly determined and unwilling to change an opinion or decision.",
+      "reason": "原en后半夹入缺少开头的引语及丘吉尔署名，不是完整清洁的释义。保留不接受劝说的正确基本义，移除误入题干的句子。"
+    },
+    {
+      "id": 9477,
+      "word": "graphite",
+      "field": "en",
+      "before": "used as a lubricant and as a moderator in nuclear reactors",
+      "after": "A soft, dark form of carbon used in pencil cores and as a lubricant.",
+      "reason": "原en只列润滑剂及核反应堆用途，没有说明是什么材料，且两句明确是铅笔和绘画。Oxford 确认为碳的一种柔软黑色矿物，改为材料性质定义。"
+    },
+    {
+      "id": 9481,
+      "word": "galley",
+      "field": "en",
+      "before": "a large medieval vessel with a single deck propelled by sails and oars with guns at stern and prow; a complement of 1,000 men; used mainly in the Mediterranean for war and trading",
+      "after": "A kitchen on a ship or aircraft; also, a rowing ship or a printed proof for checking before publication.",
+      "reason": "原en限定中世纪船只并把千人编制定为必备，且没有对应两句厨房和校样。改为经核实的厨房、旧桨船及印刷校样，避免不实固定人数。"
+    },
+    {
+      "id": 9484,
+      "word": "hepatitis",
+      "field": "en",
+      "before": "inflammation of the liver caused by a virus or a toxin",
+      "after": "Inflammation of the liver, which can have several different causes.",
+      "reason": "原en把病因限定病毒或毒素；NIDDK 明确自身免疫也可引起肝炎。保留肝脏炎症核心义，去掉错误排他性病因限制。"
+    },
+    {
+      "id": 9493,
+      "word": "subversive",
+      "field": "en",
+      "before": "n a radical supporter of political or social revolution",
+      "after": "Intended to undermine established authority, institutions, or accepted ideas.",
+      "reason": "原en只定义支持革命的人；中文常用义与两句戏剧、笑话均为挑战权威或既有观念的形容词，改为对应性质。"
+    },
+    {
+      "id": 9495,
+      "word": "tinker",
+      "field": "en",
+      "before": "a person who enjoys fixing and experimenting with machines and their parts",
+      "after": "To make small repairs or experimental changes, especially without major improvements.",
+      "reason": "原en定义修机器的人；两句均为 tinker with 的摆弄、小修小改动作，第二句还涉及时间表，不是人物职业。采用 Oxford 核实的动词义。"
+    },
+    {
+      "id": 9499,
+      "word": "dummy",
+      "field": "en",
+      "before": "a person who does not talk",
+      "after": "A model or imitation used in place of a real person or object.",
+      "reason": "原en是不会说话的人，既不对应碰撞测试假人也不对应展示手机模型；改为替代真实人或物的模型、仿制品。"
+    },
+    {
+      "id": 9503,
+      "word": "fieldwork",
+      "field": "en",
+      "before": "a temporary fortification built by troops in the field",
+      "after": "Research or practical work done in a real-world setting rather than in a classroom or laboratory.",
+      "reason": "原en是临时野战工事，和中文实地调查、两句村庄调查及课程野外工作错配；应指实地研究或实践。"
+    },
+    {
+      "id": 9508,
+      "word": "trample",
+      "field": "en",
+      "before": "the sound of heavy treading or stomping",
+      "after": "To tread heavily on something, often damaging it; also, to disregard someone’s rights or wishes.",
+      "reason": "原en仅指重踏的声音，当前两句均是踩坏花和踩踏倒地者的动作，改为实际动词义；中文完整词典另列无视义。"
+    },
+    {
+      "id": 9511,
+      "word": "timid",
+      "field": "en",
+      "before": "people who are fearful and cautious",
+      "after": "Easily frightened or lacking confidence in dealing with others.",
+      "reason": "原en把词头定义为一群胆怯的人；两句修饰小猫和描述说话者，中文也标形容词，应写胆怯或缺乏自信的性质。"
+    },
+    {
+      "id": 9512,
+      "word": "destabilize",
+      "field": "en",
+      "before": "become unstable",
+      "after": "To make a situation, organization, or region less stable.",
+      "reason": "原en是 become unstable 自身变得不稳定，遗漏致使关系；两句都是变化或冲突使团队、地区不稳定，须改为及物致使义。"
+    },
+    {
+      "id": 9514,
+      "word": "taboo",
+      "field": "en",
+      "before": "a prejudice (especially in Polynesia and other South Pacific islands) that prohibits the use or mention of something because of its sacred nature",
+      "after": "A social or cultural rule against doing or discussing something; also, forbidden by such a rule.",
+      "reason": "原en把禁忌限定神圣事物并突出特定海岛地区；当前家里不谈钱和社会禁忌不必出于宗教。Oxford 核实日常冒犯或尴尬话题也可禁忌。"
+    },
+    {
+      "id": 9522,
+      "word": "felon",
+      "field": "en",
+      "before": "a purulent infection at the end of a finger or toe in the area surrounding the nail",
+      "after": "A person who has committed a serious crime, especially in North American legal usage.",
+      "reason": "原en采用指端感染的医学同形义；两句是已定罪重罪犯获释及生活困难，必须采用已核实的法律人物义。"
+    },
+    {
+      "id": 9529,
+      "word": "creepy",
+      "field": "en",
+      "before": "annoying and unpleasant",
+      "after": "Strange or disturbing in a way that causes fear or unease.",
+      "reason": "原en只有讨厌、不愉快，缺少令人恐惧或不安的关键性质；阴森空房和持续盯人都使人发毛，并非普通恼人。"
+    },
+    {
+      "id": 9532,
+      "word": "rummage",
+      "field": "en",
+      "before": "a jumble of things to be given away",
+      "after": "To search through things by moving them around; also, an untidy search of this kind.",
+      "reason": "原en是准备赠送的杂物堆；两句均指翻抽屉或翻照片的搜寻动作、一次翻找，采用经 Oxford 核实的翻动寻找义。"
+    },
+    {
+      "id": 9533,
+      "word": "neutrino",
+      "field": "en",
+      "before": "an elementary particle with zero charge and zero mass",
+      "after": "An electrically neutral elementary particle with a very small mass.",
+      "reason": "原en断言零质量，CERN 说明中微子有极小质量；保留零电荷和基本粒子性质，纠正已过时的零质量事实。"
+    },
+    {
+      "id": 9541,
+      "word": "chancellor",
+      "field": "en",
+      "before": "the person who is head of state (in several countries)",
+      "after": "The head of government in Germany or Austria, or the official head of certain universities.",
+      "reason": "原en把职位写为国家元首，德国总理是政府首脑；另一句是大学校监，Oxford 明确列出政府首脑与大学负责人，纠正角色事实。"
+    },
+    {
+      "id": 9550,
+      "word": "impatience",
+      "field": "en",
+      "before": "a restless desire for change and excitement",
+      "after": "Annoyance at having to wait, or an eager desire for something to happen soon.",
+      "reason": "原en特指追求变化和刺激，不是一般不耐烦；跺脚和说话语气两句都对应等不及或焦躁。Oxford 确认等候烦躁及急切期待义。"
+    },
+    {
+      "id": 9552,
+      "word": "grace",
+      "field": "en",
+      "before": "(Christian theology) a state of sanctification by God; the state of one who is under such divine influence",
+      "after": "Elegance in movement or considerate, dignified behavior; also, divine favor in Christian belief.",
+      "reason": "原en仅限基督教神学恩典状态；两句是动作优雅、面对批评有风度。补入实际主要常用义并保留已列的宗教义。"
+    },
+    {
+      "id": 9560,
+      "word": "parchment",
+      "field": "en",
+      "before": "a superior paper resembling sheepskin",
+      "after": "Animal skin prepared for writing; also, a type of paper used for writing or baking.",
+      "reason": "原en只有类似羊皮的纸，容易把古文书所用真实动物皮也当纸；Oxford 区分皮制书写材料和包括烘焙纸的纸张，两句对应不同材料义。"
+    },
+    {
+      "id": 9568,
+      "word": "immortal",
+      "field": "en",
+      "before": "a person (such as an author) of enduring fame",
+      "after": "Living forever, or remembered and admired long after death.",
+      "reason": "原en定义长久有名的人，是名词；两句形容永生女王与歌迷认为不朽的歌手，应定义不死或声名长存的性质。"
+    },
+    {
+      "id": 9571,
+      "word": "assertive",
+      "field": "en",
+      "before": "aggressively self-assured",
+      "after": "Confident and clear in expressing opinions, needs, or wishes.",
+      "reason": "原en把 aggressively 当必要特征，会把明确自信表达误作好斗；第一句明确不失礼貌，Oxford 区分 assertive 与 aggressive。"
+    },
+    {
+      "id": 9572,
+      "word": "spore",
+      "field": "en",
+      "before": "a small usually single-celled asexual reproductive body produced by many nonflowering plants and fungi and some bacteria and protozoans and that are capable of developing into a new individual without sexual fusion",
+      "after": "A tiny reproductive cell produced by fungi and certain plants that can develop into a new organism.",
+      "reason": "原en将孢子一律归为无性生殖，并把细菌休眠孢子同列为生殖体；OpenStax 明确真菌有有性和无性孢子，细菌内生孢子用于生存。两句真菌及显微镜观察，采用真菌、部分植物的生殖细胞基本义。"
+    },
+    {
+      "id": 9579,
+      "word": "washer",
+      "field": "en",
+      "before": "someone who washes things for a living",
+      "after": "A machine for washing clothes, or a flat ring fitted around a bolt or screw.",
+      "reason": "原en是以洗东西为业的人；两句分别洗衣机和螺栓垫圈，都不是人物，改为当前两种实物义。"
+    },
+    {
+      "id": 9581,
+      "word": "maternity",
+      "field": "en",
+      "before": "n the state of being pregnant; the period from conception to birth when a woman carries a developing fetus in her uterus",
+      "after": "The state of being or becoming a mother; relating to pregnancy, childbirth, or care after birth.",
+      "reason": "原en只给受孕到出生的孕期，无法恰当说明产假与分娩病区，并遗漏母亲身份；Oxford 说明为成为或作为母亲的状态及生孩子的病区。采用孕产相关性质。"
+    },
+    {
+      "id": 9584,
+      "word": "visualise",
+      "field": "en",
+      "before": "v view the outline of by means of an X-ray",
+      "after": "To form a mental picture of something or make it easier to understand through images.",
+      "reason": "原en限定使用 X 光观察轮廓；两句是想象变浅的墙和用图解理解部件，应改为想象、使形象化。"
+    },
+    {
+      "id": 9587,
+      "word": "seminal",
+      "field": "en",
+      "before": "pertaining to or containing or consisting of semen",
+      "after": "Having a major influence on later work or developments; also, relating to semen.",
+      "reason": "原en只有精液的专业义，两句文学作品和研究影响都用开创性、影响深远义。Oxford 同时列两义，保留专业义但以实际常用义为首。"
+    },
+    {
+      "id": 9591,
+      "word": "depressive",
+      "field": "en",
+      "before": "someone suffering psychological depression",
+      "after": "Relating to depression or its symptoms.",
+      "reason": "原en定义患抑郁的人，是名词；两句是 depressive episode 与 depressive symptoms 的医学形容词用法，Oxford 核实相应性质义。"
+    },
+    {
+      "id": 9597,
+      "word": "hive",
+      "field": "en",
+      "before": "a teeming multitude",
+      "after": "A home or container for a colony of bees; also, a place full of busy activity.",
+      "reason": "原en是蜂拥的大群，和蜜蜂返回蜂箱的场所错配；第二句繁忙厨房用蜂巢隐喻，改为蜂群住所及繁忙场所。"
+    },
+    {
+      "id": 9600,
+      "word": "subvert",
+      "field": "en",
+      "before": "destroy completely",
+      "after": "To undermine or overturn an established system, authority, belief, or convention.",
+      "reason": "原en要求完全毁灭，范围过强；小说颠覆套路和传言破坏信任不要求对象被彻底消灭，应写动摇、颠覆或削弱既有秩序。"
+    },
+    {
+      "id": 9604,
+      "word": "caveat",
+      "field": "en",
+      "before": "(law) a formal notice filed with a court or officer to suspend a proceeding until filer is given a hearing",
+      "after": "a warning or condition that limits what is being agreed or claimed",
+      "reason": "旧定义只讲法院程序中的正式异议；两句是同意时附条件和报告的限制提醒，改回一般提醒或保留条件。"
+    },
+    {
+      "id": 9607,
+      "word": "abnormality",
+      "field": "en",
+      "before": "an abnormal physical condition resulting from defective genes or developmental deficiencies",
+      "after": "a feature or condition that differs from what is normal",
+      "reason": "旧定义把异常限于遗传或发育缺陷；仪器读数异常与扫描结果均不要求这两种原因。"
+    },
+    {
+      "id": 9613,
+      "word": "quicken",
+      "field": "en",
+      "before": "give life or energy to",
+      "after": "to become faster or make something happen faster",
+      "reason": "两句脉搏和脚步均指加快；旧定义赋予生命或活力与当前常用义不符。"
+    },
+    {
+      "id": 9624,
+      "word": "horrifying",
+      "field": "en",
+      "before": "v fill with apprehension or alarm; cause to be unpleasantly surprised",
+      "after": "causing intense fear or shock",
+      "reason": "当前是描述故事和破坏程度的形容词；旧动词定义还把程度降到普通的不愉快惊讶。"
+    },
+    {
+      "id": 9626,
+      "word": "abduct",
+      "field": "en",
+      "before": "pull away from the body",
+      "after": "to take someone away illegally, usually by force",
+      "reason": "旧定义是肢体外展；商人被绑架和儿童绑架语境都需要非法劫持人的义项。"
+    },
+    {
+      "id": 9627,
+      "word": "drone",
+      "field": "en",
+      "before": "stingless male bee in a colony of social bees (especially honeybees) whose sole function is to mate with the queen",
+      "after": "an aircraft flown without an onboard pilot, or a continuous low humming sound",
+      "reason": "旧定义是雄蜂，当前中文与无人机、发动机嗡嗡声两句均不匹配。"
+    },
+    {
+      "id": 9629,
+      "word": "sitter",
+      "field": "en",
+      "before": "Dutch astronomer who calculated the size of the universe and suggested that it is expanding (1872-1934)",
+      "after": "someone who temporarily looks after a child, or poses for a portrait",
+      "reason": "旧定义错接了荷兰天文学家de Sitter；两句是照看孩子的人和肖像模特。"
+    },
+    {
+      "id": 9631,
+      "word": "thrash",
+      "field": "en",
+      "before": "a swimming kick used while treading water",
+      "after": "to beat someone severely, defeat them decisively, or move about violently",
+      "reason": "旧定义是踩水时的泳姿动作；当前痛打、大胜和猛烈挣扎不是这个名词义。"
+    },
+    {
+      "id": 9634,
+      "word": "boon",
+      "field": "en",
+      "before": "very close and convivial",
+      "after": "something that brings a useful benefit or advantage",
+      "reason": "旧定义是boon companion中的亲密友好；公交改善和免费餐食都是名词好处。"
+    },
+    {
+      "id": 9635,
+      "word": "pointless",
+      "field": "en",
+      "before": "not having a point especially a sharp point",
+      "after": "having no useful purpose or meaning",
+      "reason": "旧定义说没有尖端；争论和会议没有意义，均不是物体不尖锐。"
+    },
+    {
+      "id": 9645,
+      "word": "converse",
+      "field": "en",
+      "before": "a proposition obtained by conversion",
+      "after": "to have a conversation; the opposite situation or relationship",
+      "reason": "旧定义只讲逻辑命题的换位；两句分别是交谈和相反情形，需回到当前常用义。"
+    },
+    {
+      "id": 9646,
+      "word": "unborn",
+      "field": "en",
+      "before": "not yet brought into existence",
+      "after": "not yet born, especially while still developing in the womb",
+      "reason": "两句均指尚在胎内的孩子；旧not yet brought into existence容易把未出生误说成尚不存在。"
+    },
+    {
+      "id": 9647,
+      "word": "stroller",
+      "field": "en",
+      "before": "n someone who walks at a leisurely pace",
+      "after": "a wheeled chair pushed by an adult to carry a baby or young child",
+      "reason": "旧散步者是正确但此处错配的义项；折叠和留在咖啡馆外的都是婴儿推车。"
+    },
+    {
+      "id": 9650,
+      "word": "conformity",
+      "field": "en",
+      "before": "correspondence in form or appearance",
+      "after": "following rules or standards, or matching what is expected",
+      "reason": "旧定义限定外形相似；学校要求循规蹈矩和设计符合标准均是规范上的遵从或符合。"
+    },
+    {
+      "id": 9661,
+      "word": "dormant",
+      "field": "en",
+      "before": "in a condition of biological rest or suspended animation",
+      "after": "temporarily inactive, with the possibility of becoming active again",
+      "reason": "旧定义只讲生物休眠；账户和火山暂未活动需要一般暂时不活跃的义项。"
+    },
+    {
+      "id": 9667,
+      "word": "juncture",
+      "field": "en",
+      "before": "an event that occurs at a critical time",
+      "after": "a particular point or stage, especially when an important decision is needed",
+      "reason": "旧定义把关头说成发生在关键时刻的事件；两句指时间或阶段本身。"
+    },
+    {
+      "id": 9675,
+      "word": "buz",
+      "field": "en",
+      "before": "& n. See Buzz.",
+      "after": "",
+      "reason": "旧See Buzz交叉参照没有可用题意，且与现蜂鸣器标记不符。厂商手册能证实buz作为蜂鸣器命令，但不足以确认它是通行英语缩写；清空辅助定义回退中文，不猜统一英语词义。"
+    },
+    {
+      "id": 9676,
+      "word": "purge",
+      "field": "en",
+      "before": "the act of clearing yourself (or another) from some stigma or charge",
+      "after": "to remove unwanted people or things completely",
+      "reason": "旧定义是洗清污名或指控；删除数据库条目和政治清洗均是清除，而非证明清白。"
+    },
+    {
+      "id": 9681,
+      "word": "legitimize",
+      "field": "en",
+      "before": "v make legal",
+      "after": "to make something accepted as proper, justified, or lawful",
+      "reason": "旧make legal仅限法律许可；仪式认可权力主张和奖励使行为显得正当，不要求改变法律地位。"
+    },
+    {
+      "id": 9689,
+      "word": "calculator",
+      "field": "en",
+      "before": "an expert at calculation (or at operating calculating machines)",
+      "after": "a device or computer program used to perform arithmetic",
+      "reason": "旧定义指计算专家；两句的学生使用工具和桌上物品都是计算器。"
+    },
+    {
+      "id": 9693,
+      "word": "inspirational",
+      "field": "en",
+      "before": "imparting a divine influence on the mind and soul",
+      "after": "encouraging people and giving them hope or motivation",
+      "reason": "旧定义要求神圣力量影响心灵；讲话和引语的鼓舞作用不含宗教限定。"
+    },
+    {
+      "id": 9700,
+      "word": "sushi",
+      "field": "en",
+      "before": "rice (with raw fish) wrapped in seaweed",
+      "after": "a Japanese dish of vinegar-seasoned rice served with fish, vegetables, or other ingredients",
+      "reason": "旧定义把生鱼和海苔包裹作为必要条件；当前黄瓜、牛油果寿司不含鱼，官方蔬菜寿司配方也支持这一点。"
+    },
+    {
+      "id": 9727,
+      "word": "plop",
+      "field": "en",
+      "before": "the noise of a rounded object dropping into a liquid without a splash",
+      "after": "a short sound made when something drops into liquid; to drop or put something down with this sound",
+      "reason": "root复核Oxford原页面后，去掉物体必须圆形及绝不溅水这两个无依据的必要限制；保留扑通声和放下动作基本义。"
+    },
+    {
+      "id": 9748,
+      "word": "puffy",
+      "field": "en",
+      "before": "abnormally distended especially by fluids or gas",
+      "after": "swollen or soft and rounded, as if filled with air",
+      "reason": "旧定义只指液体或气体造成的异常肿胀；夹克和云朵的蓬松形态不是病理异常。"
+    },
+    {
+      "id": 9760,
+      "word": "retribution",
+      "field": "en",
+      "before": "a justly deserved penalty",
+      "after": "punishment or revenge in response to a wrong or injury",
+      "reason": "旧定义预先断定惩罚必然公正应得；反派复仇和小说质疑报复的语境不能这样下判断。"
+    },
+    {
+      "id": 9764,
+      "word": "bloodshed",
+      "field": "en",
+      "before": "the shedding of blood resulting in murder",
+      "after": "violent conflict that causes deaths or injuries",
+      "reason": "旧定义只限造成谋杀的流血；战争和避免流血冲突的语境不要求构成谋杀。"
+    },
+    {
+      "id": 9766,
+      "word": "apprehend",
+      "field": "en",
+      "before": "anticipate with dread or anxiety",
+      "after": "to catch and arrest someone suspected of a crime",
+      "reason": "旧定义指忧惧地预料；当前两句警方行动均是逮捕或抓获。"
+    },
+    {
+      "id": 9780,
+      "word": "solidly",
+      "field": "en",
+      "before": "as an undiversified whole",
+      "after": "firmly or securely, or with strong and consistent support",
+      "reason": "旧定义指作为一个未分化整体；桌子的牢固和支持的坚定都不是整体未分化。"
+    },
+    {
+      "id": 9782,
+      "word": "occupancy",
+      "field": "en",
+      "before": "an act of being a tenant or occupant",
+      "after": "the use of a space, measured by the people it holds or the rooms that are occupied",
+      "reason": "旧定义只讲作为住户占用的行为；标牌最大容纳人数和酒店入住率都是容量或使用数量。"
+    },
+    {
+      "id": 9789,
+      "word": "languish",
+      "field": "en",
+      "before": "become feeble",
+      "after": "to remain neglected or make little progress for a long time",
+      "reason": "旧定义说变虚弱；项目受搁置和画作闲置都指长期得不到推进或重视。"
+    },
+    {
+      "id": 9790,
+      "word": "serpent",
+      "field": "en",
+      "before": "a firework that moves in serpentine manner when ignited",
+      "after": "a snake, especially in literature or traditional stories",
+      "reason": "旧定义是点燃后蛇形移动的烟火；图画和传说里的蛇与该烟火义不符。"
+    },
+    {
+      "id": 9791,
+      "word": "fiddle",
+      "field": "en",
+      "before": "avoid (one's assigned duties)",
+      "after": "an informal word for a violin; to handle or adjust something aimlessly",
+      "reason": "旧定义指逃避职责；当前是小提琴和摆弄设备，需去掉错配的偷懒义。"
+    },
+    {
+      "id": 9793,
+      "word": "petite",
+      "field": "en",
+      "before": "a garment size for short or slender women",
+      "after": "small and short in build, or designed for women of below-average height",
+      "reason": "旧short or slender把瘦高女性也纳入小个子尺码；词典区分娇小身材与面向身高较矮者的衣服。"
+    },
+    {
+      "id": 9794,
+      "word": "stretcher",
+      "field": "en",
+      "before": "a wooden framework on which canvas is stretched and fixed for oil painting",
+      "after": "a flat frame used to carry someone who is injured or ill",
+      "reason": "旧定义是油画绷布木框；救援搬运伤者均使用担架。"
+    },
+    {
+      "id": 9795,
+      "word": "bask",
+      "field": "en",
+      "before": "be exposed",
+      "after": "to enjoy warmth, sunlight, or pleasant attention",
+      "reason": "旧be exposed泛到任何暴露，丢失舒适享受这一核心；猫晒太阳和享受掌声均是愉悦地沉浸其中。"
+    },
+    {
+      "id": 9802,
+      "word": "staunch",
+      "field": "en",
+      "before": "v stop the flow of a liquid",
+      "after": "firmly loyal and committed",
+      "reason": "旧义是止住液体流动的动词；两句坚定支持者及忠实朋友均用形容词。"
+    },
+    {
+      "id": 9804,
+      "word": "spasm",
+      "field": "en",
+      "before": "a painful and involuntary muscular contraction",
+      "after": "a sudden involuntary contraction of a muscle or group of muscles",
+      "reason": "旧义把疼痛写为必要条件；NCI的肌肉突然收缩定义不要求疼痛，保留肌肉痉挛基本义。"
+    },
+    {
+      "id": 9805,
+      "word": "streamline",
+      "field": "en",
+      "before": "contour economically or efficiently",
+      "after": "to simplify a process or system so that it works more efficiently",
+      "reason": "旧义仅说高效地塑造轮廓；预订及打包流程两句讲简化工作程序，不涉及外形。"
+    },
+    {
+      "id": 9810,
+      "word": "medic",
+      "field": "en",
+      "before": "any of several Old World herbs of the genus Medicago having small flowers and trifoliate compound leaves",
+      "after": "a person trained to provide medical care, especially in emergencies or in the armed forces",
+      "reason": "旧义是苜蓿属植物；比赛后检查跑者及前线工作两句都指医护人员。"
+    },
+    {
+      "id": 9814,
+      "word": "prematurely",
+      "field": "en",
+      "before": "(of childbirth) before the end of the normal period of gestation",
+      "after": "earlier than expected or than is appropriate",
+      "reason": "旧义限定在早产；会议提前结束和过早宣布结果均无分娩语境。"
+    },
+    {
+      "id": 9826,
+      "word": "capitalise",
+      "field": "en",
+      "before": "v supply with capital, as of a business by using a combination of capital used by investors and debt capital provided by lenders",
+      "after": "to use a capital letter, or take advantage of an opportunity",
+      "reason": "旧义只说向企业提供资金；两句是首字母大写和利用成功，与当前中文所列义相同。"
+    },
+    {
+      "id": 9835,
+      "word": "queer",
+      "field": "en",
+      "before": "put in a dangerous, disadvantageous, or difficult position",
+      "after": "relating to non-heterosexual or non-cisgender identities; reclaimed by some, offensive as an insult",
+      "reason": "旧动词义把某事搞糟，与酷儿电影和自我认同两句错配；用现有身份义，保留自称及辱称语域边界。"
+    },
+    {
+      "id": 9836,
+      "word": "deportation",
+      "field": "en",
+      "before": "the expulsion from a country of an undesirable alien",
+      "after": "the official removal of a noncitizen from a country",
+      "reason": "旧义以undesirable界定被驱逐者，带评价且把多种法定原因压成一个必要标签；保留官方移除非公民的核心行为义。"
+    },
+    {
+      "id": 9838,
+      "word": "pathologist",
+      "field": "en",
+      "before": "n a doctor who specializes in medical diagnosis",
+      "after": "a doctor specializing in diagnosing disease through examination of cells and tissues",
+      "reason": "旧义把病理科医生泛化为专门作医学诊断的医生，缺少病理检查的专业范围；NCI核实其通过细胞和组织检查识别疾病，与组织样本句匹配。"
+    },
+    {
+      "id": 9857,
+      "word": "primal",
+      "field": "en",
+      "before": "s serving as an essential component",
+      "after": "original or primitive, especially relating to basic instincts",
+      "reason": "旧义说组成必要部分；两句本能恐惧及原始节奏需要原始、本能义，而非组成部分。"
+    },
+    {
+      "id": 9862,
+      "word": "notification",
+      "field": "en",
+      "before": "a request for payment",
+      "after": "a message or notice that informs someone about something",
+      "reason": "旧义仅为付款请求；包裹到达提醒及设置中的通知都不要求付费。"
+    },
+    {
+      "id": 9875,
+      "word": "aptly",
+      "field": "en",
+      "before": "r with competence; in a competent capable manner",
+      "after": "in a suitable or fitting way",
+      "reason": "旧义强调能力胜任；名字贴切及比喻贴切两句讲用词适合对象，而非做事能力。"
+    },
+    {
+      "id": 9878,
+      "word": "cyberspace",
+      "field": "en",
+      "before": "n a computer network consisting of a worldwide network of computer networks that use the TCP/IP network protocols to facilitate data transmission and exchange",
+      "after": "the virtual environment of computer networks where people communicate and share information",
+      "reason": "旧义复制了互联网实体网络及TCP/IP定义；两句讲线上社群和友谊所在的虚拟交流空间。"
+    },
+    {
+      "id": 9881,
+      "word": "midwife",
+      "field": "en",
+      "before": "a woman skilled in aiding the delivery of babies",
+      "after": "a trained person who assists with childbirth",
+      "reason": "旧义把从业者必限女性；现代词典用person，职业培训及产后探访语境不需该性别限制。"
+    },
+    {
+      "id": 9882,
+      "word": "jack",
+      "field": "en",
+      "before": "a small worthless amount",
+      "after": "a device for lifting heavy objects, or a socket for a plug",
+      "reason": "旧义为少得不值一提的数量；千斤顶举车及音频插孔两句均是装置义。"
+    },
+    {
+      "id": 9884,
+      "word": "protracted",
+      "field": "en",
+      "before": "v lengthen in time; cause to be or last longer",
+      "after": "lasting for a long time, especially longer than expected or desired",
+      "reason": "旧义用主动动词让时间变长；延误及谈判两句是持续很久的形容词状态。"
+    },
+    {
+      "id": 9886,
+      "word": "lug",
+      "field": "en",
+      "before": "ancient Celtic god",
+      "after": "to carry or drag something heavy with effort",
+      "reason": "旧义指凯尔特神祇；两句是费力拖搬行李或箱子的动词。"
+    },
+    {
+      "id": 9889,
+      "word": "baffle",
+      "field": "en",
+      "before": "a flat plate that controls or directs the flow of fluid or energy",
+      "after": "to confuse someone or make something difficult to understand",
+      "reason": "旧义为控制流体的挡板；说明及异响让人困惑的两句是动词。"
+    },
+    {
+      "id": 9893,
+      "word": "pavilion",
+      "field": "en",
+      "before": "large and often sumptuous tent",
+      "after": "a decorative building in a garden, or a building used for exhibitions or events",
+      "reason": "旧义仅指大型帐篷；花园避雨亭及湖边展馆两句是建筑义。"
+    },
+    {
+      "id": 9894,
+      "word": "acculturation",
+      "field": "en",
+      "before": "all the knowledge and values shared by a society",
+      "after": "the process of adapting to another culture through contact with it",
+      "reason": "旧义为某社会共享的知识与价值，即文化本身；移民适应及语言学习两句需文化适应过程。"
+    },
+    {
+      "id": 9896,
+      "word": "breaker",
+      "field": "en",
+      "before": "a quarry worker who splits off blocks of stone",
+      "after": "a device that interrupts an electric circuit, or a wave breaking on the shore",
+      "reason": "旧义是采石工人；现有断路器及拍岸碎浪两句均错配。"
+    },
+    {
+      "id": 9914,
+      "word": "moody",
+      "field": "en",
+      "before": "United States tennis player who dominated women's tennis in the 1920s and 1930s (1905-1998)",
+      "after": "having changing moods or a gloomy emotional atmosphere",
+      "reason": "旧义是美国网球运动员的履历；情绪多变及照片忧郁气氛两句均是普通形容词。"
+    },
+    {
+      "id": 9918,
+      "word": "wasp",
+      "field": "en",
+      "before": "a white person of Anglo-Saxon ancestry who belongs to a Protestant denomination",
+      "after": "a flying insect with a narrow waist that can sting",
+      "reason": "旧义是WASP的族群宗教缩写；杯边昆虫及屋檐巢两句都是黄蜂。"
+    },
+    {
+      "id": 9923,
+      "word": "camden",
+      "field": "en",
+      "before": "a city in southwestern New Jersey on the Delaware River near Philadelphia",
+      "after": "a borough in London",
+      "reason": "旧义指新泽西城市；第二句明确London，可用可靠市政来源确认地点义；第一句普通人名不足以判定具体人物。"
+    },
+    {
+      "id": 9928,
+      "word": "formative",
+      "field": "en",
+      "before": "minimal language unit that has a syntactic (or morphological) function",
+      "after": "having an important influence on how someone or something develops",
+      "reason": "旧义是具语法功能的语言单位名词；成长岁月及首份工作的影响两句均是形容词。"
+    },
+    {
+      "id": 9929,
+      "word": "helium",
+      "field": "en",
+      "before": "a very light colorless element that is one of the six inert gasses; the most difficult gas to liquefy; occurs in economically extractable amounts in certain natural gases (as those found in Texas and Kansas)",
+      "after": "a very light, colorless noble gas with atomic number 2",
+      "reason": "保留氦元素核心，删除未限定天然范围的六种惰性气体总数说法；RSC核实氦为第18族、原子序数2的无色气体。"
+    },
+    {
+      "id": 9930,
+      "word": "crumple",
+      "field": "en",
+      "before": "v fall apart",
+      "after": "to crush or fold something into wrinkles, or collapse under pressure",
+      "reason": "旧义fall apart易教成散成碎片；收据揉皱及盒子受压变形均是皱折或塌瘪，并不必散开。"
+    },
+    {
+      "id": 9945,
+      "word": "verbally",
+      "field": "en",
+      "before": "as a verb",
+      "after": "using spoken words rather than writing, or using words in general",
+      "reason": "旧义as a verb误教为以动词形式；口头批准和言语辱骂两句是言语方式。"
+    },
+    {
+      "id": 9952,
+      "word": "attrition",
+      "field": "en",
+      "before": "sorrow for sin arising from fear of damnation",
+      "after": "a gradual loss of strength, resources, or staff over time",
+      "reason": "旧义是因惧怕地狱惩罚而悔罪的宗教义；自然减员及消耗战两句均指逐渐损耗。"
+    },
+    {
+      "id": 9958,
+      "word": "idealistic",
+      "field": "en",
+      "before": "a of or relating to the philosophical doctrine of the reality of ideas",
+      "after": "guided by hopes or principles about how things should be, sometimes without enough practicality",
+      "reason": "旧义只属哲学观念实在论；初任教师态度及理想化计划两句都是现实生活中的理想主义。"
+    },
+    {
+      "id": 9963,
+      "word": "hind",
+      "field": "en",
+      "before": "any of several mostly spotted fishes that resemble groupers",
+      "after": "at the back, especially of an animal, or a female deer",
+      "reason": "旧义是斑点海鱼；兔子后腿及雌鹿两句均为另一组常用义。"
+    },
+    {
+      "id": 9968,
+      "word": "allure",
+      "field": "en",
+      "before": "the power to entice or attract through personal charm",
+      "after": "the power to attract or interest someone",
+      "reason": "旧义把吸引力限为个人魅力；岛屿和收藏硬币两句的吸引物均非个人。"
+    },
+    {
+      "id": 9979,
+      "word": "gladstone",
+      "field": "en",
+      "before": "liberal British statesman who served as prime minister four times (1809-1898)",
+      "after": "a travel bag with a rigid frame that opens into two equal compartments",
+      "reason": "旧义是英国首相履历；第一句明确旅行包可经词典核实，第二句普通姓氏不能据此认定为该首相。"
+    },
+    {
+      "id": 9986,
+      "word": "brit",
+      "field": "en",
+      "before": "the young of a herring or sprat or similar fish",
+      "after": "a person from Britain, in informal speech",
+      "reason": "旧义为小鲱鱼等幼鱼；推荐茶的人及移居加拿大的人两句均是英国人。"
+    },
+    {
+      "id": 10000,
+      "word": "fluent",
+      "field": "en",
+      "before": "smooth and unconstrained in movement",
+      "after": "able to speak a language easily, or expressed smoothly and clearly",
+      "reason": "旧义限定运动的流畅；两句语言熟练及演讲表达需要言语流利义。"
+    }
+  ]
+}
