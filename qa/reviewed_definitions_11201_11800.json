@@ -1,0 +1,931 @@
+{
+  "version": "1.32.6",
+  "range": [
+    11201,
+    11800
+  ],
+  "status": "frozen",
+  "base_head": "248e61d492f321207aa3e92fa834d156407eb377",
+  "reviewed_words": 600,
+  "reviewed_english_example_contexts": 1200,
+  "changed_words": 104,
+  "replaced_definitions": 103,
+  "cleared_mismatched_definitions": 1,
+  "existing_empty_en_preserved": 38,
+  "unchanged_correct": 458,
+  "reports": [
+    {
+      "range": "11201-11400",
+      "file": "qa/review_definitions_11201_11400.json",
+      "sha256": "550deb9fd8d82663dfbd8a0ffc7c85eb16b2218d5b8acb1d573bb959449ef788",
+      "counts": {
+        "unchanged": 152,
+        "empty": 22,
+        "changed": 26
+      }
+    },
+    {
+      "range": "11401-11600",
+      "file": "qa/review_definitions_11401_11600.json",
+      "sha256": "a45f61dff7ad674e2bd5b22de87b565250f6b14f2aeeda60fe8bf257514f183b",
+      "counts": {
+        "changed": 42,
+        "unchanged": 145,
+        "empty": 13
+      }
+    },
+    {
+      "range": "11601-11800",
+      "file": "qa/review_definitions_11601_11800.json",
+      "sha256": "68eccde8dbbf3164382696628e8be6c6350b69ec31f7d9da0711880abd2b5f6d",
+      "counts": {
+        "unchanged": 162,
+        "empty": 3,
+        "changed": 35
+      }
+    }
+  ],
+  "root_review": "root实际分六段逐词读600个现存en、中文义、完整词典及1200组完整双语，再逐项读三个冻结作者稿的103项建议。保留正确另一基本义和原空，不强制覆盖全部多义。root仅微调purify去浓度限定、新增exhibitor避免组织者混淆。作者及整批审读全部冻结后apply。",
+  "root_sources_checked": [
+    {
+      "url": "https://dictionary.cambridge.org/us/dictionary/english/purify",
+      "supports": "净化是去除杂质，不要求蒸馏或增加浓度。"
+    },
+    {
+      "url": "https://dictionary.cambridge.org/us/dictionary/english/exhibitor",
+      "supports": "参展者是展示自己产品或作品的人/公司，不要求组织展会。"
+    },
+    {
+      "url": "https://handbook.fide.com/chapter/E012023",
+      "supports": "5.2.1逼和要求无合法走法且王未被将军，root实际读取。"
+    },
+    {
+      "url": "https://www.englandboxing.org/wp-content/uploads/2025/01/2025-EB-Rule-Book-1.pdf",
+      "supports": "10.6.1击倒后规定计数内未恢复比赛为KO，不要求昏迷，root实际读取。"
+    },
+    {
+      "url": "https://www.nhs.uk/conditions/coeliac-disease/",
+      "supports": "乳糜泻为麸质诱发免疫反应损伤小肠，只作术语辨识。"
+    },
+    {
+      "url": "https://www.niddk.nih.gov/health-information/digestive-diseases/digestive-system-how-it-works",
+      "supports": "消化把食物分解为可吸收物质，只作术语辨识。"
+    }
+  ],
+  "root_adjustments": [
+    {
+      "id": 11277,
+      "word": "purify",
+      "author_after": "to remove unwanted substances from something and make it cleaner or more concentrated",
+      "final_after": "to remove impurities or unwanted substances from something",
+      "reason": "纯净不等同浓度变高，删除非必要浓度结果。"
+    },
+    {
+      "id": 11299,
+      "word": "exhibitor",
+      "author_after": "someone who organizes an exhibit for others to see",
+      "final_after": "a person or company displaying goods or work at an exhibition",
+      "reason": "明确参展展示者，避免组织展览者/展会主办者混淆。"
+    }
+  ],
+  "boundaries": [
+    "仅en字段；学习ID、词头、中文、音标、原完整词典及全部例句保持。",
+    "Tod普通姓名不锁定某个人或羊毛重量旧义，清空回退既有中文题。",
+    "458正确基本义和38原空保留，不为列全多义重写。",
+    "覆盖不是全库专业语言审校，未做真人听审。"
+  ],
+  "changes": [
+    {
+      "id": 11202,
+      "word": "impulsive",
+      "field": "en",
+      "before": "proceeding from natural feeling or impulse without external stimulus",
+      "after": "acting on a sudden urge without considering the consequences",
+      "reason": "旧英文添加without external stimulus，冲动购买仍可能受外部刺激；两句核心为未充分考虑就行动，移除错误必要条件。"
+    },
+    {
+      "id": 11211,
+      "word": "monde",
+      "field": "en",
+      "before": "The world; a globe as an ensign of royalty.",
+      "after": "a French word used for fashionable society or a social circle",
+      "reason": "旧释取世界与王权球体；中文和两句beau monde指社交界，Merriam-Webster确认时髦社交界义。"
+    },
+    {
+      "id": 11227,
+      "word": "honored",
+      "field": "en",
+      "before": "v bestow honor or rewards upon",
+      "after": "feeling privileged, or treated with special respect",
+      "reason": "词头和两句均表示感到荣幸或备受尊敬；旧主动动词bestow写成授予别人荣誉，改为现状态义。"
+    },
+    {
+      "id": 11234,
+      "word": "apex",
+      "field": "en",
+      "before": "the point on the celestial sphere toward which the sun and solar system appear to be moving relative to the fixed stars",
+      "after": "the highest point or top of something",
+      "reason": "旧英文取太阳系运动方向的天球顶点；屋顶与事业最高点均不对应该天文限定，改为顶点基本义。"
+    },
+    {
+      "id": 11240,
+      "word": "aggressor",
+      "field": "en",
+      "before": "a confident assertive person who acts as instigator",
+      "after": "a person or country that starts an attack or conflict",
+      "reason": "旧英文把攻击方写成自信而果断的人，并不能辨明谁发动攻击；两句均为袭击或冲突发起方。"
+    },
+    {
+      "id": 11253,
+      "word": "stalemate",
+      "field": "en",
+      "before": "drawing position in chess: any of a player's possible moves would place his king in check",
+      "after": "a deadlock, or a chess draw when the player to move has no legal move but is not in check",
+      "reason": "旧国际象棋释义遗漏王未被将军的关键条件，可混同将死；FIDE 5.2.1明确此条件，保留僵局常用义。"
+    },
+    {
+      "id": 11256,
+      "word": "ya",
+      "field": "en",
+      "before": "Yea.",
+      "after": "an informal spelling of you, or an abbreviation for young adult in publishing",
+      "reason": "旧英文Yea为肯定应答；See ya和YA fiction分别是you口语拼写与young adult，Cambridge确认这两义。"
+    },
+    {
+      "id": 11260,
+      "word": "apprehensive",
+      "field": "en",
+      "before": "quick to understand",
+      "after": "worried that something unpleasant may happen",
+      "reason": "旧英文为敏悟、很快理解的旧义，与中文忧虑及面试、飞机起动两句不匹配；Collins确认担忧义。"
+    },
+    {
+      "id": 11277,
+      "word": "purify",
+      "field": "en",
+      "before": "remove impurities from, increase the concentration of, and separate through the process of distillation",
+      "after": "to remove impurities or unwanted substances from something",
+      "reason": "旧英文把净化限定为蒸馏；第一句明确过滤器净水，不必蒸馏，Collins支持移除杂质的一般义。"
+    },
+    {
+      "id": 11296,
+      "word": "lms",
+      "field": "en",
+      "before": "n a unit of luminous flux equal to the amount of light given out through a solid angle of 1 steradian by a point source of 1 candela intensity radiating uniformly in all directions",
+      "after": "an abbreviation for learning management system, software for organizing courses and assignments",
+      "reason": "旧英文是流明单位，错配学习管理系统缩写；Moodle官方对课程、教学活动与资料管理的描述支持软件系统义。"
+    },
+    {
+      "id": 11298,
+      "word": "tec",
+      "field": "en",
+      "before": "n a police officer who investigates crimes",
+      "after": "an informal shortened word for a detective",
+      "reason": "旧英文要求是警察，第二句明确private tec，私家侦探不必是警察；Merriam-Webster确认侦探俚语，不限受雇单位。"
+    },
+    {
+      "id": 11299,
+      "word": "exhibitor",
+      "field": "en",
+      "before": "someone who organizes an exhibit for others to see",
+      "after": "a person or company displaying goods or work at an exhibition",
+      "reason": "root交叉审读发现organizes易混成展会组织者；Cambridge出版社明确展示自己产品或作品的参展人/公司，不要求是展览组织者。"
+    },
+    {
+      "id": 11307,
+      "word": "legitimately",
+      "field": "en",
+      "before": "in a manner acceptable to common custom",
+      "after": "in a lawful way, or with a valid reason or justification",
+      "reason": "旧英文只说符合习俗；合法取得土地与有理由不满不以地方习俗为判据，改为合法或有正当根据的义。"
+    },
+    {
+      "id": 11311,
+      "word": "coincidentally",
+      "field": "en",
+      "before": "happening at the same time",
+      "after": "by chance, without being planned or expected",
+      "reason": "旧英文只是同时发生，未说明巧合；同航班和同生日两句重在偶然，Cambridge确认chance or luck义。"
+    },
+    {
+      "id": 11313,
+      "word": "cray",
+      "field": "en",
+      "before": "Alt. of Crayer",
+      "after": "an informal Australian and New Zealand word for a crayfish",
+      "reason": "旧英文仅转向Crayer旧形式，无法解释中文螯虾或姓氏；Collins确认澳新螯虾口语义，不猜两句普通姓氏具体是谁。"
+    },
+    {
+      "id": 11326,
+      "word": "gypsy",
+      "field": "en",
+      "before": "a member of a people with dark skin and hair who speak Romany and who traditionally live by seasonal work and fortunetelling; they are believed to have originated in northern India but now are living on all continents (but mostly in Europe, North Africa, and North America)",
+      "after": "an older term for a Romani person that can be offensive",
+      "reason": "旧英文用肤色与算命等职业概括族群，容易误当成员必要特征；两句专谈旧称和冒犯语域，Oxford支持注明Romani及可能冒犯。"
+    },
+    {
+      "id": 11334,
+      "word": "fluke",
+      "field": "en",
+      "before": "a barb on a harpoon or arrow",
+      "after": "a lucky result or success that happens by chance",
+      "reason": "旧英文是鱼叉或箭头倒刺，与中文侥幸、两句获胜及满分不匹配，改为偶然成功义。"
+    },
+    {
+      "id": 11335,
+      "word": "discursive",
+      "field": "en",
+      "before": "s proceeding to a conclusion by reason or argument rather than intuition",
+      "after": "moving from one subject to another without staying focused",
+      "reason": "旧英文是通过推理得出结论的哲学义；中文和两句均为离题、东拉西扯，改为相应用法。"
+    },
+    {
+      "id": 11353,
+      "word": "lr",
+      "field": "en",
+      "before": "n a radioactive transuranic element synthesized from californium",
+      "after": "an abbreviation for long range, describing an extended operating distance",
+      "reason": "旧英文取化学元素铹符号；中文和两句明确远程型号与long range缩写，NAVAIR官方确认LR/LE为Long Range/Long Endurance。"
+    },
+    {
+      "id": 11355,
+      "word": "swipe",
+      "field": "en",
+      "before": "a sweeping stroke or blow",
+      "after": "to slide a finger or card across a surface, or to steal something casually",
+      "reason": "旧英文为强打或挥击名词；现常用中文和两句是屏幕滑动及顺走笔，改为这些动词基本义。"
+    },
+    {
+      "id": 11357,
+      "word": "snp",
+      "field": "en",
+      "before": "n (genetics) genetic variation in a DNA sequence that occurs when a single nucleotide in a genome is altered; SNPs are usually considered to be point mutations that have been evolutionarily successful enough to recur in a significant proportion of the population of a species",
+      "after": "an abbreviation for the Scottish National Party, which supports Scottish independence",
+      "reason": "旧英文是DNA单核苷酸变异；本站中文与两句明确苏格兰民族党，党官网支持政治组织及独立诉求性质。"
+    },
+    {
+      "id": 11368,
+      "word": "oceanic",
+      "field": "en",
+      "before": "an eastern subfamily of Malayo-Polynesian languages",
+      "after": "relating to the ocean or life in it",
+      "reason": "旧英文取马来波利尼西亚语族分支；中文和洋流、海洋生物两句都是海洋形容词。"
+    },
+    {
+      "id": 11370,
+      "word": "cautionary",
+      "field": "en",
+      "before": "warding off",
+      "after": "intended to warn people about a danger or problem",
+      "reason": "旧英文warding off只说挡开、预防，未辨明警示含义；警世故事和提醒证据有限均为给予警告。"
+    },
+    {
+      "id": 11372,
+      "word": "garland",
+      "field": "en",
+      "before": "United States singer and film actress (1922-1969)",
+      "after": "a decorative chain or ring of flowers, leaves, or similar material",
+      "reason": "旧英文锁定歌手演员Judy Garland；中文和两句均为花叶装饰环串，应恢复普通名词义。"
+    },
+    {
+      "id": 11383,
+      "word": "porous",
+      "field": "en",
+      "before": "able to absorb fluids",
+      "after": "having small holes that let air or liquid pass through, or easily allowing entry",
+      "reason": "旧英文仅说能吸收液体，混同吸收性与孔隙渗透性；Oxford给出细孔让水或气通过，石头和边境容易通过均相容。"
+    },
+    {
+      "id": 11389,
+      "word": "attractiveness",
+      "field": "en",
+      "before": "sexual allure",
+      "after": "the quality of being appealing, interesting, or desirable",
+      "reason": "旧英文仅限性吸引力；地点提议和包装吸引力都不是该限定，恢复一般吸引力义。"
+    },
+    {
+      "id": 11396,
+      "word": "inactive",
+      "field": "en",
+      "before": "(chemistry) not participating in a chemical reaction; chemically inert",
+      "after": "not active, operating, or moving",
+      "reason": "旧英文限定化学不参加反应；无活动账户和下午身体未活动均为一般不活跃状态，去除错误学科限定。"
+    },
+    {
+      "id": 11406,
+      "word": "saturation",
+      "field": "en",
+      "before": "the act of soaking thoroughly with a liquid",
+      "after": "the degree to which something is full or widespread; the intensity of a color",
+      "reason": "原液体浸透义与两句颜色饱和度、市场饱和的语境错配，改为相应的饱和程度。"
+    },
+    {
+      "id": 11408,
+      "word": "wafer",
+      "field": "en",
+      "before": "a small adhesive disk of paste; used to seal letters",
+      "after": "a thin, crisp biscuit; a thin slice of material used to make electronic chips",
+      "reason": "旧封信粘贴圆片义与威化食品、半导体晶圆语境错配。"
+    },
+    {
+      "id": 11409,
+      "word": "wo",
+      "field": "en",
+      "before": "& a. See Woe.",
+      "after": "an abbreviation for warrant officer, a military rank",
+      "reason": "旧See Woe交叉引用既不能独立出题，也不对应两句准尉缩写。"
+    },
+    {
+      "id": 11412,
+      "word": "fisher",
+      "field": "en",
+      "before": "large dark brown North American arboreal carnivorous mammal",
+      "after": "a person who catches fish",
+      "reason": "旧北美食肉动物义与中文渔民及捕鱼语境错配；姓氏例句不据此猜人物。"
+    },
+    {
+      "id": 11413,
+      "word": "tod",
+      "field": "en",
+      "before": "a unit of weight for wool equal to about 28 pounds",
+      "after": "",
+      "reason": "旧羊毛重量单位与两句普通人名错配，不能从姓名定位唯一人物，清空回退中文。"
+    },
+    {
+      "id": 11417,
+      "word": "anatomical",
+      "field": "en",
+      "before": "n an expression that relates to anatomy",
+      "after": "relating to the structure of a body or its parts",
+      "reason": "原文把形容词误写为表达式名词，两句均指解剖图或模型。"
+    },
+    {
+      "id": 11422,
+      "word": "balsamic",
+      "field": "en",
+      "before": "of or relating to or containing balsam",
+      "after": "relating to a sweet Italian vinegar used to flavor food",
+      "reason": "旧香脂义与两句意大利香醋的食品语境错配。"
+    },
+    {
+      "id": 11423,
+      "word": "leaflet",
+      "field": "en",
+      "before": "part of a compound leaf",
+      "after": "a small printed sheet that gives information",
+      "reason": "旧复叶小叶义与宣传单和信息册语境错配。"
+    },
+    {
+      "id": 11424,
+      "word": "chunky",
+      "field": "en",
+      "before": "like or containing small sticky lumps",
+      "after": "thick and solid, or containing large pieces",
+      "reason": "原small sticky lumps误加小和黏的条件，不能解释厚实衣物和大块蔬菜。"
+    },
+    {
+      "id": 11429,
+      "word": "hegemonic",
+      "field": "en",
+      "before": "Alt. of Hegemonical",
+      "after": "having dominant influence or control over other groups or countries",
+      "reason": "原Alt. of Hegemonical只交叉引用，补为能独立辨识支配地位的定义。"
+    },
+    {
+      "id": 11430,
+      "word": "wi",
+      "field": "en",
+      "before": "n a midwestern state in north central United States",
+      "after": "an abbreviation for the Women's Institute, an organization with local groups for women",
+      "reason": "旧美国威斯康星州义与两句妇女协会活动语境错配。"
+    },
+    {
+      "id": 11432,
+      "word": "papillae",
+      "field": "en",
+      "before": "n (botany) a tiny outgrowth on the surface of a petal or leaf",
+      "after": "small nipple-shaped projections on a surface, such as those on the tongue",
+      "reason": "原定义只指植物表面突起，两句涉及舌乳头；保留小突起性质，不声称全部含味蕾。"
+    },
+    {
+      "id": 11435,
+      "word": "snowball",
+      "field": "en",
+      "before": "plant having heads of fragrant white trumpet-shaped flowers; grows in sandy arid regions",
+      "after": "a ball made by pressing snow together; to grow rapidly in size or importance",
+      "reason": "旧旱地开花植物义与雪球、迅速扩大的用法错配。"
+    },
+    {
+      "id": 11437,
+      "word": "tue",
+      "field": "en",
+      "before": "The parson bird.",
+      "after": "a written abbreviation for Tuesday",
+      "reason": "旧鸟名与日程中星期二缩写错配。"
+    },
+    {
+      "id": 11438,
+      "word": "unease",
+      "field": "en",
+      "before": "n physical discomfort (as mild sickness or depression)",
+      "after": "a feeling of worry or discomfort",
+      "reason": "原偏身体不适，两句主要指对计划和沉默的不安。"
+    },
+    {
+      "id": 11439,
+      "word": "ono",
+      "field": "en",
+      "before": "United States musician (born in Japan) who married John Lennon and collaborated with him on recordings (born in 1933)",
+      "after": "an abbreviation for or near offer, indicating that a sale price is negotiable",
+      "reason": "旧特定音乐家义与两句售物价格缩写错配；Collins确认near或nearest offer。"
+    },
+    {
+      "id": 11446,
+      "word": "coeliac",
+      "field": "en",
+      "before": "of or in or belonging to the cavity of the abdomen",
+      "after": "relating to a condition in which gluten triggers immune damage to the small intestine",
+      "reason": "旧泛腹腔义与两句乳糜泻疾病名称错配；NHS确认麸质反应损伤小肠。"
+    },
+    {
+      "id": 11457,
+      "word": "brownie",
+      "field": "en",
+      "before": "a junior Girl Scout",
+      "after": "a small, rich chocolate cake, usually cut into squares",
+      "reason": "原女童军成员义与两句巧克力糕点错配。"
+    },
+    {
+      "id": 11459,
+      "word": "parka",
+      "field": "en",
+      "before": "a kind of heavy jacket (`windcheater' is a British term)",
+      "after": "a hooded coat or jacket usually lined for cold weather",
+      "reason": "旧定义将英式windcheater直接当同义词且漏掉兜帽性质，按词典明确寒天连帽外套。"
+    },
+    {
+      "id": 11465,
+      "word": "homemaker",
+      "field": "en",
+      "before": "n a wife who manages a household while her husband earns the family income",
+      "after": "a person whose main work is managing their home and household",
+      "reason": "原定义强制妻子与丈夫收入，不能解释例句中的父亲；改为不限性别的持家者。"
+    },
+    {
+      "id": 11471,
+      "word": "lymph",
+      "field": "en",
+      "before": "a thin coagulable fluid (similar to plasma but) containing white blood cells (lymphocytes) and chyle; is conveyed to the blood stream by lymphatic vessels",
+      "after": "fluid carried by lymphatic vessels that transports immune cells and returns tissue fluid to the blood",
+      "reason": "原把含乳糜列为一般淋巴的必要组成，易把肠道特殊淋巴混同全部；保留NCI支持的运输和回流性质。"
+    },
+    {
+      "id": 11474,
+      "word": "equatorial",
+      "field": "en",
+      "before": "a telescope whose mounting has only two axes of motion, one parallel to the Earth's axis and the other one at right angles to it",
+      "after": "near or relating to the earth's middle line between the poles",
+      "reason": "旧赤道仪名词与两句赤道地区的形容词错配。"
+    },
+    {
+      "id": 11475,
+      "word": "coffer",
+      "field": "en",
+      "before": "an ornamental sunken panel in a ceiling or dome",
+      "after": "a strong chest used to store money or valuables",
+      "reason": "旧天花板凹格义与木箱、珍贵物品储存语境错配。"
+    },
+    {
+      "id": 11491,
+      "word": "condense",
+      "field": "en",
+      "before": "undergo condensation; change from a gaseous to a liquid state and fall in drops",
+      "after": "to change from gas to liquid; to make something shorter or more concentrated",
+      "reason": "凝结不要求液滴落下；删除不必要条件，同时对应摘要压缩的用法。"
+    },
+    {
+      "id": 11498,
+      "word": "artistry",
+      "field": "en",
+      "before": "n a superior skill that you can learn by study and practice and observation",
+      "after": "great skill in creating or performing artistic work",
+      "reason": "旧任何学得的优异技能范围过宽，补回艺术创作或表演的必要领域。"
+    },
+    {
+      "id": 11501,
+      "word": "knockout",
+      "field": "en",
+      "before": "a blow that renders the opponent unconscious",
+      "after": "a boxing victory when an opponent cannot continue before the referee finishes the required count",
+      "reason": "原强制失去意识；拳击规则以规定计数内未能恢复比赛为准，不必昏迷。"
+    },
+    {
+      "id": 11502,
+      "word": "spooky",
+      "field": "en",
+      "before": "s unpredictably excitable (especially of horses)",
+      "after": "strange and frightening, as if connected with ghosts",
+      "reason": "旧马匹易受惊义与闹鬼房屋和诡异感觉语境错配。"
+    },
+    {
+      "id": 11508,
+      "word": "giver",
+      "field": "en",
+      "before": "someone who devotes himself completely",
+      "after": "a person who gives gifts, help, or support",
+      "reason": "原要求完全献身于某事，不能解释普通送礼者，删去无依据的强条件。"
+    },
+    {
+      "id": 11510,
+      "word": "predicate",
+      "field": "en",
+      "before": "(logic) what is predicated of the subject of a proposition; the second term in a proposition is predicated of the first term by means of the copula",
+      "after": "the part of a sentence containing the verb that says something about the subject",
+      "reason": "旧逻辑判断第二项义与两句英语语法谓语语境错配，明确含动词的句子成分。"
+    },
+    {
+      "id": 11511,
+      "word": "commons",
+      "field": "en",
+      "before": "a pasture subject to common use",
+      "after": "the elected lower chamber of the UK Parliament",
+      "reason": "旧公用牧场义与下议院语境错配；改为可辨识的议院定义，不用宽泛公共场所代称。"
+    },
+    {
+      "id": 11513,
+      "word": "brotherhood",
+      "field": "en",
+      "before": "the kinship relation between a male offspring and the siblings",
+      "after": "a bond of friendship and solidarity among people",
+      "reason": "原仅指生物学兄弟关系，两句强调非亲属间的兄弟情谊和团结。"
+    },
+    {
+      "id": 11523,
+      "word": "carver",
+      "field": "en",
+      "before": "United States botanist and agricultural chemist who developed many uses for peanuts and soy beans and sweet potatoes (1864-1943)",
+      "after": "a person who cuts wood or stone into decorative shapes",
+      "reason": "旧特定美国植物学家义与两句雕刻工匠语境错配。"
+    },
+    {
+      "id": 11540,
+      "word": "melodrama",
+      "field": "en",
+      "before": "an extravagant comedy in which action is more salient than characterization",
+      "after": "a story or performance with exaggerated emotions and dramatic events",
+      "reason": "原强制喜剧，但情节剧也可悲情，按Cambridge保留夸张情绪和戏剧性。"
+    },
+    {
+      "id": 11543,
+      "word": "pluralistic",
+      "field": "en",
+      "before": "of or relating to the philosophical doctrine of pluralism",
+      "after": "allowing different groups, beliefs, or ways of life to exist together",
+      "reason": "旧哲学多元论义与多元文化社群语境错配。"
+    },
+    {
+      "id": 11547,
+      "word": "jot",
+      "field": "en",
+      "before": "n a brief (and hurriedly handwritten) note",
+      "after": "to write something down quickly; a very small amount",
+      "reason": "旧手写便条名词与jot down动词、not a jot极少量用法错配。"
+    },
+    {
+      "id": 11550,
+      "word": "recoup",
+      "field": "en",
+      "before": "reimburse or compensate (someone), as for a loss",
+      "after": "to regain money spent or recover a loss",
+      "reason": "原侧重向别人赔偿，两句为收回自己的成本或损失，调整动词方向。"
+    },
+    {
+      "id": 11557,
+      "word": "blocker",
+      "field": "en",
+      "before": "a football player whose responsibility is to block players attempting to stop an offensive play",
+      "after": "something that prevents an action, stops unwanted material, or obstructs progress",
+      "reason": "旧美式足球球员义与广告拦截工具、项目障碍语境错配。"
+    },
+    {
+      "id": 11574,
+      "word": "snuggle",
+      "field": "en",
+      "before": "n a close and affectionate (and often prolonged) embrace",
+      "after": "to settle close to someone or curl up somewhere warm and comfortable",
+      "reason": "旧拥抱名词与两句依偎或舒适蜷缩的动词语境错配。"
+    },
+    {
+      "id": 11576,
+      "word": "desegregation",
+      "field": "en",
+      "before": "n the action of incorporating a racial or religious group into a community",
+      "after": "the ending of enforced separation between racial groups",
+      "reason": "原泛指把群体纳入社区，未限定废除隔离，可能混同一般融合；两句均为学校种族隔离。"
+    },
+    {
+      "id": 11583,
+      "word": "norman",
+      "field": "en",
+      "before": "United States operatic soprano (born in 1945)",
+      "after": "relating to medieval Normandy and its people, culture, or architecture",
+      "reason": "旧特定美国女高音人物与建筑及普通姓名错配；选择词典可确认的诺曼文化建筑义，不猜姓名人物。"
+    },
+    {
+      "id": 11587,
+      "word": "filament",
+      "field": "en",
+      "before": "the stalk of a stamen",
+      "after": "a very thin thread or wire, including the wire that glows inside a light bulb",
+      "reason": "原花蕊花丝义与灯丝和打印塑料丝语境错配。"
+    },
+    {
+      "id": 11599,
+      "word": "townhouse",
+      "field": "en",
+      "before": "A building devoted to the public used of a town; a",
+      "after": "a house in a town or city, often joined to similar houses in a row",
+      "reason": "旧公共建筑定义截断且对象错误，两句均为城镇联排住宅。"
+    },
+    {
+      "id": 11605,
+      "word": "patronising",
+      "field": "en",
+      "before": "v do one's shopping at; do business with; be a customer or client of",
+      "after": "showing a superior attitude toward someone, as if they were less capable",
+      "reason": "旧释是光顾商店的动词；两句的语气和笑容均为居高临下的形容词义。"
+    },
+    {
+      "id": 11606,
+      "word": "safari",
+      "field": "en",
+      "before": "n an overland journey by hunters (especially in Africa)",
+      "after": "a trip to observe or hunt wild animals in their natural habitat, especially in Africa",
+      "reason": "旧释只指猎人旅行，排除了两句观察野生动物的游览；采用包括观察的现代旅行义。"
+    },
+    {
+      "id": 11614,
+      "word": "transfix",
+      "field": "en",
+      "before": "pierce with a sharp stake or point",
+      "after": "to hold someone motionless or completely capture their attention",
+      "reason": "旧释只有刺穿；场景与故事使人看得出神，采用吸引注意、使人动弹不得的义。"
+    },
+    {
+      "id": 11616,
+      "word": "revisionist",
+      "field": "en",
+      "before": "a Communist who tries to rewrite Marxism to justify a retreat from the revolutionary position",
+      "after": "reconsidering or challenging accepted views, especially about history",
+      "reason": "旧释把修正主义者专限为退出革命立场的共产党人；两句修饰历史观点，应为重新解释既有历史看法的形容词。"
+    },
+    {
+      "id": 11621,
+      "word": "immigrate",
+      "field": "en",
+      "before": "migrate to a new environment",
+      "after": "to come to another country to live there",
+      "reason": "旧释仅说迁移到新环境，未区分移入外国与普通迁移；父母和家庭进入另一国家定居，两句均为移民。"
+    },
+    {
+      "id": 11635,
+      "word": "recharge",
+      "field": "en",
+      "before": "load anew",
+      "after": "to restore electrical power to a battery; to regain energy after rest",
+      "reason": "旧释load anew过于笼统，不能辨识手机充电及休息恢复精力；改为相应通常两义。"
+    },
+    {
+      "id": 11637,
+      "word": "retort",
+      "field": "en",
+      "before": "a vessel where substances are distilled or decomposed by heat",
+      "after": "a sharp or witty reply; to answer someone sharply",
+      "reason": "旧释只有蒸馏容器，常用中文及两句为言语反驳。"
+    },
+    {
+      "id": 11646,
+      "word": "emergent",
+      "field": "en",
+      "before": "occurring unexpectedly and requiring urgent action",
+      "after": "newly appearing or developing",
+      "reason": "旧释要求突然发生且需要紧急处理；新趋势和模式正在形成，不表示紧急事件。"
+    },
+    {
+      "id": 11650,
+      "word": "shrapnel",
+      "field": "en",
+      "before": "shell containing lead pellets that explodes in flight",
+      "after": "fragments of metal scattered by an exploding shell, bomb, or mine",
+      "reason": "旧释仅指装有铅丸的旧式炮弹；墙上的碎片及博物馆碎片指爆炸散出的金属弹片。"
+    },
+    {
+      "id": 11652,
+      "word": "devalue",
+      "field": "en",
+      "before": "remove the value from; deprive of its value",
+      "after": "to reduce the value or importance of something, including a currency",
+      "reason": "旧释deprive of value容易表示完全失去价值；工作被贬低及货币贬值都指降低价值。"
+    },
+    {
+      "id": 11653,
+      "word": "bonanza",
+      "field": "en",
+      "before": "an especially rich vein of precious ore",
+      "after": "something that brings great profit or good fortune",
+      "reason": "旧释只指富矿脉；出售及旅游带来的收益均指获利良机或横财。"
+    },
+    {
+      "id": 11657,
+      "word": "affix",
+      "field": "en",
+      "before": "a linguistic element added to a word to produce an inflected or derived form",
+      "after": "to attach or add something to something else",
+      "reason": "旧释只为词缀名词；贴标签和签名两句均使用附加的动词。"
+    },
+    {
+      "id": 11659,
+      "word": "intangible",
+      "field": "en",
+      "before": "assets that are saleable though not material or physical",
+      "after": "not physical or touchable; difficult to define precisely",
+      "reason": "旧释限定为可出售的无形资产；信任及房间的温馨气氛为无形、难以量化的性质，不要求可出售。"
+    },
+    {
+      "id": 11666,
+      "word": "elliptical",
+      "field": "en",
+      "before": "s rounded like an egg",
+      "after": "shaped like an ellipse; expressed with words left out or meaning implied",
+      "reason": "旧释把椭圆笼统说成蛋形；改为几何椭圆，并与第二句省略、含蓄的回答分别表达。"
+    },
+    {
+      "id": 11668,
+      "word": "impeach",
+      "field": "en",
+      "before": "challenge the honesty or veracity of",
+      "after": "to formally accuse a public official of misconduct in office",
+      "reason": "旧释为质疑诚实；两句都讨论总统遭正式弹劾，改为提出职务不当指控，不等同已经免职。"
+    },
+    {
+      "id": 11669,
+      "word": "unrelenting",
+      "field": "en",
+      "before": "s not to be placated or appeased or moved by entreaty",
+      "after": "continuing without weakening or becoming less intense",
+      "reason": "旧释只指不会被恳求安抚的人；持续的雨和压力应是不减弱、不停歇。"
+    },
+    {
+      "id": 11671,
+      "word": "fiat",
+      "field": "en",
+      "before": "n a legally binding command or decision entered on the court record (as if issued by a court or judge)",
+      "after": "an order or decision made by someone with authority",
+      "reason": "旧释把命令限定为法院登记的有法律约束力决定；official fiat是权威命令，不必出自法院。保留正确基础命令义，不强加汽车品牌义。"
+    },
+    {
+      "id": 11672,
+      "word": "visor",
+      "field": "en",
+      "before": "a piece of armor plate (with eye slits) fixed or hinged to a medieval helmet to protect the face",
+      "after": "a part of a helmet or cap that protects or shades the face; a sunshade in a vehicle",
+      "reason": "旧释把面罩限为有眼缝的中世纪金属甲片；两句现代头盔和汽车遮阳板不具有这些限定。"
+    },
+    {
+      "id": 11681,
+      "word": "retract",
+      "field": "en",
+      "before": "use a surgical instrument to hold open (the edges of a wound or an organ)",
+      "after": "to take back a statement; to pull something back or inward",
+      "reason": "旧释实际是牵开器器械，而不是目标动词；两句为撤回陈述及收起轮子。"
+    },
+    {
+      "id": 11685,
+      "word": "jumble",
+      "field": "en",
+      "before": "small flat ring-shaped cake or cookie",
+      "after": "a confused mixture of things; to mix things together without order",
+      "reason": "旧释为环形小饼干；抽屉里的混乱和混放衣物两句为杂乱混合。"
+    },
+    {
+      "id": 11687,
+      "word": "mischievous",
+      "field": "en",
+      "before": "deliberately causing harm or damage",
+      "after": "playfully naughty or likely to cause trouble",
+      "reason": "旧释要求故意造成损害；孩子的笑与打开橱柜的猫表示调皮，不必有恶意伤害。"
+    },
+    {
+      "id": 11688,
+      "word": "nip",
+      "field": "en",
+      "before": "a small drink of liquor",
+      "after": "a quick small bite or pinch; a slight sharp feeling of cold",
+      "reason": "旧释只指一小口酒；两句是空气的寒意及轻咬。"
+    },
+    {
+      "id": 11696,
+      "word": "mainline",
+      "field": "en",
+      "before": "inject into the vein",
+      "after": "relating to a principal railway route",
+      "reason": "旧释是静脉注射毒品；两句明确干线列车和铁路，没有注射语境。"
+    },
+    {
+      "id": 11704,
+      "word": "conveyor",
+      "field": "en",
+      "before": "n a person who conveys (carries or transmits)",
+      "after": "a machine, often using a moving belt, that carries goods or materials",
+      "reason": "旧释限定搬运的人；箱子和粮食沿机械输送机移动，两句均为设备。"
+    },
+    {
+      "id": 11705,
+      "word": "triad",
+      "field": "en",
+      "before": "n the cardinal number that is the sum of one and one and one",
+      "after": "a group of three; a musical chord made of three notes",
+      "reason": "旧释解释基数三而非三者组成的组；两句为三因素组合及三和弦。"
+    },
+    {
+      "id": 11706,
+      "word": "deductible",
+      "field": "en",
+      "before": "(taxes) an amount that can be deducted (especially for the purposes of calculating income tax)",
+      "after": "able to be subtracted from a total; an amount paid by an insured person before insurance covers a claim",
+      "reason": "旧释把词当作税务可扣除金额；首句是可扣除的形容词，第二句是保险免赔额，分别表示。"
+    },
+    {
+      "id": 11709,
+      "word": "decimate",
+      "field": "en",
+      "before": "kill one in every ten, as of mutineers in Roman armies",
+      "after": "to destroy a large part of something or greatly reduce its numbers",
+      "reason": "旧释局限古罗马每十人杀一人；鸟群数量锐减与工厂遭重创使用现代大量毁坏义。"
+    },
+    {
+      "id": 11720,
+      "word": "tummy",
+      "field": "en",
+      "before": "n slang for a paunch",
+      "after": "an informal word for the stomach or belly",
+      "reason": "旧释把肚子限定为大肚腩；孩子肚痛和狗腹部两句没有肥胖信息。"
+    },
+    {
+      "id": 11721,
+      "word": "digestion",
+      "field": "en",
+      "before": "the process of decomposing organic matter (as in sewage) by bacteria or by chemical action or heat",
+      "after": "the process of breaking down food into substances the body can absorb",
+      "reason": "旧释是污水有机物分解等技术过程；课文及医生问诊语境都是身体的食物消化。"
+    },
+    {
+      "id": 11724,
+      "word": "craze",
+      "field": "en",
+      "before": "state of violent mental agitation",
+      "after": "a strong, often short-lived enthusiasm for something",
+      "reason": "旧释是暴烈的精神激动；面包及玩具的风潮指一时流行的热衷。"
+    },
+    {
+      "id": 11728,
+      "word": "privy",
+      "field": "en",
+      "before": "hidden from general view or use",
+      "after": "knowing private or secret information; an outdoor toilet",
+      "reason": "旧释只说隐蔽的；privy to表示知晓内幕，而第二句是室外厕所，分别表示对应常用义。"
+    },
+    {
+      "id": 11731,
+      "word": "horseshoe",
+      "field": "en",
+      "before": "game equipment consisting of an open ring of iron used in playing horseshoes",
+      "after": "a U-shaped metal shoe fitted to a horse’s hoof; something shaped like it",
+      "reason": "旧释仅指投掷游戏用具；铁匠马蹄及桌子排列两句指马蹄铁和马蹄形。"
+    },
+    {
+      "id": 11761,
+      "word": "giveaway",
+      "field": "en",
+      "before": "a gift of public land or resources for the private gain of a limited group",
+      "after": "a free gift or an event offering free items; a clue that unintentionally reveals something",
+      "reason": "旧释只指把公共土地资源赠送给少数人；两句为暴露事实的线索和店铺赠品活动，不要求涉及公共资产。"
+    },
+    {
+      "id": 11783,
+      "word": "grudge",
+      "field": "en",
+      "before": "a resentment strong enough to justify retaliation",
+      "after": "a lasting feeling of resentment; to be unwilling to give or allow something",
+      "reason": "旧释无根据地把怨恨说成足以正当化报复；移除报复正当性限定，保留积怨及不愿给予的通常义。"
+    },
+    {
+      "id": 11793,
+      "word": "blot",
+      "field": "en",
+      "before": "an act that brings discredit to the person who does it",
+      "after": "a spot or stain, especially of ink; to absorb liquid with cloth or paper",
+      "reason": "旧释只说给人带来耻辱的行为；两句是墨渍和吸干洒出的液体。"
+    }
+  ]
+}
