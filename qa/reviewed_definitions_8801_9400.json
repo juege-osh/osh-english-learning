@@ -1,0 +1,918 @@
+{
+  "version": "1.32.2",
+  "range": [
+    8801,
+    9400
+  ],
+  "status": "frozen",
+  "base_head": "cc66bff2b1a4fa71145a8cedd3b1b5a2250c8d68",
+  "reviewed_words": 600,
+  "reviewed_english_example_contexts": 1200,
+  "changed_words": 106,
+  "replaced_definitions": 101,
+  "cleared_mismatched_definitions": 5,
+  "existing_empty_en_preserved": 41,
+  "unchanged_correct": 453,
+  "reports": [
+    {
+      "range": "8801-9000",
+      "file": "qa/review_definitions_8801_9000.json",
+      "sha256": "56018ad85d9a4133c6c13aa647291b32bbe94ac2f4e7a6f448f1ad1fd5a84885",
+      "counts": {
+        "empty": 8,
+        "unchanged": 165,
+        "changed": 27
+      }
+    },
+    {
+      "range": "9001-9200",
+      "file": "qa/review_definitions_9001_9200.json",
+      "sha256": "ce041dd88d88901b966e4e3a73d84d29c0436bf5b67717f476606a01647e442e",
+      "counts": {
+        "unchanged": 136,
+        "changed": 46,
+        "empty": 18
+      }
+    },
+    {
+      "range": "9201-9400",
+      "file": "qa/review_definitions_9201_9400.json",
+      "sha256": "7f5fa5b2c80418ef5d413d99387078b541d514a2d69d190f11d96641e75b48e1",
+      "counts": {
+        "unchanged": 152,
+        "changed": 33,
+        "empty": 15
+      }
+    }
+  ],
+  "root_review": "Root逐项读600个现存en、中文义和1200组双语语境，再审三作者全部106个修改建议；全部接受，未再改作者稿。正确基本义及原空保留，作者与整批审读冻结后才apply。",
+  "root_sources_checked": [
+    {
+      "url": "https://www.unicode.org/faq/utf_bom.html",
+      "supports": "UTF-8字符可使用多字节，不能把一个字节等同所有字符。"
+    },
+    {
+      "url": "https://www.cancer.gov/about-cancer/understanding/what-is-cancer",
+      "supports": "白血病为造血组织癌症；四种常见白血病并非四大癌种。"
+    },
+    {
+      "url": "https://www.who.int/news-room/questions-and-answers/item/vaccines-and-immunization-what-is-vaccination",
+      "supports": "疫苗接种是施用疫苗，不是接种留下的疤痕。"
+    }
+  ],
+  "boundaries": [
+    "只改en，学习ID、词头、中文义、原完整词典、音标、所有例句和行业池保留。",
+    "原空不补填，正确基本义不为穷尽另一义重写。",
+    "来源支持相应事实，不表示全库经过专业语言审校。"
+  ],
+  "changes": [
+    {
+      "id": 8805,
+      "word": "courtship",
+      "field": "en",
+      "before": "a man's courting of a woman; seeking the affections of a woman (usually with the hope of marriage)",
+      "after": "The development of a romantic relationship, or behavior used by animals to attract a mate.",
+      "reason": "原义将求爱限定为男人追求女人；Oxford 将人类恋爱期写为两个人发展关系，另列动物求偶。第二句明确鸟类求偶，因此去掉男女限定并概括实际用法。"
+    },
+    {
+      "id": 8808,
+      "word": "rift",
+      "field": "en",
+      "before": "a gap between cloud masses",
+      "after": "A deep crack or split; also, a serious disagreement between people.",
+      "reason": "原义只写云团之间的空隙，与当前中文和冰面深裂缝、朋友关系裂痕两句不相配。"
+    },
+    {
+      "id": 8809,
+      "word": "orgasm",
+      "field": "en",
+      "before": "the moment of most intense pleasure in sexual intercourse",
+      "after": "The peak of sexual arousal, involving intense pleasure and release of sexual tension.",
+      "reason": "原义限定性交中的时刻；Cleveland Clinic 明确性高潮也可在自慰等性刺激中产生。两句都是中性医学术语辨识，移除性交限制，不增加健康建议。"
+    },
+    {
+      "id": 8817,
+      "word": "cubicle",
+      "field": "en",
+      "before": "n small room in which a monk or nun lives",
+      "after": "A small separate space or compartment, often used for working or changing clothes.",
+      "reason": "原义是僧侣或修女住的小房间，误取修道院居室义；当前两句为更衣与办公隔间。"
+    },
+    {
+      "id": 8838,
+      "word": "nostalgic",
+      "field": "en",
+      "before": "unhappy about being away and longing for familiar things or persons",
+      "after": "Feeling affection and longing for happy times in the past.",
+      "reason": "原义把离家在外的不快和思乡作为必要内容，两句是听歌和看旧照片引发怀旧，不必离家。"
+    },
+    {
+      "id": 8845,
+      "word": "humanities",
+      "field": "en",
+      "before": "n studies intended to provide general knowledge and intellectual skills (rather than occupational or professional skills)",
+      "after": "Subjects that study human culture and thought, such as literature, history, and philosophy.",
+      "reason": "原义笼统指提供一般知识而非职业技能的学科，不能区别人文学科与同样非职业性的自然科学等。"
+    },
+    {
+      "id": 8847,
+      "word": "neutralize",
+      "field": "en",
+      "before": "make politically neutral and thus inoffensive",
+      "after": "To cancel an effect or make something ineffective; in chemistry, to counteract acidity or alkalinity.",
+      "reason": "原义仅为使政治上中立，与中和酸和抵消延误影响不对应；采用经核实的化学及一般动词义。"
+    },
+    {
+      "id": 8848,
+      "word": "proportional",
+      "field": "en",
+      "before": "one of the quantities in a mathematical proportion",
+      "after": "Having a size or amount that changes in a fixed ratio to another; also, suitably matched in degree.",
+      "reason": "原义为数学比例中的一个数量，是比例项名词；两句和常用中文均指成比例或程度相称。"
+    },
+    {
+      "id": 8852,
+      "word": "abdominal",
+      "field": "en",
+      "before": "the muscles of the abdomen",
+      "after": "Relating to the part of the body between the chest and the pelvis.",
+      "reason": "原义说腹部肌肉，误把名词复数式肌群义用于形容词；疼痛、肌肉均由该词修饰腹部位置。"
+    },
+    {
+      "id": 8858,
+      "word": "paranoia",
+      "field": "en",
+      "before": "a psychological disorder characterized by delusions of persecution or grandeur",
+      "after": "Unreasonable suspicion or fear that other people intend to harm or threaten you.",
+      "reason": "原义把偏执多疑一律作独立心理障碍并列夸大妄想；当前两句与常用义为被监视或受害的多疑恐惧。"
+    },
+    {
+      "id": 8859,
+      "word": "emeritus",
+      "field": "en",
+      "before": "a professor or minister who is retired from assigned duties",
+      "after": "Retired from a position but allowed to keep its title as an honor.",
+      "reason": "原义仅为退休教授或牧师，漏掉获准保留荣誉头衔的区别性条件，并不能说明退休院长用法。"
+    },
+    {
+      "id": 8865,
+      "word": "hippy",
+      "field": "en",
+      "before": "n someone who rejects the established culture; advocates extreme liberalism in politics and lifestyle",
+      "after": "A person associated with a counterculture favoring peace, personal freedom, and an unconventional way of life.",
+      "reason": "原义把极端政治自由主义列为必要特征，容易误导。Oxford 描述拒绝西方社会常规生活方式，并说明和平、爱和自由生活的文化特征；改为人物及节日氛围两句都相容的文化性质。"
+    },
+    {
+      "id": 8877,
+      "word": "confiscate",
+      "field": "en",
+      "before": "surrendered as a penalty",
+      "after": "To take something away officially or as a punishment.",
+      "reason": "原义为作为惩罚而交出的状态，当前教师与安保人员主动没收物品的动词行为不对应。"
+    },
+    {
+      "id": 8879,
+      "word": "burgess",
+      "field": "en",
+      "before": "English writer of satirical novels (1917-1993)",
+      "after": "A citizen or freeman of a borough, especially in historical British usage.",
+      "reason": "原义取作家Anthony Burgess，首句明确是历史自治市自由民；第二句的普通姓氏不能确定为该作家。"
+    },
+    {
+      "id": 8890,
+      "word": "thee",
+      "field": "en",
+      "before": "To thrive; to prosper.",
+      "after": "An old or dialect form of you, used for one person as the object of a verb or preposition.",
+      "reason": "原义为兴旺这一罕用动词，两句古信与诗句均是第二人称单数宾格代词。"
+    },
+    {
+      "id": 8901,
+      "word": "downright",
+      "field": "en",
+      "before": "characterized by plain blunt honesty",
+      "after": "Completely or absolutely, especially when emphasizing a strong negative quality.",
+      "reason": "原义取率直诚实的形容词旧义，当前中文和rude、cold两句均是加强程度的副词。"
+    },
+    {
+      "id": 8907,
+      "word": "bewildered",
+      "field": "en",
+      "before": "v be a mystery or bewildering to",
+      "after": "Confused and unsure how to understand or respond to something.",
+      "reason": "原义为主动使人困惑的动词，当前词形与两句都是人感到困惑的形容词状态。"
+    },
+    {
+      "id": 8917,
+      "word": "kayak",
+      "field": "en",
+      "before": "a small canoe consisting of a light frame made watertight with animal skins; used by Eskimos",
+      "after": "A small, narrow boat usually paddled with a double-bladed paddle.",
+      "reason": "原义将动物皮蒙木框的传统船型当普遍必要特征，并使用旧族群称呼；现代租赁与海岸运动用法不必为这种材质。"
+    },
+    {
+      "id": 8937,
+      "word": "bumper",
+      "field": "en",
+      "before": "a glass filled to the brim (especially as a toast)",
+      "after": "A protective bar at the front or rear of a vehicle; also, unusually large or abundant.",
+      "reason": "原义取祝酒时的满杯，两句分别指汽车保险杠和作物丰收。"
+    },
+    {
+      "id": 8940,
+      "word": "thrilling",
+      "field": "en",
+      "before": "causing quivering or shivering as by cold or fear or electric shock",
+      "after": "Very exciting and enjoyable.",
+      "reason": "原义是寒冷、恐惧或电击引起身体颤抖，错配比赛结尾和看到鲸鱼的兴奋感。"
+    },
+    {
+      "id": 8947,
+      "word": "airy",
+      "field": "en",
+      "before": "not practical or realizable; speculative",
+      "after": "Light and spacious with plenty of fresh air; also, casually dismissive or unconcerned.",
+      "reason": "原义取不切实际、推测性的意思；当前两句为卧室通风以及轻率地不把问题当回事。"
+    },
+    {
+      "id": 8969,
+      "word": "revere",
+      "field": "en",
+      "before": "American silversmith remembered for his midnight ride (celebrated in a poem by Longfellow) to warn the colonists in Lexington and Concord that British troops were coming (1735-1818)",
+      "after": "To regard someone or something with deep respect and admiration.",
+      "reason": "原义是银匠Paul Revere的传记，与崇敬作品或老师的动词无关。"
+    },
+    {
+      "id": 8973,
+      "word": "toyota",
+      "field": "en",
+      "before": "an industrial city of Japan in southern Honshu",
+      "after": "A Japanese motor vehicle manufacturer and its brand of cars.",
+      "reason": "原义为日本本州的丰田市，两句明确是车辆品牌，不是城市。"
+    },
+    {
+      "id": 8982,
+      "word": "whichever",
+      "field": "en",
+      "before": "& a. Alt. of Whichsoever",
+      "after": "Any one from a particular set, regardless of which one is chosen.",
+      "reason": "原内容只是另一古词形Whichsoever的交叉引用，没有解释不论哪一个的选择含义。"
+    },
+    {
+      "id": 8985,
+      "word": "memorabilia",
+      "field": "en",
+      "before": "a record of things worth remembering",
+      "after": "Objects kept or collected because of their connection with a person, event, or activity.",
+      "reason": "原义是值得记忆事情的记录，而两句为电影及人物职业生涯的收藏纪念物，不必是文字记录。"
+    },
+    {
+      "id": 8994,
+      "word": "wrapper",
+      "field": "en",
+      "before": "n a loose dressing gown for women",
+      "after": "Paper, plastic, or another material used to cover and protect something.",
+      "reason": "原义为女士宽松晨衣，错配糖纸和三明治塑料包装。"
+    },
+    {
+      "id": 8999,
+      "word": "ambivalent",
+      "field": "en",
+      "before": "uncertain or unable to decide about what course to follow",
+      "after": "Having conflicting positive and negative feelings about someone or something.",
+      "reason": "原义只说不确定行动选择，与undecided近乎相同，漏掉中文与两句所强调的相反感受并存。"
+    },
+    {
+      "id": 9003,
+      "word": "hearth",
+      "field": "en",
+      "before": "home symbolized as a part of the fireplace",
+      "after": "The floor of a fireplace, or the area immediately around it.",
+      "reason": "旧题面是以壁炉象征家庭的转义；两句与当前中文均指实体壁炉底台或炉边。"
+    },
+    {
+      "id": 9008,
+      "word": "glean",
+      "field": "en",
+      "before": "v gather, as of natural products",
+      "after": "To gather useful information gradually from various sources.",
+      "reason": "旧义限定采集自然产物，两句均从信件或经历获取信息和建议，改为对应搜集信息义。"
+    },
+    {
+      "id": 9019,
+      "word": "fillet",
+      "field": "en",
+      "before": "a boneless steak cut from the tenderloin of beef",
+      "after": "A boneless piece of fish or meat; to remove the bones and cut it into such pieces.",
+      "reason": "旧义只指牛里脊，两句均为去骨鱼片或给鱼去骨，物种和用法错配。"
+    },
+    {
+      "id": 9022,
+      "word": "varsity",
+      "field": "en",
+      "before": "a British abbreviation of `university'; usually refers to Oxford University or Cambridge University",
+      "after": "The main sports team representing a school, college or university, especially in the US.",
+      "reason": "旧义是英国大学简称，当前中文及两句为学校运动一队，不能用大学名称义解释校队。"
+    },
+    {
+      "id": 9025,
+      "word": "kettle",
+      "field": "en",
+      "before": "a metal pot for stewing or boiling; usually has a lid",
+      "after": "A container, usually with a handle and spout, used to boil water.",
+      "reason": "旧义强调炖煮用锅，两句均是烧水泡茶的壶，改为对应烧水壶义。"
+    },
+    {
+      "id": 9030,
+      "word": "transient",
+      "field": "en",
+      "before": "one who stays for only a short time",
+      "after": "Lasting or staying for only a short time.",
+      "reason": "旧义定义短期居留者这个人，两句形容症状暂时及人口短期居留，改为性质定义。"
+    },
+    {
+      "id": 9032,
+      "word": "doorstep",
+      "field": "en",
+      "before": "n the sill of a door; a horizontal piece of wood or stone that forms the bottom of a doorway and offers support when passing through a doorway",
+      "after": "A step outside an entrance door; figuratively, the area very close to a home.",
+      "reason": "旧题面把门口台阶定义成门槛底部横条；词典区分外门前台阶，两句分别包裹门阶与家门附近。"
+    },
+    {
+      "id": 9034,
+      "word": "patriarch",
+      "field": "en",
+      "before": "title for the heads of the Eastern Orthodox Churches (in Istanbul and Alexandria and Moscow and Jerusalem)",
+      "after": "The senior male head of a family; also a senior religious leader in some Christian churches.",
+      "reason": "旧题面仅宗主教头衔，两句都是家族男性长者；补正当前家族义，保留合法宗教基本义。"
+    },
+    {
+      "id": 9039,
+      "word": "gal",
+      "field": "en",
+      "before": "a unit of gravitational acceleration equal to one centimeter per second per second (named after Galileo)",
+      "after": "An informal word for a girl or woman.",
+      "reason": "旧义为以伽利略命名的重力加速度单位，两句都是非正式称女性，类别错配。"
+    },
+    {
+      "id": 9056,
+      "word": "dick",
+      "field": "en",
+      "before": "someone who is a detective",
+      "after": "A vulgar word for a penis, or an offensive insult for an obnoxious man.",
+      "reason": "旧义为侦探俚语，当前语境为男性名和冒犯骂词；以词典核实粗俗普通词义，姓名用法仍通过中文识别，不猜特定人物。"
+    },
+    {
+      "id": 9058,
+      "word": "sub",
+      "field": "en",
+      "before": "n a large sandwich made of a long crusty roll split lengthwise and filled with meats and cheese (and tomato and onion and lettuce and condiments); different names are used in different sections of the United States",
+      "after": "An informal short form for a substitute player or a submarine.",
+      "reason": "旧义为长条三明治，两句为替补球员和潜艇，当前中文未教食品义。"
+    },
+    {
+      "id": 9062,
+      "word": "macho",
+      "field": "en",
+      "before": "a male exhibiting or characterized by machismo",
+      "after": "Displaying an exaggerated image of masculine toughness or dominance.",
+      "reason": "旧义是具有大男子主义的男性这一名词，两句及中文都形容刻意硬汉或大男子主义形象。"
+    },
+    {
+      "id": 9063,
+      "word": "picket",
+      "field": "en",
+      "before": "a detachment of troops guarding an army from surprise attack",
+      "after": "A person or group protesting outside a workplace, or a pointed stake used in a fence.",
+      "reason": "旧义为军队警戒分队，两句是罢工纠察队或尖桩篱笆，并非军队。"
+    },
+    {
+      "id": 9064,
+      "word": "clothe",
+      "field": "en",
+      "before": "cover as if with clothing",
+      "after": "To provide someone with clothes or dress them.",
+      "reason": "旧义为像衣服一样覆盖的转义，两句是为困难家庭与孩子提供实际衣物。"
+    },
+    {
+      "id": 9067,
+      "word": "derivative",
+      "field": "en",
+      "before": "a compound obtained from, or regarded as derived from, another compound",
+      "after": "Based on earlier work rather than original; in mathematics, a measure of a function's rate of change.",
+      "reason": "旧义为化学衍生物，两句均非化合物，分别作品不原创与数学导数。"
+    },
+    {
+      "id": 9071,
+      "word": "nominal",
+      "field": "en",
+      "before": "relating to or constituting or bearing or giving a name",
+      "after": "Existing in name only, or very small in amount, especially a fee.",
+      "reason": "旧题面仅与名称有关，未表达名义负责人没有实际权力，也无法解释象征性小额收费。"
+    },
+    {
+      "id": 9072,
+      "word": "recapture",
+      "field": "en",
+      "before": "a legal seizure by the government of profits beyond a fixed amount",
+      "after": "To catch or take back something lost, or bring back an earlier feeling or experience.",
+      "reason": "旧义是政府追缴超额利润，两句分别重新抓动物及重温专辑氛围，均不涉追缴。"
+    },
+    {
+      "id": 9073,
+      "word": "frontal",
+      "field": "en",
+      "before": "a drapery that covers the front of an altar",
+      "after": "Relating to the front, or to the forehead.",
+      "reason": "旧义是祭坛前帷帘这个物件，两句均形容正面碰撞或头骨前部。"
+    },
+    {
+      "id": 9076,
+      "word": "viability",
+      "field": "en",
+      "before": "(of living things) capable of normal growth and development",
+      "after": "The ability to work successfully or survive over time.",
+      "reason": "旧题面为生物能正常发育的形容词，不是可行性名词，两句评价商业计划或项目持续能力。"
+    },
+    {
+      "id": 9078,
+      "word": "cohesion",
+      "field": "en",
+      "before": "(botany) the process in some plants of parts growing together that are usually separate (such as petals)",
+      "after": "The quality of holding together as a united group or a connected whole.",
+      "reason": "旧义为通常分离植物部分长在一起的植物学过程，两句为团队凝聚力及文章连贯性。"
+    },
+    {
+      "id": 9081,
+      "word": "pictorial",
+      "field": "en",
+      "before": "a periodical (magazine or newspaper) containing many pictures",
+      "after": "Using or relating to pictures to show or explain something.",
+      "reason": "旧义为含图片的期刊这个名词，两句均指以图片介绍或记录的形容词。"
+    },
+    {
+      "id": 9083,
+      "word": "airway",
+      "field": "en",
+      "before": "n a duct that provides ventilation (as in mines)",
+      "after": "A passage that carries air to and from the lungs.",
+      "reason": "旧义为矿井通风管道，两句均为人体气道，词典核实医学所指呼吸通道。"
+    },
+    {
+      "id": 9085,
+      "word": "ancestry",
+      "field": "en",
+      "before": "inherited properties shared with others of your bloodline",
+      "after": "The ancestors and family line from which a person comes.",
+      "reason": "旧题面是血缘人群共享的遗传属性，两句为家族祖先及世系研究，不是某项遗传属性。"
+    },
+    {
+      "id": 9087,
+      "word": "remembrance",
+      "field": "en",
+      "before": "the ability to recall past occurrences",
+      "after": "The act of remembering someone or something, especially to honor a person who has died.",
+      "reason": "旧题面是记忆能力，两句都是纪念行为或仪式，记忆能力与纪念行为不同。"
+    },
+    {
+      "id": 9088,
+      "word": "detachment",
+      "field": "en",
+      "before": "the act of releasing from an attachment or connection",
+      "after": "Calm emotional distance, or a small group of soldiers assigned to a task.",
+      "reason": "旧题面是解除物理连接的行为，两句是情绪超脱及分遣小队，均非拆开连接。"
+    },
+    {
+      "id": 9093,
+      "word": "decoy",
+      "field": "en",
+      "before": "a beguiler who leads someone into danger (usually as part of a plot)",
+      "after": "A person or object used to lure someone or distract their attention.",
+      "reason": "旧题面只指使人陷入危险的诱骗者，第二句木鸭是诱骗物而非人，第一句还可只是分散注意。"
+    },
+    {
+      "id": 9101,
+      "word": "tame",
+      "field": "en",
+      "before": "correct by punishment or discipline",
+      "after": "Accustomed to people and not wild; also dull or lacking excitement.",
+      "reason": "旧题面是惩罚或纪律纠正的动词，两句是动物温顺及结局平淡的形容词。"
+    },
+    {
+      "id": 9105,
+      "word": "porn",
+      "field": "en",
+      "before": "n creative activity (writing or pictures or films etc.) of no literary or artistic value other than to stimulate sexual desire",
+      "after": "Sexually explicit pictures, writing or films intended to arouse sexual interest; an informal term.",
+      "reason": "旧定义强加无文学艺术价值这一必要条件；词典按性内容与性刺激意图说明，不把价值判断当定义条件。"
+    },
+    {
+      "id": 9109,
+      "word": "deport",
+      "field": "en",
+      "before": "v behave in a certain manner",
+      "after": "To force someone to leave a country, usually by official order.",
+      "reason": "旧义为以某方式举止的动词，两句均为当局驱逐出境。"
+    },
+    {
+      "id": 9113,
+      "word": "amen",
+      "field": "en",
+      "before": "a primeval Egyptian personification of air and breath; worshipped especially at Thebes",
+      "after": "An expression meaning 'so be it', used after a prayer or to show agreement.",
+      "reason": "旧义是埃及神祇Amen，词典将其与祷告结语分列；两句均为阿门或赞同语。"
+    },
+    {
+      "id": 9114,
+      "word": "slater",
+      "field": "en",
+      "before": "n any of various small terrestrial isopods having a flat elliptical segmented body; found in damp habitats",
+      "after": "",
+      "reason": "旧义为潮湿环境中的等足类动物，当前中文与Ms/Mr两句都是普通姓氏；清空回中文，不能把姓氏判成动物，也不编泛用姓名题。"
+    },
+    {
+      "id": 9115,
+      "word": "genus",
+      "field": "en",
+      "before": "a general kind of something",
+      "after": "A biological classification group below a family and above a species.",
+      "reason": "旧题面仅泛指某一类东西，未表达当前中文及两句明确的生物分类属；按词典核实分类层级。"
+    },
+    {
+      "id": 9126,
+      "word": "naturalist",
+      "field": "en",
+      "before": "an advocate of the doctrine that the world can be understood in scientific terms",
+      "after": "A person who studies plants, animals and other features of the natural world.",
+      "reason": "旧义为科学自然主义哲学的拥护者，两句为实地观察沼泽和辨鸟的博物学家。"
+    },
+    {
+      "id": 9130,
+      "word": "appalling",
+      "field": "en",
+      "before": "an experience that appalls",
+      "after": "Extremely bad or shocking.",
+      "reason": "旧题面把词定义成使人惊骇的经历这一名词，两句都是糟糕或令人震惊的形容词。"
+    },
+    {
+      "id": 9137,
+      "word": "teller",
+      "field": "en",
+      "before": "United States physicist (born in Hungary) who worked on the first atom bomb and the first hydrogen bomb (1908-2003)",
+      "after": "A bank employee who handles deposits, withdrawals and other customer transactions.",
+      "reason": "旧义为物理学家Edward Teller，两句均为银行柜员，没有历史人物身份。"
+    },
+    {
+      "id": 9140,
+      "word": "tweak",
+      "field": "en",
+      "before": "pinch or squeeze sharply",
+      "after": "To make a small adjustment to improve something.",
+      "reason": "旧义是用力捏或拧，两句为微调布局及食谱，不是捏拧。"
+    },
+    {
+      "id": 9148,
+      "word": "maud",
+      "field": "en",
+      "before": "A gray plaid; -- used by shepherds in Scotland.",
+      "after": "",
+      "reason": "旧义为苏格兰灰格子披衣，词典另有女性名Maud；两句明确普通人名，清空英文题回中文，避免姓名通用定义多解。"
+    },
+    {
+      "id": 9150,
+      "word": "penetration",
+      "field": "en",
+      "before": "an attack that penetrates into enemy territory",
+      "after": "The entry of something into or through a material; also how widely a product or service is used.",
+      "reason": "旧义仅深入敌方领土的攻击，两句为水渗透及互联网普及，均无军事攻击。"
+    },
+    {
+      "id": 9161,
+      "word": "exaggeration",
+      "field": "en",
+      "before": "the act of making something more noticeable than usual",
+      "after": "A statement or description that makes something seem more extreme than it really is.",
+      "reason": "旧义仅使某物更显眼，未区分突出与言过其实；两句均讨论说法是否夸大实际情况。"
+    },
+    {
+      "id": 9171,
+      "word": "felicity",
+      "field": "en",
+      "before": "pleasing and appropriate manner or style (especially manner or style of expression)",
+      "after": "",
+      "reason": "旧义为恰当优美的表达方式，当前两句及中文均为女性名Felicity；词典分列两义，清空回中文题而不以泛用姓名定义凑题。"
+    },
+    {
+      "id": 9173,
+      "word": "contra",
+      "field": "en",
+      "before": "a member of the guerrilla force that opposed a left-wing government in Nicaragua",
+      "after": "A social folk dance in which couples form facing lines and follow instructions from a caller.",
+      "reason": "旧义为尼加拉瓜反政府游击队成员，当前为contra dance；CDSS原始舞蹈资料明确相对长队列及口令员，不猜舞蹈词源。"
+    },
+    {
+      "id": 9185,
+      "word": "trafficker",
+      "field": "en",
+      "before": "n someone who promotes or exchanges goods or services for money",
+      "after": "A person involved in illegal trade, such as drugs or protected wildlife.",
+      "reason": "旧义是一般买卖商品服务者，无法区分普通商人与当前药品/野生动物非法贩运者；词典核实非法交易义。"
+    },
+    {
+      "id": 9188,
+      "word": "feeder",
+      "field": "en",
+      "before": "an animal being fattened or suitable for fattening",
+      "after": "A device that supplies food, or a service that connects to a main transport route.",
+      "reason": "旧义为待育肥动物，两句为喂鸟器或接驳公交，均非育肥动物。"
+    },
+    {
+      "id": 9189,
+      "word": "dampen",
+      "field": "en",
+      "before": "reduce the amplitude (of oscillations or waves)",
+      "after": "To make slightly wet, or reduce the strength of a feeling or effect.",
+      "reason": "旧义限定振荡或波的幅度减小，两句为湿布与热情减弱，当前不涉及技术振幅。"
+    },
+    {
+      "id": 9192,
+      "word": "smother",
+      "field": "en",
+      "before": "a stifling cloud of smoke",
+      "after": "To cover with a thick layer or suppress something, such as a sound or feeling.",
+      "reason": "旧义为令人窒息的烟云这个名词，两句为给土豆大量浇酱与忍住笑的动词。"
+    },
+    {
+      "id": 9198,
+      "word": "marshal",
+      "field": "en",
+      "before": "a law officer having duties similar to those of a sheriff in carrying out the judgments of a court of law",
+      "after": "An official who organizes an event; to gather and arrange people or resources.",
+      "reason": "旧义为执行法院判决的执法官，两句分别是赛事工作人员及调配资源，均非司法执法。"
+    },
+    {
+      "id": 9203,
+      "word": "pip",
+      "field": "en",
+      "before": "a disease of poultry",
+      "after": "a small fruit seed, or a short high-pitched signal sound",
+      "reason": "旧义是禽类疾病，与苹果果籽及提示音两句均不相符。"
+    },
+    {
+      "id": 9205,
+      "word": "tsunami",
+      "field": "en",
+      "before": "a cataclysm resulting from a destructive sea wave caused by an earthquake or volcanic eruption",
+      "after": "a series of sea waves caused by a sudden displacement of water",
+      "reason": "旧义把海啸限定为破坏性灾难、单波且仅由地震或火山造成；NOAA说明还可由滑坡等引发，多数并无破坏性。"
+    },
+    {
+      "id": 9206,
+      "word": "mute",
+      "field": "en",
+      "before": "a deaf person who is unable to speak",
+      "after": "to silence a sound, or unable or unwilling to speak",
+      "reason": "旧义把聋与无法说话绑定，还把当前动词及形容词误作特定人群名词；两句分别为麦克风静音和惊得无言。"
+    },
+    {
+      "id": 9216,
+      "word": "byte",
+      "field": "en",
+      "before": "a sequence of 8 bits (enough to represent one character of alphanumeric data) processed as a single unit of information",
+      "after": "a unit of digital information consisting of eight bits",
+      "reason": "保留现代八位字节基本义，删除不注明编码而声称足以表示一个字母数字字符的限定；Unicode字符可占多个字节。"
+    },
+    {
+      "id": 9224,
+      "word": "hassle",
+      "field": "en",
+      "before": "disorderly fighting",
+      "after": "an annoying difficulty, or to bother someone repeatedly",
+      "reason": "旧义为混乱打斗；现有中义及例句说麻烦与烦扰，没有打斗语境。"
+    },
+    {
+      "id": 9227,
+      "word": "adultery",
+      "field": "en",
+      "before": "extramarital sex that willfully and maliciously interferes with marriage relations",
+      "after": "voluntary sexual relations between a married person and someone other than their spouse",
+      "reason": "旧义多加蓄意恶意干涉婚姻关系的必要条件；词典基本义不要求这种动机。仅作术语辨识。"
+    },
+    {
+      "id": 9240,
+      "word": "fragmentation",
+      "field": "en",
+      "before": "the disintegration of social norms governing behavior and thought and social relationships",
+      "after": "the breaking of something into separate parts",
+      "reason": "旧义说社会规范瓦解，错配到失范概念；现有栖息地分割和组织碎片化均为分成零散部分。"
+    },
+    {
+      "id": 9247,
+      "word": "leukemia",
+      "field": "en",
+      "before": "malignant neoplasm of blood-forming tissues; characterized by abnormal proliferation of leukocytes; one of the four major types of cancer",
+      "after": "a cancer of blood-forming tissue that produces abnormal blood cells",
+      "reason": "血液形成组织癌症的核心正确，但旧定义无依据地固定为四大癌症之一；按NCI核实后删去该分类断言。"
+    },
+    {
+      "id": 9249,
+      "word": "mulch",
+      "field": "en",
+      "before": "a protective covering of rotting vegetable matter spread to reduce evaporation and soil erosion",
+      "after": "a layer of material spread over soil to protect it and help retain moisture",
+      "reason": "旧义只限腐烂植物；RHS列有机及无机覆盖材料，树皮等也不必已腐烂。"
+    },
+    {
+      "id": 9254,
+      "word": "ana",
+      "field": "en",
+      "before": "mother of the ancient Irish gods; sometimes identified with Danu",
+      "after": "",
+      "reason": "两句仅使用普通女性名Ana，不能据此认定为爱尔兰神祇；不猜具体人物，清空英文辅助定义回退中文。"
+    },
+    {
+      "id": 9257,
+      "word": "censor",
+      "field": "en",
+      "before": "someone who censures or condemns",
+      "after": "a person who restricts objectionable content, or to examine and restrict such content",
+      "reason": "旧义混同censure的谴责者；审查影片及删改报道是内容审查，非单纯批评。"
+    },
+    {
+      "id": 9260,
+      "word": "overhaul",
+      "field": "en",
+      "before": "periodic maintenance on a car or machine",
+      "after": "a thorough examination and repair, or to make major improvements to a machine or system",
+      "reason": "旧义仅说定期保养，遗漏彻底检修的必要程度；发动机检修及预约系统全面改进都不是一般周期维护。"
+    },
+    {
+      "id": 9275,
+      "word": "generalized",
+      "field": "en",
+      "before": "not biologically differentiated or adapted to a specific function or environment",
+      "after": "broad or general rather than limited to a specific case or area",
+      "reason": "旧义仅为生物学未分化，与笼统概括和广泛性焦虑的当前语境错配。"
+    },
+    {
+      "id": 9292,
+      "word": "abduction",
+      "field": "en",
+      "before": "the criminal act of capturing and carrying away by force a family member; if a man's wife is abducted it is a crime against the family relationship and against the wife",
+      "after": "the act of taking someone away illegally, usually by force or deception",
+      "reason": "旧义把对象限制为家庭成员并加入特定家庭关系陈述；绑架外交人员等不要求家属关系。"
+    },
+    {
+      "id": 9293,
+      "word": "paige",
+      "field": "en",
+      "before": "United States baseball player; a black pitcher noted for his longevity (1906-1982)",
+      "after": "",
+      "reason": "Paige两句是普通人名，无法定位为棒球选手Satchel Paige；旧专人履历不能作为当前词头的定义。"
+    },
+    {
+      "id": 9308,
+      "word": "booze",
+      "field": "en",
+      "before": "n an alcoholic beverage that is distilled rather than fermented",
+      "after": "alcoholic drink, in informal speech",
+      "reason": "旧义错误地排除发酵酒类；非正式泛指酒，不限蒸馏酒。"
+    },
+    {
+      "id": 9317,
+      "word": "ooze",
+      "field": "en",
+      "before": "n any thick, viscous matter",
+      "after": "to flow slowly through a small opening, or show a quality very strongly",
+      "reason": "旧义只有黏稠物名词；现有渗出泥浆及洋溢自信两句均是动词，改为对应动词义。"
+    },
+    {
+      "id": 9322,
+      "word": "argentine",
+      "field": "en",
+      "before": "any of various small silver-scaled salmon-like marine fishes",
+      "after": "from or relating to Argentina, or a person from that country",
+      "reason": "旧义是银色海鱼，与阿根廷餐厅及记者两句、当前中文均错配。"
+    },
+    {
+      "id": 9331,
+      "word": "verification",
+      "field": "en",
+      "before": "(law) an affidavit attached to a statement confirming the truth of that statement",
+      "after": "the process of checking that something is true, accurate, or genuine",
+      "reason": "旧义只指附在陈述上的法律宣誓书，现有身份核验及独立核实均指检查过程。"
+    },
+    {
+      "id": 9335,
+      "word": "astonished",
+      "field": "en",
+      "before": "v affect with wonder",
+      "after": "very surprised",
+      "reason": "旧义误用主动动词affect；两句表达人的惊讶状态，需用形容词定义。"
+    },
+    {
+      "id": 9338,
+      "word": "quad",
+      "field": "en",
+      "before": "(printing) a block of type without a raised letter; used for spacing between words or sentences",
+      "after": "an enclosed courtyard, or a four-wheeled all-terrain vehicle",
+      "reason": "旧义仅为印刷空铅，未对应校园院落和四轮摩托两句；词典核实这两种缩略用法。"
+    },
+    {
+      "id": 9342,
+      "word": "antisocial",
+      "field": "en",
+      "before": "shunning contact with others; just shy\"",
+      "after": "unwilling to socialize, or harmful to others or society",
+      "reason": "旧文混入just shy并有残留引号，误把害羞视为同义；词典区分不爱交际与妨害社会。"
+    },
+    {
+      "id": 9345,
+      "word": "beak",
+      "field": "en",
+      "before": "beaklike mouth of animals other than birds (e.g., turtles)",
+      "after": "the hard pointed or curved mouth of a bird",
+      "reason": "旧义明确排除鸟类，恰与两句鸟嘴语境相反。"
+    },
+    {
+      "id": 9346,
+      "word": "tenuous",
+      "field": "en",
+      "before": "having thin consistency",
+      "after": "weak, uncertain, or not well supported",
+      "reason": "旧义为稀薄的物质稠度；联系和协议两句用薄弱或不稳固的抽象义。"
+    },
+    {
+      "id": 9348,
+      "word": "hanger",
+      "field": "en",
+      "before": "a worker who hangs something",
+      "after": "a shaped frame used for hanging clothes",
+      "reason": "旧义是挂东西的工人；两句及当前中文讲衣架这个物件。"
+    },
+    {
+      "id": 9352,
+      "word": "repository",
+      "field": "en",
+      "before": "a person to whom a secret is entrusted",
+      "after": "a place where things, information, or computer code are stored",
+      "reason": "旧义是受托保密的人；博物馆知识库及代码仓库均为存储处。"
+    },
+    {
+      "id": 9360,
+      "word": "vaccination",
+      "field": "en",
+      "before": "the scar left following inoculation with a vaccine",
+      "after": "the act of giving or receiving a vaccine",
+      "reason": "旧义只指接种后疤痕；预约和接种记录均指接种行为，NCI亦给出疫苗使用义。"
+    },
+    {
+      "id": 9362,
+      "word": "garner",
+      "field": "en",
+      "before": "store grain",
+      "after": "to collect or obtain something, especially support, praise, or awards",
+      "reason": "旧义仅为储粮；现有奖项和支持语境是获得或收集。"
+    },
+    {
+      "id": 9364,
+      "word": "sinner",
+      "field": "en",
+      "before": "a person who sins (without repenting)",
+      "after": "a person who commits an act considered morally or religiously wrong",
+      "reason": "旧义多加without repenting限制；词典不以不悔改为必要条件，寻求宽恕句也不适合该限制。"
+    },
+    {
+      "id": 9368,
+      "word": "biotech",
+      "field": "en",
+      "before": "n the branch of molecular biology that studies the use of microorganisms to perform specific industrial processes",
+      "after": "the use of living organisms or their components to develop useful products",
+      "reason": "旧义只限微生物工业工艺，不能代表生物技术整体；词典包括生物及其组成部分的应用。"
+    },
+    {
+      "id": 9379,
+      "word": "budge",
+      "field": "en",
+      "before": "United States tennis player who in 1938 was the first to win the Australian and French and English and United States singles championship in the same year (1915-2000)",
+      "after": "to move a little, or change a position or opinion",
+      "reason": "旧义是网球选手Don Budge的履历；现有门挪动及价格立场不变两句是普通动词。"
+    },
+    {
+      "id": 9396,
+      "word": "sliver",
+      "field": "en",
+      "before": "divide into slivers or splinters",
+      "after": "a thin narrow piece of something, or a very small amount",
+      "reason": "旧义是切成薄片的动词；两句的玻璃碎片和一缕阳光均为名词。"
+    },
+    {
+      "id": 9398,
+      "word": "thorn",
+      "field": "en",
+      "before": "a Germanic character of runic origin",
+      "after": "a sharp point growing on the stem or branch of a plant",
+      "reason": "旧义仅指古日耳曼字母；衣袖被挂住及园艺手套语境均为植物刺。"
+    }
+  ]
+}
