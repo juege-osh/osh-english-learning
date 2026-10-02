@@ -1,0 +1,421 @@
+{
+  "version": "1.31.7",
+  "range": [
+    901,
+    1000
+  ],
+  "reviewed_glosses": 100,
+  "reviewed_examples": 200,
+  "external_words_with_id": 50,
+  "external_examples_with_id": 100,
+  "status": "frozen_after_root_cross_review",
+  "review_method": "逐条审读简义及两句中英；humanizer 自审，仅提出明确问题，保留其余句子。",
+  "changes": [
+    {
+      "word_id": 903,
+      "word": "goods",
+      "example_index": 0,
+      "field": "translation",
+      "before": "我用三元一打的价钱买了这些东西。",
+      "after": "我以每打3美元的价格购买这些货物。",
+      "reason": "原句 $3 应明确美元；buy 是一般现在时，原译“买了”擅改为一次已完成购买。",
+      "id": 44297,
+      "translationId": 345998,
+      "author": "\\N",
+      "translationAuthor": "nickyeow",
+      "original_metadata": {
+        "id": 44297,
+        "author": "\\N",
+        "translationId": 345998,
+        "translationAuthor": "nickyeow",
+        "translationAdapted": "OpenCC t2s"
+      }
+    },
+    {
+      "word_id": 907,
+      "word": "method",
+      "example_index": 1,
+      "field": "translation",
+      "before": "这绝对是最好的方法。",
+      "after": "这是最好的方法，远胜其他方法。",
+      "reason": "by far 表示比较差距很大，原“绝对”只表达肯定，未呈现该用法。",
+      "id": 55510,
+      "translationId": 337322,
+      "author": "CK",
+      "translationAuthor": "nickyeow",
+      "original_metadata": {
+        "id": 55510,
+        "author": "CK",
+        "translationId": 337322,
+        "translationAuthor": "nickyeow",
+        "translationAdapted": "OpenCC t2s"
+      }
+    },
+    {
+      "word_id": 915,
+      "word": "heat",
+      "example_index": 0,
+      "field": "translation",
+      "before": "太阳提供我们光和热。",
+      "after": "太阳给我们光和热。",
+      "reason": "“提供我们光和热”缺少介词且中文搭配不成立。",
+      "id": 275126,
+      "translationId": 4265916,
+      "author": "CK",
+      "translationAuthor": "egg0073",
+      "original_metadata": {
+        "id": 275126,
+        "author": "CK",
+        "translationId": 4265916,
+        "translationAuthor": "egg0073",
+        "translationAdapted": "OpenCC t2s"
+      }
+    },
+    {
+      "word_id": 931,
+      "word": "ahead",
+      "example_index": 1,
+      "field": "translation",
+      "before": "我应该先去做。",
+      "after": "我应该着手去做那件事。",
+      "reason": "go ahead and do 表示着手、继续去做，并非先于别人的时间顺序；that 也应保留。",
+      "id": 6260777,
+      "translationId": 9419110,
+      "author": "CK",
+      "translationAuthor": "BobbyLee",
+      "original_metadata": {
+        "id": 6260777,
+        "author": "CK",
+        "translationId": 9419110,
+        "translationAuthor": "BobbyLee"
+      }
+    },
+    {
+      "word_id": 941,
+      "word": "total",
+      "example_index": 1,
+      "field": "translation",
+      "before": "你看到昨天的日全食了吗？",
+      "after": "你看到昨天的月全食了吗？",
+      "reason": "lunar eclipse 是月食，原译日全食把月食误成日食。",
+      "id": 1293228,
+      "translationId": 13919370,
+      "author": "CM",
+      "translationAuthor": "DaoSeng",
+      "original_metadata": {
+        "id": 1293228,
+        "author": "CM",
+        "translationId": 13919370,
+        "translationAuthor": "DaoSeng",
+        "translationAdapted": "OpenCC t2s"
+      }
+    },
+    {
+      "word_id": 944,
+      "word": "discussion",
+      "example_index": 1,
+      "field": "translation",
+      "before": "我们激烈的讨论了这个问题。",
+      "after": "我们激烈地讨论了这个问题。",
+      "reason": "修饰动词“讨论”应为“地”，原“的”为明确语法错误。",
+      "id": 248169,
+      "translationId": 796077,
+      "author": "CK",
+      "translationAuthor": "Martha",
+      "original_metadata": {
+        "id": 248169,
+        "author": "CK",
+        "translationId": 796077,
+        "translationAuthor": "Martha",
+        "translationAdapted": "OpenCC t2s"
+      }
+    },
+    {
+      "word_id": 945,
+      "word": "finger",
+      "example_index": 1,
+      "field": "translation",
+      "before": "我的手被门夹到了。",
+      "after": "我的手指被门夹到了。",
+      "reason": "finger 为手指，原“手”扩大了受伤部位，目标词语义未准确呈现。",
+      "id": 39084,
+      "translationId": 472976,
+      "author": "CK",
+      "translationAuthor": "fucongcong",
+      "original_metadata": {
+        "id": 39084,
+        "author": "CK",
+        "translationId": 472976,
+        "translationAuthor": "fucongcong"
+      }
+    },
+    {
+      "word_id": 953,
+      "word": "civil",
+      "example_index": null,
+      "field": "gloss",
+      "before": "公民的；文明的",
+      "after": "公民的；民事的；有礼貌的",
+      "reason": "civil 的人际行为义为有礼貌、文明有礼，笼统“文明的”易混同 civilized；补常见民事义，例句义对应。"
+    },
+    {
+      "word_id": 961,
+      "word": "agreement",
+      "example_index": 0,
+      "field": "translation",
+      "before": "我们同意。",
+      "after": "我们的意见一致。",
+      "reason": "in agreement 表示彼此意见一致，原“我们同意”容易变成同意一个未说明对象。",
+      "id": 9305516,
+      "translationId": 663299,
+      "author": "Lillith",
+      "translationAuthor": "sysko",
+      "original_metadata": {
+        "id": 9305516,
+        "author": "Lillith",
+        "translationId": 663299,
+        "translationAuthor": "sysko"
+      }
+    },
+    {
+      "word_id": 961,
+      "word": "agreement",
+      "example_index": 1,
+      "field": "translation",
+      "before": "我们要达成一些协定。",
+      "after": "我们必须达成某种协议。",
+      "reason": "have to 体现必须；some agreement 是不确定的某种协议，并非复数“一些协定”。",
+      "id": 5573997,
+      "translationId": 5574485,
+      "author": "CK",
+      "translationAuthor": "verdastelo9604",
+      "original_metadata": {
+        "id": 5573997,
+        "author": "CK",
+        "translationId": 5574485,
+        "translationAuthor": "verdastelo9604"
+      }
+    },
+    {
+      "word_id": 969,
+      "word": "smile",
+      "example_index": 1,
+      "field": "translation",
+      "before": "她面带大大的笑容向我招呼。",
+      "after": "她满脸笑容地向我打招呼。",
+      "reason": "“向我招呼”缺“打”，原搭配不自然；保留 big smile 的明显笑容。",
+      "id": 311901,
+      "translationId": 802087,
+      "author": "CK",
+      "translationAuthor": "Martha",
+      "original_metadata": {
+        "id": 311901,
+        "author": "CK",
+        "translationId": 802087,
+        "translationAuthor": "Martha",
+        "translationAdapted": "OpenCC t2s"
+      }
+    },
+    {
+      "word_id": 971,
+      "word": "score",
+      "example_index": 1,
+      "field": "translation",
+      "before": "测试我考了低分。",
+      "after": "我在那次测试中得了低分。",
+      "reason": "原“测试我考了低分”语序不成立。",
+      "id": 8359751,
+      "translationId": 9415229,
+      "author": "CK",
+      "translationAuthor": "BobbyLee",
+      "original_metadata": {
+        "id": 8359751,
+        "author": "CK",
+        "translationId": 9415229,
+        "translationAuthor": "BobbyLee"
+      }
+    },
+    {
+      "word_id": 972,
+      "word": "account",
+      "example_index": 1,
+      "field": "translation",
+      "before": "有个帐户要结清。",
+      "after": "有个账户要关闭。",
+      "reason": "close an account 是关闭、注销账户，不等于结清账目；使用关闭保留账户类型的开放性。",
+      "id": 13990008,
+      "translationId": 501438,
+      "author": "LeviHighway",
+      "translationAuthor": "fucongcong",
+      "original_metadata": {
+        "id": 13990008,
+        "author": "LeviHighway",
+        "translationId": 501438,
+        "translationAuthor": "fucongcong"
+      }
+    },
+    {
+      "word_id": 977,
+      "word": "recognise",
+      "example_index": 1,
+      "field": "translation",
+      "before": "我没有认出来他们。",
+      "after": "我没有认出他们。",
+      "reason": "原“认出来他们”宾语位置不自然。",
+      "id": 6292780,
+      "translationId": 4444844,
+      "author": "zzz",
+      "translationAuthor": "shanghainese",
+      "original_metadata": {
+        "id": 6292780,
+        "author": "zzz",
+        "translationId": 4444844,
+        "translationAuthor": "shanghainese"
+      }
+    },
+    {
+      "word_id": 985,
+      "word": "none",
+      "example_index": 1,
+      "field": "translation",
+      "before": "我求助了，但没人来。",
+      "after": "我求助了，但没有得到任何帮助。",
+      "reason": "none 指前文 help，而非必然指人；原“没人来”擅自限定为有人到场。",
+      "source": "original",
+      "original_metadata": {
+        "source": "original"
+      }
+    },
+    {
+      "word_id": 991,
+      "word": "key",
+      "example_index": 1,
+      "field": "translation",
+      "before": "现在，我把钥匙放哪里了？",
+      "after": "我把钥匙放哪儿了？",
+      "reason": "句首 Now 是回想、转换话题的语用标记，原译“现在，我把钥匙放哪里了”把回想过去放置误作现在时间。",
+      "id": 3156830,
+      "translationId": 8602117,
+      "author": "CK",
+      "translationAuthor": "maxine",
+      "original_metadata": {
+        "id": 3156830,
+        "author": "CK",
+        "translationId": 8602117,
+        "translationAuthor": "maxine"
+      }
+    },
+    {
+      "word_id": 994,
+      "word": "fast",
+      "example_index": 1,
+      "field": "translation",
+      "before": "我尽力奔跑。",
+      "after": "我尽可能快地奔跑。",
+      "reason": "as fast as I could 明确尽可能快的速度；原“尽力奔跑”只表示努力，漏最大速度。",
+      "id": 27573,
+      "translationId": 358289,
+      "author": "CK",
+      "translationAuthor": "zhouj1955",
+      "original_metadata": {
+        "id": 27573,
+        "author": "CK",
+        "translationId": 358289,
+        "translationAuthor": "zhouj1955"
+      }
+    },
+    {
+      "word_id": 999,
+      "word": "successful",
+      "example_index": 1,
+      "field": "translation",
+      "before": "整体而言，这个事件是成功的。",
+      "after": "总的来说，这次活动很成功。",
+      "reason": "此句 event 通常指活动，“这个事件是成功的”是中文搭配不自然；保留总结语气。",
+      "id": 65120,
+      "translationId": 801469,
+      "author": "CK",
+      "translationAuthor": "Martha",
+      "original_metadata": {
+        "id": 65120,
+        "author": "CK",
+        "translationId": 801469,
+        "translationAuthor": "Martha",
+        "translationAdapted": "OpenCC t2s"
+      }
+    },
+    {
+      "word_id": 941,
+      "word": "total",
+      "field": "gloss",
+      "example_index": null,
+      "before": "总计的；总数",
+      "after": "总计的；总数；完全的",
+      "reason": "total lunar eclipse使用完全的义，补充现有例句对应义。"
+    },
+    {
+      "word_id": 956,
+      "word": "budget",
+      "field": "translation",
+      "example_index": 0,
+      "before": "我们很节省地旅行。",
+      "after": "我们旅行的预算很紧。",
+      "reason": "tight budget强调预算有限，原译很节省只表达节俭选择。",
+      "original_metadata": {
+        "id": 324689,
+        "author": "CK",
+        "translationId": 895647,
+        "translationAuthor": "Martha",
+        "translationAdapted": "OpenCC t2s"
+      }
+    }
+  ],
+  "changed_words": 17,
+  "changed_fields": 18,
+  "preservation": "仅提交建议；未写产品。带 id 原句的 id/translationId/作者信息保持不变；建议修改译文由 root 另标本站修改。",
+  "sources": [
+    {
+      "words": [
+        "ahead"
+      ],
+      "url": "https://dictionary.cambridge.org/us/dictionary/english/go-ahead",
+      "supports": "go ahead 表示开始做某事。"
+    },
+    {
+      "words": [
+        "civil"
+      ],
+      "url": "https://dictionary.cambridge.org/us/dictionary/english/civil",
+      "supports": "civil 的 polite 义。"
+    },
+    {
+      "words": [
+        "method"
+      ],
+      "url": "https://dictionary.cambridge.org/us/dictionary/english/far",
+      "supports": "by far 表示 by a great amount。"
+    },
+    {
+      "words": [
+        "total"
+      ],
+      "url": "https://science.nasa.gov/moon/eclipses/",
+      "supports": "lunar eclipse 为月食，与 solar eclipse 区分。"
+    }
+  ],
+  "uncertain_entries": [],
+  "input_sha256": {
+    "words.json": "797ee5153972d4f8041dcaee67e907635199d229952e1b433d982684f0667907",
+    "examples.json": "da64bb806fa824e9224d196119d7c72fcbfd1e340120bbd43776abe2287709e1"
+  },
+  "reviewed_bilingual_examples": 200,
+  "root_cross_review_complete": true,
+  "change_field_count": 20,
+  "changed_word_count": 18,
+  "field_counts": {
+    "translation": 18,
+    "gloss": 2,
+    "text": 0
+  },
+  "proposal_sha256": "1b3659e56d0cbe4457e35b78a82a6f1a21c6a3960d3354a35810a7956698cda2"
+}

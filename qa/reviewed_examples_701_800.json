@@ -1,0 +1,388 @@
+{
+  "version": "1.31.7",
+  "range": [
+    701,
+    800
+  ],
+  "status": "frozen_after_root_cross_review",
+  "reviewed_glosses": 100,
+  "reviewed_bilingual_examples": 200,
+  "external_id_sentence_count": 92,
+  "external_id_word_count": 46,
+  "original_source_sentence_count": 108,
+  "review_method": "逐条审读100简义和200句英中；humanizer检查中文完整句式与自然搭配；只提明确修复，未写入产品数据。source original识别为本站旧原创，不计外部语料。",
+  "change_field_count": 24,
+  "changed_word_count": 21,
+  "field_counts": {
+    "translation": 16,
+    "gloss": 7,
+    "text": 1
+  },
+  "changes": [
+    {
+      "word_id": 704,
+      "word": "size",
+      "example_index": 0,
+      "field": "translation",
+      "before": "它的大小就像鸡蛋。",
+      "after": "它大约有鸡蛋那么大。",
+      "reason": "about the size表示大小约等于鸡蛋；原译“大小就像鸡蛋”搭配不自然且漏掉约数。",
+      "original_metadata": {
+        "id": 42038,
+        "author": "CK",
+        "translationId": 797089,
+        "translationAuthor": "Martha",
+        "translationAdapted": "OpenCC t2s"
+      },
+      "attribution_note": "保留原id/author/translationId/translationAuthor；修改后的中文须标明本站改译，不作为原译者原句展示。"
+    },
+    {
+      "word_id": 709,
+      "word": "media",
+      "example_index": 0,
+      "field": "translation",
+      "before": "我在社交媒体上看到了这条新闻。",
+      "after": "我在社交媒体上得知了这条新闻。",
+      "reason": "heard the news表示获知新闻；原译“看到了”擅自限定了获取方式。",
+      "original_metadata": {
+        "source": "original"
+      }
+    },
+    {
+      "word_id": 711,
+      "word": "sign",
+      "example_index": 1,
+      "field": "gloss",
+      "before": "标志；签名；签署",
+      "after": "标志；征兆；签名；签署",
+      "reason": "两句均使用征兆义，原简义未明确列出该常用义；补入后与原句对齐。"
+    },
+    {
+      "word_id": 726,
+      "word": "success",
+      "example_index": 1,
+      "field": "translation",
+      "before": "我的成功要归功于他。",
+      "after": "我的成功要归功于他的帮助。",
+      "reason": "his help明确归因于他的帮助；原译只保留“他”，遗漏help。",
+      "original_metadata": {
+        "id": 251286,
+        "author": "CK",
+        "translationId": 345962,
+        "translationAuthor": "fucongcong"
+      },
+      "attribution_note": "保留原id/author/translationId/translationAuthor；修改后的中文须标明本站改译，不作为原译者原句展示。"
+    },
+    {
+      "word_id": 728,
+      "word": "recognize",
+      "example_index": 0,
+      "field": "translation",
+      "before": "房子里面的人我一个也不认得。",
+      "after": "房间里的人，我一个也没认出来。",
+      "reason": "room是房间，不是整座房子；recognize表示认出，保留过去时的识别动作。",
+      "original_metadata": {
+        "id": 6246935,
+        "author": "CK",
+        "translationId": 8591278,
+        "translationAuthor": "easononizuka"
+      },
+      "attribution_note": "保留原id/author/translationId/translationAuthor；修改后的中文须标明本站改译，不作为原译者原句展示。"
+    },
+    {
+      "word_id": 728,
+      "word": "recognize",
+      "example_index": 1,
+      "field": "translation",
+      "before": "照片里的人我都不认识。",
+      "after": "照片里的人，我一个也没认出来。",
+      "reason": "did not recognize表示未认出照片中的人；原译“不认识”转为是否相识，弱化了目标词的识别意义。",
+      "original_metadata": {
+        "id": 6245128,
+        "author": "CK",
+        "translationId": 9400774,
+        "translationAuthor": "BobbyLee"
+      },
+      "attribution_note": "保留原id/author/translationId/translationAuthor；修改后的中文须标明本站改译，不作为原译者原句展示。"
+    },
+    {
+      "word_id": 729,
+      "word": "cup",
+      "example_index": 1,
+      "field": "translation",
+      "before": "我要一杯冰红茶。",
+      "after": "我要一杯冰茶。",
+      "reason": "iced tea未指定红茶；原译无依据增加茶的种类。",
+      "original_metadata": {
+        "id": 400187,
+        "author": "sysko",
+        "translationId": 400186,
+        "translationAuthor": "sysko"
+      },
+      "attribution_note": "保留原id/author/translationId/translationAuthor；修改后的中文须标明本站改译，不作为原译者原句展示。"
+    },
+    {
+      "word_id": 737,
+      "word": "loss",
+      "example_index": 0,
+      "field": "gloss",
+      "before": "损失；失去",
+      "after": "损失；失去；茫然（at a loss）",
+      "reason": "首句at a loss for words是说不出话、不知所措的习语；原简义只有损失/失去，不能直接解释该语境。"
+    },
+    {
+      "word_id": 739,
+      "word": "wonder",
+      "example_index": 1,
+      "field": "gloss",
+      "before": "想知道；奇迹",
+      "after": "想知道；奇迹；难怪（no wonder）",
+      "reason": "第二句no wonder是难怪、不足为奇的习语，不能解释成奇迹；保留原义并注明短语义。"
+    },
+    {
+      "word_id": 748,
+      "word": "trade",
+      "example_index": 1,
+      "field": "gloss",
+      "before": "贸易；交易",
+      "after": "贸易；交易；交换",
+      "reason": "第二句trade seats指互换座位，不是商业交易；补入交换义。"
+    },
+    {
+      "word_id": 756,
+      "word": "arrive",
+      "example_index": 0,
+      "field": "translation",
+      "before": "电车将准点到达。",
+      "after": "火车将准点到达。",
+      "reason": "train未限定为电车；原译擅自缩窄列车类型，保留预计到达的时态。",
+      "original_metadata": {
+        "id": 279212,
+        "author": "\\N",
+        "translationId": 347123,
+        "translationAuthor": "zhouj1955"
+      },
+      "attribution_note": "保留原id/author/translationId/translationAuthor；修改后的中文须标明本站改译，不作为原译者原句展示。"
+    },
+    {
+      "word_id": 758,
+      "word": "benefit",
+      "example_index": 1,
+      "field": "translation",
+      "before": "这个计划最大的好处是什么？",
+      "after": "这个计划的主要好处是什么？",
+      "reason": "main是主要的，不是程度最高的“最大”；修复无依据的程度变化。",
+      "original_metadata": {
+        "source": "original"
+      }
+    },
+    {
+      "word_id": 761,
+      "word": "lawyer",
+      "example_index": 1,
+      "field": "translation",
+      "before": "我怀疑他是一名律师。",
+      "after": "我想他可能是律师。",
+      "reason": "I think与may表达推测和可能性；原译“怀疑”遗漏可能性结构，容易引出质疑或不信任。",
+      "original_metadata": {
+        "id": 9711758,
+        "author": "kupo033",
+        "translationId": 4456364,
+        "translationAuthor": "plutowu"
+      },
+      "attribution_note": "保留原id/author/translationId/translationAuthor；修改后的中文须标明本站改译，不作为原译者原句展示。"
+    },
+    {
+      "word_id": 763,
+      "word": "section",
+      "example_index": 0,
+      "field": "gloss",
+      "before": "部分；章节",
+      "after": "部分；章节；区域；部门",
+      "reason": "两句分别使用非吸烟区域和销售部门，原简义部分/章节不够明确对应这些语境。"
+    },
+    {
+      "word_id": 767,
+      "word": "sister",
+      "example_index": 0,
+      "field": "translation",
+      "before": "我姐姐住得不远。",
+      "after": "我的姐妹住在附近。",
+      "reason": "sister没有说明年长或年幼；原译“姐姐”擅加年龄关系。",
+      "original_metadata": {
+        "source": "original"
+      }
+    },
+    {
+      "word_id": 767,
+      "word": "sister",
+      "example_index": 1,
+      "field": "translation",
+      "before": "你妹妹也来吗？",
+      "after": "你的姐妹也来吗？",
+      "reason": "sister没有说明年长或年幼；原译“妹妹”擅加年龄关系。",
+      "original_metadata": {
+        "source": "original"
+      }
+    },
+    {
+      "word_id": 768,
+      "word": "professor",
+      "example_index": 1,
+      "field": "translation",
+      "before": "你碰巧认识了布朗教授吗？",
+      "after": "你碰巧认识布朗教授吗？",
+      "reason": "happen to know询问是否认识；原译“认识了”错误增加了结识已完成的过程。",
+      "original_metadata": {
+        "id": 7773706,
+        "author": "sharris123",
+        "translationId": 5549907,
+        "translationAuthor": "verdastelo9604"
+      },
+      "attribution_note": "保留原id/author/translationId/translationAuthor；修改后的中文须标明本站改译，不作为原译者原句展示。"
+    },
+    {
+      "word_id": 770,
+      "word": "financial",
+      "example_index": 1,
+      "field": "translation",
+      "before": "投资前先咨询财务建议。",
+      "after": "投资前先征询财务方面的建议。",
+      "reason": "ask for advice是征询建议；中文“咨询财务建议”动宾搭配不自然，仅修复搭配。",
+      "original_metadata": {
+        "source": "original"
+      }
+    },
+    {
+      "word_id": 774,
+      "word": "authority",
+      "example_index": 0,
+      "field": "translation",
+      "before": "他授权给我解雇了他们。",
+      "after": "他授权我解雇他们。",
+      "reason": "authority to fire是授予解雇权限，不表示已经解雇；原译“解雇了”擅加动作完成。",
+      "original_metadata": {
+        "id": 307713,
+        "author": "CK",
+        "translationId": 805193,
+        "translationAuthor": "Martha",
+        "translationAdapted": "OpenCC t2s"
+      },
+      "attribution_note": "保留原id/author/translationId/translationAuthor；修改后的中文须标明本站改译，不作为原译者原句展示。"
+    },
+    {
+      "word_id": 777,
+      "word": "sort",
+      "example_index": 0,
+      "field": "gloss",
+      "before": "种类；分类",
+      "after": "种类；分类；有点（sort of）",
+      "reason": "首句sort of是程度副词短语有点，不能按种类或分类理解；补入并标清短语。"
+    },
+    {
+      "word_id": 778,
+      "word": "act",
+      "example_index": 0,
+      "field": "gloss",
+      "before": "行动；表演",
+      "after": "行动；表演；充当（act as）",
+      "reason": "首句act as a guide表示充当导游；补入并注明act as搭配，避免误读为表演。"
+    },
+    {
+      "word_id": 778,
+      "word": "act",
+      "example_index": 1,
+      "field": "text",
+      "before": "Time is short, we must act NOW.",
+      "after": "Time is short; we must act NOW.",
+      "reason": "两个完整独立分句不能仅用逗号连接；只将逗号改为分号，保留全部词语与NOW强调。",
+      "original_metadata": {
+        "id": 263919,
+        "author": "\\N",
+        "translationId": 346143,
+        "translationAuthor": "nickyeow",
+        "translationAdapted": "OpenCC t2s"
+      },
+      "attribution_note": "保留原句id与作者作为来源；修改后的英文另标本站标点修订，并留存原文，不能冒充作者未改动原句。"
+    },
+    {
+      "word_id": 795,
+      "word": "rather",
+      "example_index": 1,
+      "field": "translation",
+      "before": "我宁愿走路胜过搭公车。",
+      "after": "我宁愿走路，也不愿坐公交车。",
+      "reason": "would rather A than B表示两种选择的偏好；原译“宁愿…胜过…”混用句式，中文不通顺。",
+      "original_metadata": {
+        "id": 35264,
+        "author": "CK",
+        "translationId": 891742,
+        "translationAuthor": "Martha",
+        "translationAdapted": "OpenCC t2s"
+      },
+      "attribution_note": "保留原id/author/translationId/translationAuthor；修改后的中文须标明本站改译，不作为原译者原句展示。"
+    },
+    {
+      "word_id": 797,
+      "word": "guess",
+      "example_index": 1,
+      "field": "translation",
+      "before": "我猜这是我们的运气坏。",
+      "after": "我想那是我们运气不好。",
+      "reason": "原译“这是我们的运气坏”语序不成立；保留guess的推测和was的过去指向。",
+      "original_metadata": {
+        "id": 5250872,
+        "author": "CK",
+        "translationId": 5632405,
+        "translationAuthor": "verdastelo9604"
+      },
+      "attribution_note": "保留原id/author/translationId/translationAuthor；修改后的中文须标明本站改译，不作为原译者原句展示。"
+    }
+  ],
+  "attribution_policy": "外部句的id、author、translationId、translationAuthor须保留为来源元数据；中文变更另标“本站审校改译”，留存原译，不冒充原译者未改动译文。英文标点修订同样另标并保留原文。",
+  "sources": [
+    {
+      "url": "https://www.merriam-webster.com/dictionary/recognize",
+      "used_for": "728 recognize的识别义"
+    },
+    {
+      "url": "https://www.merriam-webster.com/dictionary/sister",
+      "used_for": "767 sister本身不区分长幼"
+    },
+    {
+      "url": "https://www.merriam-webster.com/dictionary/sign",
+      "used_for": "711 sign的征兆义"
+    },
+    {
+      "url": "https://www.merriam-webster.com/dictionary/trade",
+      "used_for": "748 trade交换、换座位的动词义"
+    },
+    {
+      "url": "https://www.merriam-webster.com/dictionary/section",
+      "used_for": "763 section的区域、群体部分义"
+    },
+    {
+      "url": "https://www.merriam-webster.com/dictionary/wonder",
+      "used_for": "739 wonder惊奇、令人惊奇之事的名词义"
+    },
+    {
+      "url": "https://www.merriam-webster.com/dictionary/sort%20of",
+      "used_for": "777 sort of表示程度有点"
+    },
+    {
+      "url": "https://www.merriam-webster.com/dictionary/act",
+      "used_for": "778 act as搭配义"
+    },
+    {
+      "url": "https://www.merriam-webster.com/dictionary/match",
+      "used_for": "735 match允许equal or similar义，原译她性格像母亲可保留，不武断改为竞争能力"
+    }
+  ],
+  "uncertain_items": [],
+  "source_sha256": {
+    "words.json": "797ee5153972d4f8041dcaee67e907635199d229952e1b433d982684f0667907",
+    "examples.json": "da64bb806fa824e9224d196119d7c72fcbfd1e340120bbd43776abe2287709e1"
+  },
+  "root_cross_review_complete": true,
+  "proposal_sha256": "168c89aaa893c62d0fe5d355b70cea82dd40858343d4f2a2d915bc782af32449"
+}

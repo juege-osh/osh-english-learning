@@ -1,0 +1,265 @@
+{
+  "range": [
+    1001,
+    1100
+  ],
+  "reviewed_words": 100,
+  "reviewed_bilingual_pairs": 200,
+  "external_words": 38,
+  "external_sentences": 76,
+  "changes": [
+    {
+      "word_id": 1003,
+      "word": "eventually",
+      "example_index": 1,
+      "field": "translation",
+      "before": "坚持练习，终究会学会的。",
+      "after": "坚持练习，你最终会做到的。",
+      "reason": "get there表示达到目标，原译擅自限定为学会。",
+      "original_metadata": {
+        "source": "original"
+      }
+    },
+    {
+      "word_id": 1004,
+      "word": "university",
+      "example_index": 0,
+      "field": "translation",
+      "before": "她在大学学生物学。",
+      "after": "她在大学学习生物学。",
+      "reason": "修掉大学学生物学的重叠表达。",
+      "original_metadata": {
+        "source": "original"
+      }
+    },
+    {
+      "word_id": 1014,
+      "word": "relation",
+      "example_index": 0,
+      "field": "translation",
+      "before": "关于这件事，我必须负上责任。",
+      "after": "这件事是我的错。",
+      "reason": "am to blame为应受责备，不是必须承担责任的将来义务。",
+      "original_metadata": {
+        "id": 56037,
+        "author": "\\N",
+        "translationId": 346853,
+        "translationAuthor": "nickyeow",
+        "translationAdapted": "OpenCC t2s"
+      }
+    },
+    {
+      "word_id": 1017,
+      "word": "labor",
+      "example_index": 0,
+      "field": "translation",
+      "before": "我不能做体力劳动。",
+      "after": "我不适合做体力劳动。",
+      "reason": "not fit for不直接等于完全不能做，保留适合程度。",
+      "original_metadata": {
+        "id": 259788,
+        "author": "\\N",
+        "translationId": 7752868,
+        "translationAuthor": "Leolaaziano",
+        "translationAdapted": "OpenCC t2s"
+      }
+    },
+    {
+      "word_id": 1017,
+      "word": "labor",
+      "example_index": 1,
+      "field": "translation",
+      "before": "吉姆怕了体力劳动了。",
+      "after": "吉姆害怕体力劳动。",
+      "reason": "去掉怕了……了的重复和无依据的状态变化。",
+      "original_metadata": {
+        "id": 53243,
+        "author": "CN",
+        "translationId": 510741,
+        "translationAuthor": "fucongcong"
+      }
+    },
+    {
+      "word_id": 1022,
+      "word": "concerned",
+      "example_index": 1,
+      "field": "translation",
+      "before": "我很关心他的健康。",
+      "after": "我很担心他的健康。",
+      "reason": "concerned about在此为担心，关心弱化了担忧。",
+      "original_metadata": {
+        "id": 260590,
+        "author": "CK",
+        "translationId": 5819693,
+        "translationAuthor": "verdastelo9604"
+      }
+    },
+    {
+      "word_id": 1035,
+      "word": "species",
+      "example_index": 1,
+      "field": "translation",
+      "before": "这品种的蝴蝶现在已经绝种了。",
+      "after": "这个物种的蝴蝶如今已经灭绝了。",
+      "reason": "species为物种，不能译为品种。",
+      "original_metadata": {
+        "id": 65888,
+        "author": "Dejo",
+        "translationId": 475392,
+        "translationAuthor": "nickyeow",
+        "translationAdapted": "OpenCC t2s"
+      }
+    },
+    {
+      "word_id": 1038,
+      "word": "basic",
+      "example_index": 1,
+      "field": "translation",
+      "before": "工人拿不到基本工资。",
+      "after": "工人没有领到基本工资。",
+      "reason": "did not get为过去没有领取，拿不到改变时态和可能性。",
+      "original_metadata": {
+        "id": 2367560,
+        "author": "eastasiastudent",
+        "translationId": 2367559,
+        "translationAuthor": "GlossaMatik"
+      }
+    },
+    {
+      "word_id": 1048,
+      "word": "refer",
+      "example_index": 0,
+      "field": "translation",
+      "before": "尽可能多点查字典。",
+      "after": "尽量多查字典。",
+      "reason": "去掉多点查的生硬搭配，保留尽可能经常查阅的要求。",
+      "original_metadata": {
+        "id": 39503,
+        "author": "zumley",
+        "translationId": 348469,
+        "translationAuthor": "nickyeow",
+        "translationAdapted": "OpenCC t2s"
+      }
+    },
+    {
+      "word_id": 1058,
+      "word": "touch",
+      "example_index": null,
+      "field": "gloss",
+      "before": "触碰；联系",
+      "after": "触碰；联系；少许（a touch of）",
+      "reason": "现有例句a touch of the flu使用少许义，简义未提示。"
+    },
+    {
+      "word_id": 1076,
+      "word": "afternoon",
+      "example_index": 0,
+      "field": "translation",
+      "before": "我们今天下午两点见得面。",
+      "after": "我们下午两点见了面。",
+      "reason": "英文没有今天，修掉见得面错误助词。",
+      "original_metadata": {
+        "id": 248662,
+        "author": "CK",
+        "translationId": 7681106,
+        "translationAuthor": "Leolaaziano",
+        "translationAdapted": "OpenCC t2s"
+      }
+    },
+    {
+      "word_id": 1077,
+      "word": "weekend",
+      "example_index": 1,
+      "field": "translation",
+      "before": "你整个周末做了什么?",
+      "after": "你周末做了什么？",
+      "reason": "over the weekend指周末期间，不强调整个周末。",
+      "original_metadata": {
+        "id": 401799,
+        "author": "CK",
+        "translationId": 905866,
+        "translationAuthor": "Martha",
+        "translationAdapted": "OpenCC t2s"
+      }
+    },
+    {
+      "word_id": 1078,
+      "word": "dozen",
+      "example_index": 1,
+      "field": "translation",
+      "before": "我用三元一打的价钱买了这些东西。",
+      "after": "我以每打3美元的价格购买这些货物。",
+      "reason": "$应保留美元单位；buy为一般现在时，不擅加买了。",
+      "original_metadata": {
+        "id": 44297,
+        "author": "\\N",
+        "translationId": 345998,
+        "translationAuthor": "nickyeow",
+        "translationAdapted": "OpenCC t2s"
+      }
+    },
+    {
+      "word_id": 1079,
+      "word": "possibility",
+      "example_index": 1,
+      "field": "translation",
+      "before": "他调查了两方合作的可能性。",
+      "after": "他研究了合作的可能性。",
+      "reason": "英文没有两方，去掉增译；investigated the possibility译研究更自然。",
+      "original_metadata": {
+        "id": 295292,
+        "author": "al_ex_an_der",
+        "translationId": 366916,
+        "translationAuthor": "nickyeow",
+        "translationAdapted": "OpenCC t2s"
+      }
+    },
+    {
+      "word_id": 1089,
+      "word": "stick",
+      "example_index": 0,
+      "field": "translation",
+      "before": "这个老人拄著一根拐杖走路。",
+      "after": "这个老人拄着一根拐杖走路。",
+      "reason": "拄著中的著未转换为常用简体助词着。",
+      "original_metadata": {
+        "id": 326449,
+        "author": "CK",
+        "translationId": 900352,
+        "translationAuthor": "Martha",
+        "translationAdapted": "OpenCC t2s"
+      }
+    },
+    {
+      "word_id": 1100,
+      "word": "slowly",
+      "example_index": 0,
+      "field": "translation",
+      "before": "我尽可能的走慢一点。",
+      "after": "我尽可能走得慢一些。",
+      "reason": "原句尽可能的走的助词错误，调整自然搭配。",
+      "original_metadata": {
+        "id": 255062,
+        "author": "CK",
+        "translationId": 876939,
+        "translationAuthor": "Martha",
+        "translationAdapted": "OpenCC t2s"
+      }
+    }
+  ],
+  "frozen": true,
+  "quality_boundary": "本站编辑审读，不冒充专业外部审校。",
+  "version": "1.31.7",
+  "status": "frozen_after_root_cross_review",
+  "reviewed_glosses": 100,
+  "reviewed_bilingual_examples": 200,
+  "root_cross_review_complete": true,
+  "change_field_count": 16,
+  "changed_word_count": 15,
+  "field_counts": {
+    "translation": 15,
+    "gloss": 1,
+    "text": 0
+  },
+  "proposal_sha256": "df1eb70395d2c50a04909736514c8f4b8b004e4998bca993a42fcfc9944cfb9a"
+}

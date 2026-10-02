@@ -1,0 +1,177 @@
+{
+  "range": [
+    801,
+    900
+  ],
+  "reviewed": {
+    "words": 100,
+    "pairs": 200
+  },
+  "external_with_id": {
+    "words": 33,
+    "pairs": 66
+  },
+  "changes": [
+    {
+      "word_id": 808,
+      "word": "network",
+      "example_index": 1,
+      "field": "translation",
+      "before": "她建立了广泛的朋友圈。",
+      "after": "她建立了稳固的朋友关系网。",
+      "reason": "strong强调关系网牢固、有力，原译“广泛”换成了范围大小。",
+      "original_metadata": {
+        "source": "original"
+      }
+    },
+    {
+      "word_id": 811,
+      "word": "cold",
+      "example_index": 0,
+      "field": "translation",
+      "before": "多么冷了！",
+      "after": "真冷啊！",
+      "reason": "原译“多么冷了”不合中文感叹句表达；保留感叹冷的程度。",
+      "original_metadata": {
+        "id": 36094,
+        "author": "Zifre",
+        "translationId": 891083,
+        "translationAuthor": "Zifre",
+        "translationAdapted": "OpenCC t2s"
+      }
+    },
+    {
+      "word_id": 814,
+      "word": "science",
+      "example_index": 0,
+      "field": "translation",
+      "before": "他必须上两堂理化课。",
+      "after": "他必须上两堂科学课。",
+      "reason": "science不能限定为理化；保留classes的课堂表述，不擅改为两门课程。",
+      "original_metadata": {
+        "id": 304618,
+        "author": "CK",
+        "translationId": 875330,
+        "translationAuthor": "Martha",
+        "translationAdapted": "OpenCC t2s"
+      }
+    },
+    {
+      "word_id": 815,
+      "word": "green",
+      "example_index": 0,
+      "field": "gloss",
+      "before": "绿色的；绿色",
+      "after": "绿色的；经验不足的；绿色",
+      "reason": "首句green指经验不足，现简义只列颜色，补足已保留例句实际义。",
+      "source_url": "https://www.collinsdictionary.com/us/dictionary/english/green"
+    },
+    {
+      "word_id": 826,
+      "word": "firm",
+      "example_index": 1,
+      "field": "gloss",
+      "before": "公司；坚定的",
+      "after": "公司；坚定的；坚实的",
+      "reason": "第二句床垫firm指不松软，不能由“坚定的”解释，补足物体质地义。",
+      "source_url": "https://dictionary.cambridge.org/us/dictionary/english/firm"
+    },
+    {
+      "word_id": 831,
+      "word": "avoid",
+      "example_index": 0,
+      "field": "text",
+      "before": "We must avoid war at all cost.",
+      "after": "We must avoid war at all costs.",
+      "reason": "现代常用固定短语是at all costs；保留原句主张，只改复数形式。",
+      "source_url": "https://dictionary.cambridge.org/dictionary/english/at-all-costs",
+      "original_metadata": {
+        "id": 5367157,
+        "author": "Mateon1",
+        "translationId": 389424,
+        "translationAuthor": "fucongcong"
+      }
+    },
+    {
+      "word_id": 831,
+      "word": "avoid",
+      "example_index": 0,
+      "field": "translation",
+      "before": "我们应该不惜代价避免战争。",
+      "after": "我们必须不惜一切代价避免战争。",
+      "reason": "must是必须，原译“应该”削弱了明确的必要性。",
+      "original_metadata": {
+        "id": 5367157,
+        "author": "Mateon1",
+        "translationId": 389424,
+        "translationAuthor": "fucongcong"
+      }
+    },
+    {
+      "word_id": 841,
+      "word": "maintain",
+      "example_index": 0,
+      "field": "translation",
+      "before": "保持规律的作息不容易。",
+      "after": "坚持一套日常安排并不容易。",
+      "reason": "routine可以是各类日常惯例，原译“作息”限缩为生活起居。",
+      "original_metadata": {
+        "source": "original"
+      }
+    },
+    {
+      "word_id": 847,
+      "word": "de",
+      "example_index": 0,
+      "field": "gloss",
+      "before": "（外语姓名地名中的）德",
+      "after": "外语姓名、地名中的连接成分",
+      "reason": "de不是统一对应汉字“德”；两句均在外语专名内，明确其连接成分性质。",
+      "source_url": "https://www.collinsdictionary.com/us/dictionary/french-english/de"
+    },
+    {
+      "word_id": 865,
+      "word": "camera",
+      "example_index": 1,
+      "field": "translation",
+      "before": "我无论去甚么地方也带著相机。",
+      "after": "我无论去什么地方都带着相机。",
+      "reason": "原译“无论……也”搭配不自然，改为“无论……都”，并统一当前简体表达。",
+      "original_metadata": {
+        "id": 38102,
+        "author": "CK",
+        "translationId": 422982,
+        "translationAuthor": "nickyeow",
+        "translationAdapted": "OpenCC t2s"
+      }
+    },
+    {
+      "word_id": 897,
+      "word": "sea",
+      "example_index": 1,
+      "field": "text",
+      "before": "We walked along the sea.",
+      "after": "We walked beside the sea.",
+      "reason": "沿海边散步用beside the sea更自然；保留sea完整词和原中文，不新增行为或地点。",
+      "original_metadata": {
+        "source": "original"
+      }
+    }
+  ],
+  "metadata_policy": "仅提交字段修订建议；原id、author、translationId、translationAuthor及其他来源字段保留。中译修订应用时标本站改译，英文改动应用时标本站改编，不冒充外部原句。",
+  "pending": [],
+  "review_scope": "逐条审读100个简义与200对双语；保留无明确问题的句子，不按配额重写。humanizer自审完成。",
+  "version": "1.31.7",
+  "status": "frozen_after_root_cross_review",
+  "reviewed_glosses": 100,
+  "reviewed_bilingual_examples": 200,
+  "root_cross_review_complete": true,
+  "change_field_count": 11,
+  "changed_word_count": 10,
+  "field_counts": {
+    "translation": 6,
+    "gloss": 3,
+    "text": 2
+  },
+  "proposal_sha256": "69daf48e39fdb64a5ed8603ccaca376c90eba73656e0d06da6e73c41c3a19ca0"
+}

@@ -748,3 +748,10 @@ prosthesis采用假肢、人工假体，matchup改为对阵，generational采用
 - [Merriam-Webster nitrous](https://www.merriam-webster.com/dictionary/nitrous)：限定亚硝及一氧化二氮语境，不泛称所有含氮化合物。
 - [Cambridge nr](https://dictionary.cambridge.org/us/dictionary/english/nr)、[seater](https://dictionary.cambridge.org/us/dictionary/english/seater)、[BIPM SI前缀](https://www.bipm.org/en/measurement-units/si-prefixes)：地址缩写、复合构词与微克/纳秒单位。
 - [Scala官网](https://www.scala-lang.org/)、[NIH MeSH前庭阶](https://www.ncbi.nlm.nih.gov/mesh/68054738)：编程语言专名与解剖义分开说明。
+
+
+## v1.31.7：701–1100质量核查与来源展示
+
+审读400简义800句，含167词334句外部语料，修64词71字段。四份 `reviewed_examples_701_800.json` 至 `reviewed_examples_1001_1100.json` 为冻结的稀疏修订记录。重建原批次后最后运行 `python3 qa/review_main_701_1100.py --apply`；它校验前后值、稳定ID和原来源字段，保留完整词典尾部。`example-provenance.test.js` 用实际渲染函数检查外部原译链接、本站校订标志、简体转换、本站原创及安全转义。最终独立范围检查和发布结果见持久回执。
+
+释义参考：[NASA月食说明](https://science.nasa.gov/moon/eclipses/)、[Cambridge go ahead](https://dictionary.cambridge.org/dictionary/english/go-ahead)、[Cambridge civil](https://dictionary.cambridge.org/dictionary/english/civil)、[Cambridge firm](https://dictionary.cambridge.org/dictionary/english/firm)、[Merriam-Webster recognize](https://www.merriam-webster.com/dictionary/recognize)、[Merriam-Webster sister](https://www.merriam-webster.com/dictionary/sister)。其余词典来源随四份修订记录保留；保留正确语料，不为凑数量重写。
