@@ -1,0 +1,1080 @@
+{
+  "version": "1.32.5",
+  "range": [
+    10601,
+    11200
+  ],
+  "status": "frozen",
+  "base_head": "9ddff31d1eb7e6de96f36df50d2e41904d3d4edf",
+  "reviewed_words": 600,
+  "reviewed_english_example_contexts": 1200,
+  "changed_words": 123,
+  "replaced_definitions": 112,
+  "cleared_mismatched_definitions": 11,
+  "existing_empty_en_preserved": 46,
+  "unchanged_correct": 431,
+  "reports": [
+    {
+      "range": "10601-10800",
+      "file": "qa/review_definitions_10601_10800.json",
+      "sha256": "c5a1946fc70dd61fe39912d986c6ea572a6d1565685aeeb092edc8f65afa53c5",
+      "counts": {
+        "unchanged": 152,
+        "empty": 9,
+        "changed": 39
+      }
+    },
+    {
+      "range": "10801-11000",
+      "file": "qa/review_definitions_10801_11000.json",
+      "sha256": "4cd0f0636a6fa382fcdc3118aedbefb54df7cbf38176a465605ca20e4d0f789c",
+      "counts": {
+        "changed": 36,
+        "unchanged": 145,
+        "empty": 19
+      }
+    },
+    {
+      "range": "11001-11200",
+      "file": "qa/review_definitions_11001_11200.json",
+      "sha256": "f814fd4816bdb1188335a643f22f8d82af8b69ba45ea67f80316dc8c0b4eccc3",
+      "counts": {
+        "unchanged": 134,
+        "empty": 18,
+        "changed": 48
+      }
+    }
+  ],
+  "root_review": "root实际逐项读600个现存en、中文义、完整词典及1200组完整双语，再逐项审读三份冻结作者稿全部123项建议与所核来源。接受建议，另拓宽lander天体范围一项。所有作者及整批审读冻结后才apply。",
+  "root_sources_checked": [
+    {
+      "url": "https://weather.metoffice.gov.uk/guides/coast-and-sea/beaufort-scale",
+      "supports": "gale风级旧数字错误，采用大风基本义。"
+    },
+    {
+      "url": "https://www.parliament.uk/site-information/glossary/backbenches/",
+      "supports": "后座议员排除政府部长及反对党前座发言人，不仅排除党魁。"
+    },
+    {
+      "url": "https://www.rhs.org.uk/vegetables/salad-onions/grow-your-own?type=v",
+      "supports": "scallions为青葱，不是原韭葱植物。"
+    },
+    {
+      "url": "https://www.cancer.gov/types/vaginal/patient/vaginal-treatment-pdq",
+      "supports": "阴道通道从宫颈通向体外。"
+    },
+    {
+      "url": "https://www.ninds.nih.gov/Disorders/All-Disorders/Migraine-Information-Page",
+      "supports": "偏头痛为复杂神经疾病，不归单一血管性。"
+    },
+    {
+      "url": "https://oceanservice.noaa.gov/facts/seaweed.html",
+      "supports": "seaweed通称海洋植物及藻类，保留正确基本义。"
+    },
+    {
+      "url": "https://blogs.esa.int/rosetta/2014/11/13/philaes-landing-through-rosettas-eye/",
+      "supports": "着陆器可在彗星工作，不只行星或卫星。"
+    }
+  ],
+  "root_adjustments": [
+    {
+      "id": 10766,
+      "word": "lander",
+      "author_after": "a spacecraft designed to reach and operate on a planet's or moon's surface",
+      "final_after": "a spacecraft designed to land and operate on the surface of a planet, moon, or other celestial body",
+      "reason": "ESA Philae在彗星着陆，着陆器不应仅限行星或卫星。"
+    }
+  ],
+  "boundaries": [
+    "仅en辅助定义；学习ID、词头、中文义、音标、完整原词典和全部例句保持。",
+    "普通姓名不锁定无依据的历史人物，11条清en回退既有中文题。",
+    "431个正确基本定义与46个原空保持，不为列全多义扩写。",
+    "覆盖不是全库专业语言审校，未验收真人音频。"
+  ],
+  "changes": [
+    {
+      "id": 10601,
+      "word": "substantiate",
+      "field": "en",
+      "before": "solidify, firm, or strengthen",
+      "after": "prove or support a claim with evidence",
+      "reason": "旧定义侧重实体化或加固；两句都是以证据证实说法，改为证据支持义。"
+    },
+    {
+      "id": 10613,
+      "word": "hayward",
+      "field": "en",
+      "before": "An officer who is appointed to guard hedges, and to keep",
+      "after": "an obsolete term for a parish officer responsible for fences and enclosures",
+      "reason": "旧英文在keep后截断；Collins证实旧时管理围栏的教区官员，第二句正用该历史义，补成完整定义并注明古用。"
+    },
+    {
+      "id": 10622,
+      "word": "adherent",
+      "field": "en",
+      "before": "sticking fast",
+      "after": "a person who supports a belief, movement, or organization",
+      "reason": "旧英文只解释黏附状态；两句指某思想和运动的追随者，中文常用义也列拥护者。"
+    },
+    {
+      "id": 10626,
+      "word": "overcoat",
+      "field": "en",
+      "before": "an additional protective coating (as of paint or varnish)",
+      "after": "a long warm coat worn over other clothes",
+      "reason": "旧英文取涂料保护层；两句均指穿戴的大衣，中文没有涂料义。"
+    },
+    {
+      "id": 10628,
+      "word": "foggy",
+      "field": "en",
+      "before": "s stunned or confused and slow to react (as from blows or drunkenness or exhaustion)",
+      "after": "covered in mist, or difficult to see or remember clearly",
+      "reason": "旧英文限定受打击、醉酒或疲劳后的迟钝状态；山上有雾和记忆模糊不属于该限定，改为现常用义。"
+    },
+    {
+      "id": 10632,
+      "word": "industrialised",
+      "field": "en",
+      "before": "v organize (the production of something) into an industry",
+      "after": "having developed industries on a large scale",
+      "reason": "现词头和两句都是完成工业化的地区或国家；旧释用主动动词组织生产，改为工业化状态。"
+    },
+    {
+      "id": 10638,
+      "word": "aversion",
+      "field": "en",
+      "before": "the act of turning yourself (or your gaze) away",
+      "after": "a strong dislike of someone or something",
+      "reason": "旧英文是转身或移开视线的动作；两句均为厌恶人群或冲突，中文也为强烈反感。"
+    },
+    {
+      "id": 10641,
+      "word": "binder",
+      "field": "en",
+      "before": "a machine that cuts grain and binds it in sheaves",
+      "after": "a folder for holding papers, or a substance that holds materials together",
+      "reason": "旧英文取捆扎谷物的农业机械；发票夹和胶合材料两句均不对应，改为所用常见义。"
+    },
+    {
+      "id": 10642,
+      "word": "incline",
+      "field": "en",
+      "before": "bend or turn (one's ear) towards a speaker in order to listen well",
+      "after": "a slope, or to lean or tend toward a position or opinion",
+      "reason": "旧英文只指把耳朵转向说话者；步道斜坡和倾向接受观点的两句不对应，改为斜坡及倾向义。"
+    },
+    {
+      "id": 10649,
+      "word": "serenity",
+      "field": "en",
+      "before": "n a disposition free from stress or emotion",
+      "after": "a state of peaceful calm",
+      "reason": "旧释free from emotion把平和写成没有情绪；花园宁静和冷静应对危机不要求没有情绪，去除误导限定。"
+    },
+    {
+      "id": 10654,
+      "word": "scuttle",
+      "field": "en",
+      "before": "container for coal; shaped to permit pouring the coal onto the fire",
+      "after": "to move with quick small steps, or to prevent a plan from succeeding",
+      "reason": "旧英文是盛煤容器；两句为螃蟹快速爬动和使计划落空，改为对应动词义。"
+    },
+    {
+      "id": 10661,
+      "word": "midsummer",
+      "field": "en",
+      "before": "n June 21, when the sun is at its northernmost point",
+      "after": "the middle of summer, especially the period around the summer solstice",
+      "reason": "旧英文把词等同固定六月二十一日；Oxford及Collins给出仲夏时段，游泳水温和节庆语境均指时段。"
+    },
+    {
+      "id": 10672,
+      "word": "appalled",
+      "field": "en",
+      "before": "v strike with disgust or revulsion",
+      "after": "shocked or horrified by something unpleasant",
+      "reason": "两句和词头均为感到震惊的状态；旧主动释strike with disgust写成使别人厌恶，改为形容词义。"
+    },
+    {
+      "id": 10676,
+      "word": "boyle",
+      "field": "en",
+      "before": "United States writer (1902-1992)",
+      "after": "the Irish-born scientist known for his law relating gas pressure and volume",
+      "reason": "旧释锁定美国作家Kay Boyle；第一句明确波义耳定律，Collins及Royal Society支持罗伯特·波义耳，不能沿用作家身份。"
+    },
+    {
+      "id": 10690,
+      "word": "patchwork",
+      "field": "en",
+      "before": "a theory or argument made up of miscellaneous or incongruous ideas",
+      "after": "cloth made by joining small pieces, or a mixture of different parts",
+      "reason": "旧释取拼凑不协调思想的论证；例句为拼布被和地块拼成的田野，不是论证，改为实际常见义。"
+    },
+    {
+      "id": 10704,
+      "word": "culmination",
+      "field": "en",
+      "before": "(astronomy) a heavenly body's highest celestial point above an observer's horizon",
+      "after": "the final or highest point reached by a process or series of events",
+      "reason": "旧英文取天体最高位置；演出终场和职业生涯巅峰均是过程的顶点，改为现义。"
+    },
+    {
+      "id": 10705,
+      "word": "holt",
+      "field": "en",
+      "before": "3d pers. sing. pres. of Hold, contr. from holdeth.",
+      "after": "",
+      "reason": "旧英文为holdeth的古缩约第三人称，中文和两句却作普通姓氏；不能猜具体人物，清空英文回中文题。"
+    },
+    {
+      "id": 10708,
+      "word": "backbencher",
+      "field": "en",
+      "before": "a member of the House of Commons who is not a party leader",
+      "after": "a member of parliament who is neither a government minister nor an opposition frontbench spokesperson",
+      "reason": "旧释仅排除党魁，不能正确区别前后座；英国议会官方说明排除政府部长和反对党前座发言人，并适用于两院议员。"
+    },
+    {
+      "id": 10718,
+      "word": "becker",
+      "field": "en",
+      "before": "A European fish (Pagellus centrodontus); the sea bream or",
+      "after": "",
+      "reason": "旧英文是鱼类名且末尾截断；中文和两句均为普通贝克尔姓氏，不能猜同姓名人，清空回中文。"
+    },
+    {
+      "id": 10720,
+      "word": "wholemeal",
+      "field": "en",
+      "before": "a of or relating to or derived from wheat",
+      "after": "made from flour containing all parts of the grain, including the bran",
+      "reason": "旧英文把普通白面粉也纳入，不能区别全麦；Oxford明确包含完整谷粒各部分，面包和面粉两句均对应。"
+    },
+    {
+      "id": 10723,
+      "word": "nissan",
+      "field": "en",
+      "before": "n the seventh month of the civil year; the first month of the ecclesiastic year (in March and April)",
+      "after": "a Japanese company and brand that makes motor vehicles",
+      "reason": "旧英文是希伯来历月份Nisan，与中文日产和两句汽车不符；日产官网确认汽车公司性质。"
+    },
+    {
+      "id": 10726,
+      "word": "aback",
+      "field": "en",
+      "before": "having the wind against the forward side of the sails",
+      "after": "used with taken to describe being suddenly surprised or shocked",
+      "reason": "旧英文取风吹船帆方向；两句taken aback均为吃惊，改为该固定短语中的常用义而不泄露词头。"
+    },
+    {
+      "id": 10729,
+      "word": "upside",
+      "field": "en",
+      "before": "n the highest or uppermost side of anything",
+      "after": "an advantage or positive aspect of a situation",
+      "reason": "旧释仅为空间上侧；灵活工时好处和提前结束任务的好处均是积极面，改为优势义。"
+    },
+    {
+      "id": 10733,
+      "word": "epoch",
+      "field": "en",
+      "before": "(astronomy) an arbitrarily fixed date that is the point in time relative to which information (as coordinates of a celestial body) is recorded",
+      "after": "a distinct period in history marked by important events or changes",
+      "reason": "旧释仅为天文计算固定日期；时代变化和发现新时代两句指历史时期，改为现用义。"
+    },
+    {
+      "id": 10734,
+      "word": "tucker",
+      "field": "en",
+      "before": "United States anarchist influential before World War I (1854-1939)",
+      "after": "",
+      "reason": "旧英文锁定特定美国无政府主义者；野餐带相机和前台留条并不能定位此人，保留姓氏中文并清空英文。"
+    },
+    {
+      "id": 10735,
+      "word": "reset",
+      "field": "en",
+      "before": "device for resetting instruments or controls",
+      "after": "to return something to its starting settings, or to set it again differently",
+      "reason": "旧英文是复位控制装置这个名词；两句均作重置路由器和重新设定优先事项的动词。"
+    },
+    {
+      "id": 10736,
+      "word": "gimmick",
+      "field": "en",
+      "before": "n a drawback or difficulty that is not readily evident",
+      "after": "a trick or device used to attract attention or promote something",
+      "reason": "旧英文是隐藏的困难或障碍；两句营销和吸引注意的噱头均不对应，改为常见宣传手法。"
+    },
+    {
+      "id": 10737,
+      "word": "limbo",
+      "field": "en",
+      "before": "an imaginary place for lost or neglected things",
+      "after": "an uncertain or unresolved state while waiting for a decision or outcome",
+      "reason": "旧释指被遗忘东西的假想地方；申请和计划待定均为悬而未决状态，改为现常用义。"
+    },
+    {
+      "id": 10743,
+      "word": "imbue",
+      "field": "en",
+      "before": "suffuse with color",
+      "after": "to fill someone or something with a quality or feeling",
+      "reason": "旧英文限定染色；作品的温暖感和孩子热爱阅读均是赋予某种情感或品质，改为对应义。"
+    },
+    {
+      "id": 10749,
+      "word": "knead",
+      "field": "en",
+      "before": "make uniform",
+      "after": "to press and fold a soft material repeatedly with the hands or paws",
+      "reason": "旧释make uniform只写结果，不能辨别揉捏动作，也不适用于猫揉踩；补明反复按压揉折的动作。"
+    },
+    {
+      "id": 10756,
+      "word": "hale",
+      "field": "en",
+      "before": "a soldier of the American Revolution who was hanged as a spy by the British; his last words were supposed to have been `I only regret that I have but one life to give for my country' (1755-1776)",
+      "after": "strong and healthy, especially in old age",
+      "reason": "旧英文锁定美国革命士兵Nathan Hale；两句均为身体硬朗的形容词，改为健壮义。"
+    },
+    {
+      "id": 10763,
+      "word": "poach",
+      "field": "en",
+      "before": "hunt illegally",
+      "after": "to cook gently in liquid, hunt illegally, or recruit another employer's staff",
+      "reason": "旧释只有非法猎捕；两句实际为水煮鸡蛋和挖走员工，改为常见动词义，保留确实存在的非法猎捕义。"
+    },
+    {
+      "id": 10765,
+      "word": "comp",
+      "field": "en",
+      "before": "n an intensive examination testing a student's proficiency in some special field of knowledge",
+      "after": "to provide something free of charge, or an item or ticket provided free",
+      "reason": "旧释是学生综合考试；两句为免饮料费用和赠票，Cambridge确认免费提供和赠票义。"
+    },
+    {
+      "id": 10766,
+      "word": "lander",
+      "field": "en",
+      "before": "a town in central Wyoming",
+      "after": "a spacecraft designed to land and operate on the surface of a planet, moon, or other celestial body",
+      "reason": "旧英文是怀俄明州城镇；两句为月球着陆器，NASA官方资料支持表面着陆工作航天器义。；root据ESA彗星着陆器资料补明其他天体，避免只限行星或卫星。"
+    },
+    {
+      "id": 10768,
+      "word": "macaroni",
+      "field": "en",
+      "before": "a British dandy in the 18th century who affected Continental mannerisms",
+      "after": "pasta made in small tubes, often curved",
+      "reason": "旧英文取十八世纪英国花花公子；两句为奶酪通心粉和煮面食，与中文通心粉一致。"
+    },
+    {
+      "id": 10776,
+      "word": "aggregate",
+      "field": "en",
+      "before": "material such as sand or gravel used with cement and water to make concrete, mortar, or plaster",
+      "after": "a total formed by combining separate amounts, or to combine them into a total",
+      "reason": "旧英文是混凝土用骨料，中文和两句均为合计金额或汇总结果，改为汇总义。"
+    },
+    {
+      "id": 10778,
+      "word": "gale",
+      "field": "en",
+      "before": "a strong wind moving 45-90 knots; force 7 to 10 on Beaufort scale",
+      "after": "a very strong wind",
+      "reason": "旧45至90节且蒲福7至10级范围错误；Met Office明确8级34至40节为gale，保留简短大风义不硬加风速。"
+    },
+    {
+      "id": 10783,
+      "word": "venom",
+      "field": "en",
+      "before": "toxin secreted by animals; secreted by certain snakes and poisonous insects (e.g., spiders and scorpions)",
+      "after": "a toxic substance delivered by an animal through a bite or sting, or intense malice",
+      "reason": "旧释把蜘蛛和蝎子列作昆虫，分类错误；Merriam-Webster支持动物咬蜇传递毒素及恶意义，两句均对应。"
+    },
+    {
+      "id": 10789,
+      "word": "shroud",
+      "field": "en",
+      "before": "a line that suspends the harness from the canopy of a parachute",
+      "after": "a cloth wrapped around a dead body, or to cover and hide something",
+      "reason": "旧英文取降落伞拉绳；例句是雾遮山谷和裹尸布，改为现两种基本义。"
+    },
+    {
+      "id": 10801,
+      "word": "impeccable",
+      "field": "en",
+      "before": "not capable of sin",
+      "after": "perfect or free from faults",
+      "reason": "神学的不能犯罪义与服务和时机的完美义错配。"
+    },
+    {
+      "id": 10809,
+      "word": "nonverbal",
+      "field": "en",
+      "before": "lacking verbal skill",
+      "after": "not involving words or speech",
+      "reason": "非语言交流不表示语言技能欠缺，原定义会误教。"
+    },
+    {
+      "id": 10817,
+      "word": "camcorder",
+      "field": "en",
+      "before": "a portable television camera and videocassette recorder",
+      "after": "a portable camera that records video and sound",
+      "reason": "摄像机不必使用录像带，原定义把旧存储介质写成必要组成。"
+    },
+    {
+      "id": 10819,
+      "word": "coloring",
+      "field": "en",
+      "before": "a digestible substance used to give color to food",
+      "after": "the colors of something, or the act of adding color to it",
+      "reason": "鸟的颜色及儿童涂色与仅指食用着色剂的原义错配。"
+    },
+    {
+      "id": 10822,
+      "word": "mussel",
+      "field": "en",
+      "before": "black marine bivalves usually steamed in wine",
+      "after": "an aquatic mollusk with a shell in two joined parts, found in seas or fresh water",
+      "reason": "把黑色、海生及白酒烹调并入定义限制了范围；淡水贻贝亦存在。"
+    },
+    {
+      "id": 10827,
+      "word": "refill",
+      "field": "en",
+      "before": "a prescription drug that is provided again",
+      "after": "to fill something again; a new supply used to fill it",
+      "reason": "续咖啡及补水均非再次领取处方药，原定义选错当前基本义。"
+    },
+    {
+      "id": 10828,
+      "word": "chandler",
+      "field": "en",
+      "before": "United States writer of detective thrillers featuring the character of Philip Marlowe (1888-1959)",
+      "after": "",
+      "reason": "两句仅为普通姓氏，无法据此认定特定侦探小说作家；清空回退中文。"
+    },
+    {
+      "id": 10831,
+      "word": "domestically",
+      "field": "en",
+      "before": "with respect to the internal affairs of a government",
+      "after": "within one country, rather than abroad",
+      "reason": "境内销售及国内生产不限定于政府内部事务，原释义范围错配。"
+    },
+    {
+      "id": 10832,
+      "word": "drench",
+      "field": "en",
+      "before": "force to drink",
+      "after": "to make something thoroughly wet",
+      "reason": "雨水湿透与往蛋糕上大量浇汁并非强迫饮用，原义选错。"
+    },
+    {
+      "id": 10841,
+      "word": "chime",
+      "field": "en",
+      "before": "a percussion instrument consisting of a set of tuned bells that are struck with a hammer; used as an orchestral instrument",
+      "after": "a ringing sound made by bells or a device",
+      "reason": "手机提示钟声及插话用法与管弦乐敲钟乐器的具体定义错配。"
+    },
+    {
+      "id": 10843,
+      "word": "scallions",
+      "field": "en",
+      "before": "n plant having a large slender white bulb and flat overlapping dark green leaves; used in cooking; believed derived from the wild Allium ampeloprasum",
+      "after": "young onions with long green leaves, used as a vegetable or seasoning",
+      "reason": "原植物描述为韭葱类型，青葱不应锁定Allium ampeloprasum和扁平叶。"
+    },
+    {
+      "id": 10851,
+      "word": "vagina",
+      "field": "en",
+      "before": "the lower part of the female reproductive tract; a moist canal in female mammals extending from the labia minora to the uterus",
+      "after": "the muscular canal connecting the cervix to the outside of the female body",
+      "reason": "原解剖边界将小阴唇至子宫连成阴道，改为宫颈至体外的肌性管道。"
+    },
+    {
+      "id": 10855,
+      "word": "activation",
+      "field": "en",
+      "before": "stimulation of activity in an organism or chemical",
+      "after": "the process of making something active or ready to use",
+      "reason": "手机与邮件链接的激活不是限定生物或化学活性刺激，原定义领域错配。"
+    },
+    {
+      "id": 10856,
+      "word": "reuse",
+      "field": "en",
+      "before": "v use again after processing",
+      "after": "to use something again rather than discard it",
+      "reason": "再利用瓶罐或材料无需先加工，删掉不成立的必要条件。"
+    },
+    {
+      "id": 10861,
+      "word": "compatibility",
+      "field": "en",
+      "before": "a feeling of sympathetic understanding",
+      "after": "the ability of things to work together, or of people to get along",
+      "reason": "软件兼容不表示同情理解的感受，改为人或事物能和谐共处或协同工作的程度。"
+    },
+    {
+      "id": 10884,
+      "word": "amish",
+      "field": "en",
+      "before": "an American follower of the Mennonite religion",
+      "after": "a member of the Anabaptist Christian community founded by followers of Jakob Ammann",
+      "reason": "该社群不仅在美国且不能简单等同门诺派；据研究机构历史与分布改正。"
+    },
+    {
+      "id": 10887,
+      "word": "torpedo",
+      "field": "en",
+      "before": "an explosive device that is set off in an oil well (or a gas well) to start or to increase the flow of oil (or gas)",
+      "after": "a self-propelled explosive weapon that travels underwater to strike a target",
+      "reason": "海军鱼雷及破坏谈判用法与油气井爆破装置的原特定义错配。"
+    },
+    {
+      "id": 10897,
+      "word": "hurst",
+      "field": "en",
+      "before": "A wood or grove; -- a word used in the composition of many",
+      "after": "",
+      "reason": "原古树林义截断，现两句均仅普通姓氏，清空回退而不猜人物。"
+    },
+    {
+      "id": 10909,
+      "word": "toil",
+      "field": "en",
+      "before": "n productive work (especially physical work done for wages)",
+      "after": "hard, tiring work; to work long and hard",
+      "reason": "辛劳不能仅定义成任何有产出的工作，原释义缺少困难费力的核心含义。"
+    },
+    {
+      "id": 10911,
+      "word": "dissemination",
+      "field": "en",
+      "before": "the opening of a subject to widespread discussion and debate",
+      "after": "the widespread sharing of information or ideas",
+      "reason": "传播历史知识及通知不必开启公众讨论，原定义多加讨论条件。"
+    },
+    {
+      "id": 10938,
+      "word": "tranquil",
+      "field": "en",
+      "before": "s (of a body of water) free from disturbance by heavy waves",
+      "after": "calm and peaceful, without noise or disturbance",
+      "reason": "花园及周末的宁静不限定于水面无巨浪，原狭窄水况定义错配。"
+    },
+    {
+      "id": 10939,
+      "word": "miscarriage",
+      "field": "en",
+      "before": "failure of a plan",
+      "after": "the spontaneous loss of a pregnancy before the baby can survive outside the womb",
+      "reason": "流产及司法误判不宜用一般计划失败作题干，选回现医学基本义。"
+    },
+    {
+      "id": 10943,
+      "word": "defensively",
+      "field": "en",
+      "before": "in an apologetic and defensive manner",
+      "after": "in a way that protects against attack or criticism",
+      "reason": "防御或戒备不一定伴随道歉，原apologetic为不成立的限制。"
+    },
+    {
+      "id": 10945,
+      "word": "telltale",
+      "field": "en",
+      "before": "n someone who gossips indiscreetly",
+      "after": "revealing something that would otherwise remain hidden",
+      "reason": "两句是显露信息的形容词，不是泄密的人，原词性语义错配。"
+    },
+    {
+      "id": 10946,
+      "word": "zombie",
+      "field": "en",
+      "before": "several kinds of rum with fruit juice and usually apricot liqueur",
+      "after": "a dead person brought back to life in stories; someone who seems exhausted and barely alert",
+      "reason": "两句僵尸与疲惫的人均非朗姆鸡尾酒，原定义选错基本义。"
+    },
+    {
+      "id": 10947,
+      "word": "grinder",
+      "field": "en",
+      "before": "a machine tool that polishes metal",
+      "after": "a device that crushes something into small pieces or powder",
+      "reason": "咖啡和胡椒研磨器不是抛光金属的机床，改回研磨装置义。"
+    },
+    {
+      "id": 10953,
+      "word": "prism",
+      "field": "en",
+      "before": "a polyhedron with two congruent and parallel faces (the bases) and whose lateral faces are parallelograms",
+      "after": "a transparent optical object that bends light or separates it into different colors",
+      "reason": "棱柱几何定义本身成立，但当前主义及两句为光学棱镜与视角，改回光学基本义。"
+    },
+    {
+      "id": 10955,
+      "word": "mindless",
+      "field": "en",
+      "before": "lacking the thinking capacity characteristic of a conscious being",
+      "after": "requiring little thought, or done without sensible thought or purpose",
+      "reason": "不动脑的任务及无谓破坏不表示缺少意识生物的思考能力，原基本义错配。"
+    },
+    {
+      "id": 10962,
+      "word": "frankenstein",
+      "field": "en",
+      "before": "an agency that escapes control and destroys its creator",
+      "after": "the title of Mary Shelley's novel about a scientist who creates life, and that scientist's surname",
+      "reason": "两句明确小说及其中科学家姓氏，与失控反噬创造者的抽象事物义错配。"
+    },
+    {
+      "id": 10967,
+      "word": "whimsical",
+      "field": "en",
+      "before": "s determined by chance or impulse or whim rather than by necessity or reason",
+      "after": "playfully imaginative, unusual, or fanciful",
+      "reason": "奇趣壁画和会说话的鞋故事不是任性冲动作决定，选回想象奇趣义。"
+    },
+    {
+      "id": 10977,
+      "word": "perpetually",
+      "field": "en",
+      "before": "everlastingly; for all time",
+      "after": "continually or very frequently",
+      "reason": "反复丢钥匙与窗上水汽为持续或频繁发生，原永恒全时间限定偏离当前常用义。"
+    },
+    {
+      "id": 10985,
+      "word": "khaki",
+      "field": "en",
+      "before": "a sturdy twilled cloth of a yellowish brown color used especially for military uniforms",
+      "after": "a dull yellowish-brown color; of this color",
+      "reason": "裤子颜色与深卡其色外套不是具体斜纹布料定义，改回黄褐色基本义。"
+    },
+    {
+      "id": 10988,
+      "word": "finder",
+      "field": "en",
+      "before": "someone who comes upon something after searching",
+      "after": "a person who discovers or comes across something",
+      "reason": "发现者可以偶然捡到东西，不必先搜寻，原after searching为不必要条件。"
+    },
+    {
+      "id": 10992,
+      "word": "hooper",
+      "field": "en",
+      "before": "One who hoops casks or tubs; a cooper.",
+      "after": "",
+      "reason": "两句均为普通姓氏，桶匠旧职业义与当前中文及人物语境错配，清空en回退。"
+    },
+    {
+      "id": 10993,
+      "word": "ordain",
+      "field": "en",
+      "before": "order by virtue of superior authority; decree",
+      "after": "to formally appoint someone as a priest or other religious minister",
+      "reason": "两句均按立神父而非颁布法令，选回宗教任命基本义。"
+    },
+    {
+      "id": 10994,
+      "word": "nationalisation",
+      "field": "en",
+      "before": "n the action of forming or becoming a nation",
+      "after": "the transfer of an industry or company into government ownership",
+      "reason": "铁路国有化与工作讨论不是建立国家，原定义明确错义。"
+    },
+    {
+      "id": 11001,
+      "word": "archaic",
+      "field": "en",
+      "before": "little evolved from or characteristic of an earlier ancestral type",
+      "after": "very old or old-fashioned, especially in language or style",
+      "reason": "原义限定祖先类型和进化程度；两句说古旧语言及机器，改为古老、过时的通常义。"
+    },
+    {
+      "id": 11005,
+      "word": "fertilization",
+      "field": "en",
+      "before": "creation by the physical union of male and female gametes; of sperm and ova in an animal or pollen and ovule in a plant",
+      "after": "the fusion of male and female gametes; the application of nutrients to soil or plants",
+      "reason": "花粉和胚珠不是两种配子；明确受精为配子融合，与授粉分开，并以独立分句表示草坪施肥义。"
+    },
+    {
+      "id": 11029,
+      "word": "din",
+      "field": "en",
+      "before": "instill (into a person) by constant repetition",
+      "after": "a loud, continuous mixture of noises",
+      "reason": "原义是反复灌输的动词；两句及常用中文均是持续嘈杂声。"
+    },
+    {
+      "id": 11030,
+      "word": "migraine",
+      "field": "en",
+      "before": "a severe recurring vascular headache; occurs more frequently in women than men",
+      "after": "a condition causing recurring attacks, often with severe headache, nausea, and sensitivity to light",
+      "reason": "旧释把疾病归为单一血管性头痛；NINDS说明涉及神经、化学及血管信号，改为反复发作的基本症状辨识，不提供治疗建议。"
+    },
+    {
+      "id": 11031,
+      "word": "highlander",
+      "field": "en",
+      "before": "a soldier in a Scottish regiment from the Highlands",
+      "after": "a person from the Scottish Highlands or another highland region",
+      "reason": "旧义限定高地军团士兵；两句只说明高地居民，没有从军信息。"
+    },
+    {
+      "id": 11032,
+      "word": "observational",
+      "field": "en",
+      "before": "s relying on observation or experiment",
+      "after": "based on watching or noticing people or things",
+      "reason": "旧义把观察和实验笼统并列；观察性研究不能据此当作实验，采用基于观察的通常形容词义。"
+    },
+    {
+      "id": 11033,
+      "word": "jolly",
+      "field": "en",
+      "before": "a happy party",
+      "after": "cheerful and full of good spirits; pleasantly enjoyable",
+      "reason": "原义是聚会名词；两句修饰男子及晚间时光，采用愉快的形容词义。"
+    },
+    {
+      "id": 11037,
+      "word": "muhammad",
+      "field": "en",
+      "before": "leader of Black Muslims who campaigned for independence for Black Americans (1897-1975)",
+      "after": "",
+      "reason": "中文及两句只是普通人名，没有定位Elijah Muhammad的证据；清空特定领袖定义，回退中文题。"
+    },
+    {
+      "id": 11039,
+      "word": "uncontrollable",
+      "field": "en",
+      "before": "difficult to solve or alleviate",
+      "after": "impossible to restrain or keep under control",
+      "reason": "原义说难以解决或缓解，未准确表示失去控制；两句是止不住的笑和失控大火。"
+    },
+    {
+      "id": 11041,
+      "word": "ply",
+      "field": "en",
+      "before": "one of the strands twisted together to make yarn or rope or thread; often used in combination",
+      "after": "a layer of material; to work at a trade or use a tool steadily",
+      "reason": "旧义只说明纱线的一股；两句是纸巾的层数和从事手艺，改为相应两义，不把股线解释当作纸层。"
+    },
+    {
+      "id": 11046,
+      "word": "renegade",
+      "field": "en",
+      "before": "someone who rebels and becomes an outlaw",
+      "after": "a person who abandons a group or cause, or rejects conventional behavior",
+      "reason": "旧义要求成为不法之徒，不能概括不守传统的设计师；解除必须违法的限定。"
+    },
+    {
+      "id": 11051,
+      "word": "personalized",
+      "field": "en",
+      "before": "pointedly referring to or concerning a person's individual personality or intimate affairs especially offensively",
+      "after": "made or adapted for a particular person",
+      "reason": "旧义指冒犯地涉及私人事务；姓名马克杯及按兴趣推荐读物均指为个人定制。"
+    },
+    {
+      "id": 11054,
+      "word": "dredge",
+      "field": "en",
+      "before": "a power shovel to remove material from a channel or riverbed",
+      "after": "to remove mud from a waterway; to bring up old memories or issues",
+      "reason": "原义只指挖泥设备；常用中文和两句都用动词，分别为疏浚与翻出旧事。"
+    },
+    {
+      "id": 11060,
+      "word": "semblance",
+      "field": "en",
+      "before": "an outward or token appearance or form that is deliberately misleading",
+      "after": "the appearance of something, or a small amount of it",
+      "reason": "原义强加刻意误导；恢复一点秩序及维持镇静表象不一定包含故意欺骗。"
+    },
+    {
+      "id": 11061,
+      "word": "replete",
+      "field": "en",
+      "before": "v fill to satisfaction",
+      "after": "filled with a large amount of something",
+      "reason": "原义是填满的动作；两句用replete with表示内容丰富、充满的状态。"
+    },
+    {
+      "id": 11064,
+      "word": "instil",
+      "field": "en",
+      "before": "v enter drop by drop",
+      "after": "to gradually establish an idea, feeling, or value in someone",
+      "reason": "旧义只指逐滴滴入；两句是培养信心和尊重，应为逐渐灌输、培养。"
+    },
+    {
+      "id": 11086,
+      "word": "cull",
+      "field": "en",
+      "before": "the person or thing that is rejected or set aside as inferior in quality",
+      "after": "to remove selected things from a group; to kill some animals to control their population",
+      "reason": "原义是被淘汰的劣质对象；两句为控制鹿数量的捕杀及剔除旧条目，采用行动义。"
+    },
+    {
+      "id": 11088,
+      "word": "corrective",
+      "field": "en",
+      "before": "a device for treating injury or disease",
+      "after": "intended to fix a fault or improve a condition",
+      "reason": "原义只指治疗用器具；纠正行动及矫正镜片都需要修正问题的形容词义。"
+    },
+    {
+      "id": 11093,
+      "word": "stripper",
+      "field": "en",
+      "before": "a chemical compound used to remove paint or varnish",
+      "after": "a tool or substance for removing a covering; a performer who takes off clothes as entertainment",
+      "reason": "旧义只指去漆化学剂；两句分别剥线工具及脱衣舞表演者，扩为匹配中文的常用两义。"
+    },
+    {
+      "id": 11102,
+      "word": "kiosk",
+      "field": "en",
+      "before": "n small area set off by walls for special use",
+      "after": "a small booth that sells goods; a public self-service machine for information or transactions",
+      "reason": "原义泛指围隔出来的专用区域，容易与隔间混淆；报刊亭及自助出票机分别有售货、自助服务性质。"
+    },
+    {
+      "id": 11107,
+      "word": "wiry",
+      "field": "en",
+      "before": "of or relating to wire",
+      "after": "thin but strong and energetic; resembling stiff wire, especially in texture",
+      "reason": "旧义只说与金属线有关，未表示瘦而结实及粗硬似金属丝的毛发。"
+    },
+    {
+      "id": 11111,
+      "word": "mull",
+      "field": "en",
+      "before": "a term used in Scottish names of promontories",
+      "after": "to think carefully about something for a while",
+      "reason": "旧义指苏格兰岬角名中的用词；两句mull over是仔细考虑。"
+    },
+    {
+      "id": 11115,
+      "word": "secluded",
+      "field": "en",
+      "before": "v keep away from others",
+      "after": "quiet and away from other people or hidden from view",
+      "reason": "旧义是使人隔离的动词原形释义；海滩及林中小屋用形容词表示幽静、隐蔽。"
+    },
+    {
+      "id": 11119,
+      "word": "expatriate",
+      "field": "en",
+      "before": "expel from a country",
+      "after": "a person living outside their native country",
+      "reason": "旧义是逐出国外的动词；中文及两句均指旅居国外的人。"
+    },
+    {
+      "id": 11123,
+      "word": "minuscule",
+      "field": "en",
+      "before": "a small cursive script developed from uncial between the 7th and 9th centuries and used in medieval manuscripts",
+      "after": "extremely small",
+      "reason": "旧义专指中世纪小写书体；两句说字极小和预算极少，改为通常形容词义。"
+    },
+    {
+      "id": 11129,
+      "word": "hooker",
+      "field": "en",
+      "before": "United States general in the Union Army who was defeated at Chancellorsville by Robert E. Lee (1814-1879)",
+      "after": "a rugby player who wins the ball in a scrum; an insulting informal term for a sex worker",
+      "reason": "旧定义错误锁定美国将领；两句明确橄榄球位置和带冒犯性的性工作者称呼，分别注明。"
+    },
+    {
+      "id": 11130,
+      "word": "yorks",
+      "field": "en",
+      "before": "n the English royal house (a branch of the Plantagenet line) that reigned from 1461 to 1485; its emblem was a white rose",
+      "after": "an abbreviation for Yorkshire, a historic county in northern England",
+      "reason": "旧义是York王室而非Yorks；Collins明确此形式为Yorkshire缩写，与地址及文件语境一致。"
+    },
+    {
+      "id": 11131,
+      "word": "mainstay",
+      "field": "en",
+      "before": "the forestay that braces the mainmast",
+      "after": "a chief support or an important part that is regularly relied on",
+      "reason": "旧义只有主桅支索；中文及两句是经济支柱与饮食主要组成。"
+    },
+    {
+      "id": 11132,
+      "word": "psychotic",
+      "field": "en",
+      "before": "a person afflicted with psychosis",
+      "after": "relating to psychosis, a state involving loss of contact with reality",
+      "reason": "旧义是患者名词；两句修饰发作及症状，采用医学形容词辨识，不把症状等同泛指精神疾病。"
+    },
+    {
+      "id": 11134,
+      "word": "caper",
+      "field": "en",
+      "before": "any of numerous plants of the genus Capparis",
+      "after": "a mischievous or risky adventure; a small pickled flower bud used to flavor food",
+      "reason": "旧义只有植物属；两句是抢劫冒险及点心上的腌花蕾，改为对应通常义。"
+    },
+    {
+      "id": 11136,
+      "word": "observance",
+      "field": "en",
+      "before": "n the act of observing; taking a patient look",
+      "after": "the act of following a rule or custom; a ceremony marking an event",
+      "reason": "原义是仔细观看；两句分别遵守安全程序及纪念逝者的仪式。"
+    },
+    {
+      "id": 11140,
+      "word": "kendall",
+      "field": "en",
+      "before": "United States biochemist who discovered cortisone (1886-1972)",
+      "after": "",
+      "reason": "两句及中文只说明普通人名，没有定位获诺奖的生化学家证据；清空特定人物定义。"
+    },
+    {
+      "id": 11142,
+      "word": "colonize",
+      "field": "en",
+      "before": "settle as a colony; of countries in the developing world",
+      "after": "to establish a colony in a place; for organisms to settle and grow in a new area",
+      "reason": "旧释无根据地限于发展中国家，并不能说明苔藓；移除地域限制，保留殖民定居及生物定殖的分别意义。"
+    },
+    {
+      "id": 11143,
+      "word": "impromptu",
+      "field": "en",
+      "before": "an extemporaneous speech or remark",
+      "after": "done or spoken without advance planning or preparation",
+      "reason": "旧义只指即席讲话名词；野餐及讲话都用未经事先准备的形容词。"
+    },
+    {
+      "id": 11145,
+      "word": "repertory",
+      "field": "en",
+      "before": "a storehouse where a stock of things is kept",
+      "after": "a collection of works a company can perform; a system of alternating different plays",
+      "reason": "旧义是仓库；两句为剧团的保留剧目和剧目轮演制。"
+    },
+    {
+      "id": 11149,
+      "word": "chen",
+      "field": "en",
+      "before": "wild goose having white adult plumage",
+      "after": "",
+      "reason": "旧义指白羽野鹅，中文及两句为中文姓氏陈；不以无关动物分类题教人名，清空回退中文。"
+    },
+    {
+      "id": 11158,
+      "word": "tortoise",
+      "field": "en",
+      "before": "usually herbivorous land turtles having clawed elephant-like limbs; worldwide in arid area except Australia and Antarctica",
+      "after": "a land-dwelling turtle with a hard shell and sturdy legs",
+      "reason": "旧释把分布笼统限定干旱地区；保留陆栖、有壳的辨识特征，不作所有物种栖地断言。"
+    },
+    {
+      "id": 11162,
+      "word": "reprocessing",
+      "field": "en",
+      "before": "v use again after processing",
+      "after": "processing material or information again",
+      "reason": "旧释是加工后的再使用，不等同再次加工；塑料和重复条目的数据都在重新处理。"
+    },
+    {
+      "id": 11164,
+      "word": "piston",
+      "field": "en",
+      "before": "United States neoclassical composer (1894-1976)",
+      "after": "a part that moves back and forth inside a cylinder in an engine or other machine",
+      "reason": "旧义错误锁定作曲家Walter Piston；两句明确机器活塞。"
+    },
+    {
+      "id": 11169,
+      "word": "tara",
+      "field": "en",
+      "before": "a village in eastern Ireland (northwest of Dublin); seat of Irish kings until 6th century",
+      "after": "",
+      "reason": "两句及中文是女子名，没有定位爱尔兰村庄；清空不匹配地名定义。"
+    },
+    {
+      "id": 11171,
+      "word": "muffle",
+      "field": "en",
+      "before": "a kiln with an inner chamber for firing things at a low temperature",
+      "after": "to make a sound quieter or less clear",
+      "reason": "旧义只有窑炉内室；窗帘减弱交通声及围巾压低咳嗽均为声音动词。"
+    },
+    {
+      "id": 11174,
+      "word": "lull",
+      "field": "en",
+      "before": "a period of calm weather",
+      "after": "a temporary pause or reduction in activity; to make someone feel calm or less alert",
+      "reason": "旧义仅限平静天气，不能说明谈话停顿及使人放松警惕；采用相应通常两义。"
+    },
+    {
+      "id": 11176,
+      "word": "geek",
+      "field": "en",
+      "before": "a carnival performer who does disgusting acts",
+      "after": "an enthusiast or expert with a strong interest in a particular subject, especially technology",
+      "reason": "旧义是旧式嘉年华猎奇表演者；两句都是电脑、历史爱好者的现代非正式义。"
+    },
+    {
+      "id": 11179,
+      "word": "blackboard",
+      "field": "en",
+      "before": "sheet of slate; for writing with chalk",
+      "after": "a smooth, usually dark board used for writing or drawing with chalk",
+      "reason": "旧义把材质限定为石板；黑板的通常定义是可粉笔书写的表面，不必须由石板制作。"
+    },
+    {
+      "id": 11184,
+      "word": "gouge",
+      "field": "en",
+      "before": "and edge tool with a blade like a trough for cutting channels or grooves",
+      "after": "to cut or dig into a surface; a deep groove or hole made by doing this",
+      "reason": "旧义只指圆凿工具，首词and亦错误；常用中文和两句用挖凿动作、凿痕，改为对应义。"
+    },
+    {
+      "id": 11186,
+      "word": "goldberg",
+      "field": "en",
+      "before": "United States cartoonist who drew intricate diagrams of very complicated and impractical contraptions that accomplished little or nothing (1883-1970)",
+      "after": "",
+      "reason": "两句只是姓氏称呼，没有证明此人就是漫画家Rube Goldberg；清空特定人物定义。"
+    },
+    {
+      "id": 11191,
+      "word": "lima",
+      "field": "en",
+      "before": "capital and largest city and economic center of Peru; located in western Peru; was capital of the Spanish empire in the New World until the 19th century",
+      "after": "the capital city of Peru",
+      "reason": "前半首都义正确，但旧释把利马笼统称为整个新世界西班牙帝国的首都；保留官方可核的秘鲁首都基本辨识，移除不准确历史范围。"
+    },
+    {
+      "id": 11195,
+      "word": "circumstantial",
+      "field": "en",
+      "before": "fully detailed and specific about particulars",
+      "after": "based on related facts rather than direct proof; connected with the surrounding circumstances",
+      "reason": "旧义是详细具体，与间接证据及取决于当时情况的语境不匹配。"
+    }
+  ]
+}
