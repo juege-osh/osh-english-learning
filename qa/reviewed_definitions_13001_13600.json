@@ -1,0 +1,725 @@
+{
+  "version": "1.32.9",
+  "range": [
+    13001,
+    13600
+  ],
+  "status": "frozen",
+  "base_head": "5b3298125bb5a155b347b3f1c10480639b1719a0",
+  "reviewed_words": 600,
+  "reviewed_english_example_contexts": 1200,
+  "changed_words": 80,
+  "replaced_definitions": 78,
+  "cleared_mismatched_definitions": 2,
+  "existing_empty_en_preserved": 37,
+  "unchanged_correct": 483,
+  "reports": [
+    {
+      "range": [
+        13001,
+        13200
+      ],
+      "file": "qa/review_definitions_13001_13200.json",
+      "path": "/tmp/english-v1329-review-13001-13200.json",
+      "sha256": "80baaf69fe6e31511b12a462373f60468e7f55ede6b5119d79bb14120f12d848",
+      "counts": {
+        "unchanged": 167,
+        "empty": 11,
+        "changed": 22
+      }
+    },
+    {
+      "range": [
+        13201,
+        13400
+      ],
+      "file": "qa/review_definitions_13201_13400.json",
+      "path": "/tmp/english-v1329-review-13201-13400.json",
+      "sha256": "7d4a9cbe79e9981badbf7e16135969f7e56c82fb983b609ea5612abec70a9eea",
+      "counts": {
+        "unchanged": 156,
+        "changed": 33,
+        "empty": 11,
+        "cleared": 1
+      }
+    },
+    {
+      "range": [
+        13401,
+        13600
+      ],
+      "file": "qa/review_definitions_13401_13600.json",
+      "path": "/tmp/english-v1329-review-13401-13600.json",
+      "sha256": "cb7bc42d48d7597a6d35cd2a2e359083c817ed27d17bd6dbb707ae4d818c2f84",
+      "counts": {
+        "unchanged": 160,
+        "empty": 15,
+        "changed": 25,
+        "cleared": 1
+      }
+    }
+  ],
+  "root_review": "root逐项读600现存en/中文义及1200组完整双语，再逐项读三份作者冻结稿80条建议及理由，保留正确基本多义和37项原空；作者读取原完整词典，root未声称全600完整词典正文另读一遍。全部作者及整批交叉审读冻结后apply。",
+  "root_sources_checked": [
+    {
+      "url": "https://www.nidcd.nih.gov/health/tinnitus",
+      "supports": "root实际读原始正文，耳鸣无外部声源可呈多种声音，并不限感染或梅尼埃病；仅核术语。"
+    },
+    {
+      "url": "https://www.nano.gov/about-nanotechnology/",
+      "supports": "root实际读官方正文，约1–100纳米尺度上理解与控制物质。"
+    },
+    {
+      "url": "https://openstax.org/books/college-physics-2e/pages/14-6-convection",
+      "supports": "root实际读教材正文，对流由物质大尺度流动传热，不混为分子运动。"
+    },
+    {
+      "url": "https://www.cdc.gov/niosh/ppe/respirators/index.html",
+      "supports": "root实际打开CDC NIOSH呼吸防护用品页面，过滤类与独立供气类用于呼吸保护。"
+    }
+  ],
+  "root_adjustments": [],
+  "changes": [
+    {
+      "id": 13006,
+      "word": "epidemiologist",
+      "field": "en",
+      "before": "a medical scientist who studies the transmission and control of epidemic diseases",
+      "after": "a scientist who studies patterns and causes of health conditions in populations",
+      "reason": "旧定义把研究限于流行性疾病的传播与控制；流行病学还研究非传染性健康问题。改为人群健康分布及成因，符合大学任职和公开交流语境。"
+    },
+    {
+      "id": 13022,
+      "word": "vegas",
+      "field": "en",
+      "before": "n prolific Spanish playwright (1562-1635)",
+      "after": "an informal name for the Nevada city famous for its Strip and casino resorts",
+      "reason": "旧定义取西班牙剧作家 Lope de Vega，同名人物与现拉斯维加斯简义和旅行、购物两句不符。州官方旅游资料使用 Vegas 指 Las Vegas，定义不用目标词提示答案。"
+    },
+    {
+      "id": 13033,
+      "word": "minimalist",
+      "field": "en",
+      "before": "a conservative who advocates only minor reforms in government or politics",
+      "after": "using very simple forms and few details, or a person who favors this style",
+      "reason": "旧定义只取主张微小改革的保守政治人物；现极简设计与少量家具语境是简约风格及其采用者。"
+    },
+    {
+      "id": 13043,
+      "word": "hanover",
+      "field": "en",
+      "before": "the English royal house that reigned from 1714 to 1901 (from George I to Victoria)",
+      "after": "a city in northern Germany that is the capital of Lower Saxony",
+      "reason": "旧定义取英国汉诺威王朝；现中文明确德国城市，两句住宿和乘火车语境也是城市，改为可识别的地名定义。"
+    },
+    {
+      "id": 13056,
+      "word": "slut",
+      "field": "en",
+      "before": "n a dirty untidy woman",
+      "after": "an offensive insult aimed mainly at a woman for her sexual behavior",
+      "reason": "旧定义只说邋遢女人，且未注明侮辱语域；现中文及被辱骂语境需中性说明现代性羞辱用法，不把侮辱标签当事实判断。"
+    },
+    {
+      "id": 13058,
+      "word": "stymie",
+      "field": "en",
+      "before": "a situation in golf where an opponent's ball blocks the line between your ball and the hole",
+      "after": "to block progress or prevent someone from achieving a goal",
+      "reason": "旧定义取高尔夫球遮挡洞口的历史名词义；现阻碍项目和计划两句是常用动词义。"
+    },
+    {
+      "id": 13068,
+      "word": "concierge",
+      "field": "en",
+      "before": "a French caretaker of apartments or a hotel; lives on the premises and oversees people entering and leaving and handles mail and acts as janitor or porter",
+      "after": "a hotel employee who helps guests with information, bookings, and other services",
+      "reason": "旧定义要求是法国看门人、住在楼内并做杂务，不能代表现酒店礼宾员帮忙找车和药店的用法；采用酒店服务人员基本义。"
+    },
+    {
+      "id": 13069,
+      "word": "essayist",
+      "field": "en",
+      "before": "a writer of literary works",
+      "after": "a writer of short prose pieces that discuss a subject or express a viewpoint",
+      "reason": "旧定义泛称文学作品作者，无法区分小说家等；现散文作家及文章写作语境需要限定为论说或表达观点的短篇散文作者。"
+    },
+    {
+      "id": 13075,
+      "word": "mason",
+      "field": "en",
+      "before": "American Revolutionary leader from Virginia whose objections led to the drafting of the Bill of Rights (1725-1792)",
+      "after": "a skilled worker who builds or repairs structures using stone or brick",
+      "reason": "旧定义绑到历史人物 George Mason；现中文及石工施工例句是职业，另一句普通姓氏也没有证据指该人物。采用石工基本义。"
+    },
+    {
+      "id": 13080,
+      "word": "headstone",
+      "field": "en",
+      "before": "n the central building block at the top of an arch or vault",
+      "after": "a stone at a grave bearing a name or other memorial details",
+      "reason": "旧定义取拱顶楔石，与现墓碑中文及墓地两句错配；改为标记墓葬的石碑。"
+    },
+    {
+      "id": 13110,
+      "word": "bushy",
+      "field": "en",
+      "before": "used of hair; thick and poorly groomed",
+      "after": "growing thickly, with many closely packed hairs, branches, or leaves",
+      "reason": "旧定义把浓密误限定为毛发且打理不佳；狗尾巴浓密不等于疏于整理，植物也可枝叶茂密。删除无依据的贬义条件。"
+    },
+    {
+      "id": 13126,
+      "word": "quickness",
+      "field": "en",
+      "before": "n skillful performance or ability without difficulty",
+      "after": "speed of movement, thought, or response",
+      "reason": "旧定义是熟练、轻松完成动作的能力，未说明速度；两句运动和反应及中文迅速、敏捷都以快为核心。"
+    },
+    {
+      "id": 13130,
+      "word": "lichen",
+      "field": "en",
+      "before": "any of several eruptive skin diseases characterized by hard thick lesions grouped together and resembling lichens growing on rocks",
+      "after": "a living partnership of a fungus with algae or cyanobacteria",
+      "reason": "旧定义取皮肤病，与地衣中文及墙面、树上生长两句错配。植物园资料确认真菌与藻类或蓝细菌的共生，不把蓝细菌归为植物。"
+    },
+    {
+      "id": 13135,
+      "word": "leeway",
+      "field": "en",
+      "before": "(of a ship or plane) sideways drift",
+      "after": "freedom or spare room to adjust something within limits",
+      "reason": "旧定义只说船或飞机侧向漂移；现价格和时间安排两句都表示可调整的余地，改为这一常用基本义。"
+    },
+    {
+      "id": 13137,
+      "word": "preponderance",
+      "field": "en",
+      "before": "superiority in power or influence",
+      "after": "a greater share or amount than the rest",
+      "reason": "旧定义强调力量或影响力的优势；现中文数量上占优势、两句年轻人和积极回答占多数均指较大比例或数量。"
+    },
+    {
+      "id": 13147,
+      "word": "riff",
+      "field": "en",
+      "before": "a Berber living in northern Morocco",
+      "after": "a short musical phrase repeated in jazz or popular music",
+      "reason": "旧定义取北非族群 Riff；现乐段中文与吉他两句都是音乐名词，不是族名。"
+    },
+    {
+      "id": 13157,
+      "word": "decentralization",
+      "field": "en",
+      "before": "the social process in which population and industry moves from urban centers to outlying districts",
+      "after": "the transfer of control from one central authority to smaller local units",
+      "reason": "旧定义取人口和工业迁出城市中心的地理过程；现分权中文与决策、公司管理两句是管理权下放。"
+    },
+    {
+      "id": 13165,
+      "word": "ritz",
+      "field": "en",
+      "before": "Swiss hotelier who created a chain of elegant hotels (1850-1918)",
+      "after": "a showy display of luxury or elegance",
+      "reason": "旧定义绑到酒店经营者 César Ritz，订餐和 put on the ritz 两句均不能证明在说该人物。采用中文已列且第二句明确使用的豪华排场基本义，不猜具体哪家酒店。"
+    },
+    {
+      "id": 13167,
+      "word": "sabbatical",
+      "field": "en",
+      "before": "a leave usually taken every seventh year",
+      "after": "an extended break from regular work, often for study, writing, or travel",
+      "reason": "旧定义只凭通常每七年休一次来辨认，没有说明假期性质，也把传统周期当核心条件。现代学术或工作休假不必按七年周期，写书及返校教学语境均符合新定义。"
+    },
+    {
+      "id": 13168,
+      "word": "repulsive",
+      "field": "en",
+      "before": "possessing the ability to repel",
+      "after": "causing strong disgust or dislike",
+      "reason": "旧定义取具有排斥能力，容易成为物理力题干；现中文和气味、残酷话语两句表示令人厌恶。改为情感反应基本义。"
+    },
+    {
+      "id": 13183,
+      "word": "epitome",
+      "field": "en",
+      "before": "a brief abstract (as of an article or book)",
+      "after": "a person or thing that is a clear example of a particular quality",
+      "reason": "旧定义是文章或书的摘要；现中文典范、缩影及耐心、简约两句都指鲜明体现某种特质的例子。"
+    },
+    {
+      "id": 13198,
+      "word": "unspoilt",
+      "field": "en",
+      "before": "s not left to spoil",
+      "after": "remaining in its natural condition without damage or major human changes",
+      "reason": "旧定义 not left to spoil 易指食物未腐坏，未表达景观未遭破坏；现海滩、山谷及中文都指仍保有自然原貌。"
+    },
+    {
+      "id": 13204,
+      "word": "chariot",
+      "field": "en",
+      "before": "a light four-wheel horse-drawn ceremonial carriage",
+      "after": "a horse-drawn two-wheeled vehicle used in ancient warfare or racing",
+      "reason": "现中文和古罗马、马拉车辆语境是古代双轮战车；旧定义锁定四轮礼仪车，错配当前题意。"
+    },
+    {
+      "id": 13213,
+      "word": "atlas",
+      "field": "en",
+      "before": "(Greek mythology) a Titan who was forced by Zeus to bear the sky on his shoulders",
+      "after": "a book or collection of maps",
+      "reason": "旧英文指希腊神话人物；现中文和岛屿地图、旧地图册两句均指地图集，不能用神名出题。"
+    },
+    {
+      "id": 13216,
+      "word": "encampment",
+      "field": "en",
+      "before": "n a site where people on holiday can pitch a tent",
+      "after": "a place where people set up tents or temporary shelters",
+      "reason": "营地不要求露营者在度假；山谷营地和考古发现的古代驻营地点不支持旧限制。"
+    },
+    {
+      "id": 13228,
+      "word": "syndicate",
+      "field": "en",
+      "before": "a loose affiliation of gangsters in charge of organized criminal activities",
+      "after": "a group working together on a business project; an agency that supplies content to publishers",
+      "reason": "旧定义限定有组织犯罪集团；现中文和投资联合体、向报刊供稿的机构是商业与出版义。"
+    },
+    {
+      "id": 13250,
+      "word": "seedy",
+      "field": "en",
+      "before": "full of seeds",
+      "after": "dirty and run-down, often with an unpleasant or disreputable atmosphere",
+      "reason": "旧英文是多籽义；现简义与旅馆、酒吧两句均指破旧肮脏或不体面的环境，属于多义错配。"
+    },
+    {
+      "id": 13251,
+      "word": "panacea",
+      "field": "en",
+      "before": "(Greek mythology) the goddess of healing; daughter of Aesculapius and sister of Hygeia",
+      "after": "a remedy or solution believed to cure every illness or solve every problem",
+      "reason": "旧英文绑定希腊女神；技术和政策两句均指万能解决办法，不是神名识别。"
+    },
+    {
+      "id": 13255,
+      "word": "environmentalism",
+      "field": "en",
+      "before": "the philosophical doctrine that environment is more important than heredity in determining intellectual growth",
+      "after": "the belief and movement that the natural environment should be protected from harm",
+      "reason": "旧英文是环境相较遗传影响智力成长的理论；现中文和环保组织、环保运动史是保护自然环境的理念。"
+    },
+    {
+      "id": 13259,
+      "word": "authoritarianism",
+      "field": "en",
+      "before": "n a form of government in which the ruler is an absolute dictator (not restricted by a constitution or laws or opposition etc.)",
+      "after": "a system or belief favoring strict obedience to authority and limiting personal or political freedom",
+      "reason": "威权主义不必由单一绝对独裁者统治，也不必不存在宪法或法律；旧定义加入过强必要条件。"
+    },
+    {
+      "id": 13264,
+      "word": "smudge",
+      "field": "en",
+      "before": "a smoky fire to drive away insects",
+      "after": "a blurred or dirty mark; to smear something or make it dirty",
+      "reason": "驱虫烟火是另一词义；当前中文与墨迹、画被蹭花两句均指污迹或弄脏，不能用烟火义解释当前题意。"
+    },
+    {
+      "id": 13267,
+      "word": "salmonella",
+      "field": "en",
+      "before": "rod-shaped Gram-negative enterobacteria; cause typhoid fever and food poisoning; can be used as a bioweapon",
+      "after": "a genus of bacteria, some of which cause foodborne illness or typhoid fever",
+      "reason": "属内不同菌型涉及不同疾病，旧句不宜让所有菌型同时承担两种疾病。生物武器描述不是辨识词义所需，改为菌属与部分成员致病的说明。"
+    },
+    {
+      "id": 13269,
+      "word": "waterfowl",
+      "field": "en",
+      "before": "freshwater aquatic bird",
+      "after": "birds such as ducks, geese, and swans that live on or near water",
+      "reason": "水禽包括海鸭，不能限定淡水；机构资料直接确认海鸭属于该类。"
+    },
+    {
+      "id": 13277,
+      "word": "punctuation",
+      "field": "en",
+      "before": "something that makes repeated and regular interruptions or divisions",
+      "after": "marks such as commas and full stops used to organize written language",
+      "reason": "旧英文仅说明反复间断或划分，没有说明写作标点；当前邮件和文字含义均指符号系统。"
+    },
+    {
+      "id": 13281,
+      "word": "tinnitus",
+      "field": "en",
+      "before": "a ringing or booming sensation in one or both ears; a symptom of an ear infection or Meniere's disease",
+      "after": "the perception of ringing or other sounds without an external sound source",
+      "reason": "耳鸣是没有外部声源时感知声音；不只由感染或梅尼埃病引起，声音也不限铃声或轰鸣。"
+    },
+    {
+      "id": 13284,
+      "word": "inconsequential",
+      "field": "en",
+      "before": "not following logically as a consequence",
+      "after": "too unimportant to have much effect or deserve serious attention",
+      "reason": "旧英文是逻辑上不能推出的意思；当前中文及小错误、细节两句都指无关紧要，需回到重要性判断。"
+    },
+    {
+      "id": 13293,
+      "word": "hancock",
+      "field": "en",
+      "before": "American revolutionary patriot who was president of the Continental Congress; was the first signer of the Declaration of Independence (1737-1793)",
+      "after": "",
+      "reason": "旧定义对应 John Hancock 的可核历史身份；当前中文为姓氏，Ms Hancock 的语境不能识别该男性历史人物，清空回退。"
+    },
+    {
+      "id": 13305,
+      "word": "colonise",
+      "field": "en",
+      "before": "v settle as a colony; of countries in the developing world",
+      "after": "to settle in and take control of a place; to become established in a new habitat",
+      "reason": "殖民或生物定居并不限现代发展中国家；旧必要范围过窄，历史区域和植物进入采石场语境要求去掉限制。"
+    },
+    {
+      "id": 13309,
+      "word": "alamo",
+      "field": "en",
+      "before": "a siege and massacre at a mission in San Antonio in 1836; Mexican forces under Santa Anna besieged and massacred American rebels who were fighting to make Texas independent of Mexico",
+      "after": "a historic former mission in San Antonio, Texas, known for a battle fought there in 1836",
+      "reason": "旧英文只定义围城和战斗事件；当前中文和参观遗址语境是阿拉莫历史建筑地点，改为遗址性质说明。"
+    },
+    {
+      "id": 13315,
+      "word": "tantalize",
+      "field": "en",
+      "before": "v harass with persistent criticism or carping",
+      "after": "to arouse a desire for something while keeping it out of reach",
+      "reason": "旧定义是持续挑剔责备，与勾起渴望但得不到满足不是同义；蛋糕和预告片两句都属于后者。"
+    },
+    {
+      "id": 13332,
+      "word": "secularism",
+      "field": "en",
+      "before": "a doctrine that rejects religion and religious considerations",
+      "after": "the principle that government and public institutions should be separate from religion",
+      "reason": "政教分离不要求否定所有个人宗教信仰；公共教育和宗教自由语境不支持旧排斥一切宗教的表述。"
+    },
+    {
+      "id": 13344,
+      "word": "feral",
+      "field": "en",
+      "before": "wild and menacing",
+      "after": "living wild despite belonging to a domesticated kind of animal",
+      "reason": "野化指原本驯养种类的动物在野外生活，不要求其危险或威胁人；旧 menacing 是多余必要条件。"
+    },
+    {
+      "id": 13345,
+      "word": "demeaning",
+      "field": "en",
+      "before": "causing awareness of your shortcomings",
+      "after": "humiliating or showing a lack of respect for someone's dignity",
+      "reason": "让人认识缺点不等于羞辱人；当前笑话和员工待遇指损害尊严，旧定义混淆了两者。"
+    },
+    {
+      "id": 13349,
+      "word": "pretrial",
+      "field": "en",
+      "before": "(law) a conference held before the trial begins to bring the parties together to outline discovery proceedings and to define the issues to be tried; more useful in civil than in criminal cases",
+      "after": "happening before a court trial begins",
+      "reason": "旧英文专指审前会议，并附民刑比较；当前中文和听证、羁押语境是审判开始前的形容词，需去掉会议限定。"
+    },
+    {
+      "id": 13350,
+      "word": "antagonist",
+      "field": "en",
+      "before": "a muscle that relaxes while another contracts",
+      "after": "a person or character who opposes another, especially the main character in a story",
+      "reason": "旧英文是拮抗肌的生理学义；当前中文和故事反派、竞选对手均指对立的人物，不能沿用肌肉义出题。"
+    },
+    {
+      "id": 13361,
+      "word": "holly",
+      "field": "en",
+      "before": "any tree or shrub of the genus Ilex having red berries and shiny evergreen leaves with prickly edges",
+      "after": "a tree or shrub of the genus Ilex, often with glossy leaves and colorful berries",
+      "reason": "冬青属并非全部红果、常绿且刺叶；RHS 直接列出黄果黑果、无刺叶及落叶种，旧全称条件错误。"
+    },
+    {
+      "id": 13365,
+      "word": "fetish",
+      "field": "en",
+      "before": "a form of sexual desire in which gratification depends to an abnormal degree on some object or item of clothing or part of the body",
+      "after": "a strong sexual interest in an object or a non-genital body part; an unusually strong fixation on something",
+      "reason": "恋物偏好不自动等于精神障碍或满足必须异常依赖；医学来源区分偏好与有功能损害的障碍，当前还有一般执迷用法。"
+    },
+    {
+      "id": 13369,
+      "word": "throwback",
+      "field": "en",
+      "before": "n an organism that has the characteristics of a more primitive type of that organism",
+      "after": "a person or thing that reminds people of an earlier time",
+      "reason": "旧英文限定有祖先特征的生物；当前中文及复古装潢、衣着指让人想起过去的事物，修的是当前多义错配，不否认返祖义。"
+    },
+    {
+      "id": 13374,
+      "word": "nanotechnology",
+      "field": "en",
+      "before": "the branch of engineering that deals with things smaller than 100 nanometers (especially with the manipulation of individual molecules)",
+      "after": "technology that studies and controls matter at scales of roughly 1 to 100 nanometers",
+      "reason": "技术所用特性尺度通常约 1–100 纳米，并非所有小于 100 纳米的工程都自动属于该技术；官方定义还涉及理解与控制物质。"
+    },
+    {
+      "id": 13379,
+      "word": "enshrine",
+      "field": "en",
+      "before": "enclose in a shrine",
+      "after": "to establish or preserve something in an official or lasting form, especially in a law",
+      "reason": "旧英文只指安置于神龛；当前中文和宪法权利、法律均为正式长期确立，属于明确的引申义错配。"
+    },
+    {
+      "id": 13381,
+      "word": "consternation",
+      "field": "en",
+      "before": "n fear resulting from the awareness of danger",
+      "after": "a feeling of shock and worry caused by something unexpected or upsetting",
+      "reason": "惊愕或忧虑不必来自意识到危险；航班取消和文件消失的语境不支持旧危险限定。"
+    },
+    {
+      "id": 13385,
+      "word": "flak",
+      "field": "en",
+      "before": "n a slick spokesperson who can turn any criticism to the advantage of their employer",
+      "after": "strong criticism; gunfire aimed at aircraft",
+      "reason": "替雇主化解批评的公关代言人是 flack 的另一用法，与当前批评及防空炮火不符。"
+    },
+    {
+      "id": 13390,
+      "word": "degenerate",
+      "field": "en",
+      "before": "n a person whose behavior deviates from what is acceptable especially in sexual behavior",
+      "after": "to become worse in quality or condition",
+      "reason": "旧英文是对人的侮辱性名词，现中文与讨论变坏、组织退化是动词；清除不相关人物与性行为判断。"
+    },
+    {
+      "id": 13393,
+      "word": "promenade",
+      "field": "en",
+      "before": "a formal ball held for a school class toward the end of the academic year",
+      "after": "a public path or wide walkway used for strolling, often beside the sea",
+      "reason": "学校正式舞会是另一合法但与当前不相配的义；中文和沿海步道散步两句均指公共步道。"
+    },
+    {
+      "id": 13398,
+      "word": "wholeness",
+      "field": "en",
+      "before": "a state of robust good health",
+      "after": "the state of being complete, with all parts forming a unified whole",
+      "reason": "旧说明把状态锁为强健的身体健康；雕塑完整性和整体感不以健康为前提，现中文题意是完整与统一。"
+    },
+    {
+      "id": 13403,
+      "word": "stipulation",
+      "field": "en",
+      "before": "(law) an agreement or concession made by parties in a judicial proceeding (or by their attorneys) relating to the business before the court; must be in writing unless they are part of the court record",
+      "after": "a condition or requirement specified as part of an agreement",
+      "reason": "旧释义把法庭诉讼约定及书面要求当成通用限制；合同和报价语境是约定条件。"
+    },
+    {
+      "id": 13406,
+      "word": "gauntlet",
+      "field": "en",
+      "before": "to offer or accept a challenge",
+      "after": "a protective glove, or a series of difficult encounters someone must pass through",
+      "reason": "旧en是offer或accept a challenge的搭配动作，未定义名词本身；改为护手及遭遇接连难关的名词义。"
+    },
+    {
+      "id": 13411,
+      "word": "psycho",
+      "field": "en",
+      "before": "n a person afflicted with psychosis",
+      "after": "an offensive slang word for someone considered mentally unstable or dangerously unpredictable",
+      "reason": "旧en将冒犯性俚语直接当作精神病性障碍诊断；两句均在讨论辱称，不构成医学辨识。"
+    },
+    {
+      "id": 13415,
+      "word": "mitt",
+      "field": "en",
+      "before": "n the (prehensile) extremity of the superior limb",
+      "after": "a glove or protective hand covering used for catching a ball or handling hot objects",
+      "reason": "旧en仅指手这一俚语义，与当前中文、完整手套义及棒球和隔热手套语境错配。"
+    },
+    {
+      "id": 13417,
+      "word": "hitherto",
+      "field": "en",
+      "before": "r used in negative statement to describe a situation that has existed up to this point or up to the present time",
+      "after": "up to this point in time; previously",
+      "reason": "旧en错误限定只能用于否定陈述；时间副词本身没有这一限制。"
+    },
+    {
+      "id": 13425,
+      "word": "leaguer",
+      "field": "en",
+      "before": "The camp of a besieging army; a camp in general.",
+      "after": "a member of a league, especially a player in a sports league",
+      "reason": "旧en是古旧围攻军营义，当前中文及major/minor搭配明确是联盟球员。"
+    },
+    {
+      "id": 13427,
+      "word": "zealander",
+      "field": "en",
+      "before": "a native or inhabitant of Zealand",
+      "after": "used after 'New' to refer to a person from New Zealand",
+      "reason": "旧en是丹麦西兰岛居民，与当前中文及两句New Zealander错配；仅解释现有固定组合，不把词头当独立通用词。"
+    },
+    {
+      "id": 13428,
+      "word": "dame",
+      "field": "en",
+      "before": "informal terms for a (young) woman",
+      "after": "a title awarded to a woman who receives a British honor equivalent to a knighthood",
+      "reason": "旧en是口语女性称呼，当前中文及被授予称号、姓名前称号明确是英国女爵士。"
+    },
+    {
+      "id": 13437,
+      "word": "engross",
+      "field": "en",
+      "before": "v devote (oneself) fully to",
+      "after": "to hold someone's attention completely",
+      "reason": "旧en把吸引注意力改成主体自己全身投入；两句的故事和谜题均是吸引他人注意力的施事。"
+    },
+    {
+      "id": 13438,
+      "word": "adhd",
+      "field": "en",
+      "before": "n a condition (mostly in boys) characterized by behavioral and learning disorders",
+      "after": "a neurodevelopmental disorder involving persistent inattention, hyperactivity, or impulsivity that interferes with daily life",
+      "reason": "旧en将男孩与行为、学习障碍混成定义；官方说明核心是持续注意力不足、多动或冲动，学习障碍可共存但非定义条件。"
+    },
+    {
+      "id": 13443,
+      "word": "negro",
+      "field": "en",
+      "before": "relating to or characteristic of or being a member of the traditional racial division of mankind having brown to black pigmentation and tightly curled hair",
+      "after": "a dated and often offensive term for a Black person or for things associated with Black people",
+      "reason": "取消旧体貌式种族分类定义，明确现词的过时及常带冒犯性质，匹配两句历史词称的辨识语境。"
+    },
+    {
+      "id": 13448,
+      "word": "convection",
+      "field": "en",
+      "before": "the transfer of heat through a fluid (liquid or gas) caused by molecular motion",
+      "after": "the transfer of heat by the bulk movement of a liquid or gas",
+      "reason": "旧en把对流归因于分子运动，混淆整体流动与热传导；教材明确是物质的大尺度流动。"
+    },
+    {
+      "id": 13453,
+      "word": "sweatshop",
+      "field": "en",
+      "before": "factory where workers do piecework for poor pay and are prevented from forming unions; common in the clothing industry",
+      "after": "a workplace where people work long hours for low pay in poor or unhealthy conditions",
+      "reason": "计件和不许组织工会不是通用必要条件；保留低薪、长工时及恶劣条件的基本义。"
+    },
+    {
+      "id": 13462,
+      "word": "digitally",
+      "field": "en",
+      "before": "by means of the fingers",
+      "after": "by using electronic or computerized technology",
+      "reason": "旧en是用手指的另一词根义，与当前中文及照片编辑、电子签名明确错配。"
+    },
+    {
+      "id": 13468,
+      "word": "yoke",
+      "field": "en",
+      "before": "fabric comprising a fitted part at the top of a garment",
+      "after": "a wooden frame joining draft animals for work, or a burden of oppression",
+      "reason": "旧en仅指衣服肩部裁片，当前中文和完整释义及牛拉车、压迫两句均指牛轭或束缚。"
+    },
+    {
+      "id": 13469,
+      "word": "esquire",
+      "field": "en",
+      "before": "(Middle Ages) an attendant and shield bearer to a knight; a candidate for knighthood",
+      "after": "a formal title of courtesy after a person's name, often used by lawyers in the United States",
+      "reason": "旧en指中世纪随侍骑士的人，当前中文及两句明确是姓名后的正式尊称。"
+    },
+    {
+      "id": 13472,
+      "word": "snare",
+      "field": "en",
+      "before": "a surgical instrument consisting of wire hoop that can be drawn tight around the base of polyps or small tumors to sever them; used especially in body cavities",
+      "after": "a trap with a tightening loop for catching animals; also a type of drum with rattling wires",
+      "reason": "旧en只有外科切除器械，当前中文与捕狐套索、小军鼓语境错配。"
+    },
+    {
+      "id": 13487,
+      "word": "raleigh",
+      "field": "en",
+      "before": "English courtier (a favorite of Elizabeth I) who tried to colonize Virginia; introduced potatoes and tobacco to England (1552-1618)",
+      "after": "the capital city of North Carolina in the United States",
+      "reason": "旧en擅绑伊丽莎白时代廷臣，中文和两句明确指北卡罗来纳州首府城市。"
+    },
+    {
+      "id": 13506,
+      "word": "blanc",
+      "field": "en",
+      "before": "a white sauce of fat, broth, and vegetables (used especially with braised meat)",
+      "after": "French for white, used in names of white wines",
+      "reason": "旧en是白色肉汁，与法语颜色中文及两种葡萄酒名称错配；标明外语及名称使用范围。"
+    },
+    {
+      "id": 13532,
+      "word": "aires",
+      "field": "en",
+      "before": "n a river in northern England that flows southeast through West Yorkshire",
+      "after": "part of the Spanish place name for the capital of Argentina",
+      "reason": "旧en是英国河流Aire，与词头Aires及两句Buenos Aires不符；仅标识现地名组成部分。"
+    },
+    {
+      "id": 13535,
+      "word": "heretofore",
+      "field": "en",
+      "before": "r used in negative statement to describe a situation that has existed up to this point or up to the present time",
+      "after": "before this time; until now",
+      "reason": "旧en错误限定否定句；此前、迄今这一时间意义不依赖句子是否否定。"
+    },
+    {
+      "id": 13548,
+      "word": "eviction",
+      "field": "en",
+      "before": "action by a landlord that compels a tenant to leave the premises (as by rendering the premises unfit for occupancy); no physical expulsion or legal process is involved",
+      "after": "the removal of a tenant from rented property, usually through a legal process",
+      "reason": "旧en描述constructive eviction却排除实际驱逐或法律程序，不能作通用驱逐定义；仅说明术语，不给法律建议。"
+    },
+    {
+      "id": 13572,
+      "word": "respirator",
+      "field": "en",
+      "before": "a breathing device for administering long-term artificial respiration",
+      "after": "a protective breathing device that filters harmful airborne substances or supplies clean breathing air",
+      "reason": "旧en指长期人工通气设备，当前中文与工人佩戴的呼吸防护用品错配；官方区分过滤净化与供气两类。"
+    },
+    {
+      "id": 13574,
+      "word": "woodward",
+      "field": "en",
+      "before": "United States historian (1908-1999)",
+      "after": "",
+      "reason": "普通姓氏及Ms.称谓语境不能唯一指向1908–1999年的美国历史学家；无可靠人物定位，清空en回退现中文。"
+    },
+    {
+      "id": 13577,
+      "word": "encroachment",
+      "field": "en",
+      "before": "n any entry into an area not previously occupied",
+      "after": "gradual intrusion into another's land or rights, or beyond acceptable limits",
+      "reason": "旧en把任何首次进入未占用区域都叫侵占，遗漏侵犯他人土地、权利或适当界限这一核心。"
+    }
+  ],
+  "frozen_at_utc": "2026-10-02T14:35:46.622162+00:00"
+}

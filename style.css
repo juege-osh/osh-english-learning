@@ -199,3 +199,22 @@
 .run-summary{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0 0 18px;padding:16px 20px}.run-summary h3,.run-summary p{margin:0 0 5px}.run-summary small{color:var(--muted);font-size:12px}.run-summary b{font-variant-numeric:tabular-nums}
 .run-dialog{width:min(460px,calc(100vw - 32px));border:1px solid var(--line);border-radius:24px;padding:28px;color:var(--ink);box-shadow:0 18px 65px #23243c25;text-align:center}.run-dialog::backdrop{background:#23243c88;backdrop-filter:blur(4px)}.run-dialog h2{font-size:23px;margin:8px 0 14px}.run-dialog p{font-size:14px;line-height:1.7}.run-dialog button{min-height:44px}.run-dialog .button-row{justify-content:center}.run-rest-icon{font-size:42px}.run-rest-clock{font-size:36px;display:block;font-variant-numeric:tabular-nums}
 @media(max-width:760px){.run-toolbar{padding:5px 8px;gap:6px}.run-toolbar>span{gap:0;display:block}.run-toolbar small{display:block;font-size:11px}.run-toolbar button{padding:8px;font-size:12px}.run-summary{align-items:flex-start;flex-direction:column;padding:14px}.run-dialog{padding:22px}.goal-options{min-width:0}.goal-options select{min-width:0;width:100%}}
+
+/* Four directional answers retain their positions on narrow screens. */
+.question-workspace .direction-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-items:stretch}
+.direction-options .option:nth-child(1){grid-column:2;grid-row:1}
+.direction-options .option:nth-child(2){grid-column:1;grid-row:2}
+.direction-options .option:nth-child(3){grid-column:3;grid-row:2}
+.direction-options .option:nth-child(4){grid-column:2;grid-row:3}
+.question-workspace .direction-options .option{flex-direction:column;justify-content:center;text-align:center;min-height:80px;padding:10px;white-space:normal}
+.direction-options .option.selected:not(:disabled){border-color:#7357ef;box-shadow:0 0 0 3px #7357ef33;background:#f0ebff}
+.direction-options .option:focus-visible{outline:3px solid #7357ef;outline-offset:3px}
+.direction-help{color:var(--muted);font-size:13px;text-align:center;line-height:1.6}
+@media(max-width:480px){.question-workspace .direction-options{gap:6px}.question-workspace .direction-options .option{padding:8px 5px;font-size:14px;min-height:76px}}
+
+.shell:has(.question-workspace) #guide-welcome{display:none}
+.question-workspace:has(.direction-options) .exercise-card{padding:12px 18px}
+.question-workspace:has(.direction-options) .question-title{margin:4px 0 6px;font-size:28px}
+.question-workspace .direction-options{gap:6px}
+.question-workspace .direction-options .option{min-height:56px;padding:6px;gap:5px;flex-direction:row}
+.question-workspace .direction-help{margin:6px 0 10px}

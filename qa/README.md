@@ -1,5 +1,7 @@
 # 测试与构建辅助脚本
 
+v1.32.9本批审读了13001–13600词的英文辅助定义，修正80处（78条定义校正、2条姓名错配清空），保留483项正确基本义和37项原空。正式发布、GitHub整仓核对及公开资源结果以 `state/evidence-v1329/verification.json` 为准；正式站当前版本见 `/api/health`。
+
 此目录包含前端逻辑测试及词库例句构建辅助脚本。
 
 `curate_starter_examples.py` 是前 100 词双语句子的人工编辑层。重新构建整份例句数据时，在补全和简体转换后，依次运行它、`curate_first500_examples.py`、`curate_common_examples.py`、`curate_next200_examples.py --apply`，以及第 701–1100 词四批对应的 `curate_*_example_gaps.py --apply`。再依次运行 `curate_main_1101_1500.py --apply`、`curate_main_1501_1900.py --apply`、`curate_main_1901_2300.py --apply`、`curate_main_2301_2700.py --apply`、`curate_main_2701_3100.py --apply`、`curate_main_3101_3500.py --apply`、`curate_main_3501_3900.py --apply`、`curate_main_3901_4300.py --apply`、`curate_main_4301_4700.py --apply`、`curate_main_4701_5100.py --apply`、`curate_main_5101_5500.py --apply`、`curate_main_5501_5900.py --apply`、`curate_main_5901_6300.py --apply`、`curate_main_6301_6700.py --apply`、`curate_main_6701_7100.py --apply`、`curate_main_7101_7900.py --apply`、`curate_main_7901_8500.py --apply`、`curate_main_8501_9100.py --apply`、`curate_main_9101_9700.py --apply`、`curate_main_9701_10300.py --apply`、`curate_main_10301_10900.py --apply`、`curate_main_10901_11500.py --apply`、`curate_main_11501_12100.py --apply`、`curate_main_12101_12700.py --apply`、`curate_main_12701_13300.py --apply`、`curate_main_13301_13900.py --apply`、`curate_main_13901_14500.py --apply`、`curate_main_14501_15100.py --apply`、`curate_main_15101_15700.py --apply`、`curate_main_15701_16300.py --apply`、`curate_main_16301_16900.py --apply`、`curate_main_16901_17500.py --apply`、`curate_main_17501_18100.py --apply`、`curate_main_18101_18700.py --apply`、`curate_main_18701_19300.py --apply`、`curate_main_19301_20000.py --apply`，全部20,000词会恢复为每词两句双语例句。第501–20000词的编辑原稿存于 `data/curated_examples_*.tsv`。不要颠倒顺序。
@@ -868,3 +870,18 @@ LMS对应学习管理系统，SNP对应苏格兰民族党；garland是花环，w
 重建须在全部历史编辑层、701–1100质量补丁、v1318辅助补丁及7001–12400九批定义补丁后，运行 `python3 qa/review_definitions_12401_13000.py --apply`。脚本只写words.json，可重复执行。三份作者稿及最终补丁保存在qa，`qa/definition-review-12401-13000.test.js`调用真实出题、渲染和判分函数验证600题各一次正确与错误、原空回退、章节边界及独立语义。入口app67/words26，examples15保持。实际测试、隔离验收、同步与发布以 `state/evidence-v1328/verification.json` 为准；未重复完整race、全部前端、小屏、付费AI，朗读点击不等于真人听审。
 
 本批实际Go为62个顶层测试及20个子测试，runner8.997秒；vet、语法和14项专项前端套件通过。新定义回归114/114，覆盖600题实际渲染及正确、错误各600次；全新隔离四账号47项检查通过，不含站长审核预约。独立21/21、两遍apply95→0幂等，Mac/Linux各77资源共154完整字节一致。隔离第1241关outage新定义选对并展开中文义；产品主线重来归零。持久预览toaster两句展开，34×34朗读中心命中并实际点击，收藏保持☆，无控制台错误。正式发布以本批最终回执为准。
+
+
+## v1.32.9：审读13001–13600词与本批验收
+
+三名作者分段审读600词的英文辅助定义、中文义及1200组完整双语，主审再逐条复核整批和80条建议后冻结。仅修80个en字段：78条定义校正，Hancock13293、Woodward13574因普通姓氏无法确定具体历史人物，清空en并回退原中文题。483项正确基本义、37项原空保持，最终561项英英题、39项中文回退。
+
+本批修正地衣、耳鸣、标点、纳米技术、对流、呼吸防护用品等错义或错误限制，保留standardise与标准比较、quadrant四分之一圆周、Acton中古铠衣、音乐invert、corduroy原木道路、rutherford旧单位等成立的基本义。医学词仅作术语辨识。全部学习ID、原完整词典及非en字段、19400个范围外对象和所有例句字节保持；语言数据仅words.json变化，data/README.md另列说明更新。
+
+重建时，在全部历史编辑层、701–1100质量补丁、v1318辅助补丁及7001–13000十批定义补丁之后，运行 `python3 qa/review_definitions_13001_13600.py --apply`。三份作者稿、最终补丁及实际函数测试保存在qa。入口为app68、words27，examples15保持；正式站的入口加载和公开资源字节核验以本批回执为准。
+
+本机检查通过：62项顶层Go测试和20项子测试（包用时6.804秒、完整runner9.015秒）、vet、20k核心、8112行业句子目标、app语法及15套专项前端回归。新真实函数回归169/169覆盖60关600题的实际渲染，以及正确、错误各600次判分；47项全新状态四账号检查通过，不含站长审核与预约。独立21/21和临时基线真实重建80→0幂等通过，Mac/Linux各77份完整嵌入资源共154/154字节一致。
+
+隔离浏览器在第1301关第6题实际选对epidemiologist的新定义并展开中文；随后通过产品「重来」恢复0词、0关、0XP。19004普通预览实际展开lichen两组双语，34×34像素朗读中心命中，点击后收藏仍为☆，控制台无错误。隔离练习不作为真人学习或榜单成绩；服务停止状态见本批隔离清理回执。正式发布、GitHub最终同步、整仓ZIP及公网资源核对结果以 `state/evidence-v1329/verification.json` 为准，正式站当前版本见 `/api/health`。
+
+首次VM为168/169，单项失败来自测试基线按UTF-8分块读取的错误，产品非en对象无差异；改为完整读取后169/169通过。首次完整日志已被最终日志覆盖，只保留如实标记的错误摘录和元数据，未补造完整原始日志。上述回归不等同于浏览器或发音验收；本批未重复全量race、全部前端、小屏、付费AI或真人听审。主线20000词初步中文性质说明及40000句双语例句、十行业8112路线条目及16224句行业双语例句保持；覆盖量不代表专业全库语言审校。

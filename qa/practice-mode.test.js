@@ -87,3 +87,26 @@ for(const mode of ['fast','delay']){
  h=harness(mode);h.start(choice());h.run("answer('1')");const stale=[...h.timers.values()][0].fn;h.run("actions.next();session.queue.push({w:{id:100,word:'last',zh:'最后'},type:'choice-zh',options:[]});session.queue[1].options=[session.queue[1].w];answer('99')");const active=h.run('practiceAutoTimer'),epoch=h.run('practiceAutoEpoch');stale();assert.equal(h.run('practiceAutoTimer'),active);assert.equal(h.run('practiceAutoEpoch'),epoch);assert.equal(h.timers.size,1,'old callback must leave new countdown intact');h.run("setPracticeMode('slow')");assert.equal(h.timers.size,0,'new timer remains cancellable after old callback fires');
 }
 console.log('PASS: slow / 0ms fast / 1–30s delayed next, 8 quiz types and matches, one record, 1s/30s boundaries, local mode+delay restore, green answered-only details, deadline countdown, manual/route/render/mode/seconds/storage cancellation, caller guard, held-key safety and input preservation');
+
+// Directional selection is deliberate, per-question, and repeat-safe.
+h=harness('slow');h.start(choice());
+h.run("actions['answer-option']('2')");assert.equal(h.run('session.answered'),false);assert.equal(h.run('p.words[1]'),undefined);
+h.run("actions['answer-option']('1')");assert.equal(h.run('p.words[1]'),undefined,'changing selection does not grade');
+h.run("actions['answer-option']('1')");assert.equal(h.run('p.words[1].seen'),1);assert.equal(h.run('p.words[1].wrong'),0);
+h=harness('fast');h.start(choice());
+const arrow=(key,repeat=false,target={tagName:'BODY',id:''})=>h.events['document:keydown']({key,repeat,target,preventDefault(){}});
+arrow('ArrowUp');assert.equal(h.run('p.words[1]'),undefined);
+arrow('ArrowUp',true);assert.equal(h.run('p.words[1]'),undefined);
+arrow('ArrowUp');assert.equal(h.run('p.words[1].seen'),1);h.flush();
+h.run('session.queue[1].options=[session.queue[1].w]');arrow('ArrowUp',true);assert.equal(h.run('p.words[99]'),undefined);
+arrow('ArrowUp');assert.equal(h.run('p.words[99]'),undefined);arrow('ArrowUp');assert.equal(h.run('p.words[99].seen'),1);
+h=harness('slow');h.start(choice());arrow('ArrowUp',false,{tagName:'INPUT',id:'answer-input',closest(){return true;}});assert.equal(h.run('session.queue[0].directionSelection'),undefined);
+console.log('PASS: directional preview, reselect, double confirmation, held keys, next-question isolation and input guard');
+
+const space=(repeat=false)=>h.events['document:keydown']({key:' ',repeat,target:{tagName:'BODY',id:''},preventDefault(){}});
+h=harness('slow');h.start(choice());space();assert.equal(h.run('p.words[1]'),undefined);
+h.run("actions['answer-option']('1')");space(true);assert.equal(h.run('p.words[1]'),undefined);space();assert.equal(h.run('p.words[1].seen'),1);space(true);assert.equal(h.run('session.index'),0);space();assert.equal(h.run('session.index'),1);
+h=harness('slow');h.start(match());h.run("actions['match-left']('1');actions['match-right']('2')");assert.equal(h.run('session.queue[0].errors'),0);space();assert.equal(h.run('session.queue[0].errors'),1);h.run("actions['match-right']('1')");assert.equal(h.run('p.words[1]'),undefined);space();assert.equal(h.run('p.words[1].seen'),1);space();assert.equal(h.run('p.words[1].seen'),1);
+for(const id of ['2','3']){h.run(`actions['match-left']('${id}');actions['match-right']('${id}');actions['practice-confirm']()`);}
+assert.equal(h.run('session.answered'),true);space();assert.equal(h.run('session.index'),1);
+console.log('PASS: space confirms selection and match pair, advances feedback, ignores repeat and missing selection');
