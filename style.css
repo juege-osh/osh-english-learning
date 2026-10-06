@@ -218,3 +218,10 @@
 .question-workspace .direction-options{gap:6px}
 .question-workspace .direction-options .option{min-height:56px;padding:6px;gap:5px;flex-direction:row}
 .question-workspace .direction-help{margin:6px 0 10px}
+
+@media(max-width:680px){
+ .question-workspace:has(.direction-options){height:calc(100dvh - 220px)}
+ .question-workspace:has(.direction-options) .question-title{font-size:22px;line-height:1.3}
+ .question-workspace .direction-options .option{flex-direction:column;gap:2px;padding:5px;min-height:56px}
+ .question-workspace .direction-help{font-size:12px;line-height:1.4;margin:4px 0 6px}
+}
